@@ -1,0 +1,7 @@
+if (!isServer) exitWith {}
+_plane = _this select 0
+
+_plane setCaptive true
+[_plane] execVM "\globemaster_c17\scr\AircraftEffects.sqf"
+#quit
+exit

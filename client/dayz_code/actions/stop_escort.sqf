@@ -1,0 +1,15 @@
+player removeAction s_player_escort;
+s_player_escort = -1;
+player forceWalk false;
+_newCiv = cursorTarget;
+_dist = player distance _newCiv;
+_newCiv setVariable ["Escort",0,true];
+_GetDetain = _newCiv getVariable ["Detain",1];
+_newCiv setVariable ["Detain",0,true];
+sleep 1;
+detach _newCiv;
+_newCiv setVariable ["Detain",_GetDetain,true];
+PVDZ_ply_Arrst = _newCiv;
+publicVariable "PVDZ_ply_Arrst";
+[objNull, _newCiv, rswitchmove ,"ActsPsitMstpSnonWunaDnon_sceneNikitinDisloyalty_Sykes"] call RE;
+[objNull, _newCiv, rDisableuserinput,true] call RE;

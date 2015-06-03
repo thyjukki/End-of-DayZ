@@ -1,0 +1,93 @@
+//Resources
+#include "defines.cpp"
+
+class RscStaticText {
+	type = CT_STATIC;
+	idc = UNDEFINED_IDC;
+	style = ST_LEFT;
+	font = FontM;
+	colorText[] = { 0.6, 0.5, 0, 0.9 };
+	colorBackground[] = {0, 0, 0, 0};
+	sizeEx = 0.03;
+	soundClick[] = {"ui\ui_ok", 0.2, 1};
+	soundEnter[] = {"ui\ui_over", 0.2, 1};
+	soundEscape[] = {"ui\ui_cc", 0.2, 1};
+	soundPush[] = {"", 0.2, 1};
+	text = "StaticText";
+};
+
+class RscListBox {
+	idc = UNDEFINED_IDC;
+	type = CT_LISTBOX;
+	style = ST_SINGLE + LB_TEXTURES;
+	font = "Zeppelin32";
+	sizeEx = 0.04221;
+    rowHeight = 0.03;
+	color[] = {1, 1, 1, 1};
+	colorText[] = {1, 1, 1, 0.75};
+	colorScrollbar[] = {0.95, 0.95, 0.95, 1};
+	colorSelect[] = {0.95, 0.95, 0.95, 1};
+	colorSelect2[] = {0.95, 0.95, 0.95, 1};
+	colorSelectBackground[] = {0.6, 0.8392, 0.4706, 1.0};
+	colorSelectBackground2[] = {0.6, 0.8392, 0.4706, 1.0};
+	columns[] = {0.1, 0.7, 0.1, 0.1};
+	period = 0;
+	colorBackground[] = {0, 0, 0, 1};
+	maxHistoryDelay = 1.0;
+	autoScrollSpeed = -1;
+	autoScrollDelay = 5;
+	autoScrollRewind = 0;
+	soundSelect[] = {"\ca\ui\data\sound\new1", 0.09, 1};
+	
+	class ScrollBar {
+		color[] = {1, 1, 1, 0.6};
+		colorActive[] = {1, 1, 1, 1};
+		colorDisabled[] = {1, 1, 1, 0.3};
+		thumb = "\ca\ui\data\igui_scrollbar_thumb_ca.paa";
+		arrowFull = "\ca\ui\data\igui_arrow_top_active_ca.paa";
+		arrowEmpty = "\ca\ui\data\igui_arrow_top_ca.paa";
+		border = "\ca\ui\data\igui_border_scroll_ca.paa";
+	};
+};
+
+class RscComboBox {
+	idc = UNDEFINED_IDC;
+	type = CT_COMBO;
+	style = ST_LEFT;
+	
+	font = "TahomaB";
+	sizeEx = 0.025;
+	
+	rowHeight = 0.025;
+	wholeHeight = 4 * 0.025;
+	
+	color[] = {1, 1, 1, 1};
+	colorText[] = {1, 1, 1, 0.75};
+	colorScrollbar[] = {0.95, 0.95, 0.95, 1};
+	colorSelect[] = {0.95, 0.95, 0.95, 1};
+	colorSelect2[] = {0.95, 0.95, 0.95, 1};
+	colorSelectBackground[] = {0.6, 0.6, 0.4706, 1.0};
+	colorSelectBackground2[] = {0.6, 0.6, 0.4706, 1.0};
+	columns[] = {0.1, 0.7, 0.1, 0.1};
+	period = 0;
+	colorBackground[] = {0, 0, 0, 1};
+	maxHistoryDelay = 1.0;
+	autoScrollSpeed = -1;
+	autoScrollDelay = 5;
+	autoScrollRewind = 0;
+	soundSelect[] = {"\ca\ui\data\sound\new1", 0.09, 1};
+	soundExpand[] = {"", 0.09, 1};
+	soundCollapse[] = {"", 0.09, 1};
+	arrowFull = "\ca\ui\data\igui_arrow_top_active_ca.paa";
+	arrowEmpty = "\ca\ui\data\igui_arrow_top_ca.paa";
+	
+	class ScrollBar {
+		color[] = {1, 1, 1, 0.6};
+		colorActive[] = {1, 1, 1, 1};
+		colorDisabled[] = {1, 1, 1, 0.3};
+		thumb = "\ca\ui\data\igui_scrollbar_thumb_ca.paa";
+		arrowFull = "\ca\ui\data\igui_arrow_top_active_ca.paa";
+		arrowEmpty = "\ca\ui\data\igui_arrow_top_ca.paa";
+		border = "\ca\ui\data\igui_border_scroll_ca.paa";
+	};
+};
