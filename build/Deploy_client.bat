@@ -8,7 +8,7 @@ for /f "tokens=1-2*" %%A in ('reg query "HKEY_LOCAL_MACHINE\Software\Wow6432Node
 
 for /D %%f in (.\..\Client\*) do cpbo.exe -p "%%f" "building\%%~nxf.pbo"
 
-for %%F in (building\*.pbo) do DSSignFile endofdayz.biprivatekey %%F
+for %%F in (building\*.pbo) do DSSignFile "c:\endofdayz.biprivatekey" %%F
 
 move building\*.pbo "%MyPath%\@EndOFDayzTest\addons"
 
