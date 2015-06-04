@@ -5,4 +5,4 @@ for /D %%f in (.\..\Client\*) do cpbo.exe -p "%%f" "building\%%~nxf.pbo"
 
 for %%F in (building\*.pbo) do DSSignFile "c:\endofdayz.biprivatekey" %%F
 
-xcopy /s/e/y .\building\* C:\arma2oa\@EndOfDayZ\addons
+xcopy /s/e/y .\building\* C:\arma2\@EndOfDayZ\addons
