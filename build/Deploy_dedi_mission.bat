@@ -1,6 +1,6 @@
 pushd %~dp0
 
-set PWA_PATH="%~1\MPMission"
+set PWA_PATH="%~1\MPMissions"
 
 mkdir %PWA_PATH%
 
