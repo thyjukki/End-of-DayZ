@@ -9,6 +9,8 @@ for /D %%f in (.\..\Client\*) do cpbo.exe -p "%%f" "building\%%~nxf.pbo"
 
 for %%F in (building\*.pbo) do DSSignFile "c:\endofdayz.biprivatekey" %%F
 
-xcopy /s/e/y .\building\* %PWA_PATH%
+move /y .\building\* %PWA_PATH%
+
+rmdir /s/q .\building
 
 popd
