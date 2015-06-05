@@ -1,97 +1,4 @@
-/* MP5 <-> PDW*/
-class 30Rnd_9x19_UZI_Empty: emptiedMagazine {
-	ammo = "B_9x19_Ball";
-	descriptionShort="Caliber: 9x19mm<br/>Rounds: 30<br/>Used in: PWD";
-	displayName="PDW Mag (Empty)";
-	picture="\Ca\weapons_e\Data\Icons\m_uzi_CA.paa";
-	scope = 2;
-	type = 16;
-	class ammoType
-	{
-		class B_9x19_Ball {
-			ammoMag = "30Rnd_9x19_UZI";
-		};
-		class B_9x19_SD {
-			ammoMag = "30Rnd_9x19_UZI_SD";
-		};
-		class B_9x19_HP {
-			ammoMag = "30Rnd_9x19_UZI_hp";
-		};
-		class B_9x19_TRACER {
-			ammoMag = "30Rnd_9x19_UZI_tracer";
-		};
-		class B_9x19_RUBBER {
-			ammoMag = "30Rnd_9x19_UZI_rubber";
-		};
-		class B_9x19_BT {
-			ammoMag = "30Rnd_9x19_UZI_bt";
-		};
-	};
-};
-
-class 30Rnd_9x19_UZI: CA_Magazine
-{
-	scope=2;
-	displayName="PDW Mag";
-	picture="\Ca\weapons_e\Data\Icons\m_uzi_CA.paa";
-	descriptionShort="Caliber: 9x19mm<br/>Rounds: 30<br/>Used in: PWD";
-	type=16;
-	ammo="B_9x19_Ball";
-	count=30;
-	initSpeed=400;
-	baseBullet = 9x19_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
-
-	emptyMag = "30Rnd_9x19_UZI_Empty";
-};
-
-class 30Rnd_9x19_UZI_SD: 30Rnd_9x19_UZI {
-	scope=2;
-	baseBullet = 9x19_SD_x;
-	initSpeed=320;
-	ammo="B_9x19_SD";
-	displayName="PDW SD Mag";
-};
-
-class 30Rnd_9x19_UZI_hp: 30Rnd_9x19_UZI {
-	scope=2;
-	baseBullet = 9x19_HP_x;
-	ammo="B_9x19_HP";
-	displayName="PDW HP Mag";
-};
-
-class 30Rnd_9x19_UZI_tracer: 30Rnd_9x19_UZI {
-	scope=2;
-	baseBullet = 9x19_Tracer_x;
-	ammo="B_9x19_TRACER";
-	displayName="PDW Tracer Mag";
-};
-
-class 30Rnd_9x19_UZI_rubber: 30Rnd_9x19_UZI {
-	scope=2;
-	baseBullet = 9x19_RUBBER_x;
-	initSpeed=150;
-	ammo="B_9x19_RUBBER";
-	displayName="PDW Rubber Mag";
-};
-
-class 30Rnd_9x19_UZI_bt: 30Rnd_9x19_UZI {
-	scope=2;
-	baseBullet = 9x19_BT_x;
-	ammo="B_9x19_BT";
-	displayName="PDW BT Mag";
-};
-
-
+/* MP5 */
 class 30Rnd_9x19_MP5_Empty: emptiedMagazine {
 	descriptionshort = "Caliber: 9x19 mm Parabellum <br/>Rounds: 30 <br/>Used in: MP5";
 	displayname = "MP5 Mag (Empty)";
@@ -141,7 +48,7 @@ class 30Rnd_9x19_MP5: CA_Magazine
 		};
 	};
 
-	emptyMag = "30Rnd_9x19_UZI_Empty";
+	emptyMag = "30Rnd_9x19_MP5_Empty";
 };
 
 class 30Rnd_9x19_MP5SD: 30Rnd_9x19_MP5 {
@@ -200,16 +107,16 @@ class 15Rnd_9x19_M9_Empty: emptiedMagazine
 			ammoMag = "15Rnd_9x19_M9SD";
 		};
 		class B_9x19_HP {
-			ammoMag = "RH_B_9x19_hp";
+			ammoMag = "15Rnd_9x19_M9_hp";
 		};
 		class B_9x19_TRACER {
-			ammoMag = "RH_B_9x19_tracer";
+			ammoMag = "15Rnd_9x19_M9_tracer";
 		};
 		class B_9x19_RUBBER {
-			ammoMag = "RH_B_9x19_rubber";
+			ammoMag = "15Rnd_9x19_M9_rubber";
 		};
 		class B_9x19_BT {
-			ammoMag = "RH_B_9x19_bt";
+			ammoMag = "15Rnd_9x19_M9_bt";
 		};
 	};
 };
@@ -277,7 +184,6 @@ class 15Rnd_9x19_M9SD_bt: 15Rnd_9x19_M9 {
 };
 
 
-//TODO(Jukki) check which mag to use
 class 17Rnd_9x19_glock17_Empty: emptiedMagazine
 {
 	scope=2;
@@ -314,7 +220,7 @@ class 17Rnd_9x19_glock17: CA_Magazine
 	displayName="G17 Mag";
 	model = "z\addons\dayz_communityweapons\magazines\g17.p3d";
 	picture = "\z\addons\dayz_communityweapons\magazines\data\m_glock17_ca.paa";
-	descriptionShort="Caliber: 9x19 mm Parabellum <br/>Rounds: 15 <br/>Used in: M9";
+	descriptionShort="Caliber: 9x19 mm Parabellum <br/>Rounds: 17 <br/>Used in: M9";
 	type=16;
 	ammo="B_9x19_Ball";
 	count=17;
@@ -377,6 +283,7 @@ class RH_13Rnd_9x19_bhp_Empty: emptiedMagazine
 {
 	scope=2;
 	displayName="Browning HP mag (Empty)";
+	descriptionShort="Caliber: 9x19 mm Parabellum <br/>Rounds: 13 <br/>Used in: Browning HP";
 	model="\RH_de\mags\mag_mk22.p3d";
 	type=16;
 	picture="\RH_de\inv\m_mk22.paa";
@@ -411,7 +318,7 @@ class RH_13Rnd_9x19_bhp: CA_Magazine
 	model="\RH_de\mags\mag_mk22.p3d";
 	type=16;
 	picture="\RH_de\inv\m_mk22.paa";
-	ammo="B_9x18_Ball";
+	ammo="B_9x19_Ball";
 	count=13;
 	initSpeed=400;
 	baseBullet = 9x19_x;
@@ -472,6 +379,7 @@ class RH_8Rnd_9x19_Mk_Empty: emptiedMagazine
 {
 	scope=2;
 	displayName="Mk22 mag (Empty)";
+	descriptionShort="Caliber: 9x19 mm Parabellum <br/>Rounds: 8 <br/>Used in: Mk22";
 	model="\RH_de\mags\mag_mk22.p3d";
 	type=16;
 	picture="\RH_de\inv\m_mk22.paa";
@@ -502,11 +410,11 @@ class RH_8Rnd_9x19_Mk: CA_Magazine
 {
 	scope=2;
 	displayName="Mk22 mag";
-	descriptionShort="Caliber: 9x19 mm Parabellum <br/>Rounds: 13 <br/>Used in: Mk22";
+	descriptionShort="Caliber: 9x19 mm Parabellum <br/>Rounds: 8 <br/>Used in: Mk22";
 	model="\RH_de\mags\mag_mk22.p3d";
 	type=16;
 	picture="\RH_de\inv\m_mk22.paa";
-	ammo="B_9x18_Ball";
+	ammo="B_9x19_Ball";
 	count=8;
 	initSpeed=400;
 	baseBullet = 9x19_x;
@@ -566,6 +474,7 @@ class RH_15Rnd_9x19_usp_Empty: emptiedMagazine
 {
 	scope=2;
 	displayName="Usp 9mm mag (Empty)";
+	descriptionShort="Caliber: 9x19 mm Parabellum <br/>Rounds: 15 <br/>Used in: USP 9mm";
 	model="\RH_de\mags\mag_usp.p3d";
 	type=16;
 	picture="\RH_de\inv\m_usp.paa";
@@ -596,11 +505,11 @@ class RH_15Rnd_9x19_usp: CA_Magazine
 {
 	scope=2;
 	displayName="Usp 9mm mag";
-	descriptionShort="Caliber: 9x19 mm Parabellum <br/>Rounds: 13 <br/>Used in: USP 9mm";
+	descriptionShort="Caliber: 9x19 mm Parabellum <br/>Rounds: 15 <br/>Used in: USP 9mm";
 	model="\RH_de\mags\mag_usp.p3d";
 	type=16;
 	picture="\RH_de\inv\m_usp.paa";
-	ammo="B_9x18_Ball";
+	ammo="B_9x19_Ball";
 	count=15;
 	initSpeed=400;
 	baseBullet = 9x19_x;
@@ -661,7 +570,7 @@ class RH_20Rnd_9x19_M93_Empty: emptiedMagazine
 {
 	scope=2;
 	displayName="M93R mag (Empty)";
-	descriptionShort="Caliber: 9x19 mm Parabellum <br/>Rounds: 13 <br/>Used in: m39r, m9";
+	descriptionShort="Caliber: 9x19 mm Parabellum <br/>Rounds: 20 <br/>Used in: m39r, m9";
 	model="\RH_de\mags\mag_m93r.p3d";
 	type=16;
 	picture="\RH_de\inv\m_m93.paa";
@@ -692,11 +601,11 @@ class RH_20Rnd_9x19_M93: CA_Magazine
 {
 	scope=2;
 	displayName="M93R mag";
-	descriptionShort="Caliber: 9x19 mm Parabellum <br/>Rounds: 13 <br/>Used in: m39r, m9";
+	descriptionShort="Caliber: 9x19 mm Parabellum <br/>Rounds: 20 <br/>Used in: m39r, m9";
 	model="\RH_de\mags\mag_m93r.p3d";
 	type=16;
 	picture="\RH_de\inv\m_m93.paa";
-	ammo="B_9x18_Ball";
+	ammo="B_9x19_Ball";
 	count=20;
 	initSpeed=400;
 	baseBullet = 9x19_x;
@@ -757,7 +666,7 @@ class RH_19Rnd_9x19_g18_Empty: emptiedMagazine
 {
 	scope=2;
 	displayName="G18 mag (Empty)";
-	descriptionShort="Caliber: 9x19 mm Parabellum <br/>Rounds: 13 <br/>Used in: G17, G18, G19";
+	descriptionShort="Caliber: 9x19 mm Parabellum <br/>Rounds: 19 <br/>Used in: G17, G18, G19";
 	model="\RH_de\mags\mag_g18.p3d";
 	type=16;
 	picture="\RH_de\inv\m_g18.paa";
@@ -766,7 +675,7 @@ class RH_19Rnd_9x19_g18_Empty: emptiedMagazine
 		class RH_B_9x19_Ball {
 			ammoMag = "RH_19Rnd_9x19_g18_g18";
 		};
-		class RH_B_9x19_SD {//SD VERSION HERE
+		class RH_B_9x19_SD {
 			ammoMag = "RH_19Rnd_9x19_g18_g18SD";
 		};
 		class B_9x19_HP {
@@ -788,11 +697,11 @@ class RH_19Rnd_9x19_g18: CA_Magazine
 {
 	scope=2;
 	displayName="G18 mag";
-	descriptionShort="Caliber: 9x19 mm Parabellum <br/>Rounds: 13 <br/>Used in: G17, G18, G19";
+	descriptionShort="Caliber: 9x19 mm Parabellum <br/>Rounds: 19 <br/>Used in: G17, G18, G19";
 	model="\RH_de\mags\mag_g18.p3d";
 	type=16;
 	picture="\RH_de\inv\m_g18.paa";
-	ammo="B_9x18_Ball";
+	ammo="B_9x19_Ball";
 	count=19;
 	initSpeed=400;
 	baseBullet = 9x19_x;
@@ -861,7 +770,7 @@ class RH_33Rnd_9x19_g18_Empty: emptiedMagazine
 		class RH_B_9x19_Ball {
 			ammoMag = "RH_33Rnd_9x19_g18";
 		};
-		class RH_B_9x19_SD {//SD VERSION HERE
+		class RH_B_9x19_SD {
 			ammoMag = "RH_33Rnd_9x19_g18SD";
 		};
 		class B_9x19_HP {
@@ -887,7 +796,7 @@ class RH_33rnd_9x19_g18: CA_Magazine
 	model="\RH_de\mags\mag_g18.p3d";
 	type=16;
 	picture="\RH_de\inv\m_g18.paa";
-	ammo="B_9x18_Ball";
+	ammo="B_9x19_Ball";
 	count=19;
 	initSpeed=400;
 	baseBullet = 9x19_x;
@@ -983,7 +892,7 @@ class RH_30Rnd_9x19_tec: CA_Magazine
 	model="\RH_de\mags\mag_tec9.p3d";
 	type=16;
 	picture="\RH_de\inv\m_tec9.paa";
-	ammo="B_9x18_Ball";
+	ammo="B_9x19_Ball";
 	count=30;
 	initSpeed=400;
 	baseBullet = 9x19_x;
@@ -1080,7 +989,7 @@ class RH_32Rnd_9x19_Muzi: CA_Magazine
 	model="\RH_de\mags\mag_muzi.p3d";
 	type=16;
 	picture="\RH_de\inv\m_muzi.paa";
-	ammo="B_9x18_Ball";
+	ammo="B_9x19_Ball";
 	count=32;
 	initSpeed=400;
 	baseBullet = 9x19_x;
@@ -1176,7 +1085,7 @@ class RH_8Rnd_9x19_p38: CA_Magazine
 	model="\RH_de\mags\mag_p38.p3d";
 	type=16;
 	picture="\RH_de\inv\m_p38.paa";
-	ammo="B_9x18_Ball";
+	ammo="B_9x19_Ball";
 	count=8;
 	initSpeed=400;
 	baseBullet = 9x19_x;
@@ -1270,7 +1179,7 @@ class RH_9mm_32RND_Mag: CA_Magazine
 	descriptionShort="Caliber: 9x19 mm Parabellum <br/>Rounds: 32 <br/>Used in: Uzi";
 	model="\RH_smg\mags\mag_uzi.p3d";
 	picture="\RH_smg\inv\m_uzi.paa";
-	ammo="B_9x18_Ball";
+	ammo="B_9x19_Ball";
 	count=32;
 	initSpeed=400;
 	baseBullet = 9x19_x;

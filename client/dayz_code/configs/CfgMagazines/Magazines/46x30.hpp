@@ -75,23 +75,3 @@ class 20Rnd_46x30_sd_mp7: CA_Magazine
 
 	emptyMag = "20Rnd_46x30_mp7_Empty";
 };
-
-class RH_46x30mm_40RND_Mag: 30Rnd_9x19_MP5
-{
-	class ItemActions
-	{
-		COMBINE_MAG
-	};
-
-	emptyMag = "RH_46x30mm_40RND_Mag_Empty";
-};
-
-class RH_46x30mm_40RND_SD_Mag: 30Rnd_9x19_MP5SD
-{
-	class ItemActions
-	{
-		COMBINE_MAG
-	};
-
-	emptyMag = "RH_46x30mm_40RND_Mag_Empty";
-};

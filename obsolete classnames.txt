@@ -1,0 +1,8 @@
+30Rnd_9x19_UZI
+UZI_EP1 -> RH_muzi
+MP5A5 -> RH_mp5a5
+MP5SD -> RH_mp5sd6
+RH_46x30mm_40RND_Mag -> 40Rnd_46x30_mp7
+RH_46x30mm_40RND_SD_Mag -> 40Rnd_46x30_sd_mp7
+RH_17Rnd_9x19_g17 -> 17Rnd_9x19_glock17
+kpfs p38 ammo -> RH_8Rnd_9x19_p38

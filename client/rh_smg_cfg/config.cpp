@@ -135,24 +135,8 @@ class CfgMagazines
 	class CA_Magazine;
 	class 30Rnd_9x19_MP5;
 	class 30Rnd_9x19_MP5SD;
-	class RH_9mm_32RND_Mag: 30Rnd_9x19_MP5
-	{
-		scopeWeapon=0;
-		scopeMagazine=2;
-		displayName="Uzi Magazine";
-		model="\RH_smg\mags\mag_uzi.p3d";
-		picture="\RH_smg\inv\m_uzi.paa";
-		count=32;
-	};
-	class RH_9mm_32RND_SD_Mag: 30Rnd_9x19_MP5SD
-	{
-		scopeWeapon=0;
-		scopeMagazine=2;
-		displayName="Uzi SD Magazine";
-		model="\RH_smg\mags\mag_uzi.p3d";
-		picture="\RH_smg\inv\m_uzi.paa";
-		count=32;
-	};
+	
+	// TODO(Jukki)
 	class RH_57x28mm_50RND_Mag: 30Rnd_9x19_MP5
 	{
 		scopeWeapon=0;
@@ -225,11 +209,25 @@ class cfgWeapons
 	class M4A1;
 	class MP5SD: Rifle 
 	{
-		magazines[] = {"30Rnd_9x19_MP5","30Rnd_9x19_MP5SD"};
+		magazines[] = {
+			"30Rnd_9x19_MP5",
+			"30Rnd_9x19_MP5SD",
+			"30Rnd_9x19_MP5_hp",
+			"30Rnd_9x19_MP5_tracer",
+			"30Rnd_9x19_MP5_rubber",
+			"30Rnd_9x19_MP5_bt"
+		};
 	}
 	class MP5A5: MP5SD 
 	{
-		magazines[] = {"30Rnd_9x19_MP5", "30Rnd_9x19_MP5SD"};
+		magazines[] = {
+			"30Rnd_9x19_MP5",
+			"30Rnd_9x19_MP5SD",
+			"30Rnd_9x19_MP5_hp",
+			"30Rnd_9x19_MP5_tracer",
+			"30Rnd_9x19_MP5_rubber",
+			"30Rnd_9x19_MP5_bt"
+		};
 	}
 	class RH_HK53: M4A1
 	{
@@ -385,10 +383,13 @@ class cfgWeapons
 		model="\RH_smg\RH_mp5a4.p3d";
 		picture="\RH_smg\inv\mp5a4.paa";
 		UiPicture="\CA\weapons\data\Ico\i_regular_CA.paa";
-		magazines[]=
-		{
+		magazines[] = {
 			"30Rnd_9x19_MP5",
-			"30Rnd_9x19_MP5SD"
+			"30Rnd_9x19_MP5SD",
+			"30Rnd_9x19_MP5_hp",
+			"30Rnd_9x19_MP5_tracer",
+			"30Rnd_9x19_MP5_rubber",
+			"30Rnd_9x19_MP5_bt"
 		};
 		displayName="HK MP5A4";
 		handAnim[]=
@@ -810,10 +811,13 @@ class cfgWeapons
 		displayName="HK MP5SD6";
 		model="\RH_smg\RH_mp5sd6.p3d";
 		picture="\RH_smg\inv\mp5sd6.paa";
-		magazines[]=
-		{
+		magazines[] = {
+			"30Rnd_9x19_MP5",
 			"30Rnd_9x19_MP5SD",
-			"30Rnd_9x19_MP5"
+			"30Rnd_9x19_MP5_hp",
+			"30Rnd_9x19_MP5_tracer",
+			"30Rnd_9x19_MP5_rubber",
+			"30Rnd_9x19_MP5_bt"
 		};
 		fireLightDuration=0;
 		fireLightIntensity=0;
@@ -1234,8 +1238,18 @@ class cfgWeapons
 		picture="\RH_smg\inv\uzi.paa";
 		magazines[]=
 		{
+			"RH_32Rnd_9x19_Muzi",
+			"RH_32Rnd_9x19_MuziSD",
+			"RH_32Rnd_9x19_Muzi_hp",
+			"RH_32Rnd_9x19_Muzi_tracer",
+			"RH_32Rnd_9x19_Muzi_rubber",
+			"RH_32Rnd_9x19_Muzi_bt",
 			"RH_9mm_32RND_Mag",
-			"RH_9mm_32RND_SD_Mag"
+			"RH_9mm_32RND_MagSD",
+			"RH_9mm_32RND_Mag_hp",
+			"RH_9mm_32RND_Mag_tracer",
+			"RH_9mm_32RND_Mag_rubber",
+			"RH_9mm_32RND_Mag_bt"
 		};
 		handAnim[]=
 		{
@@ -1302,8 +1316,18 @@ class cfgWeapons
 		picture="\RH_smg\inv\uzim.paa";
 		magazines[]=
 		{
+			"RH_32Rnd_9x19_Muzi",
+			"RH_32Rnd_9x19_MuziSD",
+			"RH_32Rnd_9x19_Muzi_hp",
+			"RH_32Rnd_9x19_Muzi_tracer",
+			"RH_32Rnd_9x19_Muzi_rubber",
+			"RH_32Rnd_9x19_Muzi_bt",
 			"RH_9mm_32RND_Mag",
-			"RH_9mm_32RND_SD_Mag"
+			"RH_9mm_32RND_MagSD",
+			"RH_9mm_32RND_Mag_hp",
+			"RH_9mm_32RND_Mag_tracer",
+			"RH_9mm_32RND_Mag_rubber",
+			"RH_9mm_32RND_Mag_bt"
 		};
 		handAnim[]=
 		{
@@ -1333,8 +1357,18 @@ class cfgWeapons
 		picture="\RH_smg\inv\uzisd.paa";
 		magazines[]=
 		{
-			"RH_9mm_32RND_SD_Mag",
-			"RH_9mm_32RND_Mag"
+			"RH_32Rnd_9x19_Muzi",
+			"RH_32Rnd_9x19_MuziSD",
+			"RH_32Rnd_9x19_Muzi_hp",
+			"RH_32Rnd_9x19_Muzi_tracer",
+			"RH_32Rnd_9x19_Muzi_rubber",
+			"RH_32Rnd_9x19_Muzi_bt",
+			"RH_9mm_32RND_Mag",
+			"RH_9mm_32RND_MagSD",
+			"RH_9mm_32RND_Mag_hp",
+			"RH_9mm_32RND_Mag_tracer",
+			"RH_9mm_32RND_Mag_rubber",
+			"RH_9mm_32RND_Mag_bt"
 		};
 		fireLightDuration=0;
 		fireLightIntensity=0;
@@ -1407,8 +1441,18 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"RH_32Rnd_9x19_Muzi",
+			"RH_32Rnd_9x19_MuziSD",
+			"RH_32Rnd_9x19_Muzi_hp",
+			"RH_32Rnd_9x19_Muzi_tracer",
+			"RH_32Rnd_9x19_Muzi_rubber",
+			"RH_32Rnd_9x19_Muzi_bt",
 			"RH_9mm_32RND_Mag",
-			"RH_9mm_32RND_SD_Mag"
+			"RH_9mm_32RND_MagSD",
+			"RH_9mm_32RND_Mag_hp",
+			"RH_9mm_32RND_Mag_tracer",
+			"RH_9mm_32RND_Mag_rubber",
+			"RH_9mm_32RND_Mag_bt"
 		};
 		modes[]=
 		{
@@ -1643,11 +1687,6 @@ class cfgWeapons
 		displayName="TMP SD";
 		model="\RH_smg\RH_tmpsd.p3d";
 		picture="\RH_smg\inv\tmpsd.paa";
-		magazines[]=
-		{
-			"30Rnd_9x19_MP5SD",
-			"30Rnd_9x19_MP5"
-		};
 		fireLightDuration=0;
 		fireLightIntensity=0;
 		class Single: Single
@@ -2566,9 +2605,9 @@ class cfgVehicles
 				magazine="RH_9mm_32RND_Mag";
 				count=200;
 			};
-			class _xx_RH_9mm_32RND_SD_Mag
+			class _xx_RH_9mm_32RND_MagSD
 			{
-				magazine="RH_9mm_32RND_SD_Mag";
+				magazine="RH_9mm_32RND_MagSD";
 				count=200;
 			};
 			class _xx_RH_57x28mm_50RND_Mag

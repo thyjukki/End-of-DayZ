@@ -173,87 +173,6 @@ class CfgMagazines
 		count=6;
 		initSpeed=421;
 	};
-	class RH_8Rnd_9x19_Mk: CA_Magazine
-	{
-		scope=2;
-		displayName="Mk22 mag";
-		model="\RH_de\mags\mag_mk22.p3d";
-		type=16;
-		picture="\RH_de\inv\m_mk22.paa";
-		ammo="B_9x18_Ball";
-		count=8;
-		initSpeed=365;
-	};
-	class RH_13Rnd_9x19_bhp: CA_Magazine
-	{
-		scope=2;
-		displayName="Browning HP mag";
-		model="\RH_de\mags\mag_mk22.p3d";
-		type=16;
-		picture="\RH_de\inv\m_mk22.paa";
-		ammo="B_9x18_Ball";
-		count=13;
-		initSpeed=365;
-	};
-	class RH_19Rnd_9x19_g18;
-	class RH_17Rnd_9x19_g17: CA_Magazine
-	{
-		scope=2;
-		displayName="Glock 17 mag";
-		model="\RH_de\mags\mag_g17.p3d";
-		type=16;
-		picture="\RH_de\inv\m_g18.paa";
-		ammo="B_9x18_Ball";
-		count=17;
-		initSpeed=365;
-	};
-	class RH_17Rnd_9x19_g17SD: CA_Magazine
-	{
-		scope=2;
-		displayName="Glock 17 SD mag";
-		model="\RH_de\mags\mag_g17.p3d";
-		type=16;
-		picture="\RH_de\inv\m_g18.paa";
-		count=17;
-		ammo="B_9x18_SD";
-		initSpeed=278;
-	};
-	class RH_33Rnd_9x19_g18: CA_Magazine
-	{
-		scope=2;
-		displayName="Glock 18 33Rnd mag";
-		model="\RH_de\mags\mag_g18.p3d";
-		type=16;
-		picture="\RH_de\inv\m_g18.paa";
-		ammo="B_9x18_Ball";
-		count=33;
-		initSpeed=365;
-	};
-	class RH_20Rnd_9x19_M93;
-	class RH_32Rnd_9x19_Muzi;
-	class RH_30Rnd_9x19_tec;
-	class RH_8Rnd_9x19_Mksd: RH_8Rnd_9x19_Mk
-	{
-		displayName="Mk22sd mag";
-		model="\RH_de\mags\mag_mk22.p3d";
-		type=16;
-		picture="\RH_de\inv\m_mk22.paa";
-		ammo="B_9x18_SD";
-		initSpeed=278;
-	};
-	class RH_8Rnd_9x19_P38: CA_Magazine
-	{
-		scope=2;
-		displayName="P38 mag";
-		model="\RH_de\mags\mag_p38.p3d";
-		type=16;
-		picture="\RH_de\inv\m_p38.paa";
-		ammo="B_9x18_Ball";
-		count=8;
-		initSpeed=365;
-	};
-	class RH_15Rnd_9x19_usp;
-	class RH_15Rnd_9x19_uspsd;
 	class RH_8Rnd_762_tt33: CA_Magazine
 	{
 		scope=2;
@@ -585,7 +504,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
-			"RH_13Rnd_9x19_bhp"
+			"RH_13Rnd_9x19_bhp",
+			"RH_13Rnd_9x19_bhp_sd",
+			"RH_13Rnd_9x19_bhp_hp",
+			"RH_13Rnd_9x19_bhp_tracer",
+			"RH_13Rnd_9x19_bhp_rubber",
+			"RH_13Rnd_9x19_bhp_bt"
 		};
 		dispersion=0.011000;
 		ffCount=1;
@@ -642,7 +566,11 @@ class cfgWeapons
 		magazines[]=
 		{
 			"RH_15Rnd_9x19_usp",
-			"RH_15Rnd_9x19_uspsd"
+			"RH_15Rnd_9x19_uspsd",
+			"RH_15Rnd_9x19_usp_hp",
+			"RH_15Rnd_9x19_usp_tracer",
+			"RH_15Rnd_9x19_usp_rubber",
+			"RH_15Rnd_9x19_usp_bt"
 		};
 		dispersion=0.011000;
 		ffCount=1;
@@ -704,7 +632,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
-			"RH_8Rnd_9x19_P38"
+			"RH_8Rnd_9x19_P38",
+			"RH_8Rnd_9x19_p38SD",
+			"RH_8Rnd_9x19_p38_hp",
+			"RH_8Rnd_9x19_p38_tracer",
+			"RH_8Rnd_9x19_p38_rubber",
+			"RH_8Rnd_9x19_p38_bt"
 		};
 		dispersion=0.011000;
 		ffCount=1;
@@ -830,7 +763,11 @@ class cfgWeapons
 		magazines[]=
 		{
 			"RH_8Rnd_9x19_Mk",
-			"RH_8Rnd_9x19_Mksd"
+			"RH_8Rnd_9x19_Mksd",
+			"RH_8Rnd_9x19_Mk_hp",
+			"RH_8Rnd_9x19_Mk_tracer",
+			"RH_8Rnd_9x19_Mk_rubber",
+			"RH_8Rnd_9x19_Mk_bt"
 		};
 		dispersion=0.011000;
 		ffCount=1;
@@ -898,7 +835,11 @@ class cfgWeapons
 		magazines[]=
 		{
 			"RH_8Rnd_9x19_Mk",
-			"RH_8Rnd_9x19_Mksd"
+			"RH_8Rnd_9x19_Mksd",
+			"RH_8Rnd_9x19_Mk_hp",
+			"RH_8Rnd_9x19_Mk_tracer",
+			"RH_8Rnd_9x19_Mk_rubber",
+			"RH_8Rnd_9x19_Mk_bt"
 		};
 		dispersion=0.011000;
 		ffCount=1;
@@ -994,7 +935,11 @@ class cfgWeapons
 		magazines[]=
 		{
 			"RH_15Rnd_9x19_usp",
-			"RH_15Rnd_9x19_uspsd"
+			"RH_15Rnd_9x19_uspsd",
+			"RH_15Rnd_9x19_usp_hp",
+			"RH_15Rnd_9x19_usp_tracer",
+			"RH_15Rnd_9x19_usp_rubber",
+			"RH_15Rnd_9x19_usp_bt"
 		};
 		dispersion=0.011000;
 		ffCount=1;
@@ -1072,7 +1017,11 @@ class cfgWeapons
 		magazines[]=
 		{
 			"RH_15Rnd_9x19_usp",
-			"RH_15Rnd_9x19_uspsd"
+			"RH_15Rnd_9x19_uspsd",
+			"RH_15Rnd_9x19_usp_hp",
+			"RH_15Rnd_9x19_usp_tracer",
+			"RH_15Rnd_9x19_usp_rubber",
+			"RH_15Rnd_9x19_usp_bt"
 		};
 		dispersion=0.008100;
 		ffCount=1;
@@ -1488,8 +1437,17 @@ class cfgWeapons
 		magazines[]=
 		{
 			"RH_20Rnd_9x19_M93",
+			"RH_20Rnd_9x19_M93SD",
+			"RH_20Rnd_9x19_M93_hp",
+			"RH_20Rnd_9x19_M93_tracer",
+			"RH_20Rnd_9x19_M93_rubber",
+			"RH_20Rnd_9x19_M93_bt",
 			"15Rnd_9x19_M9",
-			"15Rnd_9x19_M9SD"
+			"15Rnd_9x19_M9SD",
+			"15Rnd_9x19_M9_hp",
+			"15Rnd_9x19_M9_tracer",
+			"15Rnd_9x19_M9_rubber",
+			"15Rnd_9x19_M9_bt"
 		};
 		modes[]=
 		{
@@ -1606,9 +1564,18 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"RH_20Rnd_9x19_M93",
+			"RH_20Rnd_9x19_M93SD",
+			"RH_20Rnd_9x19_M93_hp",
+			"RH_20Rnd_9x19_M93_tracer",
+			"RH_20Rnd_9x19_M93_rubber",
+			"RH_20Rnd_9x19_M93_bt",
 			"15Rnd_9x19_M9",
 			"15Rnd_9x19_M9SD",
-			"RH_20Rnd_9x19_M93"
+			"15Rnd_9x19_M9_hp",
+			"15Rnd_9x19_M9_tracer",
+			"15Rnd_9x19_M9_rubber",
+			"15Rnd_9x19_M9_bt"
 		};
 		modes[]=
 		{
@@ -1687,9 +1654,18 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"RH_20Rnd_9x19_M93",
+			"RH_20Rnd_9x19_M93SD",
+			"RH_20Rnd_9x19_M93_hp",
+			"RH_20Rnd_9x19_M93_tracer",
+			"RH_20Rnd_9x19_M93_rubber",
+			"RH_20Rnd_9x19_M93_bt",
 			"15Rnd_9x19_M9",
 			"15Rnd_9x19_M9SD",
-			"RH_20Rnd_9x19_M93"
+			"15Rnd_9x19_M9_hp",
+			"15Rnd_9x19_M9_tracer",
+			"15Rnd_9x19_M9_rubber",
+			"15Rnd_9x19_M9_bt"
 		};
 		modes[]=
 		{
@@ -1775,9 +1751,24 @@ class cfgWeapons
 		magazines[]=
 		{
 			"RH_19Rnd_9x19_g18",
+			"RH_19Rnd_9x19_g18_g18SD",
+			"RH_19Rnd_9x19_g18_hp",
+			"RH_19Rnd_9x19_g18_tracer",
+			"RH_19Rnd_9x19_g18_rubber",
+			"RH_19Rnd_9x19_g18_bt",
 			"RH_33Rnd_9x19_g18",
-			"RH_17Rnd_9x19_g17",
-			"RH_17Rnd_9x19_g17sd"
+			"RH_33Rnd_9x19_g18SD",
+			"RH_33Rnd_9x19_g18_hp",
+			"RH_33Rnd_9x19_g18_tracer",
+			"RH_33Rnd_9x19_g18_rubber",
+			"RH_33Rnd_9x19_g18_bt",
+			"17Rnd_9x19_glock17",
+			"17Rnd_9x19_glock17sd",
+			"17Rnd_9x19_glock17SD",
+			"17Rnd_9x19_glock17_hp",
+			"17Rnd_9x19_glock17_tracer",
+			"17Rnd_9x19_glock17_rubber",
+			"17Rnd_9x19_glock17_bt"
 		};
 		modes[]=
 		{
@@ -1900,9 +1891,24 @@ class cfgWeapons
 		magazines[]=
 		{
 			"RH_19Rnd_9x19_g18",
+			"RH_19Rnd_9x19_g18_g18SD",
+			"RH_19Rnd_9x19_g18_hp",
+			"RH_19Rnd_9x19_g18_tracer",
+			"RH_19Rnd_9x19_g18_rubber",
+			"RH_19Rnd_9x19_g18_bt",
 			"RH_33Rnd_9x19_g18",
-			"RH_17Rnd_9x19_g17",
-			"RH_17Rnd_9x19_g17sd"
+			"RH_33Rnd_9x19_g18SD",
+			"RH_33Rnd_9x19_g18_hp",
+			"RH_33Rnd_9x19_g18_tracer",
+			"RH_33Rnd_9x19_g18_rubber",
+			"RH_33Rnd_9x19_g18_bt",
+			"17Rnd_9x19_glock17",
+			"17Rnd_9x19_glock17sd",
+			"17Rnd_9x19_glock17SD",
+			"17Rnd_9x19_glock17_hp",
+			"17Rnd_9x19_glock17_tracer",
+			"17Rnd_9x19_glock17_rubber",
+			"17Rnd_9x19_glock17_bt"
 		};
 		modes[]=
 		{
@@ -1987,9 +1993,24 @@ class cfgWeapons
 		magazines[]=
 		{
 			"RH_19Rnd_9x19_g18",
+			"RH_19Rnd_9x19_g18_g18SD",
+			"RH_19Rnd_9x19_g18_hp",
+			"RH_19Rnd_9x19_g18_tracer",
+			"RH_19Rnd_9x19_g18_rubber",
+			"RH_19Rnd_9x19_g18_bt",
 			"RH_33Rnd_9x19_g18",
-			"RH_17Rnd_9x19_g17",
-			"RH_17Rnd_9x19_g17sd"
+			"RH_33Rnd_9x19_g18SD",
+			"RH_33Rnd_9x19_g18_hp",
+			"RH_33Rnd_9x19_g18_tracer",
+			"RH_33Rnd_9x19_g18_rubber",
+			"RH_33Rnd_9x19_g18_bt",
+			"17Rnd_9x19_glock17",
+			"17Rnd_9x19_glock17sd",
+			"17Rnd_9x19_glock17SD",
+			"17Rnd_9x19_glock17_hp",
+			"17Rnd_9x19_glock17_tracer",
+			"17Rnd_9x19_glock17_rubber",
+			"17Rnd_9x19_glock17_bt"
 		};
 		modes[]=
 		{
@@ -2063,9 +2084,24 @@ class cfgWeapons
 		magazines[]=
 		{
 			"RH_19Rnd_9x19_g18",
+			"RH_19Rnd_9x19_g18_g18SD",
+			"RH_19Rnd_9x19_g18_hp",
+			"RH_19Rnd_9x19_g18_tracer",
+			"RH_19Rnd_9x19_g18_rubber",
+			"RH_19Rnd_9x19_g18_bt",
 			"RH_33Rnd_9x19_g18",
-			"RH_17Rnd_9x19_g17",
-			"RH_17Rnd_9x19_g17sd"
+			"RH_33Rnd_9x19_g18SD",
+			"RH_33Rnd_9x19_g18_hp",
+			"RH_33Rnd_9x19_g18_tracer",
+			"RH_33Rnd_9x19_g18_rubber",
+			"RH_33Rnd_9x19_g18_bt",
+			"17Rnd_9x19_glock17",
+			"17Rnd_9x19_glock17sd",
+			"17Rnd_9x19_glock17SD",
+			"17Rnd_9x19_glock17_hp",
+			"17Rnd_9x19_glock17_tracer",
+			"17Rnd_9x19_glock17_rubber",
+			"17Rnd_9x19_glock17_bt"
 		};
 		modes[]=
 		{
@@ -2251,7 +2287,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
-			"RH_30Rnd_9x19_tec"
+			"RH_30Rnd_9x19_tec",
+			"RH_30Rnd_9x19_tecSD",
+			"RH_30Rnd_9x19_tec_hp",
+			"RH_30Rnd_9x19_tec_tracer",
+			"RH_30Rnd_9x19_tec_rubber",
+			"RH_30Rnd_9x19_tec_bt"
 		};
 		modes[]=
 		{
@@ -2360,8 +2401,17 @@ class cfgWeapons
 		magazines[]=
 		{
 			"RH_32Rnd_9x19_Muzi",
-			"30Rnd_9x19_UZI",
-			"30Rnd_9x19_UZI_SD"
+			"RH_32Rnd_9x19_MuziSD",
+			"RH_32Rnd_9x19_Muzi_hp",
+			"RH_32Rnd_9x19_Muzi_tracer",
+			"RH_32Rnd_9x19_Muzi_rubber",
+			"RH_32Rnd_9x19_Muzi_bt",
+			"RH_9mm_32RND_Mag",
+			"RH_9mm_32RND_MagSD",
+			"RH_9mm_32RND_Mag_hp",
+			"RH_9mm_32RND_Mag_tracer",
+			"RH_9mm_32RND_Mag_rubber",
+			"RH_9mm_32RND_Mag_bt"
 		};
 		modes[]=
 		{
@@ -2732,14 +2782,14 @@ class CfgVehicles
 				magazine="15Rnd_9x19_M9SD";
 				count=25;
 			};
-			class xxRH_17Rnd_9x19_g17
+			class xx17Rnd_9x19_glock17
 			{
-				magazine="RH_17Rnd_9x19_g17";
+				magazine="17Rnd_9x19_glock17";
 				count=25;
 			};
-			class xxRH_17Rnd_9x19_g17SD
+			class xx17Rnd_9x19_glock17SD
 			{
-				magazine="RH_17Rnd_9x19_g17SD";
+				magazine="17Rnd_9x19_glock17SD";
 				count=25;
 			};
 			class xxRH_19Rnd_9x19_g18
