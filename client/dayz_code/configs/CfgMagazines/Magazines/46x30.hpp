@@ -33,7 +33,7 @@ class 40Rnd_46x30_mp7_Empty: emptiedMagazine
 class 40Rnd_46x30_mp7: CA_Magazine
 {
 	scope=2;
-	displayName="MP7 Long Mag (Empty)";
+	displayName="MP7 Long Mag";
 	descriptionshort = "Caliber: 46x30 mm<br/>Rounds: 40 <br/>Used in: MP7";
 	picture="\C1987_Mp7\equip\gui_mp7_40_mag.paa";
 	model="\C1987_Mp7\mp7_40_mag.p3d";
@@ -70,14 +70,14 @@ class 40Rnd_46x30_mp7_hp: 40Rnd_46x30_mp7 {
 	displayName="MP7 Long HP Mag";
 };
 
-class 40Rnd_46x30_mp7SD_tracer: 40Rnd_46x30_mp7 {
+class 40Rnd_46x30_mp7_tracer: 40Rnd_46x30_mp7 {
 	scope=2;
 	baseBullet = 46x30_Tracer_x;
 	ammo="B_46x30_TRACER";
 	displayName="MP7 Long Tracer Mag";
 };
 
-class 40Rnd_46x30_mp7SD_rubber: 40Rnd_46x30_mp7 {
+class 40Rnd_46x30_mp7_rubber: 40Rnd_46x30_mp7 {
 	scope=2;
 	baseBullet = 46x30_RUBBER_x;
 	initSpeed=150;
@@ -85,7 +85,7 @@ class 40Rnd_46x30_mp7SD_rubber: 40Rnd_46x30_mp7 {
 	displayName="MP7 Long Rubber Mag";
 };
 
-class 40Rnd_46x30_mp7SD_bt: 40Rnd_46x30_mp7 {
+class 40Rnd_46x30_mp7_bt: 40Rnd_46x30_mp7 {
 	scope=2;
 	baseBullet = 46x30_BT_x;
 	ammo="B_46x30_BT";
@@ -126,7 +126,7 @@ class 20Rnd_46x30_mp7_Empty: emptiedMagazine
 class 20Rnd_46x30_mp7: CA_Magazine
 {
 	scope=2;
-	displayName="MP7 Mag (Empty)";
+	displayName="MP7 Mag";
 	descriptionshort = "Caliber: 46x30 mm<br/>Rounds: 20 <br/>Used in: MP7";
 	picture="\C1987_Mp7\equip\gui_mp7_20_mag.paa";
 	model="\C1987_Mp7\mp7_20_mag.p3d";
@@ -163,14 +163,14 @@ class 20Rnd_46x30_mp7_hp: 20Rnd_46x30_mp7 {
 	displayName="MP7 HP Mag";
 };
 
-class 20Rnd_46x30_mp7SD_tracer: 20Rnd_46x30_mp7 {
+class 20Rnd_46x30_mp7_tracer: 20Rnd_46x30_mp7 {
 	scope=2;
 	baseBullet = 46x30_Tracer_x;
 	ammo="B_46x30_TRACER";
 	displayName="MP7 Tracer Mag";
 };
 
-class 20Rnd_46x30_mp7SD_rubber: 20Rnd_46x30_mp7 {
+class 20Rnd_46x30_mp7_rubber: 20Rnd_46x30_mp7 {
 	scope=2;
 	baseBullet = 46x30_RUBBER_x;
 	initSpeed=150;
@@ -178,7 +178,7 @@ class 20Rnd_46x30_mp7SD_rubber: 20Rnd_46x30_mp7 {
 	displayName="MP7 Rubber Mag";
 };
 
-class 20Rnd_46x30_mp7SD_bt: 20Rnd_46x30_mp7 {
+class 20Rnd_46x30_mp7_bt: 20Rnd_46x30_mp7 {
 	scope=2;
 	baseBullet = 46x30_BT_x;
 	ammo="B_46x30_BT";

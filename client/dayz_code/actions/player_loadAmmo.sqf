@@ -16,7 +16,8 @@ _config = configFile >> "CfgMagazines" >> _item;
 
 if (r_ammo_selected_mode == 2) then
 {
-	if (0 < getNumber (configFile >> "CfgMagazines" >> _item >> "bulletCount")) exitWith {
+	if (0 < getNumber (configFile >> "CfgMagazines" >> _item >> "bulletCount")) exitWith 
+	{
 		systemChat "Select magazine";
 	};
 	_selected_ammo = r_ammo_selected;
@@ -29,49 +30,71 @@ if (r_ammo_selected_mode == 2) then
 	_mag_limit = 0;
 	_mag_out = "";
 	_isEmptyMag = getNumber (configFile >> "CfgMagazines" >> _selected_mag >> "isEmptyMag");
-	if (1 == _isEmptyMag) then { 
+	if (1 == _isEmptyMag) then
+	{ 
 		
-		if (!(isClass (configFile >> "CfgMagazines" >> _selected_mag >> "ammoType" >> _ammo_type))) exitWith {
+		if (!(isClass (configFile >> "CfgMagazines" >> _selected_mag >> "ammoType" >> _ammo_type))) exitWith
+		{
 			systemChat "Magazine not compatible with ammunition";
 			_Break = true;
 		};
 		
 		_mag_out = getText(configFile >> "CfgMagazines" >> _selected_mag >> "ammoType" >> _ammo_type >> "ammoMag");
 		_mag_limit = getNumber (configFile >> "CfgMagazines" >> _mag_out >> "count");
-		diag_log format ["Testing, empty magazine %1 (%3), with ammo %4", _selected_mag, _mag_limit, _ammo_type];
+		diag_log format ["Testing, empty magazine %1 (%2), with ammo %3", _selected_mag, _mag_limit, _ammo_type];
 		
-	} else {
+	}
+	else
+	{
 
-		if (_ammo_type != getText(configFile >> "CfgMagazines" >> _selected_mag >> "ammo")) exitWith {
+		if (_ammo_type != getText(configFile >> "CfgMagazines" >> _selected_mag >> "ammo")) exitWith
+		{
 			systemChat "Magazine not compatible with ammunition";
 			_Break = true;
 		};
+
 		_mag_out = _selected_mag;
 		_mag_limit = getNumber (configFile >> "CfgMagazines" >> _mag_out >> "count");
 		_mag_cur = gearSlotAmmoCount _control;
-		if (_mag_cur == _mag_limit) exitWith {
+
+		if (_mag_cur == _mag_limit) exitWith
+		{
 			systemChat "Magazine is full";
 			_Break = true;
 		};
-		diag_log format ["Testing, magazine %1 (%2/%3), with ammo %4", _selected_mag, _mag_cur, _mag_limit, _ammo_type];
+
+		diag_log format ["Testing, magazine %1 (%2/%3), with ammo %4 (%5)", _selected_mag, _mag_cur, _mag_limit, _ammo_type, _ammo_count];
 	};
 	if (_Break) exitWith{};
+
 	_loaded_to_mag = _mag_cur + _ammo_count;
-	if (_loaded_to_mag <= _mag_limit) then {
+	if (_loaded_to_mag <= _mag_limit) then
+	{
 		player removeMagazine _selected_ammo;
-		if (1 == _isEmptyMag) then {
+
+		if (1 == _isEmptyMag) then
+		{
 			player removeMagazine _selected_mag;
 			player addMagazine [_mag_out, _loaded_to_mag];
-		} else {
+		}
+		else
+		{
 			_selectedSlot setIDCAmmoCount _loaded_to_mag;
 		};
+
 		systemChat format ["Loaded mag %1 with %2 rounds", getText (configFile >> "CfgMagazines" >> _mag_out >> "displayName"), _ammo_count];
-	} else {
+	}
+	else
+	{
 		player removeMagazine _selected_ammo;
-		if (1 == _isEmptyMag) then {
+
+		if (1 == _isEmptyMag) then
+		{
 			player removeMagazine _selected_mag;
 			player addMagazine [_mag_out, _mag_limit];
-		} else {
+		}
+		else
+		{
 			_selectedSlot setIDCAmmoCount _mag_limit;
 		};
 
@@ -79,65 +102,85 @@ if (r_ammo_selected_mode == 2) then
 		
 		_toBoGiven = getText (configFile >> "CfgMagazines" >> _selected_ammo >> "baseName");
 		
-		if (_extra_ammo <= 10) then {
+		if (_extra_ammo <= 10) then
+		{
 			_giving = _toBoGiven + str(_extra_ammo);
 
 			player addMagazine _giving;
-		} else {
-			if (_extra_ammo > 50) then {
+		}
+		else
+		{
+			if (_extra_ammo > 50) then
+			{
 				_extra_ammo = _extra_ammo - 50;
 				_giving = _toBoGiven + str(50);
 				_isOK = [player,_giving] call BIS_fnc_invAdd;
-				if (!_isOK) then {
+				if (!_isOK) then
+				{
 					_nearByPile = nearestObjects [getPosATL player, ["WeaponHolder","WeaponHolderBase"], 2];
 					_pile = if (count _nearByPile > 0) then {_nearByPile select 0};
-					if (count _nearByPile == 0) then {
-						_pos = player modeltoWorld [0,1,0];
-						_pos set [2, 0];
-						//diag_log format [ "%1 itempos:%2 _nearByPile:%3", __FILE__, _pos, _nearByPile];
-						_pile = createVehicle ["WeaponHolder", _pos, [], 0.0, "CAN_COLLIDE"];
-						_pile setPosATL _pos;
-					};
-					_pile addMagazineCargoGlobal [_giving,1];
-				};
-			};
-			
-			_base10 = floor (_extra_ammo / 10)*10;
 
-			if (_base10 > 0) then {
-				_giving = _toBoGiven + str(_base10);
-				diag_log format ["_base10, %1 (%2), giving %3", _base10, _extra_ammo,_giving];
-				_isOK = [player,_giving] call BIS_fnc_invAdd;
-				if (!_isOK) then {
-					_nearByPile = nearestObjects [getPosATL player, ["WeaponHolder","WeaponHolderBase"], 2];
-					_pile = if (count _nearByPile > 0) then {_nearByPile select 0};
-					if (count _nearByPile == 0) then {
+					if (count _nearByPile == 0) then
+					{
 						_pos = player modeltoWorld [0,1,0];
 						_pos set [2, 0];
 						//diag_log format [ "%1 itempos:%2 _nearByPile:%3", __FILE__, _pos, _nearByPile];
 						_pile = createVehicle ["WeaponHolder", _pos, [], 0.0, "CAN_COLLIDE"];
 						_pile setPosATL _pos;
 					};
+
 					_pile addMagazineCargoGlobal [_giving,1];
 				};
 			};
 			
-			_base1 = _extra_ammo - _base10;
+			_base10 = floor (_extra_ammo / 10);
+
+			if (_base10 > 0) then
+			{
+				_giving = _toBoGiven + str(_base10*10);
+				diag_log format ["_base10, %1 (%2), giving %3", _base10*10, _extra_ammo,_giving];
+				_isOK = [player,_giving] call BIS_fnc_invAdd;
+
+				if (!_isOK) then
+				{
+					_nearByPile = nearestObjects [getPosATL player, ["WeaponHolder","WeaponHolderBase"], 2];
+					_pile = if (count _nearByPile > 0) then {_nearByPile select 0};
+
+					if (count _nearByPile == 0) then
+					{
+						_pos = player modeltoWorld [0,1,0];
+						_pos set [2, 0];
+						//diag_log format [ "%1 itempos:%2 _nearByPile:%3", __FILE__, _pos, _nearByPile];
+						_pile = createVehicle ["WeaponHolder", _pos, [], 0.0, "CAN_COLLIDE"];
+						_pile setPosATL _pos;
+					};
+
+					_pile addMagazineCargoGlobal [_giving,1];
+				};
+			};
 			
-			if (_base1 > 0) then {
+			_base1 = _extra_ammo - _base10*10;
+			
+			if (_base1 > 0) then
+			{
 				_giving = _toBoGiven + str(_base1);
 				diag_log format ["_base1, %1 (%2), giving %3", _base1, _extra_ammo,_giving];
 				_isOK = [player,_giving] call BIS_fnc_invAdd;
-				if (!_isOK) then {
+
+				if (!_isOK) then
+				{
 					_nearByPile = nearestObjects [getPosATL player, ["WeaponHolder","WeaponHolderBase"], 2];
 					_pile = if (count _nearByPile > 0) then {_nearByPile select 0};
-					if (count _nearByPile == 0) then {
+
+					if (count _nearByPile == 0) then
+					{
 						_pos = player modeltoWorld [0,1,0];
 						_pos set [2, 0];
 						//diag_log format [ "%1 itempos:%2 _nearByPile:%3", __FILE__, _pos, _nearByPile];
 						_pile = createVehicle ["WeaponHolder", _pos, [], 0.0, "CAN_COLLIDE"];
 						_pile setPosATL _pos;
 					};
+
 					_pile addMagazineCargoGlobal [_giving,1];
 				};
 			};
@@ -148,7 +191,9 @@ if (r_ammo_selected_mode == 2) then
 	r_ammo_selected = "";
 	r_ammo_selected_mode = 0;
 
-} else {
+}
+else
+{
 	if (0 == getNumber (configFile >> "CfgMagazines" >> _item >> "bulletCount")) exitWith {systemChat "Select bullet first";};
 	r_ammo_selected_slot = _selectedSlot;	
 	r_ammo_selected = _item;
