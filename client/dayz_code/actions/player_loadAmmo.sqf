@@ -41,7 +41,7 @@ if (r_ammo_selected_mode == 2) then
 		
 		_mag_out = getText(configFile >> "CfgMagazines" >> _selected_mag >> "ammoType" >> _ammo_type >> "ammoMag");
 		_mag_limit = getNumber (configFile >> "CfgMagazines" >> _mag_out >> "count");
-		diag_log format ["Testing, empty magazine %1 (%2), with ammo %3", _selected_mag, _mag_limit, _ammo_type];
+		diag_log format ["Testing, empty magazine %1 (%2), with ammo %3 (%4)", _selected_mag, _mag_limit, _ammo_type, _ammo_count];
 		
 	}
 	else
@@ -72,15 +72,7 @@ if (r_ammo_selected_mode == 2) then
 	{
 		player removeMagazine _selected_ammo;
 
-		if (1 == _isEmptyMag) then
-		{
-			player removeMagazine _selected_mag;
-			player addMagazine [_mag_out, _loaded_to_mag];
-		}
-		else
-		{
-			_selectedSlot setIDCAmmoCount _loaded_to_mag;
-		};
+		_selectedSlot setIDCAmmoCount _loaded_to_mag;
 
 		systemChat format ["Loaded mag %1 with %2 rounds", getText (configFile >> "CfgMagazines" >> _mag_out >> "displayName"), _ammo_count];
 	}
