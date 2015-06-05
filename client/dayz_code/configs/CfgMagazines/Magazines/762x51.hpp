@@ -158,3 +158,29 @@ class 20Rnd_762x51_B_SCAR_Empty: emptiedMagazine {
 		};
 	};
 };
+
+
+//TODO(Jukki) make this into 7.62 nato
+class KPFS_8Rnd_cal30_60_Gar_Empty: emptiedMagazine
+{
+	scope=2;
+	displayName="Garand clip (Empty)";
+	picture="\kpfs_weapons2\data\icons\m_garand_ca.paa";
+	descriptionShort="$STR_KPFSS_8RND_CAL30_60";
+	class ammoType
+	{
+		class KPFS_B_762x63_Ball {
+			ammoMag = "KPFS_8Rnd_cal30_60_Gar";
+		};
+	};
+};
+
+class KPFS_8Rnd_cal30_60_Gar: KPFS_15Rnd_cal30_Carbine
+{
+	class ItemActions
+	{
+		COMBINE_MAG
+	};
+
+	emptyMag = "KPFS_8Rnd_cal30_60_Gar_Empty";
+};

@@ -271,7 +271,11 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
-			"KPFS_15Rnd_cal30_Carbine"
+			"KPFS_15Rnd_cal30_Carbine",
+			"KPFS_15Rnd_cal30_Carbine_hp",
+			"KPFS_15Rnd_cal30_Carbine_tracer",
+			"KPFS_15Rnd_cal30_Carbine_rubber",
+			"KPFS_15Rnd_cal30_Carbine_bt"
 		};
 		reloadTime=2;
 		backgroundReload=1;
