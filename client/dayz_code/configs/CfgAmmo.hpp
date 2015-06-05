@@ -167,14 +167,14 @@ class CfgAmmo {
 		fusedistance = 0;
 	};
 	
-	#include "bullets\r_9x18.hpp"
-	#include "bullets\r_9x19.hpp"
-	#include "bullets\r_9x39.hpp"
-	#include "bullets\r_22lr.hpp"
-	#include "bullets\r_30cal.hpp"
-	#include "bullets\r_32acp.hpp"
-	#include "bullets\r_45acp.hpp"
-	#include "bullets\r_46x30.hpp"
-	#include "bullets\r_50AE.hpp"
-	#include "bullets\r_762x39.hpp"
+	#include "CfgAmmo\r_9x18.hpp"
+	#include "CfgAmmo\r_9x19.hpp"
+	#include "CfgAmmo\r_9x39.hpp"
+	#include "CfgAmmo\r_22lr.hpp"
+	#include "CfgAmmo\r_30cal.hpp"
+	#include "CfgAmmo\r_32acp.hpp"
+	#include "CfgAmmo\r_45acp.hpp"
+	#include "CfgAmmo\r_46x30.hpp"
+	#include "CfgAmmo\r_50AE.hpp"
+	#include "CfgAmmo\r_762x39.hpp"
 };
