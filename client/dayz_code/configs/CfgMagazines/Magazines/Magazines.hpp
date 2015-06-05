@@ -6,15 +6,30 @@
 	script = "spawn player_combineMag; r_action_count = r_action_count + 1;";\
 };
 
-#include "9x18.hpp"		//Makarov
-#include "9x19.hpp"		//MP5, PDW, Bizon, M9, G17
-#include "45ACP.hpp"	//Colt M1911, Revolver
-#include "545x39.hpp"	//AK74, RPK74
-#include "556x45.hpp"	//M249, STANAG, G36
-#include "762x39.hpp"	//AK47, SA58
-#include "762x51.hpp"	//M240, FN FAL, DMR, M24
-#include "762x54r.hpp"	//PK, SVD, Mosin
-#include "Misc.hpp"		//CZ550, Lee-Enfield, Winchester 1866
+#include "EmptyMag.hpp"
+#include "9x18.hpp"
+#include "9x19.hpp"
+#include "22lr.hpp"
+#include "30cal.hpp"
+#include "32ACP.hpp"
+#include "44m.hpp"
+#include "45ACP.hpp"
+#include "46x30.hpp"
+#include "50AE.hpp"
+#include "57x28.hpp"
+#include "127x99.hpp"
+#include "357.hpp"
+#include "545x39.hpp"
+#include "556x45.hpp"
+#include "762x39.hpp"
+#include "635x15.hpp"
+#include "762x25.hpp"
+#include "762x39.hpp"
+#include "762x51.hpp"
+#include "762x54r.hpp"
+#include "765x17.hpp"
+#include "792x33.hpp"
+#include "Misc.hpp"
 #include "Shotgun.hpp"
 #include "Quiver.hpp"
 

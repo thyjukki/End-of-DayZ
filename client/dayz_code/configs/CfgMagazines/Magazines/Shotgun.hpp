@@ -18,6 +18,26 @@ class 8Rnd_B_Beneli_74Slug: CA_Magazine
 	};
 };
 
+class 8Rnd_B_Saiga12_Pellets: CA_Magazine {
+
+	class ItemActions
+	{
+		COMBINE_MAG
+	};
+
+	emptyMag = "8Rnd_B_Saiga12_Pellets_Empty";
+};
+
+class 8Rnd_B_Saiga12_74Slug: CA_Magazine {
+
+	class ItemActions
+	{
+		COMBINE_MAG
+	};
+
+	emptyMag = "8Rnd_B_Saiga12_74Slug_Empty";
+};
+
 class 2Rnd_shotgun_74Slug: 8Rnd_B_Beneli_74Slug
 {
 	displayName=$STR_MAG_NAME_8;

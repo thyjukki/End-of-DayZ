@@ -14,13 +14,7 @@ class CfgMagazines
 	//Trash
 	#include "TrashTinCan.hpp"
 	#include "TrashLoot.hpp"
-	
 
-	#include "CombineMag.hpp"
-	#include "Magazines\pistol_mags.hpp"
-	#include "Magazines\smg_mags.hpp"
-	#include "Magazines\rifle_mags.hpp"
-	#include "EmptyMag.hpp"
 	//Chemlight and Roadflare
 	#include "HandGrenade.hpp"
 	
