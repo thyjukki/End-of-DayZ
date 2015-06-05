@@ -41,15 +41,6 @@ class CfgMagazines
 	#include "bullets\45acp.hpp"
 	#include "bullets\32acp.hpp"
 	#include "bullets\762x39.hpp"
-
-	
-	//attachemtns
-	#include "Attachments\AttAcog.hpp"
-	#include "Attachments\AttAimpoint.hpp"
-	#include "Attachments\AttHolo.hpp"
-	#include "Attachments\AttLauncher.hpp"
-	#include "Attachments\AttScope.hpp"
-	#include "Attachments\AttSilencer.hpp"
 	
 	//Crafting materials
 	#include "Crafting\Crafting.hpp"

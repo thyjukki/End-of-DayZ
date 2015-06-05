@@ -80,7 +80,7 @@ class CfgVehicles {
 	#include "RepairParts.hpp" //names for all reapir parts. Needs moving to hitpoints
 	//ZEDS
 	#include "Zeds\Zeds.hpp" //old type zeds
-	#include "Zeds\SlowZeds.hpp" //old type zeds
+	#include "Zeds\ZedsSlow.hpp" //old type zeds
 	#include "Zeds\ViralZeds.hpp" //Viral type zeds
 	#include "Zeds\WildZeds.hpp" //Viral type zeds
 	#include "Zeds\SwarmZeds.hpp" //Swarm
