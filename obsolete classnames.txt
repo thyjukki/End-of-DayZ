@@ -6,3 +6,5 @@ RH_46x30mm_40RND_Mag -> 40Rnd_46x30_mp7
 RH_46x30mm_40RND_SD_Mag -> 40Rnd_46x30_sd_mp7
 RH_17Rnd_9x19_g17 -> 17Rnd_9x19_glock17
 kpfs p38 ammo -> RH_8Rnd_9x19_p38
+Makarov -> RH_pm
+RH_20Rnd_9x39_val_mag -> vil_20Rnd_9x39_SP6_VAL

@@ -267,16 +267,6 @@ class CfgMagazines {
 		descriptionShort = $STR_TGW_VIL_MS_SP6VSS;
 	};
 	
-	class vil_20Rnd_9x39_SP6_VAL : CA_Magazine {
-		scope = public;
-		ammo = "vil_B_9x39_SP6";
-		count = 20;
-		initSpeed = 300;
-		picture = "\CA\weapons\data\equip\M_VSSx20_CA.paa";
-		displayName = $STR_TGW_VIL_MN_SP6VAL;
-		descriptionShort = $STR_TGW_VIL_MS_SP6VAL;
-	};
-	
 	class vil_20Rnd_9x39_SP6_OC : CA_Magazine {
 		scope = public;
 		ammo = "vil_B_9x39_SP6";
@@ -1787,7 +1777,6 @@ class cfgWeapons {
 		magazines[]=
 		{
 			"vil_10Rnd_9x39_SP6_VSS",
-			"RH_20Rnd_9x39_val_mag",
 			"vil_20Rnd_9x39_SP6_VAL"
 		};
 		
@@ -1858,7 +1847,6 @@ class cfgWeapons {
 		magazines[]=
 		{
 			"vil_10Rnd_9x39_SP6_VSS",
-			"RH_20Rnd_9x39_val_mag",
 			"vil_20Rnd_9x39_SP6_VAL"
 		};
 		class Single : Single {

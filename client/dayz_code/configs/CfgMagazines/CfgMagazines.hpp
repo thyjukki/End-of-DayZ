@@ -40,6 +40,7 @@ class CfgMagazines
 
 	#include "bullets\b_9x18.hpp"
 	#include "bullets\b_9x19.hpp"
+	#include "bullets\b_9x39.hpp"
 	#include "bullets\b_45acp.hpp"
 	#include "bullets\b_32acp.hpp"
 	#include "bullets\b_762x39.hpp"

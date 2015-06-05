@@ -94,7 +94,7 @@ class 8Rnd_9x18_Makarov_bt: 8Rnd_9x18_Makarov {
 
 class RH_20Rnd_9x18_aps_Empty: emptiedMagazine {
 	ammo = "B_9x18_Ball";
-	descriptionshort = "Caliber: 9x18 mm Makarov <br/>Rounds: 8 <br/>Used in: Makarov";
+	descriptionshort = "Caliber: 9x18 mm Makarov <br/>Rounds: 20 <br/>Used in: Makarov";
 	displayname = "APS Mag (Empty)";
 	picture = "\Ca\weapons\Data\Equip\m_makarov_CA.paa";
 	scope = 2;
@@ -127,6 +127,7 @@ class RH_20Rnd_9x18_aps: 8Rnd_9x18_Makarov
 	scope=2;
 	displayName="APS mag";
 	descriptionShort="Caliber: 9x18 mm APS <br/>Rounds: 20 <br/>Used in: APS";
+	count=20;
 
 	emptyMag = "RH_20Rnd_9x18_aps_Empty";
 };
@@ -211,8 +212,8 @@ class 64Rnd_9x19_Bizon: CA_Magazine
 	picture = "\CA\weapons\data\equip\m_bizon_ca.paa";
 	model = "z\addons\dayz_communityweapons\magazines\bizon.p3d";
 	ammo="B_9x18_Ball";
-	count=32;
-	initSpeed=400;
+	count=64;
+	initSpeed=320;
 	baseBullet = 9x18_x;
 	class ItemActions {
 		class loadMag {

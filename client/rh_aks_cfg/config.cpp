@@ -346,7 +346,11 @@ class cfgWeapons
 		magazines[]=
 		{
 			"8Rnd_9x18_Makarov",
-			"8Rnd_9x18_MakarovSD"
+			"8Rnd_9x18_MakarovSD",
+			"8Rnd_9x18_Makarov_hp",
+			"8Rnd_9x18_Makarov_tracer",
+			"8Rnd_9x18_Makarov_rubber",
+			"8Rnd_9x18_Makarov_bt"
 		};
 	};
 	class RH_pmsd: MakarovSD
@@ -391,8 +395,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"8Rnd_9x18_Makarov",
 			"8Rnd_9x18_MakarovSD",
-			"8Rnd_9x18_Makarov"
+			"8Rnd_9x18_Makarov_hp",
+			"8Rnd_9x18_Makarov_tracer",
+			"8Rnd_9x18_Makarov_rubber",
+			"8Rnd_9x18_Makarov_bt"
 		};
 	};
 	class RH_aps: Pistol
@@ -2569,7 +2577,7 @@ class cfgWeapons
 			64Rnd_9x19_Bizon_hp,
 			64Rnd_9x19_Bizon_tracer,
 			64Rnd_9x19_Bizon_rubber,
-			64Rnd_9x19_SD_Bizon_bt
+			64Rnd_9x19_Bizon_bt
 		};
 		displayName="Bizon";
 		drySound[]=
@@ -7367,7 +7375,6 @@ class cfgWeapons
 		magazines[]=
 		{
 			"vil_10Rnd_9x39_SP6_VSS",
-			"RH_20Rnd_9x39_val_mag",
 			"vil_20Rnd_9x39_SP6_VAL"
 		};
 		handAnim[]=
