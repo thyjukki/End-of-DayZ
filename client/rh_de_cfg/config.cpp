@@ -237,7 +237,11 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
-			"RH_7Rnd_50_AE"
+			"RH_7Rnd_50_AE",
+			"RH_7Rnd_50_AE_hp",
+			"RH_7Rnd_50_AE_tracer",
+			"RH_7Rnd_50_AE_rubber",
+			"RH_7Rnd_50_AE_bt"
 		};
 		dispersion=0.008500;
 		ffCount=1;
