@@ -1,16 +1,14 @@
+pushd %~dp0
+set PWA_PATH="%~1\addons"
 
-RMDIR /S /Q  .\building
+rmdir  /s/q .\@EndOFDayz
 
-mkdir .\building
+mkdir %PWA_PATH%
+mkdir .\@EndOFDayz\addons
 
-for /f "tokens=1-2*" %%A in ('reg query "HKEY_LOCAL_MACHINE\Software\Wow6432Node\bohemia interactive\ArmA 2 OA\BattlEye" /v MAIN ^| find "REG_SZ"') do set MyPath=%%C
+for /D %%f in (.\..\Client\*) do cpbo.exe -p "%%f" ".\@EndOFDayz\addons\%%~nxf.pbo"
 
-mkdir "%MyPath%\@EndOFDayzTest\addons"
+for %%F in (.\@EndOFDayz\addons\*.pbo) do DSSignFile "c:\endofdayz.biprivatekey" %%F
 
-for /D %%f in (.\..\Client\*) do cpbo.exe -p "%%f" ".\building\%%~nxf.pbo"
-
-for %%F in (.\building\*.pbo) do DSSignFile "c:\endofdayz.biprivatekey" %%F
-
-move /y .\building\* "%MyPath%\@EndOFDayzTest\addons"
-
-RMDIR /S /Q  .\building
+move /y .\@EndOFDayz\addons\* %PWA_PATH%
+popd
