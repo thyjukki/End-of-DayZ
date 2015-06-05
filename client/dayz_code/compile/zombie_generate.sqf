@@ -76,7 +76,7 @@ if ((_maxlocalspawned < _maxControlledZombies) and (dayz_CurrentNearByZombies < 
 		if (_tooClose) exitwith { diag_log ("Zombie_Generate: was too close to player."); };
 		
 		if (count _unitTypes == 0) then {
-			_unitTypes = []+ getArray (configFile >> "CfgBuildingLoot" >> "Default" >> "zombieClass");
+			_unitTypes = []+ getArray (missionConfigFile >> "CfgBuildingLoot" >> "Default" >> "zombieClass");
 		};
 		
 		// lets create an agent

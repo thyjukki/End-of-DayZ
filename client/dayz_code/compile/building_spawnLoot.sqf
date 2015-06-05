@@ -6,7 +6,7 @@ _vectorup = vectorUp _obj;
 if (abs(([0,0,_vectorup select 2] distance _vectorup) atan2 (_vectorup select 2)) > 20) exitWith {0};
 
 _type = typeOf _obj;
-_config = configFile >> "CfgBuildingLoot" >> _type;
+_config = missionConfigFile >> "CfgBuildingLoot" >> _type;
 _itemTypes = [] + getArray (_config >> "lootType");
 _lootChance = getNumber (_config >> "lootChance");
 _qty = 0; // effective quantity of spawned weaponholder
