@@ -26,4 +26,4 @@ diagHit = 1;
 
 #include "\z\addons\dayz_code\gui\description.hpp"
 
-#include "cfgloot/CfgLoot.hpp"
+#include "cfgloot\CfgLoot.hpp"
