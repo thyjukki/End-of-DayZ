@@ -10,6 +10,7 @@ _cursorTarget = cursorTarget;
 _primaryWeapon = primaryWeapon player;
 _currentWeapon = currentWeapon player;
 _onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
+_hasShovel = ("ItemEtool" in items player) || ("ItemEtool" in items player);
 //_canDrink = count nearestObjects [getPosATL player, ["Land_pumpa","Land_water_tank"], 2] > 0;
 
 _nearLight = nearestObject [player,"LitObject"];
