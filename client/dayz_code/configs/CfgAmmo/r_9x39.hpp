@@ -1,5 +1,6 @@
 
 //9x39
+class B_9x39_SP5;
 class B_9x39_Ball : B_9x39_SP5 {
 	hit=12;
 	cost=5;

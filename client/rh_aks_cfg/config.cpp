@@ -4299,7 +4299,7 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
-			"RH_20Rnd_9x39_SP6_mag"
+			"RH_20Rnd_9x39_SP6_mag",
 			"RH_20Rnd_9x39_SP6_mag_hp",
 			"RH_20Rnd_9x39_SP6_mag_tracer",
 			"RH_20Rnd_9x39_SP6_mag_rubber",
@@ -4449,7 +4449,7 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
-			"RH_20Rnd_9x39_SP6_mag"
+			"RH_20Rnd_9x39_SP6_mag",
 			"RH_20Rnd_9x39_SP6_mag_hp",
 			"RH_20Rnd_9x39_SP6_mag_tracer",
 			"RH_20Rnd_9x39_SP6_mag_rubber",
@@ -4535,7 +4535,7 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
-			"RH_20Rnd_9x39_SP6_mag"
+			"RH_20Rnd_9x39_SP6_mag",
 			"RH_20Rnd_9x39_SP6_mag_hp",
 			"RH_20Rnd_9x39_SP6_mag_tracer",
 			"RH_20Rnd_9x39_SP6_mag_rubber",
@@ -4623,7 +4623,7 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
-			"RH_20Rnd_9x39_SP6_mag"
+			"RH_20Rnd_9x39_SP6_mag",
 			"RH_20Rnd_9x39_SP6_mag_hp",
 			"RH_20Rnd_9x39_SP6_mag_tracer",
 			"RH_20Rnd_9x39_SP6_mag_rubber",
