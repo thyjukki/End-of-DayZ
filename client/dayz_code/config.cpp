@@ -1,7 +1,7 @@
 #include "Configs\basicDefines.hpp"
 
 class CfgPatches {
-	class dayzend_code {
+	class dayz_code {
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.1;

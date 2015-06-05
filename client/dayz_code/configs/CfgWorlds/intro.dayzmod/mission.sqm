@@ -72,13 +72,13 @@ class Intro
 		"CAWheeled",
 		"cadata",
 		"ca_animals2_sheep",
-		"dayzend_code",
+		"dayz_code",
 		"dayz"
 	};
 	addOnsAuto[]=
 	{
 		"cacharacters2",
-		"dayzend_code",
+		"dayz_code",
 		"dayz",
 		"chernarus"
 	};
