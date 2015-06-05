@@ -195,17 +195,7 @@ class CfgMagazines
 		count=13;
 		initSpeed=365;
 	};
-	class RH_19Rnd_9x19_g18: CA_Magazine
-	{
-		scope=2;
-		displayName="Glock 18 mag";
-		model="\RH_de\mags\mag_g18.p3d";
-		type=16;
-		picture="\RH_de\inv\m_g18.paa";
-		ammo="B_9x18_Ball";
-		count=19;
-		initSpeed=365;
-	};
+	class RH_19Rnd_9x19_g18;
 	class RH_17Rnd_9x19_g17: CA_Magazine
 	{
 		scope=2;
@@ -239,39 +229,9 @@ class CfgMagazines
 		count=33;
 		initSpeed=365;
 	};
-	class RH_20Rnd_9x19_M93: CA_Magazine
-	{
-		scope=2;
-		displayName="M93R mag";
-		model="\RH_de\mags\mag_m93r.p3d";
-		type=16;
-		picture="\RH_de\inv\m_m93.paa";
-		ammo="B_9x18_Ball";
-		count=20;
-		initSpeed=365;
-	};
-	class RH_32Rnd_9x19_Muzi: CA_Magazine
-	{
-		scope=2;
-		displayName="MUzi mag";
-		model="\RH_de\mags\mag_muzi.p3d";
-		type=16;
-		picture="\RH_de\inv\m_muzi.paa";
-		ammo="B_9x18_Ball";
-		count=32;
-		initSpeed=360;
-	};
-	class RH_30Rnd_9x19_tec: CA_Magazine
-	{
-		scope=2;
-		displayName="Tec9 mag";
-		model="\RH_de\mags\mag_tec9.p3d";
-		type=16;
-		picture="\RH_de\inv\m_tec9.paa";
-		ammo="B_9x18_Ball";
-		count=30;
-		initSpeed=360;
-	};
+	class RH_20Rnd_9x19_M93;
+	class RH_32Rnd_9x19_Muzi;
+	class RH_30Rnd_9x19_tec;
 	class RH_8Rnd_9x19_Mksd: RH_8Rnd_9x19_Mk
 	{
 		displayName="Mk22sd mag";
@@ -292,26 +252,8 @@ class CfgMagazines
 		count=8;
 		initSpeed=365;
 	};
-	class RH_15Rnd_9x19_usp: CA_Magazine
-	{
-		scope=2;
-		displayName="Usp mag (9 mm)";
-		model="\RH_de\mags\mag_usp.p3d";
-		type=16;
-		picture="\RH_de\inv\m_usp.paa";
-		ammo="B_9x18_Ball";
-		count=15;
-		initSpeed=365;
-	};
-	class RH_15Rnd_9x19_uspsd: RH_15Rnd_9x19_usp
-	{
-		displayName="Uspsd mag (9 mm)";
-		model="\RH_de\mags\mag_usp.p3d";
-		type=16;
-		picture="\RH_de\inv\m_usp.paa";
-		ammo="B_9x18_SD";
-		initSpeed=278;
-	};
+	class RH_15Rnd_9x19_usp;
+	class RH_15Rnd_9x19_uspsd;
 	class RH_8Rnd_762_tt33: CA_Magazine
 	{
 		scope=2;

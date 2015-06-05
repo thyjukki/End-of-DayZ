@@ -167,8 +167,9 @@ class CfgAmmo {
 		fusedistance = 0;
 	};
 	
-	#include "CfgAmmo\ammo.hpp"
-	#include "CfgAmmo\45acp.hpp"
-	#include "CfgAmmo\32acp.hpp"
-	#include "CfgAmmo\762x39.hpp"
+	#include "CfgAmmo\r_9x18.hpp"
+	#include "CfgAmmo\r_9x19.hpp"
+	#include "CfgAmmo\r_45acp.hpp"
+	#include "CfgAmmo\r_32acp.hpp"
+	#include "CfgAmmo\r_762x39.hpp"
 };

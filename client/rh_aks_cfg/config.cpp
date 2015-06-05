@@ -229,27 +229,8 @@ class CfgMagazines
 	class 30Rnd_545x39_AK;
 	class 30Rnd_545x39_AKSD;
 	class 30Rnd_762x39_AK47;
-	class RH_20Rnd_9x18_aps: CA_Magazine
-	{
-		scope=2;
-		type=16;
-		displayName="20rnd APS mag";
-		picture="\Ca\weapons\Data\Equip\m_makarov_CA.paa";
-		ammo="B_9x18_Ball";
-		count=20;
-		initSpeed=320;
-		descriptionShort="20rnd APS mag";
-	};
-	class RH_20Rnd_9x18_apsSD: RH_20Rnd_9x18_aps
-	{
-		scope=2;
-		type=16;
-		displayName="20rnd APS SD mag";
-		picture="\Ca\weapons\Data\Equip\m_makarov_CA.paa";
-		ammo="B_9x18_SD";
-		initSpeed=310;
-		descriptionShort="20rnd APS SD mag";
-	};
+	class RH_20Rnd_9x18_aps;
+	class RH_20Rnd_9x18_apsSD;
 	class RH_20Rnd_9x39_SP6_mag: 30Rnd_545x39_AK
 	{
 		displayName="OC14 mag";

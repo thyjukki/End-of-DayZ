@@ -38,9 +38,11 @@ class CfgMagazines
 		bulletCount = 1;
 	};
 
-	#include "bullets\45acp.hpp"
-	#include "bullets\32acp.hpp"
-	#include "bullets\762x39.hpp"
+	#include "bullets\b_9x18.hpp"
+	#include "bullets\b_9x19.hpp"
+	#include "bullets\b_45acp.hpp"
+	#include "bullets\b_32acp.hpp"
+	#include "bullets\b_762x39.hpp"
 	
 	//Crafting materials
 	#include "Crafting\Crafting.hpp"
