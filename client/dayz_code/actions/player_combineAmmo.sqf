@@ -50,7 +50,7 @@ if (r_ammo_selected_mode == 1) then
 			_base10 = floor (_total_ammo / 10);
 			
 			if (_base10 > 0) then {
-				_giving = _toBoGiven + str(_base10);
+				_giving = _toBoGiven + str(_base10 * 10);
 				_isOK = [player,_giving] call BIS_fnc_invAdd;
 				if (!_isOK) then {
 					_nearByPile = nearestObjects [getPosATL player, ["WeaponHolder","WeaponHolderBase"], 2];
