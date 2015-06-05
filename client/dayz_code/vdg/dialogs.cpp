@@ -43,22 +43,6 @@ class vdgRscButton {
 	text = "";
 };
 
-class RscPicture {
-	type = CT_STATIC;
-	idc = UNDEFINED_IDC;
-	style = ST_PICTURE;
-	colorText[] = {0.75, 0.75, 0.75, 1};
-	colorBackground[] = {0, 0, 0, 0};
-	font = "Bitstream";
-	sizeEx = 0.025;
-	soundClick[] = {"ui\ui_ok", 0.2, 1};
-	soundEnter[] = {"ui\ui_over", 0.2, 1};
-	soundEscape[] = {"ui\ui_cc", 0.2, 1};
-	soundPush[] = {"", 0.2, 1};
-	w = 0.275;
-	h = 0.04;
-	text = "";
-};
 
 class RscListBox {
 	idc = UNDEFINED_IDC;
