@@ -16,7 +16,7 @@ class RscStaticText {
 	text = "StaticText";
 };
 
-class RscButton {
+class vdgRscButton {
 	idc = UNDEFINED_IDC;
 	type = CT_BUTTON;
 	style = ST_CENTER;

@@ -75,7 +75,7 @@ class ViewDistanceChanger {
 			h = 0.025;
 		};
 	
-		class btnApply : RscButton{
+		class btnApply : vdgRscButton{
 			idc = VDG_BTNAPPLY_IDC;
 			x = 0.33;
 			y = 0.73;
@@ -86,7 +86,7 @@ class ViewDistanceChanger {
 		};
 		
 		
-		class btnCancel : RscButton {
+		class btnCancel : vdgRscButton {
 			x = 0.44; 
 			y = 0.73;
 			w = 0.08; 
