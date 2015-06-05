@@ -230,7 +230,7 @@ if (_inVehicle) then {
 				r_action_unload = false;
 				call fnc_usec_medic_removeActions;
 			};
-		} else {	};
+		};
 	};
 
 //Remove Actions
