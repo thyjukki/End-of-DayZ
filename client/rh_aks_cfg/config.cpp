@@ -397,6 +397,15 @@ class cfgWeapons
 	};
 	class RH_aps: Pistol
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_useAttchment;";
+				text = "Attach Silencer";
+				att = "Attachment_Sup9";
+				out = "RH_apssd";
+			};
+		};
 		scope=2;
 		model="\RH_aks\RH_aps.p3d";
 		modelOptics="-";
@@ -422,7 +431,11 @@ class cfgWeapons
 		magazines[]=
 		{
 			"RH_20Rnd_9x18_aps",
-			"RH_20Rnd_9x18_apssd"
+			"RH_20Rnd_9x18_apssd",
+			"RH_20Rnd_9x18_aps_hp",
+			"RH_20Rnd_9x18_aps_tracer",
+			"RH_20Rnd_9x18_aps_rubber",
+			"RH_20Rnd_9x18_aps_bt"
 		};
 		modes[]=
 		{
@@ -511,6 +524,15 @@ class cfgWeapons
 	};
 	class RH_apssd: Pistol
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Silencer";
+				att = "Attachment_Sup9";
+				out = "RH_aps";
+			};
+		};
 		scope=2;
 		model="\RH_aks\RH_apssd.p3d";
 		modelOptics="-";
@@ -535,8 +557,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"RH_20Rnd_9x18_aps",
 			"RH_20Rnd_9x18_apssd",
-			"RH_20Rnd_9x18_aps"
+			"RH_20Rnd_9x18_aps_hp",
+			"RH_20Rnd_9x18_aps_tracer",
+			"RH_20Rnd_9x18_aps_rubber",
+			"RH_20Rnd_9x18_aps_bt"
 		};
 		modes[]=
 		{
@@ -1638,7 +1664,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_aks74uk";
 			};
 			class UseAtt1 : UseAtt{
@@ -1733,7 +1759,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_aks74u";
 			};
 			class UseAtt1 : UseAtt{
@@ -1841,7 +1867,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_aks74usdk";
 			};
 			class UseAtt1 : UseAtt{
@@ -1940,7 +1966,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_aks74usd";
 			};
 			class UseAtt1 : UseAtt{
@@ -2524,12 +2550,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_bizonk";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup9";
 				out = "RH_bizonsd";
 			};
 		};
@@ -2538,8 +2564,12 @@ class cfgWeapons
 		picture="\rh_aks\inv\bizon.paa";
 		magazines[]=
 		{
-			"64Rnd_9x19_Bizon",
-			"64Rnd_9x19_SD_Bizon"
+			64Rnd_9x19_Bizon,
+			64Rnd_9x19_SD_Bizon,
+			64Rnd_9x19_Bizon_hp,
+			64Rnd_9x19_Bizon_tracer,
+			64Rnd_9x19_Bizon_rubber,
+			64Rnd_9x19_SD_Bizon_bt
 		};
 		displayName="Bizon";
 		drySound[]=
@@ -2631,13 +2661,13 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_bizon";
 			};
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup9";
 				out = "RH_bizonsdk";
 			};
 		};
@@ -2655,24 +2685,19 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_bizonsdk";
 			};
 			class UseAtt1 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup9";
 				out = "RH_bizon";
 			};
 		};
 		displayName="Bizon SD";
 		model="\rh_aks\RH_bizonsd.p3d";
 		picture="\rh_aks\inv\bizonsd.paa";
-		magazines[]=
-		{
-			"64Rnd_9x19_SD_Bizon",
-			"64Rnd_9x19_Bizon"
-		};
 		fireLightDuration=0;
 		fireLightIntensity=0;
 		class Single: Single
@@ -2713,12 +2738,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_bizonsd";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup9";
 				out = "RH_bizonk";
 			};
 		};
@@ -2736,7 +2761,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak74k";
 			};
 			class UseAtt1 : UseAtt{
@@ -2917,7 +2942,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak74mk";
 			};
 			class UseAtt1 : UseAtt{
@@ -2942,7 +2967,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak74mkgl";
 			};
 			class UseAtt1 : UseAtt{
@@ -3036,7 +3061,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak74m";
 			};
 			class UseAtt2 : UseAtt{
@@ -3060,7 +3085,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak74mgl";
 			};
 			class UseAtt2 : UseAtt{
@@ -3370,7 +3395,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_aks74mk";
 			};
 			class UseAtt1 : UseAtt{
@@ -3395,7 +3420,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_aks74mkgl";
 			};
 			class UseAtt1 : UseAtt{
@@ -3489,7 +3514,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_aks74m";
 			};
 			class UseAtt2 : UseAtt{
@@ -3513,7 +3538,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_aks74mgl";
 			};
 			class UseAtt2 : UseAtt{
@@ -3824,7 +3849,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak74kgl";
 			};
 			class UseAtt1 : UseAtt{
@@ -3918,7 +3943,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak74";
 			};
 			class UseAtt2 : UseAtt{
@@ -3942,7 +3967,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak74gl";
 			};
 			class UseAtt2 : UseAtt{
@@ -4974,7 +4999,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak103k";
 			};
 			class UseAtt1 : UseAtt{
@@ -5070,7 +5095,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak103kgl";
 			};
 			class UseAtt1 : UseAtt{
@@ -5159,7 +5184,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak103";
 			};
 			class UseAtt2 : UseAtt{
@@ -5183,7 +5208,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak103gl";
 			};
 			class UseAtt2 : UseAtt{
@@ -5478,7 +5503,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak104k";
 			};
 			class UseAtt1 : UseAtt{
@@ -5574,7 +5599,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak104kgl";
 			};
 			class UseAtt1 : UseAtt{
@@ -5663,7 +5688,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak104";
 			};
 			class UseAtt2 : UseAtt{
@@ -5687,7 +5712,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak104gl";
 			};
 			class UseAtt2 : UseAtt{
@@ -5982,7 +6007,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_aks74pk";
 			};
 			class UseAtt1 : UseAtt{
@@ -6007,7 +6032,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_aks74pkgl";
 			};
 			class UseAtt1 : UseAtt{
@@ -6101,7 +6126,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_aks74p";
 			};
 			class UseAtt2 : UseAtt{
@@ -6125,7 +6150,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_aks74pgl";
 			};
 			class UseAtt2 : UseAtt{
@@ -6436,7 +6461,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak105k";
 			};
 			class UseAtt1 : UseAtt{
@@ -6461,7 +6486,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak105kgl";
 			};
 			class UseAtt1 : UseAtt{
@@ -6555,7 +6580,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak105";
 			};
 			class UseAtt2 : UseAtt{
@@ -6579,7 +6604,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak105gl";
 			};
 			class UseAtt2 : UseAtt{
@@ -6889,7 +6914,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak107k";
 			};
 			class UseAtt1 : UseAtt{
@@ -6914,7 +6939,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak107kgl";
 			};
 			class UseAtt1 : UseAtt{
@@ -7008,7 +7033,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak107";
 			};
 			class UseAtt2 : UseAtt{
@@ -7032,7 +7057,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "RH_ak107gl";
 			};
 			class UseAtt2 : UseAtt{

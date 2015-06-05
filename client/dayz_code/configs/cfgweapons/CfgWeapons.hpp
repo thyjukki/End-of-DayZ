@@ -110,10 +110,6 @@ class CfgWeapons
 	class BAF_L85A2_RIS_Holo;
 	#include "Rifles\L85.hpp"
 	
-	class bizon;
-	class bizon_silenced;
-	#include "Rifles\Bizon.hpp"
-	
 	class huntingrifle;
 	#include "Rifles\CZ550.hpp"
 	
@@ -136,8 +132,6 @@ class CfgWeapons
 	class Colt1911;
 	#include "Pistols\M1911.hpp"
 	
-	class Makarov;
-	class MakarovSD;
 	#include "Pistols\Makarov.hpp"
 	
 	class UZI_EP1;
