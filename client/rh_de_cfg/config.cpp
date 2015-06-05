@@ -125,18 +125,6 @@ class CfgAmmo
 		airFriction=-0.003000;
 		caliber=0.300000;
 	};
-	class RH_B_22LR_SD: BulletBase
-	{
-		cartridge="FxCartridge_Small";
-		visibleFire=0.035000;
-		audibleFire=0.035000;
-		visibleFireTime=2;
-		cost=1;
-		typicalSpeed=278;
-		airFriction=-0.001500;
-		hit=4;
-		caliber=0.100000;
-	};
 };
 class CfgMagazines
 {
@@ -1403,7 +1391,11 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
-			"RH_10Rnd_22LR_mk2"
+			"RH_10Rnd_22LR_mk2",
+			"RH_10Rnd_22LR_mk2_hp",
+			"RH_10Rnd_22LR_mk2_tracer",
+			"RH_10Rnd_22LR_mk2_rubber",
+			"RH_10Rnd_22LR_mk2_bt"
 		};
 		dispersion=0.008500;
 		ffCount=1;
