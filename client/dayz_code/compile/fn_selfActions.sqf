@@ -47,7 +47,14 @@ if (dayz_onBack != "" && !dayz_onBackActive && !_inVehicle && !_onLadder && !r_p
 	s_player_equip_carry = -1;
 };
 
-
+if (!r_player_unconscious) then {
+	if (s_player_change_view < 0) then {
+		s_player_change_view = player addAction ["<t color='#888800'>Viewdistance</t>","\z\addons\dayz_code\vdg\scripts\addAction.sqf",[],0,false,true,"","VDG_showAction && (vehicle _this) == _target"];
+	};
+} else {
+	player removeAction s_player_change_view;
+	s_player_change_view = -1;
+};
 
 //fishing
 if ((_currentWeapon in Dayz_fishingItems) && !dayz_fishingInprogress && !_inVehicle && !dayz_isSwimming) then {
@@ -67,27 +74,29 @@ if ((_primaryWeapon in Dayz_fishingItems) && !dayz_fishingInprogress && (_inVehi
 	s_player_fishing_veh = -1;
 };
 
-
-if (_canDo) then {
-	//Drink from well/pond
-	if (!_inVehicle) then {
-		if (s_player_Drinkfromhands < 0) then {
-			s_player_Drinkfromhands = player addAction [localize "str_player_31_drink", "\z\addons\dayz_code\actions\player_drinkWater.sqf",player, 0.5, false, true];
+_canDoThis=false;
+if (_canDo and !_inVehicle and !dayz_isSwimming) then {
+	{
+        _waterHoles = if (typeOf _x == "waterHoleProxy") then {nearestObjects [_x, [], 0.5];} else {[_x];};
+		{
+            _w2m = _x worldToModel (getPosATL player);
+            _bb = (boundingbox _x) select 1;
+            _dir = [player, _x] call BIS_fnc_relativeDirTo; if (_dir > 180) then {_dir = _dir - 360};
+            if (((abs _dir < 45) and {(_x distance player < 2.22)})  // wells, kasna, pumpa
+            	or {((("" == typeOf _x) and ((_w2m select 2) < 0.05)) and {((abs(_w2m select 0) < (_bb select 0)) and (abs(_w2m select 1) < (_bb select 1)))})}) exitWith { // ponds
+				_canDoThis = true;
+			};
+		} count _waterHoles;
+		if (_canDoThis) exitWith {
+			if (s_player_Drinkfromhands < 0) then {
+				s_player_Drinkfromhands = player addAction [localize "str_player_31_drink", "\z\addons\dayz_code\actions\player_drinkWater.sqf",player, 0.5, false, true];
+			};
 		};
-	} else {
-		player removeAction s_player_Drinkfromhands;
-		s_player_Drinkfromhands = -1;
-	};
-
-	if (s_player_change_view < 0) then {
-		s_player_change_view = player addAction ["<t color='#888800'>Viewdistance</t>","\z\addons\dayz_code\vdg\scripts\addAction.sqf",[],0,false,true,"","VDG_showAction && (vehicle _this) == _target"];
-	};
-} else {
+	} foreach nearestObjects [player, ["waterHoleProxy", "Land_pumpa"], 50];
+};
+if (!_canDoThis and s_player_Drinkfromhands >= 0) then {
 	player removeAction s_player_Drinkfromhands;
 	s_player_Drinkfromhands = -1;
-	
-	player removeAction s_player_change_view;
-	s_player_change_view = -1;
 };
 
 if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4) and _canDo) then { 
@@ -121,8 +130,7 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 	_canmove = canmove _cursorTarget;
 	_text = getText (configFile >> "CfgVehicles" >> typeOf _cursorTarget >> "displayName");
 	_isPlant = typeOf _cursorTarget in Dayz_plants;
-	_tentitems = ["IC_DomeTent","IC_Tent","TentStorage","TentStorage0","TentStorage1","TentStorage2","TentStorage3","TentStorage4","DomeTentStorage0","DomeTentStorage1","DomeTentStorage2","DomeTentStorage3","DomeTentStorage4"];
-	_istypeTent = typeOf _cursorTarget in _tentitems;
+	_istypeTent = (_cursorTarget isKindOf "TentStorage_base") or (_cursorTarget isKindOf "IC_Tent");
 	_hasShovel = ("ItemEtool" in items player) || ("ItemEtool" in items player);
 	_upgradeItems = ["TentStorage","TentStorage0","TentStorage1","TentStorage2","TentStorage3","StashSmall","StashSmall1","StashSmall2","StashSmall3","StashSmall4","StashMedium","StashMedium1","StashMedium2","StashMedium3","DomeTentStorage","DomeTentStorage0","DomeTentStorage1","DomeTentStorage2","DomeTentStorage3","DomeTentStorage4"];
 
@@ -248,15 +256,6 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 		player removeAction s_player_release;
 		s_player_release = -1;
 	};
-	
-	if (_typeOfCursorTarget == "Infostand_1_EP1" && _allowRemoval == 1 && _canDo) then {
-		if (s_player_infoStand < 0) then {
-			s_player_infoStand = player addAction ["Activate Infostand", "maca134\actions\player_infostand.sqf",_cursorTarget, 1, true, true, "", ""];
-		}
-	} else {
-		player removeAction s_player_infoStand;
-		s_player_infoStand = -1;
-	};
 
 	if(_isMan && !_isZombie && !_isAnimal && _isAlive && _isDetained != 0 && _isEscorted == 0) then 
 	{
@@ -359,7 +358,7 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 			if (s_player_upgradestroage < 0) then {
 				if (isText (configFile >> "CfgVehicles" >> (typeof _cursorTarget) >> "Upgrade" >> "create")) then {
 					_displayName = getText (configFile >> "CfgVehicles" >> (typeOf _cursorTarget) >> "displayName");
-					s_player_upgradestroage = player addAction [format["Upgrade %1 Storage",_displayName], "\z\addons\dayz_code\actions\object_upgradeStorage.sqf",_cursorTarget, 0, false, true, "",""];
+					s_player_upgradestroage = player addAction [format[localize "str_upgrade",_displayName], "\z\addons\dayz_code\actions\object_upgradeStorage.sqf",_cursorTarget, 0, false, true, "",""];
 				};
 			};
 		} else {
@@ -431,7 +430,7 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 	_hasCarBomb = "ItemCarBomb" in magazines player;
 	if (((cursorTarget isKindOf "Car") || (cursorTarget isKindOf "Air") || (cursorTarget isKindOf "Motorcycle")) and _hasCarBomb) then {
 		if (s_player_attach_bomb < 0) then {
-			s_player_attach_bomb = player addAction ["Attach Carbomb", "\z\addons\dayz_code\actions\player_attach_bomb.sqf",cursorTarget, 3, true, true, "", ""];
+			s_player_attach_bomb = player addAction [localize "str_bombAttach", "\z\addons\dayz_code\actions\player_attach_bomb.sqf",cursorTarget, 3, true, true, "", ""];
 		};
 	} else {
 			player removeAction s_player_attach_bomb;
@@ -504,8 +503,6 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 	//Allow player to siphon vehicle fuel
 	player removeAction s_player_siphonfuel;
 	s_player_siphonfuel = -1;
-	player removeAction s_player_infoStand;
-	s_player_infoStand = -1;
 	//Allow player to gather
 	player removeAction s_player_gather;
 	s_player_gather = -1;

@@ -52,7 +52,7 @@ _startUpgrade = true;
 
 if(_isWater or _onLadder) exitWith {
 	//cutText ["unable to upgrade at this time", "PLAIN DOWN"];
-	systemchat["unable to upgrade at this time"];
+	systemchat[localize "str_CannotUpgrade"];
 };
 
 // lets check player has requiredTools for upgrade
@@ -100,16 +100,20 @@ if ((_startUpgrade) AND (isClass(_upgradeConfig))) then {
 	//Upgrade
 	_alreadyupgrading = _cursorTarget getVariable["alreadyupgrading",0];
 
-	if (_alreadyupgrading == 1) exitWith {cutText [format[("Object is already upgrading")] , "PLAIN DOWN"]};
+	if (_alreadyupgrading == 1) exitWith {cutText [localize "str_upgradeInProgress", "PLAIN DOWN"]};
 	
 	_cursorTarget setVariable["alreadyupgrading",1];
 
 	sleep 0.03;
 
 	//Get location and direction of old item
+	_dir = round getDir _cursorTarget;
+	_vector = [vectorDir _cursorTarget,vectorUp _cursorTarget];
 	_pos = getposATL _cursorTarget;
-	_dir = getDir _cursorTarget;
-	
+	diag_log [ "dir/angle/pos", _dir, _vector, _pos];
+	if (abs(((_vector select 1) select 2) - 1) > 0.001) then { _pos set [2,0]; };
+	diag_log [ "dir/angle/pos - reset elevation if angle is straight", _dir, _vector, _pos];
+
 	//get contents
 	_weapons = getWeaponCargo _cursorTarget;
 	_magazines = getMagazineCargo _cursorTarget;
@@ -134,9 +138,9 @@ if ((_startUpgrade) AND (isClass(_upgradeConfig))) then {
 	} count _upgradeParts;
 	
 	//create new tent
-	_object = createVehicle [_upgrade, [0,0,0], [], 0, "NONE"];
-	_object setdir _dir;
-	_object setpos _pos;
+    _object = createVehicle [_upgrade, getMarkerpos "respawn_west", [], 0, "CAN_COLLIDE"];
+	_object setVectorDirAndUp _vector;
+	_object setPosATL _pos;
 	//set ownerID from old tent.
 	_object setVariable ["characterID",_ownerID];
 	
@@ -174,10 +178,11 @@ if ((_startUpgrade) AND (isClass(_upgradeConfig))) then {
 	sleep 3;
 	
 	//publish new tent
-	PVDZ_obj_Publish = [dayz_characterID,_object,[_dir, _pos],_upgrade];
+	PVDZ_obj_Publish = [dayz_characterID,_object,[_dir, _pos],[_weapons,_magazines,_backpacks]];
 	publicVariableServer "PVDZ_obj_Publish";
+    diag_log [diag_ticktime, __FILE__, "New Networked object, request to save to hive. PVDZ_obj_Publish:", PVDZ_obj_Publish];
 
-	cutText ["Upgrade done.", "PLAIN DOWN"];
+	cutText [localize "str_upgradeDone", "PLAIN DOWN"];
 /*
 } else {
 	cutText ["Object has no upgrade option.", "PLAIN DOWN"];

@@ -15,13 +15,13 @@ class ItemWaterbottleUnfilled : CA_Magazine { //Empty
 	};
 };
  class ItemWaterbottleDmg : ItemSodaEmpty {
-	displayName = "Broken Water Bottle";
+	displayName = $STR_ITEMWATERBOTTLEDMG_CODE_NAME;
 	model = "z\addons\dayz_communityassets\models\waterbottle_damaged.p3d";
 	picture = "\z\addons\dayz_communityassets\textures\waterbottle_damaged.paa";
-	descriptionShort = "Broken Water Bottle, Can no longer be used for fluids";
+	descriptionShort = $STR_ITEMWATERBOTTLEDMG_CODE_DESC;
 	class ItemActions {
 		class Fill {
-			text = "Fix Bottle";
+			text = $STR_ACTIONS_FIX_W;
 			script = "spawn player_fixBottle;";
 		};
 	};
@@ -220,7 +220,7 @@ class ItemSodaGrapeDrinkEmpty : ItemSodaEmpty{
 	};	
 };
 
-/*
+
 class ItemSodaSherbetEmpty : ItemSodaEmpty{
 	model = "z\addons\dayz_communityassets\models\soda_sherbet_clean_empty.p3d";
 	picture = "\z\addons\dayz_communityassets\pictures\equip_soda_sherbet_clean_empty_ca.paa";
@@ -231,4 +231,4 @@ class ItemSodaSherbetEmpty : ItemSodaEmpty{
 		};
 	};	
 };
-*/
+

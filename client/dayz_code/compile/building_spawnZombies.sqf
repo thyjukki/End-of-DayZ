@@ -4,7 +4,6 @@
 */
 private ["_maxlocalspawned","_maxControlledZombies","_iPos","_nearByZed","_nearByPlayer","_rnd","_positions","_zombieChance","_unitTypes","_min","_max","_num","_clean","_obj","_type","_config","_canLoot","_originalPos","_fastRun"];
 _obj = 			_this select 0;
-_building_zombies = (_obj getVariable ["currentZombies",0]);
 _type = 		typeOf _obj;
 _config = 		missionConfigFile >> "CfgBuildingLoot" >> _type;
 _canLoot = 		isClass (_config);
@@ -33,14 +32,12 @@ if (_canLoot) then {
 
 	//Walking Zombies
 	_num = (round(random _max)) max _min; // + round(_max / 3);
-	diag_log ("Class: " + _type + " / Zombies: " + str(_unitTypes) + " / Walking: " + str(_num));
+	//diag_log ("Class: " + _type + " / Zombies: " + str(_unitTypes) + " / Walking: " + str(_num));
 	for "_i" from 0 to _num do
 	{
 		//_iPos = _obj modelToWorld _originalPos;
 		if ((_maxlocalspawned < _maxControlledZombies) and (dayz_CurrentNearByZombies < dayz_maxNearByZombies) and (dayz_currentGlobalZombies < dayz_maxGlobalZeds)) then {
 			[_originalPos,true,_unitTypes] call zombie_generate;
-			_building_zombies = _building_zombies + 1;
-			_obj setVariable ["currentZombies",_building_zombies, true];	
 		};
 	};
 
@@ -61,8 +58,6 @@ if (_canLoot) then {
 					if ((_maxlocalspawned < _maxControlledZombies) and (dayz_CurrentNearByZombies < dayz_maxNearByZombies) and (dayz_currentGlobalZombies < dayz_maxGlobalZeds)) then {
 						if (!_nearByPlayer and !_nearByZed) then {
 							[_iPos,false,_unitTypes] call zombie_generate;
-							_building_zombies = _building_zombies + 1;
-							_obj setVariable ["currentZombies",_building_zombies, true];	
 						};
 					};
 				};

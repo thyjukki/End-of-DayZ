@@ -20,7 +20,7 @@ if (_PlayerNear) exitWith {cutText [localize "str_pickup_limit_5", "PLAIN DOWN"]
 	};
 } count Dayz_Gutting;
 
-if ((count _knifeArray) < 1) exitwith { cutText ["Missing Knife to gut animal.", "PLAIN DOWN"] };
+if ((count _knifeArray) < 1) exitwith { cutText [localize "str_cannotgut", "PLAIN DOWN"] };
 
 
 if ((count _knifeArray > 0) and !_hasHarvested) then {

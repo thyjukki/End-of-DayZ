@@ -18,16 +18,16 @@ player removeMagazine _skin;
 
 switch (_rounded) do {
 	case 0: {
-		cutText [(localize "str_tear_clothes_0") , "PLAIN DOWN"];
+		cutText [localize "str_tear_clothes_0", "PLAIN DOWN"];
 	};
 	case 1: {
-		cutText [(localize "str_tear_clothes_1") , "PLAIN DOWN"];
+		cutText [localize "str_tear_clothes_1", "PLAIN DOWN"];
 	};
 	case 2: {
-		cutText [(localize "str_tear_clothes_2") , "PLAIN DOWN"];
+		cutText [localize "str_tear_clothes_2", "PLAIN DOWN"];
 	};
 	case 3: {
-		cutText [(localize "str_tear_clothes_3") , "PLAIN DOWN"];
+		cutText [localize "str_tear_clothes_3", "PLAIN DOWN"];
 	};
 };
 

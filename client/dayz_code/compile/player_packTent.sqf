@@ -23,7 +23,7 @@ if (_ownerID == dayz_characterID or (typeOf _obj in _campitems)) then { _pickup 
 if(_pickup) then {
 	_alreadyPacking = _obj getVariable["packing",0];
 
-	if (_alreadyPacking == 1) exitWith {cutText [format[(localize "str_player_beingpacked")] , "PLAIN DOWN"]};
+	if (_alreadyPacking == 1) exitWith {cutText [format [localize "str_player_beingpacked"] , "PLAIN DOWN"]};
 
 	_obj setVariable["packing",1];
 

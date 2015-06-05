@@ -20,7 +20,7 @@ class IC_Tent: House {
 	transportMaxBackpacks = 5;
 };
 
-class IC_DomeTent : House {
+class IC_DomeTent : IC_Tent {
 	displayname = "Old Dome camping tent";
 	icon = "\Ca\buildings\Icons\i_Astan_CA.paa";
 	model = "\ca\buildings\Tents\astan";

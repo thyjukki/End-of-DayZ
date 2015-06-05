@@ -40,7 +40,7 @@ class FoodbaconRaw : FoodRaw {
 	picture = "\z\addons\dayz_communityassets\pictures\equip_bacon_raw_CA.paa";
 	descriptionShort = $STR_FOOD_EQUIP_CODE_DESC_4;
 	bloodRegen = 300;
-	Nutrition[] = {417,50,0,0}; //[Energy]
+	Nutrition[] = {417,150,00,0}; //[Energy]
 };
 
 class FoodrabbitRaw : FoodRaw {
@@ -60,10 +60,10 @@ class FoodbeefRaw : FoodRaw {
 	Nutrition[] = {332,200,0,0}; //[Energy]
 };
 class FoodSteakRaw : FoodRaw {
-	displayName = $STR_EQUIP_NAME_24;
+	displayName = $STR_EQUIP_NAME_47;
 	model = "\dayz_equip\models\food_steak_gear.p3d";
 	picture = "\dayz_equip\textures\equip_steak_ca.paa";
-	descriptionShort = $STR_EQUIP_DESC_24;
+	descriptionShort = $STR_EQUIP_DESC_47;
 	bloodRegen = 400;
 	Nutrition[] = {332,200,0,0}; //[Energy]
 };

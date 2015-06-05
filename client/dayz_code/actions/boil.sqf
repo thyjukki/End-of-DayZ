@@ -25,8 +25,8 @@ if ("ItemWaterBottleInfected" in magazines player) then {
 } forEach boil_tin_cans;
 
 
-if (!_hasbottleitem) exitWith {cutText [format[(localize "str_player_31"),_bottletext,(localize "str_player_31_fill")] , "PLAIN DOWN"]; a_player_boil = false;};
-if (!_hastinitem) exitWith {cutText [format[(localize "str_player_31"),_tintext,(localize "str_player_31_fill")] , "PLAIN DOWN"]; a_player_boil = false;};
+if (!_hasbottleitem) exitWith {cutText [format [localize "str_player_31",_bottletext,localize "str_player_31_fill"] , "PLAIN DOWN"]; a_player_boil = false;};
+if (!_hastinitem) exitWith {cutText [format [localize "str_player_31",_tintext,localize "str_player_31_fill"] , "PLAIN DOWN"]; a_player_boil = false;};
 
 if (_hasbottleitem and _hastinitem) then {
 	_qty = 0;
@@ -61,9 +61,9 @@ if (_hasbottleitem and _hastinitem) then {
 		};	
 
 	};
-    cutText [format[(localize "str_player_boiledwater"),_qty], "PLAIN DOWN"];
+    cutText [format [localize "str_player_boiledwater",_qty], "PLAIN DOWN"];
 } else {
-    cutText [(localize "str_player_02") , "PLAIN DOWN"];
+    cutText [localize "str_player_02", "PLAIN DOWN"];
 };
 
 a_player_boil = false;

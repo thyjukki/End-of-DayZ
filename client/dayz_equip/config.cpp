@@ -625,7 +625,7 @@ class cfgWeapons {
 		picture = "\dayz_equip\textures\equip_toolbox_ca.paa";
 		descriptionShort = $STR_EQUIP_DESC_2;
 	};
-
+	
 	
 	#include "configs\ItemMatchbox.hpp"
 	
@@ -1638,7 +1638,7 @@ class ItemSodaEmpty;
 				create = "Sandbag1_DZ";
 			};
 			class Build2 {
-				text = "Build Stash";
+				text = $STR_CREATE_STASH;
 				script = "; ['ItemSandbag','Build2'] spawn player_build; r_action_count = r_action_count + 1;";
 				require[] = {"ItemEtool"};
 				consume[] = {"ItemSandbag"};
@@ -1857,7 +1857,7 @@ class CfgVehicles {
 		memoryPointSupply = "collect";
 		supplyRadius = 3;
 		transportMaxWeapons = 0;
-		transportMaxMagazines = 0
+		transportMaxMagazines = 0;
 		transportMaxBackpacks = 0;
 		transportAmmo = 0;
 		transportRepair = 0;
@@ -2090,10 +2090,6 @@ class CfgVehicles {
 				magazine = "PartWoodPile";
 				count = "1";
 			};
-		};
-		
-		class Eventhandlers {
-			init = "_this call eh_localCleanup;";
 		};
 	};
 	

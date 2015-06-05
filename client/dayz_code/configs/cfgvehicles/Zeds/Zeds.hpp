@@ -52,7 +52,12 @@ class zZombie_Base : Zed_Base {
 	
 	class Eventhandlers {
 		init = "_this call zombie_initialize;";
-		local = "if(_this select 1) then {[(position (_this select 0)),(_this select 0),true] execFSM '\z\AddOns\dayz_code\system\zombie_agent.fsm'};";
+		local = "_z = _this select 0;" \n
+			    "if ((!isServer and !isNull _z) and {(side _z != civilian)}) exitWith { " \n
+			    "PVDZ_sec_atp = [ 'wrong side', player ]; publicVariableServer 'PVDZ_sec_atp'; deleteVehicle _z; };" \n
+				"if (!(_this select 1)) exitWith {};" \n
+			    "if (isServer) exitWith { _z call sched_co_deleteVehicle; };" \n
+			    "[(position _z), _z, true] execFSM '\z\AddOns\dayz_code\system\zombie_agent.fsm';";
 	};
 	
 	class HitPoints {

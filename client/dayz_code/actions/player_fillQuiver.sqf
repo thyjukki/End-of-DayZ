@@ -18,7 +18,7 @@ if (_qty_quiverfreeslots > 0) then {
 		player removeMagazine "WoodenArrow";
 	};
 	player addMagazine ["Quiver",_qty_quiverarrows+_qty_arrows2add];
-	cutText [format[localize "str_quiver_addarrows",_qty_arrows2add], "PLAIN DOWN"];
+	cutText [format [localize "str_quiver_addarrows",_qty_arrows2add], "PLAIN DOWN"];
 } else {
 	cutText [localize "str_quiver_full", "PLAIN DOWN"];
 };

@@ -2,8 +2,9 @@ private ["_projectile","_unit","_ammo"];
 
 //[unit, weapon, muzzle, mode, ammo, magazine, projectile]
 _unit = _this select 0;
-//_weapon = _this select 1;
+_weapon = _this select 1;
 _ammo = _this select 4;
+_magazine = _this select 5;
 _projectile = _this select 6;
 
 //Alert Nearby
@@ -14,6 +15,13 @@ _distance = round(_audible * 10 * _caliber);
 dayz_disAudial = _distance;
 dayz_firedCooldown = time;
 
+if (player ammo _weapon == 0) then {
+	_emptyMag = getText (configFile >> "CfgMagazines" >> _magazine >> "emptyMag");
+	if (_emptyMag != "") then {
+		player addMagazine _emptyMag;
+		//hint format ["Weapon out, giving mag %1",_magazine];
+	};
+};
 if (_ammo isKindOf "Melee") exitWith {
 	_unit playActionNow "GestureSwing";
 };

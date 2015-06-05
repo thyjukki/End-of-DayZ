@@ -42,6 +42,8 @@ if (count _medical > 0) then {
 	player setVariable["unconsciousTime",(_medical select 10),true];
 	player setVariable["blood_type",(_medical select 11),true];
 	player setVariable["rh_factor",(_medical select 12),true];
+	player setVariable["messing",(_medical select 13),true];
+	player setVariable["blood_testdone",(_medical select 14),true];
 
 	//Add Wounds
 	{

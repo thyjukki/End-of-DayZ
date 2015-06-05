@@ -1,3 +1,5 @@
+//if (!isNil "faco_object_maintenance") exitWith { _this call faco_object_maintenance;};
+
 private ["_isMedic"];
 
 _cursorTarget = _this select 3;
@@ -29,15 +31,13 @@ _upgradeParts = [];
 _startMaintenance = false;
 
 if(_isWater or _onLadder) exitWith {
-	//cutText ["unable to upgrade at this time", "PLAIN DOWN"];
-	systemchat["unable to do maintenance at this time"];
+	cutText [localize "str_CannotUpgrade", "PLAIN DOWN"];
 };
 
 // lets check player has requiredTools for upgrade
 {
 	if (!(_x IN items player)) exitWith {
-		//systemchat("Missing tools for upgrade." +str());
-		systemChat format["Missing %1 to do maintenance %2.",_x,_displayname];
+		cutText[ format[ localize "str_maintenanceMissingTool", "PLAIN DOWN"]; //"Missing %1 to do maintenance %2."
 	};
 	if (_x IN items player) then {
 		_startMaintenance = true;
@@ -48,7 +48,7 @@ if(_isWater or _onLadder) exitWith {
 
 {
 	if (!(_x IN magazines player)) exitWith {
-		systemChat format["Missing %1 to maintenance %2.",_x,_displayname];
+		cutText[ format[ localize "str_maintenanceMissingPart",_x,_displayname], "PLAIN DOWN"]; //"Missing %1 to maintenance %2."
 	};
 	if (_x IN magazines player) then {
 		_startMaintenance = true;
@@ -93,8 +93,8 @@ if (_startMaintenance) then {
 		};
 	}
 	
-	cutText ["Maintenance done.", "PLAIN DOWN"];
+	cutText [localize "str_maintenanceDone", "PLAIN DOWN"];
 } else {
-	cutText ["Object has no maintenance option.", "PLAIN DOWN"];
+	cutText [localize "str_maintenanceNoOption", "PLAIN DOWN"];
 };
 

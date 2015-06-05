@@ -7,7 +7,7 @@ dayz_Trash = 1;
 //Model Variables
 Bandit1_DZ = "Bandit1_DZ";
 BanditW1_DZ = "BanditW1_DZ";
-Survivor1_DZ = "Survivor1_DZ";
+Survivor1_DZ = "Survivor2_DZ";
 Survivor2_DZ = "Survivor2_DZ";
 SurvivorW2_DZ = "SurvivorW2_DZ";
 Sniper1_DZ = "Sniper1_DZ";
@@ -31,6 +31,8 @@ MeleeMagazines = ["hatchet_swing","crowbar_swing","Machete_swing","Bat_Swing","B
 Dayz_fishingItems = ["MeleeFishingPole"];
 //Plants
 Dayz_plants = ["Dayz_Plant1","Dayz_Plant2","Dayz_Plant3"];
+//Attachment array - NOt USED
+Dayz_attachment_array = ["Attachment_ACG","Attachment_AIM"];
 //DayZ_Tents = ["TentStorage","TentStorage0","TentStorage1","TentStorage2","TentStorage3","TentStorage4","DomeTentStorage","DomeTentStorage0","DomeTentStorage1","DomeTentStorage2","DomeTentStorag3","DomeTentStorage4"]
 //DayZ_Stashs = ["StashSmall","StashSmall1","StashSmall2","StashSmall3","StashSmall4","StashMedium","StashMedium1","StashMedium2","StashMedium3", "StashMedium4"]
 //DayZ_cutter = ["Wire_cat1","Sandbag1_DZ","Fence_DZ","Generator_DZ","Hedgehog_DZ","CamoNet_DZ"]
@@ -317,9 +319,6 @@ dayz_resetSelfActions = {
 	s_player_attach_bomb = -1;
 	s_player_upgradestroage = -1;
 	s_player_Drinkfromhands = -1;
-	s_player_building = -1;
-	s_player_maintenance = -1;
-	s_player_disassembly = -1;
 };
 call dayz_resetSelfActions;
 
@@ -347,7 +346,8 @@ r_drag_sqf = false;
 r_action = false;
 r_action_unload = false;
 r_player_handler = false;
-r_player_handler1 = false;
+r_player_unconsciousInProgress = false;
+r_player_unconsciousInputDisabled = false;
 r_player_dead = false;
 r_player_unconscious = false;
 r_player_infected = false;
@@ -361,6 +361,9 @@ r_fracture_legs = false;
 r_fracture_arms = false;
 r_player_vehicle = player;
 r_player_blood = 12000;
+r_ammo_selected = "";
+r_ammo_selected_slot = 0;
+r_ammo_selected_mode = 0;
 //Blood Regen
 r_player_bloodregen = 0;
 //Blood Gain Per Sec
@@ -369,8 +372,6 @@ r_player_bloodgainpersec = 0;
 r_player_bloodlosspersec = 0;
 //Blood Per Sec (gain - loss)
 r_player_bloodpersec = 0;
-//blood pools
-r_player_bloodpools = [];
 //Food Stack
 r_player_foodstack = 1;
 //player skill
@@ -495,10 +496,10 @@ if(isNil "dayz_POIs") then {
     dayz_POIs = true; //Enable POI's
 };
 if(isNil "dayz_ForcefullmoonNights") then {
-    dayz_ForcefullmoonNights = 2; //force full moon nights.
+    dayz_ForcefullmoonNights = true; //force full moon nights.
 };
 if(isNil "dayz_infectiouswaterholes") then {
-	dayz_infectiouswaterholes = false; //Enable infected waterholes
+	dayz_infectiouswaterholes = true; //Enable infected waterholes
 };
 
 if(isNil "dayz_quickSwitch") then {
@@ -509,9 +510,6 @@ if(isNil "dayz_bleedingeffect") then {
 	dayz_bleedingeffect = 2;
 };//dayz_bleedingeffect = 3; //1= blood on the ground, 2= partical effect, 3 = both.
 
-if (isNil "Dayz_BuildCameraMode") then {
-	Dayz_BuildCameraMode = 0;
-};
 
 //init global arrays for Loot Chances
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\loot_init.sqf";
@@ -615,31 +613,30 @@ if(!isDedicated) then {
 	dayz_clientPreload = false;
 	dayz_authed = false;
 	dayz_panicCooldown = 0;
-	dayz_areaAffect = 2.5;
-	dayz_monitorPeriod = 0.8; // number of seconds between each player_zombieCheck calls
+	dayz_areaAffect = 3.5;
+	dayz_monitorPeriod = 0.6; // number of seconds between each player_zombieCheck calls
 	dayz_heartBeat = false;
 //Current local
 	dayz_spawnZombies = 0;
 	dayz_swarmSpawnZombies = 0;
 //Max local
-	dayz_maxLocalZombies = 10; // max quantity of Z controlled by local gameclient, used by player_spawnCheck. Below this limit we can spawn Z
+	dayz_maxLocalZombies = 15; // max quantity of Z controlled by local gameclient, used by player_spawnCheck. Below this limit we can spawn Z
 //Current NearBy
 	dayz_CurrentNearByZombies = 0;
 //Max NearBy
-	dayz_maxNearByZombies = 15; // max quantity of Z controlled by local gameclient, used by player_spawnCheck. Below this limit we can spawn Z
+	dayz_maxNearByZombies = 30; // max quantity of Z controlled by local gameclient, used by player_spawnCheck. Below this limit we can spawn Z
 //Current total
 	dayz_currentGlobalZombies = 0;
 //Max global zeds.
-	dayz_maxGlobalZeds = 1000;
+	dayz_maxGlobalZeds = 3000;
 //Animals
 	dayz_currentGlobalAnimals =	0;
-	dayz_maxGlobalAnimals =		100;
+	dayz_maxGlobalAnimals =		50;
 //Plnats	
 	dayz_currentGlobalPlants = 0;
-	dayz_maxGlobalPlants = 100;
+	dayz_maxGlobalPlants = 500;
 //Loot
 	r_player_divideinvehicle = 0;
-	dayz_tickTimeOffset = 0;
 	dayz_currentWeaponHolders = 0;
 	dayz_maxMaxWeaponHolders = 80;	
 	dayz_inVehicle = false;
@@ -660,4 +657,5 @@ if(!isDedicated) then {
 	//	dayzDebug = true;
 	//};
 	dayz_dodge = false;
+	Dayz_constructionContext = [];
 };

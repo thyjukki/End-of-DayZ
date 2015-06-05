@@ -17,6 +17,8 @@ IGUI_GEAR_filterPistols = (_activeFilter select 5);
 IGUI_GEAR_filterPistolAmmo = (_activeFilter select 6);
 */
 
+_doFilter = false;
+
 _filterSets = [
 	//Primary Weapon, Secondary weapon, Ammo, Binocular, Inventory, Pistols,  Pistols Ammo
 	[false,false,false,false,false,false,false],
@@ -36,7 +38,7 @@ _icons = [
 
 _event = _this select 1;
 _data = _this select 0;
-
+//diag_log [diag_ticktime, __FILE__, _this];
 
 
 
@@ -65,7 +67,7 @@ _lbSelectedItem = {
 		_n = _n + 1;
 	};
 
-	_selectedItem;
+	_selectedItem
 };
 
 _arrowsEnable = {
@@ -85,14 +87,14 @@ _isWeapon = {
 	private ["_item","_return"];
 	_item = _this select 0;
 	_return = (str(configfile >> "cfgWeapons" >> _item) != "");
-	_return;
+	_return
 };
 
 _isMagazine = {
 	private ["_item","_return"];
 	_item = _this select 0;
 	_return = (str(configfile >> "cfgMagazines" >> _item) != "");
-	_return;
+	_return
 };
 
 _IDCsArray = [
@@ -119,7 +121,7 @@ _IDCsArray = [
 	[107],
 	[107]
 ];
-
+/*
 _showAllIDCs = {
 	private ["_slotArray","_j","_i"];
 	for [{_i=0},{_i<count(_IDCsArray)}, {_i = _i + 1} ] do {
@@ -132,7 +134,7 @@ _showAllIDCs = {
 		};
 	};
 };
-
+*/
 _higlightIDCs = {
 	private ["_slotArray","_j","_i"];
 	for [{_i=0},{_i<count(_IDCsArray)}, {_i = _i + 1} ] do {
@@ -175,29 +177,21 @@ _returnSlotIDCs = {
 		_outputArray = (_IDCsArray select 2);
 	};
 
-	_outputArray;
+	_outputArray
 };
-
+/*
 _isPrimaryWeapon = {
 	_flags = (_this select 0);
 
-	if ( (_flags select 0) == 1) then {
-		true;
-	} else {
-		false;
-	};
+	(_flags select 0) == 1
 };
 
 _isSecondaryWeapon = {
 	_flags = (_this select 0);
 
-	if ( (_flags select 0) == 1) then {
-		true;
-	} else {
-		false;
-	};
+	(_flags select 0) == 1
 };
-
+*/
 _itemSlot = {
 	private ["_item", "_return"];
 	_item = _this select 0;
@@ -211,15 +205,15 @@ _itemSlot = {
 		_return = getNumber(configfile >> "cfgMagazines" >> _item >> "type");
 	};
 
-	_return;
+	_return
 };
 
 _highlightIDCs = {
 	_hlIDCs = _this select 0;
-
+/*
 	for [{_i=0},{_i<count(_hlIDCs)}, {_i = _i + 1} ] do {
-
-	};
+// what is it????
+	};*/
 };
 
 _returnBitArray = {
@@ -251,12 +245,12 @@ _highlightGearSlots ={
 	_selectedItemSlotIDCs = [_selectedItemSlotFlags] call _returnSlotIDCs;
 	[_selectedItemSlotIDCs] call _higlightIDCs;
 };
-
+/*
 _weaponsLBSetFocus = {
 	_lbcontrol = _display displayctrl _lbIDC;
-	/** Temporary disabled to prevent bug news:hov5k4$f6f$1@new-server.localdomain **/
+	//Temporary disabled to prevent bug news:hov5k4$f6f$1@new-server.localdomain
 	//ctrlSetFocus _lbcontrol;
-};
+};*/
 
 _setFilterIcon = {
 	_ctrlIcon = _display displayctrl 148;
@@ -281,14 +275,14 @@ _keyActions = {
 		ctrlActivate _control;
 		_output = true;
 	};
-
+/*
 	if((_keyTop find _key)>=0)then {
 
 	};
 
 	if((_keyBottom find _key)>=0)then {
 
-	};
+	};*/
 };
 
 //_bitArray = [0,0,0,0,0 ,0,0,0,0,0 ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
@@ -369,7 +363,7 @@ _matchesFilter = {
 		_output = true;
 	};
 
-	_output;
+	_output
 };
 
 _filterItems = {
@@ -409,7 +403,7 @@ _itemPicture = {
 		_return = getText(configfile >> "cfgMagazines" >> _item >> "picture");
 	};
 
-	_return;
+	_return
 };
 
 _itemDescription = {
@@ -427,7 +421,7 @@ private ["_inputItem","_return"];
 		_return = (_name);
 	};
 
-	_return;
+	_return
 };
 
 _itemName = {
@@ -445,7 +439,7 @@ _itemName = {
 		_return = ( _name);
 	};
 
-	_return;
+	_return
 };
 
 _displayItemIcon = {
@@ -488,16 +482,16 @@ _lbIDC = 105;
 
 switch _event do {
 	case "initDialog": {
-		[] call _showAllIDCs;
+		//[] call _showAllIDCs;
 	};
 
 	case "onLoad": {
-		[] call _weaponsLBSetFocus;
+		//[] call _weaponsLBSetFocus;
 		[] call _arrowsEnable;
 		[] call _displayItemIcon;
 		[] call _displayItemName;
 		[] call _displayItemDescription;
-		[] call _showAllIDCs;
+		//[] call _showAllIDCs;
 		//[] call _arrowsEnable;
 		//[] call _highlightGearSlots;
 	};
@@ -535,7 +529,7 @@ switch _event do {
 	};
 
 	case "onFocus": {
-		[] call _weaponsLBSetFocus;
+		//[] call _weaponsLBSetFocus;
 		//[] call _arrowsEnable;
 	};
 
@@ -553,21 +547,17 @@ switch _event do {
 	};
 
 	case "onKillFocus": {
-		[] call _weaponsLBSetFocus;
+		//[] call _weaponsLBSetFocus;
 	};
 
-	default {
-
-	};
+	default {};
 };
 
 /* Filter removed, moving to engine */
-if (isNil "_doFilter") then {_doFilter = false;};
 if _doFilter then {
 	(_filterSets select IGUI_GEAR_activeFilter) call _setFilterGlobals;
 	//[] call _filterItems;
 	//[] call _setFilterIcon;
 };
 
-_output;
-false;
+_output

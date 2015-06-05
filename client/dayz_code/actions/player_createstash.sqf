@@ -27,7 +27,7 @@ _stashname = getText (configFile >> "CfgVehicles" >> _stashtype >> "displayName"
 // Items are missing
 if ((!(_consume IN magazines player))) exitWith {
 	r_action_count = 0;
-	cutText [format[(localize "str_player_31_stash"),_consumetext] , "PLAIN DOWN"];
+	cutText [format [localize "str_player_31_stash",_consumetext] , "PLAIN DOWN"];
 };
 
 _location = player modeltoworld [0,2.5,0];
@@ -57,19 +57,18 @@ if ((count _worldspace) == 2) then {
 	//place tent (local)
 	_stash = createVehicle [_stashtype, _location, [], 0, "CAN_COLLIDE"];
 	_stash setdir _dir;
-	_stash setpos _location;
+	_stash setposATL _location;
 	player reveal _stash;
-	_location = getPosATL _stash;
 	
 	_stash setVariable ["characterID",dayz_characterID,true];
 	
-	PVDZ_obj_Publish = [dayz_characterID,_stash,[_dir,_location],_stashtype];
-
+	PVDZ_obj_Publish = [dayz_characterID,_stash,[_dir,_location],[]];
 	publicVariableServer "PVDZ_obj_Publish";
+    diag_log [diag_ticktime, __FILE__, "New Networked object, request to save to hive. PVDZ_obj_Publish:", PVDZ_obj_Publish];
 
 	r_action_count = 0;
-	cutText [format[(localize "str_success_stash_pitch"),_stashname], "PLAIN DOWN"];
+	cutText [format [localize "str_success_stash_pitch",_stashname], "PLAIN DOWN"];
 } else {
 	r_action_count = 0;
-	cutText [format[(localize "str_fail_stash_pitch"),_stashname], "PLAIN DOWN"];
+	cutText [format [localize "str_fail_stash_pitch",_stashname], "PLAIN DOWN"];
 };

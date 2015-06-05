@@ -1,26 +1,27 @@
+
 private ["_WaterHoleArray","_ShuffleArray"];
 
 _WaterHoleArray = [
-	"\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\BlackLake.sqf",
-	"\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\Gvozdno.sqf",
-	"\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\Gvozdno.sqf",
-	"\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\Kabanino.sqf",
-	"\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\Kopyto.sqf",
-	"\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\Mogilevka.sqf",
-	"\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\Nadezdinho.sqf",
-	"\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\NorthNadezdinho.sqf",
-	"\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\NorthPusta.sqf",
-	"\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\NorthTopolka.sqf",
-	"\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\Novy.sqf",
-	"\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\PobedaDam.sqf",
-	"\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\Pogorevka.sqf",
-	"\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\Polana.sqf",
-	"\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\Prud.sqf",
-	"\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\Sosnovy.sqf",
-	"\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\Stary.sqf",
-	"\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\Topolka.sqf",
-	"\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\Vysota.sqf",
-	"\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\WillowLake.sqf"
+	"BlackLake",
+	"Gvozdno",
+	"Gvozdno",
+	"Kabanino",
+	"Kopyto",
+	"Mogilevka",
+	"Nadezdinho",
+	"NorthNadezdinho",
+	"NorthPusta",
+	"NorthTopolka",
+	"Novy",
+	"PobedaDam",
+	"Pogorevka",
+	"Polana",
+	"Prud",
+	"Sosnovy",
+	"Stary",
+	"Topolka",
+	"Vysota",
+	"WillowLake"
 ];
 
 _ShuffleArray = {
@@ -43,15 +44,16 @@ _infectedWaterHoles = _WaterHoleArray call _ShuffleArray;
 _i = 0;
 _t = 0;
 _activeArray = [];
-
+//diag_log [ diag_tickTime, __FILE__, "Sp4wing infectious waterholes..."];
 {
 	if ((random 1) < 0.5) then {
-		[] execVM _x;
+		call compile preprocessFileLineNumbers ("\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\"+_x+".sqf");
 		_activeArray set [count _activeArray, _x]; // set  
 		_i = _i + 1;
 	};
 	_t = _t + 1;
 	sleep 0.01;
 }count _infectedWaterHoles;
+//diag_log [ diag_tickTime, __FILE__, "Infectious waterholes Max,Spawned,Active:",_t,_i,_activeArray];
 
-diag_log format["Max: %1, Spawned: %2, Active: %3",_t,_i,_activeArray];
+

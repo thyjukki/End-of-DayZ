@@ -41,10 +41,6 @@ switch true do {
 		_rnd = 8;
 		_move = "ZombieStandingAttack" + str(_rnd);
 	};
-	case (((_speed >= 5) or (_speed <= -5)) and (_distance < 2.3)) : {
-		_rnd = 8;
-		_move = "ZombieStandingAttack" + str(_rnd);
-	};
 	default {
 		// attack moves depends on the distance between player and Z
 		// we compute the distance in 10cm slots.
@@ -107,7 +103,7 @@ if (((diag_tickTime - _lastDodge) == 0) or ((diag_tickTime - _lastDodge) > 10)) 
 
 
 if (_playerDodged) exitwith { 
-	systemChat ("That was close!");
+	//systemChat ("That was close!");
 	_lastDodge = _unit setVariable ["lastDodge", diag_tickTime];
 };
 

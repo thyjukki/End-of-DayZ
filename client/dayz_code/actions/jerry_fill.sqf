@@ -71,5 +71,5 @@ if (("ItemJerrycanEmpty" in magazines player) or ("ItemFuelcanEmpty" in magazine
 		cutText [format[(localize "str_player_09"),_qty], "PLAIN DOWN"];
 	};
 } else {
-	cutText [(localize "str_player_10") , "PLAIN DOWN"];
+	cutText [localize "str_player_10", "PLAIN DOWN"];
 };

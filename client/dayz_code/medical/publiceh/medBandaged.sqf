@@ -7,7 +7,6 @@ _medic = _array select 1;
 
 if ((_unit == player) or (vehicle player != player)) then {
 	r_player_injured = false;
-	"dynamicBlur" ppEffectAdjust [0]; "dynamicBlur" ppEffectCommit 5;
 	r_player_handler = false;
 
 	if (r_player_blood == r_player_bloodTotal) then {

@@ -17,7 +17,7 @@ if (r_action_count != 1) exitWith { cutText [localize "str_player_actionslimit",
 // item is missing or tools are missing
 if ((!(_item IN magazines player))) exitWith {
 	r_action_count = 0;
-	cutText [format[(localize "str_player_31"),_text,(localize "str_player_31_pitch")] , "PLAIN DOWN"];
+	cutText [format [localize "str_player_31",_text,localize "str_player_31_pitch"] , "PLAIN DOWN"];
 };
 
 _booleans = []; //testonLadder, testSea, testPond, testBuilding, testSlope, testDistance

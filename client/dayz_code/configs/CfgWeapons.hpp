@@ -18,7 +18,6 @@ class CfgWeapons {
 		}; 
 	};
 	class PistolCore;
-    class ItemRadio;
 	class Pistol;
 	class GrenadeLauncher;
 	//class M107_DZ;
@@ -27,6 +26,30 @@ class CfgWeapons {
 	class SVD;
 	class SVD_CAMO;
 	class M14_EP1;
+	class AK_BASE;
+	class AK_47_M: AK_BASE
+	{
+		magazines[]=
+		{
+			"30Rnd_762x39_AK47",
+			"30Rnd_762x39_AK47_SD",
+			"30Rnd_762x39_AK47_hp",
+			"30Rnd_762x39_AK47_tracer",
+			"30Rnd_762x39_AK47_rubber",
+			"30Rnd_762x39_AK47_bt",
+			"RH_75Rnd_762x39_mag",
+			"RH_75Rnd_762x39_mag_SD",
+			"RH_75Rnd_762x39_mag_hp",
+			"RH_75Rnd_762x39_mag_tracer",
+			"RH_75Rnd_762x39_mag_rubber",
+			"RH_75Rnd_762x39_mag_bt",
+			"vil_40Rnd_762x39_AK47",
+			"vil_40Rnd_762x39_AK47_hp",
+			"vil_40Rnd_762x39_AK47_tracer",
+			"vil_40Rnd_762x39_AK47_rubber",
+			"vil_40Rnd_762x39_AK47_bt",
+		};
+	};
 	
 	#include "CfgWeapons\Melee\MeleeMachete.hpp"
 	#include "CfgWeapons\Melee\ItemMachete.hpp"
@@ -50,33 +73,9 @@ class CfgWeapons {
 	#include "CfgWeapons\Item\ItemShovel.hpp"
 	#include "CfgWeapons\Item\ItemFishingPole.hpp"
 	//#include "CfgWeapons\Item\ItemMatchbox.hpp" Moved to equip
-	
-	//Pistols
-	#include "CfgWeapons\Weapon\Pistol\M9.hpp"
-	#include "CfgWeapons\Weapon\Pistol\M9SD.hpp"
-	#include "CfgWeapons\Weapon\Pistol\G17.hpp"
-	#include "CfgWeapons\Weapon\Pistol\M1911.hpp"
-	#include "CfgWeapons\Weapon\Pistol\Makarov.hpp"
-	#include "CfgWeapons\Weapon\Pistol\MakarovSD.hpp"
-	#include "CfgWeapons\Weapon\Pistol\PDW.hpp"
-	#include "CfgWeapons\Weapon\Pistol\Revolver.hpp"
 	//AR
 	class M16_base;
-	#include "CfgWeapons\Weapon\AR\M16A2.hpp"
-	
-	#include "CfgWeapons\Weapon\AR\M16A2GL.hpp"
-	#include "CfgWeapons\Weapon\AR\M16A4.hpp"
-	#include "CfgWeapons\Weapon\AR\M16A4ACG.hpp"
-	#include "CfgWeapons\Weapon\AR\M16A4GL.hpp"
-	#include "CfgWeapons\Weapon\AR\M16A4ACGGL.hpp"
-	#include "CfgWeapons\Weapon\AR\FNFAL.hpp"
-	
-	//Sniper
-	#include "CfgWeapons\Weapon\Sniper\M107.hpp"
-	#include "CfgWeapons\Weapon\Sniper\DMR_DZ.hpp"
-	//#include "CfgWeapons\Weapon\M14_DZ.hpp"
-	#include "CfgWeapons\Weapon\Sniper\SVD_DZ.hpp"
-	#include "CfgWeapons\Weapon\Sniper\SVD_CAMO_DZ.hpp"
+	#include "CfgWeapons\Weapon\AR\sa58.hpp"
 	
 
 	class ItemFlashlightEmpty : ItemCore {
@@ -113,17 +112,5 @@ class CfgWeapons {
 				script = "spawn player_drinkWater;";
 			};
 		};
-	};
-    class ItemRadioRP : ItemRadio {
-		count = 1;
-		displayName = "Radio";
-		descriptionShort = "A Radio which can be used for both short and long range communication.";
-		picture = "\ca\ui\data\gear_picture_radio_ca.paa";
-		class ItemActions {
-			class BreakRadio {
-				text = "Break Radio";
-				script = "spawn player_breakradio;";
-			};
-		}; 
 	};
 };

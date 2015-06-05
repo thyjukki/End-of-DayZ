@@ -49,7 +49,7 @@ if (_isMan or _isAnimal or _isZombie) exitWith { cutText [localize "str_siphon_n
 			};
 
 			if (_newFuel > 0) then {
-				cutText [format[localize "str_siphon_preparing",_canTypeEmpty], "PLAIN DOWN"];
+				cutText [format [localize "str_siphon_preparing",_canTypeEmpty], "PLAIN DOWN"];
 				_finished = false;
 				
 				// alert zombies
@@ -145,7 +145,7 @@ if (_isMan or _isAnimal or _isZombie) exitWith { cutText [localize "str_siphon_n
 							// Added Nutrition-Factor for work
 							["Working",0,[20,40,15,0]] call dayz_NutritionSystem;
 					
-							cutText [format[localize "str_siphon_drained",_nameText,_canSize], "PLAIN DOWN"];
+							cutText [format [localize "str_siphon_drained",_nameText,_canSize], "PLAIN DOWN"];
 	
 							call fnc_usec_medic_removeActions;
 							r_action = false;
@@ -155,7 +155,7 @@ if (_isMan or _isAnimal or _isZombie) exitWith { cutText [localize "str_siphon_n
 							_abort = true;
 						};					
 					} else {
-						cutText [format[localize "str_siphon_notenough",_nameText], "PLAIN DOWN"];
+						cutText [format [localize "str_siphon_notenough",_nameText], "PLAIN DOWN"];
 						_abort = true;
 					};						
 				} else {
@@ -163,7 +163,7 @@ if (_isMan or _isAnimal or _isZombie) exitWith { cutText [localize "str_siphon_n
 					_abort = true;
 				};			
 			} else {
-				cutText [format[localize "str_siphon_notenough",_nameText], "PLAIN DOWN"];
+				cutText [format [localize "str_siphon_notenough",_nameText], "PLAIN DOWN"];
 				_abort = true;
 			};
 		};

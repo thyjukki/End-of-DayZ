@@ -9,6 +9,7 @@
 #define ReadOnly			2
 #define ReadOnlyVerified	3
 #define EAST 				0 // (Russian)
+
 class CfgPatches {
 	class dayzend_code {
 		units[] = {};
@@ -23,10 +24,10 @@ class CfgMods {
 		dir = "DayZ";
 		name = "EndOfDayZ";
 		picture = "z\addons\dayz_code\gui\mod.paa";
-		hidePicture = 0;  
+		hidePicture = 0;
 		hideName = 0;
 		action = "http://endofdayz.org/mybb/index.php";
-		version = "EndOfDayZ 1.0";
+		version = "EndOfDayZ 1.1";
 		hiveVersion = 0.96;
 		requiredAddons[] = {"Chernarus"};
 	};

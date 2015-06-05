@@ -5,14 +5,6 @@ _iClass = _this select 1;
 _iPos = _this select 2;
 _radius = _this select 3;
 _uniq = [];
-//_permaLoot = false;
-
-
-_iPosZ = _iPos select 2;
-if((isNil "_iPosZ") OR ( _iPosZ < 0)) then { _iPos = [_iPos select 0,_iPos select 1,0]; };
-
-
-//if(_iClass == "Unknown") exitwith {};
 
 switch (_iClass) do {
 	default {
@@ -108,6 +100,8 @@ switch (_iClass) do {
 if ((count _iPos) > 2) then {
 	_item setPosATL _iPos;
 };
+_item setPosATL _iPos; // createVehicle does a "setPos", i.e stacks the weaponholder above existing item on the object.
+sleep 0.01;
 
 //if (_permaLoot == true) then { _item setVariable ["permaLoot",true]; };
 

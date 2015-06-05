@@ -5,11 +5,11 @@ _isCardiac = _unit getVariable["USEC_isCardiac",false];
 
 sleep 1;
 if (_isDead) then {
-	cutText[localize "str_pulse_extremely_weak","PLAIN DOWN"];
+	cutText [localize "str_pulse_extremely_weak","PLAIN DOWN"];
 } else {
 	if (_isCardiac) then {
-		cutText[localize "str_pulse_weak","PLAIN DOWN"];
+		cutText [localize "str_pulse_weak","PLAIN DOWN"];
 	} else {
-		cutText[localize "str_pulse_strong","PLAIN DOWN"];
+		cutText [localize "str_pulse_strong","PLAIN DOWN"];
 	};
 };

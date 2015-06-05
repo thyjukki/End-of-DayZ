@@ -11,7 +11,7 @@
 		displayName = $STR_EQUIP_NAME_4;
 		model = "\dayz_equip\models\knife_gear.p3d";
 		picture = "\dayz_equip\textures\equip_knife_ca.paa";
-		descriptionShort = "Your Knife appears to be too blunt. (Maybe 5 uses Left)";
+		descriptionShort = $STR_EQUIP_DESC_4_A;
 		sharpnessRemaining = "ItemKnife4";
 	};
 	class ItemKnife4 : ItemCore {
@@ -19,7 +19,7 @@
 		displayName = $STR_EQUIP_NAME_4;
 		model = "\dayz_equip\models\knife_gear.p3d";
 		picture = "\dayz_equip\textures\equip_knife_ca.paa";
-		descriptionShort = "Your Knife appears to be too blunt. (Maybe 4 uses Left)";
+		descriptionShort = $STR_EQUIP_DESC_4_B;
 		sharpnessRemaining = "ItemKnife3";
 	};
 	class ItemKnife3 : ItemCore {
@@ -27,7 +27,7 @@
 		displayName = $STR_EQUIP_NAME_4;
 		model = "\dayz_equip\models\knife_gear.p3d";
 		picture = "\dayz_equip\textures\equip_knife_ca.paa";
-		descriptionShort = "Your Knife appears to be too blunt. (Maybe 3 uses Left)";
+		descriptionShort = $STR_EQUIP_DESC_4_C;
 		sharpnessRemaining = "ItemKnife2";
 	};
 	class ItemKnife2 : ItemCore {
@@ -35,7 +35,7 @@
 		displayName = $STR_EQUIP_NAME_4;
 		model = "\dayz_equip\models\knife_gear.p3d";
 		picture = "\dayz_equip\textures\equip_knife_ca.paa";
-		descriptionShort = "Your Knife appears to be too blunt. (Maybe 2 uses Left)";
+		descriptionShort = $STR_EQUIP_DESC_4_D;
 		sharpnessRemaining = "ItemKnife1";
 	};
 	class ItemKnife1 : ItemCore {
@@ -43,7 +43,7 @@
 		displayName = $STR_EQUIP_NAME_4;
 		model = "\dayz_equip\models\knife_gear.p3d";
 		picture = "\dayz_equip\textures\equip_knife_ca.paa";
-		descriptionShort = "Your Knife appears to be too blunt. (Maybe 1 uses Left)";
+		descriptionShort = $STR_EQUIP_DESC_4_E;
 		sharpnessRemaining = "ItemKnifeBlunt";
 	};
 	class ItemKnifeBlunt : ItemCore {

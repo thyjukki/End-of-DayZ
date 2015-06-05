@@ -1,158 +1,157 @@
-private ["_isMedic"];
+// (c) facoptere@gmail.com  for DayZ mod.
+private ["_cursorTarget","_onLadder","_isWater","_alreadyRemoving","_characterID","_objectID","_objectUID","_ownerArray","_dir",
+    "_realObjectStillThere","_upgrade","_entry","_parent","_requiredParts","_requiredTools","_model","_toolsOK","_displayname",
+    "_whpos","_i","_wh","_object"];
+
+//if (!isNil "faco_object_disassembly") exitWith { _this call faco_object_disassembly;};
 
 _cursorTarget = _this select 3;
+// ArmaA2 bug workaround: sometimes the object is null
+if ((isNil "_cursorTarget") or {(isNull _cursorTarget)}) then {
+    _cursorTarget = nearestObjects [ player modelToWorld [0,1.5,0] , ["DZ_buildables","BuiltItems"], 1.5];
+    _cursorTarget = if (count _cursorTarget == 0) then { objNull } else { _cursorTarget select 0 };
+};
+
+if(isNull _cursorTarget) exitWith {
+    cutText [localize "str_disassembleNoOption", "PLAIN DOWN"];
+};
 
 //Remove action Menu
 player removeAction s_player_disassembly;
 s_player_disassembly = -1;
 
-//Item
-_item = typeof _cursorTarget;
-//diag_log (str(_item));
-
-//Get tools needed
-_classname = configFile >> "CfgVehicles" >> _item;
-_displayname = getText (_classname >> "displayname");
-_requiredTools = getArray (_classname >> "Disassembly" >> "requiredTools");
-//diag_log (str(_requiredTools));
-
-//get parts needed
-_requiredParts = getArray (_classname >> "Disassembly" >> "requiredParts"); 
-//diag_log (str(_requiredParts));
-
-//get item to create
-_create = getText (_classname >> "Disassembly" >> "create");
-//diag_log (str(_create));
-
-//Display name of upgrade part
-_upgradeConfig = configFile >> "CfgVehicles" >> _create;
-//diag_log (str(_upgradeConfig));
-
-
 //Normal blocked stuff
-_onLadder =		(getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
-_isWater = 		(surfaceIsWater (getPosATL player)) or dayz_isSwimming;
-
-_upgradeParts = [];
-_startUpgrade = true;
-
+_onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
+_isWater = (surfaceIsWater (getPosATL player)) or dayz_isSwimming;
 if(_isWater or _onLadder) exitWith {
-	//cutText ["unable to upgrade at this time", "PLAIN DOWN"];
-	systemchat["unable to disassemble at this time"];
+    //cutText ["unable to upgrade at this time", "PLAIN DOWN"];
+    cutText [localize "str_disassembleInProgress", "PLAIN DOWN"];
 };
 
-// lets check player has requiredTools for upgrade
-{
-	if (!(_x IN items player)) exitWith {
-		//systemchat("Missing tools for upgrade." +str());
-		systemChat format["Missing %1 to disassemble %2.",_x,_displayname];
-		_startUpgrade = false;
-	};
-} count _requiredTools;
+_alreadyRemoving = _cursorTarget getVariable["alreadyRemoving",0];
+if (_alreadyRemoving == 1) exitWith {cutText [localize "str_disassembleInProgress" , "PLAIN DOWN"]};
+_cursorTarget setVariable["alreadyRemoving",1];
+_characterID = _cursorTarget getVariable ["characterID","0"];
+_objectID = _cursorTarget getVariable ["ObjectID","0"];
+_objectUID = _cursorTarget getVariable ["ObjectUID","0"];
+_ownerArray = _cursorTarget getVariable ["ownerArray",[]];
+_dir = round getDir _cursorTarget;
+_vector = [vectorDir _cursorTarget,vectorUp _cursorTarget];
+_pos = getposATL _cursorTarget;
+if (((_vector select 1) select 2) - 1 > 0.001) then { _pos set [2,0]; };
 
-// lets check player has requiredParts for upgrade
-{
-	if (_x == []) exitwith {};
-	
-	if (!(_x IN magazines player)) exitWith {
-		systemChat format["Missing %1 to disassemble %2.",_x,_displayname];
-	};
-	if (_x IN magazines player) then {
-		_upgradeParts set [count _upgradeParts, _x];
-	};
-} count _requiredParts;
+_realObjectStillThere = true;
+_upgrade = typeOf _cursorTarget;
+_entry = configFile >> "CfgVehicles" >> _upgrade;
+r_interrupt = false;
+for "_i" from 1 to 20 do {
+    _parent = inheritsFrom _entry;
+    _requiredParts = [] + (getArray (_parent >> "Upgrade" >> "requiredParts"));
+    _requiredTools = [] + (getArray (_parent >> "Upgrade" >> "requiredTools"));
+    _model = getText (_parent >> "model"); // model of parent
+    _displayname = getText (_entry >> "displayName"); // name of current
 
-if ((_startUpgrade) AND (isClass(_upgradeConfig))) then {
-	//play animation
-	player playActionNow "Medic";
-	_dis=20;
-	_sfx = "tentpack";
-	[player,_sfx,0,false,_dis] call dayz_zombieSpeak;
-	[player,_dis,true,(getPosATL player)] call player_alertZombies;
-	
-	/*
-	//Not Finished
-	//Animation Loop
-	r_doLoop = true;
-	_started = false;
-	_finished = false;
-	while {r_doLoop} do {
-		_animState = animationState player;
-		_isMedic = ["medic",_animState] call fnc_inString;
-		if (_isMedic) then {
-			_started = true;
-		};
-		if (_started and _isMedic) then {
-			r_doLoop = false;
-			_finished = true;
-		};
-		
-		if (!_isMedic) then {
-			player playActionNow "Medic";
-		};
-		
-		if (r_interrupt) then {
-			r_doLoop = false;
-		};
-		sleep 0.1;
-	};
-	
-	if (r_interrupt) then {
-		r_interrupt = false;
-		player switchMove "";
-		player playActionNow "stop";
-	};
-	*/
+    // check the tools needed
+    _toolsOK = true;
+    {
+        if (!(_x IN items player)) exitWith { _toolsOK = false; };
+    } count _requiredTools;
+    if (!_toolsOK) exitWith {
+        cutText [format [localize "str_disassembleMissingTool",getText (configFile >> "CfgWeapons" >> _x >> "displayName"),_displayname], "PLAIN DOWN"];//["Missing %1 to disassemble %2."
+    };
 
-	// Added Nutrition-Factor for work
-	["Working",0,[20,40,15,0]] call dayz_NutritionSystem;
-	
-	//Upgrade
-	_alreadyRemoving = _cursorTarget getVariable["alreadyRemoving",0];
+    if (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "disableWeapons") == 0) then {
+        player playActionNow "Medic";
+        _dis=20;
+        [player,"tentpack",0,false,20] call dayz_zombieSpeak;
+        [player,_dis,true,(getPosATL player)] call player_alertZombies;
+        //wait animation starts and block
+        waitUntil {getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "disableWeapons") == 1};
+    };
 
-	if (_alreadyRemoving == 1) exitWith {cutText [format[("Object is already disassembling")] , "PLAIN DOWN"]};
-	
-	_cursorTarget setVariable["alreadyRemoving",1];
-	
-	//Get location and direction of old item
-	_pos = getposATL _cursorTarget;
-	_dir = getDir _cursorTarget;
-	
-	//get ownerID from old tent.
-	_ownerID = _cursorTarget getVariable ["characterID","0"];
-	_objectID = _cursorTarget getVariable ["ObjectID","0"];
-	_objectUID = _cursorTarget getVariable ["ObjectUID","0"];
-	
-	//Remove object
-	PVDZ_obj_Destroy = [_objectID,_objectUID];
-	publicVariableServer "PVDZ_obj_Destroy";
-	
-	if (isServer) then {
-		PVDZ_obj_Destroy call server_deleteObj;
-	};
-	deleteVehicle _cursorTarget;
-	
-	player playActionNow "Medic";
-	while {1 == 1} do {
-		_animState = animationState player;
-		_isMedic = ["medic",_animState] call fnc_inString;
 
-		if (_isMedic) exitwith {};
-	};
-	
-	waituntil {_isMedic};
-	sleep 3;
-	
-	//create new object on debug
-	_object = createVehicle [_create, [0,0,0], [], 0, "NONE"];
-	//set direction
-	_object setdir _dir;
-	//set pos to old location
-	_object setPosATL _pos;
-	
-	player reveal _object;
-	
-	cutText ["Disassemble done.", "PLAIN DOWN"];
-} else {
-	cutText ["Object has no disassemble option.", "PLAIN DOWN"];
+    // remove object
+    deleteVehicle _cursorTarget;
+    _cursorTarget = objNull;
+    if (_realObjectStillThere) then { // send to server the destroy request
+        _realObjectStillThere = false;
+        PVDZ_obj_Destroy = [_objectID,_objectUID];
+        publicVariableServer "PVDZ_obj_Destroy";
+        diag_log [diag_ticktime, __FILE__, "Networked object, request to destroy", PVDZ_obj_Destroy];
+    };
+
+    ["Working",0,[20,40,15,0]] call dayz_NutritionSystem;
+
+    // check whether we reached the base class, for which no P3D is defined
+    if (count _requiredParts == 0) exitwith {
+        diag_log [diag_ticktime, __FILE__, "Dismantle terminated, last building deleted is:", _upgrade];
+    };
+
+    // create a weaponholder with dismissed parts
+    _whpos=player modelToWorld [2 * sin(30*_i), 2 * cos(30*_i), 0];
+    _whpos set [2,0];
+    _wh = createVehicle ["WeaponHolder", _whpos, [], 0, "CAN_COLLIDE"];
+    _wh setDir (30*_i);
+    _wh setPosATL _whpos;
+    {
+        if (isClass (configFile >> "CfgMagazines" >> _x))
+        then { _wh addMagazineCargoGlobal [_x, 1]; }
+        else { _wh addWeaponCargoGlobal [_x, 1]; };
+    } forEach _requiredParts;
+    diag_log [diag_ticktime, __FILE__, "Pile created with:", _requiredParts];
+
+    // create the parent object locally
+    _upgrade = configName _parent;
+    _cursorTarget = _upgrade createVehicleLocal getMarkerpos "respawn_west";
+    _cursorTarget setVectorDirAndUp _vector;
+    _cursorTarget setPosATL _pos;
+
+    sleep 1.5;
+
+    if (r_interrupt) exitwith { 
+        diag_log [diag_ticktime, __FILE__, "Operation interrupted, last building deleted is:", _upgrade];           
+    };
+
+    _entry = _parent;
 };
+
+// wait animation ends
+waitUntil {r_interrupt or (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "disableWeapons") == 0)};
+if (r_interrupt and vehicle player == player) then {
+    [objNull, player, rSwitchMove,""] call RE;
+    player playActionNow "stop";
+    r_interrupt = false;
+};
+
+if (!_realObjectStillThere) then {
+    // current object is a local one, replace it by a networked one, with all attributes
+    // and request a HIVE save
+    if (!isNull _cursorTarget) then {
+        _upgrade = typeOf _cursorTarget;
+        deleteVehicle _cursorTarget;
+        _object = createVehicle [_upgrade, getMarkerpos "respawn_west", [], 0, "CAN_COLLIDE"];
+        if (_object isKindOf "DZ_buildables") then { _object allowDamage false; };
+        _object setVectorDirAndUp _vector;
+        _object setPosATL _pos;
+        _puid = getPlayerUID player;
+        if (!(_puid in _ownerArray)) then {
+            _ownerArray set [ count _ownerArray, _puid ];
+        };        
+        _object setVariable ["ownerArray",_ownerArray,true];
+        _variables = [[ "ownerArray", _ownerArray]];
+        _object setVariable ["characterID",_characterID,true];
+        PVDZ_obj_Publish = [dayz_characterID,_object,[_dir, _pos],_variables];
+        publicVariableServer "PVDZ_obj_Publish";
+        diag_log [diag_ticktime, __FILE__, "New Networked object, request to save to hive. PVDZ_obj_Publish:", PVDZ_obj_Publish];
+        /*
+        //Send maintenance info
+        PVDZ_veh_Save = [_object,"maintenance"];
+        publicVariableServer "PVDZ_veh_Save";*/
+        player reveal _object;
+    };
+};
+
+cutText [localize "str_disassembleDone", "PLAIN DOWN"];
+
+player setVariable["alreadyBuilding",0];
+

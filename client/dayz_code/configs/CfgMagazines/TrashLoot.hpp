@@ -37,8 +37,8 @@
 	class ItemTrashPaper : CA_Magazine {
 		scope = public;
 		count = 1;
-		displayName = "Sheet of Paper";
-		descriptionShort = "Sheet of paper";
+		displayName = $STR_name_ItemTrashPaper;//"Sheet of Paper";
+		descriptionShort = $STR_desc_ItemTrashPaper;//"Sheet of paper";
 		model = "z\addons\dayz_communityassets\models\paper_sheet_clean_note.p3d";
 		picture = "\z\addons\dayz_communityassets\pictures\equip_paper_sheet_note_ca.paa";
 		type = 256;
@@ -46,8 +46,8 @@
 	class ItemTrashPaperMusic : CA_Magazine {
 		scope = public;
 		count = 1;
-		displayName = "Sheet Music";
-		descriptionShort = "Sheet Music";
+		displayName = $STR_name_ItemTrashPaperMusic;//"Sheet Music";
+		descriptionShort = $STR_desc_ItemTrashPaperMusic;//"Sheet Music";
 		model = "z\addons\dayz_communityassets\models\paper_sheet_musical.p3d";
 		picture = "\z\addons\dayz_communityassets\pictures\equip_paper_sheet_musical_ca.paa";
 		type = 256;

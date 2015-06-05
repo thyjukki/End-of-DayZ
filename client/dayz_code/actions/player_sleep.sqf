@@ -64,7 +64,7 @@ while {r_doLoop} do {
 					
 					_timer = diag_tickTime;
 					
-					cutText [format["Blood regenerated: %1, Infected: %2",_blood,r_player_infected], "PLAIN DOWN"];
+					cutText [format [localize "str_sleepStats",_blood,r_player_infected], "PLAIN DOWN"];
 				};
 				
 			};

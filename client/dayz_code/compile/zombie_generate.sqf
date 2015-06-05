@@ -180,7 +180,6 @@ if ((_maxlocalspawned < _maxControlledZombies) and (dayz_CurrentNearByZombies < 
 
 			// lets create an agent
 			_type = _unitTypes call BIS_fnc_selectRandom;
-
 			_radius = 0;
 			_method = "NONE";
 			if (_doLoiter) then {

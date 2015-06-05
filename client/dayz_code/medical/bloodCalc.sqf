@@ -7,68 +7,37 @@ O		A		B		AB
 39%		32%		23%		6%
 
 We use realistic RH distribution per blood type as well
-Ex. CID = 13... _bt_calc = 31... Blood Type = A
+Ex. CID = 13... _randType = 31... Blood Type = A
 */
-private ["_CID_array","_ranVal","_length","_rh_val","_bt_val","_CID_first","_CID","_CID_select_1","_CID_select_2","_CID_1_String","_CID_2_String","_CID_1","_CID_2","_bt_calc"];
+private ["_playerObj","_randRh","_randType","_bt_val","_rh_val"];
 
-_CID = _this select 0;
-//diag_log format["PLAYER BLOOD CALC: Character ID == %1", _CID];
-_CID_array = toArray _CID;
-_length = count _CID_array;
-_CID_first = _CID_array select 0;
+_playerObj = _this;
 
-if (_length < 2) then {
-	_CID_array = toArray str(_CID_first);
-	_length = count _CID_array;
-};
-
-_CID_select_1 = [_CID_array select (_length - 1)];
-_CID_select_2 = [_CID_array select (_length - 2)];
-_CID_1_String = toString _CID_select_1;
-_CID_2_String = toString _CID_select_2;
-_CID_1 = parseNumber _CID_1_String;
-_CID_2 = parseNumber _CID_2_String;
-
-_ranVal = floor(random 100);
-_bt_calc = (_CID_1 * 10) + _CID_2;
-
+_randRh = random 100;
+_randType = random 100;
+_bt_val = nil;
+_rh_val = nil;
 switch true do {
-	case (_bt_calc >= 61) : {
+	case (_randType >= 61) : {
 		_bt_val = "O";
-		if (_ranVal >= 11) then {
-			_rh_val = true; //89% of O type population is RH +
-		} else {
-			_rh_val = false;
-		};
+		_rh_val = if (_randRh >= 89) then { false } else { true };
 	};
-	case (_bt_calc >= 29) : {
+	case (_randType >= 29) : {
 		_bt_val = "A";
-		if (_ranVal >= 11) then {
-			_rh_val = true; //89% of A type population is RH +
-		} else {
-			_rh_val = false;
-		};
+		_rh_val = if (_randRh >= 89) then { false } else { true };
 	};
-	case (_bt_calc >= 6) : {
+	case (_randType >= 6) : {
 		_bt_val = "B";
-		if (_ranVal >= 6) then {
-			_rh_val = true; //94% of B type population is RH +
-		} else {
-			_rh_val = false;
-		};
+		_rh_val = if (_randRh >= 94) then { false } else { true };
 	};
-	case (_bt_calc >= 0) : {
+	default {
 		_bt_val = "AB";
-		if (_ranVal >= 9) then {
-			_rh_val = true; //91% of AB type population is RH +
-		} else {
-			_rh_val = false;
-		};
+		_rh_val = if (_randRh >= 91) then { false } else { true };
 	};
 };
-//diag_log format["PLAYER BLOOD CALC: Blood Type == %1 Rh Type == %2", _bt_val, _rh_val];
+//diag_log ["_playerObj BLOOD CALC: Blood Type,Rh Type=", _bt_val, _rh_val];
 
 //RH type
-player setVariable ["rh_factor", _rh_val, true];
+_playerObj setVariable ["rh_factor", _rh_val, true];
 //blood type
-player setVariable ["blood_type", _bt_val, true];
+_playerObj setVariable ["blood_type", _bt_val, true];

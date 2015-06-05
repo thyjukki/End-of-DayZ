@@ -98,12 +98,12 @@ class RscDisplayGetReady;
 class RscDisplayClientGetReady : RscDisplayGetReady
 {
 	// could probably add a check in the spawn but couldn't test with multiple players
-	onload = "private ['_dummy']; _dummy = [_this,'onload'] call compile preprocessfile '\ca\ui\scripts\server_interface.sqf'; _this spawn { while { !isNull (findDisplay 53) } do { ctrlActivate ((_this select 0) displayCtrl 1); sleep 0.1; }; };";
+	onload = "[_this,'onload'] call compile preprocessfile '\ca\ui\scripts\server_interface.sqf'; _this spawn { while { !isNull (findDisplay 53) } do { ctrlActivate ((_this select 0) displayCtrl 1); sleep 0.1; }; };"; /*diag_log[diag_tickTime,'RscDisplayClientGetReady'];*/
 };
 
 class RscDisplayDebriefing: RscStandardDisplay
 {
-	onLoad = "ctrlActivate ((_this select 0) displayCtrl 2)";
+	onLoad = "ctrlActivate ((_this select 0) displayCtrl 2);with uiNameSpace do {RscDMSLoad=nil;};"; /*diag_log[diag_tickTime,'RscDisplayDebriefing'];*/
 	class controls
 	{
 		delete Debriefing_MissionTitle;
@@ -131,9 +131,151 @@ class RscDisplayDebriefing: RscStandardDisplay
 	};
 };
 
+class RscDisplayMultiplayerSetup: RscStandardDisplay
+{
+	onload = "with uiNameSpace do{RscDisplayMultiplayerSetup=_this select 0};";
+	onMouseHolding = "with uiNameSpace do {" \n
+		"switch (1==1) do {" \n
+		"	case(isNil 'RscDMSLoad'):{RscDMSLoad=diag_tickTime};" \n
+		"	case(RscDMSLoad==-1):{};" \n
+		"	case(diag_tickTime-RscDMSLoad>5):{ctrlActivate((_this select 0)displayCtrl 1);RscDMSLoad=-1;};" \n /*diag_log[diag_tickTime,_this,RscDMSLoad,'onMouseHolding/autosubmit']*/
+		"};};";
+	onButtonClick = "with uiNameSpace do{RscDMSLoad=-1};false";
+	onButtonDblClick = "with uiNameSpace do{RscDMSLoad=-1};false";
+	onKeyDown = "with uiNameSpace do{RscDMSLoad=-1};false";
+  
+	class controlsbackground
+	{
+		class dayz_black: RscText
+		{
+			idc=1017;
+			colorBackground[] = {0,0,0,1};
+			x = "SafeZoneX";
+			y = "SafeZoneY";
+			w = "SafeZoneW";
+			h = "SafeZoneH";
+		};
+		class MP_roles_TitleBorder: RscText
+		{
+			idc=1008;
+		};
+		class TextBack: RscText
+		{
+			idc=1009;
+		};
+		class TextBorder: RscText
+		{
+			idc=1010;
+		};
+		class SidesBack: RscText
+		{
+			idc=1011;
+			y = "(120/100) * SafeZoneH + SafeZoneY";
+		};
+		class SidesBorder: RscText
+		{
+			idc=1012;
+			y = "(120/100) * SafeZoneH + SafeZoneY";
+		};		
+		class ValueRolesBack: RscText
+		{
+			idc=1013;
+			y = "(120/100) * SafeZoneH + SafeZoneY";
+		};
+		class ValueRolesBorder: RscText
+		{
+			idc=1014;
+			y = "(120/100) * SafeZoneH + SafeZoneY";
+		};
+		class ValuePoolBack: RscText
+		{
+			idc=1015;
+			y = "(120/100) * SafeZoneH + SafeZoneY";
+		};
+		class ValuePoolBorder: RscText
+		{
+			idc=1016;
+			y = "(120/100) * SafeZoneH + SafeZoneY";
+		};
+	};
+	class controls
+	{ 
+		class TextIsland: RscText
+		{
+			idc = 1003;
+			y = "(109.5/100) * SafeZoneH + SafeZoneY"; //hide
+		};
+		class ValueIsland: RscText
+		{
+			idc = 102;
+			y = "(109.5/100) * SafeZoneH + SafeZoneY"; //hide
+		};
+		class TextSide: RscText
+		{
+			idc = 1005;
+			y = "(116.5/100) * SafeZoneH + SafeZoneY"; //hide
+		};
+		class TextRoles: RscText
+		{
+			idc = 1007; // new, idc was missed by BI
+			y = "(116.5/100) * SafeZoneH + SafeZoneY"; // hide
+		};
+		class CA_B_West: RscActiveText
+		{
+			idc = 104;
+			y = "(121/100) * SafeZoneH + SafeZoneY"; //hide
+		};
+		class CA_B_East: CA_B_West
+		{
+			idc = 105;
+			y = "(131/100) * SafeZoneH + SafeZoneY"; //hide
+		};
+		class CA_B_Guerrila: CA_B_West
+		{
+			idc = 106;
+			y = "(141/100) * SafeZoneH + SafeZoneY"; //hide
+		};
+		class CA_B_Civilian: CA_B_West
+		{
+			idc = 107;
+			y = "(151/100) * SafeZoneH + SafeZoneY"; //hide
+		};
+		class CA_ValueRoles: RscIGUIListBox
+		{
+			idc = 109;
+			style = 16;
+			y = "(120.5/100) * SafeZoneH + SafeZoneY"; //hide
+		};
+		class TextPool: RscText
+		{
+			idc = 1006;
+			x = "(2/100) * SafeZoneW + SafeZoneX"; // to left
+			w = "(96/100) * SafeZoneW"; //wide (was: 38/100)
+		};
+		class CA_ValuePool: RscIGUIListBox
+		{
+			idc = 114;
+			x = "(2/100) * SafeZoneW + SafeZoneX"; // to left
+			w = "(96/100) * SafeZoneW"; // wide
+		};
+	};
+};
+
+class RscPendingInvitation
+{
+	x = 0.955313 * safezoneW + safezoneX;
+	y = 0.45 * safezoneH + safezoneY;
+};
+
+class RscPendingInvitationInGame
+{
+	x = 0.955313 * safezoneW + safezoneX;
+	y = 0.46 * safezoneH + safezoneY;
+};
+
 class RscDisplayMissionFail: RscStandardDisplay
 {
-	onLoad = "ctrlActivate ((_this select 0) displayCtrl 2)";
+	onLoad = "ctrlActivate ((_this select 0) displayCtrl 2);"; /*diag_log[diag_tickTime,'RscDisplayMissionFail'];*/
 	class controls
 	{
 		delete Debriefing_MissionTitle;
@@ -167,8 +309,8 @@ class RscXListBox;
 class RscDisplayGameOptions
 {
 	//onLoad = "((_this select 0) displayCtrl 140) lbAdd 'Default';((_this select 0) displayCtrl 140) lbAdd 'Debug';((_this select 0) displayCtrl 140) lbAdd 'None';((_this select 0) displayCtrl 140) lbSetCurSel (uiNamespace getVariable ['DZ_displayUI', 0]);";
-	onUnload = "call ui_changeDisplay;";
-	class controls
+	onUnload = "call ui_changeDisplay;"; /*diag_log[diag_tickTime,'RscDisplayGameOptions'];*/
+	/*class controls
 	{
 		class CA_TextUIDisplay: CA_TextLanguage
 		{
@@ -184,7 +326,7 @@ class RscDisplayGameOptions
 			w = 0.3;
 			onLBSelChanged = "(uiNamespace setVariable ['DZ_displayUI', (_this select 1)]);";
 		};
-	};
+	};*/
 };
 class RscShortcutButton;
 class RscShortcutButtonMain;
@@ -213,7 +355,7 @@ class RscDisplayMain : RscStandardDisplay
 		class DAYZ_Version : CA_Version
 		{
 			idc = -1;
-			text = "@DayZEnd 0.5.1";
+			text = "@DayZMod 1.8.3-DEV.1";
 			y = "(SafeZoneH + SafeZoneY) - (1 - 0.95)";
 		};
 		delete CA_TitleMainMenu;
@@ -294,8 +436,8 @@ class RscDisplayMPInterrupt : RscStandardDisplay {
 	movingEnable = 0;
 	enableSimulation = 1;
 	//onLoad = "_dummy = ['Init', _this] execVM '\ca\ui\scripts\pauseLoadinit.sqf'; [(_this select 0)] execVM '\z\addons\dayz_code\compile\player_onPause.sqf';"; _respawn = (_this select 0) displayCtrl 1010); _respawn ctrlEnable false; _abort = (_this select 0) displayCtrl 104); _abort ctrlEnable false;
-	onLoad = "[] execVM '\z\addons\dayz_code\compile\player_onPause.sqf'; _dummy = ['Init', _this] execVM '\ca\ui\scripts\pauseLoadinit.sqf';";
-	onUnload = "private ['_dummy']; _dummy = ['Unload', _this] execVM '\ca\ui\scripts\pauseOnUnload.sqf';";
+	onLoad = "uiNamespace setVariable ['RscDisplayMPInterrupt', _this select 0];[] execVM '\z\addons\dayz_code\compile\player_onPause.sqf'; _dummy = ['Init', _this] execVM '\ca\ui\scripts\pauseLoadinit.sqf';"; /*diag_log[diag_tickTime,'RscDisplayMPInterrupt'];*/
+	onUnload = "uiNamespace setVariable ['RscDisplayMPInterrupt', nil];['Unload', _this] execVM '\ca\ui\scripts\pauseOnUnload.sqf';";
 
 	class controlsBackground {
 		class Mainback : RscPicture {
@@ -396,9 +538,9 @@ class RscDisplayMPInterrupt : RscStandardDisplay {
 		};
 	};
 };
-
+/*
 class DZ_ItemInteraction {
-	idd = 6901;
+	idd = 6999;
 	movingEnable = 0;
 	class controlsBackground {
 		// define controls here
@@ -411,6 +553,7 @@ class DZ_ItemInteraction {
 
 	};
 };
+*/
 
 class bloodTest
 {

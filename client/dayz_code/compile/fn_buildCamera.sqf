@@ -1,20 +1,26 @@
-if (isNil "Dayz_BuildCameraMode") then {
-	Dayz_BuildCameraMode = 0;
-};
-if (Dayz_BuildCameraMode == 0) then {
-	showCinemaBorder false;
-	cutText ["Build Camera Active.", "PLAIN DOWN"];
-	Dayz_BuildCamera = "camera" camCreate [0,0,0];
-	Dayz_BuildCamera cameraeffect ["Internal", "back"];
-	Dayz_BuildCamera camsettarget (player getVariable["BuildObject",player]);
-	Dayz_BuildCamera camsetrelpos [0,0,10];
-	Dayz_BuildCamera camSetDir 0;
-	Dayz_BuildCamera camcommit 0;
-	Dayz_BuildCameraMode = 1;
-} else {
-	cutText ["Build Camera Disabled.", "PLAIN DOWN"];
-	Dayz_BuildCamera cameraeffect ["terminate", "back"];
-	camdestroy Dayz_BuildCamera;
-	player switchCamera (player getVariable["BuildCamera","INTERNAL"]);
-	Dayz_BuildCameraMode = 0;
-};
+
+if (0 != count Dayz_constructionContext) then {
+    if (!(Dayz_constructionContext select 3)) then {
+        _ghost = Dayz_constructionContext select 0;
+        if (abs(([_ghost, player] call BIS_fnc_distance2D) - (1 + (sizeOf (typeOf _ghost)) * 0.5)) < 1) then {
+            showCinemaBorder false;
+            Dayz_BuildCamera = "camera" camCreate (player modeltoWorld [0,0,2]);
+            Dayz_BuildCamera cameraeffect ["External", "TOP"];
+            Dayz_BuildCamera camcommit 0;
+            Dayz_BuildCamera camsettarget _ghost;
+            Dayz_BuildCamera camsetFov 0.1;
+            Dayz_BuildCamera camsetrelpos [-1,0,60];
+            Dayz_BuildCamera camcommit 0;
+            Dayz_constructionContext set [3, true];
+            cutText [localize "str_buildCameraOn", "PLAIN DOWN"];
+        };
+    }
+    else {
+        Dayz_BuildCamera cameraeffect ["terminate", "TOP"];
+        player switchCamera (Dayz_constructionContext select 2);
+        camdestroy Dayz_BuildCamera;
+        Dayz_constructionContext set [3, false];
+        cutText [localize "str_buildCameraOff", "PLAIN DOWN"];
+    };
+    _handled = true; // used by keyboard.sqf
+};    

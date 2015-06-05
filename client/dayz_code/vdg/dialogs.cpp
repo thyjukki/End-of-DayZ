@@ -16,6 +16,50 @@ class RscStaticText {
 	text = "StaticText";
 };
 
+class RscButton {
+	idc = UNDEFINED_IDC;
+	type = CT_BUTTON;
+	style = ST_CENTER;
+	default = false;
+	font = FontM;
+	sizeEx = 0.03;
+	colorText[] = { 0.6, 0.5, 0, 1 };
+	colorFocused[] = { 0.4, 0.4, 0, 1 }; 
+	colorDisabled[] = { 0.2, 0.2, 0, 1 };
+	colorBackground[] = { 0.4, 0.4, 0, 0.8 };
+	colorBackgroundDisabled[] = {0.4, 0.4, 0, 0.9 };
+	colorBackgroundActive[] = { 0.4, 0.4, 0, 1 };
+	offsetX = 0.003;
+	offsetY = 0.003;
+	offsetPressedX = 0.002;
+	offsetPressedY = 0.002;
+	colorShadow[] = { 0, 0, 0, 0.5 };
+	colorBorder[] = { 0, 0, 0, 1 };
+	borderSize = 0;
+	soundEnter[] = { "", 0, 1 };  // no sound
+	soundPush[] = { "", 0.1, 1 };
+	soundClick[] = { "", 0, 1 };  // no sound
+	soundEscape[] = { "", 0, 1 };  // no sound
+	text = "";
+};
+
+class RscPicture {
+	type = CT_STATIC;
+	idc = UNDEFINED_IDC;
+	style = ST_PICTURE;
+	colorText[] = {0.75, 0.75, 0.75, 1};
+	colorBackground[] = {0, 0, 0, 0};
+	font = "Bitstream";
+	sizeEx = 0.025;
+	soundClick[] = {"ui\ui_ok", 0.2, 1};
+	soundEnter[] = {"ui\ui_over", 0.2, 1};
+	soundEscape[] = {"ui\ui_cc", 0.2, 1};
+	soundPush[] = {"", 0.2, 1};
+	w = 0.275;
+	h = 0.04;
+	text = "";
+};
+
 class RscListBox {
 	idc = UNDEFINED_IDC;
 	type = CT_LISTBOX;

@@ -73,8 +73,7 @@ if (_isSea) then { } else {  };
 			
 			//Block all target atteps while in a vehicle
 			if (!_isAir) then {
-				if (!(_refObj in _targets)) then {		
-					//diag_log format["Zombie, if can see or hear: %1", str([(typeof _x),_dist])];		
+				if (!(_refObj in _targets)) then {				
 					//Noise Activation
 					//zed is within players audial projection
 					if (_dist < DAYZ_disAudial) then {
@@ -83,7 +82,7 @@ if (_isSea) then { } else {  };
 						} else {
 							//if (DAYZ_disAudial > 6) then {
 							_chance = [_x,_dist,DAYZ_disAudial] call dayz_losChance;
-							diag_log format["Sound Activation: %1  %2, %3", str([(typeof _x),_dist]), str(_chance), str(DAYZ_disAudial)];
+							//diag_log ("Visual Detection: " + str([_x,_dist]) + " " + str(_chance));
 							if ((random 1) < _chance) then {
 								//make sure the player isnt behind a building or wall if target is in the open always target if player is making too much noise
 								_cantSee = [_refObj,_x] call dayz_losCheck;
@@ -102,7 +101,6 @@ if (_isSea) then { } else {  };
 					//Sight Activation
 					if (_dist < DAYZ_disVisual ) then {
 						_chance = [_x,_dist,DAYZ_disVisual] call dayz_losChance;
-						//diag_log format["Sight Activation: %1  %2, %3", str([(typeof _x),_dist]), str(_chance), str(DAYZ_disVisual)];
 						if ((random 1) < _chance) then {
 							_tPos = (getPosASL (vehicle player));
 							_zPos = (getPosASL _x);
@@ -122,7 +120,7 @@ if (_isSea) then { } else {  };
 			if (_targetedBySight or _targetedBySound) then {
 				[_x, "spotted", 0, false] call dayz_zombieSpeak;
 				
-				//diag_log format["Zombie: %1, Distance: %2, Target Reason: Sight-%3,%5/Sound-%4,%6",(typeof _x),_dist,_targetedBySight,_targetedBySound,DAYZ_disVisual,DAYZ_disAudial];
+				diag_log format["Zombie: %1, Distance: %2, Target Reason: Sight-%3,%5/Sound-%4,%6",(typeof _x),_dist,_targetedBySight,_targetedBySound,DAYZ_disVisual,DAYZ_disAudial];
 				
 				switch (local _x) do {
 					case false: {

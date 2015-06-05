@@ -38,7 +38,7 @@ class FoodBox2 : FoodBox0 {};
 class MedBox0 : CardboardBox {
 	scope = public;
 	displayName = $STR_DAYZ_OBJ_2;
-	model = "\dayz_equip\models\cardboard_box_med.p3d";
+	model = "z\addons\dayz_communityassets\models\medical_freezbox.p3d";
 	
 	class transportmagazines {
 		class _xx_ItemBandage {
@@ -66,8 +66,7 @@ class MedBox0 : CardboardBox {
 class MedBox1 : CardboardBox {
 	scope = public;
 	displayName = $STR_DAYZ_OBJ_2;
-	model = "\dayz_equip\models\cardboard_box_med.p3d";
-	//model = "z\addons\dayz_communityassets\models\medical_freezbox.p3d";
+	model = "z\addons\dayz_communityassets\models\medical_freezbox.p3d";
 	
 	class transportmagazines {
 		class _xx_ItemBandage {
@@ -105,8 +104,7 @@ class MedBox1 : CardboardBox {
 class MedBox2 : CardboardBox {
 	scope = public;
 	displayName = $STR_DAYZ_OBJ_2;
-	model = "\dayz_equip\models\cardboard_box_med.p3d";
-	//model = "z\addons\dayz_communityassets\models\medical_freezbox.p3d";
+	model = "z\addons\dayz_communityassets\models\medical_freezbox.p3d";
 	
 	class transportmagazines {
 		class _xx_ItemBandage {

@@ -46,10 +46,10 @@ if (_section and _hasToolbox) then {
 		_vehicle setvelocity [0,0,1];
 
 		//Success!
-		cutText [format[localize "str_player_04",_namePart,_nameType], "PLAIN DOWN"];
+		cutText [format [localize "str_player_04",_namePart,_nameType], "PLAIN DOWN"];
 	} else {
 		player addMagazine _part;
 	};
 } else {
-	cutText [format[localize "str_player_03",_namePart], "PLAIN DOWN"];
+	cutText [format [localize "str_player_03",_namePart], "PLAIN DOWN"];
 };

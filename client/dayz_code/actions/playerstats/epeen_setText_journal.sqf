@@ -237,7 +237,7 @@ if (_weapon != "" and _weapon != "Throw" and _weapon != "Put" and _weapon != "Fl
 
 */
 
-_moon = if (dayz_ForcefullmoonNights == 2) then { "Yes" } else { "No" };
+_moon = if (dayz_ForcefullmoonNights) then { "Yes" } else { "No" };
 
 _spawnselection = switch (dayz_spawnselection) do {
 	case 1: { "Yes" };

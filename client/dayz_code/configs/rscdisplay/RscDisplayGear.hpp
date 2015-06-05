@@ -3,7 +3,7 @@ class RscDisplayGear {
 	enableDisplay = 1;
 	movingEnable = 0;
 	onLoad = "[] spawn object_monitorGear; {player removeMagazines _x} count MeleeMagazines; call gear_ui_init; call ui_gear_sound; if (isNil('IGUI_GEAR_activeFilter')) then { IGUI_GEAR_activeFilter = 0;}; private ['_dummy']; _dummy = [_this,'initDialog'] call compile preprocessFile	'\z\addons\dayz_code\system\handleGear.sqf'; _dummy = [_this,'onLoad'] execVM	'\z\addons\dayz_code\system\handleGear.sqf'; _dummy;";
-	onUnload = "{player removeMagazines _x} count MeleeMagazines; call player_forceSave; call dayz_meleeMagazineCheck;";
+	onUnload = "{player removeMagazines _x} count MeleeMagazines; call player_forceSave; call dayz_meleeMagazineCheck;r_ammo_selected_mode = 0;";
 	onMouseMoving = "[] call gear_ui_hide;";
 	onMouseHolding = "[] call gear_ui_hide;";
 	
@@ -285,8 +285,8 @@ class RscDisplayGear {
 					idc = 146;
 					x = -2;
 					style = 2048;
-					onSetFocus = "private [""_dummy""]; _dummy = [_this,""onFocus""] execVM	""\z\addons\dayz_code\system\handleGear.sqf""; _dummy;";
-					onButtonClick = "private [""_dummy""]; {player removeMagazines _x} count MeleeMagazines; _dummy = [_this,""onLBListSelChanged""] execVM ""\z\addons\dayz_code\system\handleGear.sqf""; _dummy;";
+					onSetFocus = "[_this,'onFocus'] execVM '\z\addons\dayz_code\system\handleGear.sqf'";
+					onButtonClick = "{player removeMagazines _x} count MeleeMagazines; [_this,'onLBListSelChanged'] execVM '\z\addons\dayz_code\system\handleGear.sqf'";
 					text = "&lt;";
 				};
 
@@ -302,10 +302,9 @@ class RscDisplayGear {
 					colorSelectBackground[] = {0.28,0.25,0.18,0.4};
 					colorSelectBackground2[] = {0.28,0.25,0.18,0.4};
 					shadow = 0;
-					onKeyDown = "private [""_dummy""]; _dummy = [_this,""onKeyDown"",0,107,0,107] execVM	""\z\addons\dayz_code\system\handleGear.sqf""; _dummy;";
-					onLBSelChanged = "private [""_dummy""]; _dummy = [_this,""onLBSelChanged""] execVM ""\z\addons\dayz_code\system\handleGear.sqf""; _dummy;";
-					onLBListSelChanged = "private [""_dummy""]; _dummy = [_this,""onLBListSelChanged""] execVM ""\z\addons\dayz_code\system\handleGear.sqf""; _dummy;";
-					onKillFocus = "private [""_dummy""]; _dummy = [_this,""onKillFocus""] execVM	""\z\addons\dayz_code\system\handleGear.sqf""; _dummy;";
+					onLBSelChanged = "[_this,'onLBSelChanged'] execVM '\z\addons\dayz_code\system\handleGear.sqf'";
+					onLBListSelChanged = "[_this,'onLBListSelChanged'] execVM '\z\addons\dayz_code\system\handleGear.sqf'";
+					onKillFocus = "[_this,'onKillFocus'] execVM '\z\addons\dayz_code\system\handleGear.sqf'";
 					x = 0;
 					y = 0;
 					//w = 0.46;
@@ -319,8 +318,8 @@ class RscDisplayGear {
 				class CA_B_Remove: CA_B_Add {
 					idc = 147;
 					x = -2;
-					onSetFocus = "private [""_dummy""]; _dummy = [_this,""onFocus""] execVM ""\z\addons\dayz_code\system\handleGear.sqf""; _dummy;";
-					onButtonClick = "private [""_dummy""]; {player removeMagazines _x} count MeleeMagazines; _dummy = [_this,""onLBListSelChanged""] execVM ""\z\addons\dayz_code\system\handleGear.sqf""; _dummy;";
+					onSetFocus = "[_this,""onFocus""] execVM '\z\addons\dayz_code\system\handleGear.sqf'";
+					onButtonClick = "{player removeMagazines _x} count MeleeMagazines; [_this,""onLBListSelChanged""] execVM '\z\addons\dayz_code\system\handleGear.sqf'";
 					text = ">";
 				};
 			};

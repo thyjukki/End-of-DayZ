@@ -5,5 +5,4 @@ _medic = _array select 1;
 
 if ((_unit == player) or (vehicle player != player)) then {
 	r_player_inpain = false;
-	"dynamicBlur" ppEffectAdjust [0]; "dynamicBlur" ppEffectCommit 5;
 };

@@ -5,15 +5,15 @@ _hasCrowbar = 	"ItemCrowbar" in items player;
 _hasCarBomb = "ItemCarBomb" in magazines player;
 _alreadyBombed = _vehicle getVariable["hasBomb",false];
 if(!_hasToolbox or !_hasCrowbar) exitWith {
-	cutText ["\n\nYou need a Toolbox and a Crowbar to attach the Bomb to this Vehicle", "PLAIN DOWN"];
+	cutText [localize "str_bombToolMissing", "PLAIN DOWN"];
 };
 if(!_hasCarBomb) exitWith {
-	cutText ["\n\nYou dont have a Bomb in your Inventory", "PLAIN DOWN"];
+	cutText [localize "str_bombMissing", "PLAIN DOWN"];
 };
 
 /*
 if(_vehicle getVariable["hasBomb",false]) exitWith {
-	cutText ["\n\nThis Vehicle already has a Bomb attached!", "PLAIN DOWN"];
+	cutText [localize "str_bombAlready", "PLAIN DOWN"];
 };
 */
 
@@ -34,4 +34,4 @@ if(!_alreadyBombed) then {
 	PVDZ_dayzCarBomb = [_vehicle,getPlayerUID player];
 	publicVariableServer "PVDZ_dayzCarBomb";
 };
-cutText ["\n\nAttached Carbomb! Next Survivor who starts the Engine will blow up!", "PLAIN DOWN"];
+cutText [localize "str_bombAttached", "PLAIN DOWN"];

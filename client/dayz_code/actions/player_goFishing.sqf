@@ -96,7 +96,7 @@ while {_isOk} do {
 				_itemtodrop = _itemOut;
 				_item addMagazineCargoGlobal [_itemtodrop,1];
 				//Let the player know what he caught
-				cutText [format[localize "str_fishing_success",_text], "PLAIN DOWN"];
+				cutText [format [localize "str_fishing_success",_text], "PLAIN DOWN"];
 			} else {
 				call gear_ui_init;
 				//Remove melee magazines (BIS_fnc_invAdd fix) 
@@ -104,9 +104,9 @@ while {_isOk} do {
 				_result = [player,_itemOut] call BIS_fnc_invAdd;
 				if (_result) then {
 					//Let the player know what he caught
-					cutText [format[localize "str_fishing_success",_text], "PLAIN DOWN"];
+					cutText [format [localize "str_fishing_success",_text], "PLAIN DOWN"];
 				} else {
-					cutText [format[localize "str_fishing_noroom",_text], "PLAIN DOWN"];
+					cutText [format [localize "str_fishing_noroom",_text], "PLAIN DOWN"];
 				};
 				//adding melee mags back if needed
 				call dayz_meleeMagazineCheck;
@@ -118,7 +118,7 @@ while {_isOk} do {
 		} else {
 
 			switch (true) do {
-				case (_counter == 0) : { cutText [format[localize "str_fishing_cast",_num], "PLAIN DOWN"]; }; 
+				case (_counter == 0) : { cutText [format [localize "str_fishing_cast",_num], "PLAIN DOWN"]; }; 
 				case (_counter == 4) : { cutText [localize "str_fishing_pull", "PLAIN DOWN"]; player playActionNow "GesturePoint"; }; 
 				case (_counter == 8) : { cutText [localize "str_fishing_pull", "PLAIN DOWN"]; player playActionNow "GesturePoint"; };
 				default { cutText [localize "str_fishing_nibble", "PLAIN DOWN"]; };

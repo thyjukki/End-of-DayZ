@@ -5,7 +5,7 @@ call gear_ui_init;
 closeDialog 0;
 
 _onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
-if (_onLadder) exitWith {cutText [(localize "str_player_21") , "PLAIN DOWN"]};
+if (_onLadder) exitWith {cutText [localize "str_player_21", "PLAIN DOWN"]};
 
 _itemorignal = _this;
 _hasdrinkitem = _itemorignal in magazines player;
@@ -21,7 +21,7 @@ _sfx = getText (_config >> "sfx");
 _sfxdis = getNumber (_config >> "sfxdis");
 _player_drink_Nutrition = getArray (_config >> "Nutrition"); //[]
 
-if (!_hasdrinkitem) exitWith {cutText [format[(localize "str_player_31"),_text,(localize "str_player_31_drink")] , "PLAIN DOWN"]};
+if (!_hasdrinkitem) exitWith {cutText [format [localize "str_player_31",_text,localize "str_player_31_drink"] , "PLAIN DOWN"]};
 
 if (vehicle player != player) then {
 	_display = findDisplay 106;
@@ -54,6 +54,10 @@ if (_hasoutput and !_invehicle) then {
     };
     _item addMagazineCargoGlobal [_itemtodrop,1];
 	_item setvelocity [0,0,1];
+	
+	if (achievement_LitterCount > -1) then {
+		achievement_LitterCount = achievement_LitterCount + 1;
+	};
 };
 
 //add infection chance for "ItemWaterbottle",
@@ -79,4 +83,4 @@ dayz_lastDrink = diag_ticktime;
 _display = uiNamespace getVariable 'DAYZ_GUI_display';
 (_display displayCtrl 1302) ctrlShow true;
 
-cutText [format[(localize "str_player_consumed"),_text], "PLAIN DOWN"];
+cutText [format [localize "str_player_consumed",_text], "PLAIN DOWN"];

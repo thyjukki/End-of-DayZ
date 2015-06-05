@@ -33,27 +33,6 @@ class CfgAmmo {
 		indirecthit = 0;
 		indirecthitrange = 0;
 	};
-//mak
-	class B_9x18_Ball : BulletBase {
-		airfriction = -0.002751;
-		audiblefire = 15;
-		caliber = 0.33;
-		cartridge = "FxCartridge_9mm";
-		cost = 5;
-		hit = 6;
-		typicalspeed = 350;
-		visiblefire = 15;
-	};
-//macSD
-	class B_9x18_SD : B_9x18_Ball {
-		airfriction = -0.001893;
-		audiblefire = 0.035;
-		cost = 5;
-		hit = 6;
-		typicalspeed = 310;
-		visiblefire = 0.035;
-		visiblefiretime = 2;
-	};
 //1911
 	class B_45ACP_Ball : BulletBase {
 		airfriction = -0.0013522;
@@ -187,4 +166,9 @@ class CfgAmmo {
 		//explosiontime = 1;
 		fusedistance = 0;
 	};
+	
+	#include "CfgAmmo\ammo.hpp"
+	#include "CfgAmmo\45acp.hpp"
+	#include "CfgAmmo\32acp.hpp"
+	#include "CfgAmmo\762x39.hpp"
 };

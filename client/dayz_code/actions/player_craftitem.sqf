@@ -15,8 +15,8 @@ private["_config","_input","_output","_required","_failChance","_hasInput","_ava
 //diag_log(str(isnil "r_player_crafting"));
 
 //Process has started
-if(!isnil "r_player_crafting") exitwith {};
-r_player_crafting = true;
+if( (animationState player) IN [ "ainvpknlmstpslaywrfldnon_medic" ]) exitwith {};
+
 
 //Config class of right click item
 _classname = _this;
@@ -51,7 +51,7 @@ if(!r_drag_sqf and !r_player_unconscious and !_onLadder) then {
 			if (!("MeleeHatchet" in weapons player)) then {
 				if (!(DayZ_onBack == "MeleeHatchet")) then {
 					if (!(_x IN items player)) then {
-						systemChat format[(localize ("str_cannotCraft")), _x];
+						systemChat format[localize "str_cannotCraft", _x];
 						_hasTools = false;
 					};
 				};
@@ -82,7 +82,7 @@ if(!r_drag_sqf and !r_player_unconscious and !_onLadder) then {
 		if (_avail < _amount) exitWith {
 			_hasInput = false;
 			_itemName = getText(configFile >> _selection >> _item >> "displayName");
-			cutText[format[(localize "str_crafting_missing"),(_amount - _avail),_itemName], "PLAIN DOWN"];
+			cutText [format [localize "str_crafting_missing",(_amount - _avail),_itemName], "PLAIN DOWN"];
 		};
 	} forEach (_input);
 	
@@ -112,7 +112,7 @@ if(!r_drag_sqf and !r_player_unconscious and !_onLadder) then {
 						_freeSlots set[_j, ((_freeSlots select _j) - (_slotType select _j))];
 						if (_freeSlots select _j < 0) exitWith {
 							_availabeSpace = false;
-							cutText[(localize "str_crafting_space"), "PLAIN DOWN"];
+							cutText [localize "str_crafting_space", "PLAIN DOWN"];
 						};
 					};
 				};
@@ -125,7 +125,7 @@ if(!r_drag_sqf and !r_player_unconscious and !_onLadder) then {
 			call gear_ui_init;
 			closeDialog 1;
 			player playActionNow "Medic";
-
+			sleep 2;
 			//setup alert and speak
 			_dis=20;
 			_sfx = "chopwood";
@@ -150,7 +150,7 @@ if(!r_drag_sqf and !r_player_unconscious and !_onLadder) then {
 					//sleep 0.1;
 				};
 			} forEach _input;
-
+			sleep 3;
 			{
 				_item = _x select 0;
 				_selection = _x select 1;
@@ -172,10 +172,10 @@ if(!r_drag_sqf and !r_player_unconscious and !_onLadder) then {
 								player addBackpack _item;
 							};
 						};
-						cutText[format[(localize "str_crafting_success"),_itemName], "PLAIN DOWN"];
+						cutText [format [localize "str_crafting_success",_itemName], "PLAIN DOWN"];
 						//sleep 2;
 					} else {
-						cutText[format[(localize "str_crafting_failed"),_itemName], "PLAIN DOWN"];
+						cutText [format [localize "str_crafting_failed",_itemName], "PLAIN DOWN"];
 						//sleep 2;
 					};
 				};
@@ -183,5 +183,3 @@ if(!r_drag_sqf and !r_player_unconscious and !_onLadder) then {
 		};
 	};
 };
-
-r_player_crafting = nil;

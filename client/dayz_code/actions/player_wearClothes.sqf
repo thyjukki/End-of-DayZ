@@ -8,13 +8,13 @@ _item = _this;
 call gear_ui_init;
 r_action_count = 0; //reset for strange glitch
 _onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
-if (_onLadder) exitWith {cutText [(localize "str_player_21") , "PLAIN DOWN"]};
+if (_onLadder) exitWith {cutText [localize "str_player_21", "PLAIN DOWN"]};
 
 _hasclothesitem = _this in magazines player;
 _config = configFile >> "CfgMagazines";
 _text = getText (_config >> _item >> "displayName");
 
-if (!_hasclothesitem) exitWith {cutText [format[(localize "str_player_31"),_text,(localize "str_player_31_wear")] , "PLAIN DOWN"]};
+if (!_hasclothesitem) exitWith {cutText [format [localize "str_player_31",_text,localize "str_player_31_wear"] , "PLAIN DOWN"]};
 
 if (vehicle player != player) exitWith {cutText [localize "str_player_fail_wear1", "PLAIN DOWN"]};
 

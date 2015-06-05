@@ -20,7 +20,7 @@ _hitpoints = _vehicle call vehicle_getHitpoints;
 	if (isnil ("_part")) then { _part = "PartGeneric"; };
 
 	// get every damaged part no matter how tiny damage is!
-	_damagePercent = str(round((0 + _damage) * 100))+"% Damage";
+	_damagePercent = str(round(_damage * 100))+"% Damage";
 	if (_damage > 0) then {
 		if ((_damage >= 0) and (_damage <= 0.25)) then {_color = "color='#00ff00'";}; //green
 		if ((_damage >= 0.26) and (_damage <= 0.50)) then {_color = "color='#ffff00'";}; //yellow

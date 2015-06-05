@@ -16,7 +16,9 @@ _timerMonitor = diag_ticktime;
 
 player setVariable ["temperature",dayz_temperatur,true];
 
-dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)) + (((count dayz_myMagazines) * 0.1) + (count dayz_myWeapons * 0.5));
+r_ammo_selected = "";
+r_ammo_selected_slot = 0;
+r_ammo_selected_mode = 0;
 
 [player,0] call player_humanityChange;
 
@@ -33,6 +35,7 @@ while {1 == 1} do {
 	_speed = round((_vel distance [0,0,0]) * 3.5);
 	_saveTime = (playersNumber west * 2) + 10;
 
+dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)) + (((count dayz_myMagazines) * 0.1) + (count dayz_myWeapons * 0.5));
 	
 	//reset position
 	_randomSpot = true;
@@ -72,7 +75,7 @@ while {1 == 1} do {
 		_timeOut = 0;
 	};
 	
-	if ((diag_tickTime - _timer10) > 10) then {
+/*	if ((diag_tickTime - _timer10) > 10) then {
 		{	
 		//crickets
 			(getPosATL _x) spawn {
@@ -85,9 +88,9 @@ while {1 == 1} do {
 		} foreach (nearestObjects [getPosATL player, ["Dayz_Plant1","Dayz_Plant2","Dayz_Plant3"], 15]);
 		
 		_timer10 = diag_Ticktime;
-	};
+	};*/
 	
-	if ((diag_tickTime - _timer150) > 150) then {
+	if ((diag_tickTime - _timer150) > 60) then {
 		//Digest Food.
 		if (r_player_foodstack > 0) then { r_player_foodstack = r_player_foodstack - 1; };
 		
@@ -101,7 +104,7 @@ while {1 == 1} do {
 		dayz_currentGlobalZombies = count entities "zZombie_Base";
 		
 	//Animals
-		[] call player_animalCheck;
+		//[] call player_animalCheck;
 		
 		_timer = diag_tickTime;
 	};
@@ -131,6 +134,12 @@ while {1 == 1} do {
 	dayz_hunger = dayz_hunger + (_hunger / 60);
 	dayz_hunger = (dayz_hunger min SleepFood) max 0;
 
+	if (dayz_hunger >= SleepFood) then {
+		if (r_player_blood < 10) then {
+			_id = [player,"starve"] spawn player_death;
+		};
+	};
+
 	//Thirst
 	_thirst = 2;
 	if (_refObj == player) then {
@@ -138,6 +147,12 @@ while {1 == 1} do {
 	};
 	dayz_thirst = dayz_thirst + (_thirst / 60) * (dayz_temperatur / dayz_temperaturnormal);	//TeeChange Temperatur effects added Max Effects: -25% and + 16.6% waterloss
 	dayz_thirst = (dayz_thirst min SleepWater) max 0;
+
+	if (dayz_thirst >= SleepWater) then {
+		if (r_player_blood < 10) then {
+			_id = [player,"dehyd"] spawn player_death;
+		};
+	};
 	
 	//Calories
 	if (dayz_nutrition > 0) then {
@@ -148,7 +163,6 @@ while {1 == 1} do {
 		r_player_Nutrition = [0];
 	};
 	dayz_nutrition = r_player_Nutrition select 0;
-
 	
 	//Temperatur
 	2 call player_temp_calculation; //2 = sleep time of this loop //TeeChange
@@ -160,6 +174,7 @@ while {1 == 1} do {
 		
 		_lastTemp = dayz_temperatur;
 	};
+	dayz_temperatur = (dayz_temperatur min dayz_temperaturmax) max dayz_temperaturmin;
 
 	//can get nearby infection
 	if (!r_player_infected) then {
@@ -198,103 +213,35 @@ while {1 == 1} do {
 			player setVariable["USEC_infected",true,true];
 		};
 
-		if (!r_player_unconscious) then {
-			_rnd = 10; //_rnd = ceil (random 8);
-			[player,"cough",_rnd,false] call dayz_zombieSpeak;
-
-			if (_rnd < 3) then {
-				addCamShake [2, 1, 25];
-			};
-		};
-		
-		_result = r_player_blood - 3;
-		if (_result < 0) then {
+		if (r_player_blood < 3) then {
 			_id = [player,"sick"] spawn player_death;
 		};
 	};
 
-	//Pain Shake Effects
-	if (r_player_inpain and !r_player_unconscious) then {
-		playSound "breath_1";
-		addCamShake [2, 1, 25];
-	};
 
-	//Hunger Effect
-	_foodVal = dayz_statusArray select 0;
-	_thirstVal = dayz_statusArray select 1;
-	if (_thirstVal <= 0) then {
-		_result = r_player_blood - 10;
-		if (_result < 0) then {
-			_id = [player,"dehyd"] spawn player_death;
-		} else {
-			r_player_blood = _result;
-		};
-	};
-	if (_foodVal <= 0) then {
-		_result = r_player_blood - 10;
-		if (_result < 0) then {
-			_id = [player,"starve"] spawn player_death;
-		} else {
-			r_player_blood = _result;
-		};
-	};
-
-	//Well Fed 
-	//how are medical condiections
-	if (!r_player_unconscious) then {
-		//make sure player isnt infected or inpain.
-		if (!r_player_infected AND !(r_player_Sepsis select 0)) then {
-			//Check food, water and temperature is a good level
-			if (r_player_blood < 12000) then {
-				_wellfedVals = dayz_hunger + dayz_thirst;
-				_WellFedpercentages = SleepWater + SleepFood;
-				_result = 0;
-				_wellfed = false;
-				
-				//diag_log format["Food %1, Water: %2 = WellFed: %3/%4 = %5",_foodVal,_thirstVal,_wellfedVals,_WellFedpercentages,(_wellfedVals / _WellFedpercentages)];
-				
-				switch (true) do 
-				{ 
-					case (((_wellfedVals / _WellFedpercentages) < 0.25)): {
-						_result = 3; //1.2
-						_wellfed = false;
-					}; 
-					case (((_wellfedVals / _WellFedpercentages) < 0.50)): {
-						_result = 1.5; //0.6
-						_wellfed = true;
-					};
-					case (((_wellfedVals / _WellFedpercentages) < 0.75)): {
-						_result = 0.7; //0.3
-						_wellfed = true;
-					};
-				};
-				
-				if ((r_player_blood < 2000) and _wellfed) then {
-					if (animationState player in DayZ_RestingAnims) then { _result = _result * 15; } else {
-						if (speed player == 0) then { _result = _result * 10; };
-					};
-				} else {
-					if ((r_player_blood < 5000) and _wellfed) then {
-						if (animationState player in DayZ_RestingAnims) then { _result = _result * 10; } else {
-							if (speed player == 0) then { _result = _result * 7; };
-						};
-					} else {
-						if ((r_player_blood < 9000) and _wellfed) then {
-							if (animationState player in DayZ_RestingAnims) then { _result = _result * 5; } else {
-								if (speed player == 0) then { _result = _result * 2; };
-							};
-						};
-					};
-				};
-				
-				if (_result > 0) then {
-				//If player isnt injured
-					if (!r_player_injured AND !r_player_infected AND !(r_player_Sepsis select 0)) then {
-						r_player_bloodregen = r_player_bloodregen + _result;
-					};
-				};
+	// Regen some blood if player is well fed and resting
+	// Attention: regen _result must not trigger the "up" arrow of the blood icon
+	if (r_player_blood < 12000 and dayz_hunger < SleepFood 
+		and dayz_thirst < SleepWater and !r_player_injured
+		 and !r_player_infected and !(r_player_Sepsis select 0) 
+		 and !r_player_unconscious) then {
+		_result = (1-(dayz_hunger + dayz_thirst)/(SleepWater + SleepFood));
+		switch (1==1) do {
+			case (_result < 0.25) : {}; // not well fed
+			case ((toArray(animationState player) select 5) == 112) : { // prone
+				_result = _result * (1 + 10 * (12000 - r_player_blood) / 12000);
+			};
+			case (speed player < 1) : { // still
+				_result = _result * (1 + 4 * sqrt((12000 - r_player_blood) / 12000));
+			};
+			default { // moving
 			};
 		};
+		r_player_bloodregen = r_player_bloodregen + _result;
+	};
+	
+	if (r_player_blood > 12000) then {
+		r_player_blood = 12000;
 	};
 
 	//Record low bloow
@@ -308,7 +255,7 @@ while {1 == 1} do {
 
 	//Broadcast Hunger/Thirst
 	_messTimer = _messTimer + 1;
-	if (_messTimer > 15) then {
+	if (_messTimer > 60) then {
 		_messTimer = 0;
 		player setVariable ["messing",[dayz_hunger,dayz_thirst,dayz_nutrition],false];
 		
@@ -368,8 +315,6 @@ while {1 == 1} do {
 	//setGroupIconsVisible [false,false];
 	//clearGroupIcons group player;
 
-	"colorCorrections" ppEffectAdjust [1, 1, 0, [1, 1, 1, 0.0], [1, 1, 1, 1 min (4*r_player_blood/3/r_player_bloodTotal)],  [1, 1, 1, 0.0]];
-	"colorCorrections" ppEffectCommit 0;
 	sleep 2;
 
 	_myPos = player getVariable["lastPos",[]];
@@ -433,7 +378,7 @@ while {1 == 1} do {
 	//Two primary guns pickup exploit fix
 	if ((primaryWeapon player != "") && (!(primaryWeapon player in MeleeWeapons)) && (dayz_onBack != "") && (!(dayz_onBack in MeleeWeapons)) && (isNull (findDisplay 106)) &&
 	(animationState player != "amovpknlmstpslowwrfldnon_amovpknlmstpsraswrfldnon" OR animationState player != "amovpercmstpslowwrfldnon_amovpercmstpsraswrfldnon" OR animationState player != "amovpercmstpslowwrfldnon_amovpercmstpsraswrfldnon")) then {
-		cutText ["You can't carry two primary weapons at the same time!","PLAIN DOWN"];
+		cutText [localize "str_player_ammo_2primary","PLAIN DOWN"];
 		player playActionNow "stop";
 		player action ["dropWeapon", player, primaryWeapon player];
 		sleep 3;

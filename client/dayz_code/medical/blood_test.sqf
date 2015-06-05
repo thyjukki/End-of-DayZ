@@ -309,7 +309,11 @@ if (_allClicked == 4) then {
 	if (_antiD_displayed and _antiB_displayed and _antiA_displayed and _control_displayed and _results_shown) then {
 		r_doLoop = false;
 		_isDone = true;
-		//Journal_bloodType = _type + _rh;
+		[] spawn {
+			sleep 7;
+			player setVariable["blood_testDone",true,true];
+			player setVariable["medForceUpdate",true];
+		};
 	};
 	sleep 0.01;
 };

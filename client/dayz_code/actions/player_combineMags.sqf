@@ -20,7 +20,7 @@ _name = getText(configFile >> "CfgMagazines" >> _create >> "displayName");
 _magCount = {_x == _create} count magazines player;
 
 if (_magCount == 1) exitWith {
-	cutText [format["You have only one %1\nThere's nothing to combine.", _name], "PLAIN DOWN"];
+	cutText [format [localize "str_cannotCombine", _name], "PLAIN DOWN"];
 	r_action_count = 0;
 };
 
@@ -72,13 +72,13 @@ if(_create == "Quiver") then {
 
 switch true do {
 	case (_qtynew_create_ammo_rest == 0) : {
-		cutText [format["You've combined %1 non-full %2(s) into %3 full %4.",_magCount, _name, _qtynew_create_mags_full,_magFull], "PLAIN DOWN"];
+		cutText [format [localize "str_combineDoneFull",_magCount, _name, _qtynew_create_mags_full,_magFull], "PLAIN DOWN"];
 		};
 	case (_qtynew_create_mags_full == 0) : {
-		cutText [format["You've combined %1 non-full %2(s) into one.\nYou have %3 %4 left",_magCount, _name, _qtynew_create_ammo_rest,_magAmmunition], "PLAIN DOWN"];
+		cutText [format [localize "str_combineDonePartialOne",_magCount, _name, _qtynew_create_ammo_rest,_magAmmunition], "PLAIN DOWN"];
 		};
 	default {
-		cutText [format["You've combined %1 non-full %2(s) into %3 full %7.\nLast %6 still has %4 %5 inside.",_magCount, _name, _qtynew_create_mags_full, _qtynew_create_ammo_rest,_magAmmunition,_magFullSingular,_magFull], "PLAIN DOWN"];
+		cutText [format [localize "str_combineDonePartial",_magCount, _name, _qtynew_create_mags_full, _qtynew_create_ammo_rest,_magAmmunition,_magFullSingular,_magFull], "PLAIN DOWN"];
 	};
 };
 

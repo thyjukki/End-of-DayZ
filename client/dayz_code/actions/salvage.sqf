@@ -75,9 +75,9 @@ if (_hasToolbox) then {
 				_vehicle call fnc_veh_ResetEH;
 				_vehicle setvelocity [0,0,1];
 				if(_brokenPart) then {
-						cutText [format[localize "str_salvage_destroyed",_namePart,_nameType], "PLAIN DOWN"];
+						cutText [format [localize "str_salvage_destroyed",_namePart,_nameType], "PLAIN DOWN"];
 				} else {
-						cutText [format[localize "str_salvage_removed",_namePart,_nameType], "PLAIN DOWN"];
+						cutText [format [localize "str_salvage_removed",_namePart,_nameType], "PLAIN DOWN"];
 				};
 			} else {
 				cutText [localize "str_player_24", "PLAIN DOWN"];
@@ -92,7 +92,7 @@ if (_hasToolbox) then {
 		cutText [localize "str_salvage_canceled", "PLAIN DOWN"];
 	};
 } else {
-	cutText [format[localize "str_salvage_toolbox",_namePart], "PLAIN DOWN"];
+	cutText [format [localize "str_salvage_toolbox",_namePart], "PLAIN DOWN"];
 };
 
 dayz_myCursorTarget = objNull;

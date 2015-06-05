@@ -1,7 +1,7 @@
 //diag_log ("Bubble Start");
 
 //Create bubble around the default view distance.
-_position = getPosATL player;
+//_position = getPosATL player;
 
 /*
 //All zeds fall under "Zed_Base", 1600 is default viewdistance
@@ -72,20 +72,6 @@ diag_log format["Agent's in Bubble: %1",(count dayz_zedMonitor)];
 */
 
 //BuildingMonitor
-{
-	_dis = _x distance player;
-	if ((player distance _x) > 400) then {
-		if (_x in dayz_buildingBubbleMonitor) then {
-			dayz_buildingBubbleMonitor = dayz_buildingBubbleMonitor - [_x];	
-		};
-		//Clear Loot vars
-		if (!(isNil {player getVariable "looted"})) then {
-			_x setVariable ["looted",nil]; //SpawnCheck
-		};
-		if (!(isNil {player getVariable "zombieSpawn"})) then {
-			_x setVariable ["zombieSpawn",nil]; //SpawnCheck
-		};
-	};
-} foreach dayz_buildingBubbleMonitor;
+// moved to dayz_code/system/scheduler/sched_buildingBubble.sqf
 
 //diag_log ("Bubble END");

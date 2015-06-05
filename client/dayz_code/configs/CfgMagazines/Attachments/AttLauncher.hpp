@@ -5,17 +5,6 @@ class AttLauncher : CA_Magazine {
 	displayName = $STR_EQUIP_NAME_M203;
 	picture = "\z\addons\dayz_communityassets\pictures\attachment_m203.paa";
 	descriptionShort = $STR_EQUIP_DESC_M203;
-	
-	class ItemActions {
-		class AttPrimary {
-			text = $STR_ACTIONS_ATTACHTOPRIMARY;
-			script = "spawn player_useAttchment;";
-		};
-		/*class AttSecondary {
-			text = $STR_ACTIONS_ATTACHTOSECONDARY;
-			script = "spawn player_useAttchment;";
-		};*/
-	};
 };
 
 class AttGP30 : CA_Magazine {
@@ -25,15 +14,4 @@ class AttGP30 : CA_Magazine {
 	displayName = $STR_EQUIP_NAME_GP30;
 	picture = "\z\addons\dayz_communityassets\CraftingPlaceHolders\equip_part_somegeneric.paa";
 	descriptionShort = $STR_EQUIP_DESC_GP30;
-	
-	class ItemActions {
-		class AttPrimary {
-			text = $STR_ACTIONS_ATTACHTOPRIMARY;
-			script = "spawn player_useAttchment;";
-		};
-		/*class AttSecondary {
-			text = $STR_ACTIONS_ATTACHTOSECONDARY;
-			script = "spawn player_useAttchment;";
-		};*/
-	};
 };

@@ -158,7 +158,7 @@ class ItemSodaGrapeDrink : ItemSoda {
 	picture = "\z\addons\dayz_communityassets\pictures\equip_soda_grape_clean_full_ca.paa";
 	Nutrition[] = {90,0,600,0}; //[Energy,food,water,temp]
 };
-/*
+
 class ItemSherbet : ItemSoda {
 	displayName = "Sherbet";
 	descriptionShort = "Sherbet";
@@ -166,4 +166,4 @@ class ItemSherbet : ItemSoda {
 	picture = "\z\addons\dayz_communityassets\pictures\equip_soda_sacrite_clean_full_ca.paa";
 	Nutrition[] = {90,0,300,0}; //[Energy,food,water,temp]
 };
-*/
+

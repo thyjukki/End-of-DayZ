@@ -40,7 +40,7 @@ class FoodbaconCooked : FoodCooked {
 	picture = "\z\addons\dayz_communityassets\pictures\equip_bacon_fried_CA.paa";
 	descriptionShort = $STR_FOODCOOKED_EQUIP_CODE_DESC_4;
 	bloodRegen = 600;
-	Nutrition[] = {417,200,0,0}; //[Energy]
+	Nutrition[] = {417,400,0,0}; //[Energy]
 };
 
 class FoodrabbitCooked : FoodCooked {

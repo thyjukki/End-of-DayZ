@@ -51,7 +51,7 @@ if((vehicle player) != player) then {
 	//speed factor
 	private["_vel","_speed"];
 	_vel = velocity player;
-	_speed = round((_vel distance [0,0,0]) * 3.5);
+	_speed = round((_vel distance [0,0,0]) * 3.6);
 	_difference = (_moving_factor * (_speed / 20)) min 7;
 };
 
@@ -148,13 +148,3 @@ _difference = _difference * SleepTemperatur / (60 / _looptime) * ((dayz_temperat
 
 //Change Temperatur Should be moved in a own Function to allow adding of Items which increase the Temp like "hot tea"
 dayz_temperatur = (((dayz_temperatur + _difference) max dayz_temperaturmin) min dayz_temperaturmax);
-
-//Add Shivering
-//Percent when the Shivering will start
-if(dayz_temperatur <= (0.125 * (dayz_temperaturmax - dayz_temperaturmin) + dayz_temperaturmin)) then {
-	//CamShake as linear Function Maximum reached when Temp is at temp minimum. First Entry = Max Value
-	_temp = 0.6 * (dayz_temperaturmin / dayz_temperatur );
-	addCamShake [_temp,(_looptime + 1),30];	//[0.5,looptime,6] -> Maximum is 25% of the Pain Effect
-} else {
-	addCamShake [0,0,0];			//Not needed at the Moment, but will be necesarry for possible Items
-};

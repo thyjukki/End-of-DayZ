@@ -41,7 +41,17 @@ if (_button == 1) then {
 		_script = getText (_config >> "script");
 		_outputOriented = getNumber (_config >> "outputOriented") == 1;
 		_height = _height + (0.025 * safezoneH);
-		_compile = format["_id = '%2' %1;",_script,_item];
+		_isAttachment = getNumber (_config >> "isAttachment");
+		if (_isAttachment == 1) then {
+			_compile = format["_id = ['%2','%3'] %1;",_script,_item, configName (_config)];
+		} else {
+			if (configName (_config) == "Stack" || configName (_config) == "loadMag" || configName (_config) == "unLoadMag") then {
+				_idc = str(_control) call fGetIDC;
+				_compile = format["_id = ['%2','%3'] %1;",_script,_item, _idc];
+			} else {
+				_compile = format["_id = '%2' %1;",_script,_item];
+			};
+		};
 		uiNamespace setVariable ['uiControl', _control];
 		if (_outputOriented) then {
 			/*

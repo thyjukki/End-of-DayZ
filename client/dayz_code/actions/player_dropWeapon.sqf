@@ -5,7 +5,7 @@ _config = configFile >> "CfgWeapons" >> _item;
 _droppedtype = (gettext (_config >> "droppeditem"));
 
 _onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
-if (_onLadder) exitWith { cutText [(localize "str_player_21") , "PLAIN DOWN"]; r_action_count = 0; };
+if (_onLadder) exitWith { cutText [localize "str_player_21", "PLAIN DOWN"]; r_action_count = 0; };
 if (r_action_count != 1) exitWith { cutText [localize "str_player_actionslimit", "PLAIN DOWN"]; };
 
 call gear_ui_init;

@@ -17,7 +17,7 @@ _isAnimal = _vehicle isKindOf "Animal";
 _isAir = _vehicle isKindOf "Air";
 _isZombie = _vehicle isKindOf "zZombie_base";
 
-if (_isMan or _isAnimal or _isZombie) exitWith { cutText [(localize ("str_refuel_notvehicle")), "PLAIN DOWN"] };
+if (_isMan or _isAnimal or _isZombie) exitWith { cutText [localize "str_refuel_notvehicle", "PLAIN DOWN"] };
 
 player removeAction s_player_fillfuel + _capacity;
 

@@ -177,9 +177,14 @@ class CfgVehicles {
 	//Antihack
 	#include "CfgVehicles\antihack_logic.hpp"
 	#include "CfgVehicles\antihack_plants.hpp"
+	#include "CfgVehicles\antihack_weaponholders.hpp"
 	
 	//Blood Trail
 	#include "CfgVehicles\Buildings\Blood_Trail_DZ.hpp"
+
+	class waterHoleProxy: House {
+		model = "z\addons\dayz_communityassets\models\waterHoleProxy.p3d";
+	};
 	
 	//Camps
 	#include "CfgVehicles\InfectedCamps\IC_Fireplace1.hpp"

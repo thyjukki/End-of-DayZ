@@ -33,34 +33,12 @@ fnc_usec_damageUnconscious = {
 	private["_unit","_damage"];
 	_unit = _this select 0;
 	_damage = _this select 1;
-	_inVehicle = (vehicle _unit != _unit);
 	
-	//diag_log format["%1,%2,%3,%4",_unit,_damage,_inVehicle, player];
+	diag_log format["fnc_usec_damageUnconscious: %1,%2,%3",_unit,_damage, player];
 	
 	if (_unit == player) then {
-		r_player_timeout = round((((random 2) max 0.1) * _damage) * 20);
+		r_player_timeout = 120 min (round((((random 2) max 0.1) * _damage) * 20));
 		r_player_unconscious = true;
-		player setVariable["medForceUpdate",true,true];
-		player setVariable ["unconsciousTime", r_player_timeout, true];
-	};
-	
-	if (_inVehicle) then {
-		_unit spawn {
-			private["_veh","_unit"];
-			_veh = vehicle _this;
-			_unit = _this;
-			waitUntil{(((getPosATL _veh select 2 < 1) and (speed _veh < 1)) or (!r_player_unconscious))};
-			if (r_player_unconscious) then {
-				_unit action ["eject", _veh];
-				waitUntil{((vehicle _this) != _this)};
-				sleep 1;
-				_unit setVariable ["NORRN_unconscious", true, true];
-				_unit playActionNow "Die";
-			};
-		};
-	} else {
-		_unit setVariable ["NORRN_unconscious", true, true];
-		_unit playActionNow "Die";
 	};
 };
 
@@ -70,11 +48,11 @@ fnc_usec_bulletHit = {
 	//private["_commit"];
 	_commit = _this;
 	if (!r_player_unconscious) then {
-		"colorCorrections" ppEffectEnable true;"colorCorrections" ppEffectAdjust [1, 1, 0, [1, 1, 1, 0.0], [1, 1, 1, 0.1],  [1, 1, 1, 0.0]];"colorCorrections" ppEffectCommit 0;
-		"dynamicBlur" ppEffectEnable true;"dynamicBlur" ppEffectAdjust [2]; "dynamicBlur" ppEffectCommit 0;
-		addCamShake [5, 0.5, 25];
-		"colorCorrections" ppEffectAdjust [1, 1, 0, [1, 1, 1, 0.0], [1, 1, 1, 1],  [1, 1, 1, 0.0]];"colorCorrections" ppEffectCommit _commit;
-		"dynamicBlur" ppEffectAdjust [0]; "dynamicBlur" ppEffectCommit _commit;
+        "colorCorrections" ppEffectEnable true; "colorCorrections" ppEffectAdjust [1, 1.1, -0.02, [0.4,-0.2,-0.2, .04], [1,1,1,0],  [1,1,1, 0]]; "colorCorrections" ppEffectCommit 0;
+        "dynamicBlur" ppEffectEnable true;"dynamicBlur" ppEffectAdjust [1]; "dynamicBlur" ppEffectCommit 0;
+        setCamShakeParams [0.05, 4, 1, 3, true]; addCamShake [5, 0.5, 25];
+        "colorCorrections" ppEffectAdjust [1, 1, 0, [0,0,0,0], [1, 1, 1, 1],  [1, 1, 1, 1]]; "colorCorrections" ppEffectCommit _commit;
+        "dynamicBlur" ppEffectAdjust [0]; "dynamicBlur" ppEffectCommit _commit;
 	};
 };
 
@@ -111,6 +89,16 @@ fnc_usec_calculateBloodPerSec = {
 	private["_bloodLossPerSec","_bloodGainPerSec","_bloodPerSec"];
 	_bloodLossPerSec = 0;
 	_bloodGainPerSec = 0;
+
+
+	if (dayz_thirst >= SleepWater) then {
+		_bloodLossPerSec = _bloodLossPerSec + 10;
+	};
+
+	if (dayz_hunger >= SleepFood) then {
+		_bloodLossPerSec = _bloodLossPerSec + 10;
+	};
+
 
 	if (r_player_injured) then {
 		_bloodLossPerSec = 10;
@@ -168,15 +156,41 @@ fnc_usec_calculateBloodPerSec = {
 		};
 */
 
-		r_player_bloodregen = r_player_bloodregen - _bloodGainPerSec;
+		r_player_bloodregen = (0 max r_player_bloodregen) - (0 max _bloodGainPerSec);
 	};
 
 	r_player_bloodlosspersec = _bloodLossPerSec;
 	r_player_bloodgainpersec = _bloodGainPerSec;
 
 	_bloodPerSec = _bloodGainPerSec - _bloodLossPerSec;
+/*
+private [ "_foodVal", "_thirstVal", "_tempVal"];
+_foodVal = round(100*(1 - (dayz_hunger / SleepFood)));
+_thirstVal = round(100*(1 - (dayz_thirst / SleepWater)));
+_tempVal = round(100*(1 - ((dayz_temperatur - dayz_temperaturmin)/(dayz_temperaturmax - dayz_temperaturmin))));
+
+	hintSilent format [ "blood/s: %1\ngain/s: %2\nloss/s: %3\nbloodregen: %4\ninjured: %5\ninfected: %6\nsepsis: %7\ninpain:%15\nblood: %8\nthirst: %9 (%12%%)\nhunger: %10 (%13%%)\ntemp: %11 (%14%%)\nFoodstack: %16\n", 
+		_bloodPerSec,
+		r_player_bloodgainpersec,
+		r_player_bloodlosspersec,
+		r_player_bloodregen,
+		r_player_injured,
+		r_player_infected,
+		r_player_Sepsis,
+		r_player_blood,
+		dayz_thirst,
+		dayz_hunger,
+		dayz_temperatur,
+		_thirstVal,
+		_foodVal,
+		_tempVal,
+		r_player_inpain,
+		r_player_foodstack
+	];
+*/
+
 	r_player_bloodpersec = _bloodPerSec;
-	_bloodPerSec;
+	_bloodPerSec
 };
 
 fnc_usec_playerHandleBlood = {
@@ -243,28 +257,10 @@ fnc_usec_damageBleed = {
 	//_injury = _this select 2; // not used. damage% ???
 
 	if (isServer) exitWith{}; // no graphical effects on server!
-/*
-	while {!r_player_dead} do {
-			_onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
-		_inVehicle = (vehicle player != player);
-		_pooldelay = 34 + r_player_bloodpersec;
-		
-		if ((!_inVehicle) && (!dayz_isSwimming)) then {
-			if ((r_player_bloodpersec < 0) AND ((diag_tickTime - _timerbloodpooldelay) > _pooldelay/2)) then { //r_player_injured is bleeding.. i think
-				_jeep = createVehicle ["Blood_Trail_DZ", _debug, [], 0, "NONE"];
-				_jeep setVariable ["bloodpools",diag_ticktime];
-				_playerPos = getPosATL player;
-				_jeep setPos [(_playerPos select 0), (_playerPos select 1), 0];
-				r_player_bloodpools set [count r_player_bloodpools, _jeep]; //Add new puddle to end of array
-				_timerbloodpooldelay = diag_tickTime;
-			};
-		};
-		sleep 0.5;
-	};
-*/
+		/*
 		if ((dayz_bleedingeffect == 1) or (dayz_bleedingeffect == 3)) then {
 			[] spawn fnc_blooddrops;
-		};
+		};*/
 		//diag_log format ["%1::fnc_usec_damageBleed %2", __FILE__, _this];
 
 		_modelPos = [0,0,0];
@@ -340,48 +336,4 @@ fnc_usec_damageBleed = {
 
 		deleteVehicle _source;
 		deleteVehicle _point;
-};
-
-fnc_blooddrops = {
-	
-	r_player_bloodpools = [];
-	_recycleArray = false; //Flag to remove old puddles
-	_debug = getMarkerpos "respawn_west";
-	_timerbloodpooldelay = diag_tickTime;
-	_timerbloodpoolcleandelay = diag_tickTime;
-	
-	//Blood on the ground
-	_onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
-	_inVehicle = (vehicle player != player);
-	_pooldelay = 34 + r_player_bloodpersec;
-	while {!r_player_dead} do {
-		if ((!_inVehicle) && (!dayz_isSwimming)) then {
-			if ((r_player_bloodpersec < 0) AND ((diag_tickTime - _timerbloodpooldelay) > _pooldelay/2)) then { //r_player_injured is bleeding.. i think
-				_jeep = createVehicle ["Blood_Trail_DZ", _debug, [], 0, "NONE"];
-				_jeep setVariable ["bloodpools",diag_ticktime];
-				_playerPos = getPosATL player;
-				_jeep setPos [(_playerPos select 0), (_playerPos select 1), 0];
-				r_player_bloodpools set [count r_player_bloodpools, _jeep]; //Add new puddle to end of array
-				_timerbloodpooldelay = diag_tickTime;
-			};
-		};
-		sleep 1;
-	};
-};
-
-fnc_usec_recoverUncons = {
-	//same actions as in the EH, just timed differently
-	player setVariable ["NORRN_unconscious", false, true];
-	player setVariable ["unconsciousTime", 0, true];
-	player setVariable ["USEC_isCardiac",false,true];
-	player setVariable["medForceUpdate",true,true];
-	sleep 1;
-	PVDZ_send = [player,"Epinephrine",[player,player,"ItemEpinephrine"]];
-	publicVariableServer "PVDZ_send";
-	r_player_unconscious = false;
-	sleep 1;
-	r_player_cardiac = false;
-	r_player_handler1 = false;
-	player switchMove "AmovPpneMstpSnonWnonDnon_healed";
-	[objNull, player, rSwitchMove,"AmovPpneMstpSnonWnonDnon_healed"] call RE;
 };

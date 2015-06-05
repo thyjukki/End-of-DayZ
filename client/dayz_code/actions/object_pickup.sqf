@@ -47,7 +47,7 @@ sleep 0.25; //Why are we waiting? Animation
 
 _claimedBy = _holder getVariable["claimed","0"];
 
-if (_claimedBy != _playerID) exitWith { cutText [format[(localize "str_player_beinglooted"),_text] , "PLAIN DOWN"]; };
+if (_claimedBy != _playerID) exitWith { cutText [format [localize "str_player_beinglooted",_text] , "PLAIN DOWN"]; };
 
 if(_classname isKindOf "Bag_Base_EP1") exitwith {
 	_PlayerNear = {isPlayer _x} count ((getPosATL _holder) nearEntities ["CAManBase", 10]) > 1;

@@ -26,9 +26,14 @@ if (dayz_onBack != "") then {
     _item addWeaponCargoGlobal [dayz_onBack,1];
 };
 _array = _this;
+if (count _array > 0) then {
 _source = _array select 0;
 _method = _array select 1;
 _dist = player distance _source;
+} else {
+_source = player;
+_method = "unknown";
+};
 //Send Death Notice
 //["PVDZ_plr_Death",[dayz_characterID,0,_body,_playerID,dayz_playerName]] call callRpcProcedure;
 PVDZ_plr_Death = [dayz_characterID,0,_body,_playerID, _source, currentweapon _source, _dist];
@@ -76,27 +81,15 @@ if (count _array > 0) then {
 };
 
 terminate dayz_musicH;
-//terminate dayz_lootCheck;
 terminate dayz_slowCheck;
-terminate dayz_animalCheck;
 terminate dayz_monitor1;
-terminate dayz_medicalH;
-terminate dayz_gui;
-//terminate dayz_zedCheck;
-terminate dayz_locationCheck;
-//terminate dayz_combatCheck;
-//terminate dayz_spawnCheck;
 
 //Reset (just in case)
 //deleteVehicle dayz_playerTrigger;
 //disableUserInput false;
 r_player_dead = true;
 
-"dynamicBlur" ppEffectEnable true;"dynamicBlur" ppEffectAdjust [4]; "dynamicBlur" ppEffectCommit 0.2;
 
-"colorCorrections" ppEffectEnable true;
-"colorCorrections" ppEffectAdjust [1, 1, 0, [1, 1, 1, 0.0], [1, 1, 1, 0.01],  [1, 1, 1, 0.0]];
-"colorCorrections" ppEffectCommit 1;
 
 //Player is Dead!
 3 fadeSound 0;
@@ -128,8 +121,6 @@ sleep 2;
 
 playMusic "dayz_track_death_1";
 
-"dynamicBlur" ppEffectAdjust [0]; "dynamicBlur" ppEffectCommit 5;
-"colorCorrections" ppEffectAdjust [1, 1, 0, [1, 1, 1, 0.0], [1, 1, 1, 1],  [1, 1, 1, 1]];"colorCorrections" ppEffectCommit 5;
 
 sleep 2;
 

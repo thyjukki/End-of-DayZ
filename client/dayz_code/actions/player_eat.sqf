@@ -5,7 +5,7 @@ call gear_ui_init;
 closeDialog 0;
 
 _onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
-if (_onLadder) exitWith {cutText [(localize "str_player_21") , "PLAIN DOWN"]};
+if (_onLadder) exitWith {cutText [localize "str_player_21", "PLAIN DOWN"]};
 
 _itemorignal = _this;
 _hasfooditem = _itemorignal in magazines player;
@@ -21,13 +21,13 @@ _regen = 0;
 //Unable to eat anything more.
 if ((r_player_foodstack >= 10)) exitwith { 	systemChat [format["Unable to Eat anything else.",_text], "PLAIN DOWN"]; };
 
-if (_cookedfood or _rawfood) then {
+//if (_cookedfood or _rawfood) then {
 	_regen = getNumber (_config >> "bloodRegen");
-};
+//};
 
 _player_eat_Nutrition = getArray (_config >> "Nutrition"); //[]
 
-if (!_hasfooditem) exitWith {cutText [format[(localize "str_player_31"),_text,(localize "str_player_31_consume")] , "PLAIN DOWN"]};
+if (!_hasfooditem) exitWith {cutText [format [localize "str_player_31",_text,localize "str_player_31_consume"] , "PLAIN DOWN"]};
 
 if (vehicle player != player) then {
 	_display = findDisplay 106;
@@ -46,16 +46,7 @@ _sfx = getText (_config >> "sfx");
 //set _sfx to eat if nothing is defined
 if (_sfx == "") then {_sfx = "eat"};
 
-//if (r_player_foodstack >= 10) then {
-	_regen = 0;
-//};
-
-if ((r_player_bloodregen > 5) and (r_player_foodstack > 1) and (r_player_foodstack < 10) and (_regen > 0)) then {
-	_regen = _regen / r_player_foodstack;
-};
-
 ["FoodDrink",_regen,_player_eat_Nutrition] call dayz_NutritionSystem;
-dayz_lastMeal = diag_ticktime;
 
 //disminishing returns. while regen is active
 r_player_foodstack = r_player_foodstack + 1;
@@ -103,11 +94,11 @@ if (r_player_blood / r_player_bloodTotal >= 0.2) then {
 };
 
 if ((r_player_foodstack >= 0) and (r_player_foodstack < 7)) then {
-	cutText [format[(localize "str_player_consumed_food"),_text], "PLAIN DOWN"];
+	cutText [format [localize "str_player_consumed_food",_text], "PLAIN DOWN"];
 };
 if ((r_player_foodstack >= 7) and (r_player_foodstack < 10)) then {
-	cutText [format[(localize "str_player_consumed_food_1"),_text], "PLAIN DOWN"];
+	cutText [format [localize "str_player_consumed_food_1",_text], "PLAIN DOWN"];
 };
 if ((r_player_foodstack >= 10)) then {
-	cutText [format[(localize "str_player_consumed_food_2"),_text], "PLAIN DOWN"];
+	cutText [format [localize "str_player_consumed_food_2",_text], "PLAIN DOWN"];
 };

@@ -23,10 +23,10 @@ _bloodDrained = false;
 _forceExit = false;
 _UID = getPlayerUID player;
 if ((isNil "_UID") or (_UID == "0")) exitWith {};
-if (!_hasEmptyBag) exitWith { cutText ["Missing empty Blood Bag.", "PLAIN DOWN"]; };
-if (!_hasTransfusionKit) exitWith { cutText ["Missing Transfusionkit.", "PLAIN DOWN"]; };
+if (!_hasEmptyBag) exitWith { cutText [localize "str_actions_medical_bagEmpty", "PLAIN DOWN"]; };
+if (!_hasTransfusionKit) exitWith { cutText [localize "str_actions_medical_bagMissingKit", "PLAIN DOWN"]; };
 
-if (_bloodLevel <= 4200) exitWith {cutText ["The bag cannot be filled, there is not enough blood in the donor.", "PLAIN DOWN"];};
+if (_bloodLevel <= 4200) exitWith {cutText [localize "str_actions_medical_bagMissingBlood", "PLAIN DOWN"];};
 
 if (!(alive _victim)) then {
 	_bloodDrained = _victim getVariable ["bloodTaken", false];
@@ -34,7 +34,7 @@ if (!(alive _victim)) then {
 	_victim setVariable ["bloodTaken", true, true];
 };
 
-if (_forceExit) exitWith {cutText ["The bag cannot be filled, there is not enough blood in the donor.", "PLAIN DOWN"];};
+if (_forceExit) exitWith {cutText [localize "str_actions_medical_bagMissingBlood", "PLAIN DOWN"];};
 
 if (vehicle player == player) then {
 	//not in a vehicle
@@ -71,8 +71,8 @@ while {r_doLoop and (_i < 25)} do {
 	_bloodAfter = (_blood - 4000);
 
 	if ((_blood <= _bloodAfter) or (_i == 25)) then {
-		cutText ["The bag has been filled successfully.", "PLAIN DOWN"];
-		[player,_victim,"loc",rTITLETEXT,"The bag has been filled successfully.","PLAIN DOWN"] call RE;
+		cutText [localize "str_actions_medical_bagDone", "PLAIN DOWN"];
+		[player,_victim,"loc",rTITLETEXT,localize "str_actions_medical_bagDone","PLAIN DOWN"] call RE;
 		//_victim setVariable ["USEC_BloodQty", _bloodAfter, true];
 		r_doLoop = false;
 		_complete = true;
@@ -83,8 +83,8 @@ while {r_doLoop and (_i < 25)} do {
 	if (!_isClose) then {
 		r_doLoop = false;
 		r_interrupt = true;
-		cutText ["The process was interrupted! The blood bag has been lost.", "PLAIN DOWN"];
-		[player,_victim,"loc",rTITLETEXT,"The process was interrupted! The blood bag has been lost.","PLAIN DOWN"] call RE;
+		cutText [localize "str_actions_medical_bagInterrupted", "PLAIN DOWN"];
+		[player,_victim,"loc",rTITLETEXT,localize "str_actions_medical_bagInterrupted","PLAIN DOWN"] call RE;
 	};
 };
 

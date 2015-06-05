@@ -13,14 +13,14 @@ _pondPos = [];
 _objectsWell = [];
 
 _onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
-if (_onLadder) exitWith {cutText [(localize "str_player_21") , "PLAIN DOWN"]};
+if (_onLadder) exitWith {cutText [localize "str_player_21", "PLAIN DOWN"]};
 
 _hasbottleitem = _this in magazines player;
 
 _config = configFile >> "CfgMagazines" >> _item;
 _text = getText (_config >> "displayName");
 
-if (!_hasbottleitem) exitWith {cutText [format[(localize "str_player_31"),_text,(localize "str_player_31_fill")] , "PLAIN DOWN"]};
+if (!_hasbottleitem) exitWith {cutText [format [localize "str_player_31",_text,localize "str_player_31_fill"] , "PLAIN DOWN"]};
 
 if (!dayz_isSwimming) then {
 	player playActionNow "PutDown";
@@ -78,10 +78,10 @@ if (_canFill) then {
 				};
 			};
 		};
-		cutText [format[(localize "str_player_01"),_qty], "PLAIN DOWN"];
+		cutText [format [localize "str_player_01",_qty], "PLAIN DOWN"];
 	} else {
-		cutText [(localize "str_player_02") , "PLAIN DOWN"];
+		cutText [localize "str_player_02", "PLAIN DOWN"];
 	};
 } else {
-	cutText [(localize "str_player_20") , "PLAIN DOWN"];
+	cutText [localize "str_player_20", "PLAIN DOWN"];
 };

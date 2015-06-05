@@ -54,7 +54,13 @@ while {_counter < _amount} do {
 
 		_position = getPosATL _agent;
 
-		_favStance = "Middle"; // Kneel
+		_favStance = (
+			switch ceil(random(3^0.5)^2) do {
+				case 3: {"DOWN"}; // prone
+				case 2: {"Middle"}; // Kneel
+				default {"UP"} // stand-up
+			}
+		);
 		_agent setUnitPos _favStance;
 		
 		//Check if point is in water

@@ -145,26 +145,14 @@ drn_AskServerDynamicWeatherEventArgs = []; // []
 drn_fnc_DynamicWeather_SetWeatherLocal = {
     private ["_currentOvercast", "_currentFog", "_currentRain", "_currentWeatherChange", "_targetWeatherValue", "_timeUntilCompletion", "_currentWindX", "_currentWindZ"];
 
-    if(daytime<6||daytime>19)then {
-        _currentOvercast = 0;
-        _currentFog = 0;
-        _currentRain = 0;
-        _currentWeatherChange = _this select 3;
-        _targetWeatherValue = _this select 4;
-        _timeUntilCompletion = _this select 5;
-        _currentWindX = _this select 6;
-        _currentWindZ = _this select 7;
-    }
-    else {
-        _currentOvercast = _this select 0;
-        _currentFog = _this select 1;
-        _currentRain = _this select 2;
-        _currentWeatherChange = _this select 3;
-        _targetWeatherValue = _this select 4;
-        _timeUntilCompletion = _this select 5;
-        _currentWindX = _this select 6;
-        _currentWindZ = _this select 7;
-    };
+    _currentOvercast = _this select 0;
+    _currentFog = _this select 1;
+    _currentRain = _this select 2;
+    _currentWeatherChange = _this select 3;
+    _targetWeatherValue = _this select 4;
+    _timeUntilCompletion = _this select 5;
+    _currentWindX = _this select 6;
+    _currentWindZ = _this select 7;
 
     // Set current weather values
     0 setOvercast _currentOvercast;
