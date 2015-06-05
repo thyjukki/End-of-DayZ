@@ -1149,11 +1149,11 @@ class cfgWeapons
 			"RH_8Rnd_45cal_m1911_tracer",
 			"RH_8Rnd_45cal_m1911_rubber",
 			"RH_8Rnd_45cal_m1911_bt",
-			"RH_8Rnd_45cal_m1911",
-			"RH_8Rnd_45cal_m1911_hp",
-			"RH_8Rnd_45cal_m1911_tracer",
-			"RH_8Rnd_45cal_m1911_rubber",
-			"RH_8Rnd_45cal_m1911_bt"
+			"7Rnd_45ACP_1911",
+			"7Rnd_45ACP_1911_hp",
+			"7Rnd_45ACP_1911_tracer",
+			"7Rnd_45ACP_1911_rubber",
+			"7Rnd_45ACP_1911_bt"
 		};
 		dispersion=0.008500;
 		ffCount=1;
@@ -1220,11 +1220,17 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+
 			"RH_8Rnd_45cal_m1911",
 			"RH_8Rnd_45cal_m1911_hp",
 			"RH_8Rnd_45cal_m1911_tracer",
 			"RH_8Rnd_45cal_m1911_rubber",
-			"RH_8Rnd_45cal_m1911_bt"
+			"RH_8Rnd_45cal_m1911_bt",
+			"7Rnd_45ACP_1911",
+			"7Rnd_45ACP_1911_hp",
+			"7Rnd_45ACP_1911_tracer",
+			"7Rnd_45ACP_1911_rubber",
+			"7Rnd_45ACP_1911_bt"
 		};
 		dispersion=0.007500;
 		ffCount=1;
@@ -1284,7 +1290,12 @@ class cfgWeapons
 			"RH_8Rnd_45cal_m1911_hp",
 			"RH_8Rnd_45cal_m1911_tracer",
 			"RH_8Rnd_45cal_m1911_rubber",
-			"RH_8Rnd_45cal_m1911_bt"
+			"RH_8Rnd_45cal_m1911_bt",
+			"7Rnd_45ACP_1911",
+			"7Rnd_45ACP_1911_hp",
+			"7Rnd_45ACP_1911_tracer",
+			"7Rnd_45ACP_1911_rubber",
+			"7Rnd_45ACP_1911_bt"
 		};
 		dispersion=0.008500;
 		ffCount=1;
