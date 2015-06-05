@@ -77,9 +77,9 @@ _unit setDir _dir;
 
 // let's animate the Z
 if (local _unit) then {
-	_unit switchMove _move;
+	_unit PlayMove _move;
 } else {
-	[objNull,  _unit,  rswitchMove,  _move] call RE;
+	[objNull,  _unit,  rPlayMove,  _move] call RE;
 };
 
 //slow it down make sure the animation isnt running after the damage
@@ -111,7 +111,7 @@ _tPos = (getPosASL _vehicle);
 _zPos = (getPosASL _unit);
 // compute damage for vehicle and/or the player
 if (_isVehicle) then {
-	if ((_unit distance player) < 5) then {
+	if ((_unit distance player) < (dayz_attackRange * 2)) then {
 		_hpList = 	_vehicle call vehicle_getHitpoints;
 		_hp = 		_hpList call BIS_fnc_selectRandom;
 		_wound = 	getText(configFile >> "cfgVehicles" >> (typeOf _vehicle) >> "HitPoints" >> _hp >> "name");
@@ -166,7 +166,7 @@ if (_isVehicle) then {
 	};
 } else { 
 	// player by foot
-	if ((_unit distance player) <= 3.2) then {
+	if ((_unit distance player) <= dayz_attackRange) then {
 			
 		//Make sure sure evrything is processed as we attack.
 		_damage = 0.2 + random (1.2);

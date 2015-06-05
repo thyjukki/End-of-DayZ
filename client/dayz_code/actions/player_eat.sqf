@@ -1,4 +1,4 @@
-private ["_onLadder","_itemorignal","_hasfooditem","_rawfood","_player_eat_Nutrient","_cookedfood","_invehicle","_hasoutput","_config","_text","_regen","_dis","_sfx","_itemtodrop","_nearByPile","_item","_display","_pos"];
+private ["_onLadder","_itemoriginal","_hasfooditem","_rawfood","_player_eat_Nutrient","_cookedfood","_invehicle","_hasoutput","_config","_text","_regen","_dis","_sfx","_itemtodrop","_nearByPile","_item","_display","_pos"];
 
 disableserialization;
 call gear_ui_init;
@@ -7,14 +7,14 @@ closeDialog 0;
 _onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 if (_onLadder) exitWith {cutText [localize "str_player_21", "PLAIN DOWN"]};
 
-_itemorignal = _this;
-_hasfooditem = _itemorignal in magazines player;
-_rawfood = _itemorignal in Dayz_meatraw;
-_cookedfood = _itemorignal in Dayz_meatcooked;
-_hasoutput = _itemorignal in food_with_output;
+_itemoriginal = _this;
+_hasfooditem = _itemoriginal in magazines player;
+_rawfood = _itemoriginal in Dayz_meatraw;
+_cookedfood = _itemoriginal in Dayz_meatcooked;
+_hasoutput = _itemoriginal in food_with_output;
 _invehicle = false;
 
-_config = configFile >> "CfgMagazines" >> _itemorignal;
+_config = configFile >> "CfgMagazines" >> _itemoriginal;
 _text = getText (_config >> "displayName");
 _regen = 0;
 
@@ -37,7 +37,7 @@ if (vehicle player != player) then {
 	player playActionNow "PutDown";
 };
 
-player removeMagazine _itemorignal;
+player removeMagazine _itemoriginal;
 sleep 1;
 
 _dis=3;
@@ -45,6 +45,14 @@ _sfx = getText (_config >> "sfx");
 
 //set _sfx to eat if nothing is defined
 if (_sfx == "") then {_sfx = "eat"};
+
+if (r_player_foodstack >= 10) then {
+	_regen = 0;
+};
+
+if ((r_player_bloodregen > 5) and (r_player_foodstack > 1) and (r_player_foodstack < 10) and (_regen > 0)) then {
+	_regen = _regen / r_player_foodstack;
+};
 
 ["FoodDrink",_regen,_player_eat_Nutrition] call dayz_NutritionSystem;
 
@@ -56,7 +64,7 @@ r_player_foodstack = r_player_foodstack + 1;
 
 if (_hasoutput and !_invehicle) then{
     // Selecting output
-    _itemtodrop = food_output select (food_with_output find _itemorignal);
+    _itemtodrop = food_output select (food_with_output find _itemoriginal);
 
     sleep 3;
     _nearByPile = nearestObjects [getPosATL player, ["WeaponHolder","WeaponHolderBase"], 2];

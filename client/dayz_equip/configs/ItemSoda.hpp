@@ -20,6 +20,13 @@ class ItemWaterBottleInfected : ItemWaterbottle {
 	picture = "\z\addons\dayz_communityassets\textures\waterbottle.paa";
 };
 
+class ItemWaterBottleHerbal : ItemWaterbottle { 
+	model = "z\addons\dayz_communityassets\models\waterbottle.p3d";
+	picture = "\z\addons\dayz_communityassets\textures\waterbottle.paa";
+	displayName = $STR_ITEM_NAME_HerbalDrink;
+	descriptionShort = $STR_ITEM_DESC_HerbalDrink;
+};
+
 //Removed Later
 class ItemSodaCoke : ItemSoda {
 	displayName = $STR_EQUIP_NAME_36a;
@@ -35,7 +42,7 @@ class ItemSodaPepsi : ItemSoda {
 	descriptionShort = $STR_EQUIP_DESC_36;
 	Nutrition[] = {90,0,100,0}; //[Energy,food,water,temp]
 };
-class ItemSodaMdew : ItemSodaCoke {
+class ItemSodaMdew : ItemSoda {
 	displayName = $STR_EQUIP_NAME_37;
 	model = "\dayz_equip\models\soda_mdew.p3d";
 	picture = "\dayz_equip\textures\equip_soda_mdew_ca.paa";
@@ -163,7 +170,6 @@ class ItemSherbet : ItemSoda {
 	displayName = "Sherbet";
 	descriptionShort = "Sherbet";
 	model = "z\addons\dayz_communityassets\models\soda_sherbet_clean_full.p3d";
-	picture = "\z\addons\dayz_communityassets\pictures\equip_soda_sacrite_clean_full_ca.paa";
+	picture = "\z\addons\dayz_communityassets\pictures\equip_soda_sherbet_clean_full_ca.paa";
 	Nutrition[] = {90,0,300,0}; //[Energy,food,water,temp]
 };
-

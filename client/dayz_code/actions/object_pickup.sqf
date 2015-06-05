@@ -5,7 +5,7 @@ _type = _array select 0;
 _classname = _array select 1;
 _holder = _array select 2;
 
-// 												what is this supposed to be?
+
 if (player distance _holder > 3) exitwith { localize "str_pickup_limit_1","PLAIN DOWN" };
 
 _playerID = getPlayerUID player;
@@ -14,9 +14,9 @@ _text = getText (configFile >> _type >> _classname >> "displayName");
 
 if (!canPickup) exitwith {
 	if (pickupInit) then {
-		cutText [localize "str_pickup_limit_2","PLAIN DOWN"]
+		cutText [localize "str_pickup_limit_2","PLAIN DOWN"];
 	} else {
-		cutText [localize "str_pickup_limit_3","PLAIN DOWN"]
+		cutText [localize "str_pickup_limit_3","PLAIN DOWN"];
 	};
 };
 
@@ -54,7 +54,18 @@ if(_classname isKindOf "Bag_Base_EP1") exitwith {
 	if (_PlayerNear) exitWith {cutText [localize "str_pickup_limit_4", "PLAIN DOWN"]};
 
 	diag_log("Picked up a bag: " + _classname);
-	player action ["TakeBag", _holder];
+	
+	_hasBag = unitBackpack player;
+
+	if (isNull _hasBag) then {
+		player action ["TakeBag", _holder];
+	} else {
+		player action ["putbag", player];
+		
+		sleep 0.03;
+		
+		player action ["TakeBag", _holder];
+	};
 };
 
 _config = (configFile >> _type >> _classname);

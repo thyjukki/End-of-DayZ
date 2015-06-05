@@ -5,6 +5,7 @@ if (0 != count Dayz_constructionContext) then {
         if (abs(([_ghost, player] call BIS_fnc_distance2D) - (1 + (sizeOf (typeOf _ghost)) * 0.5)) < 1) then {
             showCinemaBorder false;
             Dayz_BuildCamera = "camera" camCreate (player modeltoWorld [0,0,2]);
+            0.2 fadeSound 0.1;
             Dayz_BuildCamera cameraeffect ["External", "TOP"];
             Dayz_BuildCamera camcommit 0;
             Dayz_BuildCamera camsettarget _ghost;
@@ -17,6 +18,7 @@ if (0 != count Dayz_constructionContext) then {
     }
     else {
         Dayz_BuildCamera cameraeffect ["terminate", "TOP"];
+        0.2 fadeSound 1;
         player switchCamera (Dayz_constructionContext select 2);
         camdestroy Dayz_BuildCamera;
         Dayz_constructionContext set [3, false];

@@ -7,7 +7,7 @@ class Fishing_Boat: Ship {
 	cargoiscodriver[] = {0};
 	cost = 10000;
 	crew = "";
-	maxspeed = 45;
+	maxspeed = 40;
 	damageresistance = 0.00318;
 	displayname = $STR_VEH_NAME_FISHING_BOAT;
 	driveraction = "FB_Driver";

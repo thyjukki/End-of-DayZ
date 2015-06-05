@@ -1,4 +1,4 @@
-// (c) facoptere@gmail.com  for DayZ mod.
+// (c) facoptere@gmail.com, licensed to DayZMod for the community
 
 _base="z\addons\dayz_code\system\scheduler\";
 call compile preprocessFileLineNumbers (_base+"sched_oneachframe.sqf");
@@ -19,8 +19,11 @@ call compile preprocessFileLineNumbers (_base+"sched_achievement.sqf");
 call compile preprocessFileLineNumbers (_base+"sched_gui.sqf");
 call compile preprocessFileLineNumbers (_base+"sched_buildingBubble.sqf");
 
-[
-	// period	offset	code <-> ctx				init code ->ctx
+_list = [];
+if (!isNil "_this") then { call _this; }; // patch the code before starting the scheduler (the task contents can't be modified after the FSM has started)
+if (count _list == 0) then {
+	_list = [
+	// period	offset	loop code <-> ctx, init code ->ctx
 	 [ 0,	 	0,		sched_onEachFrame, sched_onEachFrame_init ], // SPECIAL: nul period -> code returns boolean requesting to skip other tasks
 	 [ 0.2,	 	20,		sched_gravity, sched_gravity_init ],
 	 [ 0.2,	 	0.15,	sched_security, sched_security_init ],
@@ -41,6 +44,8 @@ call compile preprocessFileLineNumbers (_base+"sched_buildingBubble.sqf");
 	 [ 15, 	   35.44,	sched_buildingBubble ],
 	 [ 60, 	   20.44,	sched_newDay ],
 	 [ 1, 		0.51,	sched_buriedZeds, sched_buriedZeds_init ]
-] execFSM (_base+"scheduler.fsm");
+	];
+};
+_list execFSM (_base+"scheduler.fsm");
 
-//diag_log [ diag_tickTime, __FILE__, "Scheduler started"];
+diag_log [ diag_tickTime, __FILE__, "Scheduler started"];

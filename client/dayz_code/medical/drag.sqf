@@ -20,7 +20,6 @@ if (!_unconscious) exitWith {};
 
 //player assumes dragging posture
 r_drag_sqf = true;
-r_carry_sqf = true;
 
 while {r_drag_sqf} do {
 	if (!_addAction) then {
@@ -47,22 +46,19 @@ while {r_drag_sqf} do {
 		call fnc_usec_medic_removeActions;
 
 		NORRN_dropAction = player addAction [localize "str_actions_medical_dropbody", "\z\addons\dayz_code\medical\drop_body.sqf",_dragee, 0, false, true];
-		NORRN_carryAction = player addAction ["Carry body", "\z\addons\dayz_code\medical\carry.sqf",_dragee, 0, false, true];
+		//NORRN_carryAction = player addAction ["Carry body", "\z\addons\dayz_code\medical\carry.sqf",_dragee, 0, false, true];
 		sleep 1;
 		_addAction = true;
 	};
 
 	if (force_dropBody) then {
-		[_dragee, _unit, _unconscious, _dragee] execVM "\z\addons\dayz_code\medical\drop_body.sqf";
+		[cursorTarget, _unit, _unconscious, _dragee] execVM "\z\addons\dayz_code\medical\drop_body.sqf";
 	};
 
 	if (vehicle player != player) then {
 		player action ["eject", vehicle player];
 		cutText [localize "str_actions_medical_dragbody_veh","PLAIN DOWN"];
-		[_dragee, _unit, _unconscious, _dragee] execVM "\z\addons\dayz_code\medical\drop_body.sqf";
-	};
-	if (_dragee getVariable ["NORRN_unconscious", false]) then {
-		[_dragee, _unit, _unconscious, _dragee] execVM "\z\addons\dayz_code\medical\drop_body.sqf";
+		[cursorTarget, _unit, _unconscious, _dragee] execVM "\z\addons\dayz_code\medical\drop_body.sqf";
 	};
 	if (!r_drag_sqf) exitWith {};
 };

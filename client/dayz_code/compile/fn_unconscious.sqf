@@ -1,22 +1,26 @@
-// (c) facoptere@gmail.com  for DayZ mod.
+// (c) facoptere@gmail.com, licensed to DayZMod for the community
 
-private ["_count","_anim","_weapon","_sprint","_stance","_transmove","_start","_timeout","_short","_sandLevel","_veh","_disableHdlr"];
+private ["_count","_anim","_weapon","_sprint","_stance","_transmove","_start","_timeout","_short","_sandLevel","_veh","_disableHdlr", "_speed"];
 
 if (r_player_unconsciousInProgress) exitWith {};
 r_player_unconsciousInProgress = true;
 
 
 _anim = toArray animationState player;
-_weapon = switch (_anim select 17) do {
-    case 114 : { 2 }; // rifle
-    case 112 : { 1 }; // pistol
-    default { 0 }; // bare hands / flare
+_weapon = if (count _anim <= 17) then { 0 } else {
+    switch (_anim select 17) do {
+        case 114 : { 2 }; // rifle
+        case 112 : { 1 }; // pistol
+        default { 0 }; // bare hands / flare
+    }
 };
-_sprint = (_anim select 10 in [112, 118]);
-_stance = switch (_anim select 5) do {
-    case 107 : { 1 }; // kneel
-    case 112 : { 0 }; // prone
-    default { 2 }; // erected
+_sprint = if (count _anim <= 10) then { false } else { _anim select 10 in [112, 118] };
+_stance = if (count _anim <= 5) then { 2 } else {
+    switch (_anim select 5) do {
+        case 107 : { 1 }; // kneel
+        case 112 : { 0 }; // prone
+        default { 2 }; // erected
+    }
 };
 _transmove = (switch true do {
     case (player != vehicle player) : {""};
@@ -64,11 +68,16 @@ while { (diag_tickTime - _start) < _timeout and r_player_unconscious and alive p
         ((uiNamespace getVariable 'DAYZ_GUI_waiting') displayCtrl 1400) ctrlCommit 0.05;
     };
     _veh = vehicle player;
-    if ((player != _veh) and {(_veh iskindOf "LandVehicle" and [0,0,0] distance velocity _veh < 10)}) then {
-         player action ["eject", _veh];
-         waituntil {player == _veh};
-         player switchmove "amovppnemstpsnonwnondnon"; // instant prone
+    if ((player != _veh) and {(_veh iskindOf "LandVehicle")}) then {
+        _speed = [0,0,0] distance velocity _veh;
+        if (_speed > 10) then { _veh engineOn false; }
+        else {
+            player action ["eject", _veh];
+            player leaveVehicle _veh;
+            [] spawn { sleep 0.1; player switchmove "amovppnemstpsnonwnondnon"; }; // instant prone
+        };
     };
+    if (player == _veh) then { player setVelocity [0,0,0]; };
     sleep 0.1;
     _count = _count + 1;
 };
@@ -84,4 +93,5 @@ r_player_unconsciousInProgress = false;
 terminate _disableHdlr;
 waituntil {scriptDone _disableHdlr};
 disableUserInput false; r_player_unconsciousInputDisabled = false;
+player switchMove "AmovPpneMstpSnonWnonDnon_healed";
 //diag_log [ __FILE__, diag_tickTime, "done" ];

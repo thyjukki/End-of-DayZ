@@ -1,4 +1,4 @@
-// (c) facoptere@gmail.com for DayZ Mod
+// (c) facoptere@gmail.com, licensed to DayZMod for the community
 //
 // check that plants libs are properly loaded
 // thanks to Tansien the great

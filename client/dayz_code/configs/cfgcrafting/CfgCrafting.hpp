@@ -18,19 +18,19 @@ class CfgCrafting {
 	#include "Recipes\Medical\Bandage.hpp"
 	#include "Recipes\Medical\sepsisBandage.hpp"
 	#include "Recipes\Medical\woodensplint.hpp"
+	#include "Recipes\Medical\HerbalDrink.hpp"
 	//ammo
 	#include "Recipes\Ammo\WoodenArrow.hpp"
 	//other
 	#include "Recipes\Other\woodencrate.hpp"
+	#include "Recipes\Other\nails.hpp"
+	#include "Recipes\Other\BackPack.hpp"
 	//#include "Recipes\Other\woodenCraftTable.hpp"
 	//Traps
-	/*#include "Recipes\Traps\TrapBearTrapFlare.hpp"
+	#include "Recipes\Traps\TrapBearTrapFlare.hpp"
 	#include "Recipes\Traps\TrapBearTrapSmoke.hpp"
 	#include "Recipes\Traps\TrapTripwireCans.hpp"
 	#include "Recipes\Traps\TrapTripwireFlare.hpp"
 	#include "Recipes\Traps\TrapTripwireGrenade.hpp"
-	#include "Recipes\Traps\TrapTripwireSmoke.hpp"*/
-	
-	//Backpacks
-	#include "Recipes\Other\BackPack.hpp"	
+	#include "Recipes\Traps\TrapTripwireSmoke.hpp"	
 };

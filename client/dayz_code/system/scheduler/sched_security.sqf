@@ -1,4 +1,4 @@
-// (c) facoptere@gmail.com  for DayZ mod.
+// (c) facoptere@gmail.com, licensed to DayZMod for the community
 
 sched_security_init = {
 	if (dayz_antihack == 1) then { diag_log [ diag_ticktime, __FILE__, "Some security routines inited"]; };

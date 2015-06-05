@@ -1,8 +1,6 @@
-private["_soundVal","_array"];
+private ["_type","_typeA","_test","_soundType","_soundVal","_soundval"];
 
-_unit = _this;
-_pos = getPosATL _unit;
-_type = surfaceType _pos;
+_type = surfaceType getPosATL _this;
 _typeA = toArray _type;
 _typeA set [0,"DEL"];
 _typeA = _typeA - ["DEL"];
@@ -10,20 +8,23 @@ _type = toString _typeA;
 //_test = 0;
 
 _soundType = getText (configFile >> "CfgSurfaces" >> _type >> "soundEnviron");
-
-if (isClass(configFile >> "CfgPatches" >> "JSRS_Movement")) then 
-{
-	_soundVal = parseNumber format["%1",(((getArray (configFile >> "CfgVehicles" >> "CAManBase" >> "SoundEnvironExt" >> _soundType) select 0)  select 1) select 3)];
-}
-else
-{
-	_soundVal = parseNumber format["%1",((getArray (configFile >> "CfgVehicles" >> "CAManBase" >> "SoundEnvironExt" >> _soundType) select 0) select 3)];
+_soundVal = getArray (configFile >> "CfgVehicles" >> "CAManBase" >> "SoundEnvironExt" >> _soundType);
+if ((isNil "_soundval") or {(count _soundval == 0)}) then {
+	_soundval = 25; 
+} 
+else {
+	_soundVal = _soundVal select 0;
+	if ((isNil "_soundval") or {(count _soundval <= 3)}) then {
+		_soundval = 25; 
+	} 
+	else { 
+		_soundVal = parseNumber format["%1",_soundVal select 3];
+		if (_soundVal == 0) then {
+			_soundVal = 25;
+		};
+	};
 };
 
-//diag_log format["JUKDEBUGType: %1, SoundType: %2, SoundVal: %3",_type,_soundType,_soundVal];
+//diag_log format["Type: %1, SoundType: %2, SoundVal: %3",_type,_soundType,_soundVal];
 
-if (_soundVal == 0) then {
-	_soundVal = 25;
-};
-_array = [_soundType,_soundVal];
-_array
+[_soundType,_soundVal]

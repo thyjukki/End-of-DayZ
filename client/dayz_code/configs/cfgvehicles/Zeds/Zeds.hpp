@@ -45,9 +45,9 @@ class zZombie_Base : Zed_Base {
 	identityTypes[] = {"zombie1", "zombie2"};
 	class TalkTopics {};
 	languages[] = {};
-	damageScale = 300;
-	sepsisChance = 10;
-	BleedChance  = 5;
+	damageScale = 350;
+	sepsisChance = 18;
+	BleedChance  = 15;
 	forcedSpeed = 6;
 	
 	class Eventhandlers {
@@ -70,13 +70,13 @@ class zZombie_Base : Zed_Base {
 		};
 		
 		class HitBody : HitHead {
-			armor = 1.4;
+			armor = 2.4;
 			name = "body";
 			memoryPoint = "aimPoint";
 		};
 		
 		class HitSpine : HitHead {
-			armor = 1;
+			armor = 2;
 			name = "Spine2";
 			memoryPoint = "aimPoint";
 		};

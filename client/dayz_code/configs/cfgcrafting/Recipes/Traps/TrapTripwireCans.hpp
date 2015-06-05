@@ -6,7 +6,7 @@ class Blueprint_Trap_Cans : Recipe {
 		{"equip_string","CfgMagazines",1},
 		{"PartWoodPile","CfgMagazines",1},
 		{{"TrashTinCan","CfgMagazines",1},
-			{"FoodCanLongSpratsEmpty","CfgMagazines",1}, 
+		//	{"FoodCanLongSpratsEmpty","CfgMagazines",1}, 
 			{"FoodCanBeefEmpty","CfgMagazines",1}, 
 			{"FoodCanPotatoesEmpty","CfgMagazines",1}, 
 			{"FoodCanGriffEmpty","CfgMagazines",1}, 

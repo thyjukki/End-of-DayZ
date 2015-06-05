@@ -103,7 +103,7 @@ class RscDisplayClientGetReady : RscDisplayGetReady
 
 class RscDisplayDebriefing: RscStandardDisplay
 {
-	onLoad = "ctrlActivate ((_this select 0) displayCtrl 2);with uiNameSpace do {RscDMSLoad=nil;};"; /*diag_log[diag_tickTime,'RscDisplayDebriefing'];*/
+	onLoad = "ctrlActivate ((_this select 0) displayCtrl 2);";
 	class controls
 	{
 		delete Debriefing_MissionTitle;
@@ -130,15 +130,20 @@ class RscDisplayDebriefing: RscStandardDisplay
 		delete Mainback;
 	};
 };
+class RscShortcutButton;
+class RscShortcutButtonMain;
+
 
 class RscDisplayMultiplayerSetup: RscStandardDisplay
 {
-	onload = "with uiNameSpace do{RscDisplayMultiplayerSetup=_this select 0};";
+	onload = "with uiNameSpace do{RscDisplayMultiplayerSetup=_this select 0};"; //#70
 	onMouseHolding = "with uiNameSpace do {" \n
 		"switch (1==1) do {" \n
-		"	case(isNil 'RscDMSLoad'):{RscDMSLoad=diag_tickTime};" \n
-		"	case(RscDMSLoad==-1):{};" \n
-		"	case(diag_tickTime-RscDMSLoad>5):{ctrlActivate((_this select 0)displayCtrl 1);RscDMSLoad=-1;};" \n /*diag_log[diag_tickTime,_this,RscDMSLoad,'onMouseHolding/autosubmit']*/
+		"	case(isNil 'RscDMSLoad'):{RscDMSLoad=diag_tickTime;};" \n // start autologon timer 
+		"	case(RscDMSLoad==-1):{};" \n // do not autologon, Death 
+		"	case(RscDMSLoad==-2):{};" \n // start autologon timer, Abort
+		"	case(diag_tickTime-RscDMSLoad>7):{RscDMSLoad=diag_tickTime;};" \n // workaround for a strange bug //
+		"	case(diag_tickTime-RscDMSLoad>5):{ctrlActivate((_this select 0)displayCtrl 1);RscDMSLoad=-1;};" \n // autologon after 5 seconds //
 		"};};";
 	onButtonClick = "with uiNameSpace do{RscDMSLoad=-1};false";
 	onButtonDblClick = "with uiNameSpace do{RscDMSLoad=-1};false";
@@ -255,9 +260,21 @@ class RscDisplayMultiplayerSetup: RscStandardDisplay
 		class CA_ValuePool: RscIGUIListBox
 		{
 			idc = 114;
+			text = "Players";
 			x = "(2/100) * SafeZoneW + SafeZoneX"; // to left
 			w = "(96/100) * SafeZoneW"; // wide
 		};
+		class CA_ButtonCancel: RscShortcutButton
+		{
+			idc = 2;
+			default = 0;
+			shortcuts[] = {"0x00050000 + 1"};
+			x = "(68/100)	* SafeZoneW + SafeZoneX";
+			y = "(93/100)	* SafeZoneH + SafeZoneY";
+			w = 0.203825;
+			text = "$STR_DISP_BACK";
+			onButtonClick = "with uiNameSpace do {RscDMSLoad=nil;};"; // autologon at logon on next server
+		};		
 	};
 };
 
@@ -328,8 +345,6 @@ class RscDisplayGameOptions
 		};
 	};*/
 };
-class RscShortcutButton;
-class RscShortcutButtonMain;
 
 class RscDisplayMain : RscStandardDisplay
 {
@@ -355,7 +370,7 @@ class RscDisplayMain : RscStandardDisplay
 		class DAYZ_Version : CA_Version
 		{
 			idc = -1;
-			text = "@DayZMod 1.8.3-DEV.1";
+			text = "DayZMod V1.8.6.1";
 			y = "(SafeZoneH + SafeZoneY) - (1 - 0.95)";
 		};
 		delete CA_TitleMainMenu;
@@ -523,7 +538,7 @@ class RscDisplayMPInterrupt : RscStandardDisplay {
 		class CA_B_Abort : CA_B_SAVE {
 			idc = 104;
 			y = 0.2537 + 0.101903 * 4;
-			onButtonClick = "[] execVM '\z\addons\dayz_code\compile\player_onPause.sqf'; call player_forceSave;";
+			onButtonClick = "[] execVM '\z\addons\dayz_code\compile\player_onPause.sqf'; call player_forceSave; with uiNameSpace do {RscDMSLoad=-2;};"; // request disconnection from server
 			text = $STR_DISP_INT_ABORT;
 			default = 0;
 		};
@@ -538,6 +553,9 @@ class RscDisplayMPInterrupt : RscStandardDisplay {
 		};
 	};
 };
+
+
+
 /*
 class DZ_ItemInteraction {
 	idd = 6999;

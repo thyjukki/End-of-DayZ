@@ -77,7 +77,7 @@ if ((_primaryWeapon in Dayz_fishingItems) && !dayz_fishingInprogress && (_inVehi
 _canDoThis=false;
 if (_canDo and !_inVehicle and !dayz_isSwimming) then {
 	{
-        _waterHoles = if (typeOf _x == "waterHoleProxy") then {nearestObjects [_x, [], 0.5];} else {[_x];};
+        _waterHoles = if (typeOf _x == "waterHoleProxy") then {nearestObjects [_x, [], 1];} else {[_x];};
 		{
             _w2m = _x worldToModel (getPosATL player);
             _bb = (boundingbox _x) select 1;
@@ -110,9 +110,9 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 	_isAnimal = _cursorTarget isKindOf "Animal";
 	_isZombie = _cursorTarget isKindOf "zZombie_base";
 	_isDestructable = _cursorTarget isKindOf "BuiltItems";
-	_isTent = _cursorTarget isKindOf "TentStorage";
-	_isStash = _cursorTarget isKindOf "StashSmall";
-	_isMediumStash = _cursorTarget isKindOf "StashMedium";
+	//_isTent = _cursorTarget isKindOf "TentStorage";
+	//_isStash = _cursorTarget isKindOf "StashSmall";
+	//_isMediumStash = _cursorTarget isKindOf "StashMedium";
 	_isHarvested = _cursorTarget getVariable["meatHarvested",false];
 	_isGenerator = _cursorTarget isKindOf "Generator_DZ";
 	_ownerID = _cursorTarget getVariable ["characterID","0"];
@@ -131,7 +131,6 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 	_text = getText (configFile >> "CfgVehicles" >> typeOf _cursorTarget >> "displayName");
 	_isPlant = typeOf _cursorTarget in Dayz_plants;
 	_istypeTent = (_cursorTarget isKindOf "TentStorage_base") or (_cursorTarget isKindOf "IC_Tent");
-	_hasShovel = ("ItemEtool" in items player) || ("ItemEtool" in items player);
 	_upgradeItems = ["TentStorage","TentStorage0","TentStorage1","TentStorage2","TentStorage3","StashSmall","StashSmall1","StashSmall2","StashSmall3","StashSmall4","StashMedium","StashMedium1","StashMedium2","StashMedium3","DomeTentStorage","DomeTentStorage0","DomeTentStorage1","DomeTentStorage2","DomeTentStorage3","DomeTentStorage4"];
 
 	_isCampSite = _cursorTarget isKindOf "IC_Fireplace1";
@@ -168,26 +167,24 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 	};
 	
 	if (damage _cursorTarget < 1) then {
-		if (fuel _cursorTarget < 1) then {
-			//Allow player to fill vehicle 20L
-			if(_hasFuel20 and !_isZombie and !_isAnimal and !_isMan and (_isVehicle or _isGenerator)) then {
-				if (s_player_fillfuel20 < 0) then {
-					s_player_fillfuel20 = player addAction [format[localize "str_actions_medical_10",_text,"20"], "\z\addons\dayz_code\actions\refuel.sqf",["ItemJerrycan"], 0, true, true, "", "'ItemJerrycan' in magazines player"];
-				};
-			} else {
-				player removeAction s_player_fillfuel20;
-				s_player_fillfuel20 = -1;
+		//Allow player to fill vehicle 20L
+		if(_hasFuel20 and !_isZombie and !_isAnimal and !_isMan and (_isVehicle or _isGenerator) and (fuel _cursorTarget < 1) and !a_player_jerryfilling) then {
+			if (s_player_fillfuel20 < 0) then {
+				s_player_fillfuel20 = player addAction [format[localize "str_actions_medical_10",_text,"20"], "\z\addons\dayz_code\actions\refuel.sqf",["ItemJerrycan"], 0, true, true, "", "'ItemJerrycan' in magazines player"];
 			};
+		} else {
+			player removeAction s_player_fillfuel20;
+			s_player_fillfuel20 = -1;
+		};
 
-			//Allow player to fill vehicle 5L
-			if(_hasFuel5 and !_isZombie and !_isAnimal and !_isMan and (_isVehicle or _isGenerator)) then {
-				if (s_player_fillfuel5 < 0) then {
-					s_player_fillfuel5 = player addAction [format[localize "str_actions_medical_10",_text,"5"], "\z\addons\dayz_code\actions\refuel.sqf",["ItemFuelcan"], 0, true, true, "", "'ItemFuelcan' in magazines player"];
-				};
-			} else {
-				player removeAction s_player_fillfuel5;
-				s_player_fillfuel5 = -1;
+		//Allow player to fill vehicle 5L
+		if(_hasFuel5 and !_isZombie and !_isAnimal and !_isMan and (_isVehicle or _isGenerator) and (fuel _cursorTarget < 1) and !a_player_jerryfilling) then {
+			if (s_player_fillfuel5 < 0) then {
+				s_player_fillfuel5 = player addAction [format[localize "str_actions_medical_10",_text,"5"], "\z\addons\dayz_code\actions\refuel.sqf",["ItemFuelcan"], 0, true, true, "", "'ItemFuelcan' in magazines player"];
 			};
+		} else {
+			player removeAction s_player_fillfuel5;
+			s_player_fillfuel5 = -1;
 		};
 		/*
 		//power on Gen
@@ -306,7 +303,7 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 	};
 
 	//Fireplace Actions check
-	if (inflamed _cursorTarget) then {
+	if ((_cursorTarget call isInflamed) or (inflamed _cursorTarget)) then {
 		_hasRawMeat = {_x in Dayz_meatraw} count magazines player > 0;
 		_hastinitem = {_x in boil_tin_cans} count magazines player > 0;
 		
@@ -334,7 +331,7 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 	};
 	
 	if(_cursorTarget == dayz_hasFire) then {
-		if ((s_player_fireout < 0) and !(inflamed _cursorTarget) and (player distance _cursorTarget < 3)) then {
+		if ((s_player_fireout < 0) and !(_cursorTarget call isInflamed) and (player distance _cursorTarget < 3)) then {
 			s_player_fireout = player addAction [localize "str_actions_self_06", "\z\addons\dayz_code\actions\fire_pack.sqf",_cursorTarget, 0, false, true, "",""];
 		};
 	} else {
@@ -452,6 +449,79 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 			s_player_repair_crtl = -1;
 		};
 	};
+	
+	// House locking and unlocking
+	_isHouse = (typeOf cursorTarget) in ["SurvivorWorkshopAStage5", "SurvivorWorkshopBStage5", "SurvivorWorkshopCStage5"];
+	_isGate = (typeOf cursorTarget) in ["WoodenGate_1","WoodenGate_2","WoodenGate_3","WoodenGate_4"];
+
+	//Only the owners can lock the gates
+	_isLockableGate = (typeOf cursorTarget) in ["WoodenGate_2","WoodenGate_3","WoodenGate_4"];
+	_isUnlocked = cursorTarget getVariable ["isOpen","0"] == "1";
+
+	//Allow the gates to be opened when not locked by anyone
+	_isOpen = ((cursorTarget animationPhase "DoorL") == 1) || ((cursorTarget animationPhase "DoorR") == 1);
+	_isClosed = ((cursorTarget animationPhase "DoorL") == 0) || ((cursorTarget animationPhase "DoorR") == 0);
+	
+	//[["ownerArray",["PID"]]]
+	_ownerArray = _cursorTarget getVariable ["ownerArray",["0"]];
+	_ownerPID = (_ownerArray select 0);
+	
+	// open Gate
+	if (_isGate and _isClosed and _isUnlocked and _canDo) then {
+		if (s_player_openGate < 0) then {
+			s_player_openGate = player addAction ["Open Gate", "\z\addons\dayz_code\actions\player_operate.sqf",[cursorTarget,"Open"], 1, true, true, "", ""];
+		}
+	} else {
+		player removeAction s_player_openGate;
+		s_player_openGate = -1;
+	};
+	// Close Gate
+	if (_isGate and _isOpen and _isUnlocked and _canDo) then {
+		if (s_player_CloseGate < 0) then {
+			s_player_CloseGate = player addAction ["Close Gate", "\z\addons\dayz_code\actions\player_operate.sqf",[cursorTarget,"Close"], 1, true, true, "", ""];
+		}
+	} else {
+		player removeAction s_player_CloseGate;
+		s_player_CloseGate = -1;
+	};
+	// Set
+	if ((_isHouse or _isLockableGate) and (_ownerPID == (getPlayerUID player)) and !_isUnlocked and _isClosed and _canDo) then {
+		if (s_player_setCode < 0) then {
+			s_player_setCode = player addAction ["Set Lock Code", "\z\addons\dayz_code\actions\player_operate.sqf",[cursorTarget,"Set"], 1, true, true, "", ""];
+		}
+	} else {
+		player removeAction s_player_setCode;
+		s_player_setCode = -1;
+	};
+	// Unlock Gate/House
+	if ((_isHouse or _isLockableGate) and !_isUnlocked and _isClosed and _canDo) then {
+		if (s_player_unlockhouse < 0) then {
+			s_player_unlockhouse = player addAction ["Unlock Gate", "\z\addons\dayz_code\actions\player_operate.sqf",[cursorTarget,"Unlock"], 1, true, true, "", ""];
+		}
+	} else {
+		player removeAction s_player_unlockhouse;
+		s_player_unlockhouse = -1;
+	};
+	// Lock Gate/House
+	if ((_isHouse or _isLockableGate) and _isUnlocked and _isClosed and _canDo) then {
+		if (s_player_lockhouse < 0) then {
+			s_player_lockhouse = player addAction ["Lock Gate", "\z\addons\dayz_code\actions\player_operate.sqf",[cursorTarget,"Lock"], 1, true, true, "", ""];
+		};
+	} else {
+		player removeAction s_player_lockhouse;
+		s_player_lockhouse = -1;
+	};
+	//Break In
+	if ((_isHouse or _isLockableGate) and (_ownerPID != (getPlayerUID player)) and !_isUnlocked and _canDo) then {
+		if (s_player_breakinhouse < 0) then {
+			s_player_breakinhouse = player addAction ["Break In", "\z\addons\dayz_code\actions\player_breakin.sqf",cursorTarget, 1, true, true, "", ""];
+		}
+	} else {
+		player removeAction s_player_breakinhouse;
+		s_player_breakinhouse = -1;
+	};
+	
+	
 } else {
 	//Engineering
 	{dayz_myCursorTarget removeAction _x} count s_player_repairActions;s_player_repairActions = [];
@@ -514,7 +584,20 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 	//player removeAction s_player_debugCheck;
 	//s_player_debugCheck = -1;
 	player removeAction s_player_upgradestroage;
-	s_player_upgradestroage = -1
+	s_player_upgradestroage = -1;
+	//Unlock,Lock
+	player removeAction s_player_setCode;
+	s_player_setCode = -1;
+	player removeAction s_player_lockhouse;
+	s_player_lockhouse = -1;
+	player removeAction s_player_unlockhouse;
+	s_player_unlockhouse = -1;
+	player removeAction s_player_openGate;
+	s_player_openGate = -1;
+	player removeAction s_player_CloseGate;
+	s_player_CloseGate = -1;
+	player removeAction s_player_breakinhouse;
+	s_player_breakinhouse = -1;
 };
 
 //Monitor

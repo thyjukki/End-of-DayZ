@@ -1,4 +1,4 @@
-private ["_pos","_display","_body","_playerID","_array","_source","_method","_canHitFree","_isBandit","_punishment","_humanityHit","_myKills","_humanity","_kills","_killsV","_myGroup"];
+private ["_pos","_display","_body","_playerID","_array","_source","_method","_canHitFree","_isBandit","_punishment","_humanityHit","_myKills","_humanity","_kills","_killsV","_myGroup","_model"];
 disableSerialization;
 if (deathHandled) exitWith {};
 
@@ -17,26 +17,20 @@ disableUserInput true;
 
 //add weapon on back to player...
 if (dayz_onBack != "") then {
-	//_body addWeapon dayz_onBack;
-    
+	//Add weapon on back to body.
+	_body addWeapon dayz_onBack;
+    /*
+	//Add weapon on back to the ground.
 	_pos = _body modeltoWorld [1,1,0];
 	//_pos set [2, 0];
     _item = createVehicle ["WeaponHolder", _pos, [], 0.0, "CAN_COLLIDE"];
     _item setPosATL [_pos select 0, _pos select 1, ((_pos select 2) + 0.1)];
     _item addWeaponCargoGlobal [dayz_onBack,1];
-};
-_array = _this;
-if (count _array > 0) then {
-_source = _array select 0;
-_method = _array select 1;
-_dist = player distance _source;
-} else {
-_source = player;
-_method = "unknown";
+	*/
 };
 //Send Death Notice
 //["PVDZ_plr_Death",[dayz_characterID,0,_body,_playerID,dayz_playerName]] call callRpcProcedure;
-PVDZ_plr_Death = [dayz_characterID,0,_body,_playerID, _source, currentweapon _source, _dist];
+PVDZ_plr_Death = [dayz_characterID,0,_body,_playerID];
 publicVariableServer "PVDZ_plr_Death";
 
 _id = [player,20,true,getPosATL player] call player_alertZombies;
@@ -55,27 +49,62 @@ player setVariable ["bloodTaken", false, true];
 player setVariable ["startcombattimer", 0];
 r_player_unconscious = false;
 r_player_cardiac = false;
+_model = typeOf player;
 
-
+_array = _this;
 if (count _array > 0) then {
+	_source = _array select 0;
+	_method = _array select 1;
 	if ((!isNull _source) and (_source != player)) then {
 		_canHitFree = player getVariable ["freeTarget",false];
 		_isBandit = (player getVariable["humanity",0]) <= -2000;
-		_punishment = _canHitFree or _isBandit; //if u are bandit or start first - player will not recieve humanity drop
+        _accidentalMurder = (_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ","Bandit1_DZ","BanditW1_DZ"]);
+
+		_punishment = _canHitFree || _isBandit || _accidentalMurder; //if u are bandit or start first - player will not recieve humanity drop
 		_humanityHit = 0;
+
 		if (!_punishment) then {
 			//i'm "not guilty" - kill me and be punished
-			_myKills = ((player getVariable ["humanKills",0]) / 30) * 1000;
+			_myKills = ((player getVariable ["humanKills",0]) / 3) * 1500;
+			// how many non bandit players have I (the dead player) killed?
+			// punish my killer 2000 for shooting a surivor
+			// but subtract 500 for each survivor I've murdered
 			_humanityHit = -(2000 - _myKills);
 			_kills = _source getVariable ["humanKills",0];
 			_source setVariable ["humanKills",(_kills + 1),true];
 			PVDZ_send = [_source,"Humanity",[_source,_humanityHit,300]];
 			publicVariableServer "PVDZ_send";
+
 		} else {
 			//i'm "guilty" - kill me as bandit
 			_killsV = _source getVariable ["banditKills",0];
 			_source setVariable ["banditKills",(_killsV + 1),true];
 		};
+		
+		// START Musty Achievement
+		_killer = _source;			// who did the killing
+		_killedachievementID = -1;
+		if (_killer distance _body > 200) then {
+			_killedachievementID = 15;	// steady aim
+			achievement_SteadyAim = true;
+		};
+		if (_killer distance _body > 500) then {
+			_killedachievementID = 16;	// marksman
+			achievement_Marksman = true;
+		};
+		if (_killer distance _body > 1000) then {
+			_killedachievementID = 17;	// sniper
+			achievement_Sniper = true;
+		};	
+		if (_killedachievementID > -1) then {
+			if (dayz_playerAchievements select _killedachievementID < 1) then {
+				_killerID = _killer getVariable["characterID",0];	// get his characterID
+				dayz_playerAchievements set [_killedachievementID,1];
+				achievement = [_killedachievementID, _killer, _killerID];		// publish event to server
+				publicVariableServer "achievement";
+			};
+		};
+	// END Musty Achievement
 	};
 	_body setVariable ["deathType",_method,true];
 };

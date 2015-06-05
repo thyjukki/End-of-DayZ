@@ -1,4 +1,4 @@
-// (c) facoptere@gmail.com  for DayZ mod.
+// (c) facoptere@gmail.com, licensed to DayZMod for the community
 
 // automatically select primary weapon after inactivity on throwable weapon
 // (The problem in ArmA is that when a player select a throwable, he still holds the primary weapon in hand, 
@@ -15,8 +15,6 @@ sched_throwable = {
 	private ["_stance","_cur_muzz","_type", "_x"];
 	
 	if ((!isNil "player") and {(!isNull player)}) then {
-		_stance = toArray (animationState player);
-		_stance = if (count _stance>17) then {toString [_stance select 17]} else {""};
 		_cur_muzz = currentMuzzle player;
 		if (((!isNil "_cur_muzz") and {(_cur_muzz != "")}) AND {(0 == getNumber(configFile >> "CfgWeapons" >> _cur_muzz >> "type"))}) then {
 			if (sched_throwable_prevmuzz != _cur_muzz) then {
@@ -28,6 +26,8 @@ sched_throwable = {
 			};
 		};
 		if (abs(sched_throwable_time-diag_tickTime)<2) then {
+			_stance = toArray (animationState player);
+			_stance = if ((!isNil "_stance") and {(count _stance>17)}) then {toString [_stance select 17]} else {""};
 			_type = 4096;
 			switch _stance do {
 				case "p": { _type = 2; };

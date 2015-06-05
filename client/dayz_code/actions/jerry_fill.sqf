@@ -45,7 +45,6 @@ if (("ItemJerrycanEmpty" in magazines player) or ("ItemFuelcanEmpty" in magazine
 
 	r_doLoop = false;
 
-
 	if (_finished) then {
 		for "_x" from 1 to _qty20 do {
 			player removeMagazine "ItemJerrycanEmpty";

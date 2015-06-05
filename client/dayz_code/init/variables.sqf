@@ -7,7 +7,7 @@ dayz_Trash = 1;
 //Model Variables
 Bandit1_DZ = "Bandit1_DZ";
 BanditW1_DZ = "BanditW1_DZ";
-Survivor1_DZ = "Survivor2_DZ";
+Survivor1_DZ = "Survivor1_DZ";
 Survivor2_DZ = "Survivor2_DZ";
 SurvivorW2_DZ = "SurvivorW2_DZ";
 Sniper1_DZ = "Sniper1_DZ";
@@ -19,9 +19,17 @@ dayz_chloroform = [];
 
 Detain = 0;
 
+//Rolling Msg system
+Message_1 = "";
+Message_2 = "";
+Message_3 = "";
+Message_1_time = 0;
+Message_2_time = 0;
+Message_3_time = 0;
+
 ///Player class's
-AllPlayers = ["SurvivorW2_DZ","Survivor2_DZ","Sniper1_DZ","Soldier1_DZ","Camo1_DZ","BanditW1_DZ","Bandit1_DZ","Survivor3_DZ"];
-DayZ_Male = ["Survivor2_DZ","Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Bandit1_DZ","Survivor3_DZ"];
+AllPlayers = ["Survivor_DZ","Survivor1_DZ","SurvivorW2_DZ","Survivor2_DZ","Sniper1_DZ","Soldier1_DZ","Camo1_DZ","BanditW1_DZ","Bandit1_DZ","Survivor3_DZ"];
+DayZ_Male = ["Survivor_DZ","Survivor1_DZ","Survivor2_DZ","Survivor3_DZ","Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Bandit1_DZ"];
 DayZ_Female = ["SurvivorW2_DZ","BanditW1_DZ"];
 
 //Classnames for specific items
@@ -54,10 +62,10 @@ DayZ_traps = ["Trap_Cans", "TrapTripwireFlare", "TrapBearTrapSmoke", "TrapTripwi
 DayZ_ViralZeds = ["z_new_villager2","z_new_villager3","z_new_villager4","z_new_worker2","z_new_worker3","z_new_worker4"];
 
 //placed objects
-DayZ_SafeObjects = ["Land_Fire_DZ", "TentStorage","TentStorage0","TentStorage1","TentStorage2","TentStorage3","TentStorage4","StashSmall","StashSmall1","StashSmall2","StashSmall3","StashSmall4","StashMedium","StashMedium1","StashMedium2","StashMedium3", "StashMedium4", "Wire_cat1", "Sandbag1_DZ", "Fence_DZ", "Generator_DZ", "Hedgehog_DZ", "BearTrap_DZ", "DomeTentStorage", "DomeTentStorage0", "DomeTentStorage1", "DomeTentStorage2", "DomeTentStorage3", "DomeTentStorage4", "CamoNet_DZ", "Trap_Cans", "TrapTripwireFlare", "TrapBearTrapSmoke", "TrapTripwireGrenade", "TrapTripwireSmoke", "TrapBearTrapFlare", "WorkBench", "WorkBench_Internal", "WorkBench_Hidden", "DomeTentStorage_base", "ItemStorage", "WeaponStorage", "WeaponStorage_shanty"];
+DayZ_SafeObjects = ["Base_Fire_DZ","WoodenGate_1","WoodenGate_2","WoodenGate_3","WoodenGate_4","Land_Fire_DZ", "TentStorage","TentStorage0","TentStorage1","TentStorage2","TentStorage3","TentStorage4","StashSmall","StashSmall1","StashSmall2","StashSmall3","StashSmall4","StashMedium","StashMedium1","StashMedium2","StashMedium3", "StashMedium4", "Wire_cat1", "Sandbag1_DZ", "Fence_DZ", "Generator_DZ", "Hedgehog_DZ", "BearTrap_DZ", "DomeTentStorage", "DomeTentStorage0", "DomeTentStorage1", "DomeTentStorage2", "DomeTentStorage3", "DomeTentStorage4", "CamoNet_DZ", "Trap_Cans", "TrapTripwireFlare", "TrapBearTrapSmoke", "TrapTripwireGrenade", "TrapTripwireSmoke", "TrapBearTrapFlare"];
 
 //objects with gear menus
-DayZ_GearedObjects = ["Car", "Helicopter", "Motorcycle", "Ship", "TentStorage_base", "StashSmall_base", "StashMedium_base", "DomeTentStorage_base", "WorkBench", "WorkBench_Internal", "WorkBench_Hidden", "DomeTentStorage_base", "ItemStorage", "WeaponStorage", "WeaponStorage_shanty"];
+DayZ_GearedObjects = ["Car", "Helicopter", "Motorcycle", "Ship", "TentStorage_base", "StashSmall_base", "StashMedium_base" ];
 
 // Resting Animations
 DayZ_RestingAnims = ["amovpsitmstpsnonwpstdnon_ground", "amovpsitmstpsnonwpstdnon_smoking", "amovpsitmstpsraswrfldnon_weaponcheck1", "amovpsitmstpsraswrfldnon"];
@@ -125,7 +133,9 @@ food_with_output=[
 	"FoodCanRusCorn",
 	"FoodCanRusStew",
 	"FoodChipsSulahoops",
-	"FoodChipsMysticales"
+	"FoodChipsMysticales",
+	"FoodCanPotatoes",
+	"FoodCanBeef"
 ];
 
 food_output = [
@@ -153,10 +163,12 @@ food_output = [
 	"FoodCanRusCornEmpty",
 	"FoodCanRusStewEmpty",
 	"FoodChipsSulahoopsEmpty",
-	"FoodChipsMysticalesEmpty"
+	"FoodChipsMysticalesEmpty",
+	"FoodCanPotatoesEmpty",
+	"FoodCanBeefEmpty"
 ];
 //Drinking
-no_output_drink = ["ItemWaterbottle", "ItemWaterbottleBoiled", "ItemWaterBottleInfected", "ItemWaterBottleSafe"];
+no_output_drink = ["ItemWaterbottle", "ItemWaterbottleBoiled", "ItemWaterBottleInfected", "ItemWaterBottleSafe","ItemWaterBottleHerbal"];
 
 drink_with_output = [
     "ItemSoda",  //just to define item for ItemSodaEmpty
@@ -234,7 +246,9 @@ boil_tin_cans = [
 	"ItemSodaRocketFuelEmpty",
 	"ItemSodaSacriteEmpty",
 	//"ItemSodaSherbetEmpty",
-	"ItemSodaSmashtEmpty"
+	"ItemSodaSmashtEmpty",
+	"FoodCanPotatoesEmpty",
+    "FoodCanBeefEmpty"
 ];
 
 canPickup = false;
@@ -319,6 +333,12 @@ dayz_resetSelfActions = {
 	s_player_attach_bomb = -1;
 	s_player_upgradestroage = -1;
 	s_player_Drinkfromhands = -1;
+	s_player_lockhouse = -1;
+	s_player_unlockhouse = -1;
+	s_player_openGate = -1;
+	s_player_CloseGate = -1;
+	s_player_breakinhouse = -1;
+	s_player_setCode = -1;
 };
 call dayz_resetSelfActions;
 
@@ -402,6 +422,7 @@ r_antiA_done = false;
 r_antiB_done = false;
 r_antiD_done = false;
 carryClick = false;
+dayz_workingInprogress = false;
 
 //INT Nutrition Info
 r_player_Nutrition = [0]; //[Calories]
@@ -484,10 +505,10 @@ dayz_animalDistance = 600;
 dayz_plantDistance = 600;
 
 dayz_maxMaxModels = 80; // max quantity of Man models (player or Z, dead or alive) around players. Below this limit we can spawn Z // max quantity of loot piles around players. Below this limit we can spawn some loot
-dayz_spawnArea = 200; // radius around player where we can spawn loot & Z
+dayz_spawnArea = 300; // radius around player where we can spawn loot & Z
 dayz_cantseeDist = 150; // distance from which we can spawn a Z in front of any player without ray-tracing and angle checks
 dayz_cantseefov = 70; // half player field-of-view. Visible Z won't be spawned in front of any near players
-dayz_canDelete = 300; // Z, further than this distance from its "owner", will be deleted
+dayz_canDelete = 350; // Z, further than this distance from its "owner", will be deleted
 
 if(isNil "dayz_serversideloot") then {
 	dayz_serversideloot = false; //enables server side loot spawning.
@@ -510,6 +531,21 @@ if(isNil "dayz_bleedingeffect") then {
 	dayz_bleedingeffect = 2;
 };//dayz_bleedingeffect = 3; //1= blood on the ground, 2= partical effect, 3 = both.
 
+if(isNil "dayz_DamageMultiplier") then { 
+	dayz_DamageMultiplier = 1;
+};
+
+if(isNil "dayz_temperature_override") then { 
+	dayz_temperature_override = false;
+};
+
+if(isNil "dayz_attackRange") then { 
+	dayz_attackRange = 3;
+};
+
+if(isNil "dayz_maxGlobalZeds") then {
+	dayz_maxGlobalZeds = 1000;
+};
 
 //init global arrays for Loot Chances
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\loot_init.sqf";
@@ -628,7 +664,7 @@ if(!isDedicated) then {
 //Current total
 	dayz_currentGlobalZombies = 0;
 //Max global zeds.
-	dayz_maxGlobalZeds = 3000;
+	dayz_maxGlobalZeds = 1000;
 //Animals
 	dayz_currentGlobalAnimals =	0;
 	dayz_maxGlobalAnimals =		50;
@@ -658,4 +694,5 @@ if(!isDedicated) then {
 	//};
 	dayz_dodge = false;
 	Dayz_constructionContext = [];
+	Dayz_freefall = [ time, 0, 0.1 ];
 };

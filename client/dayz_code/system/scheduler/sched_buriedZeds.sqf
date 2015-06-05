@@ -1,4 +1,4 @@
-// (c) facoptere@gmail.com  for DayZ mod.
+// (c) facoptere@gmail.com, licensed to DayZMod for the community
 
 sched_buriedZeds_init = {
 	[] // it's _buriedZeds

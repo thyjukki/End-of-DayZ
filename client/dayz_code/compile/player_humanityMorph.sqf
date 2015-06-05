@@ -23,9 +23,11 @@ _zombieKills = player getVariable ["zombieKills",0];
 _headShots = player getVariable ["headShots",0];
 _humanKills = player getVariable ["humanKills",0];
 _banditKills = player getVariable ["banditKills",0];
+_achievements = player getVariable ["Achievements",[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
 
 //Switch
-	_model call player_switchModel;
+_switch = _model spawn player_switchModel;
+waitUntil { scriptDone _switch };
 
 //Login
 
@@ -76,6 +78,10 @@ player setVariable["humanKills",_humanKills,true];
 player setVariable["banditKills",_banditKills,true];
 player setVariable["characterID",_charID,true];
 player setVariable["worldspace",_worldspace];
+player setVariable["Achievements",_achievements];
+
+PVDZ_serverStoreVar = [player,"Achievements",_achievements];
+publicVariableServer "PVDZ_serverStoreVar";
 
 call dayz_resetSelfActions;
 

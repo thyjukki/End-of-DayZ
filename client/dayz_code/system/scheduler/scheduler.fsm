@@ -1,7 +1,4 @@
-/*
-        Created exclusively for ArmA2:OA - DayZ Mod.
-        Please request permission to use/alter/distribute from the author (facoptere@gmail.com)
-*/
+// (c) facoptere@gmail.com, licensed to DayZMod for the community
 
 class FSM {
    fsmName = "server_cleanup";

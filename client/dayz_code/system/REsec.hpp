@@ -1,7 +1,4 @@
-/*
-        Created exclusively for ArmA2:OA - DayZMod.
-        Please request permission to use/alter/distribute from project leader (R4Z0R49) AND the author (facoptere@gmail.com)
-*/
+// (c) facoptere@gmail.com, licensed to DayZMod for the community
 
 // These RE commands will be cancelled once init.sqf is exec'ed on client or server
 #ifndef REMOVED_LIB

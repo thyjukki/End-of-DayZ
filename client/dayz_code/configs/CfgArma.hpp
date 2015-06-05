@@ -1,52 +1,144 @@
 
 class CfgActions {
 	class None; // External class reference
-	class Rearm : None {
-		show = 0;
-	};
-	class Heal : None {
-		show = 0;
-	};
-	class HealSoldier : None {
-		show = 0;
-	};
-	class FirstAid : None {
-		show = 0;
-	};
-	class TakeBag : None {
-		show = 0;
-	};
-	class Take : None {
-		show = 0;
-	};
-	class AutoHover: None
-	{
-		show = 0;
-	};
-	class AutoHoverCancel: AutoHover
-	{
-		show = 0;
-	};
-	class MoveToDriver: None
-	{
-		show = 0;
-	};
-	class MoveToGunner: None
-	{
-		show = 0;
-	};
-	class MoveToCommander: None
-	{
-		show = 0;
-	};
-	class MoveToCargo: None
-	{
-		show = 0;
-	};
-	class MoveToTurret: None
-	{
-		show = 0;
-	};
+	class Rearm : None { show = 0; };
+	class Heal : None { show = 0; };
+	class HealSoldier : None { show = 0; };
+	class FirstAid : None { show = 0; };
+	class TakeBag : None { show = 0; };
+	class Take : None { show = 0; };
+	//class LoadMagazine : None { show = 0; };
+	//class LoadOtherMagazine : LoadMagazine { show = 0; };
+	//class LoadEmptyMagazine : LoadMagazine { show = 0; };
+	class FireInflame : None { show = 0; };
+	class FirePutDown : None { show = 0; };
+	class Repair : None { show = 0; };
+	class Refuel : None { show = 0; };
+	class TakeWeapon : None { show = 0; };
+	//class TakeMagazine : None { show = 0; };
+	//class OpenBag : None { show = 0; };
+	class PutBag : None { show = 0; };
+	class DropBag : None { show = 0; };
+	class AddBag : None { show = 0; };
+	//class TakeMine : None { show = 0; };
+	class DropWeapon : None { show = 0; };
+	class PutWeapon : None { show = 0; };
+	class DropMagazine : None { show = 0; };
+	class PutMagazine : None { show = 0; };
+	class DeactivateMine : None { show = 0; };
+/*
+"None"
+"GetInCommander"
+"GetInDriver"
+"GetInPilot"
+"GetInGunner"
+"GetInCargo"
+"GetInTurret"
+"Heal"
+"HealSoldier"
+"RepairVehicle"
+"FirstAid"
+"Repair"
+"Refuel"
+"Rearm"
+"GetOut"
+"LightOn"
+"LightOff"
+"GunLightOn"
+"GunLightOff"
+"ArtilleryComputer"
+"EngineOn"
+"EngineOff"
+"SwitchWeapon"
+"SwitchMagazine"
+"HideWeapon"
+"UseWeapon"
+"LoadMagazine"
+"LoadOtherMagazine"
+"LoadEmptyMagazine"
+"TakeWeapon"
+"TakeDropWeapon"
+"TakeMagazine"
+"TakeDropMagazine"
+"TakeFlag"
+"ReturnFlag"
+"TurnIn"
+"TurnOut"
+"WeaponInHand"
+"WeaponOnBack"
+"SitDown"
+"Land"
+"CancelLand"
+"Eject"
+"MoveToDriver"
+"MoveToPilot"
+"MoveToGunner"
+"MoveToCommander"
+"MoveToCargo"
+"MoveToTurret"
+"HideBody"
+"TouchOff"
+"SetTimer"
+"StartTimer"
+"Deactivate"
+"NVGoggles"
+"NVGogglesOff"
+"ManualFire"
+"ManualFireCancel"
+"AutoHover"
+"AutoHoverCancel"
+"StrokeFist"
+"StrokeGun"
+"LadderUp"
+"LadderDown"
+"LadderOnDown"
+"LadderOnUp"
+"LadderOff"
+"FireInflame"
+"FirePutDown"
+"LandGear"
+"LandGearUp"
+"FlapsDown"
+"FlapsUp"
+"Salute"
+"ScudLaunch"
+"ScudStart"
+"ScudCancel"
+"User"
+"DropWeapon"
+"PutWeapon"
+"DropMagazine"
+"PutMagazine"
+"UserType"
+"HandGunOn"
+"HandGunOnStand"
+"HandGunOff"
+"HandGunOffStand"
+"TakeMine"
+"DeactivateMine"
+"UseMagazine"
+"IngameMenu"
+"CancelTakeFlag"
+"CancelAction"
+"MarkEntity"
+"MarkWeapon"
+"TeamSwitch"
+"Gear"
+"OpenBag"
+"TakeBag"
+"PutBag"
+"DropBag"
+"AddBag"
+"IRLaserOn"
+"IRLaserOff"
+"Assemble"
+"DisAssemble"
+"Talk"
+"Tell"
+"Surrender"
+"GetOver"
+"Take"
+*/
 };
 class CfgAISkill {
 	aimingaccuracy[] = {0, 0, 1, 1};
@@ -225,9 +317,10 @@ class CfgSurvival {
 	class Inventory {
 		class Default {
 			RandomMagazines = 3;
-			GuaranteedMagazines[] = {"ItemBandage","HandRoadFlare","ItemPainkiller"};
-			RandomPossibilitieMagazines[] = {"ItemBandage"};
-			weapons[] = {"ItemRadio"};
+			//weapons[] = {"Makarov"};
+			//GuaranteedMagazines[] = {"ItemBandage","8Rnd_9x18_Makarov","8Rnd_9x18_Makarov","HandRoadFlare"};
+			GuaranteedMagazines[] = {"ItemBandage","HandRoadFlare"};
+			RandomPossibilitieMagazines[] = {"ItemBandage","ItemPainkiller"};
 			backpackWeapon = "";
 			//backpack = "DZ_Patrol_Pack_EP1";
 		};

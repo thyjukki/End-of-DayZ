@@ -22,11 +22,10 @@ if (_build) then {
     _object = createVehicle [_classname, getMarkerpos "respawn_west", [], 0, "CAN_COLLIDE"];
     if (_object isKindOf "DZ_buildables") then { _object allowDamage false; };
     _object setDir _direction;
-    if (Dayz_constructionContext select 5 or _keepOnSlope) then {
+    if ((Dayz_constructionContext select 5) or _keepOnSlope) then {
         _object setVectorUp surfaceNormal _location;
         _location set [2,0];
-    }
-    else {
+    } else {
         _object setVectorUp [0,0,1];
         if (_location select 2  == 0) then { _location set [2, -0.01]; };
     };
@@ -44,8 +43,12 @@ if (_build) then {
     _variables = [];
 
     if (_object iskindof "DZ_buildables") then {
+		_passcode = [floor(random 10),floor(random 10),floor(random 10),floor(random 10)];
         _object setVariable ["ownerArray",[getPlayerUID player],true];
-        _variables set [ count _variables, ["ownerArray", [getPlayerUID player]]]
+		_object setVariable ["dayz_padlockCombination",_passcode,true];
+		
+        _variables set [ count _variables, ["ownerArray", [getPlayerUID player]]];
+		_variables set [ count _variables, ["padlockCombination", _passcode]];
     };
     _object setVariable ["characterID",dayz_characterID, true];
 
@@ -57,7 +60,8 @@ if (_build) then {
         };
         _variables set [ count _variables, ["armed", _object getVariable "armed"]];
     };
-/*    //set fuel
+	
+/*    //set fuel, Later use Generator
     if (_object isKindOf "Generator_DZ") then {
     diag_log format["Object: %1, Fuel: %2",_object,fuel _object];
         if (local _object) then {
@@ -66,7 +70,9 @@ if (_build) then {
             PVDZ_send = [_object,"SetFuel",[_object,0]];
             publicVariableServer "PVDZ_send";
         };
-    };*/
+    };
+*/
+
     _object setVariable ["characterID",dayz_characterID,true];
     PVDZ_obj_Publish = [dayz_characterID,_object,[round _direction, _location], _variables];
     publicVariableServer "PVDZ_obj_Publish";
@@ -76,8 +82,10 @@ if (_build) then {
     r_action_count = 0;
 } else {
     r_action_count = 0;
-    deleteVehicle _ghost;
-    {
+	
+    if ((!isNil "_ghost") and {(!isNull _ghost)}) then { deleteVehicle _ghost; };
+    
+	{
         if (isClass (configFile >> "CfgMagazines" >> _x)) then {
             player addMagazine _x;
         };

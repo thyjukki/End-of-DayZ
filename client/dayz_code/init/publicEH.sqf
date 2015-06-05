@@ -10,6 +10,8 @@
 "PVCDZ_obj_GutBody"		addPublicVariableEventHandler {(_this select 1) spawn local_gutObject};
 "PVCDZ_veh_SetFuel"		addPublicVariableEventHandler {(_this select 1) spawn local_setFuel};
 //"dayzInfectedCamps"		addPublicVariableEventHandler {(_this select 1) call infectedcamps};
+
+"PVCDZ_veh_engineSwitch"		addPublicVariableEventHandler {(_this select 1) spawn dayz_engineSwitch};
 	
 {
 	private ["_building", "_fckingcode"];
@@ -79,6 +81,8 @@ if (isServer) then {
 	"PVDZ_obj_Destroy"		addPublicVariableEventHandler {(_this select 1) call server_deleteObj};
 	"PVDZ_send" addPublicVariableEventHandler {(_this select 1) call server_sendToClient};
 	"PVDZ_dayzCarBomb" addPublicVariableEventHandler {[_this select 1] execVM "\z\addons\dayz_code\actions\detonate_bomb.sqf";};
+	//[player,[medical Array]];
+	"PVDZ_playerMedicalSync" addPublicVariableEventHandler { (_this select 1) call server_medicalSync; ((_this select 1) select 0) setVariable["Medical",((_this select 1) select 1),false]; }; //diag_log format["%1 - %2",((_this select 1) select 0),((_this select 1) select 1)]; };
 	
 	"PVDZ_sendUnconscious" addPublicVariableEventHandler {	
 		_owner = ((_this select 1) select 0);
@@ -230,6 +234,67 @@ if (isServer) then {
 		_agent setOwner _newownerID;
 		diag_log ("TRANSFER OWNERSHIP: " + (typeOf _agent) + " OF _unit: " + str(_agent) + " TO _client: " + str(_reciever) );
 	};
+	
+	"PVDZ_Server_LogIt" addPublicVariableEventHandler {
+		_unitSending = (_this select 0);
+		_info = (_this select 1);
+		
+		diag_log format["WARNING: %1",_info];
+	};
+	"PVDZ_Server_processCode" addPublicVariableEventHandler {
+		private ["_unitSending","_object","_object","_code"];
+		_unitSending = ((_this select 1) select 0);
+		_object = ((_this select 1) select 1);
+		_code = ((_this select 1) select 2);
+		
+		//diag_log format["%1, %2-%3",_unitSending,_object,_code];
+		
+		_ownerID = owner _unitSending;
+		
+		if (_unitSending distance _object < 5) then {
+			_currentCode = _object getVariable ["dayz_padlockCombination",[]];
+			
+			_result = [_currentCode,_code] call BIS_fnc_areEqual;
+			
+			PVCDZ_Client_processCode = [_object,_result,_code];
+			_ownerID publicVariableClient "PVCDZ_Client_processCode";
+			
+			diag_log format["INFO: %1, %5 is trying to guess with %3 for %2 at time %4",(name _unitSending),(typeof _object),_code,time,(getPlayerUID _unitSending)];
+		} else {
+			diag_log format["WARNING: %1, %5 is asking for code for %2 but is a range of %3 at time %4",(name _unitSending),(typeof _object),(_unit distance _object),time,(getPlayerUID _unitSending)];
+		};
+	};
+	"PVDZ_Server_processSetAccessCode" addPublicVariableEventHandler {
+		private ["_unitSending","_object","_object","_code"];
+		_unitSending = ((_this select 1) select 0);
+		_object = ((_this select 1) select 1);
+		_code = ((_this select 1) select 2);
+		
+		//diag_log format["%1, %2-%3",_unitSending,_object,_code];
+		
+		_ownerID = owner _unitSending;
+		_ownerArray = _object getVariable ["ownerArray",["0"]];
+		
+		if ((_ownerArray select 0) == (getPlayerUID _unitSending)) then {
+			if (_unitSending distance _object < 5) then {
+				_object setVariable ["dayz_padlockCombination",_code,false];
+				
+				PVCDZ_Client_processAccessCode = [_code];
+				_ownerID publicVariableClient "PVCDZ_Client_processAccessCode";
+				
+				[_object,"accessCode",_code] call server_updateObject;
+				
+				_object setVariable ["dayz_padlockHistory", [], true];
+				_object setVariable ["dayz_padlockLockStatus", true,true];
+				
+				diag_log format["INFO: %1, %5 has changed the access code for %2 with %3 at time %4",(name _unitSending),(typeof _object),_code,time,(getPlayerUID _unitSending)];
+			} else {
+				diag_log format["WARNING: %1, %5 is asking to change access code of %2 from a distance of %3 at time %4",(name _unitSending),(typeof _object),(_unit distance _object),time,(getPlayerUID _unitSending)];
+			};
+		} else {
+			diag_log format["WARNING: %1, %2 is trying to set a code for a gate he does not own.",(name _unitSending),(getPlayerUID _unitSending)];
+		};
+	};
 
 };
 
@@ -248,17 +313,18 @@ if (!isDedicated) then {
 	};
 	"PVDZ_obj_RoadFlare"		addPublicVariableEventHandler {(_this select 1) spawn object_roadFlare};
 	"PVDZ_drg_RaDrag"   		addPublicVariableEventHandler {(_this select 1) execVM "\z\addons\dayz_code\medical\publicEH\animDrag.sqf"};
+	"PVDZ_obj_Fire"				addPublicVariableEventHandler {(_this select 1) spawn BIS_Effects_Burn};
 	"PVDZ_drg_RaCarry"   		addPublicVariableEventHandler {(_this select 1) execVM "\z\addons\dayz_code\medical\publicEH\animCarry.sqf"};
 	"PVDZ_drg_RACarUp"   		addPublicVariableEventHandler {(_this select 1) execVM "\z\addons\dayz_code\medical\publicEH\animCarryUp.sqf"};
 	"PVDZ_drg_RAPicUp"   		addPublicVariableEventHandler {(_this select 1) execVM "\z\addons\dayz_code\medical\publicEH\animPicUp.sqf"};
-	"PVDZ_obj_Fire"				addPublicVariableEventHandler {nul=(_this select 1) spawn BIS_Effects_Burn};
 	"PVDZ_dayzFlies"			addPublicVariableEventHandler {(_this select 1) call spawn_flies};
 	
 			//Medical
 	"PVCDZ_hlt_Morphine"		addPublicVariableEventHandler {(_this select 1) call player_medMorphine};
 	"PVCDZ_hlt_Bandage"			addPublicVariableEventHandler {(_this select 1) call player_medBandage};
 	"PVCDZ_hlt_Epi"				addPublicVariableEventHandler {(_this select 1) call player_medEpi};
-	"PVCDZ_hlt_Transfuse"		addPublicVariableEventHandler {(_this select 1) call player_medTransfuse; PVCDZ_hlt_Transfuse = nil};
+	"PVCDZ_hlt_Transfuse"		addPublicVariableEventHandler {(_this select 1) spawn player_medTransfuse; };
+	"PVCDZ_hlt_Transfuse_completed" addPublicVariableEventHandler {player setVariable["TransfusionCompleted",true]; };
 	"PVCDZ_hlt_PainK"			addPublicVariableEventHandler {(_this select 1) call player_medPainkiller};
 	"PVCDZ_hlt_AntiB"			addPublicVariableEventHandler {(_this select 1) call player_medAntiBiotics};
 	"dayz_chloroform"	addPublicVariableEventHandler {nul=(_this select 1) call player_chloroformed};
@@ -289,6 +355,32 @@ if (!isDedicated) then {
 		
 		[_unit,_duration] call fnc_usec_damageUnconscious;
 		_unit setVariable ["NORRN_unconscious", true, true];
+	};
+	
+	"PVCDZ_Client_processCode" addPublicVariableEventHandler {
+	// [_object,_result]
+		_object = ((_this select 1) select 0);
+		_result = ((_this select 1) select 1);
+		_codeGuess = ((_this select 1) select 2);
+	
+		
+		if (_result) then {
+			_object setVariable ["dayz_padlockLockStatus", false,true];
+			_object setVariable ["isOpen", "1", true];
+			_object setVariable ["dayz_padlockHistory", [], true];
+			titleText [format["%1 unlocked", (typeof _object)],"PLAIN DOWN"];
+		}
+		else
+		{
+			titleText ["Incorrect combination", "PLAIN DOWN"];
+			_object setVariable ["dayz_padlockHistory", _codeGuess, true];
+		};
+	};
+	
+	"PVCDZ_Client_processAccessCode" addPublicVariableEventHandler {
+		_codeGuess = ((_this select 1) select 0);
+		
+		titleText [format["You have set the combination to %1", _codeGuess],"PLAIN DOWN"];
 	};
 
 	// flies and swarm sound sync

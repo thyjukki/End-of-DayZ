@@ -1,4 +1,4 @@
-// (c) facoptere@gmail.com  for DayZ mod.
+// (c) facoptere@gmail.com, licensed to DayZMod for the community
 private ["_item","_action","_missingTools","_missingItem","_emergingLevel","_isClass","_classname","_requiredTools","_requiredParts ","_ghost","_placement","_text","_onLadder","_isWater","_object","_string","_actionBuildHidden","_getBeams","_o","_offset","_rot","_r","_p","_bn","_bb","_h","_bx","_by","_minElevation","_maxElevation","_insideCheck","_building","_unit","_bbb","_ubb","_check","_min","_max","_myX","_myY","_checkBuildingCollision","_objColliding","_inside","_checkOnRoad","_roadCollide","_checkBeam2Magnet","_a","_beams","_best","_b","_d","_checkNotBuried","_elevation","_position","_delta","_overElevation","_maxplanting","_safeDistance","_dir","_angleRef","_tmp","_actionCancel","_sfx","_actionBuild"];
 
 call gear_ui_init;
@@ -18,7 +18,10 @@ _classname = getText (configFile >> _isClass >> _item >> "ItemActions" >> _actio
 _requiredTools = getArray (configFile >> _isClass >> _item >> "ItemActions" >> _action >> "require");
 _requiredParts   = getArray (configFile >> _isClass >> _item >> "ItemActions" >> _action >> "consume");
 _ghost = getText (configFile >> _isClass >> _item >> "ItemActions" >> _action >> "ghost");
+//need to move to array and separate what checks need to be done.
+_byPassChecks = getText (configFile >> _isClass >> _item >> "ItemActions" >> _action >> "byPass");
 
+if (_byPassChecks == "") then { _byPassChecks = "BaseItems" };
 if (_ghost == "") then { _ghost = _classname; };
 
 _text = getText (configFile >> "CfgVehicles" >> _classname >> "displayName");
@@ -55,6 +58,7 @@ _missing = "";
         _ok = false;
     };
 } count _requiredTools;
+
 if (!_ok) exitWith {
     r_action_count = 0;
     cutText [format [localize "str_player_31_missingtools",_text,_missing] , "PLAIN DOWN"]; 
@@ -170,8 +174,9 @@ _checkBuildingCollision = {
     _objColliding = objNull;
     {
         _inside = false;
-        if ((!isNull _x) and (!(_x == player)) and (!(_x == _object)) and (!(_x IN DayZ_SafeObjects)) and (!(typeOf _x isKindOf "DZ_buildables"))) then {
-            if ((_x isKindOf "Building") or (_x isKindOf "AllVehicles")) then { //(["rock", str(_x)] call fnc_inString) removed due to fxrocks <<<
+        if ((!isNull _x) and (!(_x == player)) and (!(_x == _object)) and (!(_x IN DayZ_SafeObjects)) and (!(_x isKindOf "DZ_buildables"))
+            and (!((typeOf _x == "CamoNet_DZ") or {(_x isKindOf "Land_CamoNet_EAST")}))) then {
+            if ((_x isKindOf "Building") or (_x isKindOf "AllVehicles")) then { 
                 _inside = [_x, _object] call _insideCheck;
                 /*if (!_inside) then {
                     _inside = [_x, _object] call _insideCheck;
@@ -235,9 +240,6 @@ _checkNotBuried = {
     // _maxplanting is the height of the emerging foundations, must not be so high because we don't want some "floating" foundations
 };
 
-_actionBuildHidden = true;
-_actionCancel = player addAction [localize "str_player_build_cancel", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts  , _classname, _text, false, 0, "none"], 1, true, true, "", "0 != count Dayz_constructionContext"];
-
 _object = _ghost createVehicleLocal getMarkerpos "respawn_west";
 _safeDistance = 0.5 + (sizeOf _ghost) * 0.5; // beware of hedgehogs
 _dir = getDir player;
@@ -249,6 +251,10 @@ _objColliding = objNull;
 _best = [50,[0,0,0],[0,0,0]];
 _maxplanting = 10;
 _position = getPosATL _object;
+
+_actionBuildHidden = true;
+_actionCancel = player addAction [localize "str_player_build_cancel", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts, _classname, _text, false, 0, "none"], 1, true, true, "", "0 != count Dayz_constructionContext"];
+
 while {r_action_count != 0 and Dayz_constructionContext select 4} do {
 
     // force the angle so that the ghost is showing always the same side
@@ -267,7 +273,7 @@ while {r_action_count != 0 and Dayz_constructionContext select 4} do {
 
     // move object according to player position
     if ((abs(([_object, player] call BIS_fnc_distance2D) - _safeDistance) > (if (_best select 0 < 0.50) then {0.50} else {0.05})) 
-        or (abs([player, _object] call BIS_fnc_relativeDirTo) > 1) or (r_interrupt)) then {
+        or (abs([player, _object] call BIS_fnc_relativeDirTo) > (if (_best select 0 < 0.50) then {5} else {1})) or (r_interrupt)) then {
         r_interrupt = false;
         _object setDir _angleRef;
         _tmp = player modelToWorld [0, _safeDistance,0];
@@ -284,7 +290,7 @@ while {r_action_count != 0 and Dayz_constructionContext select 4} do {
         
         // check now that ghost is not colliding
         call _checkBuildingCollision;
-        };
+    };
 
     // try to dock a beam from current ghost to another beams nearby
     call _checkBeam2Magnet;
@@ -306,27 +312,44 @@ while {r_action_count != 0 and Dayz_constructionContext select 4} do {
         call _checkNotBuried;
     };
     _object setPosATL _position;
-    //systemChat str [ 'emerging', _maxplanting, 'menu hidden', _actionBuildHidden];
 
     if ((((vehicle player) != player or _posReference distance player > 20 or 0 !=  player getVariable["startcombattimer",0]) or {(!alive player)}) or {((call _onLadder) or {(call _isWater)})}) exitWith {
         [[],[],[],[_object, _requiredParts  , _classname, _text, false, 0, "none"]] call object_build;
     };
-
-    if (isNull _objColliding and _maxplanting <= _emergingLevel and !(call _checkOnRoad)) then { // placement is fine, enable "Build" in the menu
-        if (_actionBuildHidden) then {
-            _actionBuildHidden = false;
-            player removeAction _actionCancel;
-            _sfx = if (_object isKindOf "Land_A_tent") then {"tentunpack"} else {"repair"};
-            _actionBuild = player addAction [localize "str_player_build_complete", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts , _classname, _text, true, 20, _sfx], 1, true, true, "", "0 != count Dayz_constructionContext"];
-            _actionCancel = player addAction [localize "str_player_build_cancel", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts  , _classname, _text, false, 0, "none"], 1, true, true, "", "0 != count Dayz_constructionContext"];
-       };
-    }
-    else {
-        if (!_actionBuildHidden) then {
-            _actionBuildHidden = true;
-            player removeAction _actionBuild;
-        };
-    };
+	
+	if (_byPassChecks == "byPassRoadCheck") then {
+		if (isNull _objColliding and _maxplanting <= _emergingLevel) then { // placement is fine, enable "Build" in the menu
+			if (_actionBuildHidden) then {
+				_actionBuildHidden = false;
+				player removeAction _actionCancel;
+				_sfx = if (_object isKindOf "Land_A_tent") then {"tentunpack"} else {"repair"};
+				_actionBuild = player addAction [localize "str_player_build_complete", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts , _classname, _text, true, 20, _sfx], 1, true, true, "", "0 != count Dayz_constructionContext"];
+				_actionCancel = player addAction [localize "str_player_build_cancel", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts  , _classname, _text, false, 0, "none"], 1, true, true, "", "0 != count Dayz_constructionContext"];
+		   };
+		} else {
+			if (!_actionBuildHidden) then {
+				_actionBuildHidden = true;
+				player removeAction _actionBuild;
+			};
+		};
+	};
+	
+	if (_byPassChecks == "BaseItems") then {
+		if (isNull _objColliding and _maxplanting <= _emergingLevel and !(call _checkOnRoad)) then { // placement is fine, enable "Build" in the menu
+			if (_actionBuildHidden) then {
+				_actionBuildHidden = false;
+				player removeAction _actionCancel;
+				_sfx = if (_object isKindOf "Land_A_tent") then {"tentunpack"} else {"repair"};
+				_actionBuild = player addAction [localize "str_player_build_complete", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts , _classname, _text, true, 20, _sfx], 1, true, true, "", "0 != count Dayz_constructionContext"];
+				_actionCancel = player addAction [localize "str_player_build_cancel", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts  , _classname, _text, false, 0, "none"], 1, true, true, "", "0 != count Dayz_constructionContext"];
+		   };
+		} else {
+			if (!_actionBuildHidden) then {
+				_actionBuildHidden = true;
+				player removeAction _actionBuild;
+			};
+		};
+	};
     sleep 0.03;
 };
 

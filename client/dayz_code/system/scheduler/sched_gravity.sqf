@@ -1,4 +1,4 @@
-// (c) facoptere@gmail.com  for DayZ mod.
+// (c) facoptere@gmail.com, licensed to DayZMod for the community
 
 sched_gravity_init = {
 	// time, current position, time when freefall starts, position when freefall start, freefall in progress
@@ -39,7 +39,7 @@ sched_gravity = {
 				Dayz_freefall = [ _fftime, 0 max ((_offpos select 2) - (_ppos select 2)), _time - _offtime ];
 			}
 			else {
-				Dayz_freefall = [ _time, 0, 1 ]; // not falling
+				Dayz_freefall = [ _time, 0, 0.1 ]; // not falling
 			};
 			_inprogress = false;
 		};

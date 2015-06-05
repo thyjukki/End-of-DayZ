@@ -7,13 +7,14 @@ scriptName "Functions\misc\fn_damageHandler.sqf";
     - Function
     - [unit, selectionName, damage, source, projectile] call fnc_usec_damageHandler;
 ************************************************************/
-private ["_unit","_hit","_damage","_unconscious","_source","_ammo","_Viralzed","_isMinor","_isHeadHit","_isPlayer","_canHitFree","_isBandit","_punishment","_humanityHit","_myKills","_wpst","_sourceDist","_sourceWeap","_scale","_type","_nrj","_rndPain","_hitPain","_wound","_isHit","_isbleeding","_rndBleed","_hitBleed","_isInjured","_lowBlood","_rndInfection","_hitInfection","_isCardiac","_chance","_breakaleg"];_unit = _this select 0;
+private ["_unit","_hit","_damage","_unconscious","_source","_ammo","_Viralzed","_isMinor","_isHeadHit","_isPlayer","_canHitFree","_isBandit","_punishment","_humanityHit","_myKills","_wpst","_sourceDist","_sourceWeap","_scale","_type","_nrj","_rndPain","_hitPain","_wound","_isHit","_isbleeding","_rndBleed","_hitBleed","_isInjured","_lowBlood","_rndInfection","_hitInfection","_isCardiac","_chance","_breakaleg","_model"];
 _unit = _this select 0;
 _hit = _this select 1;
 _damage = _this select 2;
 _unconscious = _unit getVariable ["NORRN_unconscious", false];
 _source = _this select 3;
 _ammo = _this select 4;
+_model = typeOf player;
 _Viralzed = typeOf _source in DayZ_ViralZeds;
 _isMinor = (_hit in USEC_MinorWounds);
 _isHeadHit = (_hit == "head_hit");
@@ -21,8 +22,7 @@ _isPlayer = (isPlayer _source);
 
 // anti-hack for local explosions (HelicopterExploSmall, HelicopterExploBig, SmallSecondary...) spawned by hackers
 //diag_log [ diag_ticktime, __FILE__, _this];
-
-_breakaleg = (((_hit == "legs") AND {(_source==_unit)}) AND {((_ammo=="") AND {(!isNil "Dayz_freefall")})}) /*AND {(abs(time - (Dayz_freefall select 0))<1)}*/;
+_breakaleg = (((_hit == "legs") AND {(_source==_unit)}) AND {((_ammo=="") AND {(Dayz_freefall select 1 > 3)})}) /*AND {(abs(time - (Dayz_freefall select 0))<1)}*/;
 if ( (!_breakaleg) AND {(((isNull _source) OR {(_unit == _source)}) AND {((_ammo == "") OR {({damage _x > 0.9} count((getposATL vehicle _unit) nearEntities [["Air", "LandVehicle", "Ship"],15]) == 0) AND (count nearestObjects [getPosATL vehicle _unit, ["TrapItems"], 30] == 0)})})}) exitWith {0};
 
 if (_unit == player) then {
@@ -30,12 +30,30 @@ if (_unit == player) then {
         if ((_source != player) and _isPlayer) then {       
             _canHitFree =   player getVariable ["freeTarget",false];
             _isBandit = (player getVariable["humanity",0]) <= -2000;
-            _punishment = _canHitFree or _isBandit; //if u are bandit or start first - player will not recieve humanity drop
+
+			// Due to server errors or desync killing someone in a bandit skin with >-2000 humanity CAN occur. 
+            // Attacker should not be punished for killing a Bandit skin under any circumstances. 
+            // To prevent this we check for Bandit Skin. 
+
+            _accidentalMurder = (_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ","Bandit1_DZ","BanditW1_DZ"]);
+
+			// - Accidental Murder - \\  When wearing the garb of a non-civilian you are taking your life in your own hands
+			// Attackers humanity should not be punished for killing a survivor who has shrouded his identity in military garb.
+
+            _punishment = _canHitFree || _isBandit || _accidentalMurder;
             _humanityHit = 0;
 
             if (!_punishment) then {
-                _myKills =  200 - (((player getVariable ["humanKills",0]) / 30) * 100);
+                _myKills =  200 - (((player getVariable ["humanKills",0]) / 3) * 150);
+                // how many non bandit players have I (the shot/damaged player) killed?
+                // punish my killer 200 for shooting a surivor
+                // but subtract 50 for each survivor I've murdered
                 _humanityHit = -(_myKills * _damage);
+                    if (_humanityHit < -800) then {
+                        _humanityHit = -800;
+                    };
+                    // In the case of outrageous damage (crashes, explosions, desync repeated headshots); cap the limit on humanity lost. 
+
                 [_source,_humanityHit] spawn {  
                     private ["_source","_humanityHit"];
                     _source = _this select 0;
@@ -51,7 +69,8 @@ if (_unit == player) then {
         [_unit] spawn {
             private ["_unit"];
             _unit = _this select 0;
-            cutText [localize "str_player_tranquilized", "PLAIN DOWN"]; //systemChat format ["YOU HAVE BEEN TRANQUILISED"];
+            cutText [localize "str_player_tranquilized", "PLAIN DOWN"]; 
+			//systemChat format ["YOU HAVE BEEN TRANQUILISED"];
             //sleep 2; 
             // 0 fadeSound 0.05;
             //sleep 5; 
@@ -63,7 +82,9 @@ if (_unit == player) then {
             player setVariable ["unconsciousTime", r_player_timeout, true];
         };
     };
-    
+  
+
+    //Log to server :-( OverProcessing really not needed.
     if (((!(isNil {_source})) AND {(!(isNull _source))}) AND {((_source isKindOf "CAManBase") AND {(!local _source )})}) then {
         if (diag_ticktime-(_source getVariable ["lastloghit",0])>2) then {
             private ["_sourceWeap"];
@@ -101,17 +122,20 @@ if ((_ammo isKindof "B_127x107_Ball") or (_ammo isKindof "B_127x99_Ball")) then 
 
 if (_damage > 0.4) then {
     if (_ammo != "zombie") then {
-        _scale = _scale + 50;
+        _scale = _scale + 50; //250
     };
     //Start body part scale
     if (_ammo == "zombie") then {
         //_scale = _scale * 3; //600 = Normal, 900 = Viral
         _scale = getNumber (configFile >> "CfgVehicles" >> (typeOf _source) >> "damageScale");
+		if (dayz_DamageMultiplier > 1) then {
+			_scale = _scale * dayz_DamageMultiplier;
+		};
         //diag_log format["%1, DamageScale: %2",__FILE__,_scaleNew];
     };
     
     if (_isHeadHit) then {
-        _scale = _scale * 2; //2400 = Normal, 3600 = Viral
+        _scale = _scale * 2; //700 = Normal, 900 = Viral, 500 = wild
     };
     
     //End body part scale
@@ -126,10 +150,12 @@ if (_damage > 0.4) then {
         case 2: {_scale = _scale + 200};
     };
     if (_unit == player) then {
-        diag_log ("DAMAGE: player hit by " + typeOf _source + " in " + _hit + " with " + _ammo + " for " + str(_damage) + " scaled " + str(_damage * _scale) + " Conscious " + str (!_unconscious));
+        //diag_log ("DAMAGE: player hit by " + (typeOf _source) + " in " + _hit + " with " + _ammo + " for " + str(_damage) + " scaled " + str(_damage * _scale) + " Conscious " + str (!_unconscious));
+		diag_log format["DAMAGE: player hit by %1 in %2 with %3 for %4 scaled to %5, Conscious %6",(typeOf _source),_hit,if (_ammo == "") then { "" } else { _ammo },(str(_damage)),(str(_damage * _scale)),(str (!_unconscious))];
         r_player_blood = r_player_blood - (_damage * _scale);
     };
 };
+
 
 //Record Damage to Minor parts (legs, arms)
 if (_hit in USEC_MinorWounds) then {
@@ -160,11 +186,12 @@ if (_hit in USEC_MinorWounds) then {
         } else {
             [_unit,_hit,(_damage / 2)] call object_processHit;
         };
-    };
+		[_unit,_hit,(_damage / 2)] call object_processHit;
+	};
 };
 
 if (_unit == player) then {
-//incombat
+//Set player in combat
     _unit setVariable["startcombattimer", 1];
 };
 

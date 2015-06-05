@@ -31,8 +31,9 @@ _tv=11;
 
 //Remove weapons/ammo to prevent explosion. Script will create its own explosions (doesnt work?)
 removeallweapons _v;
-
-if (local _v) then {_expl=createVehicle ["HelicopterExploSmall", (getPosATL _v), [], 0, "CAN_COLLIDE"];};
+if((local _v) AND (_v isKindOf"Air") )then{
+	_expl=createVehicle["HelicopterExploSmall",(getPosATL _v),[],0,"CAN_COLLIDE"];
+};
 
 if (!isDedicated) then { //dw, particle stuff don't need run on dedicated
 while {_i <1200 && ((velocity _v select 2)<-20 || (getPosATL _v select 2)>8) && !(alive _v) && !(isnull _v) && (getPosATL _v select 2)>1} do

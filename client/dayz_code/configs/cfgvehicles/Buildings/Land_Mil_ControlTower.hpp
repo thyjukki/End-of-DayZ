@@ -249,7 +249,7 @@ class Land_Mil_ControlTower: House
 			class OpenDoors1
 			{
 				displayNameDefault = "<img image='\ca\ui\data\ui_action_open_ca.paa' size='4' />";
-				displayName = "Open door";
+				displayName = $STR_DN_OUT_O_DOOR;
 				position = "Dvere_spodni_R_osa";
 				radius = 3;
 				onlyForPlayer = 0;
@@ -259,14 +259,14 @@ class Land_Mil_ControlTower: House
 			class CloseDoors1: OpenDoors1
 			{
 				displayNameDefault = "<img image='\ca\ui\data\ui_action_close_ca.paa' size='4' />";
-				displayName = "Close door";
+				displayName = $STR_DN_OUT_C_DOOR;
 				condition = "this animationPhase ""Dvere_spodni_R"" >= 0.5";
 				statement = "this animate [""Dvere_spodni_R"", 0];this animate [""Dvere_spodni_L"", 0]";
 			};
 			class OpenDoors3
 			{
 				displayNameDefault = "<img image='\ca\ui\data\ui_action_open_ca.paa' size='4' />";
-				displayName = "Open door";
+				displayName = $STR_DN_OUT_O_DOOR;
 				position = "Dvere_Vrchni_osa";
 				radius = 2;
 				onlyForPlayer = 0;
@@ -276,7 +276,7 @@ class Land_Mil_ControlTower: House
 			class CloseDoors3: OpenDoors3
 			{
 				displayNameDefault = "<img image='\ca\ui\data\ui_action_close_ca.paa' size='4' />";
-				displayName = "Close door";
+				displayName = $STR_DN_OUT_C_DOOR;
 				condition = "this animationPhase ""dvere_vrchni"" >= 0.5";
 				statement = "this animate [""dvere_vrchni"", 0]";
 			};

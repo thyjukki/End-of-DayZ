@@ -1,11 +1,6 @@
-// (c) facoptere@gmail.com  for DayZ mod.
+// (c) facoptere@gmail.com, licensed to DayZMod for the community
 
 #include "scheduler.hpp"
-
-/*
-        Created exclusively for ArmA2:OA - DayZMod.
-        Please request permission to use/alter/distribute from the author (facoptere@gmail.com)
-*/
 
 // look for cells around this radius
 #define NEARBYSIZE 380

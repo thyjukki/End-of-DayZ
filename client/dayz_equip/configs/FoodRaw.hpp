@@ -40,7 +40,7 @@ class FoodbaconRaw : FoodRaw {
 	picture = "\z\addons\dayz_communityassets\pictures\equip_bacon_raw_CA.paa";
 	descriptionShort = $STR_FOOD_EQUIP_CODE_DESC_4;
 	bloodRegen = 300;
-	Nutrition[] = {417,150,00,0}; //[Energy]
+	Nutrition[] = {417,50,50,0}; //[Energy]
 };
 
 class FoodrabbitRaw : FoodRaw {

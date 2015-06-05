@@ -12,7 +12,8 @@ _text = getText (_config >> "displayName");
 
 // item is missing or tools are missing
 if ((!(_item IN magazines player)) && (!(_itemPile in magazines player))) exitWith {
-	cutText [localize "str_player_22", "PLAIN DOWN"];
+	//cutText [localize "str_player_22", "PLAIN DOWN"];
+	(localize "str_player_22") call dayz_rollingMessages;
 };
 
 _booleans = []; //testonLadder, testSea, testPond, testBuilding, testSlope, testDistance
@@ -51,27 +52,20 @@ if ((count _worldspace) == 2) then {
 	_fire setDir _dir;
 	_fire setPos _location; // follow terrain slope
 	player reveal _fire;
+
+	[_fire,true] call dayz_inflame;
+	_fire spawn player_fireMonitor;
+
 	
-	if (_tool == "Item5Matchbox") then { player removeWeapon "Item5Matchbox"; player addWeapon "Item4Matchbox"; };
-	if (_tool == "Item4Matchbox") then { player removeWeapon "Item4Matchbox"; player addWeapon "Item3Matchbox"; };
-	if (_tool == "Item3Matchbox") then { player removeWeapon "Item3Matchbox"; player addWeapon "Item2Matchbox"; };
-	if (_tool == "Item2Matchbox") then { player removeWeapon "Item2Matchbox"; player addWeapon "Item1Matchbox"; };
-	if (_tool == "Item1Matchbox") then { player removeWeapon "Item1Matchbox"; player addWeapon "ItemMatchboxEmpty"; };
-	
-	if (_tool == "ItemMatchbox") then {
-		if ([0.3] call fn_chance) then {
-			player removeWeapon "ItemMatchbox";
-			player addWeapon "Item5Matchbox";
-			
-			//info box.
-			systemChat (localize "str_info_limitedbox");	
-		};	
+	if (dayz_playerAchievements select 14 < 1) then {
+	// Firestarter
+		dayz_playerAchievements set [14,1];
+		achievement = [14, player, dayz_characterID];
+		publicVariableServer "achievement";
 	};
-	
-	_fire inflame true;
-	_fire call player_fireMonitor;
-	
-	cutText [localize "str_fireplace_01", "PLAIN DOWN"];
+	//cutText [localize "str_fireplace_01", "PLAIN DOWN"];
+	(localize "str_fireplace_01") call dayz_rollingMessages;
 } else {
-	cutText [localize "str_fireplace_02", "PLAIN DOWN"];
+	//cutText [localize "str_fireplace_02", "PLAIN DOWN"];
+	(localize "str_fireplace_0") call dayz_rollingMessages;
 };

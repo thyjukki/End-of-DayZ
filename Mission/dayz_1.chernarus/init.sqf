@@ -10,76 +10,77 @@ dayZ_serverName = "EOD"; // Servername (country code + server number)
 dayz_antihack = 0; // DayZ Antihack / 1 = enabled // 0 = disabled
 dayz_REsec = 1; // DayZ RE Security / 1 = enabled // 0 = disabled
 dayz_enableGhosting = false; //Enable disable the ghosting system.
-dayz_ghostTimer = 0; //Sets how long in seconds a player must be dissconnected before being able to login again.
-dayz_spawnselection = 0; //Turn on spawn selection 0 = random only spawns, 1 = Spawn choice based on limits
-dayz_DisplayGenderSelect = 0;
-dayz_spawncarepkgs_clutterCutter = 2; //0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
-dayz_spawnCrashSite_clutterCutter = 2;	// heli crash options 0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
-dayz_spawnInfectedSite_clutterCutter = 2; // infected base spawn... 0: loot hidden in grass, 1: loot lifted, 2: no grass 
-dayz_enableRules = false; //Enables a nice little news/rules feed on player login (make sure to keep the lists quick).
+dayz_ghostTimer = 120; //Sets how long in seconds a player must be dissconnected before being able to login again.
+dayz_spawnselection = 1; //Turn on spawn selection 0 = random only spawns, 1 = Spawn choice based on limits
+dayz_spawncarepkgs_clutterCutter = 0; //0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
+dayz_spawnCrashSite_clutterCutter = 0;	// heli crash options 0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
+dayz_spawnInfectedSite_clutterCutter = 0; // infected base spawn... 0: loot hidden in grass, 1: loot lifted, 2: no grass 
+dayz_enableRules = true; //Enables a nice little news/rules feed on player login (make sure to keep the lists quick).
 dayz_quickSwitch = false; //Turns on forced animation for weapon switch. (hotkeys 1,2,3) False = enable animations, True = disable animations
+dayz_bleedingeffect = 2; //1= blood on the ground, 2= partical effect, 3 = both.
+dayz_ForcefullmoonNights = true; // Forces night time to be full moon.
 dayz_POIs = true;
-setViewDistance 1200;
-0 setFog 0;
-dayz_ForcefullmoonNights = 0; // Forces night time to be full moon.
+dayz_infectiousWaterholes = true;
+dayz_DamageMultiplier = 1; //Damage Multiplier for Zombies.
 
-dayz_serversideloot = false;
-dayz_previousID = 0;
+dayz_maxGlobalZeds = 500; //Limit the total zeds server wide.
+dayz_attackRange = 3; // attack range of zeds vehicles are * 2 of this number
+dayz_temperature_override = false; // Set to true to disable all temperature changes.
+
+
+
+
+
+
 
 // DO NOT EDIT BELOW HERE //
+MISSION_ROOT=toArray __FILE__;MISSION_ROOT resize(count MISSION_ROOT-8);MISSION_ROOT=toString MISSION_ROOT;
+diag_log 'dayz_preloadFinished reset';
+dayz_preloadFinished=nil;
+onPreloadStarted "diag_log [diag_tickTime, 'onPreloadStarted']; dayz_preloadFinished = false;";
+onPreloadFinished "diag_log [diag_tickTime, 'onPreloadFinished']; if (!isNil 'init_keyboard') then { [] spawn init_keyboard; }; dayz_preloadFinished = true;";
+
+with uiNameSpace do {RscDMSLoad=nil;}; // autologon at next logon
 
 if (!isDedicated) then {
-	if (dayz_enableRules) then {
-		_void = [] execVM "rules.sqf";
-	};
+	enableSaving [false, false];
+	startLoadingScreen ["","RscDisplayLoadCustom"];
+	progressLoadingScreen 0;
+	dayz_loadScreenMsg = localize 'str_login_missionFile';
+	progress_monitor = [] execVM "\z\addons\dayz_code\system\progress_monitor.sqf";
+	0 cutText ['','BLACK',0];
+	0 fadeSound 0;
+	0 fadeMusic 0;
 };
-
-startLoadingScreen ["","RscDisplayLoadCustom"];
-cutText ["","BLACK OUT"];
-enableSaving [false, false];
 
 initialized = false;
-dayzHiveRequest = [];
-dayz_previousID = 0;
-0 fadeSound 0;
-//disable greeting menu
-player setVariable ["BIS_noCoreConversations", true];
-//disable radio messages to be heard and shown in the left lower corner of the screen
-
-
-//Load in compiled functions
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";				//Initilize the Variables (IMPORTANT: Must happen very early)
+call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";
+progressLoadingScreen 0.05;
+call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\publicEH.sqf";
 progressLoadingScreen 0.1;
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\publicEH.sqf";					//Initilize the publicVariable event handlers
+call compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\setup_functions_med.sqf";
+progressLoadingScreen 0.15;
+call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";
 progressLoadingScreen 0.2;
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\setup_functions_med.sqf";	//Functions used by CLIENT for medical
-progressLoadingScreen 0.4;
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";					//Compile regular functions
-progressLoadingScreen 1.0;
+call compile preprocessFileLineNumbers "\z\addons\dayz_code\system\BIS_Effects\init.sqf";
+progressLoadingScreen 0.25;
+initialized = true;
 
-EAST setFriend [WEST, 1]; 
-WEST setFriend [EAST, 1];
-
-"filmic" setToneMappingParams [0.153, 0.357, 0.231, 0.1573, 0.011, 3.750, 6, 4]; setToneMapping "Filmic";
-#include "\z\addons\dayz_code\system\BIS_Effects\init.sqf"
-
-if ((!isServer) && (isNull player) ) then
-{
-	waitUntil {!isNull player};
-	waitUntil {time > 3};
-};
-
-if ((!isServer) && (player != player)) then
-{
-	waitUntil {player == player};
-	waitUntil {time > 3};
-};
+if (dayz_REsec == 1) then { call compile preprocessFileLineNumbers "\z\addons\dayz_code\system\REsec.sqf"; };
+execVM "\z\addons\dayz_code\system\DynamicWeatherEffects.sqf";
 
 if (isServer) then {
-	_serverMonitor = [] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
-	
-	if (dayz_POIs) then {	
-		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\NEA.sqf";
+	execVM "\z\addons\dayz_server\system\server_monitor.sqf";
+	//Must be global spawned, So players dont fall thought buildings (might be best to spilt these to important, not important)
+};
+
+if (dayz_POIs) then { execVM "\z\addons\dayz_code\system\mission\chernarus\poi\init.sqf"; };
+
+if (!isDedicated) then {
+	if (dayz_infectiousWaterholes) then { execVM "\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\init.sqf"; };
+	if (dayz_antihack != 0) then {
+		execVM "\z\addons\dayz_code\system\mission\chernarus\security\init.sqf";
+		call compile preprocessFileLineNumbers "\z\addons\dayz_code\system\antihack.sqf";
 		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\DeadForest.sqf";
 		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\ZelenogorskBuildings.sqf";
 		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\Twains.sqf";
@@ -90,55 +91,23 @@ if (isServer) then {
 		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\PC.sqf";
 		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\Settlement2.sqf";
 	};
-
 	
-	if (dayz_infectiousWaterholes) then {
-		[] execVM "\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\init.sqf";
+	// remove annoying benches
+	if (toLower(worldName) == "chernarus") then {
+		diag_log format["WARNING: Clearing Benches from %1",worldName];
+		([4654,9595,0] nearestObject 145259) setDamage 1;
+		([4654,9595,0] nearestObject 145260) setDamage 1;
 	};
 	
-	
-	"PVDZ_sec_atp" addPublicVariableEventHandler { 
-		_x = _this select 1;
-		if (typeName _x == "STRING") then {
-			diag_log _x;
-		}
-		else {
-			_unit = _x select 0;
-			_source = _x select 1;
-			if (((!(isNil {_source})) AND {(!(isNull _source))}) AND {((_source isKindOf "CAManBase") AND {(owner _unit != owner _source)})}) then {
-				diag_log format ["P1ayer %1 hit by %2 %3 from %4 meters",
-					_unit call fa_plr2Str,  _source call fa_plr2Str, _x select 2, _x select 3];
-				if (_unit getVariable["processedDeath", 0] == 0) then {
-					_unit setVariable [ "attacker", name _source ];
-					_unit setVariable [ "noatlf4", diag_ticktime ]; // server-side "not in combat" test, if player is not already dead
-				};
-			};
-		};
-	};
-};
-
-if (!isDedicated) then {
-	//Conduct map operations
-	waitUntil {!isNil "dayz_loadScreenMsg"};
-	dayz_loadScreenMsg = (localize "STR_AUTHENTICATING");
-
-	//Run the player monitor
-	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
-	_playerMonitor = [] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
-};
-
-// Logo watermark: adding a logo in the bottom left corner of the screen with the server name in it
-if (!isNil "dayZ_serverName") then {
-	[] spawn {
-		waitUntil {(!isNull Player) and (alive Player) and (player == player)};
-		waituntil {!(isNull (findDisplay 46))}
-		5 cutRsc ["wm_disp","PLAIN"];
-		((uiNamespace getVariable "wm_disp") displayCtrl 1) ctrlSetText dayZ_serverName;
-	};
-};
-
-if (isNil "lifter") then {
-	lifter = 0;
+	if (dayz_enableRules) then { execVM "rules.sqf"; };
+	if (!isNil "dayZ_serverName") then { execVM "\z\addons\dayz_code\system\watermark.sqf"; };
+	execVM "\z\addons\dayz_code\compile\client_plantSpawner.sqf";
+	execFSM "\z\addons\dayz_code\system\player_monitor.fsm";
+	waituntil {scriptDone progress_monitor};
+	cutText ["","BLACK IN", 3];
+	3 fadeSound 1;
+	3 fadeMusic 1;
+	endLoadingScreen;
 };
 
 [] execVM "custom\3rd.sqf"; //3rd person limit

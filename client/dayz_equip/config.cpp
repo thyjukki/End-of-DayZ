@@ -628,30 +628,77 @@ class cfgWeapons {
 	
 	
 	#include "configs\ItemMatchbox.hpp"
+	#include "configs\ItemHatchet.hpp"
+	#include "configs\ItemKnife.hpp"
+	#include "configs\ItemMachete.hpp"
+	#include "configs\ItemCrowbar.hpp"
+	#include "configs\ItemEtool.hpp"
+	#include "configs\ItemShovel.hpp"
+	#include "configs\ItemFishingPole.hpp"
+	#include "configs\ItemWatch.hpp"
+	#include "configs\ItemMap.hpp"
+	#include "configs\ItemMap_Debug.hpp"
+	#include "configs\ItemCompass.hpp"
 	
-	class ItemHatchet : ItemCore {
+	class ItemPickaxe : ItemCore {
 		scope = public;
-		displayName = $STR_EQUIP_NAME_41;
-		model = "\dayz_equip\models\hatchet.p3d";
-		picture = "\dayz_equip\textures\equip_hatchet_CA.paa";
-		descriptionShort = $STR_EQUIP_DESC_41;
+		displayName = $STR_EQUIP_NAME_PICKAXE;
+		model = "z\addons\dayz_communityweapons\models\pickaxe\pickaxe.p3d";
+		picture = "\z\addons\dayz_communityweapons\models\pickaxe\pickaxe.paa";
+		descriptionShort = $STR_EQUIP_DESC_PICKAXE;
 		
 		class ItemActions {
-			class Use {
-				text = $STR_ACTIONS_CHOPWOOD;
-				script = "spawn player_chopWood;";
-			};
-			
-			class Toolbelt {
-				text = "Remove from Toolbelt";
-				script = "spawn player_addToolbelt;";
-				use[] = {"ItemHatchet"};
-				output[] = {"MeleeHatchet"};
+			class Use
+			{
+				text= $STR_ACTIONS_MINE_STONE;
+				script="spawn player_mineStone;";
 			};
 		};
 	};
-	
-	#include "configs\ItemKnife.hpp"
+	class ItemPickaxeBroken : ItemCore {
+		scope = public;
+		model = "z\addons\dayz_communityweapons\models\pickaxe\pickaxe.p3d";
+		picture = "\z\addons\dayz_communityweapons\models\pickaxe\pickaxe.paa";
+		displayName = $STR_name_ItemPickaxeBroken; //"Broken Hatchet";
+		descriptionShort = $STR_desc_ItemPickaxeBroken; //"Too much force has broken this Hatchet. Hopefully you find something to repair it.";
+		fixedTool = "ItemPickaxe";
+		class ItemActions {
+			class Toolbelt {
+				text = $STR_ACTIONS_FIX_PICKAXE;
+				script="spawn player_fixHatchet;";
+			};
+		};
+	};
+	class ItemSledgeHammer : ItemCore {
+		scope = public;
+		displayName = $STR_EQUIP_NAME_SledgeHammer;
+		model = "z\addons\dayz_communityweapons\models\sledge_hammer\sledgehammer.p3d";
+		picture = "\z\addons\dayz_communityweapons\models\sledge_hammer\sledgehammer.paa";
+		descriptionShort = $STR_EQUIP_DESC_SledgeHammer;
+/*		
+		class ItemActions {
+			class Use
+			{
+				text= $STR_ACTIONS_MINE_STONE;
+				script="spawn player_mineStone;";
+			};
+		};
+*/		
+	};
+	class ItemSledgeHammerBroken : ItemCore {
+		scope = public;
+		model = "z\addons\dayz_communityweapons\models\sledge_hammer\sledgehammer.p3d";
+		picture = "\z\addons\dayz_communityweapons\models\sledge_hammer\sledgehammer.paa";
+		displayName = $STR_name_ItemSledgeHammerBroken; //"Broken Hatchet";
+		descriptionShort = $STR_desc_ItemSledgeHammerBroken; //"Too much force has broken this Hatchet. Hopefully you find something to repair it.";
+		fixedTool = "ItemSledgeHammer";
+		class ItemActions {
+			class Toolbelt {
+				text = $STR_ACTIONS_FIX_SLEDGE_HAMMER;
+				script="spawn player_fixHatchet;";
+			};
+		};
+	};
 	
 	class ItemFlashlight : ItemCore {
 		scope = public;
@@ -766,60 +813,15 @@ class cfgWeapons {
 
 class CfgMagazines {
 	class CA_Magazine;	// External class reference
-    
-    class ItemWallBlueprint1 : CA_Magazine {
-        scope = public;
-        count = 1;
-        displayName = "Wall Blueprint Level 1";
-        model = "\dayz_equip\models\buildingplan1.p3d";
-		picture = "\dayz_equip\textures\buildingplan1.paa";
-        descriptionShort = "Level 1 Blueprints for Wooden fences.";
-    };
-    
-    class ItemWallBlueprint2 : CA_Magazine {
-        scope = public;
-        count = 1;
-        displayName = "Wall Blueprint Level 2";
-        model = "\dayz_equip\models\buildingplan1.p3d";
-		picture = "\dayz_equip\textures\buildingplan1.paa";
-        descriptionShort = "Level 2 Blueprints for Wooden fences.";
-    };
-    
-    class ItemBlueprint2 : CA_Magazine {
-        scope = public;
-        count = 1;
-        displayName = "Cottage Blueprint Level 2";
-        model = "\dayz_equip\models\buildingplan1.p3d";
-		picture = "\dayz_equip\textures\buildingplan1.paa";
-        descriptionShort = "Cottage framework Blueprint.";
-    };
-    
-    class ItemBlueprint3 : CA_Magazine {
-        scope = public;
-        count = 1;
-        displayName = "Cottage Blueprint Level 3";
-        model = "\dayz_equip\models\buildingplan1.p3d";
-		picture = "\dayz_equip\textures\buildingplan1.paa";
-        descriptionShort = "Cottage Walls Blueprint.";
-    };
-    
-    class ItemBlueprint4 : CA_Magazine {
-        scope = public;
-        count = 1;
-        displayName = "Cottage Blueprint Level 4";
-        model = "\dayz_equip\models\buildingplan1.p3d";
-		picture = "\dayz_equip\textures\buildingplan1.paa";
-        descriptionShort = "Cottage Roof Blueprint.";
-    };
-    
-    class ItemBlueprint5 : CA_Magazine {
-        scope = public;
-        count = 1;
-        displayName = "Cottage Blueprint Level 5";
-        model = "\dayz_equip\models\buildingplan1.p3d";
-		picture = "\dayz_equip\textures\buildingplan1.paa";
-        descriptionShort = "Complete Cottage Blueprint.";
-    };
+	//Need to find a pic of one
+	class equip_lever : CA_Magazine {
+		scope = public;
+		displayName = $STR_EQUIP_NAME_LEVER;
+		picture = "\dayz_equip\textures\equip_lever.paa";
+		ammo = "";
+		count = 1;
+		descriptionShort = $STR_EQUIP_DESC_LEVER;
+	};
 	
 	class 20Rnd_556x45_Stanag : CA_Magazine {
 		scope = public;
@@ -1304,7 +1306,7 @@ class ItemSodaEmpty;
 		
 		class ItemActions {
 			class Drink {
-				text = $STR_ACTIONS_DRINK; //$STR_ACTIONS_DRINK
+				text = "Drink"; //$STR_ACTIONS_DRINK
 				script = "spawn player_drink;";
 			};
 		};
@@ -1426,22 +1428,7 @@ class ItemSodaEmpty;
 		descriptionShort = $STR_EQUIP_DESC_16;
 	};
 	
-	class ItemAntibiotic : CA_Magazine {
-		scope = public;
-		count = 1;
-		type = 256;
-		displayName = $STR_EQUIP_NAME_17;
-		model = "\dayz_equip\models\med_antibiotic_gear.p3d";
-		picture = "\dayz_equip\textures\equip_antibiotics_ca.paa";
-		descriptionShort = $STR_EQUIP_DESC_17;
-		
-		class ItemActions {
-			class Use {
-				text = $STR_TAKE_ANTIBIOTIC;
-				script = "spawn player_useMeds;";
-			};
-		};
-	};
+	#include "configs\ItemAntibiotic.hpp"
 	
 	class ItemPainkiller : CA_Magazine {
 		scope = public;
@@ -1636,6 +1623,7 @@ class ItemSodaEmpty;
 				require[] = {"ItemEtool"};
 				consume[] = {"ItemSandbag"};
 				create = "Sandbag1_DZ";
+				byPass = "byPassRoadCheck";
 			};
 			class Build2 {
 				text = $STR_CREATE_STASH;
@@ -1663,6 +1651,7 @@ class ItemSodaEmpty;
 				require[] = {"ItemToolbox"};
 				consume[] = {"ItemTankTrap"};
 				create = "Hedgehog_DZ";
+				byPass = "byPassRoadCheck";
 			};
 		};
 	};
@@ -1683,6 +1672,7 @@ class ItemSodaEmpty;
 				require[] = {"ItemToolbox"};
 				consume[] = {"ItemWire"};
 				create = "Wire_cat1";
+				byPass = "byPassRoadCheck";
 			};
 		};
 	};
@@ -1702,7 +1692,7 @@ class CfgVehicles {
 		icon = "\Ca\misc\data\icons\I_drutkolczasty_CA.paa";
 		accuracy = 0.3;	// accuracy needed to recognize type of this target
 		mapSize = 5.5;
-		displayName = "Wire (CAT1)";
+		displayName = $STR_BUILT_WIRE1;
 		model = "\dayz_equip\models\wire_cat1.p3d";
 		destrType = "DestructTent";
 		armor = 100;
@@ -1754,7 +1744,7 @@ class CfgVehicles {
 	};
 		
 	class Wire_cat2 : Wire_cat1 {
-		displayName = "Wire (CAT2)";
+		displayName = $STR_BUILT_WIRE2;
 		model = "\dayz_equip\models\wire_cat2.p3d";
 	};
 	
@@ -1766,8 +1756,31 @@ class CfgVehicles {
 		icon = "\ca\data\data\Unknown_object.paa";
 		mapSize = 2;
 		armor = 400;
-		displayName = "Hedgehog (Steel)";
+		displayName = $STR_BUILT_HEDGEHOG;
 		vehicleClass = "Fortifications";
+		class dismantle {
+			requiredtools[] = 
+			{
+				//{"Item","Chance","ReturnedPart"}
+				{"ItemSledgeHammer",0.02,"ItemSledgeHammerBroken"},
+				{"ItemCrowbar",0.04,"ItemCrowbarBent"}
+			}; //Tools needed
+			dismantleToo = "ItemTankTrap"; //Returned magazine item
+			attemps = 5; //Random number
+		};
+		class UserActions {
+			class Dismantle {
+				displayNameDefault = $STR_BUILT_HEDGEHOG_Dismantle;
+				showWindow = 0;
+		        hideOnUse = 1;
+				displayName = $STR_BUILT_HEDGEHOG_Dismantle;
+				position="action";
+				radius = 2.7;
+				onlyForPlayer = 1;
+				condition = "(this getVariable ['CharacterID','0'] != dayz_characterID) && (alive this)";
+				statement = "this spawn object_dismantle;";
+			};
+		};
 	};
 	
 	class Sandbag1_DZ : BuiltItems {
@@ -1778,8 +1791,30 @@ class CfgVehicles {
 		icon = "\Ca\misc3\data\Icons\icon_fortBagFenceLong_ca.paa";
 		mapSize = 2;
 		armor = 400;
-		displayName = "SandBag";
+		displayName = $STR_BUILT_SANDBAG;
 		vehicleClass = "Fortifications";
+		class dismantle {
+			requiredtools[] = 
+			{
+				//{"Item","Chance","ReturnedPart"}
+				{"ItemShovel",0.02,"ItemShovelBroken"}
+			}; //Tools needed
+			dismantleToo = "ItemSandbag"; //Returned magazine item
+			attemps = 5; //Random number
+		};
+		class UserActions {
+			class Dismantle {
+				displayNameDefault = $STR_BUILT_SANDBAG_Dismantle;
+				showWindow = 0;
+		        hideOnUse = 1;
+				displayName = $STR_BUILT_SANDBAG_Dismantle;
+				position="action";
+				radius = 2.7;
+				onlyForPlayer = 1;
+				condition = "(this getVariable ['CharacterID','0'] != dayz_characterID) && (alive this)";
+				statement = "this spawn object_dismantle;";
+			};
+		};
 	};
 	
 	class Fence_DZ: BuiltItems {
@@ -1792,60 +1827,6 @@ class CfgVehicles {
 		armor = 400;
 		displayname = "Fence";
 		vehicleClass = "Fortifications";
-	};
-	
-	class BearTrap_DZ : TrapItems {
-		scope = public;
-		destrType = "DestructNo";
-		displayName = "Bear Trap";
-		model = "\dayz_equip\models\bear_trap.p3d";
-		
-		class Eventhandlers {
-			init = "_this execFSM '\z\addons\dayz_code\system\trap_monitor.fsm';";
-		};
-		
-		class AnimationSources {
-			class LeftShutter {
-				source = "user";
-				animPeriod = 0.1;
-				initPhase = 1;
-			};
-			
-			class RightShutter {
-				source = "user";
-				animPeriod = 0.1;
-				initPhase = 1;
-			};
-		};
-		
-		class UserActions {
-			class OpenTrap {
-				position = "";
-				displayName = "Reset Trap";
-				radius = 1.5;
-				onlyForPlayer = 0;
-				condition = "this animationPhase 'LeftShutter' == 1";
-				statement = "this animate ['LeftShutter', 0];this animate ['RightShutter', 0];";
-			};
-			
-			class CloseTrap {
-				position = "";
-				displayName = "Activate Trap";
-				radius = 1.5;
-				onlyForPlayer = 0;
-				condition = "this animationPhase 'LeftShutter' == 0";
-				statement = "this animate ['LeftShutter', 1];this animate ['RightShutter', 1];";
-			};
-			
-			class CollectTrap {
-				position = "";
-				displayName = "Take Trap";
-				radius = 1.5;
-				onlyForPlayer = 0;
-				condition = "this animationPhase 'LeftShutter' == 1";
-				statement = "[0,0,0,['cfgMagazines','TrapBear',this]] call object_pickup;";
-			};
-		};
 	};
 	class ReammoBox;	// External class reference
 	

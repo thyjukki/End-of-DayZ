@@ -1,4 +1,4 @@
-// (c) facoptere@gmail.com  for DayZ mod.
+// (c) facoptere@gmail.com, licensed to DayZMod for the community
 
 // detect low FPS
 // in case of player "lag" (fps_min very low), all other scheduler tasks are suspended during 50 frames

@@ -1,21 +1,11 @@
-#define VSoft				0
-#define VArmor				1
-#define VAir				2
-#define private				0
-#define protected			1
-#define public				2
-#define ReadAndWrite		0
-#define ReadAndCreate		1
-#define ReadOnly			2
-#define ReadOnlyVerified	3
-#define EAST 				0 // (Russian)
+#include "Configs\basicDefines.hpp"
 
 class CfgPatches {
 	class dayzend_code {
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"dayz_equip","dayz_weapons","community_crossbow","CAMisc3","CABuildingParts","CABuildingParts_Signs","CAStructuresHouse","CAStructuresLand_Ind_Stack_Big","CAStructures_Misc_Powerlines","CAStructures","CABuildings","CABuildings2","Ind_MalyKomin","CAStructures_A_CraneCon","CAStructures_Mil","CAStructures_Nav","CAStructures_Rail","A_Crane_02","A_TVTower","CAStructures_Railway","CAStructuresHouse_HouseBT","dayz_buildings"};
+		requiredAddons[] = {"dayz_equip","dayz_weapons","community_crossbow","dayz_communityweapons","CAMisc3","CABuildingParts","CABuildingParts_Signs","CAStructuresHouse","CAStructuresLand_Ind_Stack_Big","CAStructures_Misc_Powerlines","CAStructures","CABuildings","CABuildings2","Ind_MalyKomin","CAStructures_A_CraneCon","CAStructures_Mil","CAStructures_Nav","CAStructures_Rail","A_Crane_02","A_TVTower","CAStructures_Railway","CAStructuresHouse_HouseBT","dayz_buildings"};
 	};
 };
 
@@ -43,20 +33,21 @@ class CfgAddons {
 	};
 };
 
-#include "Configs\basicDefines.hpp"
-
 #include "Configs\rscTitles.hpp"
 #include "Configs\CfgWorlds.hpp"
 #include "Configs\CfgMoves.hpp"
-#include "Configs\CfgVehicles.hpp"
-#include "Configs\CfgWeapons.hpp"
+#include "Configs\CfgVehicles\CfgVehicles.hpp"
+#include "Configs\CfgWeapons\CfgWeapons.hpp"
 #include "Configs\CfgCrafting\CfgCrafting.hpp"
-#include "Configs\CfgMagazines.hpp"
+#include "Configs\CfgMagazines\CfgMagazines.hpp"
 #include "Configs\CfgMarkers.hpp"
 #include "Configs\CfgAmmo.hpp"
 #include "Configs\CfgObjectCompositions.hpp"
 #include "Configs\CfgTownGenerator\CfgTownGeneratorChernarus.hpp"
 #include "Configs\CfgGrid\CfgGrid.hpp"
 #include "Configs\CfgFaces.hpp"
+#include "Configs\CfgGlasses.hpp"
 #include "Configs\CfgArma.hpp"
+#include "Configs\CfgRecoils.hpp"
+#include "gui\padlock\padlock_ui.hpp"
 #include "vdg\vdg.cpp"
