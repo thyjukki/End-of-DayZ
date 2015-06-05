@@ -310,7 +310,7 @@ class cfgWeapons
 				isAttachment = 1;
 				text = "Attach Silencer";
 				script = "spawn player_useAttchment;";
-				att = "AttSilencer";
+				att = "Attachment_Sup9";
 				out = "RH_pmsd";
 			};
 		};
@@ -355,7 +355,7 @@ class cfgWeapons
 			isAttachment = 1;
 			text = "Detach Silencer";
 			script = "spawn player_removeAttchment;";
-			att = "AttSilencer";
+			att = "Attachment_Sup9";
 			out = "RH_pm";
 		};
 		displayName="Makarov PM SD";
