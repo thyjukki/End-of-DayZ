@@ -41,7 +41,7 @@ class B_9x19_RUBBER : B_9x19_Ball {
 	isRubber = 1;
 };
 
-class B_9x19_BT: B_762x39_Ball
+class B_9x19_BT: B_9x19_Ball
 {
 	hit=7;
 };
