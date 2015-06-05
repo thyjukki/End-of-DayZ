@@ -72,7 +72,8 @@ if (r_ammo_selected_mode == 2) then
 	{
 		player removeMagazine _selected_ammo;
 
-		_selectedSlot setIDCAmmoCount _loaded_to_mag;
+		player removeMagazine _selected_mag;
+		player addMagazine [_mag_out, _loaded_to_mag];
 
 		systemChat format ["Loaded mag %1 with %2 rounds", getText (configFile >> "CfgMagazines" >> _mag_out >> "displayName"), _ammo_count];
 	}
