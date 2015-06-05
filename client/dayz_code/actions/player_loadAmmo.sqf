@@ -81,15 +81,8 @@ if (r_ammo_selected_mode == 2) then
 	{
 		player removeMagazine _selected_ammo;
 
-		if (1 == _isEmptyMag) then
-		{
-			player removeMagazine _selected_mag;
-			player addMagazine [_mag_out, _mag_limit];
-		}
-		else
-		{
-			_selectedSlot setIDCAmmoCount _mag_limit;
-		};
+		player removeMagazine _selected_mag;
+		player addMagazine [_mag_out, _mag_limit];
 
 		_extra_ammo = _loaded_to_mag - _mag_limit;
 		

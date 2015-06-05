@@ -137,26 +137,6 @@ class CfgMagazines
 	class 30Rnd_9x19_MP5SD;
 	
 	// TODO(Jukki)
-	class RH_57x28mm_50RND_Mag: 30Rnd_9x19_MP5
-	{
-		scopeWeapon=0;
-		scopeMagazine=2;
-		ammo="RH_smg_57x28mm_Round";
-		displayName="FN P90 Magazine";
-		model="\RH_smg\mags\mag_p90.p3d";
-		picture="\RH_smg\inv\m_p90.paa";
-		count=50;
-	};
-	class RH_57x28mm_50RND_SD_Mag: 30Rnd_9x19_MP5SD
-	{
-		scopeWeapon=0;
-		scopeMagazine=2;
-		ammo="RH_smg_57x28mm_SD_Round";
-		displayName="FN P90 SD Magazine";
-		model="\RH_smg\mags\mag_p90.p3d";
-		picture="\RH_smg\inv\m_p90.paa";
-		count=50;
-	};
 	class RH_46x30mm_40RND_Mag: 30Rnd_9x19_MP5
 	{
 		scopeWeapon=0;
@@ -2320,7 +2300,11 @@ class cfgWeapons
 		magazines[]=
 		{
 			"RH_57x28mm_50RND_Mag",
-			"RH_57x28mm_50RND_SD_Mag"
+			"RH_57x28mm_50RND_SD_Mag",
+			"RH_57x28mm_50RND_Mag_hp",
+			"RH_57x28mm_50RND_Mag_tracer",
+			"RH_57x28mm_50RND_Mag_rubber",
+			"RH_57x28mm_50RND_Mag_bt"
 		};
 		count=25;
 		modes[]=
@@ -2463,11 +2447,6 @@ class cfgWeapons
 		displayname="FN P90 SD";
 		model="\RH_smg\RH_p90sd.p3d";
 		picture="\RH_smg\inv\p90sd.paa";
-		magazines[]=
-		{
-			"RH_57x28mm_50RND_SD_Mag",
-			"RH_57x28mm_50RND_Mag"
-		};
 		fireLightDuration=0;
 		fireLightIntensity=0;
 		class Single: Single
