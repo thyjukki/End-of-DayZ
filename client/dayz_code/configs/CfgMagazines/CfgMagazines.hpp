@@ -16,11 +16,11 @@ class CfgMagazines
 	#include "TrashLoot.hpp"
 	
 
-	#include "CfgMagazines\CombineMag.hpp"
-	#include "CfgMagazines\Magazines\pistol_mags.hpp"
-	#include "CfgMagazines\Magazines\smg_mags.hpp"
-	#include "CfgMagazines\Magazines\rifle_mags.hpp"
-	#include "CfgMagazines\EmptyMag.hpp"
+	#include "CombineMag.hpp"
+	#include "Magazines\pistol_mags.hpp"
+	#include "Magazines\smg_mags.hpp"
+	#include "Magazines\rifle_mags.hpp"
+	#include "EmptyMag.hpp"
 	//Chemlight and Roadflare
 	#include "HandGrenade.hpp"
 	
@@ -37,18 +37,18 @@ class CfgMagazines
 	#include "Attachments\Attachments.hpp"
 
 
-	#include "CfgMagazines\bullets\45acp.hpp"
-	#include "CfgMagazines\bullets\32acp.hpp"
-	#include "CfgMagazines\bullets\762x39.hpp"
+	#include "bullets\45acp.hpp"
+	#include "bullets\32acp.hpp"
+	#include "bullets\762x39.hpp"
 
 	
 	//attachemtns
-	#include "CfgMagazines\Attachments\AttAcog.hpp"
-	#include "CfgMagazines\Attachments\AttAimpoint.hpp"
-	#include "CfgMagazines\Attachments\AttHolo.hpp"
-	#include "CfgMagazines\Attachments\AttLauncher.hpp"
-	#include "CfgMagazines\Attachments\AttScope.hpp"
-	#include "CfgMagazines\Attachments\AttSilencer.hpp"
+	#include "Attachments\AttAcog.hpp"
+	#include "Attachments\AttAimpoint.hpp"
+	#include "Attachments\AttHolo.hpp"
+	#include "Attachments\AttLauncher.hpp"
+	#include "Attachments\AttScope.hpp"
+	#include "Attachments\AttSilencer.hpp"
 	
 	//Crafting materials
 	#include "Crafting\Crafting.hpp"
