@@ -259,7 +259,17 @@ class CfgWeapons
 		magazines[]=
 		{
 			"40Rnd_46x30_mp7",
-			"20Rnd_46x30_mp7"
+			"40Rnd_46x30_sd_mp7",
+			"40Rnd_46x30_mp7_hp",
+			"40Rnd_46x30_mp7_tracer",
+			"40Rnd_46x30_mp7_rubber",
+			"40Rnd_46x30_mp7_bt",
+			"20Rnd_46x30_mp7",
+			"20Rnd_46x30_sd_mp7",
+			"20Rnd_46x30_mp7_hp",
+			"20Rnd_46x30_mp7_tracer",
+			"20Rnd_46x30_mp7_rubber",
+			"20Rnd_46x30_mp7_bt"
 		};
 		descriptionShort="HK MP7A1";
 		class Library
@@ -337,11 +347,6 @@ class CfgWeapons
 		};
 		fireLightDuration=0.000000;
 		fireLightIntensity=0.000000;
-		magazines[]=
-		{
-			"40Rnd_46x30_sd_mp7",
-			"20Rnd_46x30_sd_mp7"
-		};
 		descriptionShort="HK MP7A1";
 	};
 	class C1987_MP7_su: C1987_MP7_base
@@ -414,11 +419,6 @@ class CfgWeapons
 		};
 		fireLightDuration=0.000000;
 		fireLightIntensity=0.000000;
-		magazines[]=
-		{
-			"40Rnd_46x30_sd_mp7",
-			"20Rnd_46x30_sd_mp7"
-		};
 		descriptionShort="HK MP7A1";
 	};
 	class C1987_MP7_zp: C1987_MP7_base
@@ -491,11 +491,6 @@ class CfgWeapons
 		};
 		fireLightDuration=0.000000;
 		fireLightIntensity=0.000000;
-		magazines[]=
-		{
-			"40Rnd_46x30_sd_mp7",
-			"20Rnd_46x30_sd_mp7"
-		};
 		descriptionShort="HK MP7A1";
 	};
 	class C1987_MP7_eot: C1987_MP7_base
@@ -568,11 +563,6 @@ class CfgWeapons
 		};
 		fireLightDuration=0.000000;
 		fireLightIntensity=0.000000;
-		magazines[]=
-		{
-			"40Rnd_46x30_sd_mp7",
-			"20Rnd_46x30_sd_mp7"
-		};
 		descriptionShort="HK MP7A1";
 	};
 	class C1987_MP7_aim: C1987_MP7_base
@@ -645,11 +635,6 @@ class CfgWeapons
 		};
 		fireLightDuration=0.000000;
 		fireLightIntensity=0.000000;
-		magazines[]=
-		{
-			"40Rnd_46x30_sd_mp7",
-			"20Rnd_46x30_sd_mp7"
-		};
 		descriptionShort="HK MP7A1";
 	};
 	class C1987_MP7_acog: C1987_MP7_base
@@ -784,11 +769,6 @@ class CfgWeapons
 		};
 		fireLightDuration=0.000000;
 		fireLightIntensity=0.000000;
-		magazines[]=
-		{
-			"40Rnd_46x30_sd_mp7",
-			"20Rnd_46x30_sd_mp7"
-		};
 		descriptionShort="HK MP7A1";
 	};
 	class C1987_MP7_t: C1987_MP7_base
@@ -930,11 +910,6 @@ class CfgWeapons
 		};
 		fireLightDuration=0.000000;
 		fireLightIntensity=0.000000;
-		magazines[]=
-		{
-			"40Rnd_46x30_sd_mp7",
-			"20Rnd_46x30_sd_mp7"
-		};
 		descriptionShort="HK MP7A1";
 	};
 	class C1987_MP7_su_t: C1987_MP7_base
@@ -1027,11 +1002,6 @@ class CfgWeapons
 		};
 		fireLightDuration=0.000000;
 		fireLightIntensity=0.000000;
-		magazines[]=
-		{
-			"40Rnd_46x30_sd_mp7",
-			"20Rnd_46x30_sd_mp7"
-		};
 		descriptionShort="HK MP7A1";
 	};
 	class C1987_MP7_zp_t: C1987_MP7_base
@@ -1124,11 +1094,6 @@ class CfgWeapons
 		};
 		fireLightDuration=0.000000;
 		fireLightIntensity=0.000000;
-		magazines[]=
-		{
-			"40Rnd_46x30_sd_mp7",
-			"20Rnd_46x30_sd_mp7"
-		};
 		descriptionShort="HK MP7A1";
 	};
 	class C1987_MP7_eot_t: C1987_MP7_base
@@ -1250,11 +1215,6 @@ class CfgWeapons
 		};
 		fireLightDuration=0.000000;
 		fireLightIntensity=0.000000;
-		magazines[]=
-		{
-			"40Rnd_46x30_sd_mp7",
-			"20Rnd_46x30_sd_mp7"
-		};
 		descriptionShort="HK MP7A1";
 	};
 	class C1987_MP7_aim_t: C1987_MP7_base
@@ -1376,11 +1336,6 @@ class CfgWeapons
 		};
 		fireLightDuration=0.000000;
 		fireLightIntensity=0.000000;
-		magazines[]=
-		{
-			"40Rnd_46x30_sd_mp7",
-			"20Rnd_46x30_sd_mp7"
-		};
 		descriptionShort="HK MP7A1";
 	};
 	class C1987_MP7_acog_t: C1987_MP7_base
@@ -1564,11 +1519,6 @@ class CfgWeapons
 		};
 		fireLightDuration=0.000000;
 		fireLightIntensity=0.000000;
-		magazines[]=
-		{
-			"40Rnd_46x30_sd_mp7",
-			"20Rnd_46x30_sd_mp7"
-		};
 		descriptionShort="HK MP7A1";
 	};
 };
