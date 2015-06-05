@@ -224,28 +224,10 @@ class CfgMagazines
 {
 	class Default;
 	class CA_Magazine;
-	class 8Rnd_9x18_Makarov;
-	class 8Rnd_9x18_MakarovSD;
 	class 30Rnd_545x39_AK;
 	class 30Rnd_545x39_AKSD;
 	class 30Rnd_762x39_AK47;
-	class RH_20Rnd_9x18_aps;
-	class RH_20Rnd_9x18_apsSD;
-	class RH_20Rnd_9x39_SP6_mag: 30Rnd_545x39_AK
-	{
-		displayName="OC14 mag";
-		picture="\RH_aks\inv\m_oc.paa";
-		model="\RH_aks\mags\mag_oc14.p3d";
-		initspeed=295;
-		count=20;
-		ammo="RH_B_9x39_Ball";
-	};
-	class RH_20Rnd_9x39_SP6SD_mag: RH_20Rnd_9x39_SP6_mag
-	{
-		displayName="OC14SD mag";
-		ammo="RH_B_9x39_SD";
-		selectionFireAnim="zasleh";
-	};
+
 	class RH_20Rnd_9x39_val_mag: 30Rnd_545x39_AK
 	{
 		displayName="Val mag";
@@ -4317,8 +4299,11 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
-			"RH_20Rnd_9x39_SP6_mag",
-			"RH_20Rnd_9x39_SP6SD_mag"
+			"RH_20Rnd_9x39_SP6_mag"
+			"RH_20Rnd_9x39_SP6_mag_hp",
+			"RH_20Rnd_9x39_SP6_mag_tracer",
+			"RH_20Rnd_9x39_SP6_mag_rubber",
+			"RH_20Rnd_9x39_SP6_mag_bt"
 		};
 		distanceZoomMin=110;
 		distanceZoomMax=110;
@@ -4464,8 +4449,11 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
-			"RH_20Rnd_9x39_SP6_mag",
-			"RH_20Rnd_9x39_SP6SD_mag"
+			"RH_20Rnd_9x39_SP6_mag"
+			"RH_20Rnd_9x39_SP6_mag_hp",
+			"RH_20Rnd_9x39_SP6_mag_tracer",
+			"RH_20Rnd_9x39_SP6_mag_rubber",
+			"RH_20Rnd_9x39_SP6_mag_bt"
 		};
 		muzzles[]=
 		{
@@ -4547,8 +4535,11 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
-			"RH_20Rnd_9x39_SP6_mag",
-			"RH_20Rnd_9x39_SP6SD_mag"
+			"RH_20Rnd_9x39_SP6_mag"
+			"RH_20Rnd_9x39_SP6_mag_hp",
+			"RH_20Rnd_9x39_SP6_mag_tracer",
+			"RH_20Rnd_9x39_SP6_mag_rubber",
+			"RH_20Rnd_9x39_SP6_mag_bt"
 		};
 		muzzles[]=
 		{
@@ -4632,8 +4623,11 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
-			"RH_20Rnd_9x39_SP6SD_mag",
 			"RH_20Rnd_9x39_SP6_mag"
+			"RH_20Rnd_9x39_SP6_mag_hp",
+			"RH_20Rnd_9x39_SP6_mag_tracer",
+			"RH_20Rnd_9x39_SP6_mag_rubber",
+			"RH_20Rnd_9x39_SP6_mag_bt"
 		};
 		handAnim[]=
 		{
@@ -7375,7 +7369,15 @@ class cfgWeapons
 		magazines[]=
 		{
 			"vil_10Rnd_9x39_SP6_VSS",
-			"vil_20Rnd_9x39_SP6_VAL"
+			"vil_10Rnd_9x39_SP6_VSS_hp",
+			"vil_10Rnd_9x39_SP6_VSS_tracer",
+			"vil_10Rnd_9x39_SP6_VSS_rubber",
+			"vil_10Rnd_9x39_SP6_VSS_bt",
+			"vil_20Rnd_9x39_SP6_VAL",
+			"vil_20Rnd_9x39_SP6_VAL_hp",
+			"vil_20Rnd_9x39_SP6_VAL_tracer",
+			"vil_20Rnd_9x39_SP6_VAL_rubber",
+			"vil_20Rnd_9x39_SP6_VAL_bt"
 		};
 		handAnim[]=
 		{

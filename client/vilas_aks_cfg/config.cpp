@@ -257,16 +257,6 @@ class CfgMagazines {
 		descriptionShort = $STR_TGW_VIL_MS_APB;
 	};
 	
-	class vil_10Rnd_9x39_SP6_VSS : CA_Magazine {
-		scope = public;
-		ammo = "vil_B_9x39_SP6";
-		count = 10;
-		initSpeed = 300;
-		picture = "\CA\weapons\data\equip\M_VSSx10_CA.paa";
-		displayName = $STR_TGW_VIL_MN_SP6VSS;
-		descriptionShort = $STR_TGW_VIL_MS_SP6VSS;
-	};
-	
 	class vil_20Rnd_9x39_SP6_OC : CA_Magazine {
 		scope = public;
 		ammo = "vil_B_9x39_SP6";
@@ -1777,7 +1767,15 @@ class cfgWeapons {
 		magazines[]=
 		{
 			"vil_10Rnd_9x39_SP6_VSS",
-			"vil_20Rnd_9x39_SP6_VAL"
+			"vil_10Rnd_9x39_SP6_VSS_hp",
+			"vil_10Rnd_9x39_SP6_VSS_tracer",
+			"vil_10Rnd_9x39_SP6_VSS_rubber",
+			"vil_10Rnd_9x39_SP6_VSS_bt",
+			"vil_20Rnd_9x39_SP6_VAL",
+			"vil_20Rnd_9x39_SP6_VAL_hp",
+			"vil_20Rnd_9x39_SP6_VAL_tracer",
+			"vil_20Rnd_9x39_SP6_VAL_rubber",
+			"vil_20Rnd_9x39_SP6_VAL_bt"
 		};
 		
 		class Single : Single {
@@ -1847,7 +1845,15 @@ class cfgWeapons {
 		magazines[]=
 		{
 			"vil_10Rnd_9x39_SP6_VSS",
-			"vil_20Rnd_9x39_SP6_VAL"
+			"vil_10Rnd_9x39_SP6_VSS_hp",
+			"vil_10Rnd_9x39_SP6_VSS_tracer",
+			"vil_10Rnd_9x39_SP6_VSS_rubber",
+			"vil_10Rnd_9x39_SP6_VSS_bt",
+			"vil_20Rnd_9x39_SP6_VAL",
+			"vil_20Rnd_9x39_SP6_VAL_hp",
+			"vil_20Rnd_9x39_SP6_VAL_tracer",
+			"vil_20Rnd_9x39_SP6_VAL_rubber",
+			"vil_20Rnd_9x39_SP6_VAL_bt"
 		};
 		class Single : Single {
 			dispersion = 0.0018;

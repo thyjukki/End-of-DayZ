@@ -10,7 +10,7 @@ class RH_20Rnd_9x39_SP6_mag_Empty: emptiedMagazine
 	class ammoType
 	{
 		class B_9x39_Ball {
-			ammoMag = "RH_20Rnd_9x39_SP6_mag";
+			ammoMag = "RH_20Rnd_9x39_SP6";
 		};
 		class B_9x39_HP {
 			ammoMag = "RH_20Rnd_9x39_SP6_mag_hp";
@@ -82,21 +82,6 @@ class RH_20Rnd_9x39_SP6_mag_bt: RH_20Rnd_9x39_SP6_mag {
 };
 
 
-// TODO(Jukki) remove either this or RH version, add to base class
-class vil_10Rnd_9x39_SP6_VSS_Empty : emptiedMagazine {
-	scope = public;
-	picture = "\CA\weapons\data\equip\M_VSSx10_CA.paa";
-	displayName = "10Rnd. SP6 (Empty)";
-	descriptionShort = $STR_TGW_VIL_MS_SP6VSS;
-	class ammoType
-	{
-		class vil_B_9x39_SP6 {
-			ammoMag = "vil_10Rnd_9x39_SP6_VSS";
-		};
-	};
-};
-
-
 //AS Val
 class vil_10Rnd_9x39_SP6_VSS_Empty: emptiedMagazine
 {
@@ -107,7 +92,7 @@ class vil_10Rnd_9x39_SP6_VSS_Empty: emptiedMagazine
 	class ammoType
 	{
 		class B_9x39_Ball {
-			ammoMag = "vil_10Rnd_9x39_SP6_VSS_mag";
+			ammoMag = "vil_10Rnd_9x39_SP6_VSS";
 		};
 		class B_9x39_HP {
 			ammoMag = "vil_10Rnd_9x39_SP6_VSS_hp";
@@ -178,7 +163,7 @@ class vil_10Rnd_9x39_SP6_VSS_bt: vil_10Rnd_9x39_SP6_VSS {
 };
 
 
-class vil_20Rnd_9x39_SP6_VSS_Empty: emptiedMagazine
+class vil_20Rnd_9x39_SP6_VAL_Empty: emptiedMagazine
 {
 	scope=2;
 	displayName="20Rnd SP6 (Empty)";
@@ -187,24 +172,24 @@ class vil_20Rnd_9x39_SP6_VSS_Empty: emptiedMagazine
 	class ammoType
 	{
 		class B_9x39_Ball {
-			ammoMag = "vil_20Rnd_9x39_SP6_VSS_mag";
+			ammoMag = "vil_20Rnd_9x39_SP6_VAL";
 		};
 		class B_9x39_HP {
-			ammoMag = "vil_20Rnd_9x39_SP6_VSS_hp";
+			ammoMag = "vil_20Rnd_9x39_SP6_VAL_hp";
 		};
 		class B_9x39_TRACER {
-			ammoMag = "vil_20Rnd_9x39_SP6_VSS_tracer";
+			ammoMag = "vil_20Rnd_9x39_SP6_VAL_tracer";
 		};
 		class B_9x39_RUBBER {
-			ammoMag = "vil_20Rnd_9x39_SP6_VSS_rubber";
+			ammoMag = "vil_20Rnd_9x39_SP6_VAL_rubber";
 		};
 		class B_9x39_BT {
-			ammoMag = "vil_20Rnd_9x39_SP6_VSS_bt";
+			ammoMag = "vil_20Rnd_9x39_SP6_VAL_bt";
 		};
 	};
 };
 
-class vil_20Rnd_9x39_SP6_VSS: CA_Magazine
+class vil_20Rnd_9x39_SP6_VAL: CA_Magazine
 {
 	scope=2;
 	displayName="20Rnd SP6";
@@ -228,21 +213,21 @@ class vil_20Rnd_9x39_SP6_VSS: CA_Magazine
 	emptyMag = "RH_20Rnd_9x39_SP6_mag_Empty";
 };
 
-class vil_20Rnd_9x39_SP6_VSS_hp: vil_20Rnd_9x39_SP6_VSS {
+class vil_20Rnd_9x39_SP6_VAL_hp: vil_20Rnd_9x39_SP6_VAL {
 	scope=2;
 	baseBullet = 9x39_HP_x;
 	ammo="B_9x39_HP";
 	displayName="20Rnd SP6 HP Mag";
 };
 
-class vil_20Rnd_9x39_SP6_VSS_tracer: vil_20Rnd_9x39_SP6_VSS {
+class vil_20Rnd_9x39_SP6_VAL_tracer: vil_20Rnd_9x39_SP6_VAL {
 	scope=2;
 	baseBullet = 9x39_Tracer_x;
 	ammo="B_9x39_TRACER";
 	displayName="20Rnd SP6 Tracer Mag";
 };
 
-class vil_20Rnd_9x39_SP6_VSS_rubber: vil_20Rnd_9x39_SP6_VSS {
+class vil_20Rnd_9x39_SP6_VAL_rubber: vil_20Rnd_9x39_SP6_VAL {
 	scope=2;
 	baseBullet = 9x39_RUBBER_x;
 	initSpeed=150;
@@ -250,7 +235,7 @@ class vil_20Rnd_9x39_SP6_VSS_rubber: vil_20Rnd_9x39_SP6_VSS {
 	displayName="20Rnd SP6 Rubber Mag";
 };
 
-class vil_20Rnd_9x39_SP6_VSS_bt: vil_20Rnd_9x39_SP6_VSS {
+class vil_20Rnd_9x39_SP6_VAL_bt: vil_20Rnd_9x39_SP6_VAL {
 	scope=2;
 	baseBullet = 9x39_BT_x;
 	ammo="B_9x39_BT";
