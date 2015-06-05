@@ -103,5 +103,5 @@ if (r_interrupt) then {
 	player playActionNow "stop";
 };
 
-PVDZ_plr_Save = [player,nil,true,dayz_playerAchievements];
+PVDZ_plr_Save = [player,nil,true];
 publicVariableServer "PVDZ_plr_Save";

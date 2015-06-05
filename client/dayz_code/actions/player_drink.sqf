@@ -54,10 +54,6 @@ if (_hasoutput and !_invehicle) then {
     };
     _item addMagazineCargoGlobal [_itemtodrop,1];
 	_item setvelocity [0,0,1];
-	
-	if (achievement_LitterCount > -1) then {
-		achievement_LitterCount = achievement_LitterCount + 1;
-	};
 };
 
 //add infection chance for "ItemWaterbottle",

@@ -292,12 +292,8 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 	if (dayz_unsaved or ((diag_ticktime - dayz_lastSave) > 300)) then {
 		if ((diag_ticktime - dayz_lastSave) > _saveTime) then {
 
-			PVDZ_plr_Save = [player,nil,false,dayz_playerAchievements];
+			PVDZ_plr_Save = [player,nil,false];
 			publicVariableServer "PVDZ_plr_Save";
-			
-			PVDZ_serverStoreVar = [player,"Achievements",dayz_playerAchievements];
-			publicVariableServer "PVDZ_serverStoreVar";
-			player setVariable ["Achievements",dayz_playerAchievements,false];
 
 			if (isServer) then {
 				PVDZ_plr_Save call server_playerSync;

@@ -80,31 +80,6 @@ if (count _array > 0) then {
 			_killsV = _source getVariable ["banditKills",0];
 			_source setVariable ["banditKills",(_killsV + 1),true];
 		};
-		
-		// START Musty Achievement
-		_killer = _source;			// who did the killing
-		_killedachievementID = -1;
-		if (_killer distance _body > 200) then {
-			_killedachievementID = 15;	// steady aim
-			achievement_SteadyAim = true;
-		};
-		if (_killer distance _body > 500) then {
-			_killedachievementID = 16;	// marksman
-			achievement_Marksman = true;
-		};
-		if (_killer distance _body > 1000) then {
-			_killedachievementID = 17;	// sniper
-			achievement_Sniper = true;
-		};	
-		if (_killedachievementID > -1) then {
-			if (dayz_playerAchievements select _killedachievementID < 1) then {
-				_killerID = _killer getVariable["characterID",0];	// get his characterID
-				dayz_playerAchievements set [_killedachievementID,1];
-				achievement = [_killedachievementID, _killer, _killerID];		// publish event to server
-				publicVariableServer "achievement";
-			};
-		};
-	// END Musty Achievement
 	};
 	_body setVariable ["deathType",_method,true];
 };
