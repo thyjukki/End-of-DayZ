@@ -30,6 +30,13 @@ class CfgMagazines
 	//Attachments
 	#include "Attachments\Attachments.hpp"
 
+		
+	//Bullets
+	class baseBullet : CA_Magazine {
+		scope = private;
+		count=1;
+		bulletCount = 1;
+	};
 
 	#include "bullets\45acp.hpp"
 	#include "bullets\32acp.hpp"
