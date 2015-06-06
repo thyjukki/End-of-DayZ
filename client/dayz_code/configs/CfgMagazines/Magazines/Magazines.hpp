@@ -9,6 +9,7 @@
 #include "EmptyMag.hpp"
 #include "9x18.hpp"
 #include "9x19.hpp"
+#include "9x39.hpp"
 #include "22lr.hpp"
 #include "30cal.hpp"
 #include "32ACP.hpp"
