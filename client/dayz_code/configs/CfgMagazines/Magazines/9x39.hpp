@@ -57,6 +57,7 @@ class RH_20Rnd_9x39_SP6_mag_hp: RH_20Rnd_9x39_SP6_mag {
 	baseBullet = 9x39_HP_x;
 	ammo="B_9x39_HP";
 	displayName="OC14 HP Mag";
+	displayNameShort="HP";
 };
 
 class RH_20Rnd_9x39_SP6_mag_tracer: RH_20Rnd_9x39_SP6_mag {
@@ -65,6 +66,7 @@ class RH_20Rnd_9x39_SP6_mag_tracer: RH_20Rnd_9x39_SP6_mag {
 	ammo="B_9x39_TRACER";
 	tracersevery = 1;
 	displayName="OC14 Tracer Mag";
+	displayNameShort="Tracer";
 };
 
 class RH_20Rnd_9x39_SP6_mag_rubber: RH_20Rnd_9x39_SP6_mag {
@@ -73,6 +75,7 @@ class RH_20Rnd_9x39_SP6_mag_rubber: RH_20Rnd_9x39_SP6_mag {
 	initSpeed=150;
 	ammo="B_9x39_RUBBER";
 	displayName="OC14 Rubber Mag";
+	displayNameShort="Rubber";
 };
 
 class RH_20Rnd_9x39_SP6_mag_bt: RH_20Rnd_9x39_SP6_mag {
@@ -80,6 +83,7 @@ class RH_20Rnd_9x39_SP6_mag_bt: RH_20Rnd_9x39_SP6_mag {
 	baseBullet = 9x39_BT_x;
 	ammo="B_9x39_BT";
 	displayName="OC14 BT Mag";
+	displayNameShort="BT";
 };
 
 

@@ -57,6 +57,7 @@ class RH_10Rnd_22LR_mk2_hp: RH_10Rnd_22LR_mk2 {
 	baseBullet = 22LR_HP_x;
 	ammo="B_22LR_HP";
 	displayName="MK2 HP Mag";
+	displayNameShort="HP";
 };
 
 class RH_10Rnd_22LR_mk2_tracer: RH_10Rnd_22LR_mk2 {
@@ -65,6 +66,7 @@ class RH_10Rnd_22LR_mk2_tracer: RH_10Rnd_22LR_mk2 {
 	ammo="B_22LR_TRACER";
 	tracersevery = 1;
 	displayName="MK2 Tracer Mag";
+	displayNameShort="Tracer";
 };
 
 class RH_10Rnd_22LR_mk2_rubber: RH_10Rnd_22LR_mk2 {
@@ -73,6 +75,7 @@ class RH_10Rnd_22LR_mk2_rubber: RH_10Rnd_22LR_mk2 {
 	initSpeed=150;
 	ammo="B_22LR_RUBBER";
 	displayName="MK2 Rubber Mag";
+	displayNameShort="Rubber";
 };
 
 class RH_10Rnd_22LR_mk2_bt: RH_10Rnd_22LR_mk2 {
@@ -80,4 +83,5 @@ class RH_10Rnd_22LR_mk2_bt: RH_10Rnd_22LR_mk2 {
 	baseBullet = 22LR_BT_x;
 	ammo="B_22LR_BT";
 	displayName="MK2 BT Mag";
+	displayNameShort="BT";
 };

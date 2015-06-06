@@ -59,7 +59,8 @@ class 8Rnd_9x18_MakarovSD: 8Rnd_9x18_Makarov {
 	initSpeed=310;
 	ammo="B_9x18_SD";
 	picture = "\z\addons\dayz_communityweapons\magazines\data\m_makarovsd_ca.paa";
-	displayName="MakarovSD Mag";
+	displayName="Makarov SD Mag";
+	displayNameShort="SD";
 };
 
 class 8Rnd_9x18_Makarov_hp: 8Rnd_9x18_Makarov {
@@ -67,6 +68,7 @@ class 8Rnd_9x18_Makarov_hp: 8Rnd_9x18_Makarov {
 	baseBullet = 9x18_HP_x;
 	ammo="B_9x18_HP";
 	displayName="Makarov HP Mag";
+	displayNameShort="HP";
 };
 
 class 8Rnd_9x18_Makarov_tracer: 8Rnd_9x18_Makarov {
@@ -83,6 +85,7 @@ class 8Rnd_9x18_Makarov_rubber: 8Rnd_9x18_Makarov {
 	initSpeed=150;
 	ammo="B_9x18_RUBBER";
 	displayName="Makarov Rubber Mag";
+	displayNameShort="Rubber";
 };
 
 class 8Rnd_9x18_Makarov_bt: 8Rnd_9x18_Makarov {
@@ -90,6 +93,7 @@ class 8Rnd_9x18_Makarov_bt: 8Rnd_9x18_Makarov {
 	baseBullet = 9x18_BT_x;
 	ammo="B_9x18_BT";
 	displayName="Makarov BT Mag";
+	displayNameShort="BT";
 };
 
 
@@ -140,6 +144,7 @@ class RH_20Rnd_9x18_apsSD: RH_20Rnd_9x18_aps {
 	ammo="B_9x18_SD";
 	picture = "\z\addons\dayz_communityweapons\magazines\data\m_makarovsd_ca.paa";
 	displayName="APS SD mag";
+	displayNameShort="SD";
 };
 
 class RH_20Rnd_9x18_aps_hp: RH_20Rnd_9x18_aps {
@@ -147,6 +152,7 @@ class RH_20Rnd_9x18_aps_hp: RH_20Rnd_9x18_aps {
 	baseBullet = 9x18_HP_x;
 	ammo="B_9x18_HP";
 	displayName="APS HP Mag";
+	displayNameShort="HP";
 };
 
 class RH_20Rnd_9x18_aps_tracer: RH_20Rnd_9x18_aps {
@@ -155,6 +161,7 @@ class RH_20Rnd_9x18_aps_tracer: RH_20Rnd_9x18_aps {
 	ammo="B_9x18_TRACER";
 	tracersevery = 1;
 	displayName="APS Tracer mag";
+	displayNameShort="Tracer";
 };
 
 class RH_20Rnd_9x18_aps_rubber: RH_20Rnd_9x18_aps {
@@ -163,6 +170,7 @@ class RH_20Rnd_9x18_aps_rubber: RH_20Rnd_9x18_aps {
 	initSpeed=150;
 	ammo="B_9x18_RUBBER";
 	displayName="APS Rubber mag";
+	displayNameShort="Rubber";
 };
 
 class RH_20Rnd_9x18_aps_bt: RH_20Rnd_9x18_aps {
@@ -170,6 +178,7 @@ class RH_20Rnd_9x18_aps_bt: RH_20Rnd_9x18_aps {
 	baseBullet = 9x18_BT_x;
 	ammo="B_9x18_BT";
 	displayName="APS BT mag";
+	displayNameShort="BT";
 };
 
 
@@ -238,6 +247,7 @@ class 64Rnd_9x19_SD_Bizon: 64Rnd_9x19_Bizon {
 	initSpeed=320;
 	ammo="B_9x18_SD";
 	displayName="Bizon SD Mag";
+	displayNameShort="SD";
 };
 
 class 64Rnd_9x19_Bizon_hp: 64Rnd_9x19_Bizon {
@@ -245,6 +255,7 @@ class 64Rnd_9x19_Bizon_hp: 64Rnd_9x19_Bizon {
 	baseBullet = 9x18_HP_x;
 	ammo="B_9x18_HP";
 	displayName="Bizon HP Mag";
+	displayNameShort="HP";
 };
 
 class 64Rnd_9x19_Bizon_tracer: 64Rnd_9x19_Bizon {
@@ -253,6 +264,7 @@ class 64Rnd_9x19_Bizon_tracer: 64Rnd_9x19_Bizon {
 	ammo="B_9x18_TRACER";
 	tracersevery = 1;
 	displayName="Bizon Tracer Mag";
+	displayNameShort="Tracer";
 };
 
 class 64Rnd_9x19_Bizon_rubber: 64Rnd_9x19_Bizon {
@@ -261,6 +273,7 @@ class 64Rnd_9x19_Bizon_rubber: 64Rnd_9x19_Bizon {
 	initSpeed=150;
 	ammo="B_9x18_RUBBER";
 	displayName="Bizon Rubber Mag";
+	displayNameShort="Rubber";
 };
 
 class 64Rnd_9x19_Bizon_bt: 64Rnd_9x19_Bizon {
@@ -268,4 +281,5 @@ class 64Rnd_9x19_Bizon_bt: 64Rnd_9x19_Bizon {
 	baseBullet = 9x18_BT_x;
 	ammo="B_9x18_BT";
 	displayName="Bizon BT Mag";
+	displayNameShort="BT";
 };

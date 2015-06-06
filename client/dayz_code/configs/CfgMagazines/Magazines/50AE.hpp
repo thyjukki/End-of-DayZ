@@ -61,6 +61,7 @@ class RH_7Rnd_50_AE_hp: RH_7Rnd_50_AE {
 	baseBullet = 50_AE_HP_x;
 	ammo="B_50_AE_HP";
 	displayName="Desert Eagle HP Mag";
+	displayNameShort="HP";
 };
 
 class RH_7Rnd_50_AE_tracer: RH_7Rnd_50_AE {
@@ -69,6 +70,7 @@ class RH_7Rnd_50_AE_tracer: RH_7Rnd_50_AE {
 	ammo="B_50_AE_TRACER";
 	tracersevery = 1;
 	displayName="Desert Eagle Tracer Mag";
+	displayNameShort="Tracer";
 };
 
 class RH_7Rnd_50_AE_rubber: RH_7Rnd_50_AE {
@@ -77,6 +79,7 @@ class RH_7Rnd_50_AE_rubber: RH_7Rnd_50_AE {
 	initSpeed=150;
 	ammo="B_50_AE_RUBBER";
 	displayName="Desert Eagle Rubber Mag";
+	displayNameShort="Rubber";
 };
 
 class RH_7Rnd_50_AE_bt: RH_7Rnd_50_AE {
@@ -84,4 +87,5 @@ class RH_7Rnd_50_AE_bt: RH_7Rnd_50_AE {
 	baseBullet = 50_AE_BT_x;
 	ammo="B_50_AE_BT";
 	displayName="Desert Eagle BT Mag";
+	displayNameShort="BT";
 };

@@ -59,6 +59,7 @@ class RH_57x28mm_50RND_SD_Mag: RH_57x28mm_50RND_Mag {
 	initSpeed=320;
 	ammo="RH_smg_57x28mm_SD_Round";
 	displayName="P90 SD Mag";
+	displayNameShort="SD";
 };
 
 class RH_57x28mm_50RND_Mag_hp: RH_57x28mm_50RND_Mag {
@@ -66,6 +67,7 @@ class RH_57x28mm_50RND_Mag_hp: RH_57x28mm_50RND_Mag {
 	baseBullet = 57x28_HP_x;
 	ammo="B_57x28_HP";
 	displayName="P90 HP Mag";
+	displayNameShort="HP";
 };
 
 class RH_57x28mm_50RND_Mag_tracer: RH_57x28mm_50RND_Mag {
@@ -74,6 +76,7 @@ class RH_57x28mm_50RND_Mag_tracer: RH_57x28mm_50RND_Mag {
 	ammo="B_57x28_TRACER";
 	tracersevery = 1;
 	displayName="P90 Tracer Mag";
+	displayNameShort="Tracer";
 };
 
 class RH_57x28mm_50RND_Mag_rubber: RH_57x28mm_50RND_Mag {
@@ -82,6 +85,7 @@ class RH_57x28mm_50RND_Mag_rubber: RH_57x28mm_50RND_Mag {
 	initSpeed=150;
 	ammo="B_57x28_RUBBER";
 	displayName="P90 Rubber Mag";
+	displayNameShort="Rubber";
 };
 
 class RH_57x28mm_50RND_Mag_bt: RH_57x28mm_50RND_Mag {
@@ -89,4 +93,5 @@ class RH_57x28mm_50RND_Mag_bt: RH_57x28mm_50RND_Mag {
 	baseBullet = 57x28_BT_x;
 	ammo="B_57x28_BT";
 	displayName="P90 BT Mag";
+	displayNameShort="BT";
 };

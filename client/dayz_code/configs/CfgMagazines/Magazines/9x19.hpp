@@ -57,6 +57,7 @@ class 30Rnd_9x19_MP5SD: 30Rnd_9x19_MP5 {
 	initSpeed=320;
 	ammo="B_9x19_SD";
 	displayName="MP5 SD Mag";
+	displayNameShort="SD";
 };
 
 class 30Rnd_9x19_MP5_hp: 30Rnd_9x19_MP5 {
@@ -64,6 +65,7 @@ class 30Rnd_9x19_MP5_hp: 30Rnd_9x19_MP5 {
 	baseBullet = 9x19_HP_x;
 	ammo="B_9x19_HP";
 	displayName="MP5 HP Mag";
+	displayNameShort="HP";
 };
 
 class 30Rnd_9x19_MP5_tracer: 30Rnd_9x19_MP5 {
@@ -72,6 +74,7 @@ class 30Rnd_9x19_MP5_tracer: 30Rnd_9x19_MP5 {
 	tracersevery = 1;
 	ammo="B_9x19_TRACER";
 	displayName="MP5 Tracer Mag";
+	displayNameShort="Tracer";
 };
 
 class 30Rnd_9x19_MP5_rubber: 30Rnd_9x19_MP5 {
@@ -80,6 +83,7 @@ class 30Rnd_9x19_MP5_rubber: 30Rnd_9x19_MP5 {
 	initSpeed=150;
 	ammo="B_9x19_RUBBER";
 	displayName="MP5 Rubber Mag";
+	displayNameShort="Rubber";
 };
 
 class 30Rnd_9x19_MP5_bt: 30Rnd_9x19_MP5 {
@@ -87,6 +91,7 @@ class 30Rnd_9x19_MP5_bt: 30Rnd_9x19_MP5 {
 	baseBullet = 9x19_BT_x;
 	ammo="B_9x19_BT";
 	displayName="MP5 BT Mag";
+	displayNameShort="BT";
 };
 
 
@@ -153,6 +158,7 @@ class 15Rnd_9x19_M9SD: 15Rnd_9x19_M9 {
 	initSpeed=320;
 	ammo="B_9x19_SD";
 	displayName="M9 SD Mag";
+	displayNameShort="SD";
 };
 
 class 15Rnd_9x19_M9_hp: 15Rnd_9x19_M9 {
@@ -160,29 +166,33 @@ class 15Rnd_9x19_M9_hp: 15Rnd_9x19_M9 {
 	baseBullet = 9x19_HP_x;
 	ammo="B_9x19_HP";
 	displayName="M9 HP Mag";
+	displayNameShort="HP";
 };
 
-class 15Rnd_9x19_M9SD_tracer: 15Rnd_9x19_M9 {
+class 15Rnd_9x19_M9_tracer: 15Rnd_9x19_M9 {
 	scope=2;
 	baseBullet = 9x19_Tracer_x;
 	ammo="B_9x19_TRACER";
 	tracersevery = 1;
 	displayName="M9 Tracer Mag";
+	displayNameShort="Tracer";
 };
 
-class 15Rnd_9x19_M9SD_rubber: 15Rnd_9x19_M9 {
+class 15Rnd_9x19_M9_rubber: 15Rnd_9x19_M9 {
 	scope=2;
 	baseBullet = 9x19_RUBBER_x;
 	initSpeed=150;
 	ammo="B_9x19_RUBBER";
 	displayName="M9 Rubber Mag";
+	displayNameShort="Rubber";
 };
 
-class 15Rnd_9x19_M9SD_bt: 15Rnd_9x19_M9 {
+class 15Rnd_9x19_M9_bt: 15Rnd_9x19_M9 {
 	scope=2;
 	baseBullet = 9x19_BT_x;
 	ammo="B_9x19_BT";
 	displayName="M9 BT Mag";
+	displayNameShort="BT";
 };
 
 
@@ -248,6 +258,7 @@ class 17Rnd_9x19_glock17SD: 17Rnd_9x19_glock17 {
 	initSpeed=320;
 	ammo="B_9x19_SD";
 	displayName="G17 SD Mag";
+	displayNameShort="SD";
 };
 
 class 17Rnd_9x19_glock17_hp: 17Rnd_9x19_glock17 {
@@ -255,6 +266,7 @@ class 17Rnd_9x19_glock17_hp: 17Rnd_9x19_glock17 {
 	baseBullet = 9x19_HP_x;
 	ammo="B_9x19_HP";
 	displayName="G17 HP Mag";
+	displayNameShort="HP";
 };
 
 class 17Rnd_9x19_glock17_tracer: 17Rnd_9x19_glock17 {
@@ -263,6 +275,7 @@ class 17Rnd_9x19_glock17_tracer: 17Rnd_9x19_glock17 {
 	tracersevery = 1;
 	ammo="B_9x19_TRACER";
 	displayName="G17 Tracer Mag";
+	displayNameShort="Tracer";
 };
 
 class 17Rnd_9x19_glock17_rubber: 17Rnd_9x19_glock17 {
@@ -271,6 +284,7 @@ class 17Rnd_9x19_glock17_rubber: 17Rnd_9x19_glock17 {
 	initSpeed=150;
 	ammo="B_9x19_RUBBER";
 	displayName="G17 Rubber Mag";
+	displayNameShort="Rubber";
 };
 
 class 17Rnd_9x19_glock17_bt: 17Rnd_9x19_glock17 {
@@ -278,6 +292,7 @@ class 17Rnd_9x19_glock17_bt: 17Rnd_9x19_glock17 {
 	baseBullet = 9x19_BT_x;
 	ammo="B_9x19_BT";
 	displayName="G17 BT Mag";
+	displayNameShort="BT";
 };
 
 
@@ -345,6 +360,7 @@ class RH_13Rnd_9x19_bhpSD: RH_13Rnd_9x19_bhp {
 	initSpeed=320;
 	ammo="B_9x19_SD";
 	displayName="Browning HP SD Mag";
+	displayNameShort="SD";
 };
 
 class RH_13Rnd_9x19_bhp_hp: RH_13Rnd_9x19_bhp {
@@ -352,6 +368,7 @@ class RH_13Rnd_9x19_bhp_hp: RH_13Rnd_9x19_bhp {
 	baseBullet = 9x19_HP_x;
 	ammo="B_9x19_HP";
 	displayName="Browning HP HP Mag";
+	displayNameShort="HP";
 };
 
 class RH_13Rnd_9x19_bhp_tracer: RH_13Rnd_9x19_bhp {
@@ -360,6 +377,7 @@ class RH_13Rnd_9x19_bhp_tracer: RH_13Rnd_9x19_bhp {
 	tracersevery = 1;
 	ammo="B_9x19_TRACER";
 	displayName="Browning HP Tracer Mag";
+	displayNameShort="Tracer";
 };
 
 class RH_13Rnd_9x19_bhp_rubber: RH_13Rnd_9x19_bhp {
@@ -368,6 +386,7 @@ class RH_13Rnd_9x19_bhp_rubber: RH_13Rnd_9x19_bhp {
 	initSpeed=150;
 	ammo="B_9x19_RUBBER";
 	displayName="Browning HP Rubber Mag";
+	displayNameShort="Rubber";
 };
 
 class RH_13Rnd_9x19_bhp_bt: RH_13Rnd_9x19_bhp {
@@ -375,6 +394,7 @@ class RH_13Rnd_9x19_bhp_bt: RH_13Rnd_9x19_bhp {
 	baseBullet = 9x19_BT_x;
 	ammo="B_9x19_BT";
 	displayName="Browning HP BT Mag";
+	displayNameShort="HP";
 };
 
 
@@ -442,6 +462,7 @@ class RH_8Rnd_9x19_MkSD: RH_8Rnd_9x19_Mk {
 	initSpeed=320;
 	ammo="B_9x19_SD";
 	displayName="Mk22 SD Mag";
+	displayNameShort="SD";
 };
 
 class RH_8Rnd_9x19_Mk_hp: RH_8Rnd_9x19_Mk {
@@ -449,6 +470,7 @@ class RH_8Rnd_9x19_Mk_hp: RH_8Rnd_9x19_Mk {
 	baseBullet = 9x19_HP_x;
 	ammo="B_9x19_HP";
 	displayName="Mk22 HP Mag";
+	displayNameShort="HP";
 };
 
 class RH_8Rnd_9x19_Mk_tracer: RH_8Rnd_9x19_Mk {
@@ -457,6 +479,7 @@ class RH_8Rnd_9x19_Mk_tracer: RH_8Rnd_9x19_Mk {
 	ammo="B_9x19_TRACER";
 	tracersevery = 1;
 	displayName="Mk22 Tracer Mag";
+	displayNameShort="Tracer";
 };
 
 class RH_8Rnd_9x19_Mk_rubber: RH_8Rnd_9x19_Mk {
@@ -465,6 +488,7 @@ class RH_8Rnd_9x19_Mk_rubber: RH_8Rnd_9x19_Mk {
 	initSpeed=150;
 	ammo="B_9x19_RUBBER";
 	displayName="Mk22 Rubber Mag";
+	displayNameShort="Rubber";
 };
 
 class RH_8Rnd_9x19_Mk_bt: RH_8Rnd_9x19_Mk {
@@ -472,6 +496,7 @@ class RH_8Rnd_9x19_Mk_bt: RH_8Rnd_9x19_Mk {
 	baseBullet = 9x19_BT_x;
 	ammo="B_9x19_BT";
 	displayName="Mk22 BT Mag";
+	displayNameShort="BT";
 };
 
 // 9mm usp
@@ -538,6 +563,7 @@ class RH_15Rnd_9x19_uspsd: RH_15Rnd_9x19_usp {
 	initSpeed=320;
 	ammo="B_9x19_SD";
 	displayName="Usp 9mm SD Mag";
+	displayNameShort="SD";
 };
 
 class RH_15Rnd_9x19_usp_hp: RH_15Rnd_9x19_usp {
@@ -545,6 +571,7 @@ class RH_15Rnd_9x19_usp_hp: RH_15Rnd_9x19_usp {
 	baseBullet = 9x19_HP_x;
 	ammo="B_9x19_HP";
 	displayName="Usp 9mm HP Mag";
+	displayNameShort="HP";
 };
 
 class RH_15Rnd_9x19_usp_tracer: RH_15Rnd_9x19_usp {
@@ -553,6 +580,7 @@ class RH_15Rnd_9x19_usp_tracer: RH_15Rnd_9x19_usp {
 	tracersevery = 1;
 	ammo="B_9x19_TRACER";
 	displayName="Usp 9mm Tracer Mag";
+	displayNameShort="Tracer";
 };
 
 class RH_15Rnd_9x19_usp_rubber: RH_15Rnd_9x19_usp {
@@ -561,6 +589,7 @@ class RH_15Rnd_9x19_usp_rubber: RH_15Rnd_9x19_usp {
 	initSpeed=150;
 	ammo="B_9x19_RUBBER";
 	displayName="Usp 9mm Rubber Mag";
+	displayNameShort="Rubber";
 };
 
 class RH_15Rnd_9x19_usp_bt: RH_15Rnd_9x19_usp {
@@ -568,6 +597,7 @@ class RH_15Rnd_9x19_usp_bt: RH_15Rnd_9x19_usp {
 	baseBullet = 9x19_BT_x;
 	ammo="B_9x19_BT";
 	displayName="Usp 9mm BT Mag";
+	displayNameShort="BT";
 };
 
 
@@ -635,6 +665,7 @@ class RH_20Rnd_9x19_M93SD: RH_20Rnd_9x19_M93 {
 	initSpeed=320;
 	ammo="B_9x19_SD";
 	displayName="M93R SD Mag";
+	displayNameShort="SD";
 };
 
 class RH_20Rnd_9x19_M93_hp: RH_20Rnd_9x19_M93 {
@@ -642,6 +673,7 @@ class RH_20Rnd_9x19_M93_hp: RH_20Rnd_9x19_M93 {
 	baseBullet = 9x19_HP_x;
 	ammo="B_9x19_HP";
 	displayName="M93R HP Mag";
+	displayNameShort="HP";
 };
 
 class RH_20Rnd_9x19_M93_tracer: RH_20Rnd_9x19_M93 {
@@ -650,6 +682,7 @@ class RH_20Rnd_9x19_M93_tracer: RH_20Rnd_9x19_M93 {
 	ammo="B_9x19_TRACER";
 	tracersevery = 1;
 	displayName="M93R Tracer Mag";
+	displayNameShort="Tracer";
 };
 
 class RH_20Rnd_9x19_M93_rubber: RH_20Rnd_9x19_M93 {
@@ -658,6 +691,7 @@ class RH_20Rnd_9x19_M93_rubber: RH_20Rnd_9x19_M93 {
 	initSpeed=150;
 	ammo="B_9x19_RUBBER";
 	displayName="M93R Rubber Mag";
+	displayNameShort="Rubber";
 };
 
 class RH_20Rnd_9x19_M93_bt: RH_20Rnd_9x19_M93 {
@@ -665,6 +699,7 @@ class RH_20Rnd_9x19_M93_bt: RH_20Rnd_9x19_M93 {
 	baseBullet = 9x19_BT_x;
 	ammo="B_9x19_BT";
 	displayName="M93R BT Mag";
+	displayNameShort="BT";
 };
 
 
@@ -732,6 +767,7 @@ class RH_19Rnd_9x19_g18SD: RH_19Rnd_9x19_g18 {
 	initSpeed=320;
 	ammo="B_9x19_SD";
 	displayName="G18 SD Mag";
+	displayNameShort="SD";
 };
 
 class RH_19Rnd_9x19_g18_hp: RH_19Rnd_9x19_g18 {
@@ -739,6 +775,7 @@ class RH_19Rnd_9x19_g18_hp: RH_19Rnd_9x19_g18 {
 	baseBullet = 9x19_HP_x;
 	ammo="B_9x19_HP";
 	displayName="G18 HP Mag";
+	displayNameShort="HP";
 };
 
 class RH_19Rnd_9x19_g18_tracer: RH_19Rnd_9x19_g18 {
@@ -747,6 +784,7 @@ class RH_19Rnd_9x19_g18_tracer: RH_19Rnd_9x19_g18 {
 	tracersevery = 1;
 	ammo="B_9x19_TRACER";
 	displayName="G18 Tracer Mag";
+	displayNameShort="Tracer";
 };
 
 class RH_19Rnd_9x19_g18_rubber: RH_19Rnd_9x19_g18 {
@@ -755,6 +793,7 @@ class RH_19Rnd_9x19_g18_rubber: RH_19Rnd_9x19_g18 {
 	initSpeed=150;
 	ammo="B_9x19_RUBBER";
 	displayName="G18 Rubber Mag";
+	displayNameShort="Rubber";
 };
 
 class RH_19Rnd_9x19_g18_bt: RH_19Rnd_9x19_g18 {
@@ -762,6 +801,7 @@ class RH_19Rnd_9x19_g18_bt: RH_19Rnd_9x19_g18 {
 	baseBullet = 9x19_BT_x;
 	ammo="B_9x19_BT";
 	displayName="G18 BT Mag";
+	displayNameShort="BT";
 };
 
 // Glock 9mm 33rnd
@@ -828,6 +868,7 @@ class RH_33rnd_9x19_g18SD: RH_33rnd_9x19_g18 {
 	initSpeed=320;
 	ammo="B_9x19_SD";
 	displayName="G18 Long SD Mag";
+	displayNameShort="SD";
 };
 
 class RH_33Rnd_9x19_g18_hp: RH_33Rnd_9x19_g18 {
@@ -835,6 +876,7 @@ class RH_33Rnd_9x19_g18_hp: RH_33Rnd_9x19_g18 {
 	baseBullet = 9x19_HP_x;
 	ammo="B_9x19_HP";
 	displayName="G18 Long HP Mag";
+	displayNameShort="HP";
 };
 
 class RH_33rnd_9x19_g18_tracer: RH_33rnd_9x19_g18 {
@@ -843,6 +885,7 @@ class RH_33rnd_9x19_g18_tracer: RH_33rnd_9x19_g18 {
 	ammo="B_9x19_TRACER";
 	tracersevery = 1;
 	displayName="G18 Long Tracer Mag";
+	displayNameShort="Tracer";
 };
 
 class RH_33rnd_9x19_g18_rubber: RH_33rnd_9x19_g18 {
@@ -851,6 +894,7 @@ class RH_33rnd_9x19_g18_rubber: RH_33rnd_9x19_g18 {
 	initSpeed=150;
 	ammo="B_9x19_RUBBER";
 	displayName="G18 Long Rubber Mag";
+	displayNameShort="Rubber";
 };
 
 class RH_33rnd_9x19_g18_bt: RH_33rnd_9x19_g18 {
@@ -858,6 +902,7 @@ class RH_33rnd_9x19_g18_bt: RH_33rnd_9x19_g18 {
 	baseBullet = 9x19_BT_x;
 	ammo="B_9x19_BT";
 	displayName="G18 Long BT Mag";
+	displayNameShort="BT";
 };
 
 
@@ -925,6 +970,7 @@ class RH_30Rnd_9x19_tecSD: RH_30Rnd_9x19_tec {
 	initSpeed=320;
 	ammo="B_9x19_SD";
 	displayName="Tec9 SD Mag";
+	displayNameShort="SD";
 };
 
 class RH_30Rnd_9x19_tec_hp: RH_30Rnd_9x19_tec {
@@ -932,6 +978,7 @@ class RH_30Rnd_9x19_tec_hp: RH_30Rnd_9x19_tec {
 	baseBullet = 9x19_HP_x;
 	ammo="B_9x19_HP";
 	displayName="Tec9 HP Mag";
+	displayNameShort="HP";
 };
 
 class RH_30Rnd_9x19_tec_tracer: RH_30Rnd_9x19_tec {
@@ -940,6 +987,7 @@ class RH_30Rnd_9x19_tec_tracer: RH_30Rnd_9x19_tec {
 	ammo="B_9x19_TRACER";
 	tracersevery = 1;
 	displayName="Tec9 Tracer Mag";
+	displayNameShort="Tracer";
 };
 
 class RH_30Rnd_9x19_tec_rubber: RH_30Rnd_9x19_tec {
@@ -948,6 +996,7 @@ class RH_30Rnd_9x19_tec_rubber: RH_30Rnd_9x19_tec {
 	initSpeed=150;
 	ammo="B_9x19_RUBBER";
 	displayName="Tec9 Rubber Mag";
+	displayNameShort="Rubber";
 };
 
 class RH_30Rnd_9x19_tec_bt: RH_30Rnd_9x19_tec {
@@ -955,6 +1004,7 @@ class RH_30Rnd_9x19_tec_bt: RH_30Rnd_9x19_tec {
 	baseBullet = 9x19_BT_x;
 	ammo="B_9x19_BT";
 	displayName="Tec9 BT Mag";
+	displayNameShort="BT";
 };
 
 
@@ -1023,6 +1073,7 @@ class RH_32Rnd_9x19_MuziSD: RH_32Rnd_9x19_Muzi {
 	initSpeed=320;
 	ammo="B_9x19_SD";
 	displayName="MUzi SD Mag";
+	displayNameShort="SD";
 };
 
 class RH_32Rnd_9x19_Muzi_hp: RH_32Rnd_9x19_Muzi {
@@ -1030,6 +1081,7 @@ class RH_32Rnd_9x19_Muzi_hp: RH_32Rnd_9x19_Muzi {
 	baseBullet = 9x19_HP_x;
 	ammo="B_9x19_HP";
 	displayName="MUzi HP Mag";
+	displayNameShort="HP";
 };
 
 class RH_32Rnd_9x19_Muzi_tracer: RH_32Rnd_9x19_Muzi {
@@ -1038,6 +1090,7 @@ class RH_32Rnd_9x19_Muzi_tracer: RH_32Rnd_9x19_Muzi {
 	ammo="B_9x19_TRACER";
 	tracersevery = 1;
 	displayName="MUzi Tracer Mag";
+	displayNameShort="Tracer";
 };
 
 class RH_32Rnd_9x19_Muzi_rubber: RH_32Rnd_9x19_Muzi {
@@ -1046,6 +1099,7 @@ class RH_32Rnd_9x19_Muzi_rubber: RH_32Rnd_9x19_Muzi {
 	initSpeed=150;
 	ammo="B_9x19_RUBBER";
 	displayName="MUzi Rubber Mag";
+	displayNameShort="Rubber";
 };
 
 class RH_32Rnd_9x19_Muzi_bt: RH_32Rnd_9x19_Muzi {
@@ -1053,6 +1107,7 @@ class RH_32Rnd_9x19_Muzi_bt: RH_32Rnd_9x19_Muzi {
 	baseBullet = 9x19_BT_x;
 	ammo="B_9x19_BT";
 	displayName="MUzi BT Mag";
+	displayNameShort="BT";
 };
 
 
@@ -1120,6 +1175,7 @@ class RH_8Rnd_9x19_p38SD: RH_8Rnd_9x19_p38 {
 	initSpeed=320;
 	ammo="B_9x19_SD";
 	displayName="P38 SD Mag";
+	displayNameShort="SD";
 };
 
 class RH_8Rnd_9x19_p38_hp: RH_8Rnd_9x19_p38 {
@@ -1127,6 +1183,7 @@ class RH_8Rnd_9x19_p38_hp: RH_8Rnd_9x19_p38 {
 	baseBullet = 9x19_HP_x;
 	ammo="B_9x19_HP";
 	displayName="P38 HP Mag";
+	displayNameShort="HP";
 };
 
 class RH_8Rnd_9x19_p38_tracer: RH_8Rnd_9x19_p38 {
@@ -1135,6 +1192,7 @@ class RH_8Rnd_9x19_p38_tracer: RH_8Rnd_9x19_p38 {
 	ammo="B_9x19_TRACER";
 	tracersevery = 1;
 	displayName="P38 Tracer Mag";
+	displayNameShort="Tracer";
 };
 
 class RH_8Rnd_9x19_p38_rubber: RH_8Rnd_9x19_p38 {
@@ -1143,6 +1201,7 @@ class RH_8Rnd_9x19_p38_rubber: RH_8Rnd_9x19_p38 {
 	initSpeed=150;
 	ammo="B_9x19_RUBBER";
 	displayName="P38 Rubber Mag";
+	displayNameShort="Rubber";
 };
 
 class RH_8Rnd_9x19_p38_bt: RH_8Rnd_9x19_p38 {
@@ -1150,6 +1209,7 @@ class RH_8Rnd_9x19_p38_bt: RH_8Rnd_9x19_p38 {
 	baseBullet = 9x19_BT_x;
 	ammo="B_9x19_BT";
 	displayName="P38 BT Mag";
+	displayNameShort="BT";
 };
 
 
@@ -1215,6 +1275,7 @@ class RH_9mm_32RND_MagSD: RH_9mm_32RND_Mag {
 	initSpeed=320;
 	ammo="B_9x19_SD";
 	displayName="Uzi SD Mag";
+	displayNameShort="SD";
 };
 
 class RH_9mm_32RND_Mag_hp: RH_9mm_32RND_Mag {
@@ -1222,6 +1283,7 @@ class RH_9mm_32RND_Mag_hp: RH_9mm_32RND_Mag {
 	baseBullet = 9x19_HP_x;
 	ammo="B_9x19_HP";
 	displayName="Uzi HP Mag";
+	displayNameShort="HP";
 };
 
 class RH_9mm_32RND_Mag_tracer: RH_9mm_32RND_Mag {
@@ -1230,6 +1292,7 @@ class RH_9mm_32RND_Mag_tracer: RH_9mm_32RND_Mag {
 	ammo="B_9x19_TRACER";
 	tracersevery = 1;
 	displayName="Uzi Tracer Mag";
+	displayNameShort="Tracer";
 };
 
 class RH_9mm_32RND_Mag_rubber: RH_9mm_32RND_Mag {
@@ -1238,6 +1301,7 @@ class RH_9mm_32RND_Mag_rubber: RH_9mm_32RND_Mag {
 	initSpeed=150;
 	ammo="B_9x19_RUBBER";
 	displayName="Uzi Rubber Mag";
+	displayNameShort="Rubber";
 };
 
 class RH_9mm_32RND_Mag_bt: RH_9mm_32RND_Mag {
@@ -1245,5 +1309,6 @@ class RH_9mm_32RND_Mag_bt: RH_9mm_32RND_Mag {
 	baseBullet = 9x19_BT_x;
 	ammo="B_9x19_BT";
 	displayName="Uzi BT Mag";
+	displayNameShort="BT";
 };
 

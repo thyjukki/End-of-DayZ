@@ -61,6 +61,7 @@ class 40Rnd_46x30_sd_mp7: 40Rnd_46x30_mp7 {
 	initSpeed=700;
 	ammo="C1987_B_46x30_sd_Ball";
 	displayName="MP7 Long SD Mag";
+	displayNameShort="SD";
 };
 
 class 40Rnd_46x30_mp7_hp: 40Rnd_46x30_mp7 {
@@ -68,6 +69,7 @@ class 40Rnd_46x30_mp7_hp: 40Rnd_46x30_mp7 {
 	baseBullet = 46x30_HP_x;
 	ammo="B_46x30_HP";
 	displayName="MP7 Long HP Mag";
+	displayNameShort="HP";
 };
 
 class 40Rnd_46x30_mp7_tracer: 40Rnd_46x30_mp7 {
@@ -76,6 +78,7 @@ class 40Rnd_46x30_mp7_tracer: 40Rnd_46x30_mp7 {
 	ammo="B_46x30_TRACER";
 	tracersevery = 1;
 	displayName="MP7 Long Tracer Mag";
+	displayNameShort="Tracer";
 };
 
 class 40Rnd_46x30_mp7_rubber: 40Rnd_46x30_mp7 {
@@ -84,6 +87,7 @@ class 40Rnd_46x30_mp7_rubber: 40Rnd_46x30_mp7 {
 	initSpeed=150;
 	ammo="B_46x30_RUBBER";
 	displayName="MP7 Long Rubber Mag";
+	displayNameShort="Rubber";
 };
 
 class 40Rnd_46x30_mp7_bt: 40Rnd_46x30_mp7 {
@@ -91,6 +95,7 @@ class 40Rnd_46x30_mp7_bt: 40Rnd_46x30_mp7 {
 	baseBullet = 46x30_BT_x;
 	ammo="B_46x30_BT";
 	displayName="MP7 Long BT Mag";
+	displayNameShort="BT";
 };
 
 
@@ -155,6 +160,7 @@ class 20Rnd_46x30_sd_mp7: 20Rnd_46x30_mp7 {
 	initSpeed=700;
 	ammo="C1987_B_46x30_sd_Ball";
 	displayName="MP7 SD Mag";
+	displayNameShort="SD";
 };
 
 class 20Rnd_46x30_mp7_hp: 20Rnd_46x30_mp7 {
@@ -162,6 +168,7 @@ class 20Rnd_46x30_mp7_hp: 20Rnd_46x30_mp7 {
 	baseBullet = 46x30_HP_x;
 	ammo="B_46x30_HP";
 	displayName="MP7 HP Mag";
+	displayNameShort="HP";
 };
 
 class 20Rnd_46x30_mp7_tracer: 20Rnd_46x30_mp7 {
@@ -170,6 +177,7 @@ class 20Rnd_46x30_mp7_tracer: 20Rnd_46x30_mp7 {
 	ammo="B_46x30_TRACER";
 	tracersevery = 1;
 	displayName="MP7 Tracer Mag";
+	displayNameShort="Tracer";
 };
 
 class 20Rnd_46x30_mp7_rubber: 20Rnd_46x30_mp7 {
@@ -178,6 +186,7 @@ class 20Rnd_46x30_mp7_rubber: 20Rnd_46x30_mp7 {
 	initSpeed=150;
 	ammo="B_46x30_RUBBER";
 	displayName="MP7 Rubber Mag";
+	displayNameShort="Rubber";
 };
 
 class 20Rnd_46x30_mp7_bt: 20Rnd_46x30_mp7 {
@@ -185,4 +194,5 @@ class 20Rnd_46x30_mp7_bt: 20Rnd_46x30_mp7 {
 	baseBullet = 46x30_BT_x;
 	ammo="B_46x30_BT";
 	displayName="MP7 BT Mag";
+	displayNameShort="BT";
 };

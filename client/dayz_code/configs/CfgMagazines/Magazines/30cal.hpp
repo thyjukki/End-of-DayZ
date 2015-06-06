@@ -55,6 +55,7 @@ class KPFS_15Rnd_cal30_Carbine_hp: KPFS_15Rnd_cal30_Carbine {
 	baseBullet = 30cal_HP_x;
 	ammo="B_30cal_HP";
 	displayName="M1 Carbine HP Mag";
+	displayNameShort="HP";
 };
 
 class KPFS_15Rnd_cal30_Carbine_tracer: KPFS_15Rnd_cal30_Carbine {
@@ -63,6 +64,7 @@ class KPFS_15Rnd_cal30_Carbine_tracer: KPFS_15Rnd_cal30_Carbine {
 	ammo="B_30cal_TRACER";
 	tracersevery = 1;
 	displayName="M1 Carbine Tracer Mag";
+	displayNameShort="Tracer";
 };
 
 class KPFS_15Rnd_cal30_Carbine_rubber: KPFS_15Rnd_cal30_Carbine {
@@ -71,6 +73,7 @@ class KPFS_15Rnd_cal30_Carbine_rubber: KPFS_15Rnd_cal30_Carbine {
 	initSpeed=150;
 	ammo="B_30cal_RUBBER";
 	displayName="M1 Carbine Rubber Mag";
+	displayNameShort="Rubber";
 };
 
 class KPFS_15Rnd_cal30_Carbine_bt: KPFS_15Rnd_cal30_Carbine {
@@ -78,4 +81,5 @@ class KPFS_15Rnd_cal30_Carbine_bt: KPFS_15Rnd_cal30_Carbine {
 	baseBullet = 30cal_BT_x;
 	ammo="B_30cal_BT";
 	displayName="M1 Carbine BT Mag";
+	displayNameShort="BT";
 };

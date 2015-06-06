@@ -56,8 +56,8 @@ class RH_7Rnd_32cal_ppk_hp: RH_7Rnd_32cal_ppk {
 	baseBullet = 32ACP_HP_x;
 	initSpeed=270;
 	ammo="RH_32ACP_HP";
-	displayName="PPK mag HP";
-	description = "Caliber: .32 ACP Hollow Point<br/>Rounds: 7<br/>Used in: PPK";
+	displayName="PPK HP Mag";
+	displayNameShort="HP";
 };
 
 class RH_7Rnd_32cal_ppk_tracer: RH_7Rnd_32cal_ppk {
@@ -66,8 +66,8 @@ class RH_7Rnd_32cal_ppk_tracer: RH_7Rnd_32cal_ppk {
 	lastroundstracer = 7;
 	tracersevery = 1;
 	ammo="RH_32ACP_TRACER";
-	displayName="PPK mag Tracer";
-	description = "Caliber: .32 ACP Tracer<br/>Rounds: 7<br/>Used in: PPK";
+	displayName="PPK Tracer Mag";
+	displayNameShort="Tracer";
 };
 
 class RH_7Rnd_32cal_ppk_rubber: RH_7Rnd_32cal_ppk {
@@ -75,23 +75,24 @@ class RH_7Rnd_32cal_ppk_rubber: RH_7Rnd_32cal_ppk {
 	baseBullet = 32ACP_RUBBER_x;
 	initSpeed=150;
 	ammo="RH_32ACP_RUBBER";
-	displayName="PPK mag Rubber";
-	description = "Caliber: .32 ACP Rubber<br/>Rounds: 7<br/>Used in: PPK";
+	displayName="PPK Rubber Mag";
+	displayNameShort="Rubber";
 };
 
 class RH_7Rnd_32cal_ppk_bt: RH_7Rnd_32cal_ppk {
 	scope=2;
 	baseBullet = 32ACP_BT_x;
 	ammo="RH_32ACP_BT";
-	displayName="PPK mag BT";
-	description = "Caliber: .32 ACP Ballistic Tip<br/>Rounds: 7<br/>Used in: PPK";
+	displayName="PPK BT Mag";
+	displayNameShort="BT";
 };
 
 
 class RH_20Rnd_32cal_vz61_Empty: emptiedMagazine
 {
 	scope=2;
-	displayName="Vz61 mag (Empty)";
+	displayName="Vz61 Mag (Empty)";
+	description = "Caliber: .32 ACP<br/>Rounds: 20<br/>Used in: vz61";
 	picture="\RH_de\inv\m_vz61.paa";
 	model="\RH_de\mags\mag_vz61.p3d";
 	class ammoType
@@ -117,7 +118,7 @@ class RH_20Rnd_32cal_vz61_Empty: emptiedMagazine
 class RH_20Rnd_32cal_vz61: CA_Magazine
 {
 	scope=2;
-	displayName="Vz61 mag";
+	displayName="Vz61 Mag";
 	picture="\RH_de\inv\m_vz61.paa";
 	model="\RH_de\mags\mag_vz61.p3d";
 	type=16;
@@ -145,8 +146,8 @@ class RH_20Rnd_32cal_vz61_hp: RH_20Rnd_32cal_vz61 {
 	baseBullet = 32ACP_HP_x;
 	initSpeed=270;
 	ammo="RH_32ACP_HP";
-	displayName="Vz61 mag (.32) HP";
-	description = "Caliber: .32 ACP Hollow Point<br/>Rounds: 20<br/>Used in: vz61";
+	displayName="Vz61 HP Mag";
+	displayNameShort="HP";
 };
 
 class RH_20Rnd_32cal_vz61_tracer: RH_20Rnd_32cal_vz61 {
@@ -155,8 +156,8 @@ class RH_20Rnd_32cal_vz61_tracer: RH_20Rnd_32cal_vz61 {
 	lastroundstracer = 7;
 	tracersevery = 1;
 	ammo="RH_32ACP_TRACER";
-	displayName="Vz61 mag (.32) Tracer";
-	description = "Caliber: .32 ACP Tracer<br/>Rounds: 20<br/>Used in: vz61";
+	displayName="Vz61 Tracer Mag";
+	displayNameShort="Tracer";
 };
 
 class RH_20Rnd_32cal_vz61_rubber: RH_20Rnd_32cal_vz61 {
@@ -164,14 +165,14 @@ class RH_20Rnd_32cal_vz61_rubber: RH_20Rnd_32cal_vz61 {
 	baseBullet = 32ACP_RUBBER_x;
 	initSpeed=150;
 	ammo="RH_32ACP_RUBBER";
-	displayName="Vz61 mag (.32) Rubber";
-	description = "Caliber: .32 ACP Rubber<br/>Rounds: 20<br/>Used in: vz61";
+	displayName="Vz61 Rubber Mag";
+	displayNameShort="Rubber";
 };
 
 class RH_20Rnd_32cal_vz61_bt: RH_20Rnd_32cal_vz61 {
 	scope=2;
 	baseBullet = 32ACP_BT_x;
 	ammo="RH_32ACP_BT";
-	displayName="Vz61 mag (.32) BT";
-	description = "Caliber: .32 ACP Ballistic Tip<br/>Rounds: 20<br/>Used in: vz61";
+	displayName="Vz61 BT Mag";
+	displayNameShort="BT";
 };
