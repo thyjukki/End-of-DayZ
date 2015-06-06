@@ -496,7 +496,7 @@ class cfgWeapons
 				isAttachment = 1;
 				text = "Attach Scope";
 				script = "spawn player_useAttchment;";
-				att = "AttScope";
+				att = "Attachment_SCOPED";
 				out = "KPFS_M1_Garand_M84";
 			};
 		};	
@@ -577,12 +577,14 @@ class cfgWeapons
 			"OFP2_ManSkeleton",
 			"\Ca\weapons\data\Anim\M24.rtm"
 		};
-		class ItemActions {
-			class UseAtt {
+		class ItemActions
+		{
+			class UseAtt
+			{
 				isAttachment = 1;
 				text = "Detach Scope";
-				script = "spawn player_removeAttchment;"
-				att = "AttScope";
+				script = "spawn player_removeAttchment;";
+				att = "Attachment_SCOPED";
 				out = "KPFS_M1_Garand";
 			};
 		};	

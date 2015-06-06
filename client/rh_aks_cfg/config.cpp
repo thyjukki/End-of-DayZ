@@ -225,8 +225,6 @@ class CfgMagazines
 	class Default;
 	class CA_Magazine;
 	class 30Rnd_545x39_AK;
-	class 30Rnd_545x39_AKSD;
-	class 30Rnd_762x39_AK47;
 
 	class RH_20Rnd_9x39_val_mag: 30Rnd_545x39_AK
 	{
@@ -236,14 +234,6 @@ class CfgMagazines
 		count=20;
 		selectionFireAnim="zasleh";
 		descriptionShort="$STR_TGW_VIL_MS_SP6VAL";
-	};
-	class RH_45Rnd_545x39_mag: 30Rnd_545x39_AK
-	{
-		displayName="RPK74 45rnd mag";
-		picture="\RH_aks\inv\m_rpk74.paa";
-		model="\RH_aks\mags\mag_rpk74.p3d";
-		count=45;
-		initspeed=960;
 	};
 	class RH_1Rnd_30mm: CA_Magazine
 	{
@@ -682,7 +672,7 @@ class cfgWeapons
 			"vil_40Rnd_762x39_AK47_hp",
 			"vil_40Rnd_762x39_AK47_tracer",
 			"vil_40Rnd_762x39_AK47_rubber",
-			"vil_40Rnd_762x39_AK47_bt",
+			"vil_40Rnd_762x39_AK47_bt"
 		};
 		modes[]=
 		{
@@ -823,7 +813,7 @@ class cfgWeapons
 			"vil_40Rnd_762x39_AK47_hp",
 			"vil_40Rnd_762x39_AK47_tracer",
 			"vil_40Rnd_762x39_AK47_rubber",
-			"vil_40Rnd_762x39_AK47_bt",
+			"vil_40Rnd_762x39_AK47_bt"
 		};
 		modes[]=
 		{
@@ -1077,7 +1067,7 @@ class cfgWeapons
 			"vil_40Rnd_762x39_AK47_hp",
 			"vil_40Rnd_762x39_AK47_tracer",
 			"vil_40Rnd_762x39_AK47_rubber",
-			"vil_40Rnd_762x39_AK47_bt",
+			"vil_40Rnd_762x39_AK47_bt"
 		};
 		modes[]=
 		{
@@ -1164,7 +1154,7 @@ class cfgWeapons
 			"vil_40Rnd_762x39_AK47_hp",
 			"vil_40Rnd_762x39_AK47_tracer",
 			"vil_40Rnd_762x39_AK47_rubber",
-			"vil_40Rnd_762x39_AK47_bt",
+			"vil_40Rnd_762x39_AK47_bt"
 		};
 		muzzles[]=
 		{
@@ -1248,7 +1238,7 @@ class cfgWeapons
 			"vil_40Rnd_762x39_AK47_hp",
 			"vil_40Rnd_762x39_AK47_tracer",
 			"vil_40Rnd_762x39_AK47_rubber",
-			"vil_40Rnd_762x39_AK47_bt",
+			"vil_40Rnd_762x39_AK47_bt"
 		};
 		handAnim[]=
 		{
@@ -1337,7 +1327,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		modes[]=
 		{
@@ -1500,7 +1506,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -1684,7 +1706,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		class Single: Mode_SemiAuto
 		{
@@ -1791,8 +1829,24 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"30Rnd_545x39_AK",
 			"30Rnd_545x39_AKSD",
-			"30Rnd_545x39_AK"
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		class Single: Mode_SemiAuto
 		{
@@ -1890,8 +1944,24 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"30Rnd_545x39_AK",
 			"30Rnd_545x39_AKSD",
-			"30Rnd_545x39_AK"
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		class Single: Mode_SemiAuto
 		{
@@ -1996,8 +2066,24 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"30Rnd_545x39_AK",
 			"30Rnd_545x39_AKSD",
-			"30Rnd_545x39_AK"
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -2062,8 +2148,24 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"30Rnd_545x39_AK",
 			"30Rnd_545x39_AKSD",
-			"30Rnd_545x39_AK"
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -2128,8 +2230,24 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"30Rnd_545x39_AK",
 			"30Rnd_545x39_AKSD",
-			"30Rnd_545x39_AK"
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -2248,7 +2366,7 @@ class cfgWeapons
 			"vil_40Rnd_762x39_AK47_hp",
 			"vil_40Rnd_762x39_AK47_tracer",
 			"vil_40Rnd_762x39_AK47_rubber",
-			"vil_40Rnd_762x39_AK47_bt",
+			"vil_40Rnd_762x39_AK47_bt"
 		};
 		modes[]=
 		{
@@ -2383,7 +2501,7 @@ class cfgWeapons
 			"vil_40Rnd_762x39_AK47_hp",
 			"vil_40Rnd_762x39_AK47_tracer",
 			"vil_40Rnd_762x39_AK47_rubber",
-			"vil_40Rnd_762x39_AK47_bt",
+			"vil_40Rnd_762x39_AK47_bt"
 		};
 		modes[]=
 		{
@@ -2786,7 +2904,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		class Single: Mode_SemiAuto
 		{
@@ -2867,7 +3001,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		class Single: Mode_SemiAuto
 		{
@@ -2990,7 +3140,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -3108,7 +3274,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -3233,7 +3415,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -3329,7 +3527,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -3448,7 +3662,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -3561,7 +3791,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -3687,7 +3933,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -3783,7 +4045,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -3872,7 +4150,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -3990,7 +4284,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -4107,7 +4417,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -4190,7 +4516,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -4760,7 +5102,7 @@ class cfgWeapons
 			"vil_40Rnd_762x39_AK47_hp",
 			"vil_40Rnd_762x39_AK47_tracer",
 			"vil_40Rnd_762x39_AK47_rubber",
-			"vil_40Rnd_762x39_AK47_bt",
+			"vil_40Rnd_762x39_AK47_bt"
 		};
 		distanceZoomMin=322;
 		distanceZoomMax=322;
@@ -4913,7 +5255,7 @@ class cfgWeapons
 			"vil_40Rnd_762x39_AK47_hp",
 			"vil_40Rnd_762x39_AK47_tracer",
 			"vil_40Rnd_762x39_AK47_rubber",
-			"vil_40Rnd_762x39_AK47_bt",
+			"vil_40Rnd_762x39_AK47_bt"
 		};
 		class Single: Mode_SemiAuto
 		{
@@ -5036,7 +5378,7 @@ class cfgWeapons
 			"vil_40Rnd_762x39_AK47_hp",
 			"vil_40Rnd_762x39_AK47_tracer",
 			"vil_40Rnd_762x39_AK47_rubber",
-			"vil_40Rnd_762x39_AK47_bt",
+			"vil_40Rnd_762x39_AK47_bt"
 		};
 		class Single: Mode_SemiAuto
 		{
@@ -5540,7 +5882,7 @@ class cfgWeapons
 			"vil_40Rnd_762x39_AK47_hp",
 			"vil_40Rnd_762x39_AK47_tracer",
 			"vil_40Rnd_762x39_AK47_rubber",
-			"vil_40Rnd_762x39_AK47_bt",
+			"vil_40Rnd_762x39_AK47_bt"
 		};
 		class Single: Mode_SemiAuto
 		{
@@ -6072,7 +6414,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -6185,7 +6543,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -6311,7 +6685,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -6407,7 +6797,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -6526,7 +6932,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -6639,7 +7061,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -6764,7 +7202,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -6860,7 +7314,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -6979,7 +7449,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -7092,7 +7578,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -7217,7 +7719,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -7313,7 +7831,23 @@ class cfgWeapons
 		magazines[]=
 		{
 			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD"
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		muzzles[]=
 		{
@@ -7517,7 +8051,7 @@ class cfgWeapons
 			"vil_40Rnd_762x39_AK47_hp",
 			"vil_40Rnd_762x39_AK47_tracer",
 			"vil_40Rnd_762x39_AK47_rubber",
-			"vil_40Rnd_762x39_AK47_bt",
+			"vil_40Rnd_762x39_AK47_bt"
 		};
 		modes[]=
 		{
@@ -7609,8 +8143,24 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"30Rnd_545x39_AK",
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
 			"RH_45Rnd_545x39_mag",
-			"30Rnd_545x39_AK"
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
 		};
 		modes[]=
 		{

@@ -22,7 +22,6 @@ class CfgWeapons
 	
 	/* RIFLES */
 	
-	class AK_74;
 	class AKS_74_UN_kobra;
 	#include "Rifles\AK74.hpp"
 	

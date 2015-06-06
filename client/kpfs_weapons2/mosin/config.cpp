@@ -179,7 +179,7 @@ class cfgWeapons
 				isAttachment = 1;
 				text = "Attach Scope";
 				script = "spawn player_useAttchment;";
-				att = "AttScope";
+				att = "Attachment_SCOPED";
 				out = "KPFS_Mosin_Nagant_PU";
 			};
 		};	
@@ -250,8 +250,8 @@ class cfgWeapons
 			class UseAtt {
 				isAttachment = 1;
 				text = "Detach Scope";
-				script = "spawn player_removeAttchment;"
-				att = "AttScope";
+				script = "spawn player_removeAttchment;";
+				att = "Attachment_SCOPED";
 				out = "KPFS_Mosin_Nagant";
 			};
 		};	

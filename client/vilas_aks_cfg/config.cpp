@@ -1629,7 +1629,27 @@ class cfgWeapons {
 		discreteDistance[] = {100, 200, 300, 400, 500, 600, 700, 800, 900, 1000};
 		discreteDistanceInitIndex = 2;
 		modes[] = {"manual", "close", "short", "medium", "Single"};
-		magazines[] = {"vil_45Rnd_545x39_AK", "30Rnd_545x39_AK", "vil_60Rnd_545x39_AK"};
+		magazines[]=
+		{
+			"30Rnd_545x39_AK",
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
+		};
 
 		class Armory {
 			author = $STR_AUTHOR_VILAS;
@@ -2650,7 +2670,27 @@ class cfgWeapons {
 		weaponInfoType = "RscWeaponZeroing";
 		discreteDistance[] = {350, 500};
 		discreteDistanceInitIndex = 0;
-		magazines[] = {"vil_45Rnd_545x39_AK", "30Rnd_545x39_AK", "30Rnd_545x39_AKSD"};
+		magazines[]=
+		{
+			"30Rnd_545x39_AK",
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
+		};
 	  
 		UiPicture = "\CA\weapons\data\Ico\i_regular_CA.paa";
 	  
@@ -2741,7 +2781,27 @@ class cfgWeapons {
 			author = $STR_AUTHOR_VILAS;
 		};
 		UiPicture = "\CA\weapons\data\Ico\i_regular_CA.paa";
-		magazines[] = {"30Rnd_545x39_AK", "30Rnd_545x39_AKSD", "vil_60Rnd_545x39_AK", "vil_45Rnd_545x39_AK"};
+		magazines[]=
+		{
+			"30Rnd_545x39_AK",
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
+		};
 		weaponInfoType = "RscWeaponZeroing";
 		discreteDistance[] = {100, 200, 300, 400, 500, 600, 700, 800};
 		discreteDistanceInitIndex = 2;
@@ -2861,7 +2921,27 @@ class cfgWeapons {
 		picture = "\vilas_aks\ico\aksp.paa";
 		displayName = $STR_TGW_VIL_AKS74P;
 		UiPicture = "\CA\weapons\data\Ico\i_regular_CA.paa";
-		magazines[] = {"vil_45Rnd_545x39_AK", "30Rnd_545x39_AK", "30Rnd_545x39_AKSD"};
+		magazines[]=
+		{
+			"30Rnd_545x39_AK",
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
+		};
 	};	 
 
 	class vil_AK_74P : vil_AK_74 {
@@ -3064,7 +3144,27 @@ class cfgWeapons {
 		displayName = $STR_VIL_AK74M_FSB;
 		UiPicture = "\CA\weapons\data\Ico\i_regular_CA.paa";
 		handAnim[] = {"OFP2_ManSkeleton", "\Ca\weapons\data\Anim\Mk48.rtm"};
-		magazines[] = {"30Rnd_545x39_AK", "30Rnd_545x39_AKSD", "vil_60Rnd_545x39_AK", "vil_45Rnd_545x39_AK"};	
+		magazines[]=
+		{
+			"30Rnd_545x39_AK",
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
+		};
 		class Library {
 			libTextDesc = $STR_VIL_AK74M_FSB_LIB;
 		};
@@ -3083,7 +3183,27 @@ class cfgWeapons {
 		model = "\vilas_aks\vil_ak_74m_eot_FSB_45";
 		picture = "\vilas_aks\ico\w_vil_ak74m_eot_45_ca.paa";
 		displayName = $STR_VIL_AK74M_FSB_RPK;
-		magazines[] = {"vil_45Rnd_545x39_AK", "30Rnd_545x39_AK", "30Rnd_545x39_AKSD", "vil_60Rnd_545x39_AK"};	
+		magazines[]=
+		{
+			"30Rnd_545x39_AK",
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
+		};
 		class Library {
 			libTextDesc = $STR_VIL_AK74M_RPK_LIB;
 		};
@@ -3095,7 +3215,27 @@ class cfgWeapons {
 		model = "\vilas_aks\vil_ak_74m_eot_FSB_60";
 		picture = "\vilas_aks\ico\w_vil_ak74m_eot_60_ca.paa";
 		displayName = $STR_VIL_AK74M_FSB_QUAD;
-		magazines[] = {"vil_60Rnd_545x39_AK", "30Rnd_545x39_AK", "30Rnd_545x39_AKSD", "vil_45Rnd_545x39_AK"};
+		magazines[]=
+		{
+			"30Rnd_545x39_AK",
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
+		};
 		weaponInfoType = "RscWeaponEmpty";
 		discreteDistance[] = {300};
 		discreteDistanceInitIndex = 0;
@@ -3352,7 +3492,27 @@ class cfgWeapons {
 		displayName = $STR_TGW_VIL_AK105;
 		picture = "\vilas_aks\ico\ak105.paa";
 		UiPicture = "\CA\weapons\data\Ico\i_regular_CA.paa";
-		magazines[] = {"30Rnd_545x39_AK", "30Rnd_545x39_AKSD", "vil_60Rnd_545x39_AK", "vil_45Rnd_545x39_AK"};
+		magazines[]=
+		{
+			"30Rnd_545x39_AK",
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
+		};
 		weaponInfoType = "RscWeaponZeroing";
 		discreteDistance[] = {100, 200, 300, 400, 500, 600, 700, 800};
 		discreteDistanceInitIndex = 2;
@@ -3415,7 +3575,27 @@ class cfgWeapons {
 		discreteDistanceInitIndex = 2;
 		picture = "\vilas_aks\ico\ak107.paa";
 		UiPicture = "\CA\weapons\data\Ico\i_regular_CA.paa";
-		magazines[] = {"30Rnd_545x39_AK", "30Rnd_545x39_AKSD", "vil_60Rnd_545x39_AK", "vil_45Rnd_545x39_AK"};
+		magazines[]=
+		{
+			"30Rnd_545x39_AK",
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
+		};
 		class Armory {
 			author = $STR_AUTHOR_VILAS;
 		};
@@ -3917,7 +4097,27 @@ class cfgWeapons {
 		UiPicture = "\CA\weapons\data\Ico\i_regular_CA.paa";
 		descriptionShort = $STR_TGW_VIL_AN94_SHORT;
 		modes[] = {"FullAuto", "Burst", "Single"};
-		magazines[] = {"30Rnd_545x39_AK", "30Rnd_545x39_AKSD", "vil_45Rnd_545x39_AK", "vil_60Rnd_545x39_AK"};
+		magazines[]=
+		{
+			"30Rnd_545x39_AK",
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt"
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
+		};
 		weaponInfoType = "RscWeaponZeroing";
 		discreteDistance[] = {100, 200, 300, 400, 500, 600, 700, 800};
 		discreteDistanceInitIndex = 2;
