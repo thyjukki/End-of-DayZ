@@ -119,31 +119,6 @@ class CfgWeapons
 	
 	
 	
-	
-	/* PISTOLS */
-	
-	class M9;
-	class M9SD;
-	#include "Pistols\M9.hpp"
-	
-	class glock17_EP1;
-	#include "Pistols\G17.hpp"
-	
-	class Colt1911;
-	#include "Pistols\M1911.hpp"
-	
-	#include "Pistols\Makarov.hpp"
-	
-	class UZI_EP1;
-	#include "Pistols\PDW.hpp"
-	
-	class revolver_EP1;
-	#include "Pistols\Revolver.hpp"
-	
-	
-	
-	
-	
 	/* MELEE */
 	
 	class MeleeWeapon : Rifle
