@@ -217,7 +217,7 @@ class 75Rnd_545x39_RPK_Empty: 30Rnd_545x39_AK_Empty {
 class 75Rnd_545x39_RPK: CA_Magazine
 {
 	scope=2;
-	displayname = "AK-74 Drum Mag (Empty)";
+	displayname = "AK-74 Drum Mag";
 	descriptionshort = "Caliber: 5.45x39mm <br/>Rounds: 75 <br/>Used in: AK-74 based weapons";
 	picture="\CA\weapons\AK\data\equip\M_RPK_74_CA.paa";
 	ammo="B_545x39_Ball";
