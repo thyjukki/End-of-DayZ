@@ -3,7 +3,7 @@
 class RH_smg_57x28mm_Round;
 
 class B_57x28_HP : RH_smg_57x28mm_Round {
-	airfriction = -0.001893;
+	airFriction=-0.00060000003;
 	hit = 10;
 	typicalspeed = 320;
 	visiblefiretime = 2;

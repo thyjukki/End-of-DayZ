@@ -108,11 +108,6 @@ class CfgAmmo
 		cost=1;
 		airFriction=-0.001425;
 		caliber=0.5;
-		model="\ca\Weapons\Data\bullettracer\tracer_red";
-		tracerScale=1;
-		tracerStartTime=0.050000001;
-		tracerEndTime=1;
-		nvgOnly=1;
 	};
 	class RH_smg_57x28mm_SD_Round: BulletBase
 	{
