@@ -1642,7 +1642,7 @@ class cfgWeapons {
 			"RH_45Rnd_545x39_mag_hp",
 			"RH_45Rnd_545x39_mag_tracer",
 			"RH_45Rnd_545x39_mag_rubber",
-			"RH_45Rnd_545x39_mag_bt"
+			"RH_45Rnd_545x39_mag_bt",
 			"75Rnd_545x39_RPK",
 			"75Rnd_545x39_RPKSD",
 			"75Rnd_545x39_RPK_hp",
@@ -2683,7 +2683,7 @@ class cfgWeapons {
 			"RH_45Rnd_545x39_mag_hp",
 			"RH_45Rnd_545x39_mag_tracer",
 			"RH_45Rnd_545x39_mag_rubber",
-			"RH_45Rnd_545x39_mag_bt"
+			"RH_45Rnd_545x39_mag_bt",
 			"75Rnd_545x39_RPK",
 			"75Rnd_545x39_RPKSD",
 			"75Rnd_545x39_RPK_hp",
@@ -2794,7 +2794,7 @@ class cfgWeapons {
 			"RH_45Rnd_545x39_mag_hp",
 			"RH_45Rnd_545x39_mag_tracer",
 			"RH_45Rnd_545x39_mag_rubber",
-			"RH_45Rnd_545x39_mag_bt"
+			"RH_45Rnd_545x39_mag_bt",
 			"75Rnd_545x39_RPK",
 			"75Rnd_545x39_RPKSD",
 			"75Rnd_545x39_RPK_hp",
@@ -2934,7 +2934,7 @@ class cfgWeapons {
 			"RH_45Rnd_545x39_mag_hp",
 			"RH_45Rnd_545x39_mag_tracer",
 			"RH_45Rnd_545x39_mag_rubber",
-			"RH_45Rnd_545x39_mag_bt"
+			"RH_45Rnd_545x39_mag_bt",
 			"75Rnd_545x39_RPK",
 			"75Rnd_545x39_RPKSD",
 			"75Rnd_545x39_RPK_hp",
@@ -3157,7 +3157,7 @@ class cfgWeapons {
 			"RH_45Rnd_545x39_mag_hp",
 			"RH_45Rnd_545x39_mag_tracer",
 			"RH_45Rnd_545x39_mag_rubber",
-			"RH_45Rnd_545x39_mag_bt"
+			"RH_45Rnd_545x39_mag_bt",
 			"75Rnd_545x39_RPK",
 			"75Rnd_545x39_RPKSD",
 			"75Rnd_545x39_RPK_hp",
@@ -3196,7 +3196,7 @@ class cfgWeapons {
 			"RH_45Rnd_545x39_mag_hp",
 			"RH_45Rnd_545x39_mag_tracer",
 			"RH_45Rnd_545x39_mag_rubber",
-			"RH_45Rnd_545x39_mag_bt"
+			"RH_45Rnd_545x39_mag_bt",
 			"75Rnd_545x39_RPK",
 			"75Rnd_545x39_RPKSD",
 			"75Rnd_545x39_RPK_hp",
@@ -3228,7 +3228,7 @@ class cfgWeapons {
 			"RH_45Rnd_545x39_mag_hp",
 			"RH_45Rnd_545x39_mag_tracer",
 			"RH_45Rnd_545x39_mag_rubber",
-			"RH_45Rnd_545x39_mag_bt"
+			"RH_45Rnd_545x39_mag_bt",
 			"75Rnd_545x39_RPK",
 			"75Rnd_545x39_RPKSD",
 			"75Rnd_545x39_RPK_hp",
@@ -3505,7 +3505,7 @@ class cfgWeapons {
 			"RH_45Rnd_545x39_mag_hp",
 			"RH_45Rnd_545x39_mag_tracer",
 			"RH_45Rnd_545x39_mag_rubber",
-			"RH_45Rnd_545x39_mag_bt"
+			"RH_45Rnd_545x39_mag_bt",
 			"75Rnd_545x39_RPK",
 			"75Rnd_545x39_RPKSD",
 			"75Rnd_545x39_RPK_hp",
@@ -3588,7 +3588,7 @@ class cfgWeapons {
 			"RH_45Rnd_545x39_mag_hp",
 			"RH_45Rnd_545x39_mag_tracer",
 			"RH_45Rnd_545x39_mag_rubber",
-			"RH_45Rnd_545x39_mag_bt"
+			"RH_45Rnd_545x39_mag_bt",
 			"75Rnd_545x39_RPK",
 			"75Rnd_545x39_RPKSD",
 			"75Rnd_545x39_RPK_hp",
@@ -4110,7 +4110,7 @@ class cfgWeapons {
 			"RH_45Rnd_545x39_mag_hp",
 			"RH_45Rnd_545x39_mag_tracer",
 			"RH_45Rnd_545x39_mag_rubber",
-			"RH_45Rnd_545x39_mag_bt"
+			"RH_45Rnd_545x39_mag_bt",
 			"75Rnd_545x39_RPK",
 			"75Rnd_545x39_RPKSD",
 			"75Rnd_545x39_RPK_hp",
