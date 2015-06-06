@@ -20,6 +20,7 @@ class B_545x39_TRACER: B_545x39_Ball
 	tracerendtime = 1;
 	tracerscale = 1;
 	tracerstarttime = 0.05;
+	nvgOnly=0;
 };
 
 class B_545x39_RUBBER: B_545x39_Ball

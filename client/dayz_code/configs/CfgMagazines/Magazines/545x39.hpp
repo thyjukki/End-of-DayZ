@@ -125,8 +125,8 @@ class RH_45Rnd_545x39_mag: CA_Magazine
 	scope=2;
 	displayname = "RPK-74 Mag";
 	descriptionshort = "Caliber: 5.45x39mm <br/>Rounds: 45 <br/>Used in: AK-74 based weapons";
-	picture = "\z\addons\dayz_communityweapons\magazines\data\m_ak74_ca.paa";
-	ammo="B_545x39_Ball";
+	picture="\RH_aks\inv\m_rpk74.paa";
+	model="\RH_aks\mags\mag_rpk74.p3d";
 	count=45;
 	initSpeed=900;
 	baseBullet = 545x39_x;
