@@ -1763,7 +1763,7 @@ class cfgWeapons
 		magazines[]=
 		{
 			"RH_19Rnd_9x19_g18",
-			"RH_19Rnd_9x19_g18_g18SD",
+			"RH_19Rnd_9x19_g18SD",
 			"RH_19Rnd_9x19_g18_hp",
 			"RH_19Rnd_9x19_g18_tracer",
 			"RH_19Rnd_9x19_g18_rubber",
@@ -1903,7 +1903,7 @@ class cfgWeapons
 		magazines[]=
 		{
 			"RH_19Rnd_9x19_g18",
-			"RH_19Rnd_9x19_g18_g18SD",
+			"RH_19Rnd_9x19_g18SD",
 			"RH_19Rnd_9x19_g18_hp",
 			"RH_19Rnd_9x19_g18_tracer",
 			"RH_19Rnd_9x19_g18_rubber",
@@ -2005,7 +2005,7 @@ class cfgWeapons
 		magazines[]=
 		{
 			"RH_19Rnd_9x19_g18",
-			"RH_19Rnd_9x19_g18_g18SD",
+			"RH_19Rnd_9x19_g18SD",
 			"RH_19Rnd_9x19_g18_hp",
 			"RH_19Rnd_9x19_g18_tracer",
 			"RH_19Rnd_9x19_g18_rubber",
@@ -2096,7 +2096,7 @@ class cfgWeapons
 		magazines[]=
 		{
 			"RH_19Rnd_9x19_g18",
-			"RH_19Rnd_9x19_g18_g18SD",
+			"RH_19Rnd_9x19_g18SD",
 			"RH_19Rnd_9x19_g18_hp",
 			"RH_19Rnd_9x19_g18_tracer",
 			"RH_19Rnd_9x19_g18_rubber",

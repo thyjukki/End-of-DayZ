@@ -676,7 +676,7 @@ class RH_19Rnd_9x19_g18_Empty: emptiedMagazine
 			ammoMag = "RH_19Rnd_9x19_g18_g18";
 		};
 		class RH_B_9x19_SD {
-			ammoMag = "RH_19Rnd_9x19_g18_g18SD";
+			ammoMag = "RH_19Rnd_9x19_g18SD";
 		};
 		class B_9x19_HP {
 			ammoMag = "RH_19Rnd_9x19_g18_hp";
