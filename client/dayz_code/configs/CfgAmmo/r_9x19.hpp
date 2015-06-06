@@ -31,6 +31,7 @@ class B_9x19_TRACER : B_9x19_Ball {
 	tracerendtime = 1;
 	tracerscale = 1;
 	tracerstarttime = 0.05;
+	nvgOnly=0;
 };
 
 class B_9x19_RUBBER : B_9x19_Ball {

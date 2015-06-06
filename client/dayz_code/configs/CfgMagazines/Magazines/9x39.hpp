@@ -63,6 +63,7 @@ class RH_20Rnd_9x39_SP6_mag_tracer: RH_20Rnd_9x39_SP6_mag {
 	scope=2;
 	baseBullet = 9x39_Tracer_x;
 	ammo="B_9x39_TRACER";
+	tracersevery = 1;
 	displayName="OC14 Tracer Mag";
 };
 
@@ -144,6 +145,7 @@ class vil_10Rnd_9x39_SP6_VSS_tracer: vil_10Rnd_9x39_SP6_VSS {
 	scope=2;
 	baseBullet = 9x39_Tracer_x;
 	ammo="B_9x39_TRACER";
+	tracersevery = 1;
 	displayName="10Rnd SP6 Tracer Mag";
 };
 
@@ -224,6 +226,7 @@ class vil_20Rnd_9x39_SP6_VAL_tracer: vil_20Rnd_9x39_SP6_VAL {
 	scope=2;
 	baseBullet = 9x39_Tracer_x;
 	ammo="B_9x39_TRACER";
+	tracersevery = 1;
 	displayName="20Rnd SP6 Tracer Mag";
 };
 

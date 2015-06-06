@@ -72,6 +72,7 @@ class RH_57x28mm_50RND_Mag_tracer: RH_57x28mm_50RND_Mag {
 	scope=2;
 	baseBullet = 57x28_Tracer_x;
 	ammo="B_57x28_TRACER";
+	tracersevery = 1;
 	displayName="P90 Tracer Mag";
 };
 

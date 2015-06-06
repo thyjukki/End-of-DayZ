@@ -61,6 +61,7 @@ class KPFS_15Rnd_cal30_Carbine_tracer: KPFS_15Rnd_cal30_Carbine {
 	scope=2;
 	baseBullet = 30cal_Tracer_x;
 	ammo="B_30cal_TRACER";
+	tracersevery = 1;
 	displayName="M1 Carbine Tracer Mag";
 };
 

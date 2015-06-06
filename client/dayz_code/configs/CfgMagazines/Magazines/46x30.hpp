@@ -74,6 +74,7 @@ class 40Rnd_46x30_mp7_tracer: 40Rnd_46x30_mp7 {
 	scope=2;
 	baseBullet = 46x30_Tracer_x;
 	ammo="B_46x30_TRACER";
+	tracersevery = 1;
 	displayName="MP7 Long Tracer Mag";
 };
 
@@ -167,6 +168,7 @@ class 20Rnd_46x30_mp7_tracer: 20Rnd_46x30_mp7 {
 	scope=2;
 	baseBullet = 46x30_Tracer_x;
 	ammo="B_46x30_TRACER";
+	tracersevery = 1;
 	displayName="MP7 Tracer Mag";
 };
 

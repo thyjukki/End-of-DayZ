@@ -67,6 +67,7 @@ class RH_7Rnd_50_AE_tracer: RH_7Rnd_50_AE {
 	scope=2;
 	baseBullet = 50_AE_Tracer_x;
 	ammo="B_50_AE_TRACER";
+	tracersevery = 1;
 	displayName="Desert Eagle Tracer Mag";
 };
 

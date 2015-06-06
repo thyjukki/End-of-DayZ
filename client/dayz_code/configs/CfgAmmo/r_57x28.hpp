@@ -14,6 +14,7 @@ class B_57x28_TRACER : RH_smg_57x28mm_Round {
 	tracerendtime = 1;
 	tracerscale = 1;
 	tracerstarttime = 0.05;
+	nvgOnly=0;
 };
 
 class B_57x28_RUBBER : RH_smg_57x28mm_Round {

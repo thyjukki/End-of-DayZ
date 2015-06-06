@@ -69,6 +69,7 @@ class 30Rnd_9x19_MP5_hp: 30Rnd_9x19_MP5 {
 class 30Rnd_9x19_MP5_tracer: 30Rnd_9x19_MP5 {
 	scope=2;
 	baseBullet = 9x19_Tracer_x;
+	tracersevery = 1;
 	ammo="B_9x19_TRACER";
 	displayName="MP5 Tracer Mag";
 };
@@ -165,6 +166,7 @@ class 15Rnd_9x19_M9SD_tracer: 15Rnd_9x19_M9 {
 	scope=2;
 	baseBullet = 9x19_Tracer_x;
 	ammo="B_9x19_TRACER";
+	tracersevery = 1;
 	displayName="M9 Tracer Mag";
 };
 
@@ -258,6 +260,7 @@ class 17Rnd_9x19_glock17_hp: 17Rnd_9x19_glock17 {
 class 17Rnd_9x19_glock17_tracer: 17Rnd_9x19_glock17 {
 	scope=2;
 	baseBullet = 9x19_Tracer_x;
+	tracersevery = 1;
 	ammo="B_9x19_TRACER";
 	displayName="G17 Tracer Mag";
 };
@@ -354,6 +357,7 @@ class RH_13Rnd_9x19_bhp_hp: RH_13Rnd_9x19_bhp {
 class RH_13Rnd_9x19_bhp_tracer: RH_13Rnd_9x19_bhp {
 	scope=2;
 	baseBullet = 9x19_Tracer_x;
+	tracersevery = 1;
 	ammo="B_9x19_TRACER";
 	displayName="Browning HP Tracer Mag";
 };
@@ -451,6 +455,7 @@ class RH_8Rnd_9x19_Mk_tracer: RH_8Rnd_9x19_Mk {
 	scope=2;
 	baseBullet = 9x19_Tracer_x;
 	ammo="B_9x19_TRACER";
+	tracersevery = 1;
 	displayName="Mk22 Tracer Mag";
 };
 
@@ -545,6 +550,7 @@ class RH_15Rnd_9x19_usp_hp: RH_15Rnd_9x19_usp {
 class RH_15Rnd_9x19_usp_tracer: RH_15Rnd_9x19_usp {
 	scope=2;
 	baseBullet = 9x19_Tracer_x;
+	tracersevery = 1;
 	ammo="B_9x19_TRACER";
 	displayName="Usp 9mm Tracer Mag";
 };
@@ -642,6 +648,7 @@ class RH_20Rnd_9x19_M93_tracer: RH_20Rnd_9x19_M93 {
 	scope=2;
 	baseBullet = 9x19_Tracer_x;
 	ammo="B_9x19_TRACER";
+	tracersevery = 1;
 	displayName="M93R Tracer Mag";
 };
 
@@ -737,6 +744,7 @@ class RH_19Rnd_9x19_g18_hp: RH_19Rnd_9x19_g18 {
 class RH_19Rnd_9x19_g18_tracer: RH_19Rnd_9x19_g18 {
 	scope=2;
 	baseBullet = 9x19_Tracer_x;
+	tracersevery = 1;
 	ammo="B_9x19_TRACER";
 	displayName="G18 Tracer Mag";
 };
@@ -833,6 +841,7 @@ class RH_33rnd_9x19_g18_tracer: RH_33rnd_9x19_g18 {
 	scope=2;
 	baseBullet = 9x19_Tracer_x;
 	ammo="B_9x19_TRACER";
+	tracersevery = 1;
 	displayName="G18 Long Tracer Mag";
 };
 
@@ -929,6 +938,7 @@ class RH_30Rnd_9x19_tec_tracer: RH_30Rnd_9x19_tec {
 	scope=2;
 	baseBullet = 9x19_Tracer_x;
 	ammo="B_9x19_TRACER";
+	tracersevery = 1;
 	displayName="Tec9 Tracer Mag";
 };
 
@@ -1026,6 +1036,7 @@ class RH_32Rnd_9x19_Muzi_tracer: RH_32Rnd_9x19_Muzi {
 	scope=2;
 	baseBullet = 9x19_Tracer_x;
 	ammo="B_9x19_TRACER";
+	tracersevery = 1;
 	displayName="MUzi Tracer Mag";
 };
 
@@ -1122,6 +1133,7 @@ class RH_8Rnd_9x19_p38_tracer: RH_8Rnd_9x19_p38 {
 	scope=2;
 	baseBullet = 9x19_Tracer_x;
 	ammo="B_9x19_TRACER";
+	tracersevery = 1;
 	displayName="P38 Tracer Mag";
 };
 
@@ -1216,6 +1228,7 @@ class RH_9mm_32RND_Mag_tracer: RH_9mm_32RND_Mag {
 	scope=2;
 	baseBullet = 9x19_Tracer_x;
 	ammo="B_9x19_TRACER";
+	tracersevery = 1;
 	displayName="Uzi Tracer Mag";
 };
 

@@ -71,6 +71,7 @@ class 30Rnd_545x39_AK_tracer: 30Rnd_545x39_AK {
 	scope=2;
 	baseBullet = 545x39_Tracer_x;
 	ammo="B_545x39_TRACER";
+	tracersevery = 1;
 	displayName="AK-74 Tracer Mag";
 };
 
@@ -163,6 +164,7 @@ class RH_45Rnd_545x39_mag_tracer: RH_45Rnd_545x39_mag {
 	scope=2;
 	baseBullet = 545x39_Tracer_x;
 	ammo="B_545x39_TRACER";
+	tracersevery = 1;
 	displayName="RPK-74 Tracer Mag";
 };
 
@@ -257,6 +259,7 @@ class 75Rnd_545x39_RPK_tracer: 75Rnd_545x39_RPK {
 	scope=2;
 	baseBullet = 545x39_Tracer_x;
 	ammo="B_545x39_TRACER";
+	tracersevery = 1;
 	displayName="AK-74 Tracer Drum Mag";
 };
 

@@ -72,6 +72,7 @@ class 8Rnd_9x18_Makarov_hp: 8Rnd_9x18_Makarov {
 class 8Rnd_9x18_Makarov_tracer: 8Rnd_9x18_Makarov {
 	scope=2;
 	baseBullet = 9x18_Tracer_x;
+	tracersevery = 1;
 	ammo="B_9x18_TRACER";
 	displayName="Makarov Tracer Mag";
 };
@@ -152,6 +153,7 @@ class RH_20Rnd_9x18_aps_tracer: RH_20Rnd_9x18_aps {
 	scope=2;
 	baseBullet = 9x18_Tracer_x;
 	ammo="B_9x18_TRACER";
+	tracersevery = 1;
 	displayName="APS Tracer mag";
 };
 
@@ -249,6 +251,7 @@ class 64Rnd_9x19_Bizon_tracer: 64Rnd_9x19_Bizon {
 	scope=2;
 	baseBullet = 9x18_Tracer_x;
 	ammo="B_9x18_TRACER";
+	tracersevery = 1;
 	displayName="Bizon Tracer Mag";
 };
 

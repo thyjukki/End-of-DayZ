@@ -63,6 +63,7 @@ class RH_10Rnd_22LR_mk2_tracer: RH_10Rnd_22LR_mk2 {
 	scope=2;
 	baseBullet = 22LR_Tracer_x;
 	ammo="B_22LR_TRACER";
+	tracersevery = 1;
 	displayName="MK2 Tracer Mag";
 };
 
