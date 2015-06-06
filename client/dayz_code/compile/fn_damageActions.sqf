@@ -114,6 +114,7 @@ if (_inVehicle) then {
 		_hasTester = "bloodTester" in magazines player;
 		_isAnimal = _menClose isKindOf "Animal";
 		_isZombie = _menClose isKindOf "zZombie_base";
+		_isVehicle = (_vehicle != player);
 
 		if (_hasPatient) then {
 			//Allow player to drag

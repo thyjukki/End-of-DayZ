@@ -1,10 +1,17 @@
 class B_545x39_Ball : BulletBase
 {
+	caliber=1;
+	indirectHit=0;
+	indirectHitRange=0;
+	cost=1;
+	airFriction=-0.001412;
+	cartridge="FxCartridge_556";
 	model="";
 	tracerScale=0;
 	tracerStartTime=0;
 	tracerEndTime=0;
 	nvgOnly=0;
+	hit=7;
 };
 				
 class B_545x39_HP: B_545x39_Ball
