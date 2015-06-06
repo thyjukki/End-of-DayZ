@@ -1,3 +1,4 @@
+// TODO(Jukki) We probably dont ned these?
 class 5Rnd_127x99_as50 : CA_Magazine
 {
 	class ItemActions
