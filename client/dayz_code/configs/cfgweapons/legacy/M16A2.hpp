@@ -4,7 +4,26 @@ class M16A2: M16_base {
 	descriptionshort = $STR_EQUIP_DESC_M16A2;
 	dexterity = 1.64;
 	drysound[] = {"Ca\sounds\Weapons\rifles\dry", 0.000316228, 1, 10};
-	magazines[] = {"30Rnd_556x45_Stanag", "20Rnd_556x45_Stanag", "30Rnd_556x45_G36", "100Rnd_556x45_BetaCMag"};
+	magazines[] = {
+		"20Rnd_556x45_Stanag",
+		"20Rnd_556x45_StanagSD",
+		"20Rnd_556x45_Stanag_hp",
+		"20Rnd_556x45_Stanag_tracer",
+		"20Rnd_556x45_Stanag_rubber",
+		"20Rnd_556x45_Stanag_bt",
+		"30Rnd_556x45_Stanag",
+		"30Rnd_556x45_StanagSD",
+		"30Rnd_556x45_Stanag_hp",
+		"30Rnd_556x45_Stanag_tracer",
+		"30Rnd_556x45_Stanag_rubber",
+		"30Rnd_556x45_Stanag_bt",
+		"100Rnd_556x45_BetaCMag",
+		"100Rnd_556x45_BetaCMagSD",
+		"100Rnd_556x45_BetaCMag_hp",
+		"100Rnd_556x45_BetaCMag_tracer",
+		"100Rnd_556x45_BetaCMag_rubber",
+		"100Rnd_556x45_BetaCMag_bt"
+	};
 	htmax = 480;
 	htmin = 1;
 	mfact = 1;

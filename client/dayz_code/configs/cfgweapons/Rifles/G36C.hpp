@@ -1,4 +1,4 @@
-class G36C_DZ : G36C
+class G36C : Rifle
 {
 	model = "z\addons\dayz_communityweapons\g36c\g36c.p3d";
 	picture = "\z\addons\dayz_communityweapons\g36c\data\w_g36c_ca.paa";
@@ -7,7 +7,11 @@ class G36C_DZ : G36C
 	magazines[] =
 	{
 		30Rnd_556x45_G36,
-		30Rnd_556x45_G36SD
+		30Rnd_556x45_G36SD,
+		30Rnd_556x45_G36_hp,
+		30Rnd_556x45_G36_tracer,
+		30Rnd_556x45_G36_rubber,
+		30Rnd_556x45_G36_bt
 	};
 	
 	class Attachments
@@ -25,7 +29,7 @@ class G36C_DZ : G36C
 	};
 };
 
-class G36C_SD_DZ : G36_C_SD_eotech
+class G36C_SD : G36_C_SD_eotech
 {
 	model = "z\addons\dayz_communityweapons\g36c\g36c_sd.p3d";
 	picture = "\z\addons\dayz_communityweapons\g36c\data\w_g36c_sd_ca.paa";
@@ -33,8 +37,12 @@ class G36C_SD_DZ : G36_C_SD_eotech
 	
 	magazines[] =
 	{
+		30Rnd_556x45_G36,
 		30Rnd_556x45_G36SD,
-		30Rnd_556x45_G36
+		30Rnd_556x45_G36_hp,
+		30Rnd_556x45_G36_tracer,
+		30Rnd_556x45_G36_rubber,
+		30Rnd_556x45_G36_bt
 	};
 	
 	class Attachments
@@ -59,7 +67,7 @@ class G36C_SD_DZ : G36_C_SD_eotech
 	};
 };
 
-class G36C_CCO_DZ : G36C_DZ
+class G36C_CCO : G36C_DZ
 {
 	model = "z\addons\dayz_communityweapons\g36c\g36c_cco.p3d";
 	picture = "\z\addons\dayz_communityweapons\g36c\data\w_g36c_cco_ca.paa";
@@ -85,7 +93,7 @@ class G36C_CCO_DZ : G36C_DZ
 	};
 };
 
-class G36C_CCO_SD_DZ : G36C_SD_DZ
+class G36C_CCO_SD : G36C_SD
 {
 	model = "z\addons\dayz_communityweapons\g36c\g36c_cco_sd.p3d";
 	picture = "\z\addons\dayz_communityweapons\g36c\data\w_g36c_cco_sd_ca.paa";
@@ -108,7 +116,7 @@ class G36C_CCO_SD_DZ : G36C_SD_DZ
 	};
 };
 
-class G36C_Holo_DZ : G36C_DZ
+class G36C_Holo : G36C
 {
 	model = "z\addons\dayz_communityweapons\g36c\g36c_holo.p3d";
 	picture = "\z\addons\dayz_communityweapons\g36c\data\w_g36c_holo_ca.paa";
@@ -134,7 +142,7 @@ class G36C_Holo_DZ : G36C_DZ
 	};
 };
 
-class G36C_Holo_SD_DZ : G36C_SD_DZ
+class G36C_Holo_SD : G36C_SD
 {
 	model = "z\addons\dayz_communityweapons\g36c\g36c_holo_sd.p3d";
 	picture = "\z\addons\dayz_communityweapons\g36c\data\w_g36c_holo_sd_ca.paa";

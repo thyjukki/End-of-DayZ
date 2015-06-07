@@ -16,3 +16,5 @@ class M16A2_GL_DZ : M16A2GL
 		30Rnd_556x45_StanagSD
 	};
 };
+
+//TODO(Remove)

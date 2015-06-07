@@ -1,4 +1,4 @@
-class G36K_Camo_DZ : G36C
+class G36K_Camo : G36C
 {
 	model = "z\addons\dayz_communityweapons\g36\g36k_camo.p3d";
 	picture = "\z\addons\dayz_communityweapons\g36\data\w_g36k_camo_ca.paa";
@@ -7,7 +7,11 @@ class G36K_Camo_DZ : G36C
 	magazines[] =
 	{
 		30Rnd_556x45_G36,
-		30Rnd_556x45_G36SD
+		30Rnd_556x45_G36SD,
+		30Rnd_556x45_G36_hp,
+		30Rnd_556x45_G36_tracer,
+		30Rnd_556x45_G36_rubber,
+		30Rnd_556x45_G36_bt
 	};
 	
 	//G36 Optic

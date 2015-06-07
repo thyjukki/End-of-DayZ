@@ -173,109 +173,7 @@ class CfgMagazines
 	class Default;
 	class CA_Magazine;
 	class CA_LauncherMagazine;
-	class 200Rnd_556x45_M249;
 	class 100Rnd_762x51_M240;
-	class R3F_25Rnd_556x45_FAMAS: CA_Magazine
-	{
-		scope=2;
-		displayName="$STR_R3F_25Rnd_556x45_FAMAS";
-		count=25;
-		initSpeed=960;
-		tracersEvery=0;
-		ammo="B_556x45_Ball";
-		picture="\r3f_armes\Data\Icons\R3F_Munitions_F1.paa";
-		model="\r3f_armes\chargeur_F1.p3d";
-		descriptionShort="$STR_R3F_25Rnd_556x45_FAMAS_DESC";
-		weight=0.400000;
-		class Library
-		{
-			libTextDesc="$STR_R3F_25Rnd_556x45_FAMAS_LIB";
-		};
-	};
-	class R3F_30Rnd_556x45_FAMAS: CA_Magazine
-	{
-		scope=2;
-		displayName="$STR_R3F_30Rnd_556x45_FAMAS";
-		count=30;
-		initSpeed=925;
-		tracersEvery=0;
-		ammo="B_556x45_Ball";
-		picture="\r3f_armes\Data\Icons\R3F_Munitions_G2.paa";
-		model="\r3f_armes\chargeur_G2.p3d";
-		descriptionShort="$STR_R3F_30Rnd_556x45_FAMAS_DESC";
-		weight=0.500000;
-		class Library
-		{
-			libTextDesc="$STR_R3F_30Rnd_556x45_FAMAS_LIB";
-		};
-	};
-	class R3F_25Rnd_556x45_TRACER_FAMAS: R3F_25Rnd_556x45_FAMAS
-	{
-		scope=2;
-		displayName="$STR_R3F_25Rnd_556x45_TRACER_FAMAS";
-		tracersEvery=1;
-		picture="\r3f_armes\Data\Icons\R3F_Munitions_F1_tracer.paa";
-		descriptionShort="$STR_R3F_25Rnd_556x45_TRACER_FAMAS_DESC";
-		class Library
-		{
-			libTextDesc="$STR_R3F_25Rnd_556x45_TRACER_FAMAS_LIB";
-		};
-	};
-	class R3F_30Rnd_556x45_TRACER_FAMAS: R3F_30Rnd_556x45_FAMAS
-	{
-		scope=2;
-		displayName="$STR_R3F_30Rnd_556x45_TRACER_FAMAS";
-		tracersEvery=1;
-		picture="\r3f_armes\Data\Icons\R3F_Munitions_G2_tracer.paa";
-		descriptionShort="$STR_R3F_30Rnd_556x45_TRACER_FAMAS_DESC";
-		class Library
-		{
-			libTextDesc="$STR_R3F_30Rnd_556x45_TRACER_FAMAS_LIB";
-		};
-	};
-	class R3F_25Rnd_556x45_SD_FAMAS: R3F_25Rnd_556x45_FAMAS
-	{
-		scope=2;
-		displayName="$STR_R3F_25Rnd_556x45_SD_FAMAS";
-		initSpeed=330;
-		ammo="B_556x45_SD";
-		picture="\r3f_armes\Data\Icons\R3F_Munitions_F1_SD.paa";
-		descriptionShort="$STR_R3F_25Rnd_556x45_SD_FAMAS_DESC";
-		class Library
-		{
-			libTextDesc="$STR_R3F_25Rnd_556x45_SD_FAMAS_LIB";
-		};
-	};
-	class R3F_30Rnd_556x45_SD_FAMAS: R3F_30Rnd_556x45_FAMAS
-	{
-		scope=2;
-		displayName="$STR_R3F_30Rnd_556x45_SD_FAMAS";
-		initSpeed=330;
-		ammo="B_556x45_SD";
-		picture="\r3f_armes\Data\Icons\R3F_Munitions_G2_SD.paa";
-		descriptionShort="$STR_R3F_30Rnd_556x45_SD_FAMAS_DESC";
-		class Library
-		{
-			libTextDesc="$STR_R3F_30Rnd_556x45_SD_FAMAS_LIB";
-		};
-	};
-	class R3F_200Rnd_556x45_MINIMI: 200Rnd_556x45_M249
-	{
-		scope=2;
-		displayName="$STR_R3F_200Rnd_556x45_MINIMI";
-		count=200;
-		initSpeed=915;
-		tracersEvery=4;
-		ammo="R3F_556x45_Minimi_Ball";
-		model="\r3f_armes\chargeur_Minimi.p3d";
-		picture="\r3f_armes\Data\Icons\R3F_Munitions_Minimi.paa";
-		descriptionShort="$STR_R3F_200Rnd_556x45_MINIMI_DESC";
-		weight=3.200000;
-		class Library
-		{
-			libTextDesc="$STR_R3F_200Rnd_556x45_MINIMI_LIB";
-		};
-	};
 	class R3F_100Rnd_762x51_MINIMI: 100Rnd_762x51_M240
 	{
 		scope=2;
@@ -461,9 +359,11 @@ class CfgWeapons
 		magazines[]=
 		{
 			"R3F_25Rnd_556x45_FAMAS",
-			"R3F_30Rnd_556x45_FAMAS",
-			"R3F_25Rnd_556x45_TRACER_FAMAS",
-			"R3F_30Rnd_556x45_TRACER_FAMAS"
+			"R3F_25Rnd_556x45_FAMASSD",
+			"R3F_25Rnd_556x45_FAMAS_hp",
+			"R3F_25Rnd_556x45_FAMAS_tracer",
+			"R3F_25Rnd_556x45_FAMAS_rubber",
+			"R3F_25Rnd_556x45_FAMAS_bt"
 		};
 		opticsPPEffects[]=
 		{
@@ -673,9 +573,11 @@ class CfgWeapons
 		magazines[]=
 		{
 			"R3F_25Rnd_556x45_FAMAS",
-			"R3F_30Rnd_556x45_FAMAS",
-			"R3F_25Rnd_556x45_TRACER_FAMAS",
-			"R3F_30Rnd_556x45_TRACER_FAMAS"
+			"R3F_25Rnd_556x45_FAMASSD",
+			"R3F_25Rnd_556x45_FAMAS_hp",
+			"R3F_25Rnd_556x45_FAMAS_tracer",
+			"R3F_25Rnd_556x45_FAMAS_rubber",
+			"R3F_25Rnd_556x45_FAMAS_bt"
 		};
 		opticsPPEffects[]=
 		{
@@ -985,9 +887,12 @@ class CfgWeapons
 		};
 		magazines[]=
 		{
-			"R3F_25Rnd_556x45_SD_FAMAS",
-			"R3F_30Rnd_556x45_SD_FAMAS",
-			"30Rnd_556x45_StanagSD"
+			"R3F_25Rnd_556x45_FAMAS",
+			"R3F_25Rnd_556x45_FAMASSD",
+			"R3F_25Rnd_556x45_FAMAS_hp",
+			"R3F_25Rnd_556x45_FAMAS_tracer",
+			"R3F_25Rnd_556x45_FAMAS_rubber",
+			"R3F_25Rnd_556x45_FAMAS_bt"
 		};
 		distanceZoomMin=150;
 		distanceZoomMax=150;
@@ -1174,9 +1079,12 @@ class CfgWeapons
 		picture="\r3f_armes\Data\Icons\R3F_Famas_F1_J4_M203_SD.paa";
 		magazines[]=
 		{
-			"R3F_25Rnd_556x45_SD_FAMAS",
-			"R3F_30Rnd_556x45_SD_FAMAS",
-			"30Rnd_556x45_StanagSD"
+			"R3F_25Rnd_556x45_FAMAS",
+			"R3F_25Rnd_556x45_FAMASSD",
+			"R3F_25Rnd_556x45_FAMAS_hp",
+			"R3F_25Rnd_556x45_FAMAS_tracer",
+			"R3F_25Rnd_556x45_FAMAS_rubber",
+			"R3F_25Rnd_556x45_FAMAS_bt"
 		};
 		class Single: Mode_SemiAuto
 		{
@@ -1356,9 +1264,12 @@ class CfgWeapons
 		picture="\r3f_armes\Data\Icons\R3F_Famas_surb_EOT_SD.paa";
 		magazines[]=
 		{
-			"R3F_25Rnd_556x45_SD_FAMAS",
-			"R3F_30Rnd_556x45_SD_FAMAS",
-			"30Rnd_556x45_StanagSD"
+			"R3F_25Rnd_556x45_FAMAS",
+			"R3F_25Rnd_556x45_FAMASSD",
+			"R3F_25Rnd_556x45_FAMAS_hp",
+			"R3F_25Rnd_556x45_FAMAS_tracer",
+			"R3F_25Rnd_556x45_FAMAS_rubber",
+			"R3F_25Rnd_556x45_FAMAS_bt"
 		};
 		distanceZoomMin=150;
 		distanceZoomMax=150;
@@ -1496,12 +1407,24 @@ class CfgWeapons
 		picture="\r3f_armes\Data\Icons\R3F_Famas_G2.paa";
 		magazines[]=
 		{
-			"R3F_30Rnd_556x45_FAMAS",
-			"R3F_25Rnd_556x45_FAMAS",
-			"R3F_30Rnd_556x45_TRACER_FAMAS",
-			"R3F_25Rnd_556x45_TRACER_FAMAS",
 			"20Rnd_556x45_Stanag",
-			"30Rnd_556x45_Stanag"
+			"20Rnd_556x45_StanagSD",
+			"20Rnd_556x45_Stanag_hp",
+			"20Rnd_556x45_Stanag_tracer",
+			"20Rnd_556x45_Stanag_rubber",
+			"20Rnd_556x45_Stanag_bt",
+			"30Rnd_556x45_Stanag",
+			"30Rnd_556x45_StanagSD",
+			"30Rnd_556x45_Stanag_hp",
+			"30Rnd_556x45_Stanag_tracer",
+			"30Rnd_556x45_Stanag_rubber",
+			"30Rnd_556x45_Stanag_bt",
+			"100Rnd_556x45_BetaCMag",
+			"100Rnd_556x45_BetaCMagSD",
+			"100Rnd_556x45_BetaCMag_hp",
+			"100Rnd_556x45_BetaCMag_tracer",
+			"100Rnd_556x45_BetaCMag_rubber",
+			"100Rnd_556x45_BetaCMag_bt"
 		};
 		modes[]=
 		{
@@ -1606,12 +1529,24 @@ class CfgWeapons
 		picture="\r3f_armes\Data\Icons\R3F_Famas_G2.paa";
 		magazines[]=
 		{
-			"R3F_30Rnd_556x45_FAMAS",
-			"R3F_25Rnd_556x45_FAMAS",
-			"R3F_30Rnd_556x45_TRACER_FAMAS",
-			"R3F_25Rnd_556x45_TRACER_FAMAS",
 			"20Rnd_556x45_Stanag",
-			"30Rnd_556x45_Stanag"
+			"20Rnd_556x45_StanagSD",
+			"20Rnd_556x45_Stanag_hp",
+			"20Rnd_556x45_Stanag_tracer",
+			"20Rnd_556x45_Stanag_rubber",
+			"20Rnd_556x45_Stanag_bt",
+			"30Rnd_556x45_Stanag",
+			"30Rnd_556x45_StanagSD",
+			"30Rnd_556x45_Stanag_hp",
+			"30Rnd_556x45_Stanag_tracer",
+			"30Rnd_556x45_Stanag_rubber",
+			"30Rnd_556x45_Stanag_bt",
+			"100Rnd_556x45_BetaCMag",
+			"100Rnd_556x45_BetaCMagSD",
+			"100Rnd_556x45_BetaCMag_hp",
+			"100Rnd_556x45_BetaCMag_tracer",
+			"100Rnd_556x45_BetaCMag_rubber",
+			"100Rnd_556x45_BetaCMag_bt"
 		};
 		modes[]=
 		{
@@ -2548,12 +2483,32 @@ class CfgWeapons
 		};
 		magazines[]=
 		{
-			"R3F_200Rnd_556x45_MINIMI",
+			"100Rnd_556x45_M249",
+			"100Rnd_556x45_M249SD",
+			"100Rnd_556x45_M249_hp",
+			"100Rnd_556x45_M249_tracer",
+			"100Rnd_556x45_M249_rubber",
+			"100Rnd_556x45_M249_bt",
 			"200Rnd_556x45_M249",
-			"R3F_30Rnd_556x45_FAMAS",
+			"200Rnd_556x45_M249SD",
+			"200Rnd_556x45_M249_hp",
+			"200Rnd_556x45_M249_tracer",
+			"200Rnd_556x45_M249_rubber",
+			"200Rnd_556x45_M249_bt",
 			"20Rnd_556x45_Stanag",
-			"30Rnd_556x45_Stanag"
+			"20Rnd_556x45_StanagSD",
+			"20Rnd_556x45_Stanag_hp",
+			"20Rnd_556x45_Stanag_tracer",
+			"20Rnd_556x45_Stanag_rubber",
+			"20Rnd_556x45_Stanag_bt",
+			"30Rnd_556x45_Stanag",
+			"30Rnd_556x45_StanagSD",
+			"30Rnd_556x45_Stanag_hp",
+			"30Rnd_556x45_Stanag_tracer",
+			"30Rnd_556x45_Stanag_rubber",
+			"30Rnd_556x45_Stanag_bt"
 		};
+
 		initSpeed=915;
 		irDistance=0;
 		htMin=1;
@@ -3540,31 +3495,6 @@ class cfgVehicles
 				magazine="R3F_25Rnd_556x45_FAMAS";
 				count=200;
 			};
-			class _xx_R3F_30Rnd_556x45_FAMAS
-			{
-				magazine="R3F_30Rnd_556x45_FAMAS";
-				count=200;
-			};
-			class _xx_R3F_25Rnd_556x45_TRACER_FAMAS
-			{
-				magazine="R3F_25Rnd_556x45_TRACER_FAMAS";
-				count=200;
-			};
-			class _xx_R3F_30Rnd_556x45_TRACER_FAMAS
-			{
-				magazine="R3F_30Rnd_556x45_TRACER_FAMAS";
-				count=200;
-			};
-			class _xx_R3F_25Rnd_556x45_SD_FAMAS
-			{
-				magazine="R3F_25Rnd_556x45_SD_FAMAS";
-				count=200;
-			};
-			class _xx_R3F_30Rnd_556x45_SD_FAMAS
-			{
-				magazine="R3F_30Rnd_556x45_SD_FAMAS";
-				count=200;
-			};
 			class _xx_R3F_10Rnd_762x51_FRF2
 			{
 				magazine="R3F_10Rnd_762x51_FRF2";
@@ -3618,11 +3548,6 @@ class cfgVehicles
 			class _xx_R3F_AT4CS_Mag
 			{
 				magazine="R3F_AT4CS_Mag";
-				count=100;
-			};
-			class _xx_R3F_200Rnd_556x45_MINIMI
-			{
-				magazine="R3F_200Rnd_556x45_MINIMI";
 				count=100;
 			};
 			class _xx_R3F_100Rnd_762x51_MINIMI
@@ -3985,31 +3910,6 @@ class cfgVehicles
 				magazine="R3F_25Rnd_556x45_FAMAS";
 				count=200;
 			};
-			class _xx_R3F_30Rnd_556x45_FAMAS
-			{
-				magazine="R3F_30Rnd_556x45_FAMAS";
-				count=200;
-			};
-			class _xx_R3F_25Rnd_556x45_TRACER_FAMAS
-			{
-				magazine="R3F_25Rnd_556x45_TRACER_FAMAS";
-				count=200;
-			};
-			class _xx_R3F_30Rnd_556x45_TRACER_FAMAS
-			{
-				magazine="R3F_30Rnd_556x45_TRACER_FAMAS";
-				count=200;
-			};
-			class _xx_R3F_25Rnd_556x45_SD_FAMAS
-			{
-				magazine="R3F_25Rnd_556x45_SD_FAMAS";
-				count=200;
-			};
-			class _xx_R3F_30Rnd_556x45_SD_FAMAS
-			{
-				magazine="R3F_30Rnd_556x45_SD_FAMAS";
-				count=200;
-			};
 			class _xx_R3F_10Rnd_762x51_FRF2
 			{
 				magazine="R3F_10Rnd_762x51_FRF2";
@@ -4048,11 +3948,6 @@ class cfgVehicles
 			class _xx_R3F_AT4CS_Mag
 			{
 				magazine="R3F_AT4CS_Mag";
-				count=100;
-			};
-			class _xx_R3F_200Rnd_556x45_MINIMI
-			{
-				magazine="R3F_200Rnd_556x45_MINIMI";
 				count=100;
 			};
 			class _xx_R3F_100Rnd_762x51_MINIMI
@@ -4545,31 +4440,6 @@ class cfgVehicles
 				magazine="R3F_25Rnd_556x45_FAMAS";
 				count=200;
 			};
-			class _xx_R3F_30Rnd_556x45_FAMAS
-			{
-				magazine="R3F_30Rnd_556x45_FAMAS";
-				count=200;
-			};
-			class _xx_R3F_25Rnd_556x45_TRACER_FAMAS
-			{
-				magazine="R3F_25Rnd_556x45_TRACER_FAMAS";
-				count=200;
-			};
-			class _xx_R3F_30Rnd_556x45_TRACER_FAMAS
-			{
-				magazine="R3F_30Rnd_556x45_TRACER_FAMAS";
-				count=200;
-			};
-			class _xx_R3F_25Rnd_556x45_SD_FAMAS
-			{
-				magazine="R3F_25Rnd_556x45_SD_FAMAS";
-				count=200;
-			};
-			class _xx_R3F_30Rnd_556x45_SD_FAMAS
-			{
-				magazine="R3F_30Rnd_556x45_SD_FAMAS";
-				count=200;
-			};
 			class _xx_R3F_10Rnd_762x51_FRF2
 			{
 				magazine="R3F_10Rnd_762x51_FRF2";
@@ -4608,11 +4478,6 @@ class cfgVehicles
 			class _xx_R3F_AT4CS_Mag
 			{
 				magazine="R3F_AT4CS_Mag";
-				count=100;
-			};
-			class _xx_R3F_200Rnd_556x45_MINIMI
-			{
-				magazine="R3F_200Rnd_556x45_MINIMI";
 				count=100;
 			};
 			class _xx_R3F_100Rnd_762x51_MINIMI

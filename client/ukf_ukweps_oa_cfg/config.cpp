@@ -119,7 +119,26 @@ class CfgWeapons
 	class Rifle;
 	class L85A2_base_BAF: Rifle
 	{
-		magazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_StanagSD"};
+		magazines[] = {
+			"20Rnd_556x45_Stanag",
+			"20Rnd_556x45_StanagSD",
+			"20Rnd_556x45_Stanag_hp",
+			"20Rnd_556x45_Stanag_tracer",
+			"20Rnd_556x45_Stanag_rubber",
+			"20Rnd_556x45_Stanag_bt",
+			"30Rnd_556x45_Stanag",
+			"30Rnd_556x45_StanagSD",
+			"30Rnd_556x45_Stanag_hp",
+			"30Rnd_556x45_Stanag_tracer",
+			"30Rnd_556x45_Stanag_rubber",
+			"30Rnd_556x45_Stanag_bt",
+			"100Rnd_556x45_BetaCMag",
+			"100Rnd_556x45_BetaCMagSD",
+			"100Rnd_556x45_BetaCMag_hp",
+			"100Rnd_556x45_BetaCMag_tracer",
+			"100Rnd_556x45_BetaCMag_rubber",
+			"100Rnd_556x45_BetaCMag_bt"
+		};
 		class Single: Mode_SemiAuto
 		{
 			reloadtime=0.085000;
@@ -1657,7 +1676,37 @@ class CfgWeapons
 	class BAF_L110A1_Aim;
 	class ukf_lmg: BAF_L110A1_Aim
 	{
-		magazines[] = {"200Rnd_556x45_L110A1", "100Rnd_556x45_M249", "30Rnd_556x45_Stanag", "30Rnd_556x45_StanagSD", "200Rnd_556x45_M249"};
+		magazines[] = {
+			"200Rnd_556x45_L110A1",
+			"200Rnd_556x45_L110A1SD",
+			"200Rnd_556x45_L110A1_hp",
+			"200Rnd_556x45_L110A1_tracer",
+			"200Rnd_556x45_L110A1_rubber",
+			"200Rnd_556x45_L110A1_bt",
+			"100Rnd_556x45_M249",
+			"100Rnd_556x45_M249SD",
+			"100Rnd_556x45_M249_hp",
+			"100Rnd_556x45_M249_tracer",
+			"100Rnd_556x45_M249_rubber",
+			"100Rnd_556x45_M249_bt",
+			"200Rnd_556x45_M249SD",
+			"200Rnd_556x45_M249_hp",
+			"200Rnd_556x45_M249_tracer",
+			"200Rnd_556x45_M249_rubber",
+			"200Rnd_556x45_M249_bt",
+			"20Rnd_556x45_Stanag",
+			"20Rnd_556x45_StanagSD",
+			"20Rnd_556x45_Stanag_hp",
+			"20Rnd_556x45_Stanag_tracer",
+			"20Rnd_556x45_Stanag_rubber",
+			"20Rnd_556x45_Stanag_bt",
+			"30Rnd_556x45_Stanag",
+			"30Rnd_556x45_StanagSD",
+			"30Rnd_556x45_Stanag_hp",
+			"30Rnd_556x45_Stanag_tracer",
+			"30Rnd_556x45_Stanag_rubber",
+			"30Rnd_556x45_Stanag_bt"
+		};
 		displayname="L110A2 LMG";
 		model="\ukf_ukweps_oa\lmg\ukf_l110";
 		picture="\ukf_ukweps_oa\icons\lmg";

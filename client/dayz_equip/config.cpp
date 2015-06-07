@@ -855,6 +855,7 @@ class CfgMagazines {
 		};
 	};
 	
+	//TODO(Jukki) Remove
 	class 30Rnd_556x45_Stanag : 20Rnd_556x45_Stanag {
 		displayName = "30Rnd. STANAG";
 		picture = "\ca\weapons\data\equip\m_30stanag_CA.paa";
@@ -950,23 +951,6 @@ class CfgMagazines {
 				output[] = {"200Rnd_556x45_M249", "cfgMagazines"};
 			};
 		};
-	};
-	
-	class 200Rnd_556x45_M249 : CA_Magazine {
-		scope = public;
-		displayName = "200Rnd. M249 Belt";
-		picture = "\CA\weapons\data\equip\m_m249_ca.paa";
-		model = "\ca\weapons\AmmoBoxes\Proxy_UsBasicAmmoBoxSmall.p3d";
-		ammo = "B_556x45_Ball";
-		count = 200;
-		type = 2*		256;
-		initSpeed = 915;
-		sound[] = {"\ca\Weapons\Data\Sound\M249_1_SS", db25, 1, 1300};
-		reloadMagazineSound[] = {"\ca\Weapons\Data\Sound\FAL_reload", 0.01, 1, 20};
-		tracersEvery = 4;
-		lastRoundsTracer = 4;
-		nameSound = "mgun";
-		descriptionShort = "Caliber: 5.56x45 mm NATO <br/>Rounds: 200  <br/>Used in: M249 SAW";
 	};
 	
 	class 100Rnd_762x51_M240 : CA_Magazine {

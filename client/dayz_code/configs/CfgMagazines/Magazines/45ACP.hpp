@@ -9,7 +9,7 @@ class 7Rnd_45ACP_1911_Empty: emptiedMagazine
 	displayName="M1911 Mag (Empty)";
 	picture="\CA\weapons\data\equip\m_colt1911_ca.paa";
 	description = "Caliber: .45 ACP<br/>Rounds: 7<br/>Used in: M1911";
-	model="\RH_de\mags\mag_kim.p3d";
+	model = "\dayz_equip\models\ammo_1911.p3d";
 	type=16;
 	class ammoType
 	{
@@ -36,7 +36,7 @@ class 7Rnd_45ACP_1911: CA_Magazine
 	scope=2;
 	displayName="M1911 mag";
 	picture="\CA\weapons\data\equip\m_colt1911_ca.paa";
-	model="\RH_de\mags\mag_kim.p3d";
+	model = "\dayz_equip\models\ammo_1911.p3d";
 	description = "Caliber: .45 ACP<br/>Rounds: 7<br/>Used in: M1911";
 	type=16;
 	ammo="RH_45ACP";

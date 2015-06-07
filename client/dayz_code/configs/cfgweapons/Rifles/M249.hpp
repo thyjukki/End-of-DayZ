@@ -1,3 +1,4 @@
+//TODO(Jukki) Remove
 class M249_CCO_DZ : M249
 {
 	model = "z\addons\dayz_communityweapons\m249\m249_cco.p3d";
@@ -8,9 +9,31 @@ class M249_CCO_DZ : M249
 	
 	magazines[] =
 	{
-		200Rnd_556x45_M249,
-		30Rnd_556x45_Stanag,
-		30Rnd_556x45_StanagSD
+		"100Rnd_556x45_M249",
+		"100Rnd_556x45_M249SD",
+		"100Rnd_556x45_M249_hp",
+		"100Rnd_556x45_M249_tracer",
+		"100Rnd_556x45_M249_rubber",
+		"100Rnd_556x45_M249_bt",
+		"200Rnd_556x45_M249",
+		"200Rnd_556x45_M249SD",
+		"200Rnd_556x45_M249_hp",
+		"200Rnd_556x45_M249_tracer",
+		"200Rnd_556x45_M249_rubber",
+		"200Rnd_556x45_M249_bt",
+		"20Rnd_556x45_Stanag",
+		"20Rnd_556x45_StanagSD",
+		"20Rnd_556x45_Stanag_hp",
+		"20Rnd_556x45_Stanag_tracer",
+		"20Rnd_556x45_Stanag_rubber",
+		"20Rnd_556x45_Stanag_bt",
+		"30Rnd_556x45_Stanag",
+		"30Rnd_556x45_StanagSD",
+		"30Rnd_556x45_Stanag_hp",
+		"30Rnd_556x45_Stanag_tracer",
+		"30Rnd_556x45_Stanag_rubber",
+		"30Rnd_556x45_Stanag_bt"
+
 	};
 	
 	class ItemActions

@@ -128,22 +128,7 @@ class CfgRecoils
 		"0.0125*(  (3/7))"
 	};
 };
-class CfgMagazines
-{
-	class Default;
-	class CA_Magazine;
-	class 20Rnd_556x45_Stanag;
-	class 30Rnd_556x45_Aug: 20Rnd_556x45_Stanag
-	{
-		displayName="5,56x45 Aug 30Rnd`s Mag.";
-		ammo="B_556x45_Ball";
-		count=30;
-		tracersEvery=0;
-		picture="\MIDF_Weapons\aug_a3\pictures\aug_a3_mag.paa";
-		model="\MIDF_Weapons\aug_a3\aug_a3_mag.p3d";
-		descriptionShort=" 30Rnds 5,56x45 Stanag AUG Magazine for the AUG Series";
-	};
-};
+
 class Mode_SemiAuto;
 class Mode_FullAuto;
 class Mode_Burst;
@@ -161,7 +146,12 @@ class CfgWeapons
 	{
 		magazines[]=
 		{
-			"30Rnd_556x45_Aug"
+			"30Rnd_556x45_Aug",
+			"30Rnd_556x45_AugSD",
+			"30Rnd_556x45_Aug_hp",
+			"30Rnd_556x45_Aug_tracer",
+			"30Rnd_556x45_Aug_rubber",
+			"30Rnd_556x45_Aug_bt"
 		};
 		scope=0;
 		displayName="";
@@ -335,10 +325,6 @@ class CfgWeapons
 			"\ca\Weapons\Data\Sound\G36_dry_v1",
 			0.010000,
 			1
-		};
-		magazines[]=
-		{
-			"30Rnd_556x45_Aug"
 		};
 		modes[]=
 		{

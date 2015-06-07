@@ -185,13 +185,54 @@ class CfgWeapons
 			midRangeProbab=0.800000;
 			maxRangeProbab=0.100000;
 		};
+		magazines[] =
+		{
+			"20Rnd_556x45_Stanag",
+			"20Rnd_556x45_StanagSD",
+			"20Rnd_556x45_Stanag_hp",
+			"20Rnd_556x45_Stanag_tracer",
+			"20Rnd_556x45_Stanag_rubber",
+			"20Rnd_556x45_Stanag_bt",
+			"30Rnd_556x45_Stanag",
+			"30Rnd_556x45_StanagSD",
+			"30Rnd_556x45_Stanag_hp",
+			"30Rnd_556x45_Stanag_tracer",
+			"30Rnd_556x45_Stanag_rubber",
+			"30Rnd_556x45_Stanag_bt",
+			"100Rnd_556x45_BetaCMag",
+			"100Rnd_556x45_BetaCMagSD",
+			"100Rnd_556x45_BetaCMag_hp",
+			"100Rnd_556x45_BetaCMag_tracer",
+			"100Rnd_556x45_BetaCMag_rubber",
+			"100Rnd_556x45_BetaCMag_bt"
+		};
 	};
 	class M16A2: M16_base
 	{
 	};
 	class RH_M16a1: M16A2
 	{
-		magazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_StanagSD", "20Rnd_556x45_Stanag", "100Rnd_556x45_BetaCMag"};
+		magazines[] =
+		{
+			"20Rnd_556x45_Stanag",
+			"20Rnd_556x45_StanagSD",
+			"20Rnd_556x45_Stanag_hp",
+			"20Rnd_556x45_Stanag_tracer",
+			"20Rnd_556x45_Stanag_rubber",
+			"20Rnd_556x45_Stanag_bt",
+			"30Rnd_556x45_Stanag",
+			"30Rnd_556x45_StanagSD",
+			"30Rnd_556x45_Stanag_hp",
+			"30Rnd_556x45_Stanag_tracer",
+			"30Rnd_556x45_Stanag_rubber",
+			"30Rnd_556x45_Stanag_bt",
+			"100Rnd_556x45_BetaCMag",
+			"100Rnd_556x45_BetaCMagSD",
+			"100Rnd_556x45_BetaCMag_hp",
+			"100Rnd_556x45_BetaCMag_tracer",
+			"100Rnd_556x45_BetaCMag_rubber",
+			"100Rnd_556x45_BetaCMag_bt"
+		};
 		displayName="M16A1";
 		model="\RH_m4\RH_m16a1.p3d";
 		picture="\RH_m4\inv\m16a1.paa";
@@ -1284,7 +1325,27 @@ class CfgWeapons
 	};
 	class M4A1: M16_base
 	{
-		magazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_StanagSD", "20Rnd_556x45_Stanag", "100Rnd_556x45_BetaCMag"};
+		magazines[] =
+		{
+			"20Rnd_556x45_Stanag",
+			"20Rnd_556x45_StanagSD",
+			"20Rnd_556x45_Stanag_hp",
+			"20Rnd_556x45_Stanag_tracer",
+			"20Rnd_556x45_Stanag_rubber",
+			"20Rnd_556x45_Stanag_bt",
+			"30Rnd_556x45_Stanag",
+			"30Rnd_556x45_StanagSD",
+			"30Rnd_556x45_Stanag_hp",
+			"30Rnd_556x45_Stanag_tracer",
+			"30Rnd_556x45_Stanag_rubber",
+			"30Rnd_556x45_Stanag_bt",
+			"100Rnd_556x45_BetaCMag",
+			"100Rnd_556x45_BetaCMagSD",
+			"100Rnd_556x45_BetaCMag_hp",
+			"100Rnd_556x45_BetaCMag_tracer",
+			"100Rnd_556x45_BetaCMag_rubber",
+			"100Rnd_556x45_BetaCMag_bt"
+		};
 		class Single: Single
 		{
 		};
@@ -1964,7 +2025,24 @@ class CfgWeapons
 		};
 		magazines[]=
 		{
-			"30Rnd_556x45_StanagSD"
+			"20Rnd_556x45_Stanag",
+			"20Rnd_556x45_StanagSD",
+			"20Rnd_556x45_Stanag_hp",
+			"20Rnd_556x45_Stanag_tracer",
+			"20Rnd_556x45_Stanag_rubber",
+			"20Rnd_556x45_Stanag_bt",
+			"30Rnd_556x45_Stanag",
+			"30Rnd_556x45_StanagSD",
+			"30Rnd_556x45_Stanag_hp",
+			"30Rnd_556x45_Stanag_tracer",
+			"30Rnd_556x45_Stanag_rubber",
+			"30Rnd_556x45_Stanag_bt",
+			"100Rnd_556x45_BetaCMag",
+			"100Rnd_556x45_BetaCMagSD",
+			"100Rnd_556x45_BetaCMag_hp",
+			"100Rnd_556x45_BetaCMag_tracer",
+			"100Rnd_556x45_BetaCMag_rubber",
+			"100Rnd_556x45_BetaCMag_bt"
 		};
 		displayName="M4A1 SD";
 		model="\RH_m4\RH_m4sd.p3d";
@@ -2740,7 +2818,33 @@ class CfgWeapons
 	class RH_M249: M249
 	{
 		scope=2;
-		magazines[] = {"200Rnd_556x45_M249", "30Rnd_556x45_Stanag", "20Rnd_556x45_Stanag", "30Rnd_556x45_StanagSD"};
+		magazines[] =
+		{
+			"100Rnd_556x45_M249",
+			"100Rnd_556x45_M249SD",
+			"100Rnd_556x45_M249_hp",
+			"100Rnd_556x45_M249_tracer",
+			"100Rnd_556x45_M249_rubber",
+			"100Rnd_556x45_M249_bt",
+			"200Rnd_556x45_M249",
+			"200Rnd_556x45_M249SD",
+			"200Rnd_556x45_M249_hp",
+			"200Rnd_556x45_M249_tracer",
+			"200Rnd_556x45_M249_rubber",
+			"200Rnd_556x45_M249_bt",
+			"20Rnd_556x45_Stanag",
+			"20Rnd_556x45_StanagSD",
+			"20Rnd_556x45_Stanag_hp",
+			"20Rnd_556x45_Stanag_tracer",
+			"20Rnd_556x45_Stanag_rubber",
+			"20Rnd_556x45_Stanag_bt",
+			"30Rnd_556x45_Stanag",
+			"30Rnd_556x45_StanagSD",
+			"30Rnd_556x45_Stanag_hp",
+			"30Rnd_556x45_Stanag_tracer",
+			"30Rnd_556x45_Stanag_rubber",
+			"30Rnd_556x45_Stanag_bt"
+		};
 		model="\RH_m4\RH_M249.p3d";
 		picture="\RH_m4\inv\M249.paa";
 		reloadMagazineSound[]=
