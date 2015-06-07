@@ -179,16 +179,6 @@ class CfgMagazines
 		descriptionShort="Caliber: 5.56x45mm NATO<br/>Rounds: 30<br/>Used in: AK101, AK102";
 		initSpeed=850;
 	};
-	class RH_20Rnd_762x51_SD: CA_Magazine
-	{
-		scope=2;
-		displayName="20Rnd. STANAG SD";
-		picture="\ca\weapons\data\equip\M_US_DMR_CA.paa";
-		descriptionShort="20Rnd 762x51 SD Mag ";
-		ammo="B_762x51_SB_SCAR";
-		count=20;
-		initSpeed=850;
-	};
 	class 8Rnd_B_Beneli_74Slug;
 	class RH_5Rnd_B_Beneli_74Slug: 8Rnd_B_Beneli_74Slug
 	{
@@ -1795,10 +1785,14 @@ class CfgWeapons
 		picture="\RH_mgswp\inv\m14ebr_sd.paa";
 		fireLightDuration=0.000000;
 		fireLightIntensity=0.000000;
-		magazines[]=
+		magazines[] =
 		{
-			"RH_20Rnd_762x51_SD",
-			"20Rnd_762x51_DMR"
+			"20Rnd_762x51_DMR",
+			"20Rnd_762x51_DMRSD",
+			"20Rnd_762x51_DMR_hp",
+			"20Rnd_762x51_DMR_tracer",
+			"20Rnd_762x51_DMR_rubber",
+			"20Rnd_762x51_DMR_bt"
 		};
 		ace_suppressed=1;
 		ace_weight="5.1+ 0.6";
@@ -2964,9 +2958,27 @@ class CfgWeapons
 	};
 	class SCAR_H_Base: SCAR_Base
 	{
+		magazines[] =
+		{
+			"20Rnd_762x51_B_SCAR",
+			"20Rnd_762x51_B_SCARSD",
+			"20Rnd_762x51_B_SCAR_hp",
+			"20Rnd_762x51_B_SCAR_tracer",
+			"20Rnd_762x51_B_SCAR_rubber",
+			"20Rnd_762x51_B_SCAR_bt"
+		};
 	};
 	class SCAR_H_CQC_CCO: SCAR_H_Base
 	{
+		magazines[] =
+		{
+			"20Rnd_762x51_B_SCAR",
+			"20Rnd_762x51_B_SCARSD",
+			"20Rnd_762x51_B_SCAR_hp",
+			"20Rnd_762x51_B_SCAR_tracer",
+			"20Rnd_762x51_B_SCAR_rubber",
+			"20Rnd_762x51_B_SCAR_bt"
+		};
 	};
 	class RH_SCARH: SCAR_H_CQC_CCO
 	{
@@ -4633,11 +4645,6 @@ class CfgVehicles
 				magazine="20rnd_762x51_B_SCAR";
 				count=100;
 			};
-			class _xx_20rnd_762x51_SB_SCAR
-			{
-				magazine="20rnd_762x51_SB_SCAR";
-				count=100;
-			};
 			class _xx_30Rnd_762x39_AK47
 			{
 				magazine="30Rnd_762x39_AK47";
@@ -4648,11 +4655,6 @@ class CfgVehicles
 				magazine="20Rnd_762x51_DMR";
 				count=100;
 			};
-			class _xx_RH_20Rnd_762x51_SD
-			{
-				magazine="RH_20Rnd_762x51_SD";
-				count=100;
-			};
 			class _xx_30Rnd_556x45_G36
 			{
 				magazine="30Rnd_556x45_G36";
@@ -4661,11 +4663,6 @@ class CfgVehicles
 			class _xx_100Rnd_556x45_BetaCMag
 			{
 				magazine="100Rnd_556x45_BetaCMag";
-				count=50;
-			};
-			class _xx_100Rnd_762x51_M240
-			{
-				magazine="100Rnd_762x51_M240";
 				count=50;
 			};
 			class _xx_1rnd_HE_M203

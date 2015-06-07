@@ -102,7 +102,12 @@ class CfgWeapons
 		};
 		magazines[]=
 		{
-			"20Rnd_762x51_g3"
+			"20Rnd_762x51_g3",
+			"20Rnd_762x51_g3SD",
+			"20Rnd_762x51_g3_hp",
+			"20Rnd_762x51_g3_tracer",
+			"20Rnd_762x51_g3_rubber",
+			"20Rnd_762x51_g3_bt"
 		};
 		descriptionShort="The G3 is a 7.62mm Battle Rifle, developed in the 1950s by the German Manufacturer HK";
 		modes[]=
@@ -206,7 +211,12 @@ class CfgWeapons
 		};
 		magazines[]=
 		{
-			"20Rnd_762x51_g3"
+			"20Rnd_762x51_g3",
+			"20Rnd_762x51_g3SD",
+			"20Rnd_762x51_g3_hp",
+			"20Rnd_762x51_g3_tracer",
+			"20Rnd_762x51_g3_rubber",
+			"20Rnd_762x51_g3_bt"
 		};
 		descriptionShort="The G3 is a 7.62mm Battle Rifle, developed in the 1950s by the German Manufacturer HK";
 		modes[]=
@@ -319,7 +329,12 @@ class CfgWeapons
 		};
 		magazines[]=
 		{
-			"20Rnd_762x51_g3"
+			"20Rnd_762x51_g3",
+			"20Rnd_762x51_g3SD",
+			"20Rnd_762x51_g3_hp",
+			"20Rnd_762x51_g3_tracer",
+			"20Rnd_762x51_g3_rubber",
+			"20Rnd_762x51_g3_bt"
 		};
 		descriptionShort="The G3 is a 7.62mm Battle Rifle, developed in the 1950s by the German Manufacturer HK";
 		modes[]=
@@ -432,7 +447,12 @@ class CfgWeapons
 		};
 		magazines[]=
 		{
-			"20Rnd_762x51_g3"
+			"20Rnd_762x51_g3",
+			"20Rnd_762x51_g3SD",
+			"20Rnd_762x51_g3_hp",
+			"20Rnd_762x51_g3_tracer",
+			"20Rnd_762x51_g3_rubber",
+			"20Rnd_762x51_g3_bt"
 		};
 		descriptionShort="The G3 is a 7.62mm Battle Rifle, developed in the 1950s by the German Manufacturer HK";
 		modes[]=
@@ -545,7 +565,12 @@ class CfgWeapons
 		};
 		magazines[]=
 		{
-			"20Rnd_762x51_g3"
+			"20Rnd_762x51_g3",
+			"20Rnd_762x51_g3SD",
+			"20Rnd_762x51_g3_hp",
+			"20Rnd_762x51_g3_tracer",
+			"20Rnd_762x51_g3_rubber",
+			"20Rnd_762x51_g3_bt"
 		};
 		descriptionShort="The G3 is a 7.62mm Battle Rifle, developed in the 1950s by the German Manufacturer HK";
 		modelOptics="\ca\weapons\optika_acog";
@@ -665,7 +690,12 @@ class CfgWeapons
 		};
 		magazines[]=
 		{
-			"20Rnd_762x51_g3"
+			"20Rnd_762x51_g3",
+			"20Rnd_762x51_g3SD",
+			"20Rnd_762x51_g3_hp",
+			"20Rnd_762x51_g3_tracer",
+			"20Rnd_762x51_g3_rubber",
+			"20Rnd_762x51_g3_bt"
 		};
 		descriptionShort="The G3 is a 7.62mm Battle Rifle, developed in the 1950s by the German Manufacturer HK";
 		modelOptics="\ca\weapons\2Dscope_MilDot_10";
@@ -781,7 +811,12 @@ class CfgWeapons
 		};
 		magazines[]=
 		{
-			"20Rnd_762x51_g3"
+			"20Rnd_762x51_g3",
+			"20Rnd_762x51_g3SD",
+			"20Rnd_762x51_g3_hp",
+			"20Rnd_762x51_g3_tracer",
+			"20Rnd_762x51_g3_rubber",
+			"20Rnd_762x51_g3_bt"
 		};
 		descriptionShort="The G3 is a 7.62mm Battle Rifle, developed in the 1950s by the German Manufacturer HK";
 		modelOptics="\ca\weapons\2Dscope_MilDot_10";
@@ -897,7 +932,12 @@ class CfgWeapons
 		};
 		magazines[]=
 		{
-			"20Rnd_762x51_g3"
+			"20Rnd_762x51_g3",
+			"20Rnd_762x51_g3SD",
+			"20Rnd_762x51_g3_hp",
+			"20Rnd_762x51_g3_tracer",
+			"20Rnd_762x51_g3_rubber",
+			"20Rnd_762x51_g3_bt"
 		};
 		descriptionShort="The G3 is a 7.62mm Battle Rifle, developed in the 1950s by the German Manufacturer HK";
 		modelOptics="\ca\weapons\2Dscope_MilDot_10";

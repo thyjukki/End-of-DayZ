@@ -84,20 +84,7 @@ class CfgAmmo
 		tracerEndTime="1.19*1.25";
 	};
 };
-class CfgMagazines
-{
-	class CA_Magazine;
-	class KPFS_250Rnd_MG42: CA_Magazine
-	{
-		scope=2;
-		displayName="$STR_KPFS_MG1_MAG";
-		picture="\kpfs_weapons2\data\icons\m_mg1_ca.paa";
-		count=250;
-		type="2* 256";
-		ammo="KPFS_B_792x57_Ball";
-		initSpeed=820;
-	};
-};
+
 class CfgWeapons
 {
 	class M240;
@@ -112,7 +99,12 @@ class CfgWeapons
 		cursoraim="\ca\Weapons\Data\w_lock";
 		magazines[]=
 		{
-			"KPFS_250Rnd_MG42"
+			"KPFS_250Rnd_MG42",
+			"KPFS_250Rnd_MG42SD",
+			"KPFS_250Rnd_MG42_hp",
+			"KPFS_250Rnd_MG42_tracer",
+			"KPFS_250Rnd_MG42_rubber",
+			"KPFS_250Rnd_MG42_bt"
 		};
 		reloadMagazineSound[]=
 		{

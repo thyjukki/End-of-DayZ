@@ -34,7 +34,10 @@ class UH1H_DZ: UH1H_base
 	{
 		class MainTurret : MainTurret 
 		{
-			magazines[] = {"100Rnd_762x51_M240"};
+			magazines[] =
+			{
+				"100Rnd_762x51_M240" //TODO(Jukki) load mags to helis?????????
+			};
 		};
 		class LeftDoorGun : LeftDoorGun
 		{

@@ -551,6 +551,97 @@ class RH_45ACP_30RND_Mag_bt: RH_45ACP_30RND_Mag
 };
 
 
+/* M1 Thompson */
+class KPFS_30Rnd_45ACP_Thompson_Empty: emptiedMagazine
+{
+	scope=2;
+	displayName="Thompson Mag (Empty)";
+	picture="\kpfs_weapons2\data\icons\m_uzi_ca.paa";
+	descriptionShort="Caliber: .45 ACP<br/>Rounds: 30<br/>Used in: M1 Thompson";
+	class ammoType
+	{
+		class RH_45ACP {
+			ammoMag = "KPFS_30Rnd_45ACP_Thompson_Mag";
+		};
+		class RH_45ACP_HP {
+			ammoMag = "KPFS_30Rnd_45ACP_Thompson_Mag_hp";
+		};
+		class RH_45ACP_TRACER {
+			ammoMag = "KPFS_30Rnd_45ACP_Thompson_tracer";
+		};
+		class RH_45ACP_RUBBER {
+			ammoMag = "KPFS_30Rnd_45ACP_Thompson_rubber";
+		};
+		class RH_45ACP_BT {
+			ammoMag = "KPFS_30Rnd_45ACP_Thompson_bt";
+		};
+	};
+};
+
+class KPFS_30Rnd_45ACP_Thompson: CA_Magazine
+{
+	scope=2;
+	displayName="Thompson Mag";
+	ammo="RH_45ACP";
+	count=30;
+	initSpeed=260;
+	picture="\kpfs_weapons2\data\icons\m_uzi_ca.paa";
+	descriptionShort="Caliber: .45 ACP<br/>Rounds: 30<br/>Used in: M1 Thompson";
+	baseBullet = 45ACP_x;
+	class ItemActions {
+		class loadMag {
+			text = "Load";
+			script = "spawn player_loadAmmo;";
+		};
+		class unLoadMag {
+			text = "Un Load";
+			script = "spawn player_unloadAmmo;";
+		};
+	};
+	emptyMag = "KPFS_30Rnd_45ACP_Thompson_Empty";
+};
+
+class KPFS_30Rnd_45ACP_Thompson_hp: KPFS_30Rnd_45ACP_Thompson
+{
+	scope=2;
+	baseBullet = 45ACP_HP_x;
+	initSpeed=240;
+	ammo="RH_45ACP_HP";
+	displayName="Thompson magazine HP";
+	descriptionShort="Caliber: .45 ACP Hollow Point<br/>Rounds: 30<br/>Used in: M1 Thompson";
+};
+
+class KPFS_30Rnd_45ACP_Thompson_tracer: KPFS_30Rnd_45ACP_Thompson
+{
+	scope=2;
+	baseBullet = 45ACP_TRACER_x;
+	lastroundstracer = 29;
+	tracersevery = 1;
+	ammo="RH_45ACP_TRACER";
+	displayName="Thompson magazine Tracer";
+	descriptionShort="Caliber: .45 ACP Tracer<br/>Rounds: 30<br/>Used in: M1 Thompson";
+};
+
+class KPFS_30Rnd_45ACP_Thompson_rubber: KPFS_30Rnd_45ACP_Thompson
+{
+	scope=2;
+	baseBullet = 45ACP_RUBBER_x;
+	initSpeed=150;
+	ammo="RH_45ACP_RUBBER";
+	displayName="Thompson magazine Rubber";
+	descriptionShort="Caliber: .45 ACP Rubber<br/>Rounds: 30<br/>Used in: M1 Thompson";
+};
+
+class KPFS_30Rnd_45ACP_Thompson_bt: KPFS_30Rnd_45ACP_Thompson
+{
+	scope=2;
+	baseBullet = 45ACP_BT_x;
+	ammo="RH_45ACP_BT";
+	displayName="Thompson magazine BT";
+	descriptionShort="Caliber: .45 ACP Ballistic Tip<br/>Rounds: 30<br/>Used in: M1 Thompson";
+};
+
+
 //TODO(Jukki) What do we do with revolvers?
 class 6Rnd_45ACP: CA_Magazine
 {

@@ -9,7 +9,6 @@ class CfgPatches
 		weapons[]=
 		{
 			"ukf_L85A2",
-			"ukf_L85A2_BFA",
 			"ukf_L85A2_susat",
 			"ukf_L85A2_acog",
 			"ukf_L85A2_acog_CQB",
@@ -19,15 +18,10 @@ class CfgPatches
 			"ukf_L85A2_sd",
 			"ukf_L85A2_sd_CQB",
 			"ukf_L85A2_RIS",
-			"ukf_L85A2_susat_BFA",
 			"ukf_L85A2AG36",
 			"ukf_L85A2AG36_fgrip",
 			"ukf_L85A2AG36_susat",
 			"ukf_L85A2AG36_susat_fgrip",
-			"ukf_L85A2AG36_BFA",
-			"ukf_L85A2AG36_BFA_fgrip",
-			"ukf_L85A2AG36_susat_BFA",
-			"ukf_L85A2AG36_susat_BFA_fgrip",
 			"ukf_L85A2AG36_acog",
 			"ukf_L85A2AG36_acog_CQB",
 			"ukf_L85A2AG36_acog_fgrip",
@@ -43,23 +37,16 @@ class CfgPatches
 			"ukf_L85A2AG36_sd_fgrip",
 			"ukf_L85A2AG36_sd_fgrip_CQB",
 			"ukf_L85A2K_susat",
-			"ukf_L85A2K_susat_BFA",
 			"ukf_gpmg",
 			"ukf_gpmg_fgrip",
 			"ukf_gpmg_MaxiKite",
 			"ukf_gpmg_MaxiKite_fgrip",
 			"ukf_gpmg_vipir2plus",
 			"ukf_gpmg_vipir2plus_fgrip",
-			"ukf_gpmg_bfa",
-			"ukf_gpmg_bfa_fgrip",
 			"ukf_L86A2LSW",
 			"ukf_L86A2LSW_fgrip",
-			"ukf_L86A2LSW_BFA",
-			"ukf_L86A2LSW_BFA_fgrip",
 			"ukf_L86A2LSW_susat",
 			"ukf_L86A2LSW_susat_fgrip",
-			"ukf_L86A2LSW_susat_BFA",
-			"ukf_L86A2LSW_susat_BFA_fgrip",
 			"ukf_L86A2LSW_MaxiKite",
 			"ukf_L86A2LSW_MaxiKite_fgrip",
 			"ukf_lmg",
@@ -72,10 +59,6 @@ class CfgPatches
 			"ukf_lmg_CWS_fgrip",
 			"ukf_lmg_vipir2plus",
 			"ukf_lmg_vipir2plus_fgrip",
-			"ukf_lmg_BFA",
-			"ukf_lmg_BFA_fgrip",
-			"ukf_lmg_SUSAT_BFA",
-			"ukf_lmg_SUSAT_BFA_fgrip"
 		};
 		requiredVersion=1;
 		requiredAddons[]=
@@ -311,36 +294,6 @@ class CfgWeapons
 		};
 		ace_weight=3.800000;
 		dexterity=1.600000;
-	};
-	class ukf_L85A2_BFA: ukf_L85A2
-	{
-		displayName="L85A2 w/BFA";
-		model="\ukf_ukweps_oa\bfa\ukf_SA80_IRNT";
-		picture="\ukf_ukweps_oa\bfa\trainipic";
-		magazines[]=
-		{
-			"ukf_30rnd_556x45_blank_stanag"
-		};
-		class Armory
-		{
-			author="P:UKF";
-			disabled=1;
-		};
-	};
-	class ukf_L85A2_susat_BFA: ukf_L85A2_susat
-	{
-		displayName="L85A2 w/SUSAT + BFA";
-		model="\ukf_ukweps_oa\bfa\ukf_SA80T";
-		picture="\ukf_ukweps_oa\bfa\trainpic";
-		magazines[]=
-		{
-			"ukf_30rnd_556x45_blank_stanag"
-		};
-		class Armory
-		{
-			author="P:UKF";
-			disabled=1;
-		};
 	};
 	class ukf_L85A2_RIS: ukf_L85A2_susat
 	{
@@ -846,21 +799,6 @@ class CfgWeapons
 		ace_weight=3.900000;
 		dexterity=1.650000;
 	};
-	class ukf_L85A2K_susat_BFA: ukf_L85A2K_susat
-	{
-		displayName="L22A2 w/SUSAT + BFA";
-		model="\ukf_ukweps_oa\bfa\ukf_SA80KT";
-		picture="\ukf_ukweps_oa\bfa\trainkpic";
-		magazines[]=
-		{
-			"ukf_30rnd_556x45_blank_stanag"
-		};
-		class Armory
-		{
-			author="P:UKF";
-			disabled=1;
-		};
-	};
 	class ukf_L85A2AG36_susat: ukf_L85A2_susat
 	{
 		displayName="L85A2/UGL w/SUSAT";
@@ -1334,70 +1272,6 @@ class CfgWeapons
 			disabled=1;
 		};
 	};
-	class ukf_L85A2AG36_susat_BFA: ukf_L85A2_susat_BFA
-	{
-		displayName="L85A2/UGL w/SUSAT + BFA";
-		model="\ukf_ukweps_oa\BFA\ukf_SA80AG36T";
-		picture="\ukf_ukweps_oa\bfa\trainagpic";
-		muzzles[]=
-		{
-			"this",
-			"ukf_AG36"
-		};
-		handanim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\ukf_ukweps_oa\anims\ukf_L123.rtm"
-		};
-		ace_weight=5.700000;
-		dexterity=1.250000;
-		ukf_grip_classes[]=
-		{
-			"ukf_L85A2AG36_susat_BFA",
-			"ukf_L85A2AG36_susat_BFA_fgrip"
-		};
-	};
-	class ukf_L85A2AG36_susat_BFA_fgrip: ukf_L85A2AG36_susat_BFA
-	{
-		model="\ukf_ukweps_oa\BFA\ukf_SA80AG36T_fgrip";
-		handanim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\ukf_ukweps_oa\anims\ukf_L123_trig.rtm"
-		};
-	};
-	class ukf_L85A2AG36_BFA: ukf_L85A2_BFA
-	{
-		displayName="L85A2/UGL w/BFA";
-		model="\ukf_ukweps_oa\BFA\ukf_SA80AG36_IRNT";
-		picture="\ukf_ukweps_oa\bfa\trainagipic";
-		muzzles[]=
-		{
-			"this",
-			"ukf_AG36"
-		};
-		handanim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\ukf_ukweps_oa\anims\ukf_L123.rtm"
-		};
-		ace_weight=5.300000;
-		dexterity=1.300000;
-		ukf_grip_classes[]=
-		{
-			"ukf_L85A2AG36_BFA",
-			"ukf_L85A2AG36_BFA_fgrip"
-		};
-	};
-	class ukf_L85A2AG36_BFA_fgrip: ukf_L85A2AG36_BFA
-	{
-		model="\ukf_ukweps_oa\BFA\ukf_SA80AG36_IRNT_fgrip";
-		handanim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\ukf_ukweps_oa\anims\ukf_L123_trig.rtm"
-		};
-	};
 	class BAF_L86A2_ACOG: Rifle
 	{
 		class Single;
@@ -1624,54 +1498,6 @@ class CfgWeapons
 			author="P:UKF";
 			disabled=1;
 		};
-	};
-	class ukf_L86A2LSW_susat_BFA: ukf_L86A2LSW_susat
-	{
-		displayName="L86A2 LSW w/SUSAT + BFA";
-		model="\ukf_ukweps_oa\bfa\ukf_lswt";
-		picture="\ukf_ukweps_oa\bfa\trainLSWpic";
-		magazines[]=
-		{
-			"ukf_30rnd_556x45_blank_stanag"
-		};
-		class Armory
-		{
-			author="P:UKF";
-			disabled=1;
-		};
-		ukf_grip_classes[]=
-		{
-			"ukf_L86A2LSW_susat_BFA",
-			"ukf_L86A2LSW_susat_BFA_fgrip"
-		};
-	};
-	class ukf_L86A2LSW_susat_BFA_fgrip: ukf_L86A2LSW_susat_BFA
-	{
-		model="\ukf_ukweps_oa\bfa\ukf_lswt_bp";
-	};
-	class ukf_L86A2LSW_BFA: ukf_L86A2LSW
-	{
-		displayName="L86A2 LSW w/BFA";
-		model="\ukf_ukweps_oa\bfa\ukf_lsw_irnt";
-		picture="\ukf_ukweps_oa\bfa\trainLSWipic";
-		magazines[]=
-		{
-			"ukf_30rnd_556x45_blank_stanag"
-		};
-		class Armory
-		{
-			author="P:UKF";
-			disabled=1;
-		};
-		ukf_grip_classes[]=
-		{
-			"ukf_L86A2LSW_BFA",
-			"ukf_L86A2LSW_BFA_fgrip"
-		};
-	};
-	class ukf_L86A2LSW_BFA_fgrip: ukf_L86A2LSW_BFA
-	{
-		model="\ukf_ukweps_oa\bfa\ukf_lsw_irnt_bp";
 	};
 	class BAF_L110A1_Aim;
 	class ukf_lmg: BAF_L110A1_Aim
@@ -2030,54 +1856,6 @@ class CfgWeapons
 			disabled=1;
 		};
 	};
-	class ukf_lmg_BFA: ukf_lmg
-	{
-		displayName="L110A2 LMG w/BFA";
-		model="\ukf_ukweps_oa\lmg\ukf_l110_BFA";
-		picture="\ukf_ukweps_oa\icons\lmgBFA.paa";
-		magazines[]=
-		{
-			"ukf_200rnd_556x45_blank"
-		};
-		ukf_grip_classes[]=
-		{
-			"ukf_lmg_BFA",
-			"ukf_lmg_BFA_fgrip"
-		};
-		class Armory
-		{
-			author="P:UKF";
-			disabled=1;
-		};
-	};
-	class ukf_lmg_BFA_fgrip: ukf_lmg_BFA
-	{
-		model="\ukf_ukweps_oa\lmg\ukf_l110_BFA_bp";
-	};
-	class ukf_lmg_SUSAT_BFA: ukf_lmg_SUSAT
-	{
-		displayName="L110A2 LMG w/SUSAT + BFA";
-		model="\ukf_ukweps_oa\lmg\ukf_l110_SUSAT_BFA";
-		picture="\ukf_ukweps_oa\icons\lmgSUSATBFA.paa";
-		magazines[]=
-		{
-			"ukf_200rnd_556x45_blank"
-		};
-		ukf_grip_classes[]=
-		{
-			"ukf_lmg_SUSAT_BFA",
-			"ukf_lmg_SUSAT_BFA_fgrip"
-		};
-		class Armory
-		{
-			author="P:UKF";
-			disabled=1;
-		};
-	};
-	class ukf_lmg_SUSAT_BFA_fgrip: ukf_lmg_SUSAT_BFA
-	{
-		model="\ukf_ukweps_oa\lmg\ukf_l110_SUSAT_BFA_bp";
-	};
 	class BAF_L7A2_GPMG;
 	class ukf_gpmg: BAF_L7A2_GPMG
 	{
@@ -2267,137 +2045,8 @@ class CfgWeapons
 			disabled=1;
 		};
 	};
-	class ukf_gpmg_bfa: ukf_gpmg
-	{
-		displayName="L7A2 GPMG w/BFA";
-		model="\ukf_ukweps_oa\gpmg\ukf_gpmg_t";
-		picture="\ukf_ukweps_oa\icons\gpmgt";
-		magazines[]=
-		{
-			"ukf_100rnd_762x51_blank"
-		};
-		ukf_grip_classes[]=
-		{
-			"ukf_gpmg_bfa",
-			"ukf_gpmg_bfa_fgrip"
-		};
-		class Armory
-		{
-			author="P:UKF";
-			disabled=1;
-		};
-	};
-	class ukf_gpmg_bfa_fgrip: ukf_gpmg_bfa
-	{
-		model="\ukf_ukweps_oa\gpmg\ukf_gpmg_t_bp";
-		handanim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\ukf_ukweps_oa\anims\ukf_L7_bp.rtm"
-		};
-	};
 };
-class CfgAmmo
-{
-	class B_556x45_Ball;
-	class ukf_556blank: B_556x45_Ball
-	{
-		ace_hit=0;
-		ace_mass=0;
-		ace_incendiary=0;
-		hit=0.000000;
-		visibleFire=0;
-		visiblefiretime=0;
-		audibleFire=0;
-		cost=0.100000;
-		soundHitBody1[]=
-		{
-			"\ukf_ukweps_oa\sounds\BFA\MILES_hit",
-			1,
-			1.000000,
-			500
-		};
-		soundHitBody2[]=
-		{
-			"\ukf_ukweps_oa\sounds\BFA\MILES_hit",
-			1,
-			0.980000,
-			500
-		};
-		soundHitBody3[]=
-		{
-			"\ukf_ukweps_oa\sounds\BFA\MILES_hit",
-			1,
-			1.020000,
-			500
-		};
-		hitMan[]=
-		{
-			"soundHitBody1",
-			0.340000,
-			"soundHitBody2",
-			0.330000,
-			"soundHitBody3",
-			0.330000
-		};
-		bulletfly[]={};
-		hitarmor[]={};
-		hitbuilding[]={};
-		hitconcrete[]={};
-		hitdefault[]={};
-		hitfoliage[]={};
-		hitglass[]={};
-		hitglassarmored[]={};
-		hitgroundhard[]={};
-		hitgroundsoft[]={};
-		hitiron[]={};
-		hitmetal[]={};
-		hitmetalplate[]={};
-		hitplastic[]={};
-		hitrubber[]={};
-		hitwood[]={};
-		hitground[]={};
-		class HitEffects
-		{
-			hit_blood="";
-			hit_concrete="";
-			hit_foliage="";
-			hit_foliage_green="";
-			hit_glass="";
-			hit_glass_thin="";
-			hit_metal="";
-			hit_plaster="";
-			hit_rubber="";
-			hit_wood="";
-		};
-	};
-	class ukf_762blank: ukf_556blank
-	{
-		cartridge="FxCartridge_762";
-	};
-};
-class CfgMagazines
-{
-	class 30Rnd_556x45_Stanag;
-	class ukf_30rnd_556x45_blank_stanag: 30Rnd_556x45_Stanag
-	{
-		displayName="30rnd 5.56x45 Blank Magazine";
-		ammo="ukf_556blank";
-		picture="\ukf_ukweps_oa\BFA\tmagpic";
-	};
-	class 100Rnd_762x51_M240;
-	class ukf_100rnd_762x51_blank: 100Rnd_762x51_M240
-	{
-		displayName="100rnd 7.62x51 Blank Link";
-		ammo="ukf_762blank";
-	};
-	class 200Rnd_556x45_M249;
-	class ukf_200rnd_556x45_blank: 200Rnd_556x45_M249
-	{
-		displayName="200rnd 5.56x45 Blank Link";
-		ammo="ukf_556blank";
-	};
-};
+
 class CfgVehicles
 {
 	class USBasicWeapons_EP1;
@@ -2429,11 +2078,6 @@ class CfgVehicles
 			class _xx_200Rnd_556x45_m249
 			{
 				magazine="200Rnd_556x45_m249";
-				count=50;
-			};
-			class _xx_100Rnd_762x51_m240
-			{
-				magazine="100Rnd_762x51_m240";
 				count=50;
 			};
 			class _xx_SmokeShellRed
@@ -2623,131 +2267,6 @@ class CfgVehicles
 			{
 				weapon="ukf_lmg_vipir2plus";
 				count=1;
-			};
-		};
-	};
-	class ukf_AmmoBox_2: USBasicWeapons_EP1
-	{
-		displayName="UKF Blank Ammo + Weapon Box";
-		class TransportMagazines
-		{
-			class _xx_ukf_30Rnd_556x45_blank_Stanag
-			{
-				magazine="ukf_30Rnd_556x45_blank_Stanag";
-				count=100;
-			};
-			class _xx_ukf_200Rnd_556x45_blank
-			{
-				magazine="ukf_200Rnd_556x45_blank";
-				count=50;
-			};
-			class _xx_ukf_100rnd_762x51_blank
-			{
-				magazine="ukf_100rnd_762x51_blank";
-				count=50;
-			};
-			class _xx_SmokeShellRed
-			{
-				magazine="SmokeShellRed";
-				count=50;
-			};
-			class _xx_SmokeShellGreen
-			{
-				magazine="SmokeShellGreen";
-				count=50;
-			};
-			class _xx_SmokeShell
-			{
-				magazine="SmokeShell";
-				count=50;
-			};
-			class _xx_Laserbatteries
-			{
-				magazine="Laserbatteries";
-				count=5;
-			};
-			class _xx_FlareWhite_M203
-			{
-				magazine="FlareWhite_M203";
-				count=20;
-			};
-			class _xx_FlareGreen_M203
-			{
-				magazine="FlareGreen_M203";
-				count=20;
-			};
-			class _xx_FlareYellow_M203
-			{
-				magazine="FlareYellow_M203";
-				count=20;
-			};
-		};
-		class TransportWeapons
-		{
-			class _xx_ukf_L85A2_BFA
-			{
-				weapon="ukf_L85A2_BFA";
-				count=12;
-			};
-			class _xx_ukf_L85A2_susat_BFA
-			{
-				weapon="ukf_L85A2_susat_BFA";
-				count=12;
-			};
-			class _xx_ukf_L85A2AG36_BFA
-			{
-				weapon="ukf_L85A2AG36_BFA";
-				count=6;
-			};
-			class _xx_ukf_L85A2AG36_susat_BFA
-			{
-				weapon="ukf_L85A2AG36_susat_BFA";
-				count=6;
-			};
-			class _xx_ukf_L86A2LSW_BFA
-			{
-				weapon="ukf_L86A2LSW_BFA";
-				count=4;
-			};
-			class _xx_ukf_L86A2LSW_susat_BFA
-			{
-				weapon="ukf_L86A2LSW_susat_BFA";
-				count=4;
-			};
-			class _xx_ukf_gpmg_bfa
-			{
-				weapon="ukf_gpmg_bfa";
-				count=4;
-			};
-			class _xx_Binocular
-			{
-				weapon="Binocular";
-				count=20;
-			};
-			class _xx_NVGoggles
-			{
-				weapon="NVGoggles";
-				count=20;
-			};
-			class _xx_Laserdesignator
-			{
-				weapon="Laserdesignator";
-				count=5;
-			};
-			class _xx_ukf_L85A2K_susat_BFA
-			{
-				weapon="ukf_L85A2K_susat_BFA";
-				count=8;
-			};
-			class _xx_ukf_lmg_BFA
-			{
-				weapon="ukf_lmg_BFA";
-				count=6;
-			};
-			class _xx_ukf_lmg_SUSAT_BFA
-			{
-				weapon="ukf_lmg_SUSAT_BFA";
-				count=6;
 			};
 		};
 	};

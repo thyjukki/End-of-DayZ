@@ -173,24 +173,6 @@ class CfgMagazines
 	class Default;
 	class CA_Magazine;
 	class CA_LauncherMagazine;
-	class 100Rnd_762x51_M240;
-	class R3F_100Rnd_762x51_MINIMI: 100Rnd_762x51_M240
-	{
-		scope=2;
-		displayName="$STR_R3F_100Rnd_762x51_MINIMI";
-		count=100;
-		initSpeed=820;
-		tracersEvery=3;
-		ammo="R3F_762x51_Minimi_Ball";
-		model="\r3f_armes\chargeur_Minimi_762.p3d";
-		picture="\r3f_armes\Data\Icons\R3F_Munitions_Minimi_762.paa";
-		descriptionShort="$STR_R3F_100Rnd_762x51_MINIMI_DESC";
-		weight=3.800000;
-		class Library
-		{
-			libTextDesc="$STR_R3F_100Rnd_762x51_MINIMI_LIB";
-		};
-	};
 	class R3F_10Rnd_762x51_FRF2: CA_Magazine
 	{
 		scope=2;
@@ -2713,9 +2695,20 @@ class CfgWeapons
 		};
 		UiPicture="\CA\weapons\Data\Ico\i_mg_CA.paa";
 		dexterity=0.400000;
-		magazines[]=
+		magazines[] =
 		{
-			"100Rnd_762x51_M240"
+			"100Rnd_762x51_M240",
+			"100Rnd_762x51_M240SD",
+			"100Rnd_762x51_M240_hp",
+			"100Rnd_762x51_M240_tracer",
+			"100Rnd_762x51_M240_rubber",
+			"100Rnd_762x51_M240_bt",
+			"200Rnd_762x51_M240",
+			"200Rnd_762x51_M240SD",
+			"200Rnd_762x51_M240_hp",
+			"200Rnd_762x51_M240_tracer",
+			"200Rnd_762x51_M240_rubber",
+			"200Rnd_762x51_M240_bt"
 		};
 		initSpeed=820;
 		irDistance=0;
@@ -3550,11 +3543,6 @@ class cfgVehicles
 				magazine="R3F_AT4CS_Mag";
 				count=100;
 			};
-			class _xx_R3F_100Rnd_762x51_MINIMI
-			{
-				magazine="R3F_100Rnd_762x51_MINIMI";
-				count=100;
-			};
 			class _xx_200Rnd_556x45_M249
 			{
 				magazine="200Rnd_556x45_M249";
@@ -3948,11 +3936,6 @@ class cfgVehicles
 			class _xx_R3F_AT4CS_Mag
 			{
 				magazine="R3F_AT4CS_Mag";
-				count=100;
-			};
-			class _xx_R3F_100Rnd_762x51_MINIMI
-			{
-				magazine="R3F_100Rnd_762x51_MINIMI";
 				count=100;
 			};
 			class _xx_200Rnd_556x45_M249
@@ -4478,11 +4461,6 @@ class cfgVehicles
 			class _xx_R3F_AT4CS_Mag
 			{
 				magazine="R3F_AT4CS_Mag";
-				count=100;
-			};
-			class _xx_R3F_100Rnd_762x51_MINIMI
-			{
-				magazine="R3F_100Rnd_762x51_MINIMI";
 				count=100;
 			};
 			class _xx_200Rnd_556x45_M249

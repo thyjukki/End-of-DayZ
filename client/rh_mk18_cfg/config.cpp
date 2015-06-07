@@ -89,17 +89,7 @@ class CfgAmmo
 		audibleFire=0.070000;
 	};
 };
-class CfgMagazines
-{
-	class 20Rnd_762x51_DMR;
-	class RH_20Rnd_762x51_SD_mk14: 20Rnd_762x51_DMR
-	{
-		displayName="20Rnd. M14 SD";
-		displayNameShort="SD";
-		descriptionShort="20Rnd 762x51 SD Mag";
-		ammo="RH_B_762x51_SD_mk14";
-	};
-};
+
 class Mode_SemiAuto;
 class Mode_Burst;
 class Mode_FullAuto;
@@ -1324,9 +1314,14 @@ class CfgWeapons
 		displayName="Mk14 EBR SD";
 		model="\RH_mk18\RH_mk14ebr_sd";
 		picture="\RH_mk18\inv\m14ebr_sd.paa";
-		magazines[]=
+		magazines[] =
 		{
-			"RH_20Rnd_762x51_SD_mk14"
+			"20Rnd_762x51_DMR",
+			"20Rnd_762x51_DMRSD",
+			"20Rnd_762x51_DMR_hp",
+			"20Rnd_762x51_DMR_tracer",
+			"20Rnd_762x51_DMR_rubber",
+			"20Rnd_762x51_DMR_bt"
 		};
 		class Single: Single
 		{
@@ -1657,11 +1652,6 @@ class CfgVehicles
 			class _xx_30Rnd_556x45_StanagSD
 			{
 				magazine="30Rnd_556x45_StanagSD";
-				count=200;
-			};
-			class _xx_RH_20Rnd_762x51_SD_mk14
-			{
-				magazine="RH_20Rnd_762x51_SD_mk14";
 				count=200;
 			};
 			class _xx_20Rnd_762x51_DMR

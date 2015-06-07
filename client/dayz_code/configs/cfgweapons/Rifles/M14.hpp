@@ -6,7 +6,15 @@ class M14_DZ : M14_EP1
 	picture = "\z\addons\dayz_communityweapons\m14\data\w_m14_ca.paa";
 	displayName = $STR_DZ_WPN_M14_NAME;
 	
-	magazines[] = {20Rnd_762x51_DMR};
+	magazines[] =
+	{
+		"20Rnd_762x51_DMR",
+		"20Rnd_762x51_DMRSD",
+		"20Rnd_762x51_DMR_hp",
+		"20Rnd_762x51_DMR_tracer",
+		"20Rnd_762x51_DMR_rubber",
+		"20Rnd_762x51_DMR_bt"
+	};
 	
 	distanceZoomMin = 300;
 	distanceZoomMax = 300;

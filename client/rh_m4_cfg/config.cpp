@@ -111,23 +111,7 @@ class CfgRecoils
 	RH_Mk48_Recoil[]={0,0.010000,0.002000,0.050000,0.010000,0.003000,0.040000,0.006000,0.020000,0.170000,0,0};
 	RH_Mk48_RecoilProne[]={0,0.010000,0.001200,0.090000,0.009000,-0.001000,0.150000,0,0};
 };
-class CfgMagazines
-{
-	class Default;
-	class CA_Magazine: Default
-	{
-	};
-	class 20Rnd_762x51_FNFAL: CA_Magazine
-	{
-	};
-	class RH_20Rnd_762x51_AR10: 20Rnd_762x51_FNFAL
-	{
-		displayName="20Rnd. AR-10";
-		descriptionShort="Caliber: 7.62x51mm NATO<br/>Rounds: 20<br/>Used in: AR-10";
-		picture="\rh_m4\inv\m_ar10.paa";
-		initSpeed=820;
-	};
-};
+
 class Mode_SemiAuto;
 class Mode_Burst;
 class Mode_FullAuto;
@@ -1201,7 +1185,12 @@ class CfgWeapons
 		picture="\RH_m4\inv\ar10.paa";
 		magazines[]=
 		{
-			"RH_20Rnd_762x51_AR10"
+			"RH_20Rnd_762x51_AR10",
+			"RH_20Rnd_762x51_AR10SD",
+			"RH_20Rnd_762x51_AR10_hp",
+			"RH_20Rnd_762x51_AR10_tracer",
+			"RH_20Rnd_762x51_AR10_rubber",
+			"RH_20Rnd_762x51_AR10_bt"
 		};
 		reloadMagazineSound[]=
 		{
@@ -3477,11 +3466,6 @@ class CfgVehicles
 			class _xx_100Rnd_556x45_BetaCMag
 			{
 				magazine="100Rnd_556x45_BetaCMag";
-				count=200;
-			};
-			class _xx_100Rnd_762x51_M240
-			{
-				magazine="100Rnd_762x51_M240";
 				count=200;
 			};
 			class _xx_200Rnd_556x45_M249

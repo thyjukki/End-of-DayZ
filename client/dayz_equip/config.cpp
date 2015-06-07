@@ -834,27 +834,6 @@ class CfgMagazines {
 		descriptionShort = "Caliber: 5.56x45 mm NATO <br/>Rounds: 20  <br/>Used in: M249 SAW, M4A1, M16A4";
 	};
 	
-	class 20Rnd_762x51_DMR : CA_Magazine {
-		scope = public;
-		displayName = "DMR mag";
-		picture = "\ca\weapons\data\equip\M_US_DMR_CA.paa";
-		model = "\dayz_equip\models\mag20.p3d";
-		count = 20;
-		ammo = "B_762x51_noTracer";
-		initSpeed = 900;
-		reloadMagazineSound[] = {"\ca\Weapons\Data\Sound\M21_reload_v4", 0.01, 1, 20};
-		descriptionShort = "Caliber:7.62x51 mm NATO <br/>Rounds: 20 <br/>Used in: DMR";
-		
-		class ItemActions {
-			class ReloadMag {
-				text = "Split into 4 x M24";
-				script = "spawn player_reloadMag;";
-				use[] = {"20Rnd_762x51_DMR"};
-				output[] = {"5Rnd_762x51_M24", "5Rnd_762x51_M24", "5Rnd_762x51_M24", "5Rnd_762x51_M24"};
-			};
-		};
-	};
-	
 	//TODO(Jukki) Remove
 	class 30Rnd_556x45_Stanag : 20Rnd_556x45_Stanag {
 		displayName = "30Rnd. STANAG";
@@ -951,21 +930,6 @@ class CfgMagazines {
 				output[] = {"200Rnd_556x45_M249", "cfgMagazines"};
 			};
 		};
-	};
-	
-	class 100Rnd_762x51_M240 : CA_Magazine {
-		scope = public;
-		displayName = "100Rnd. M240";
-		picture = "\CA\weapons\data\equip\m_m240_ca.paa";
-		model = "\ca\weapons\AmmoBoxes\Proxy_UsBasicAmmoBoxSmall.p3d";
-		count = 100;
-		type = 2*		256;
-		ammo = "B_762x51_Ball";
-		initSpeed = 900;
-		tracersEvery = 4;
-		lastRoundsTracer = 4;
-		nameSound = "mgun";
-		descriptionShort = "Caliber: 7.62x51mm NATO <br/>Rounds: 100 <br/>Used in: M240, Mk 48 Mod 0";
 	};
 	
 	class 6Rnd_45ACP : CA_Magazine {

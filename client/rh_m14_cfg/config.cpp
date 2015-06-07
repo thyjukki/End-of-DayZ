@@ -90,9 +90,14 @@ class cfgWeapons
 			1,
 			20
 		};
-		magazines[]=
+		magazines[] =
 		{
-			"20Rnd_762x51_DMR"
+			"20Rnd_762x51_DMR",
+			"20Rnd_762x51_DMRSD",
+			"20Rnd_762x51_DMR_hp",
+			"20Rnd_762x51_DMR_tracer",
+			"20Rnd_762x51_DMR_rubber",
+			"20Rnd_762x51_DMR_bt"
 		};
 		modes[]=
 		{
@@ -205,9 +210,14 @@ class cfgWeapons
 			1,
 			20
 		};
-		magazines[]=
+		magazines[] =
 		{
-			"20Rnd_762x51_DMR"
+			"20Rnd_762x51_DMR",
+			"20Rnd_762x51_DMRSD",
+			"20Rnd_762x51_DMR_hp",
+			"20Rnd_762x51_DMR_tracer",
+			"20Rnd_762x51_DMR_rubber",
+			"20Rnd_762x51_DMR_bt"
 		};
 		modes[]=
 		{
@@ -394,9 +404,14 @@ class cfgWeapons
 		distanceZoomMax=329;
 		optics=1;
 		displayName="M21";
-		magazines[]=
+		magazines[] =
 		{
-			"20Rnd_762x51_DMR"
+			"20Rnd_762x51_DMR",
+			"20Rnd_762x51_DMRSD",
+			"20Rnd_762x51_DMR_hp",
+			"20Rnd_762x51_DMR_tracer",
+			"20Rnd_762x51_DMR_rubber",
+			"20Rnd_762x51_DMR_bt"
 		};
 		modes[]=
 		{

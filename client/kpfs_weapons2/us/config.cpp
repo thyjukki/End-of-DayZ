@@ -385,7 +385,12 @@ class cfgWeapons
 		opticsZoomMax=0.420000;
 		magazines[]=
 		{
-			"KPFS_8Rnd_cal30_60_Gar"
+			"KPFS_8Rnd_cal30_60_Gar",
+			"KPFS_8Rnd_cal30_60_GarSD",
+			"KPFS_8Rnd_cal30_60_Gar_hp",
+			"KPFS_8Rnd_cal30_60_Gar_tracer",
+			"KPFS_8Rnd_cal30_60_Gar_rubber",
+			"KPFS_8Rnd_cal30_60_Gar_bt"
 		};
 		reloadTime=2;
 		backgroundReload=1;
@@ -515,7 +520,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
-			"KPFS_8Rnd_cal30_60_Gar"
+			"KPFS_8Rnd_cal30_60_Gar",
+			"KPFS_8Rnd_cal30_60_GarSD",
+			"KPFS_8Rnd_cal30_60_Gar_hp",
+			"KPFS_8Rnd_cal30_60_Gar_tracer",
+			"KPFS_8Rnd_cal30_60_Gar_rubber",
+			"KPFS_8Rnd_cal30_60_Gar_bt"
 		};
 		reloadTime=2;
 		backgroundReload=1;
