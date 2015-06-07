@@ -99,6 +99,14 @@ class RscDisplayClientGetReady : RscDisplayGetReady
 {
 	// could probably add a check in the spawn but couldn't test with multiple players
 	onload = "[_this,'onload'] call compile preprocessfile '\ca\ui\scripts\server_interface.sqf'; _this spawn { while { !isNull (findDisplay 53) } do { ctrlActivate ((_this select 0) displayCtrl 1); sleep 0.1; }; };"; /*diag_log[diag_tickTime,'RscDisplayClientGetReady'];*/
+	
+	class controls
+	{
+		delete Players;//TODO(Jukki)
+		delete PlayersTitle;//TODO(Jukki)
+		delete CA_PlayerName;//TODO(Jukki)
+		delete CA_PlayerRank;//TODO(Jukki)
+	}
 };
 
 class RscDisplayDebriefing: RscStandardDisplay
@@ -251,18 +259,20 @@ class RscDisplayMultiplayerSetup: RscStandardDisplay
 			style = 16;
 			y = "(120.5/100) * SafeZoneH + SafeZoneY"; //hide
 		};
-		class TextPool: RscText
+		class TextPool: RscText//Jukki: hid the playerlist on login screen
 		{
 			idc = 1006;
-			x = "(2/100) * SafeZoneW + SafeZoneX"; // to left
-			w = "(96/100) * SafeZoneW"; //wide (was: 38/100)
+			//x = "(2/100) * SafeZoneW + SafeZoneX"; // to left
+			//w = "(96/100) * SafeZoneW"; //wide (was: 38/100)
+			y = "(120.5/100) * SafeZoneH + SafeZoneY"; //hide
 		};
-		class CA_ValuePool: RscIGUIListBox
+		class CA_ValuePool: RscIGUIListBox//Jukki: hid the playerlist on login screen
 		{
 			idc = 114;
 			text = "Players";
-			x = "(2/100) * SafeZoneW + SafeZoneX"; // to left
-			w = "(96/100) * SafeZoneW"; // wide
+			//x = "(2/100) * SafeZoneW + SafeZoneX"; // to left
+			//w = "(96/100) * SafeZoneW"; // wide
+			y = "(120.5/100) * SafeZoneH + SafeZoneY"; //hide
 		};
 		class CA_ButtonCancel: RscShortcutButton
 		{
@@ -430,6 +440,8 @@ class RscDisplayDiary {
 		delete DiaryPage;
 		delete DiaryTitle;
 		delete DiaryBackground;
+		delete CA_PlayerName; //TODO(Jukki) Testing
+		delete CA_PlayerRank;
 	};
 };
 
@@ -797,6 +809,14 @@ class bloodTest
 			h = 0.15394 * safezoneH;
 		};
 	};
+};
+
+
+
+
+//TODO(Jukki) Can we remove playerlist???
+class RscDisplayMPPlayers : RscStandardDisplay
+{
 };
 
 #include "RscDisplay\includes.hpp"
