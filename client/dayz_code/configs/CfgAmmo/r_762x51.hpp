@@ -16,7 +16,7 @@ class B_762x51_Ball : BulletBase
 	airFriction = -0.0009324;
 };
 
-class B_762x51_SD : B_762x51_noTracer {
+class B_762x51_SD : B_762x51_Ball {
 	hit = 11;
 	typicalSpeed = 320;
 	airFriction = -0.00098;

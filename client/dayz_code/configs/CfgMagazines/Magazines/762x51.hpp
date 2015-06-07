@@ -418,7 +418,6 @@ class 100Rnd_762x51_M240_Empty: emptiedMagazine
 	picture = "\CA\weapons\data\equip\m_m240_ca.paa";
 	model = "\ca\weapons\AmmoBoxes\Proxy_UsBasicAmmoBoxSmall.p3d";
 	descriptionShort = "Caliber: 7.62x51mm NATO<br/>Rounds: 100<br/>Used in: M240";
-	picture = "\ca\weapons\data\equip\M_US_DMR_CA.paa";
 	type = "2*		256";
 	class ammoType
 	{
