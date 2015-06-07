@@ -15,19 +15,7 @@ class CfgPatches
 		};
 	};
 };
-class CfgMagazines
-{
-	class 30Rnd_762x39_AK47;
-	class KPFS_10Rnd_762x39_SKS: 30Rnd_762x39_AK47
-	{
-		scope=2;
-		ammo="B_762x39_Ball";
-		count=10;
-		initSpeed=710;
-		picture="\Ca\weapons\Data\Equip\m_M24_CA.paa";
-		displayName="$STR_KPFS_SKS_MAG";
-	};
-};
+
 class manual;
 class close;
 class Single;
@@ -45,7 +33,12 @@ class cfgWeapons
 		UiPicture="\CA\weapons\data\Ico\i_regular_CA.paa";
 		magazines[]=
 		{
-			"KPFS_10Rnd_762x39_SKS"
+			"KPFS_10Rnd_762x39_SKS",
+			"KPFS_10Rnd_762x39_SKS_SD",
+			"KPFS_10Rnd_762x39_SKS_hp",
+			"KPFS_10Rnd_762x39_SKS_tracer",
+			"KPFS_10Rnd_762x39_SKS_rubber",
+			"KPFS_10Rnd_762x39_SKS_bt"
 		};
 		displayName="$STR_KPFS_SKS";
 		dexterity=1.570000;

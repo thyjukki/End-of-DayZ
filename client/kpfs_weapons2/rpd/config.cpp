@@ -15,24 +15,7 @@ class CfgPatches
 		};
 	};
 };
-class CfgMagazines
-{
-	class 30Rnd_762x39_AK47;
-	class KPFS_100Rnd_762x39_RPD: 30Rnd_762x39_AK47
-	{
-		scope=2;
-		type="2*256";
-		ammo="B_762x39_Ball";
-		count=100;
-		initSpeed=710;
-		tracersEvery=4;
-		lastRoundsTracer=4;
-		nameSound="mgun";
-		picture="\kpfs_weapons2\data\icons\m_rpd_ca.paa";
-		displayName="$STR_KPFS_RPD_BOX";
-		magazineReloadTime=8;
-	};
-};
+
 class manual;
 class close;
 class Single;
@@ -63,7 +46,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
-			"KPFS_100Rnd_762x39_RPD"
+			"KPFS_100Rnd_762x39_RPD",
+			"KPFS_100Rnd_762x39_RPD_SD",
+			"KPFS_100Rnd_762x39_RPD_hp",
+			"KPFS_100Rnd_762x39_RPD_tracer",
+			"KPFS_100Rnd_762x39_RPD_rubber",
+			"KPFS_100Rnd_762x39_RPD_bt"
 		};
 		magazineReloadTime=8;
 		handAnim[]=

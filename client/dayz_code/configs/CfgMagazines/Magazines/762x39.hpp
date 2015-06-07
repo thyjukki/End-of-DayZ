@@ -1,8 +1,7 @@
-/* AK47 <-> SA58 */
-
+/* AK47 */
 class 30Rnd_762x39_AK47_Empty: emptiedMagazine {
 	descriptionshort = "Caliber:7.62x39mm <br/>Rounds: 30 <br/>AK47 based weapons";
-	displayname = "AK-47 Mag. (Empty)";
+	displayname = "AK-47 Mag (Empty)";
 	model = "z\addons\dayz_communityweapons\magazines\ak47.p3d";
 	picture = "\z\addons\dayz_communityweapons\magazines\data\m_ak47_ca.paa";
 	scope = 2;
@@ -11,19 +10,19 @@ class 30Rnd_762x39_AK47_Empty: emptiedMagazine {
 		class B_762x39_Ball {
 			ammoMag = "30Rnd_762x39_AK47";
 		};
-		class B_762x39_Ball_SD {
-			ammoMag = "30Rnd_762x39_AK47_sd";
+		class B_762x39_SD {
+			ammoMag = "30Rnd_762x39_AK47_SD";
 		};
-		class B_762x39_Ball_HP {
+		class B_762x39_HP {
 			ammoMag = "30Rnd_762x39_AK47_hp";
 		};
-		class B_762x39_Ball_TRACER {
+		class B_762x39_TRACER {
 			ammoMag = "30Rnd_762x39_AK47_tracer";
 		};
-		class B_762x39_Ball_RUBBER {
+		class B_762x39_RUBBER {
 			ammoMag = "30Rnd_762x39_AK47_rubber";
 		};
-		class B_762x39_Ball_BT {
+		class B_762x39_BT {
 			ammoMag = "30Rnd_762x39_AK47_bt";
 		};
 	};
@@ -31,11 +30,13 @@ class 30Rnd_762x39_AK47_Empty: emptiedMagazine {
 
 class 30Rnd_762x39_AK47 : CA_Magazine
 {
+	displayname = "AK-47 Mag";
+	descriptionshort = "Caliber:7.62x39mm<br/>Rounds: 30<br/>AK47 based weapons";
 	model = "z\addons\dayz_communityweapons\magazines\ak47.p3d";
 	picture = "\z\addons\dayz_communityweapons\magazines\data\m_ak47_ca.paa";
-	displayName = $STR_DZ_MAG_30RND_762X39_AK47;
-	
 	baseBullet = 762x39_x;
+	ammo="B_762x39_Ball";
+	count=30;
 	class ItemActions {
 		class loadMag {
 			text = "Load";
@@ -51,7 +52,7 @@ class 30Rnd_762x39_AK47 : CA_Magazine
 
 
 class 30Rnd_762x39_AK47_SD: 30Rnd_762x39_AK47 {
-	ammo = "B_762x39_Ball_SD";
+	ammo = "B_762x39_SD";
 	displayname = "AK-47 SD Mag";
 	initSpeed=320;
 	scope = 2;
@@ -63,7 +64,7 @@ class 30Rnd_762x39_AK47_hp: 30Rnd_762x39_AK47 {
 	scope=2;
 	baseBullet = 762x39_HP_x;
 	initSpeed=240;
-	ammo="B_762x39_Ball_HP";
+	ammo="B_762x39_HP";
 	displayname = "AK-47 HP Mag";
 	displayNameShort="HP";
 };
@@ -73,7 +74,7 @@ class 30Rnd_762x39_AK47_tracer: 30Rnd_762x39_AK47 {
 	baseBullet = 762x39_TRACER_x;
 	lastroundstracer = 7;
 	tracersevery = 1;
-	ammo="B_762x39_Ball_TRACER";
+	ammo="B_762x39_TRACER";
 	displayname = "AK-47 Tracer Mag";
 	displayNameShort="Tracer";
 };
@@ -82,7 +83,7 @@ class 30Rnd_762x39_AK47_rubber: 30Rnd_762x39_AK47 {
 	scope=2;
 	baseBullet = 762x39_RUBBER_x;
 	initSpeed=240;
-	ammo="B_762x39_Ball_RUBBER";
+	ammo="B_762x39_RUBBER";
 	displayname = "AK-47 Rubber Mag";
 	displayNameShort="Rubber";
 };
@@ -90,233 +91,49 @@ class 30Rnd_762x39_AK47_rubber: 30Rnd_762x39_AK47 {
 class 30Rnd_762x39_AK47_bt: 30Rnd_762x39_AK47 {
 	scope=2;
 	baseBullet = 762x39_BT_x;
-	ammo="B_762x39_Ball_BT";
+	ammo="B_762x39_BT";
 	displayname = "AK-47 BT Mag";
 	displayNameShort="BT";
 };
 
-class 30Rnd_762x39_SA58 : CA_Magazine
-{
-	model = "z\addons\dayz_communityweapons\magazines\vz58.p3d";
-	
-	class ItemActions
-	{
-		COMBINE_MAG
-	};
 
-	emptyMag = "30Rnd_762x39_SA58_Empty";
-};
-
-
-
-//AKM drummag
-//TODO(Jukki) Chose which one, RH or vil
-class RH_75Rnd_762x39_mag_Empty: emptiedMagazine {
-	displayName="RPK47 Mag (Empty)";
-	descriptionshort = "Caliber:7.62x39mm <br/>Rounds: 75 <br/>Used in: AK47 based weapons";
-	picture="\RH_aks\inv\m_rpk.paa";
-	model="\RH_aks\mags\mag_rpk.p3d";
-	type="2*256";
-	scope = 2;
-	class ammoType
-	{
-		class B_762x39_Ball {
-			ammoMag = "RH_75Rnd_762x39_mag";
-		};
-		class B_762x39_Ball_SD {
-			ammoMag = "RH_75Rnd_762x39_mag_sd";
-		};
-		class B_762x39_Ball_HP {
-			ammoMag = "RH_75Rnd_762x39_mag_hp";
-		};
-		class B_762x39_Ball_TRACER {
-			ammoMag = "RH_75Rnd_762x39_mag_tracer";
-		};
-		class B_762x39_Ball_RUBBER {
-			ammoMag = "RH_75Rnd_762x39_mag_rubber";
-		};
-		class B_762x39_Ball_BT {
-			ammoMag = "RH_75Rnd_762x39_mag_bt";
-		};
-	};
-};
-
-//AKM drum mag
-class RH_75Rnd_762x39_mag: 30Rnd_762x39_AK47
-{
-	displayName="RPK47 Mag";
-	descriptionshort = "Caliber:7.62x39mm <br/>Rounds: 75 <br/>Used in: AK47 based weapons";
-	picture="\RH_aks\inv\m_rpk.paa";
-	model="\RH_aks\mags\mag_rpk.p3d";
-	count=75;
-	initspeed=745;
-	type="2*256";
-	baseBullet = 762x39_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
-	emptyMag = "RH_75Rnd_762x39_mag_Empty";
-};
-
-class RH_75Rnd_762x39_mag_SD: RH_75Rnd_762x39_mag {
-	ammo = "B_762x39_Ball_SD";
-	displayName="RPK47 SD Mag";
-	initSpeed=320;
-	scope = 2;
-	baseBullet = 762x39_SD_x;
-	displayNameShort="SD";
-};
-
-class RH_75Rnd_762x39_mag_hp: RH_75Rnd_762x39_mag {
-	scope=2;
-	baseBullet = 762x39_HP_x;
-	initSpeed=240;
-	ammo="B_762x39_Ball_HP";
-	displayName="RPK47 HP Mag";
-	displayNameShort="HP";
-};
-
-class RH_75Rnd_762x39_mag_tracer: RH_75Rnd_762x39_mag {
-	scope=2;
-	baseBullet = 762x39_TRACER_x;
-	lastroundstracer = 7;
-	tracersevery = 1;
-	ammo="B_762x39_Ball_TRACER";
-	displayName="RPK47 Tracer Mag";
-	displayNameShort="Tracer";
-};
-
-class RH_75Rnd_762x39_mag_rubber: RH_75Rnd_762x39_mag {
-	scope=2;
-	baseBullet = 762x39_RUBBER_x;
-	initSpeed=240;
-	ammo="B_762x39_Ball_RUBBER";
-	displayName="RPK47 Rubber Mag";
-	displayNameShort="Rubber";
-};
-
-class RH_75Rnd_762x39_mag_bt: RH_75Rnd_762x39_mag {
-	scope=2;
-	baseBullet = 762x39_BT_x;
-	ammo="B_762x39_Ball_BT";
-	displayName="RPK47 BT Mag";
-	displayNameShort="BT";
-};
-//RPD
-class KPFS_100Rnd_762x39_RPD_Empty: emptiedMagazine
-{
-	scope=2;
-	type="2*256";
-	picture="\kpfs_weapons2\data\icons\m_rpd_ca.paa";
-	displayName="RPD ammobox (Empty)";
-	class ammoType
-	{
-		class B_762x39_Ball {
-			ammoMag = "KPFS_100Rnd_762x39_RPD";
-		};
-	};
-};
-
-class KPFS_100Rnd_762x39_RPD: 30Rnd_762x39_AK47
-{
-	scope=2;
-	type="2*256";
-	ammo="B_762x39_Ball";
-	count=100;
-	initSpeed=710;
-	tracersEvery=4;
-	lastRoundsTracer=4;
-	nameSound="mgun";
-	picture="\kpfs_weapons2\data\icons\m_rpd_ca.paa";
-	displayName="$STR_KPFS_RPD_BOX";
-	magazineReloadTime=8;
-
-	emptyMag = "KPFS_100Rnd_762x39_RPD_Empty";
-};
-
-
-class KPFS_10Rnd_762x39_SKS_Empty: emptiedMagazine
-{
-	scope=2;
-	picture="\Ca\weapons\Data\Equip\m_M24_CA.paa";
-	displayName="SKS Magazine (Empty)";
-
-	class ammoType
-	{
-		class B_762x39_Ball {
-			ammoMag = "KPFS_10Rnd_762x39_SKS";
-		};
-	};
-};
-
-class KPFS_10Rnd_762x39_SKS: 30Rnd_762x39_AK47
-{
-	emptyMag = "KPFS_10Rnd_762x39_SKS_Empty";
-};
-
-// TODO(Jukki) Make sure all ak's take thease, add to base class
-// AKM drummag
-class vil_75Rnd_762x39_AK47_Empty : emptiedMagazine {
-	scope=2;
-	type = 2*		256;
-	picture = "\CA\weapons\AK\data\equip\M_RPK_74_CA.paa";
-	displayName = "$STR_TGW_VIL_M_75Rnd_762x39_RPK";
-	descriptionShort = "$STR_VIL_M_75Rnd_762x39_AK47_SHORT";
-	class ammoType
-	{
-		class B_762x39_Ball {
-			ammoMag = "vil_75Rnd_762x39_AK47";
-		};
-	};
-};
-
-
-// TODO(Jukki) Make sure all ak's take thease
-// AKM 40rnd
-class vil_40Rnd_762x39_AK47_Empty : emptiedMagazine {
-	scope = public;
+/* AK47 40Rnd. */
+class vil_40Rnd_762x39_AK47_Empty: emptiedMagazine {
+	descriptionshort = "Caliber:7.62x39mm <br/>Rounds: 40<br/>Used In: AK47 based weapons";
+	displayname = "AK47 Long Mag (Empty)";
 	picture = "\vilas_aks\ico\m_vil_rpk_ca.paa";
-	displayName = "AK-47 Long Mag (Empty)";
-	descriptionshort = "Caliber:7.62x39mm <br/>Rounds: 40 <br/>Used in: AK47 based weapons";
+	scope = 2;
 	class ammoType
 	{
 		class B_762x39_Ball {
 			ammoMag = "vil_40Rnd_762x39_AK47";
 		};
-		class B_762x39_Ball_SD {
-			ammoMag = "vil_40Rnd_762x39_AK47_sd";
+		class B_762x39_SD {
+			ammoMag = "vil_40Rnd_762x39_AK47_SD";
 		};
-		class B_762x39_Ball_HP {
+		class B_762x39_HP {
 			ammoMag = "vil_40Rnd_762x39_AK47_hp";
 		};
-		class B_762x39_Ball_TRACER {
+		class B_762x39_TRACER {
 			ammoMag = "vil_40Rnd_762x39_AK47_tracer";
 		};
-		class B_762x39_Ball_RUBBER {
+		class B_762x39_RUBBER {
 			ammoMag = "vil_40Rnd_762x39_AK47_rubber";
 		};
-		class B_762x39_Ball_BT {
+		class B_762x39_BT {
 			ammoMag = "vil_40Rnd_762x39_AK47_bt";
 		};
 	};
 };
 
-class vil_40Rnd_762x39_AK47 : 30Rnd_762x39_AK47 {
-	scope = public;
-	ammo = "B_762x39_Ball";
-	count = 40;
-	initSpeed = 710;
+class vil_40Rnd_762x39_AK47 : CA_Magazine
+{
+	displayname = "AK47 Long Mag";
+	descriptionshort = "Caliber:7.62x39mm <br/>Rounds: 40<br/>Used In: AK47 based weapons";
 	picture = "\vilas_aks\ico\m_vil_rpk_ca.paa";
-	displayName = "AK-47 Long Mag";
-	descriptionshort = "Caliber:7.62x39mm <br/>Rounds: 40 <br/>Used in: AK47 based weapons";
 	baseBullet = 762x39_x;
+	ammo="B_762x39_Ball";
+	count=40;
 	class ItemActions {
 		class loadMag {
 			text = "Load";
@@ -330,12 +147,22 @@ class vil_40Rnd_762x39_AK47 : 30Rnd_762x39_AK47 {
 	emptyMag = "vil_40Rnd_762x39_AK47_Empty";
 };
 
+
+class vil_40Rnd_762x39_AK47_SD: vil_40Rnd_762x39_AK47 {
+	ammo = "B_762x39_SD";
+	displayname = "AK47 SD Long Mag";
+	initSpeed=320;
+	scope = 2;
+	baseBullet = 762x39_SD_x;
+	displayNameShort="SD";
+};
+
 class vil_40Rnd_762x39_AK47_hp: vil_40Rnd_762x39_AK47 {
 	scope=2;
 	baseBullet = 762x39_HP_x;
 	initSpeed=240;
-	ammo="B_762x39_Ball_HP";
-	displayName="AK-47 Long HP Mag";
+	ammo="B_762x39_HP";
+	displayname = "AK47 HP Long Mag";
 	displayNameShort="HP";
 };
 
@@ -344,8 +171,8 @@ class vil_40Rnd_762x39_AK47_tracer: vil_40Rnd_762x39_AK47 {
 	baseBullet = 762x39_TRACER_x;
 	lastroundstracer = 7;
 	tracersevery = 1;
-	ammo="B_762x39_Ball_TRACER";
-	displayName="AK-47 Long Tracer Mag";
+	ammo="B_762x39_TRACER";
+	displayname = "AK47 Tracer Long Mag";
 	displayNameShort="Tracer";
 };
 
@@ -353,15 +180,401 @@ class vil_40Rnd_762x39_AK47_rubber: vil_40Rnd_762x39_AK47 {
 	scope=2;
 	baseBullet = 762x39_RUBBER_x;
 	initSpeed=240;
-	ammo="B_762x39_Ball_RUBBER";
-	displayName="AK-47 Long Rubber Mag";
+	ammo="B_762x39_RUBBER";
+	displayname = "AK47 Rubber Long Mag";
 	displayNameShort="Rubber";
 };
 
 class vil_40Rnd_762x39_AK47_bt: vil_40Rnd_762x39_AK47 {
 	scope=2;
 	baseBullet = 762x39_BT_x;
-	ammo="B_762x39_Ball_BT";
-	displayName="AK-47 Long BT Mag";
+	ammo="B_762x39_BT";
+	displayname = "AK47 BT Long Mag";
+	displayNameShort="BT";
+};
+
+
+
+/* AKM DRUM MAG */
+class RH_75Rnd_762x39_mag_Empty: emptiedMagazine {
+	displayName="RPK47 Mag (Empty)";
+	descriptionshort = "Caliber:7.62x39mm <br/>Rounds: 75 <br/>Used in: AK47 based weapons";
+	picture="\RH_aks\inv\m_rpk.paa";
+	model="\RH_aks\mags\mag_rpk.p3d";
+	type="2*256";
+	scope = 2;
+	class ammoType
+	{
+		class B_762x39_Ball {
+			ammoMag = "RH_75Rnd_762x39_mag";
+		};
+		class B_762x39_SD {
+			ammoMag = "RH_75Rnd_762x39_mag_SD";
+		};
+		class B_762x39_HP {
+			ammoMag = "RH_75Rnd_762x39_mag_hp";
+		};
+		class B_762x39_TRACER {
+			ammoMag = "RH_75Rnd_762x39_mag_tracer";
+		};
+		class B_762x39_RUBBER {
+			ammoMag = "RH_75Rnd_762x39_mag_rubber";
+		};
+		class B_762x39_BT {
+			ammoMag = "RH_75Rnd_762x39_mag_bt";
+		};
+	};
+};
+
+class RH_75Rnd_762x39_mag: 30Rnd_762x39_AK47
+{
+	displayName="AK47 DrumMag";
+	descriptionshort = "Caliber:7.62x39mm <br/>Rounds: 75 <br/>Used in: AK47 based weapons";
+	picture="\RH_aks\inv\m_rpk.paa";
+	model="\RH_aks\mags\mag_rpk.p3d";
+	count=75;
+	type="2*256";
+
+	emptyMag = "RH_75Rnd_762x39_mag_Empty";
+};
+
+class RH_75Rnd_762x39_mag_SD: RH_75Rnd_762x39_mag {
+	ammo = "B_762x39_SD";
+	displayName="AK47 SD DrumMag";
+	initSpeed=320;
+	scope = 2;
+	baseBullet = 762x39_SD_x;
+	displayNameShort="SD";
+};
+
+class RH_75Rnd_762x39_mag_hp: RH_75Rnd_762x39_mag {
+	scope=2;
+	baseBullet = 762x39_HP_x;
+	initSpeed=320;
+	ammo="B_762x39_HP";
+	displayName="AK47 HP DrumMag";
+	displayNameShort="HP";
+};
+
+class RH_75Rnd_762x39_mag_tracer: RH_75Rnd_762x39_mag {
+	scope=2;
+	baseBullet = 762x39_TRACER_x;
+	tracersevery = 1;
+	ammo="B_762x39_TRACER";
+	displayName="AK47 Tracer DrumMag";
+	displayNameShort="Tracer";
+};
+
+class RH_75Rnd_762x39_mag_rubber: RH_75Rnd_762x39_mag {
+	scope=2;
+	baseBullet = 762x39_RUBBER_x;
+	initSpeed=240;
+	ammo="B_762x39_RUBBER";
+	displayName="AK47 Rubber DrumMag";
+	displayNameShort="Rubber";
+};
+
+class RH_75Rnd_762x39_mag_bt: RH_75Rnd_762x39_mag {
+	scope=2;
+	baseBullet = 762x39_BT_x;
+	ammo="B_762x39_BT";
+	displayName="AK47 BT DrumMag";
+	displayNameShort="BT";
+};
+
+
+/* SA85 */
+class 30Rnd_762x39_SA58_Empty: emptiedMagazine {
+	descriptionshort = "Caliber:7.62x39mm <br/>Rounds: 30 <br/>Used in: SA58";
+	displayname = "SA58 Mag (Empty)";
+	model = "z\addons\dayz_communityweapons\magazines\ak47.p3d";
+	picture = "\CA\weapons_E\data\icons\M_SA58_CA.paa";
+	scope = 2;
+	class ammoType
+	{
+		class B_762x39_Ball {
+			ammoMag = "30Rnd_762x39_SA58";
+		};
+		class B_762x39_SD {
+			ammoMag = "30Rnd_762x39_SA58_SD";
+		};
+		class B_762x39_HP {
+			ammoMag = "30Rnd_762x39_SA58_hp";
+		};
+		class B_762x39_TRACER {
+			ammoMag = "30Rnd_762x39_SA58_tracer";
+		};
+		class B_762x39_RUBBER {
+			ammoMag = "30Rnd_762x39_SA58_rubber";
+		};
+		class B_762x39_BT {
+			ammoMag = "30Rnd_762x39_SA58_bt";
+		};
+	};
+};
+
+class 30Rnd_762x39_SA58 : CA_Magazine
+{
+	displayname = "SA58 Mag";
+	descriptionshort = "Caliber:7.62x39mm<br/>Rounds: 30<br/>AK47 based weapons";
+	model = "z\addons\dayz_communityweapons\magazines\ak47.p3d";
+	picture = "\CA\weapons_E\data\icons\M_SA58_CA.paa";
+	baseBullet = 762x39_x;
+	ammo="B_762x39_Ball";
+	count=30;
+	class ItemActions {
+		class loadMag {
+			text = "Load";
+			script = "spawn player_loadAmmo;";
+		};
+		class unLoadMag {
+			text = "Un Load";
+			script = "spawn player_unloadAmmo;";
+		};
+	};
+	emptyMag = "30Rnd_762x39_SA58_Empty";
+};
+
+
+class 30Rnd_762x39_SA58_SD: 30Rnd_762x39_SA58 {
+	ammo = "B_762x39_SD";
+	displayname = "SA58 SD Mag";
+	initSpeed=320;
+	scope = 2;
+	baseBullet = 762x39_SD_x;
+	displayNameShort="SD";
+};
+
+class 30Rnd_762x39_SA58_hp: 30Rnd_762x39_SA58 {
+	scope=2;
+	baseBullet = 762x39_HP_x;
+	initSpeed=240;
+	ammo="B_762x39_HP";
+	displayname = "SA58 HP Mag";
+	displayNameShort="HP";
+};
+
+class 30Rnd_762x39_SA58_tracer: 30Rnd_762x39_SA58 {
+	scope=2;
+	baseBullet = 762x39_TRACER_x;
+	lastroundstracer = 7;
+	tracersevery = 1;
+	ammo="B_762x39_TRACER";
+	displayname = "SA58 Tracer Mag";
+	displayNameShort="Tracer";
+};
+
+class 30Rnd_762x39_SA58_rubber: 30Rnd_762x39_SA58 {
+	scope=2;
+	baseBullet = 762x39_RUBBER_x;
+	initSpeed=240;
+	ammo="B_762x39_RUBBER";
+	displayname = "SA58 Rubber Mag";
+	displayNameShort="Rubber";
+};
+
+class 30Rnd_762x39_SA58_bt: 30Rnd_762x39_SA58 {
+	scope=2;
+	baseBullet = 762x39_BT_x;
+	ammo="B_762x39_BT";
+	displayname = "SA58 BT Mag";
+	displayNameShort="BT";
+};
+
+
+
+/* RPD */
+class KPFS_100Rnd_762x39_RPD_Empty: emptiedMagazine {
+	descriptionshort = "Caliber:7.62x39mm <br/>Rounds: 10 <br/>Used in: RPD";
+	displayname = "RPD Mag (Empty)";
+	picture="\kpfs_weapons2\data\icons\m_rpd_ca.paa";
+	scope = 2;
+	type=2*256;
+	class ammoType
+	{
+		class B_762x39_Ball {
+			ammoMag = "KPFS_100Rnd_762x39_RPD";
+		};
+		class B_762x39_SD {
+			ammoMag = "KPFS_100Rnd_762x39_RPD_SD";
+		};
+		class B_762x39_HP {
+			ammoMag = "KPFS_100Rnd_762x39_RPD_hp";
+		};
+		class B_762x39_TRACER {
+			ammoMag = "KPFS_100Rnd_762x39_RPD_tracer";
+		};
+		class B_762x39_RUBBER {
+			ammoMag = "KPFS_100Rnd_762x39_RPD_rubber";
+		};
+		class B_762x39_BT {
+			ammoMag = "KPFS_100Rnd_762x39_RPD_bt";
+		};
+	};
+};
+
+class KPFS_100Rnd_762x39_RPD : CA_Magazine
+{
+	displayname = "RPD Mag";
+	descriptionshort = "Caliber:7.62x39mm<br/>Rounds: 100<br/>Used in: RPD";
+	picture="\kpfs_weapons2\data\icons\m_rpd_ca.paa";
+	baseBullet = 762x39_x;
+	ammo="B_762x39_Ball";
+	type=2*256;
+	count=100;
+	magazineReloadTime=8;
+	class ItemActions {
+		class loadMag {
+			text = "Load";
+			script = "spawn player_loadAmmo;";
+		};
+		class unLoadMag {
+			text = "Un Load";
+			script = "spawn player_unloadAmmo;";
+		};
+	};
+	emptyMag = "KPFS_100Rnd_762x39_RPD_Empty";
+};
+
+
+class KPFS_100Rnd_762x39_RPD_SD: KPFS_100Rnd_762x39_RPD {
+	ammo = "B_762x39_SD";
+	displayname = "RPD SD Mag";
+	initSpeed=320;
+	scope = 2;
+	baseBullet = 762x39_SD_x;
+	displayNameShort="SD";
+};
+
+class KPFS_100Rnd_762x39_RPD_hp: KPFS_100Rnd_762x39_RPD {
+	scope=2;
+	baseBullet = 762x39_HP_x;
+	initSpeed=240;
+	ammo="B_762x39_HP";
+	displayname = "RPD HP Mag";
+	displayNameShort="HP";
+};
+
+class KPFS_100Rnd_762x39_RPD_tracer: KPFS_100Rnd_762x39_RPD {
+	scope=2;
+	baseBullet = 762x39_TRACER_x;
+	lastroundstracer = 7;
+	tracersevery = 1;
+	ammo="B_762x39_TRACER";
+	displayname = "RPD Tracer Mag";
+	displayNameShort="Tracer";
+};
+
+class KPFS_100Rnd_762x39_RPD_rubber: KPFS_100Rnd_762x39_RPD {
+	scope=2;
+	baseBullet = 762x39_RUBBER_x;
+	initSpeed=240;
+	ammo="B_762x39_RUBBER";
+	displayname = "RPD Rubber Mag";
+	displayNameShort="Rubber";
+};
+
+class KPFS_100Rnd_762x39_RPD_bt: KPFS_100Rnd_762x39_RPD {
+	scope=2;
+	baseBullet = 762x39_BT_x;
+	ammo="B_762x39_BT";
+	displayname = "RPD BT Mag";
+	displayNameShort="BT";
+};
+
+
+/* SKS */
+class KPFS_10Rnd_762x39_SKS_Empty: emptiedMagazine {
+	descriptionshort = "Caliber:7.62x39mm <br/>Rounds: 10<br/>Used In: SKS";
+	displayname = "SKS Mag (Empty)";
+	picture="\Ca\weapons\Data\Equip\m_M24_CA.paa";
+	scope = 2;
+	class ammoType
+	{
+		class B_762x39_Ball {
+			ammoMag = "KPFS_10Rnd_762x39_SKS";
+		};
+		class B_762x39_SD {
+			ammoMag = "KPFS_10Rnd_762x39_SKS_SD";
+		};
+		class B_762x39_HP {
+			ammoMag = "KPFS_10Rnd_762x39_SKS_hp";
+		};
+		class B_762x39_TRACER {
+			ammoMag = "KPFS_10Rnd_762x39_SKS_tracer";
+		};
+		class B_762x39_RUBBER {
+			ammoMag = "KPFS_10Rnd_762x39_SKS_rubber";
+		};
+		class B_762x39_BT {
+			ammoMag = "KPFS_10Rnd_762x39_SKS_bt";
+		};
+	};
+};
+
+class KPFS_10Rnd_762x39_SKS : CA_Magazine
+{
+	displayname = "SKS Mag";
+	descriptionshort = "Caliber:7.62x39mm <br/>Rounds: 10<br/>Used In: SKS";
+	picture="\Ca\weapons\Data\Equip\m_M24_CA.paa";
+	baseBullet = 762x39_x;
+	ammo="B_762x39_Ball";
+	count=10;
+	class ItemActions {
+		class loadMag {
+			text = "Load";
+			script = "spawn player_loadAmmo;";
+		};
+		class unLoadMag {
+			text = "Un Load";
+			script = "spawn player_unloadAmmo;";
+		};
+	};
+	emptyMag = "KPFS_10Rnd_762x39_SKS_Empty";
+};
+
+
+class KPFS_10Rnd_762x39_SKS_SD: KPFS_10Rnd_762x39_SKS {
+	ammo = "B_762x39_SD";
+	displayname = "SKS SD Mag";
+	initSpeed=320;
+	scope = 2;
+	baseBullet = 762x39_SD_x;
+	displayNameShort="SD";
+};
+
+class KPFS_10Rnd_762x39_SKS_hp: KPFS_10Rnd_762x39_SKS {
+	scope=2;
+	baseBullet = 762x39_HP_x;
+	initSpeed=240;
+	ammo="B_762x39_HP";
+	displayname = "SKS HP Mag";
+	displayNameShort="HP";
+};
+
+class KPFS_10Rnd_762x39_SKS_tracer: KPFS_10Rnd_762x39_SKS {
+	scope=2;
+	baseBullet = 762x39_TRACER_x;
+	lastroundstracer = 7;
+	tracersevery = 1;
+	ammo="B_762x39_TRACER";
+	displayname = "SKS Tracer Mag";
+	displayNameShort="Tracer";
+};
+
+class KPFS_10Rnd_762x39_SKS_rubber: KPFS_10Rnd_762x39_SKS {
+	scope=2;
+	baseBullet = 762x39_RUBBER_x;
+	initSpeed=240;
+	ammo="B_762x39_RUBBER";
+	displayname = "SKS Rubber Mag";
+	displayNameShort="Rubber";
+};
+
+class KPFS_10Rnd_762x39_SKS_bt: KPFS_10Rnd_762x39_SKS {
+	scope=2;
+	baseBullet = 762x39_BT_x;
+	ammo="B_762x39_BT";
+	displayname = "SKS BT Mag";
 	displayNameShort="BT";
 };

@@ -10,3 +10,5 @@ Makarov -> RH_pm
 RH_20Rnd_9x39_val_mag -> vil_20Rnd_9x39_SP6_VAL
 RH_30Rnd_545x39_AKSU_mag -> 30Rnd_545x39_AK
 KPFS_8Rnd_762x25_TT33 -> RH_8Rnd_762_tt33
+vil_75Rnd_762x39_AK47 ->RH_75Rnd_762x39_mag
+vil_RPD -> KPFS_RPD

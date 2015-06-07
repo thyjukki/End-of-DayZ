@@ -13,7 +13,7 @@ class B_762x39_Ball: BulletBase {
 	visiblefire = 18;
 };
 
-class B_762x39_Ball_SD: BulletBase //RH_B_762x39SD_Ball
+class B_762x39_SD: BulletBase //RH_B_762x39SD_Ball
 {
 	hit=7;
 	typicalSpeed=290;
@@ -38,14 +38,14 @@ class B_762x39_Ball_SD: BulletBase //RH_B_762x39SD_Ball
 	cartridge="FxCartridge_762";
 };
 
-class B_762x39_Ball_HP: B_762x39_Ball
+class B_762x39_HP: B_762x39_Ball
 {
 	hit=10;
-	airFriction=-0.002000;
+	airFriction=-0.000550;
 	typicalSpeed=290;
 };
 
-class B_762x39_Ball_TRACER: B_762x39_Ball
+class B_762x39_TRACER: B_762x39_Ball
 {
 	model = "\ca\Weapons\Data\bullettracer\tracer_red";
 	tracerendtime = 1;
@@ -53,7 +53,7 @@ class B_762x39_Ball_TRACER: B_762x39_Ball
 	tracerstarttime = 0.05;
 };
 
-class B_762x39_Ball_RUBBER: B_762x39_Ball
+class B_762x39_RUBBER: B_762x39_Ball
 {
 	airfriction = -0.01;
 	caliber = 0.1;
@@ -62,7 +62,7 @@ class B_762x39_Ball_RUBBER: B_762x39_Ball
 	typicalSpeed=240;
 };
 
-class B_762x39_Ball_BT: B_762x39_Ball
+class B_762x39_BT: B_762x39_Ball
 {
 	hit=10;
 };

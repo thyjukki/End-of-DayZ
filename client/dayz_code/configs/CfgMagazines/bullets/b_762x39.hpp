@@ -348,7 +348,7 @@ class 762x39_x50 : 762x39_x1 {
 class 762x39_HP_x1 : 762x39_x1 {
 	scope = public;
 	displayName = "762x39mm HP (x1)";
-	ammo = "B_762x39_Ball_HP";
+	ammo = "B_762x39_HP";
 	bulletCount = 1;
 	baseName = "762x39_HP_x";
 	baseDesc = "762x39mm Hollow Point";
@@ -695,7 +695,7 @@ class 762x39_HP_x50 : 762x39_HP_x1 {
 class 762x39_TRACER_x1 : 762x39_x1 {
 	scope = public;
 	displayName = "762x39mm Tracer (x1)";
-	ammo = "B_762x39_Ball_TRACER";
+	ammo = "B_762x39_TRACER";
 	bulletCount = 1;
 	baseName = "762x39_TRACER_x";
 	baseDesc = "762x39mm Tracer";
@@ -1042,7 +1042,7 @@ class 762x39_TRACER_x50 : 762x39_TRACER_x1 {
 class 762x39_RUBBER_x1 : 762x39_x1 {
 	scope = public;
 	displayName = "762x39mm Rubber (x1)";
-	ammo = "B_762x39_Ball_RUBBER";
+	ammo = "B_762x39_RUBBER";
 	bulletCount = 1;
 	baseName = "762x39_RUBBER_x";
 	baseDesc = "762x39mm Rubber";
@@ -1389,7 +1389,7 @@ class 762x39_RUBBER_x50 : 762x39_RUBBER_x1 {
 class 762x39_BT_x1 : 762x39_x1 {
 	scope = public;
 	displayName = "762x39mm Ballistic Tip (x1)";
-	ammo = "B_762x39_Ball_BT";
+	ammo = "B_762x39_BT";
 	bulletCount = 1;
 	baseName = "762x39_BT_x";
 	baseDesc = "762x39mm Ballistic Tip";
@@ -1737,7 +1737,7 @@ class 762x39_BT_x50 : 762x39_BT_x1 {
 class 762x39_SD_x1 : 762x39_x1 {
 	scope = public;
 	displayName = "762x39mm SD (x1)";
-	ammo = "B_762x39_Ball_SD";
+	ammo = "B_762x39_SD";
 	bulletCount = 1;
 	baseName = "762x39_SD_x";
 	baseDesc = "762x39mm SD";
