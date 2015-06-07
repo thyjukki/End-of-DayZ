@@ -1,4 +1,4 @@
-class G36K_Camo : G36C
+class G36K_Camo_DZ : G36C
 {
 	model = "z\addons\dayz_communityweapons\g36\g36k_camo.p3d";
 	picture = "\z\addons\dayz_communityweapons\g36\data\w_g36k_camo_ca.paa";

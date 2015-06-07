@@ -14,18 +14,18 @@ class B_556x45_Ball : BulletBase
 	hit=8;
 };
 
-class B_545x39_SD : BulletBase {
+class B_556x45_SD : BulletBase {
 	hit=7;
 };
 				
-class B_545x39_HP: B_545x39_Ball
+class B_556x45_HP: B_556x45_Ball
 {
 	hit=10;
 	airFriction=-0.0006;
 	typicalSpeed=320;
 };
 
-class B_545x39_TRACER: B_545x39_Ball
+class B_556x45_TRACER: B_556x45_Ball
 {
 	model = "\ca\Weapons\Data\bullettracer\tracer_red";
 	tracerendtime = 1;
@@ -34,7 +34,7 @@ class B_545x39_TRACER: B_545x39_Ball
 	nvgOnly=0;
 };
 
-class B_545x39_RUBBER: B_545x39_Ball
+class B_556x45_RUBBER: B_556x45_Ball
 {
 	airfriction = -0.01;
 	caliber = 0.1;
@@ -43,7 +43,7 @@ class B_545x39_RUBBER: B_545x39_Ball
 	typicalSpeed=150;
 };
 
-class B_545x39_BT: B_545x39_Ball
+class B_556x45_BT: B_556x45_Ball
 {
 	hit=10;
 };

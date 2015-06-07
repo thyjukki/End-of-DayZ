@@ -786,21 +786,6 @@ class 200Rnd_556x45_L110A1_bt: 200Rnd_556x45_L110A1 {
 };
 
 
-//TODO(Jukki) add empty to base class
-class 100Rnd_556x45_M249_Empty: emptiedMagazine {
-	scope=2;
-	descriptionshort = "Caliber: 5.56x45mm NATO<br/>Rounds: 100<br/>Used in: M249";
-	displayname = "M249 Mag. (Empty)";
-	picture = "\CA\weapons_E\Data\icons\m_m245_CA.paa";
-	class ammoType
-	{
-		class B_556x45_Ball {
-			ammoMag = "100Rnd_556x45_M249";
-		};
-	};
-};
-
-
 
 /* M249 100Rnd. */
 class 100Rnd_556x45_M249_Empty: 200Rnd_556x45_M249_Empty {
