@@ -6,7 +6,7 @@ _isOK = false;
 
 _mag_out = "";
 _item = _this select 0;
-_selectedSlot = parseNumber (_this select 1);
+_selectedSlot =  _this select 1;
 _dialog = findDisplay 106;
 _Break = false;
 _control = _dialog displayCtrl _selectedSlot;
@@ -70,19 +70,35 @@ if (r_ammo_selected_mode == 2) then
 	_loaded_to_mag = _mag_cur + _ammo_count;
 	if (_loaded_to_mag <= _mag_limit) then
 	{
-		player removeMagazine _selected_ammo;
 
-		player removeMagazine _selected_mag;
-		player addMagazine [_mag_out, _loaded_to_mag];
+		if (1 == _isEmptyMag) then 
+		{
+			player removeMagazine _selected_mag;
+			player addMagazine [_mag_out, _loaded_to_mag];
+		}
+		else
+		{
+			_selectedSlot setIDCAmmoCount _loaded_to_mag;
+		};
+
+		player removeMagazine _selected_ammo;
 
 		systemChat format ["Loaded mag %1 with %2 rounds", getText (configFile >> "CfgMagazines" >> _mag_out >> "displayName"), _ammo_count];
 	}
 	else
 	{
-		player removeMagazine _selected_ammo;
 
-		player removeMagazine _selected_mag;
-		player addMagazine [_mag_out, _mag_limit];
+		if (1 == _isEmptyMag) then
+		{
+			player removeMagazine _selected_mag;
+			player addMagazine [_mag_out, _mag_limit];
+		}
+		else
+		{
+			_selectedSlot setIDCAmmoCount _mag_limit;
+		};
+
+		player removeMagazine _selected_ammo;
 
 		_extra_ammo = _loaded_to_mag - _mag_limit;
 		

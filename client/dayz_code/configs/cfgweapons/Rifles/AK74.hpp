@@ -2,7 +2,7 @@
 
 class AK_BASE: Rifle
 {
-	magazines[] = 
+	/*magazines[] = 
 	{
 		"30Rnd_762x39_AK47",
 		"30Rnd_762x39_AK47_SD",
@@ -22,7 +22,7 @@ class AK_BASE: Rifle
 		"RH_75Rnd_762x39_mag_tracer",
 		"RH_75Rnd_762x39_mag_rubber",
 		"RH_75Rnd_762x39_mag_bt"
-	};
+	};*/
 };
 
 

@@ -6,7 +6,7 @@ call gear_ui_init;
 _isOK = false;
 
 _item = _this select 0;
-_selectedSlot = parseNumber (_this select 1);
+_selectedSlot = _this select 1;
 if (!(_item in magazines player)) exitWith {systemChat "Item not found"};
 
 _config = configFile >> "CfgMagazines" >> _item;

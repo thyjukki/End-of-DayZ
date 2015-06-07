@@ -47,7 +47,7 @@ if (_button == 1) then {
 		} else {
 			if (configName (_config) == "Stack" || configName (_config) == "loadMag" || configName (_config) == "unLoadMag") then {
 				_idc = str(_control) call fGetIDC;
-				_compile = format["_id = ['%2','%3'] %1;",_script,_item, _idc];
+				_compile = format["_id = ['%2',%3] %1;",_script,_item, _idc];
 			} else {
 				_compile = format["_id = '%2' %1;",_script,_item];
 			};
