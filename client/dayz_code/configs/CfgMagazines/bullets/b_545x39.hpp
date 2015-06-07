@@ -348,7 +348,7 @@ class 545x39_x50 : 545x39_x1 {
 class 545x39_HP_x1 : 545x39_x1 {
 	scope = public;
 	displayName = "545x39mm HP (x1)";
-	ammo = "B_545x39_Ball_HP";
+	ammo = "B_545x39_HP";
 	bulletCount = 1;
 	baseName = "545x39_HP_x";
 	baseDesc = "545x39mm Hollow Point";
@@ -695,7 +695,7 @@ class 545x39_HP_x50 : 545x39_HP_x1 {
 class 545x39_TRACER_x1 : 545x39_x1 {
 	scope = public;
 	displayName = "545x39mm Tracer (x1)";
-	ammo = "B_545x39_Ball_TRACER";
+	ammo = "B_545x39_TRACER";
 	bulletCount = 1;
 	baseName = "545x39_TRACER_x";
 	baseDesc = "545x39mm Tracer";
@@ -1042,7 +1042,7 @@ class 545x39_TRACER_x50 : 545x39_TRACER_x1 {
 class 545x39_RUBBER_x1 : 545x39_x1 {
 	scope = public;
 	displayName = "545x39mm Rubber (x1)";
-	ammo = "B_545x39_Ball_RUBBER";
+	ammo = "B_545x39_RUBBER";
 	bulletCount = 1;
 	baseName = "545x39_RUBBER_x";
 	baseDesc = "545x39mm Rubber";
@@ -1389,7 +1389,7 @@ class 545x39_RUBBER_x50 : 545x39_RUBBER_x1 {
 class 545x39_BT_x1 : 545x39_x1 {
 	scope = public;
 	displayName = "545x39mm Ballistic Tip (x1)";
-	ammo = "B_545x39_Ball_BT";
+	ammo = "B_545x39_BT";
 	bulletCount = 1;
 	baseName = "545x39_BT_x";
 	baseDesc = "545x39mm Ballistic Tip";

@@ -106,7 +106,7 @@ class RscDisplayClientGetReady : RscDisplayGetReady
 		delete PlayersTitle;//TODO(Jukki)
 		delete CA_PlayerName;//TODO(Jukki)
 		delete CA_PlayerRank;//TODO(Jukki)
-	}
+	};
 };
 
 class RscDisplayDebriefing: RscStandardDisplay
@@ -431,8 +431,10 @@ class RscDisplayMain : RscStandardDisplay
 class RscDisplayDiary {
 	idd = 129;
 	movingEnable = 0;
+	//onLoad = "((_this select 0) displayCtrl 1001) ctrlShow false";
 
 	class Controls {
+		delete CA_DiaryIndex;
 		delete Diary;
 		delete DiaryIndex;
 		delete B_Quit;
@@ -440,8 +442,42 @@ class RscDisplayDiary {
 		delete DiaryPage;
 		delete DiaryTitle;
 		delete DiaryBackground;
-		delete CA_PlayerName; //TODO(Jukki) Testing
+
+		delete CA_CurrentTaskLabel;
+		delete CA_CurrentTask;
+		delete CA_TopicsBackground;
 		delete CA_PlayerRank;
+		delete CA_SubTopicsBackground;
+		delete CA_ContentBackground;
+		class CA_DiaryGroup : RscControlsGroup
+		{
+			y = "(109.5/100) * SafeZoneH + SafeZoneY"; //hide
+			x=0;
+			w=0;
+			h=0;
+			
+			class Controls
+			{
+				class CA_Diary : RscHTML
+				{
+					y = "(109.5/100) * SafeZoneH + SafeZoneY"; //hide
+				};
+			};
+			
+		};
+		
+		//delete DiaryList;
+		class DiaryList: RscIGUIListBox
+		{
+			idc = 1001;
+			colorText[] = {0.30,0.30,0.30,1};
+			colorSelectBackground[]={0.60,0.60,0.60,1};
+			colorSelectBackground2[]={0.60,0.60,0.60,1};
+			onLBSelChanged = " [ _this select 0 , _this select 1 , 'List' ] call compile preprocessFileLineNumbers 'ca\Warfare2\Scripts\Client\GUI\GUI_logEH.sqf'; ";
+			default = 0;
+			w = "0";
+			h = "0";
+		};
 	};
 };
 
@@ -812,11 +848,23 @@ class bloodTest
 };
 
 
-
-
-//TODO(Jukki) Can we remove playerlist???
 class RscDisplayMPPlayers : RscStandardDisplay
 {
+	class CA_TextPlayerName : RscText
+	{
+		x=0.325;
+		y=0.18;
+		w=0.125;
+		text="Allah:";
+	};
+	class CA_TextSquadName : RscText
+	{
+		x=0.325;
+		y=0.57;
+		w=0.125;
+		text="Allah:";
+	};
 };
+
 
 #include "RscDisplay\includes.hpp"
