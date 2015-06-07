@@ -50,6 +50,7 @@ class CfgMagazines
 	#include "bullets\b_57x28.hpp"
 	#include "bullets\b_545x39.hpp"
 	#include "bullets\b_556x45.hpp"
+	#include "bullets\b_762x15.hpp"
 	#include "bullets\b_762x39.hpp"
 	
 	//Crafting materials

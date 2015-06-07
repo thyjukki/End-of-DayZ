@@ -33,20 +33,7 @@ class CfgAmmo
 		cost=1;
 	};
 };
-class CfgMagazines
-{
-	class CA_Magazine;
-	class KPFS_71Rnd_762x25_PPSh: CA_Magazine
-	{
-		scope=2;
-		displayName="$STR_KPFS_PPSH_DRUM";
-		ammo="KPFS_B_762x25_Ball";
-		type="2*256";
-		count=71;
-		initSpeed=490;
-		picture="\kpfs_weapons2\data\icons\m_ppsh_ca.paa";
-	};
-};
+
 class Mode_FullAuto;
 class Far;
 class Medium;
@@ -69,7 +56,11 @@ class cfgWeapons
 		distanceZoomMax=50;
 		magazines[]=
 		{
-			"KPFS_71Rnd_762x25_PPSh"
+			"KPFS_71Rnd_762x25_PPSh",
+			"KPFS_71Rnd_762x25_PPSh_hp",
+			"KPFS_71Rnd_762x25_PPSh_tracer",
+			"KPFS_71Rnd_762x25_PPSh_rubber",
+			"KPFS_71Rnd_762x25_PPSh_bt"
 		};
 		reloadMagazineSound[]=
 		{

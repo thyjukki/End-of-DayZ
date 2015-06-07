@@ -130,17 +130,6 @@ class CfgMagazines
 {
 	class Default;
 	class CA_Magazine;
-	class RH_7Rnd_50_AE: CA_Magazine
-	{
-		scope=2;
-		displayName=".50 AE";
-		picture="\RH_de\inv\m_de.paa";
-		model="\RH_de\mags\mag_de.p3d";
-		type=16;
-		ammo="RH_50_AE_Ball";
-		count=7;
-		initSpeed=421;
-	};
 	class RH_6Rnd_44_Mag: CA_Magazine
 	{
 		scope=2;
@@ -160,28 +149,6 @@ class CfgMagazines
 		ammo="RH_357mag_ball";
 		count=6;
 		initSpeed=421;
-	};
-	class RH_8Rnd_762_tt33: CA_Magazine
-	{
-		scope=2;
-		displayName="TT33 mag";
-		picture="\RH_de\inv\m_tt33.paa";
-		model="\RH_de\mags\mag_tt33.p3d";
-		type=16;
-		ammo="RH_762x25";
-		count=8;
-		initSpeed=420;
-	};
-	class RH_10Rnd_22LR_mk2: CA_Magazine
-	{
-		scope=2;
-		displayName="MK2 mag";
-		picture="\RH_de\inv\m_mk2.paa";
-		model="\RH_de\mags\mag_mk2.p3d";
-		type=16;
-		ammo="RH_B_22LR_SD";
-		count=10;
-		initSpeed=290;
 	};
 };
 class Mode_SemiAuto;
@@ -1355,7 +1322,11 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
-			"RH_8Rnd_762_tt33"
+			"RH_8Rnd_762_tt33",
+			"RH_8Rnd_762_tt33_hp",
+			"RH_8Rnd_762_tt33_tracer",
+			"RH_8Rnd_762_tt33_rubber",
+			"RH_8Rnd_762_tt33_bt"
 		};
 		dispersion=0.008500;
 		ffCount=1;
