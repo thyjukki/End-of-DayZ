@@ -30,5 +30,4 @@ if (_emptymagslotcount > 0) then
 	player addMagazine _giveAtt;
 
 	cutText [format["Attachment %1 succesfully removed.",getText (configFile >> "CfgMagazines" >> _giveAtt >> "displayName")], "PLAIN DOWN"];
-	player removeMagazine _item;
 } else {cutText [format["You need room in inventory to remove attachment.",getText (configFile >> "CfgMagazines" >> _requiredAtt >> "displayName")], "PLAIN DOWN"];};
