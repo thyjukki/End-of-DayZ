@@ -4,7 +4,7 @@ _onLadder =	(getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animatio
 
 if (_onLadder) exitWith {cutText [(localize "str_player_21") , "PLAIN DOWN"]};
 
-_weapon = configName(_this select 0);
+_weapon = _this select 0;
 _config = configFile >> "cfgWeapons" >> _weapon;
 
 _requiredAtt = getText(_config >> "ItemActions" >> _this select 1 >> "att");
