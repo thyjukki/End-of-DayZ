@@ -7,13 +7,4 @@ class Attachment_SCOPED : CA_Magazine
 	model = "z\addons\dayz_communityweapons\models\attachments\SCOPE";
 	picture = "\z\addons\dayz_communityweapons\models\attachments\SCOPE.paa";
 	type = 256;
-	
-	class ItemActions
-	{
-		class Use
-		{
-			text = $STR_DZ_ATT_ACT_TO_PRIMARY;
-			script = "; [_id,1] call player_attachAttachment";
-		};
-	};
 };

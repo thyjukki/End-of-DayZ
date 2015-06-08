@@ -3,6 +3,7 @@ class 30Rnd_9x19_MP5_Empty: emptiedMagazine {
 	descriptionshort = "Caliber: 9x19 mm Parabellum <br/>Rounds: 30 <br/>Used in: MP5";
 	displayname = "MP5 Mag (Empty)";
 	picture = "\Ca\weapons\Data\Equip\m_HKM5_CA.paa";
+	model = "\ca\CommunityConfigurationProject_E\Gameplay_ActualModelsOfWeaponMagazinesVisibleOnTheGround\p3d\30Rnd_9x19_MP5.p3d";
 	scope = 2;
 	class ammoType
 	{
@@ -33,6 +34,7 @@ class 30Rnd_9x19_MP5: CA_Magazine
 	displayName="MP5 Mag";
 	picture="\Ca\weapons\Data\Equip\m_HKM5_CA.paa";
 	descriptionShort="Caliber: 9x19 mm Parabellum <br/>Rounds: 30 <br/>Used in: MP5";
+	model = "\ca\CommunityConfigurationProject_E\Gameplay_ActualModelsOfWeaponMagazinesVisibleOnTheGround\p3d\30Rnd_9x19_MP5.p3d";
 	ammo="B_9x19_Ball";
 	count=30;
 	initSpeed=400;
@@ -103,6 +105,7 @@ class 15Rnd_9x19_M9_Empty: emptiedMagazine
 	descriptionshort = "Caliber: 9x19 mm Parabellum <br/>Rounds: 15 <br/>Used in: M9";
 	displayname = "M9 Mag (Empty)";
 	picture = "\Ca\weapons\Data\Equip\m_m9_beretta_CA.paa";
+	model = "\ca\CommunityConfigurationProject_E\Gameplay_ActualModelsOfWeaponMagazinesVisibleOnTheGround\p3d\15Rnd_9x19_M9.p3d";
 	type=16;
 	class ammoType
 	{
@@ -133,6 +136,7 @@ class 15Rnd_9x19_M9: CA_Magazine
 	displayName="M9 Mag";
 	picture="\Ca\weapons\Data\Equip\m_m9_beretta_CA.paa";
 	descriptionShort="Caliber: 9x19 mm Parabellum <br/>Rounds: 15 <br/>Used in: M9";
+	model = "\ca\CommunityConfigurationProject_E\Gameplay_ActualModelsOfWeaponMagazinesVisibleOnTheGround\p3d\15Rnd_9x19_M9.p3d";
 	type=16;
 	ammo="B_9x19_Ball";
 	count=15;

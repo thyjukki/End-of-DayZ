@@ -9,13 +9,4 @@ class Attachment_FL_Pist : CA_Magazine
 	
 	displayName = $STR_DZ_ATT_FL_PST_NAME;
 	descriptionShort = $STR_DZ_ATT_FL_PST_DESC;
-	
-	class ItemActions
-	{
-		class AttachToSecondary
-		{
-			text = $STR_DZ_ATT_ACT_TO_SECONDARY;
-			script = "; [_id,0] call player_attachAttachment";
-		};
-	};
 };

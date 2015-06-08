@@ -4,6 +4,7 @@
 class 20Rnd_556x45_Stanag_Empty: emptiedMagazine {
 	displayname = "STANAG VN Mag(Empty)";
 	picture = "\ca\weapons\data\equip\m_20stanag_CA.paa";
+	model = "\ca\CommunityConfigurationProject_E\Gameplay_ActualModelsOfWeaponMagazinesVisibleOnTheGround\p3d\20Rnd_556x45_Stanag.p3d";
 	descriptionshort = "Caliber: 5.56x45 mm NATO <br/>Rounds: 20  <br/>Used in: Stanag compatible Weapons";
 	scope = 2;
 	class ammoType
@@ -34,6 +35,7 @@ class 20Rnd_556x45_Stanag: CA_Magazine
 	scope=2;
 	displayname = "STANAG VN Mag";
 	picture = "\ca\weapons\data\equip\m_20stanag_CA.paa";
+	model = "\ca\CommunityConfigurationProject_E\Gameplay_ActualModelsOfWeaponMagazinesVisibleOnTheGround\p3d\20Rnd_556x45_Stanag.p3d";
 	descriptionshort = "Caliber: 5.56x45 mm NATO <br/>Rounds: 20  <br/>Used in: Stanag compatible Weapons";
 	ammo="B_556x45_Ball";
 	count=20;
@@ -101,7 +103,7 @@ class 20Rnd_556x45_Stanag_bt: 20Rnd_556x45_Stanag {
 class 30Rnd_556x45_Stanag_Empty: emptiedMagazine {
 	displayname = "STANAG Mag(Empty)";
 	picture="\ca\weapons\data\equip\m_30stanag_CA.paa";
-	model = "\dayz_equip\models\mag30.p3d";
+	model = "\ca\CommunityConfigurationProject_E\Gameplay_ActualModelsOfWeaponMagazinesVisibleOnTheGround\p3d\30Rnd_556x45_Stanag.p3d";
 	descriptionshort = "Caliber: 5.56x45 mm NATO <br/>Rounds: 30  <br/>Used in: Stanag compatible Weapons";
 	scope = 2;
 	class ammoType
@@ -132,7 +134,7 @@ class 30Rnd_556x45_Stanag: CA_Magazine
 	scope=2;
 	displayname = "STANAG Mag";
 	picture="\ca\weapons\data\equip\m_30stanag_CA.paa";
-	model = "\dayz_equip\models\mag30.p3d";
+	model = "\ca\CommunityConfigurationProject_E\Gameplay_ActualModelsOfWeaponMagazinesVisibleOnTheGround\p3d\30Rnd_556x45_Stanag.p3d";
 	descriptionshort = "Caliber: 5.56x45 mm NATO <br/>Rounds: 30  <br/>Used in: Stanag compatible Weapons";
 	ammo="B_556x45_Ball";
 	count=30;
@@ -202,6 +204,7 @@ class 30Rnd_556x45_Stanag_bt: 30Rnd_556x45_Stanag {
 class 30Rnd_556x45_G36_Empty: emptiedMagazine {
 	displayname = "G36 Mag(Empty)";
 	picture="\ca\weapons\data\equip\m_G36_CA.paa";
+	model = "\ca\CommunityConfigurationProject_E\Gameplay_ActualModelsOfWeaponMagazinesVisibleOnTheGround\p3d\30Rnd_556x45_G36.p3d";
 	descriptionshort = "Caliber: 5.56x45 mm NATO <br/>Rounds: 30  <br/>Used in: G36 Weapons";
 	scope = 2;
 	class ammoType
@@ -232,6 +235,7 @@ class 30Rnd_556x45_G36: CA_Magazine
 	scope=2;
 	displayname = "G36 Mag";
 	picture="\ca\weapons\data\equip\m_G36_CA.paa";
+	model = "\ca\CommunityConfigurationProject_E\Gameplay_ActualModelsOfWeaponMagazinesVisibleOnTheGround\p3d\30Rnd_556x45_G36.p3d";
 	descriptionshort = "Caliber: 5.56x45 mm NATO <br/>Rounds: 30  <br/>Used in: G36 compatible Weapons";
 	ammo="B_556x45_Ball";
 	count=30;
@@ -604,7 +608,7 @@ class R3F_25Rnd_556x45_FAMAS_bt: R3F_25Rnd_556x45_FAMAS {
 class 200Rnd_556x45_M249_Empty: emptiedMagazine {
 	displayname = "M249 Mag (Empty)";
 	picture="\CA\weapons\data\equip\m_m249_ca.paa";
-	model = "\ca\weapons\AmmoBoxes\Proxy_UsBasicAmmoBoxSmall.p3d";
+	model = "\ca\CommunityConfigurationProject_E\Gameplay_ActualModelsOfWeaponMagazinesVisibleOnTheGround\p3d\200Rnd_556x45_M249.p3d";
 	type="2*		256";
 	descriptionshort = "Caliber: 5.56x45 mm NATO <br/>Rounds: 200  <br/>Used in: M249";
 	scope = 2;
@@ -636,7 +640,7 @@ class 200Rnd_556x45_M249: CA_Magazine
 	scope=2;
 	displayname = "M249 Mag";
 	picture="\CA\weapons\data\equip\m_m249_ca.paa";
-	model = "\ca\weapons\AmmoBoxes\Proxy_UsBasicAmmoBoxSmall.p3d";
+	model = "\ca\CommunityConfigurationProject_E\Gameplay_ActualModelsOfWeaponMagazinesVisibleOnTheGround\p3d\200Rnd_556x45_M249.p3d";
 	descriptionshort = "Caliber: 5.56x45 mm NATO <br/>Rounds: 200  <br/>Used in: M249";
 	ammo="B_556x45_Ball";
 	type = 2*		256;

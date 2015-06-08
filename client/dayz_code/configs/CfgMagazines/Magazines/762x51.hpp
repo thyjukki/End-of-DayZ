@@ -416,7 +416,7 @@ class 100Rnd_762x51_M240_Empty: emptiedMagazine
 	scope=2;
 	displayName="M240 Mag (Empty)";
 	picture = "\CA\weapons\data\equip\m_m240_ca.paa";
-	model = "\ca\weapons\AmmoBoxes\Proxy_UsBasicAmmoBoxSmall.p3d";
+	model = "\ca\CommunityConfigurationProject_E\Gameplay_ActualModelsOfWeaponMagazinesVisibleOnTheGround\p3d\100Rnd_762x51_M240.p3d";
 	descriptionShort = "Caliber: 7.62x51mm NATO<br/>Rounds: 100<br/>Used in: M240";
 	type = "2*		256";
 	class ammoType
@@ -447,7 +447,7 @@ class 100Rnd_762x51_M240: CA_Magazine
 	scope=2;
 	displayName="M240 Mag";
 	picture = "\CA\weapons\data\equip\m_m240_ca.paa";
-	model = "\ca\weapons\AmmoBoxes\Proxy_UsBasicAmmoBoxSmall.p3d";
+	model = "\ca\CommunityConfigurationProject_E\Gameplay_ActualModelsOfWeaponMagazinesVisibleOnTheGround\p3d\100Rnd_762x51_M240.p3d";
 	descriptionShort = "Caliber: 7.62x51mm NATO<br/>Rounds: 100<br/>Used in: M240";
 	ammo="B_762x51_Ball";
 	type = "2*		256";

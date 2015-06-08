@@ -3,6 +3,7 @@ class 8Rnd_9x18_Makarov_Empty: emptiedMagazine {
 	descriptionshort = "Caliber: 9x18 mm Makarov <br/>Rounds: 8 <br/>Used in: Makarov";
 	displayname = "Makarov Mag (Empty)";
 	picture = "\Ca\weapons\Data\Equip\m_makarov_CA.paa";
+	model = "\ca\CommunityConfigurationProject_E\Gameplay_ActualModelsOfWeaponMagazinesVisibleOnTheGround\p3d\8Rnd_9x18_Makarov.p3d";
 	scope = 2;
 	type = 16;
 	class ammoType
@@ -33,6 +34,7 @@ class 8Rnd_9x18_Makarov: CA_Magazine
 	scope=2;
 	displayName="Makarov Mag";
 	picture="\Ca\weapons\Data\Equip\m_makarov_CA.paa";
+	model = "\ca\CommunityConfigurationProject_E\Gameplay_ActualModelsOfWeaponMagazinesVisibleOnTheGround\p3d\8Rnd_9x18_Makarov.p3d";
 	descriptionShort="Caliber: 9x18 mm Makarov <br/>Rounds: 8 <br/>Used in: Makarov";
 	type=16;
 	ammo="B_9x18_Ball";
@@ -142,7 +144,6 @@ class RH_20Rnd_9x18_apsSD: RH_20Rnd_9x18_aps {
 	baseBullet = 9x18_SD_x;
 	initSpeed=310;
 	ammo="B_9x18_SD";
-	picture = "\z\addons\dayz_communityweapons\magazines\data\m_makarovsd_ca.paa";
 	displayName="APS SD mag";
 	displayNameShort="SD";
 };

@@ -7,9 +7,9 @@ class 7Rnd_45ACP_1911_Empty: emptiedMagazine
 {
 	scope=2;
 	displayName="M1911 Mag (Empty)";
-	picture="\CA\weapons\data\equip\m_colt1911_ca.paa";
+	picture="\RH_de\inv\m_colt.paa";
+	model="\RH_de\mags\mag_kim.p3d";
 	description = "Caliber: .45 ACP<br/>Rounds: 7<br/>Used in: M1911";
-	model = "\dayz_equip\models\ammo_1911.p3d";
 	type=16;
 	class ammoType
 	{
@@ -35,8 +35,8 @@ class 7Rnd_45ACP_1911: CA_Magazine
 {
 	scope=2;
 	displayName="M1911 mag";
-	picture="\CA\weapons\data\equip\m_colt1911_ca.paa";
-	model = "\dayz_equip\models\ammo_1911.p3d";
+	picture="\RH_de\inv\m_colt.paa";
+	model="\RH_de\mags\mag_kim.p3d";
 	description = "Caliber: .45 ACP<br/>Rounds: 7<br/>Used in: M1911";
 	type=16;
 	ammo="RH_45ACP";
@@ -557,6 +557,7 @@ class KPFS_30Rnd_45ACP_Thompson_Empty: emptiedMagazine
 	scope=2;
 	displayName="Thompson Mag (Empty)";
 	picture="\kpfs_weapons2\data\icons\m_uzi_ca.paa";
+	model="\RH_de\mags\mag_muzi.p3d";
 	descriptionShort="Caliber: .45 ACP<br/>Rounds: 30<br/>Used in: M1 Thompson";
 	class ammoType
 	{
@@ -586,6 +587,7 @@ class KPFS_30Rnd_45ACP_Thompson: CA_Magazine
 	count=30;
 	initSpeed=260;
 	picture="\kpfs_weapons2\data\icons\m_uzi_ca.paa";
+	model="\RH_de\mags\mag_muzi.p3d";
 	descriptionShort="Caliber: .45 ACP<br/>Rounds: 30<br/>Used in: M1 Thompson";
 	baseBullet = 45ACP_x;
 	class ItemActions {

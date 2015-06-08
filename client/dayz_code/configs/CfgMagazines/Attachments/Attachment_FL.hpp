@@ -9,13 +9,4 @@ class Attachment_FL : CA_Magazine
 	
 	displayName = $STR_DZ_ATT_FL_RFL_NAME;
 	descriptionShort = $STR_DZ_ATT_FL_RFL_DESC;
-	
-	class ItemActions
-	{
-		class AttachToPrimary
-		{
-			text = $STR_DZ_ATT_ACT_TO_PRIMARY;
-			script = "; [_id,1] call player_attachAttachment";
-		};
-	};
 };

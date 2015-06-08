@@ -823,27 +823,6 @@ class CfgMagazines {
 		descriptionShort = $STR_EQUIP_DESC_LEVER;
 	};
 	
-	class 20Rnd_556x45_Stanag : CA_Magazine {
-		scope = public;
-		displayName = "20Rnd. STANAG";
-		picture = "\ca\weapons\data\equip\m_20stanag_CA.paa";
-		ammo = "B_556x45_Ball";
-		count = 20;
-		initSpeed = 930;
-		tracersEvery = 0;
-		descriptionShort = "Caliber: 5.56x45 mm NATO <br/>Rounds: 20  <br/>Used in: M249 SAW, M4A1, M16A4";
-	};
-	
-	//TODO(Jukki) Remove
-	class 30Rnd_556x45_Stanag : 20Rnd_556x45_Stanag {
-		displayName = "30Rnd. STANAG";
-		picture = "\ca\weapons\data\equip\m_30stanag_CA.paa";
-		model = "\dayz_equip\models\mag30.p3d";
-		count = 30;
-		tracersEvery = 0;
-		descriptionShort = "Caliber: 5.56x45 mm NATO <br/>Rounds: 30  <br/>Used in: M4A1, M249, M16A4, Mk12";
-	};
-	
 	class 10x_303 : CA_Magazine {
 		scope = public;
 		displayName = "Lee Enfield Mag.";
@@ -879,15 +858,6 @@ class CfgMagazines {
 		sound[] = {"\ca\Weapons\Data\Sound\M21_single_shot_v3", 10, 1, 1600};
 		reloadMagazineSound[] = {"\ca\Weapons\Data\Sound\M21_reload_v4", 0.01, 1, 10};
 		descriptionShort = "Caliber: 7.62x51mm NATO <br/>Rounds: 5 <br/>Used in: M24, M40A3";
-		
-		class ItemActions {
-			class ReloadMag {
-				text = "Combine for DMR";
-				script = "spawn player_reloadMag;";
-				use[] = {"5Rnd_762x51_M24", "5Rnd_762x51_M24", "5Rnd_762x51_M24", "5Rnd_762x51_M24"};
-				output[] = {"20Rnd_762x51_DMR"};
-			};
-		};
 	};
 	
 	class 10Rnd_127x99_m107 : CA_Magazine {

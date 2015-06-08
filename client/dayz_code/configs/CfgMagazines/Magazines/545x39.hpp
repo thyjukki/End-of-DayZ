@@ -3,6 +3,7 @@ class 30Rnd_545x39_AK_Empty: emptiedMagazine {
 	displayname = "AK-74 Mag (Empty)";
 	descriptionshort = "Caliber: 5.45x39mm <br/>Rounds: 30 <br/>Used in: AK-74 based weapons";
 	picture = "\z\addons\dayz_communityweapons\magazines\data\m_ak74_ca.paa";
+	model = "\ca\CommunityConfigurationProject_E\Gameplay_ActualModelsOfWeaponMagazinesVisibleOnTheGround\p3d\30Rnd_545x39_AK.p3d";
 	scope = 2;
 	class ammoType
 	{
@@ -33,6 +34,7 @@ class 30Rnd_545x39_AK: CA_Magazine
 	displayname = "AK-74 Mag";
 	descriptionshort = "Caliber: 5.45x39mm <br/>Rounds: 30 <br/>Used in: AK-74 based weapons";
 	picture = "\z\addons\dayz_communityweapons\magazines\data\m_ak74_ca.paa";
+	model = "\ca\CommunityConfigurationProject_E\Gameplay_ActualModelsOfWeaponMagazinesVisibleOnTheGround\p3d\30Rnd_545x39_AK.p3d";
 	ammo="B_545x39_Ball";
 	count=30;
 	initSpeed=900;
@@ -202,6 +204,7 @@ class 75Rnd_545x39_RPK_Empty: 30Rnd_545x39_AK_Empty {
 	displayname = "AK-74 Drum Mag (Empty)";
 	descriptionshort = "Caliber: 5.45x39mm <br/>Rounds: 75 <br/>Used in: AK-74 based weapons";
 	picture="\CA\weapons\AK\data\equip\M_RPK_74_CA.paa";
+	model="\RH_aks\mags\mag_rpk.p3d";
 	scope = 2;
 	class ammoType
 	{
@@ -232,6 +235,7 @@ class 75Rnd_545x39_RPK: CA_Magazine
 	displayname = "AK-74 Drum Mag";
 	descriptionshort = "Caliber: 5.45x39mm <br/>Rounds: 75 <br/>Used in: AK-74 based weapons";
 	picture="\CA\weapons\AK\data\equip\M_RPK_74_CA.paa";
+	model="\RH_aks\mags\mag_rpk.p3d";
 	ammo="B_545x39_Ball";
 	count=75;
 	initSpeed=900;
