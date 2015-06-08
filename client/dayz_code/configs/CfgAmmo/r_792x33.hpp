@@ -1,4 +1,4 @@
-class B_792x33_Ball: B_792x33_Ball
+class B_792x33_Ball: B_762x54_Ball
 {
 	hit=8;
 	indirectHit=0;
