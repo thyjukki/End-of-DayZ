@@ -1279,6 +1279,26 @@ class CfgWeapons
 		{
 			class Kolimator;
 		};
+		magazines[] = {
+			"20Rnd_556x45_Stanag",
+			"20Rnd_556x45_StanagSD",
+			"20Rnd_556x45_Stanag_hp",
+			"20Rnd_556x45_Stanag_tracer",
+			"20Rnd_556x45_Stanag_rubber",
+			"20Rnd_556x45_Stanag_bt",
+			"30Rnd_556x45_Stanag",
+			"30Rnd_556x45_StanagSD",
+			"30Rnd_556x45_Stanag_hp",
+			"30Rnd_556x45_Stanag_tracer",
+			"30Rnd_556x45_Stanag_rubber",
+			"30Rnd_556x45_Stanag_bt",
+			"100Rnd_556x45_BetaCMag",
+			"100Rnd_556x45_BetaCMagSD",
+			"100Rnd_556x45_BetaCMag_hp",
+			"100Rnd_556x45_BetaCMag_tracer",
+			"100Rnd_556x45_BetaCMag_rubber",
+			"100Rnd_556x45_BetaCMag_bt"
+		};
 	};
 	class ukf_L86A2LSW: BAF_L86A2_ACOG
 	{
@@ -1499,7 +1519,40 @@ class CfgWeapons
 			disabled=1;
 		};
 	};
-	class BAF_L110A1_Aim;
+	class BAF_L110A1_Aim : Rifle
+	{
+		magazines[] = {
+			"200Rnd_556x45_L110A1",
+			"200Rnd_556x45_L110A1SD",
+			"200Rnd_556x45_L110A1_hp",
+			"200Rnd_556x45_L110A1_tracer",
+			"200Rnd_556x45_L110A1_rubber",
+			"200Rnd_556x45_L110A1_bt",
+			"100Rnd_556x45_M249",
+			"100Rnd_556x45_M249SD",
+			"100Rnd_556x45_M249_hp",
+			"100Rnd_556x45_M249_tracer",
+			"100Rnd_556x45_M249_rubber",
+			"100Rnd_556x45_M249_bt",
+			"200Rnd_556x45_M249SD",
+			"200Rnd_556x45_M249_hp",
+			"200Rnd_556x45_M249_tracer",
+			"200Rnd_556x45_M249_rubber",
+			"200Rnd_556x45_M249_bt",
+			"20Rnd_556x45_Stanag",
+			"20Rnd_556x45_StanagSD",
+			"20Rnd_556x45_Stanag_hp",
+			"20Rnd_556x45_Stanag_tracer",
+			"20Rnd_556x45_Stanag_rubber",
+			"20Rnd_556x45_Stanag_bt",
+			"30Rnd_556x45_Stanag",
+			"30Rnd_556x45_StanagSD",
+			"30Rnd_556x45_Stanag_hp",
+			"30Rnd_556x45_Stanag_tracer",
+			"30Rnd_556x45_Stanag_rubber",
+			"30Rnd_556x45_Stanag_bt"
+		};
+	};
 	class ukf_lmg: BAF_L110A1_Aim
 	{
 		magazines[] = {

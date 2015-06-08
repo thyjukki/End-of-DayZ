@@ -1,4 +1,4 @@
-class CfgPatches
+class CfgPatches//TODO(Jukki) Wierd bug with ammo
 {
 	class MIDF_Weapons
 	{

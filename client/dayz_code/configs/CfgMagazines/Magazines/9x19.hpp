@@ -354,7 +354,7 @@ class RH_13Rnd_9x19_bhp: CA_Magazine
 	emptyMag = "RH_13Rnd_9x19_bhp_Empty";
 };
 
-class RH_13Rnd_9x19_bhpSD: RH_13Rnd_9x19_bhp {
+class RH_13Rnd_9x19_bhp_sd: RH_13Rnd_9x19_bhp {
 	scope=2;
 	baseBullet = 9x19_SD_x;
 	initSpeed=320;

@@ -9,7 +9,7 @@ class CfgPatches
 		};
 		weapons[]=
 		{
-			"UKF_L115A3",
+			"UKF_L115A3",//TODO(Jukki) Ammo for this?!?
 			"UKF_L115A3_fgrip",
 			"UKF_L115A3_wdl",
 			"UKF_L115A3_wdl_fgrip",

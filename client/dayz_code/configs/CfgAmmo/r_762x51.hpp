@@ -9,7 +9,7 @@ class B_762x51_Ball : BulletBase
 	visibleFireTime = 3;
 	cost = 1.2;
 	airLock = 1;
-	model = "";
+	model = "\ca\Weapons\Data\bullettracer\tracer_red";
 	tracerScale = 0;
 	tracerStartTime = 0;
 	tracerEndTime = 0;

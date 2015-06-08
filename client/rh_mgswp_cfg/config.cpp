@@ -1614,6 +1614,15 @@ class CfgWeapons
 	class M14_EP1: Rifle
 	{
 		class Single;
+		magazines[] =
+		{
+			"20Rnd_762x51_DMR",
+			"20Rnd_762x51_DMRSD",
+			"20Rnd_762x51_DMR_hp",
+			"20Rnd_762x51_DMR_tracer",
+			"20Rnd_762x51_DMR_rubber",
+			"20Rnd_762x51_DMR_bt"
+		};
 	};
 	class RH_M14EBR: M14_EP1
 	{
@@ -1637,6 +1646,15 @@ class CfgWeapons
 		{
 			"Single",
 			"RH_Auto"
+		};
+		magazines[] =
+		{
+			"20Rnd_762x51_DMR",
+			"20Rnd_762x51_DMRSD",
+			"20Rnd_762x51_DMR_hp",
+			"20Rnd_762x51_DMR_tracer",
+			"20Rnd_762x51_DMR_rubber",
+			"20Rnd_762x51_DMR_bt"
 		};
 		opticsZoomMin=0.333330;
 		opticsZoomMax=1;
@@ -2172,12 +2190,72 @@ class CfgWeapons
 	};
 	class SCAR_Base: M16_base
 	{
+		magazines[] = {
+			"20Rnd_556x45_Stanag",
+			"20Rnd_556x45_StanagSD",
+			"20Rnd_556x45_Stanag_hp",
+			"20Rnd_556x45_Stanag_tracer",
+			"20Rnd_556x45_Stanag_rubber",
+			"20Rnd_556x45_Stanag_bt",
+			"30Rnd_556x45_Stanag",
+			"30Rnd_556x45_StanagSD",
+			"30Rnd_556x45_Stanag_hp",
+			"30Rnd_556x45_Stanag_tracer",
+			"30Rnd_556x45_Stanag_rubber",
+			"30Rnd_556x45_Stanag_bt",
+			"100Rnd_556x45_BetaCMag",
+			"100Rnd_556x45_BetaCMagSD",
+			"100Rnd_556x45_BetaCMag_hp",
+			"100Rnd_556x45_BetaCMag_tracer",
+			"100Rnd_556x45_BetaCMag_rubber",
+			"100Rnd_556x45_BetaCMag_bt"
+		};
 	};
 	class SCAR_L_Base: SCAR_Base
 	{
+		magazines[] = {
+			"20Rnd_556x45_Stanag",
+			"20Rnd_556x45_StanagSD",
+			"20Rnd_556x45_Stanag_hp",
+			"20Rnd_556x45_Stanag_tracer",
+			"20Rnd_556x45_Stanag_rubber",
+			"20Rnd_556x45_Stanag_bt",
+			"30Rnd_556x45_Stanag",
+			"30Rnd_556x45_StanagSD",
+			"30Rnd_556x45_Stanag_hp",
+			"30Rnd_556x45_Stanag_tracer",
+			"30Rnd_556x45_Stanag_rubber",
+			"30Rnd_556x45_Stanag_bt",
+			"100Rnd_556x45_BetaCMag",
+			"100Rnd_556x45_BetaCMagSD",
+			"100Rnd_556x45_BetaCMag_hp",
+			"100Rnd_556x45_BetaCMag_tracer",
+			"100Rnd_556x45_BetaCMag_rubber",
+			"100Rnd_556x45_BetaCMag_bt"
+		};
 	};
 	class SCAR_L_CQC: SCAR_L_Base
 	{
+		magazines[] = {
+			"20Rnd_556x45_Stanag",
+			"20Rnd_556x45_StanagSD",
+			"20Rnd_556x45_Stanag_hp",
+			"20Rnd_556x45_Stanag_tracer",
+			"20Rnd_556x45_Stanag_rubber",
+			"20Rnd_556x45_Stanag_bt",
+			"30Rnd_556x45_Stanag",
+			"30Rnd_556x45_StanagSD",
+			"30Rnd_556x45_Stanag_hp",
+			"30Rnd_556x45_Stanag_tracer",
+			"30Rnd_556x45_Stanag_rubber",
+			"30Rnd_556x45_Stanag_bt",
+			"100Rnd_556x45_BetaCMag",
+			"100Rnd_556x45_BetaCMagSD",
+			"100Rnd_556x45_BetaCMag_hp",
+			"100Rnd_556x45_BetaCMag_tracer",
+			"100Rnd_556x45_BetaCMag_rubber",
+			"100Rnd_556x45_BetaCMag_bt"
+		};
 	};
 	class RH_SCARL: SCAR_L_CQC
 	{
