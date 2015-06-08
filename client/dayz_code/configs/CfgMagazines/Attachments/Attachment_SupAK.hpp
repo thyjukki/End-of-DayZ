@@ -1,4 +1,4 @@
-class Attachment_Sup545 : CA_Magazine
+class Attachment_SupAK : CA_Magazine
 {
 	scope = public;
 	count = 1;

@@ -47,31 +47,6 @@ class CfgAmmo
 	{
 		model="\ca\weapons\nabojnice_127";
 	};
-	class R3F_556x45_Ball: BulletBase
-	{
-		hit=10;
-		typicalSpeed=930;
-		indirectHit=0;
-		indirectHitRange=0;
-		cost=1;
-		airFriction=-0.001625;
-		caliber=0.600000;
-		model="\ca\Weapons\Data\bullettracer\tracer_red";
-		tracerScale=1;
-		tracerStartTime=0.050000;
-		tracerEndTime=1;
-		nvgOnly=1;
-	};
-	class R3F_556x45_Ball_SD: R3F_556x45_Ball
-	{
-		hit=8;
-		typicalSpeed=330;
-		airFriction=-0.000400;
-		visibleFire=0.080000;
-		audibleFire=0.080000;
-		visibleFireTime=2;
-		tracerStartTime=-1;
-	};
 	class R3F_762x51_Ball: BulletBase
 	{
 		hit=15;
@@ -104,14 +79,6 @@ class CfgAmmo
 		hit=15;
 		airFriction=-0.002000;
 		caliber=1;
-		tracerEndTime=2;
-		nvgOnly=0;
-	};
-	class R3F_556x45_Minimi_Ball: R3F_556x45_Ball
-	{
-		hit=9;
-		airFriction=-0.002000;
-		caliber=0.750000;
 		tracerEndTime=2;
 		nvgOnly=0;
 	};
@@ -515,12 +482,12 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "R3F_Famas_F1_AIM";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "R3F_Famas_F1_EOT";
 			};
 		};
@@ -729,7 +696,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "R3F_Famas_F1";
 			};
 		};
@@ -788,14 +755,14 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "R3F_Famas_F1";
 			};
 			class UseAtt1{
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup556";
 				out = "R3F_Famas_F1_EOT_HG_SD";
 			};
 		};
@@ -854,7 +821,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup556";
 				out = "R3F_Famas_F1_EOT";
 			};
 		};
@@ -987,6 +954,7 @@ class CfgWeapons
 	};
 	class R3F_Famas_F1_J4_M203: R3F_Famas_F1_SUB
 	{
+		delete ItemActions;
 		displayName="$STR_R3F_Famas_F1_J4_M203";
 		descriptionShort="$STR_R3F_Famas_F1_J4_M203_DESC";
 		model="\r3f_armes\Famas_F1_J4_M203.p3d";
@@ -1055,6 +1023,7 @@ class CfgWeapons
 	};
 	class R3F_Famas_F1_J4_M203_SD: R3F_Famas_F1_J4_M203
 	{
+		delete ItemActions;
 		displayName="$STR_R3F_Famas_F1_J4_M203_SD";
 		descriptionShort="$STR_R3F_Famas_F1_J4_M203_SD_DESC";
 		model="\r3f_armes\Famas_F1_J4_M203_SD.p3d";
@@ -1140,6 +1109,7 @@ class CfgWeapons
 	};
 	class R3F_Famas_surb: R3F_Famas_F1_SUB
 	{
+		delete ItemActions;
 		displayName="$STR_R3F_Famas_surb";
 		descriptionShort="$STR_R3F_Famas_surb_DESC";
 		model="\r3f_armes\famas_surb.p3d";
@@ -1369,17 +1339,17 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Acog";
-				att = "AttAcog";
-				out = "R3F_Famas_G2_J4";
+				att = "Attachment_ACOG";
+				out = "R3F_Famas_G2_J4_HG";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "R3F_Famas_G2_AIM_HG";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "R3F_Famas_G2_EOT";
 			};
 		};
@@ -1491,17 +1461,17 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "R3F_Famas_G2_J4";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "R3F_Famas_G2_AIM_HG";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "R3F_Famas_G2_EOT";
 			};
 		};
@@ -1613,7 +1583,7 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach Holo";
 				script = "spawn player_removeAttchment;";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "R3F_Famas_G2";
 			};
 		};
@@ -1667,15 +1637,7 @@ class CfgWeapons
 	};
 	class R3F_Famas_G2_J4: R3F_Famas_G2_SUB
 	{
-		class ItemActions {
-			class UseAtt {
-				isAttachment = 1;
-				text = "Detach Acog";
-				script = "spawn player_removeAttchment;";
-				att = "AttAcog";
-				out = "R3F_Famas_G2";
-			};
-		};
+		delete ItemActions;
 		displayName="$STR_R3F_Famas_G2_J4";
 		descriptionShort="$STR_R3F_Famas_G2_J4_DESC";
 		model="\r3f_armes\Famas_G2_J4.p3d";
@@ -1731,6 +1693,15 @@ class CfgWeapons
 	};
 	class R3F_Famas_G2_J4_HG: R3F_Famas_G2_J4
 	{
+		class ItemActions {
+			class UseAtt {
+				isAttachment = 1;
+				text = "Detach Acog";
+				script = "spawn player_removeAttchment;";
+				att = "Attachment_ACOG";
+				out = "R3F_Famas_G2";
+			};
+		};
 		displayName="$STR_R3F_Famas_G2_J4_HG";
 		descriptionShort="$STR_R3F_Famas_G2_J4_HG_DESC";
 		model="\r3f_armes\Famas_G2_J4_HG.p3d";
@@ -1812,7 +1783,7 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach Aimpoint";
 				script = "spawn player_removeAttchment;";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "R3F_Famas_G2";
 			};
 		};
@@ -1870,6 +1841,7 @@ class CfgWeapons
 	};
 	class R3F_Famas_felin: R3F_Famas_G2_SUB
 	{
+		delete ItemActions;
 		displayName="$STR_R3F_Famas_felin";
 		descriptionShort="$STR_R3F_Famas_felin_DESC";
 		model="\r3f_armes\Famas_felin.p3d";

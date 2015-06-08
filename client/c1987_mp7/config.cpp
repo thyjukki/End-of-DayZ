@@ -64,55 +64,7 @@ class CfgAmmo
 		hit=5;
 	};
 };
-class CfgMagazines
-{
-	class Default;
-	class CA_Magazine;
-	class 40Rnd_46x30_mp7: CA_Magazine
-	{
-		scope=2;
-		displayName="40Rnd. MP7 Mag";
-		picture="\C1987_Mp7\equip\gui_mp7_40_mag.paa";
-		model="\C1987_Mp7\mp7_40_mag.p3d";
-		ammo="C1987_B_46x30_Ball";
-		count=40;
-		initSpeed=735;
-		descriptionShort="40Rnd. 4,6x30mm";
-	};
-	class 40Rnd_46x30_sd_mp7: CA_Magazine
-	{
-		scope=2;
-		displayName="40Rnd. MP7 SD Mag";
-		picture="\C1987_Mp7\equip\gui_mp7_40_mag.paa";
-		model="\C1987_Mp7\mp7_40_mag.p3d";
-		ammo="C1987_B_46x30_sd_Ball";
-		count=40;
-		initSpeed=700;
-		descriptionShort="40Rnd. 4,6x30mm SD";
-	};
-	class 20Rnd_46x30_mp7: CA_Magazine
-	{
-		scope=2;
-		displayName="20Rnd. MP7 Mag";
-		picture="\C1987_Mp7\equip\gui_mp7_20_mag.paa";
-		model="\C1987_Mp7\mp7_20_mag.p3d";
-		ammo="C1987_B_46x30_Ball";
-		count=20;
-		initSpeed=735;
-		descriptionShort="20Rnd. 4,6x30mm";
-	};
-	class 20Rnd_46x30_sd_mp7: CA_Magazine
-	{
-		scope=2;
-		displayName="20Rnd. MP7 SD Mag";
-		picture="\C1987_Mp7\equip\gui_mp7_20_mag.paa";
-		model="\C1987_Mp7\mp7_20_mag.p3d";
-		ammo="C1987_B_46x30_sd_Ball";
-		count=20;
-		initSpeed=700;
-		descriptionShort="20Rnd. 4,6x30mm SD";
-	};
-};
+
 class Mode_SemiAuto;
 class Mode_FullAuto;
 class CfgWeapons
@@ -778,22 +730,22 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "C1987_MP7_aim_t";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "C1987_MP7_eot_t";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "C1987_MP7_acog_t";
 			};
 			class UseAtt3 : UseAtt{
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "C1987_MP7_sd_t";
 			};
 		};
@@ -819,23 +771,23 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "C1987_MP7_aim_t";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "C1987_MP7_eot_t";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "C1987_MP7_acog_t";
 			};
 			class UseAtt3 : UseAtt{
 				text = "Detach Silencer";
 				script = "spawn player_removeAttchment;";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "C1987_MP7_t";
 			};
 		};
@@ -1103,13 +1055,13 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "C1987_MP7_t";
 			};
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "C1987_MP7_eot_sd_t";
 			};
 		};
@@ -1135,12 +1087,12 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "C1987_MP7_sd_t";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "C1987_MP7_eot_t";
 			};
 		};
@@ -1224,13 +1176,13 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAim";
+				att = "Attachment_CCO";
 				out = "C1987_MP7_t";
 			};
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "C1987_MP7_aim_sd_t";
 			};
 		};
@@ -1256,12 +1208,12 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAim";
+				att = "Attachment_CCO";
 				out = "C1987_MP7_sd_t";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "C1987_MP7_aim_t";
 			};
 		};
@@ -1345,13 +1297,13 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "C1987_MP7_t";
 			};
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "C1987_MP7_acog_sd_t";
 			};
 		};
@@ -1408,12 +1360,12 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "C1987_MP7_sd_t";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "C1987_MP7_acog_t";
 			};
 		};

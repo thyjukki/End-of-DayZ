@@ -1825,7 +1825,7 @@ class cfgWeapons {
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "vil_VAL_C";
 			};
 		};
@@ -1903,7 +1903,7 @@ class cfgWeapons {
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Kobra";
-				att = "AttKobra";
+				att = "Attachment_Kobra";
 				out = "vil_VAL";
 			};
 		};
@@ -4238,12 +4238,12 @@ class cfgWeapons {
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "vil_ak12_ap";
 			};
 			class UseAtt1 : UseAtt{
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "vil_ak12_gp";
 			};
 		};
@@ -4266,7 +4266,7 @@ class cfgWeapons {
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "vil_ak12";
 			};
 		};
@@ -4291,7 +4291,7 @@ class cfgWeapons {
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Attach GP30";
-				att = "AttGP30";
+				att = "Attachment_GP25";
 				out = "vil_ak12";
 			};
 		};

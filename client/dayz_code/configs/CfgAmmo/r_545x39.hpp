@@ -6,7 +6,7 @@ class B_545x39_Ball : BulletBase
 	cost=1;
 	airFriction=-0.001412;
 	cartridge="FxCartridge_556";
-	model="";
+	model = "\ca\Weapons\Data\bullettracer\tracer_red";
 	tracerScale=0;
 	tracerStartTime=0;
 	tracerEndTime=0;
@@ -23,7 +23,6 @@ class B_545x39_HP: B_545x39_Ball
 
 class B_545x39_TRACER: B_545x39_Ball
 {
-	model = "\ca\Weapons\Data\bullettracer\tracer_red";
 	tracerendtime = 1;
 	tracerscale = 1;
 	tracerstarttime = 0.05;

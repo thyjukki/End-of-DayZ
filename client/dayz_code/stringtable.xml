@@ -9885,10 +9885,10 @@
 		
 		<!-- 9mm Suppressor -->
 		<Key ID="STR_DZ_ATT_SUP9_NAME">
-			<Original>9mm Suppressor</Original>
+			<Original>Suppressor</Original>
 		</Key>
 		<Key ID="STR_DZ_ATT_SUP9_DESC">
-			<Original>9mm Sound suppressor</Original>
+			<Original>Universal Sound suppressor</Original>
 		</Key>
 		<Key ID="STR_DZ_ATT_SUP9_RMVE">
 			<Original>Remove Suppressor</Original>
@@ -9896,10 +9896,10 @@
 		
 		<!-- 5.56mm Suppressor -->
 		<Key ID="STR_DZ_ATT_SUP556_NAME">
-			<Original>5.56mm Suppressor</Original>
+			<Original>NATO Suppressor</Original>
 		</Key>
 		<Key ID="STR_DZ_ATT_SUP556_DESC">
-			<Original>5.56mm Sound suppressor</Original>
+			<Original>NATO suppressor</Original>
 		</Key>
 		<Key ID="STR_DZ_ATT_SUP556_RMVE">
 			<Original>Remove Suppressor</Original>
@@ -9907,10 +9907,10 @@
 		
 		<!-- 5.45mm Suppressor -->
 		<Key ID="STR_DZ_ATT_SUP545_NAME">
-			<Original>5.45mm Suppressor</Original>
+			<Original>AK Suppressor</Original>
 		</Key>
 		<Key ID="STR_DZ_ATT_SUP545_DESC">
-			<Original>5.45mm Sound suppressor</Original>
+			<Original>AK suppressor</Original>
 		</Key>
 		<Key ID="STR_DZ_ATT_SUP545_RMVE">
 			<Original>Remove Suppressor</Original>

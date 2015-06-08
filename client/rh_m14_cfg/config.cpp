@@ -69,102 +69,6 @@ class cfgWeapons
 	class MissileLaunche;
 	class MGun;
 	class Rifle;
-	class RH_m14_SUB: Rifle
-	{
-		scope=2;
-		model="\RH_m14\RH_m14.p3d";
-		picture="\RH_m14\inv\m14.paa";
-		UiPicture="\CA\weapons\data\Ico\i_regular_CA.paa";
-		optics=1;
-		opticsDisablePeripherialVision=1;
-		displayName="M14";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\Ca\weapons\data\Anim\M24.rtm"
-		};
-		reloadMagazineSound[]=
-		{
-			"\RH_m14\Sound\M14_Reload.wss",
-			0.056234,
-			1,
-			20
-		};
-		magazines[] =
-		{
-			"20Rnd_762x51_DMR",
-			"20Rnd_762x51_DMRSD",
-			"20Rnd_762x51_DMR_hp",
-			"20Rnd_762x51_DMR_tracer",
-			"20Rnd_762x51_DMR_rubber",
-			"20Rnd_762x51_DMR_bt"
-		};
-		modes[]=
-		{
-			"Single",
-			"FullAuto"
-		};
-		class Single: Mode_SemiAuto
-		{
-			begin1[]=
-			{
-				"\RH_m14\Sound\m14.wss",
-				1.778279,
-				1,
-				1000
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-			soundBurst=1;
-			soundContinuous=0;
-			multiplier=1;
-			burst=1;
-			dispersion=0.000071;
-			reloadTime=0.100000;
-			recoil="RH_M14Recoil";
-			recoilProne="RH_M14prRecoil";
-			aiRateOfFire=0.600000;
-			aiRateOfFireDistance=550;
-			minRange=2;
-			minRangeProbab=0.100000;
-			midRange=400;
-			midRangeProbab=0.700000;
-			maxRange=650;
-			maxRangeProbab=0.050000;
-		};
-		class FullAuto: Mode_FullAuto
-		{
-			begin1[]=
-			{
-				"\RH_m14\Sound\m14.wss",
-				1.778279,
-				1,
-				1000
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-			dispersion=0.000285;
-			reloadTime=0.100000;
-			recoil="RH_M14Recoil";
-			recoilProne="RH_M14prRecoil";
-			minRange=2;
-			minRangeProbab=0.100000;
-			midRange=60;
-			midRangeProbab=0.700000;
-			maxRange=90;
-			maxRangeProbab=0.050000;
-		};
-		class Library
-		{
-			libTextDesc="The M14 rifle more formally the United States Rifle, Caliber 7.62 mm, M14 is an American selective fire battle rifle firing 7.62 × 51 mm NATO ammunition. Although largely superseded in military use by the M16 rifle, it remains in limited front line service with the United States Army, Marine Corps, and Navy. The M14 also provides the basis for the M21 and XM25 sniper rifles not to be confused with the XM25 grenade launcher.Mk14 EBR is shorter, more tactical version of the M14, with a retractable stock and multiple rails for more accessories.";
-		};
-	};
 	class RH_m14: Rifle
 	{
 		class ItemActions {
@@ -172,22 +76,22 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m14acog";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m14aim";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m14eot";
 			};
 			class UseAtt3 : UseAtt{
 				text = "Attach Scope";
-				att = "AttScope";
+				att = "Attachment_SCOPED";
 				out = "RH_m21";
 			};
 		};
@@ -285,14 +189,14 @@ class cfgWeapons
 			libTextDesc="The M14 rifle more formally the United States Rifle, Caliber 7.62 mm, M14 is an American selective fire battle rifle firing 7.62 × 51 mm NATO ammunition. Although largely superseded in military use by the M16 rifle, it remains in limited front line service with the United States Army, Marine Corps, and Navy. The M14 also provides the basis for the M21 and XM25 sniper rifles not to be confused with the XM25 grenade launcher.Mk14 EBR is shorter, more tactical version of the M14, with a retractable stock and multiple rails for more accessories.";
 		};
 	};
-	class RH_m14acog: RH_m14_SUB
+	class RH_m14acog: RH_m14
 	{
 		class ItemActions {
 			class UseAtt{
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m14";
 			};
 		};
@@ -341,14 +245,14 @@ class cfgWeapons
 			};
 		};
 	};
-	class RH_m14aim: RH_m14_SUB
+	class RH_m14aim: RH_m14
 	{
 		class ItemActions {
 			class UseAtt{
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m14";
 			};
 		};
@@ -361,14 +265,14 @@ class cfgWeapons
 		distanceZoomMin=100;
 		distanceZoomMax=100;
 	};
-	class RH_m14eot: RH_m14_SUB
+	class RH_m14eot: RH_m14
 	{
 		class ItemActions {
 			class UseAtt{
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m14";
 			};
 		};
@@ -381,14 +285,14 @@ class cfgWeapons
 		distanceZoomMin=100;
 		distanceZoomMax=100;
 	};
-	class RH_m21: RH_m14_SUB
+	class RH_m21: RH_m14
 	{
 		class ItemActions {
 			class UseAtt{
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Scope";
-				att = "AttScope";
+				att = "Attachment_SCOPED";
 				out = "RH_m14";
 			};
 		};
@@ -418,8 +322,32 @@ class cfgWeapons
 			"Single"
 		};
 	};
-	class RH_sc2: RH_m14_SUB
+	class RH_sc2: RH_m14
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_useAttchment;";
+				text = "Attach Acog";
+				att = "Attachment_ACOG";
+				out = "RH_sc2acog";
+			};
+			class UseAtt1 : UseAtt{
+				text = "Attach Aimpoint";
+				att = "Attachment_CCO";
+				out = "RH_sc2aim";
+			};
+			class UseAtt2 : UseAtt{
+				text = "Attach Holo";
+				att = "Attachment_Holo";
+				out = "RH_sc2eot";
+			};
+			class UseAtt3 : UseAtt{
+				text = "Attach Scope";
+				att = "Attachment_SCOPED";
+				out = "RH_sc2sp";
+			};
+		};
 		scope=2;
 		model="\RH_m14\RH_sc2.p3d";
 		picture="\RH_m14\inv\sc2.paa";
@@ -428,6 +356,15 @@ class cfgWeapons
 	};
 	class RH_sc2acog: RH_sc2
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Acog";
+				att = "Attachment_ACOG";
+				out = "RH_sc2";
+			};
+		};
 		scope=2;
 		model="\RH_m14\RH_sc2acog.p3d";
 		picture="\RH_m14\inv\sc2acog.paa";
@@ -475,6 +412,15 @@ class cfgWeapons
 	};
 	class RH_sc2aim: RH_sc2
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Aimpoint";
+				att = "Attachment_CCO";
+				out = "RH_sc2";
+			};
+		};
 		scope=2;
 		model="\RH_m14\RH_sc2aim.p3d";
 		picture="\RH_m14\inv\sc2aim.paa";
@@ -486,6 +432,15 @@ class cfgWeapons
 	};
 	class RH_sc2eot: RH_sc2
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Holo";
+				att = "Attachment_Holo";
+				out = "RH_sc2";
+			};
+		};
 		scope=2;
 		model="\RH_m14\RH_sc2eot.p3d";
 		picture="\RH_m14\inv\sc2eot.paa";
@@ -497,6 +452,7 @@ class cfgWeapons
 	};
 	class RH_sc2shd: RH_sc2
 	{
+		delete itemActions;
 		scope=2;
 		model="\RH_m14\RH_sc2shd.p3d";
 		picture="\RH_m14\inv\sc2shd.paa";
@@ -512,6 +468,15 @@ class cfgWeapons
 	};
 	class RH_sc2sp: RH_sc2
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Scope";
+				att = "Attachment_SCOPED";
+				out = "RH_sc2";
+			};
+		};
 		scope=2;
 		model="\RH_m14\RH_sc2sp.p3d";
 		picture="\RH_m14\inv\sc2sp.paa";
@@ -525,8 +490,32 @@ class cfgWeapons
 		optics=1;
 		displayName="Socom II SP";
 	};
-	class RH_m1s: RH_m14_SUB
+	class RH_m1s: RH_m14
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_useAttchment;";
+				text = "Attach Acog";
+				att = "Attachment_ACOG";
+				out = "RH_m1sacog";
+			};
+			class UseAtt1 : UseAtt{
+				text = "Attach Aimpoint";
+				att = "Attachment_CCO";
+				out = "RH_m1saim";
+			};
+			class UseAtt2 : UseAtt{
+				text = "Attach Holo";
+				att = "Attachment_Holo";
+				out = "RH_m1seot";
+			};
+			class UseAtt3 : UseAtt{
+				text = "Attach Scope";
+				att = "Attachment_SCOPED";
+				out = "RH_m1ssp";
+			};
+		};
 		scope=2;
 		model="\RH_m14\RH_m1s.p3d";
 		picture="\RH_m14\inv\m1s.paa";
@@ -540,6 +529,15 @@ class cfgWeapons
 	};
 	class RH_m1sacog: RH_m1s
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Acog";
+				att = "Attachment_ACOG";
+				out = "RH_m1s";
+			};
+		};
 		scope=2;
 		model="\RH_m14\RH_m1sacog.p3d";
 		picture="\RH_m14\inv\m1sacog.paa";
@@ -587,6 +585,15 @@ class cfgWeapons
 	};
 	class RH_m1saim: RH_m1s
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Aimpoint";
+				att = "Attachment_CCO";
+				out = "RH_m1s";
+			};
+		};
 		scope=2;
 		model="\RH_m14\RH_m1saim.p3d";
 		picture="\RH_m14\inv\m1saim.paa";
@@ -598,6 +605,15 @@ class cfgWeapons
 	};
 	class RH_m1seot: RH_m1s
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Holo";
+				att = "Attachment_Holo";
+				out = "RH_m1s";
+			};
+		};
 		scope=2;
 		model="\RH_m14\RH_m1seot.p3d";
 		picture="\RH_m14\inv\m1seot.paa";
@@ -609,6 +625,7 @@ class cfgWeapons
 	};
 	class RH_m1sshd: RH_m1s
 	{
+		delete itemActions;
 		scope=2;
 		model="\RH_m14\RH_m1sshd.p3d";
 		picture="\RH_m14\inv\m1sshd.paa";
@@ -624,6 +641,15 @@ class cfgWeapons
 	};
 	class RH_m1ssp: RH_m1s
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Scope";
+				att = "Attachment_SCOPED";
+				out = "RH_m1s";
+			};
+		};
 		scope=2;
 		model="\RH_m14\RH_m1ssp.p3d";
 		picture="\RH_m14\inv\m1ssp.paa";
@@ -637,8 +663,32 @@ class cfgWeapons
 		optics=1;
 		displayName="M1SE1 SP";
 	};
-	class RH_m1st: RH_m14_SUB
+	class RH_m1st: RH_m14
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_useAttchment;";
+				text = "Attach Acog";
+				att = "Attachment_ACOG";
+				out = "RH_m1stacog";
+			};
+			class UseAtt1 : UseAtt{
+				text = "Attach Aimpoint";
+				att = "Attachment_CCO";
+				out = "RH_m1staim";
+			};
+			class UseAtt2 : UseAtt{
+				text = "Attach Holo";
+				att = "Attachment_Holo";
+				out = "RH_m1steot";
+			};
+			class UseAtt3 : UseAtt{
+				text = "Attach Scope";
+				att = "Attachment_SCOPED";
+				out = "RH_m1stsp";
+			};
+		};
 		scope=2;
 		model="\RH_m14\RH_m1st.p3d";
 		picture="\RH_m14\inv\m1st.paa";
@@ -652,6 +702,15 @@ class cfgWeapons
 	};
 	class RH_m1stacog: RH_m1st
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Acog";
+				att = "Attachment_ACOG";
+				out = "RH_m1st";
+			};
+		};
 		scope=2;
 		model="\RH_m14\RH_m1stacog.p3d";
 		picture="\RH_m14\inv\m1stacog.paa";
@@ -699,6 +758,15 @@ class cfgWeapons
 	};
 	class RH_m1staim: RH_m1st
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Aimpoint";
+				att = "Attachment_CCO";
+				out = "RH_m1st";
+			};
+		};
 		scope=2;
 		model="\RH_m14\RH_m1staim.p3d";
 		picture="\RH_m14\inv\m1staim.paa";
@@ -710,6 +778,15 @@ class cfgWeapons
 	};
 	class RH_m1steot: RH_m1st
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Holo";
+				att = "Attachment_Holo";
+				out = "RH_m1st";
+			};
+		};
 		scope=2;
 		model="\RH_m14\RH_m1steot.p3d";
 		picture="\RH_m14\inv\m1steot.paa";
@@ -721,6 +798,7 @@ class cfgWeapons
 	};
 	class RH_m1stshd: RH_m1st
 	{
+		delete itemActions;
 		scope=2;
 		model="\RH_m14\RH_m1stshd.p3d";
 		picture="\RH_m14\inv\m1stshd.paa";
@@ -736,6 +814,15 @@ class cfgWeapons
 	};
 	class RH_m1stsp: RH_m1st
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Scope";
+				att = "Attachment_SCOPED";
+				out = "RH_m1st";
+			};
+		};
 		scope=2;
 		model="\RH_m14\RH_m1stsp.p3d";
 		picture="\RH_m14\inv\m1stsp.paa";

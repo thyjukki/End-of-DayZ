@@ -40,22 +40,7 @@ class CfgAmmo
 		cartridge="FxCartridge_762";
 	};
 };
-class CfgMagazines
-{
-	class Default;
-	class CA_Magazine;
-	class 20Rnd_762x51_g3: CA_Magazine
-	{
-		scope=2;
-		displayName="G3-Mag";
-		model="\C1987_g3\mag.p3d";
-		picture="\C1987_g3\equip\mag.paa";
-		descriptionShort="20Rnd. 7.62x51mm. for the G3 Series.";
-		ammo="B_762x51_noTracer";
-		count=20;
-		initSpeed=780;
-	};
-};
+
 class CfgWeapons
 {
 	class M16a4;
@@ -66,22 +51,22 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Scope";
-				att = "AttScope";
+				att = "Attachment_SCOPED";
 				out = "C1987_G3SG1";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "C1987_G3_acog";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "C1987_G3_aimshot";
 			};
 			class UseAtt3 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_HOLO";
 				out = "C1987_G3_eotech";
 			};
 		};
@@ -308,7 +293,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "C1987_G3";
 			};
 		};
@@ -426,7 +411,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "C1987_G3";
 			};
 		};
@@ -544,7 +529,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "C1987_G3";
 			};
 		};
@@ -669,7 +654,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Scope";
-				att = "AttScope";
+				att = "Attachment_SCOPED";
 				out = "C1987_G3";
 			};
 		};

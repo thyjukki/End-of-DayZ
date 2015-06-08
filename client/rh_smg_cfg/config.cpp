@@ -124,35 +124,7 @@ class CfgAmmo
 		caliber=0.5;
 	};
 };
-class CfgMagazines
-{
-	class Default;
-	class CA_Magazine;
-	class 30Rnd_9x19_MP5;
-	class 30Rnd_9x19_MP5SD;
-	
-	// TODO(Jukki)
-	class RH_46x30mm_40RND_Mag: 30Rnd_9x19_MP5
-	{
-		scopeWeapon=0;
-		scopeMagazine=2;
-		ammo="RH_smg_57x28mm_Round";
-		displayName="HK MP7 Magazine";
-		model="\RH_smg\mags\mag_mp7.p3d";
-		picture="\RH_smg\inv\m_mp7.paa";
-		count=40;
-	};
-	class RH_46x30mm_40RND_SD_Mag: 30Rnd_9x19_MP5SD
-	{
-		scopeWeapon=0;
-		scopeMagazine=2;
-		ammo="RH_smg_57x28mm_SD_Round";
-		displayName="HK MP7 SD Magazine";
-		model="\RH_smg\mags\mag_mp7.p3d";
-		picture="\RH_smg\inv\m_mp7.paa";
-		count=40;
-	};
-};
+
 class Mode_SemiAuto
 {
 };
@@ -211,12 +183,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_HK53aim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_HK53eot";
 			};
 		};
@@ -303,7 +275,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_HK53";
 			};
 		};
@@ -321,7 +293,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_HK53";
 			};
 		};
@@ -334,6 +306,7 @@ class cfgWeapons
 	};
 	class RH_HK53RFX: RH_HK53
 	{
+		delete ItemActions;
 		displayName="HK 53 RFX";
 		model="\RH_smg\RH_HK53RFX.p3d";
 		picture="\RH_smg\inv\HK53RFX.paa";
@@ -345,12 +318,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_mp5a4aim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_mp5a4eot";
 			};
 		};
@@ -486,7 +459,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_mp5a4";
 			};
 		};
@@ -505,7 +478,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_mp5a4";
 			};
 		};
@@ -532,17 +505,17 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_mp5a5aim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_mp5a5eot";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach EOD";
-				att = "AttLauncher";
+				att = "Attachment_Sup";
 				out = "RH_mp5a5eod";
 			};
 		};
@@ -557,13 +530,13 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_mp5a5";
 			};
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach EOD";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_mp5a5eodaim";
 			};
 		};
@@ -581,13 +554,13 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_mp5a5";
 			};
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach EOD";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_mp5a5eodeot";
 			};
 		};
@@ -600,6 +573,7 @@ class cfgWeapons
 	};
 	class RH_mp5a5RFX: RH_mp5a5
 	{
+		delete ItemActions;
 		displayname="HK MP5A5 RFX";
 		model="\RH_smg\RH_mp5a5RFX.p3d";
 		picture="\RH_smg\inv\mp5a5RFX.paa";
@@ -609,6 +583,7 @@ class cfgWeapons
 	};
 	class RH_mp5a5ris: RH_mp5a5
 	{
+		delete ItemActions;
 		displayName="HK MP5A5 RIS";
 		model="\RH_smg\RH_mp5a5ris.p3d";
 		picture="\RH_smg\inv\mp5a5ris.paa";
@@ -620,6 +595,7 @@ class cfgWeapons
 	};
 	class RH_mp5a5risaim: RH_mp5a5ris
 	{
+		delete ItemActions;
 		displayname="HK MP5A5 RIS CCO";
 		model="\RH_smg\RH_mp5a5risaim.p3d";
 		picture="\RH_smg\inv\mp5a5risaim.paa";
@@ -629,6 +605,7 @@ class cfgWeapons
 	};
 	class RH_mp5a5riseot: RH_mp5a5ris
 	{
+		delete ItemActions;
 		displayname="HK MP5A5 RIS Holo";
 		model="\RH_smg\RH_mp5a5riseot.p3d";
 		picture="\RH_smg\inv\mp5a5riseot.paa";
@@ -638,6 +615,7 @@ class cfgWeapons
 	};
 	class RH_mp5a5risRFX: RH_mp5a5ris
 	{
+		delete ItemActions;
 		displayname="HK MP5A5 RIS RFX";
 		model="\RH_smg\RH_mp5a5risRFX.p3d";
 		picture="\RH_smg\inv\mp5a5risRFX.paa";
@@ -652,18 +630,18 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_mp5a5eodaim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_mp5a5eodeot";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach EOD";
-				att = "AttLauncher";
+				att = "Attachment_Sup";
 				out = "RH_mp5a5";
 			};
 		};
@@ -677,13 +655,10 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_MPMuzzle",
+			"this",
 			"RH_M203Muzzle"
 		};
 		dexterity=1.59;
-		class RH_MPMuzzle: RH_mp5a5
-		{
-		};
 		class RH_M203Muzzle: M203Muzzle
 		{
 			displayName="$STR_DN_M203";
@@ -719,12 +694,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach EOD";
-				att = "AttLauncher";
+				att = "Attachment_Sup";
 				out = "RH_mp5a5aim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_mp5a5eod";
 			};
 		};
@@ -742,12 +717,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach EOD";
-				att = "AttLauncher";
+				att = "Attachment_Sup";
 				out = "RH_mp5a5eot";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_mp5a5eod";
 			};
 		};
@@ -760,6 +735,7 @@ class cfgWeapons
 	};
 	class RH_mp5a5eodRFX: RH_mp5a5eod
 	{
+		delete ItemActions;
 		displayname="HK MP5A5 EOD RFX";
 		model="\RH_smg\RH_mp5a5eodRFX.p3d";
 		picture="\RH_smg\inv\mp5a5eodRFX.paa";
@@ -774,12 +750,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_mp5sd6aim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_mp5sd6eot";
 			};
 		};
@@ -849,7 +825,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_mp5sd6";
 			};
 		};
@@ -867,7 +843,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_mp5sd6";
 			};
 		};
@@ -880,6 +856,7 @@ class cfgWeapons
 	};
 	class RH_mp5sd6RFX: RH_mp5sd6
 	{
+		delete ItemActions;
 		displayName="HK MP5SD6 RFX";
 		model="\RH_smg\RH_mp5sd6RFX.p3d";
 		picture="\RH_smg\inv\mp5sd6rfx.paa";
@@ -889,12 +866,14 @@ class cfgWeapons
 	};
 	class RH_mp5sd6g: RH_mp5sd6
 	{
+		delete ItemActions;
 		displayName="HK MP5SD6 Gold";
 		model="\RH_smg\RH_mp5sd6g.p3d";
 		picture="\RH_smg\inv\mp5sd6g.paa";
 	};
 	class RH_mp5k: RH_mp5a5
 	{
+		delete ItemActions;
 		displayName="HK MP5K";
 		model="\RH_smg\RH_mp5k.p3d";
 		picture="\RH_smg\inv\mp5k.paa";
@@ -911,12 +890,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_mp5kpdwaim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_mp5kpdweot";
 			};
 		};
@@ -931,7 +910,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_mp5kpdw";
 			};
 		};
@@ -949,7 +928,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_mp5kpdw";
 			};
 		};
@@ -962,6 +941,7 @@ class cfgWeapons
 	};
 	class RH_mp5kpdwRFX: RH_mp5k
 	{
+		delete ItemActions;
 		displayName="HK Mp5k PDW RFX";
 		model="\RH_smg\RH_mp5kpdwRFX.p3d";
 		picture="\RH_smg\inv\mp5kpdwRFX.paa";
@@ -971,6 +951,25 @@ class cfgWeapons
 	};
 	class RH_kriss: RH_mp5a5
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_useAttchment;";
+				text = "Attach Aimpoint";
+				att = "Attachment_CCO";
+				out = "RH_krissaim";
+			};
+			class UseAtt1 : UseAtt{
+				text = "Attach Holo";
+				att = "Attachment_Holo";
+				out = "RH_krisseot";
+			};
+			class UseAtt2 : UseAtt{
+				text = "Attach Silencer";
+				att = "Attachment_Sup";
+				out = "RH_krisssd";
+			};
+		};
 		displayName="TDI Kriss";
 		model="\RH_smg\RH_kriss.p3d";
 		picture="\RH_smg\inv\kriss.paa";
@@ -1089,6 +1088,21 @@ class cfgWeapons
 	};
 	class RH_krissaim: RH_kriss
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Aimpoint";
+				att = "Attachment_CCO";
+				out = "RH_kriss";
+			};
+			class UseAtt1 : UseAtt{
+				script = "spawn player_useAttchment;";
+				text = "Attach Silencer";
+				att = "Attachment_Sup";
+				out = "RH_krisssdeot";
+			};
+		};
 		displayname="TDI Kriss CCO";
 		model="\RH_smg\RH_krissaim.p3d";
 		picture="\RH_smg\inv\krissaim.paa";
@@ -1098,6 +1112,21 @@ class cfgWeapons
 	};
 	class RH_krisseot: RH_kriss
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Holo";
+				att = "Attachment_Holo";
+				out = "RH_kriss";
+			};
+			class UseAtt1 : UseAtt{
+				script = "spawn player_useAttchment;";
+				text = "Attach Silencer";
+				att = "Attachment_Sup";
+				out = "RH_krisssdaim";
+			};
+		};
 		displayname="TDI Kriss Holo";
 		model="\RH_smg\RH_krisseot.p3d";
 		picture="\RH_smg\inv\krisseot.paa";
@@ -1107,6 +1136,7 @@ class cfgWeapons
 	};
 	class RH_krissRFX: RH_kriss
 	{
+		delete ItemActions;
 		displayname="TDI Kriss RFX";
 		model="\RH_smg\RH_krissRFX.p3d";
 		picture="\RH_smg\inv\krissRFX.paa";
@@ -1116,6 +1146,26 @@ class cfgWeapons
 	};
 	class RH_krisssd: RH_kriss
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_useAttchment;";
+				text = "Attach Aimpoint";
+				att = "Attachment_CCO";
+				out = "RH_krisssdaim";
+			};
+			class UseAtt1 : UseAtt{
+				text = "Attach Holo";
+				att = "Attachment_Holo";
+				out = "RH_krisssdeot";
+			};
+			class UseAtt2 : UseAtt{
+				script = "spawn player_removeAttchment;";
+				text = "Detach Silencer";
+				att = "Attachment_Sup";
+				out = "RH_kriss";
+			};
+		};
 		displayName="TDI Kriss SD";
 		model="\RH_smg\RH_krisssd.p3d";
 		picture="\RH_smg\inv\krisssd.paa";
@@ -1123,19 +1173,6 @@ class cfgWeapons
 		{
 			"OFP2_ManSkeleton",
 			"\RH_smg\Anim\NORRN_RH_Kris.rtm"
-		};
-		magazines[]=
-		{
-			"RH_45ACP_30RND_Mag",
-			"RH_45ACP_30RND_Mag_hp",
-			"RH_45ACP_30RND_Mag_tracer",
-			"RH_45ACP_30RND_Mag_rubber",
-			"RH_45ACP_30RND_Mag_bt",
-			"RH_45ACP_13RND_Mag",
-			"RH_45ACP_13RND_Mag_hp",
-			"RH_45ACP_13RND_Mag_tracer",
-			"RH_45ACP_13RND_Mag_rubber",
-			"RH_45ACP_13RND_Mag_bt"
 		};
 		fireLightDuration=0;
 		fireLightIntensity=0;
@@ -1172,6 +1209,20 @@ class cfgWeapons
 	};
 	class RH_krisssdaim: RH_krisssd
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Aimpoint";
+				att = "Attachment_CCO";
+				out = "RH_krisssd";
+			};
+			class UseAtt1 : UseAtt{
+				text = "Detach Silencer";
+				att = "Attachment_Sup";
+				out = "RH_krissaim";
+			};
+		};
 		displayname="TDI Kriss SD CCO";
 		model="\RH_smg\RH_krisssdaim.p3d";
 		picture="\RH_smg\inv\krisssdaim.paa";
@@ -1181,6 +1232,20 @@ class cfgWeapons
 	};
 	class RH_krisssdeot: RH_krisssd
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Holo";
+				att = "Attachment_HOLO";
+				out = "RH_krisssd";
+			};
+			class UseAtt1 : UseAtt{
+				text = "Detach Silencer";
+				att = "Attachment_Sup";
+				out = "RH_krisseot";
+			};
+		};
 		displayname="TDI Kriss SD Holo";
 		model="\RH_smg\RH_krisssdeot.p3d";
 		picture="\RH_smg\inv\krisssdeot.paa";
@@ -1190,6 +1255,7 @@ class cfgWeapons
 	};
 	class RH_krisssdRFX: RH_krisssd
 	{
+		delete ItemActions;
 		displayname="TDI Kriss SD RFX";
 		model="\RH_smg\RH_krisssdRFX.p3d";
 		picture="\RH_smg\inv\krisssdRFX.paa";
@@ -1312,6 +1378,7 @@ class cfgWeapons
 	};
 	class RH_uzig: RH_uzi
 	{
+		delete ItemActions;
 		displayName="UZI Gold";
 		model="\RH_smg\RH_uzig.p3d";
 		picture="\RH_smg\inv\uzig.paa";
@@ -1395,6 +1462,7 @@ class cfgWeapons
 	};
 	class RH_mac10: RH_mp5a5
 	{
+		delete ItemActions;
 		scope=2;
 		modelOptics="-";
 		optics=1;
@@ -1524,12 +1592,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_tmpaim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_tmpeot";
 			};
 			class UseAtt2 : UseAtt{
@@ -1596,7 +1664,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_tmp";
 			};
 			class UseAtt1 : UseAtt{
@@ -1620,7 +1688,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_tmp";
 			};
 			class UseAtt1 : UseAtt{
@@ -1644,12 +1712,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_tmpsdaim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_tmpsdeot";
 			};
 			class UseAtt2 : UseAtt{
@@ -1702,7 +1770,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_tmpsd";
 			};
 			class UseAtt2 : UseAtt{
@@ -1725,7 +1793,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_tmpsd";
 			};
 			class UseAtt2 : UseAtt{
@@ -1741,143 +1809,6 @@ class cfgWeapons
 		distanceZoomMin=100;
 		distanceZoomMax=100;
 	};
-	class RH_mp7: RH_mp5a5
-	{
-		displayName="HK Mp7";
-		model="\RH_smg\RH_mp7.p3d";
-		picture="\RH_smg\inv\mp7.paa";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\RH_smg\Anim\NORRN_RH_tmp.rtm"
-		};
-		reloadMagazineSound[]=
-		{
-			"\RH_smg\sound\tmp_Reload.wss",
-			0.056233998,
-			1,
-			25
-		};
-		magazines[]=
-		{
-			"RH_46x30mm_40RND_Mag",
-			"RH_46x30mm_40RND_SD_Mag"
-		};
-		modes[]=
-		{
-			"Single",
-			"FullAuto"
-		};
-		class Single: Single
-		{
-			begin1[]=
-			{
-				"\RH_smg\sound\mp7.wss",
-				1.7782789,
-				1,
-				900
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-		};
-		class FullAuto: FullAuto
-		{
-			begin1[]=
-			{
-				"\RH_smg\sound\mp7.wss",
-				1.7782789,
-				1,
-				900
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-		};
-	};
-	class RH_mp7aim: RH_mp7
-	{
-		displayName="HK MP7 CCO";
-		model="\RH_smg\RH_mp7aim.p3d";
-		picture="\RH_smg\inv\mp7aim.paa";
-		opticsDisablePeripherialVision=1;
-		distanceZoomMin=100;
-		distanceZoomMax=100;
-	};
-	class RH_mp7eot: RH_mp7
-	{
-		displayName="HK MP7 Holo";
-		model="\RH_smg\RH_mp7eot.p3d";
-		picture="\RH_smg\inv\mp7eot.paa";
-		opticsDisablePeripherialVision=1;
-		distanceZoomMin=100;
-		distanceZoomMax=100;
-	};
-	class RH_mp7sd: RH_mp7
-	{
-		displayName="HK MP7 SD";
-		model="\RH_smg\RH_mp7sd.p3d";
-		picture="\RH_smg\inv\mp7sd.paa";
-		magazines[]=
-		{
-			"RH_46x30mm_40RND_SD_Mag",
-			"RH_46x30mm_40RND_Mag"
-		};
-		fireLightDuration=0;
-		fireLightIntensity=0;
-		class Single: Single
-		{
-			begin1[]=
-			{
-				"\RH_smg\sound\mp7sd.wss",
-				1.7782789,
-				1,
-				300
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-		};
-		class FullAuto: FullAuto
-		{
-			begin1[]=
-			{
-				"\RH_smg\sound\mp7sd.wss",
-				1.7782789,
-				1,
-				300
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-		};
-	};
-	class RH_mp7sdaim: RH_mp7sd
-	{
-		displayName="HK MP7 SD CCO";
-		model="\RH_smg\RH_mp7sdaim.p3d";
-		picture="\RH_smg\inv\mp7sdaim.paa";
-		opticsDisablePeripherialVision=1;
-		distanceZoomMin=100;
-		distanceZoomMax=100;
-	};
-	class RH_mp7sdeot: RH_mp7sd
-	{
-		displayName="HK MP7 SD Holo";
-		model="\RH_smg\RH_mp7sdeot.p3d";
-		picture="\RH_smg\inv\mp7sdeot.paa";
-		opticsDisablePeripherialVision=1;
-		distanceZoomMin=100;
-		distanceZoomMax=100;
-	};
 	class RH_pp2000: RH_mp5a5
 	{
 		class ItemActions {
@@ -1885,12 +1816,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_pp2000aim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_pp2000eot";
 			};
 		};
@@ -1952,7 +1883,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_pp2000";
 			};
 		};
@@ -1970,7 +1901,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_pp2000";
 			};
 		};
@@ -1988,12 +1919,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_umpaim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_umpeot";
 			};
 			class UseAtt2 : UseAtt{
@@ -2099,7 +2030,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_ump";
 			};
 			class UseAtt1 : UseAtt{
@@ -2123,7 +2054,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_ump";
 			};
 			class UseAtt1 : UseAtt{
@@ -2142,6 +2073,7 @@ class cfgWeapons
 	};
 	class RH_umpRFX: RH_UMP
 	{
+		delete ItemActions;
 		displayName="HK UMP45 RFX";
 		model="\RH_smg\RH_umpRFX.p3d";
 		picture="\RH_smg\inv\umpRFX.paa";
@@ -2156,12 +2088,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_umpsdaim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_umpsdeot";
 			};
 			class UseAtt2 : UseAtt{
@@ -2222,7 +2154,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_umpsd";
 			};
 			class UseAtt2 : UseAtt{
@@ -2245,7 +2177,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_umpsd";
 			};
 			class UseAtt2 : UseAtt{
@@ -2263,6 +2195,7 @@ class cfgWeapons
 	};
 	class RH_umpsdRFX: RH_umpsd
 	{
+		delete ItemActions;
 		displayName="HK UMP45 SD RFX";
 		model="\RH_smg\RH_umpsdRFX.p3d";
 		picture="\RH_smg\inv\umpsdRFX.paa";
@@ -2272,6 +2205,7 @@ class cfgWeapons
 	};
 	class RH_P90: MP5A5
 	{
+		delete ItemActions;
 		scope=2;
 		displayName="FN P90";
 		model="\RH_smg\RH_p90.p3d";
@@ -2373,12 +2307,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_P90aim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_P90eot";
 			};
 			class UseAtt2 : UseAtt{
@@ -2398,7 +2332,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_P90i";
 			};
 			class UseAtt1 : UseAtt{
@@ -2421,7 +2355,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_P90i";
 			};
 			class UseAtt1 : UseAtt{
@@ -2439,6 +2373,7 @@ class cfgWeapons
 	};
 	class RH_P90sd: RH_P90
 	{
+		delete ItemActions;
 		displayname="FN P90 SD";
 		model="\RH_smg\RH_p90sd.p3d";
 		picture="\RH_smg\inv\p90sd.paa";
@@ -2482,12 +2417,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_p90sdaim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_p90sdeot";
 			};
 			class UseAtt2 : UseAtt{
@@ -2508,7 +2443,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_p90sd";
 			};
 			class UseAtt2 : UseAtt{
@@ -2531,7 +2466,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_p90sd";
 			};
 			class UseAtt2 : UseAtt{
@@ -2592,16 +2527,6 @@ class cfgVehicles
 			class _xx_RH_57x28mm_50RND_SD_Mag
 			{
 				magazine="RH_57x28mm_50RND_SD_Mag";
-				count=200;
-			};
-			class _xx_RH_46x30mm_40RND_Mag
-			{
-				magazine="RH_46x30mm_40RND_Mag";
-				count=200;
-			};
-			class _xx_RH_46x30mm_40RND_SD_Mag
-			{
-				magazine="RH_46x30mm_40RND_SD_Mag";
 				count=200;
 			};
 			class _xx_30Rnd_556x45_Stanag
@@ -2990,36 +2915,6 @@ class cfgVehicles
 			class _xx_RH_pp2000eot
 			{
 				weapon="RH_pp2000eot";
-				count=6;
-			};
-			class _xx_RH_mp7
-			{
-				weapon="RH_mp7";
-				count=6;
-			};
-			class _xx_RH_mp7aim
-			{
-				weapon="RH_mp7aim";
-				count=6;
-			};
-			class _xx_RH_mp7eot
-			{
-				weapon="RH_mp7eot";
-				count=6;
-			};
-			class _xx_RH_mp7sd
-			{
-				weapon="RH_mp7sd";
-				count=6;
-			};
-			class _xx_RH_mp7sdaim
-			{
-				weapon="RH_mp7sdaim";
-				count=6;
-			};
-			class _xx_RH_mp7sdeot
-			{
-				weapon="RH_mp7sdeot";
 				count=6;
 			};
 		};

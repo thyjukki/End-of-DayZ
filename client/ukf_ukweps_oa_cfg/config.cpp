@@ -255,12 +255,12 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "ukf_L85A2_acog";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach UGL";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "ukf_L85A2AG36";
 			};
 		};
@@ -391,13 +391,13 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "ukf_L85A2";
 			};
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach UGL";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "ukf_L85A2AG36_acog";
 			};
 		};
@@ -476,6 +476,7 @@ class CfgWeapons
 	};
 	class ukf_L85A2_acog_CQB: ukf_L85A2_acog
 	{
+		delete ItemActions;
 		class FlashLight
 		{
 			color[]={0.900000,0.900000,0.700000,0.900000};
@@ -571,6 +572,7 @@ class CfgWeapons
 	};
 	class ukf_L85A2_cws_CQB: ukf_L85A2_cws
 	{
+		delete ItemActions;
 		class FlashLight
 		{
 			color[]={0.900000,0.900000,0.700000,0.900000};
@@ -801,6 +803,7 @@ class CfgWeapons
 	};
 	class ukf_L85A2AG36_susat: ukf_L85A2_susat
 	{
+		delete ItemActions;
 		displayName="L85A2/UGL w/SUSAT";
 		model="\ukf_ukweps_oa\ag36\ukf_SA80AG36";
 		picture="\ukf_ukweps_oa\icons\l85a2ag36";
@@ -847,12 +850,12 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach UGL";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "ukf_L85A2_acog";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "ukf_L85A2AG36";
 			};
 		};
@@ -1227,13 +1230,13 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach UGL";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "ukf_L85A2";
 			};
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "ukf_L85A2AG36_acog";
 			};
 		};

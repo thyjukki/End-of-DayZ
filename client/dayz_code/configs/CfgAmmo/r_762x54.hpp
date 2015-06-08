@@ -9,7 +9,7 @@ class B_762x54_Ball: BulletBase
 	visibleFireTime = 3;
 	cost = 1.2;
 	airLock = 0;
-	model = "";
+	model = "\ca\Weapons\Data\bullettracer\tracer_red";
 	tracerScale = 0;
 	tracerStartTime = 0;
 	tracerEndTime = 0;
@@ -25,7 +25,6 @@ class B_762x54_HP: B_762x54_Ball
 
 class B_762x54_TRACER: B_762x54_Ball
 {
-	model = "\ca\Weapons\Data\bullettracer\tracer_red";
 	tracerendtime = 1;
 	tracerscale = 1;
 	tracerstarttime = 0.05;

@@ -286,17 +286,17 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "MIDF_Aug_A3_gl";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "MIDF_Aug_A3_acog";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "MIDF_Aug_A3_eotech";
 			};
 		};
@@ -344,17 +344,17 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "MIDF_Aug_A3_gl_blue";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "MIDF_Aug_A3_acog_blue";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "MIDF_Aug_A3_eotech_blue";
 			};
 		};
@@ -404,17 +404,17 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "MIDF_Aug_A3_gl_black";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "MIDF_Aug_A3_acog_black";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "MIDF_Aug_A3_eotech_black";
 			};
 		};
@@ -464,13 +464,13 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "MIDF_Aug_A3_acog_gl";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Acog";
 				script = "spawn player_removeAttchment;";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "MIDF_Aug_A3";
 			};
 		};
@@ -520,13 +520,13 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "MIDF_Aug_A3_acog_gl_black";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Acog";
 				script = "spawn player_removeAttchment;";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "MIDF_Aug_A3_black";
 			};
 		};
@@ -576,13 +576,13 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "MIDF_Aug_A3_acog_gl_blue";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Acog";
 				script = "spawn player_removeAttchment;";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "MIDF_Aug_A3_blue";
 			};
 		};
@@ -632,13 +632,13 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "MIDF_Aug_A3_eotech_gl";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Holo";
 				script = "spawn player_removeAttchment;";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "MIDF_Aug_A3";
 			};
 		};
@@ -675,13 +675,13 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "MIDF_Aug_A3_eotech_gl_black";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Holo";
 				script = "spawn player_removeAttchment;";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "MIDF_Aug_A3_black";
 			};
 		};
@@ -718,13 +718,13 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "MIDF_Aug_A3_eotech_gl_blue";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Holo";
 				script = "spawn player_removeAttchment;";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "MIDF_Aug_A3_black";
 			};
 		};
@@ -761,18 +761,18 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detacg M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "MIDF_Aug_A3";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Holo";
 				script = "spawn player_useAttchment;";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "MIDF_Aug_A3_eotech_gl";
 			};
 			class UseAtt2 : UseAtt1{
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "MIDF_Aug_A3_acog_gl";
 			};
 		};
@@ -781,7 +781,7 @@ class CfgWeapons
 		model="\MIDF_Weapons\Aug_a3\aug_a3_gl.p3d";
 		muzzles[]=
 		{
-			"AUGmuzzle",
+			"this",
 			"GLmuzzle"
 		};
 		modes[]=
@@ -796,9 +796,7 @@ class CfgWeapons
 		};
 		dexterity=1.680000;
 		descriptionShort="STEYR AUG A3 (Green) equipt with a Leupold CQ T 1-3x scope and a 40mm Granade launcher";
-		class AUGmuzzle: MIDF_Aug_A3
-		{
-		};
+
 		class GLmuzzle: Grenadelauncher
 		{
 			displayName="Grenade Launcher";
@@ -846,18 +844,18 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detacg M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "MIDF_Aug_A3_black";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Holo";
 				script = "spawn player_useAttchment;";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "MIDF_Aug_A3_eotech_gl_black";
 			};
 			class UseAtt2 : UseAtt1{
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "MIDF_Aug_A3_acog_gl_black";
 			};
 		};
@@ -866,7 +864,7 @@ class CfgWeapons
 		model="\MIDF_Weapons\Aug_a3\aug_a3_gl_black.p3d";
 		muzzles[]=
 		{
-			"AUGmuzzle",
+			"this",
 			"GLmuzzle"
 		};
 		modes[]=
@@ -881,9 +879,7 @@ class CfgWeapons
 		};
 		dexterity=1.680000;
 		descriptionShort="STEYR AUG A3 (Black) equipt with a Leupold CQ T 1-3x scope and a 40mm Granade launcher";
-		class AUGmuzzle: MIDF_Aug_A3
-		{
-		};
+
 		class GLmuzzle: Grenadelauncher
 		{
 			displayName="Grenade Launcher";
@@ -931,18 +927,18 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detacg M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "MIDF_Aug_A3_blue";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Holo";
 				script = "spawn player_useAttchment;";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "MIDF_Aug_A3_eotech_gl_blue";
 			};
 			class UseAtt2 : UseAtt1{
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "MIDF_Aug_A3_acog_gl_blue";
 			};
 		};
@@ -951,7 +947,7 @@ class CfgWeapons
 		model="\MIDF_Weapons\Aug_a3\aug_a3_gl_blue.p3d";
 		muzzles[]=
 		{
-			"AUGmuzzle",
+			"this",
 			"GLmuzzle"
 		};
 		modes[]=
@@ -966,9 +962,7 @@ class CfgWeapons
 		};
 		dexterity=1.680000;
 		descriptionShort="STEYR AUG A3 (Blue) equipt with a Leupold CQ T 1-3x scope and a 40mm Granade launcher";
-		class AUGmuzzle: MIDF_Aug_A3
-		{
-		};
+
 		class GLmuzzle: Grenadelauncher
 		{
 			displayName="Grenade Launcher";
@@ -1016,12 +1010,12 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detacg M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "MIDF_Aug_A3_acog";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detacg Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "MIDF_Aug_A3_gl";
 			};
 		};
@@ -1030,7 +1024,7 @@ class CfgWeapons
 		model="\MIDF_Weapons\Aug_a3\aug_a3_acog_gl.p3d";
 		muzzles[]=
 		{
-			"AUGmuzzle",
+			"this",
 			"GLmuzzle"
 		};
 		modes[]=
@@ -1045,9 +1039,7 @@ class CfgWeapons
 		};
 		dexterity=1.680000;
 		descriptionShort="STEYR AUG A3 (Green) equipt with a ACOG 3.5x Scope and a 40mm Granade launcher";
-		class AUGmuzzle: MIDF_Aug_A3_acog
-		{
-		};
+
 		class GLmuzzle: Grenadelauncher
 		{
 			displayName="Grenade Launcher";
@@ -1095,12 +1087,12 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detacg M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "MIDF_Aug_A3_acog_black";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detacg Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "MIDF_Aug_A3_gl_black";
 			};
 		};
@@ -1109,7 +1101,7 @@ class CfgWeapons
 		model="\MIDF_Weapons\Aug_a3\aug_a3_acog_gl_black.p3d";
 		muzzles[]=
 		{
-			"AUGmuzzle",
+			"this",
 			"GLmuzzle"
 		};
 		modes[]=
@@ -1124,9 +1116,7 @@ class CfgWeapons
 		};
 		dexterity=1.680000;
 		descriptionShort="STEYR AUG A3 (Black) equipt with a ACOG 3.5x Scope and a 40mm Granade launcher";
-		class AUGmuzzle: MIDF_Aug_A3_acog
-		{
-		};
+
 		class GLmuzzle: Grenadelauncher
 		{
 			displayName="Grenade Launcher";
@@ -1174,12 +1164,12 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detacg M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "MIDF_Aug_A3_acog_blue";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detacg Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "MIDF_Aug_A3_gl_blue";
 			};
 		};
@@ -1188,7 +1178,7 @@ class CfgWeapons
 		model="\MIDF_Weapons\Aug_a3\aug_a3_acog_gl_blue.p3d";
 		muzzles[]=
 		{
-			"AUGmuzzle",
+			"this",
 			"GLmuzzle"
 		};
 		modes[]=
@@ -1203,9 +1193,7 @@ class CfgWeapons
 		};
 		dexterity=1.680000;
 		descriptionShort="STEYR AUG A3 (Blue) equipt with a ACOG 3.5x Scope and a 40mm Granade launcher";
-		class AUGmuzzle: MIDF_Aug_A3_acog
-		{
-		};
+
 		class GLmuzzle: Grenadelauncher
 		{
 			displayName="Grenade Launcher";
@@ -1253,12 +1241,12 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detacg M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "MIDF_Aug_A3_eotech";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detacg Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "MIDF_Aug_A3_gl";
 			};
 		};
@@ -1267,7 +1255,7 @@ class CfgWeapons
 		model="\MIDF_Weapons\Aug_a3\aug_a3_eotech_gl.p3d";
 		muzzles[]=
 		{
-			"AUGmuzzle",
+			"this",
 			"GLmuzzle"
 		};
 		modes[]=
@@ -1282,9 +1270,7 @@ class CfgWeapons
 		};
 		dexterity=1.680000;
 		descriptionShort="STEYR AUG A3 (Green) equipt with a EoTech Scope and a 40mm Granade launcher";
-		class AUGmuzzle: MIDF_Aug_A3_eotech
-		{
-		};
+
 		class GLmuzzle: Grenadelauncher
 		{
 			displayName="Grenade Launcher";
@@ -1332,12 +1318,12 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detacg M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "MIDF_Aug_A3_eotech_black";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detacg Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "MIDF_Aug_A3_gl_black";
 			};
 		};
@@ -1346,7 +1332,7 @@ class CfgWeapons
 		model="\MIDF_Weapons\Aug_a3\aug_a3_eotech_gl_black.p3d";
 		muzzles[]=
 		{
-			"AUGmuzzle",
+			"this",
 			"GLmuzzle"
 		};
 		modes[]=
@@ -1361,9 +1347,7 @@ class CfgWeapons
 		};
 		dexterity=1.680000;
 		descriptionShort="STEYR AUG A3 (Black) equipt with a EoTech Scope and a 40mm Granade launcher";
-		class AUGmuzzle: MIDF_Aug_A3_eotech
-		{
-		};
+
 		class GLmuzzle: Grenadelauncher
 		{
 			displayName="Grenade Launcher";
@@ -1411,12 +1395,12 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detacg M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "MIDF_Aug_A3_eotech_blue";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detacg Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "MIDF_Aug_A3_gl_blue";
 			};
 		};
@@ -1425,7 +1409,7 @@ class CfgWeapons
 		model="\MIDF_Weapons\Aug_a3\aug_a3_eotech_gl_blue.p3d";
 		muzzles[]=
 		{
-			"AUGmuzzle",
+			"this",
 			"GLmuzzle"
 		};
 		modes[]=
@@ -1440,9 +1424,7 @@ class CfgWeapons
 		};
 		dexterity=1.680000;
 		descriptionShort="STEYR AUG A3 (Green) equipt with a EoTech Scope and a 40mm Granade launcher";
-		class AUGmuzzle: MIDF_Aug_A3_eotech
-		{
-		};
+
 		class GLmuzzle: Grenadelauncher
 		{
 			displayName="Grenade Launcher";

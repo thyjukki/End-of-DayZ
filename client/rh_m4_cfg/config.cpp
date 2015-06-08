@@ -193,9 +193,44 @@ class CfgWeapons
 	};
 	class M16A2: M16_base
 	{
+		magazines[] =
+		{
+			"20Rnd_556x45_Stanag",
+			"20Rnd_556x45_StanagSD",
+			"20Rnd_556x45_Stanag_hp",
+			"20Rnd_556x45_Stanag_tracer",
+			"20Rnd_556x45_Stanag_rubber",
+			"20Rnd_556x45_Stanag_bt",
+			"30Rnd_556x45_Stanag",
+			"30Rnd_556x45_StanagSD",
+			"30Rnd_556x45_Stanag_hp",
+			"30Rnd_556x45_Stanag_tracer",
+			"30Rnd_556x45_Stanag_rubber",
+			"30Rnd_556x45_Stanag_bt",
+			"100Rnd_556x45_BetaCMag",
+			"100Rnd_556x45_BetaCMagSD",
+			"100Rnd_556x45_BetaCMag_hp",
+			"100Rnd_556x45_BetaCMag_tracer",
+			"100Rnd_556x45_BetaCMag_rubber",
+			"100Rnd_556x45_BetaCMag_bt"
+		};
 	};
 	class RH_M16a1: M16A2
 	{
+		class ItemActions {
+			class UseAtt {
+				isAttachment = 1;
+				text = "Attach M203";
+				script = "spawn player_useAttchment;";
+				att = "Attachment_M203";
+				out = "RH_m16a1gl";
+			};
+			class UseAtt1 : UseAtt{
+				text = "Attach Acog";
+				att = "Attachment_ACOG";
+				out = "RH_m16a1s";
+			};
+		};
 		magazines[] =
 		{
 			"20Rnd_556x45_Stanag",
@@ -296,6 +331,21 @@ class CfgWeapons
 	};
 	class RH_M16a1s: RH_M16a1
 	{
+		class ItemActions {
+			class UseAtt {
+				isAttachment = 1;
+				text = "Attach M203";
+				script = "spawn player_useAttchment;";
+				att = "Attachment_M203";
+				out = "RH_m16a1gl";
+			};
+			class UseAtt1 : UseAtt{
+				text = "Detach Acog";
+				script = "spawn player_removeAttchment;";
+				att = "Attachment_ACOG";
+				out = "RH_m16a2";
+			};
+		};
 		displayName="M16A1 Scope";
 		model="\RH_m4\RH_M16a1s.p3d";
 		picture="\RH_m4\inv\m16a1s.paa";
@@ -349,6 +399,21 @@ class CfgWeapons
 	};
 	class RH_M16a1gl: RH_M16a1
 	{
+		class ItemActions {
+			class UseAtt {
+				isAttachment = 1;
+				text = "Attach Acog";
+				script = "spawn player_useAttchment;";
+				att = "Attachment_ACOG";
+				out = "RH_M16a1sgl";
+			};
+			class UseAtt1 : UseAtt{
+				text = "Detach M203";
+				script = "spawn player_removeAttchment;";
+				att = "Attachment_M203";
+				out = "RH_M16a1";
+			};
+		};
 		displayName="M16A1 M203";
 		model="\RH_m4\RH_m16a1gl.p3d";
 		picture="\RH_m4\inv\m16a1gl.paa";
@@ -369,17 +434,28 @@ class CfgWeapons
 	};
 	class RH_M16a1sgl: RH_M16a1gl
 	{
+		class ItemActions {
+			class UseAtt {
+				isAttachment = 1;
+				text = "Attach Acog";
+				script = "spawn player_removeAttchment;";
+				att = "Attachment_ACOG";
+				out = "RH_M16a1gl";
+			};
+			class UseAtt1 : UseAtt{
+				text = "Detach M203";
+				att = "Attachment_M203";
+				out = "RH_M16a1s";
+			};
+		};
 		displayName="M16A1 M203 Scope";
 		model="\RH_m4\RH_m16a1sgl.p3d";
 		picture="\RH_m4\inv\m16a1sgl.paa";
 		muzzles[]=
 		{
-			"RH_M16a1sMuzzle",
+			"this",
 			"RH_M203Muzzle",
 			"RH_M203Muzzle_AI"
-		};
-		class RH_M16a1sMuzzle: RH_M16a1s
-		{
 		};
 		ace_weight=4.700000;
 		dexterity=1.300000;
@@ -391,17 +467,17 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m16a2gl";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m16a2s";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m16a2aim";
 			};
 		};
@@ -480,18 +556,18 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m16a2";
 			};
 			class UseAtt1 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m16a2sgl";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m16a2glaim";
 			};
 		};
@@ -520,13 +596,13 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m16a2glaim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Aimpoint";
 				script = "spawn player_removeAttchment;";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m16a2";
 			};
 		};
@@ -543,13 +619,13 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m16a2aim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Aimpoint";
 				script = "spawn player_removeAttchment;";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m16a2gl";
 			};
 		};
@@ -566,13 +642,13 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m16a2sgl";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Acog";
 				script = "spawn player_removeAttchment;";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m16a2";
 			};
 		};
@@ -634,13 +710,13 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m16a2gl";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Acog";
 				script = "spawn player_removeAttchment;";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m16a2gl";
 			};
 		};
@@ -669,17 +745,17 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m16a3gl";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m16a3s";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m16a3aim";
 			};
 		};
@@ -736,13 +812,13 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m16a3";
 			};
 			class UseAtt1 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m16a3sgl";
 			};
 		};
@@ -772,7 +848,7 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach Aimpoint";
 				script = "spawn player_removeAttchment;";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m16a3";
 			};
 		};
@@ -789,13 +865,13 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m16a3aim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Aimpoint";
 				script = "spawn player_removeAttchment;";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m16a3gl";
 			};
 		};
@@ -862,13 +938,13 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m16a3gl";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Acog";
 				script = "spawn player_removeAttchment;";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m16a3gl";
 			};
 		};
@@ -897,22 +973,22 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m16a4gl";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m16a4acog";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m16a2aim";
 			};
 			class UseAtt3 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m16a4eotech";
 			};
 		};
@@ -935,13 +1011,13 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m16a4glaim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Aimpoint";
 				script = "spawn player_removeAttchment;";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m16a4";
 			};
 		};
@@ -958,13 +1034,13 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m16a4gleotech";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Holo";
 				script = "spawn player_removeAttchment;";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m16a4";
 			};
 		};
@@ -981,13 +1057,13 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m16a4glacog";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Acog";
 				script = "spawn player_removeAttchment;";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m16a4";
 			};
 		};
@@ -1049,23 +1125,23 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m16a4";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Acog";
 				script = "spawn player_useAttchment;";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m16a4glacog";
 			};
 			class UseAtt2 : UseAtt1{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m16a4glaim";
 			};
 			class UseAtt3 : UseAtt1{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m16a4gleotech";
 			};
 		};
@@ -1094,12 +1170,12 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m16a4aim";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m16a4gl";
 			};
 		};
@@ -1116,12 +1192,12 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m16a4eotech";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m16a4gl";
 			};
 		};
@@ -1138,12 +1214,12 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m16a4acog";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m16a4gl";
 			};
 		};
@@ -1176,7 +1252,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_ar10s";
 			};
 		};
@@ -1257,7 +1333,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_ar10";
 			};
 		};
@@ -1352,22 +1428,22 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4gl";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m4acog";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m4aim";
 			};
 			class UseAtt3 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m4eotech";
 			};
 		};
@@ -1479,27 +1555,27 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_M4a1gl";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m4a1acog";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m4a1aim";
 			};
 			class UseAtt3 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m4a1eotech";
 			};
 			class UseAtt4 : UseAtt{
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4sd";
 			};
 		};
@@ -1539,13 +1615,13 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4glaim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Aimpoint";
 				script = "spawn player_removeAttchment;";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_M4";
 			};
 		};
@@ -1563,18 +1639,18 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4a1glaim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4sdaim";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Aimpoint";
 				script = "spawn player_removeAttchment;";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m4a1";
 			};
 		};
@@ -1592,13 +1668,13 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4gleotech";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Holo";
 				script = "spawn player_removeAttchment;";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m4";
 			};
 		};
@@ -1614,18 +1690,18 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4a1gleotech";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4sdeotech";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Holo";
 				script = "spawn player_removeAttchment;";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m4a1";
 			};
 		};
@@ -1643,13 +1719,13 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4glacog";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Acog";
 				script = "spawn player_removeAttchment;";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m4";
 			};
 		};
@@ -1711,18 +1787,18 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4a1glacog";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4sdacog";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Acog";
 				script = "spawn player_removeAttchment;";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m4a1";
 			};
 		};
@@ -1740,23 +1816,23 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_M4";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Acog";
 				script = "spawn player_useAttchment;";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m4glacog";
 			};
 			class UseAtt2 : UseAtt1{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m4glaim";
 			};
 			class UseAtt3 : UseAtt1{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m4gleotech";
 			};
 		};
@@ -1785,28 +1861,28 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4a1";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Acog";
 				script = "spawn player_useAttchment;";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_M4a1glacog";
 			};
 			class UseAtt2 : UseAtt1{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_M4a1glaim";
 			};
 			class UseAtt3 : UseAtt1{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_M4a1gleotech";
 			};
 			class UseAtt4 : UseAtt1{
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4sdgl";
 			};
 		};
@@ -1824,12 +1900,12 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4aim";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m4gl";
 			};
 		};
@@ -1847,18 +1923,18 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4a1aim";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m4a1gl";
 			};
 			class UseAtt3 : UseAtt{
 				text = "Attach Silencer";
 				script = "spawn player_useAttchment;";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4sdglaim";
 			};
 		};
@@ -1876,12 +1952,12 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4eotech";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m4gl";
 			};
 		};
@@ -1896,18 +1972,18 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_M4a1eotech";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m4a1gl";
 			};
 			class UseAtt3 : UseAtt{
 				text = "Attach Silencer";
 				script = "spawn player_useAttchment;";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4sdgleotech";
 			};
 		};
@@ -1925,12 +2001,12 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4acog";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m4gl";
 			};
 		};
@@ -1958,18 +2034,18 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_M4a1acog";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m4a1gl";
 			};
 			class UseAtt3 : UseAtt{
 				text = "Attach Silencer";
 				script = "spawn player_useAttchment;";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4sdglacog";
 			};
 		};
@@ -1987,28 +2063,28 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4sdgl";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m4sdacog";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m4sdaim";
 			};
 			class UseAtt3 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m4sdeotech";
 			};
 			class UseAtt4 : UseAtt{
 				text = "Detach Silencer";
 				script = "spawn player_removeAttchment;";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4a1";
 			};
 		};
@@ -2095,18 +2171,18 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4sdglaim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Aimpoint";
 				script = "spawn player_removeAttchment;";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m4sd";
 			};
 			class UseAtt2 : UseAtt1{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4a1aim";
 			};
 		};
@@ -2123,18 +2199,18 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4sdgleotech";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Holo";
 				script = "spawn player_removeAttchment;";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m4sd";
 			};
 			class UseAtt2 : UseAtt1{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4a1eotech";
 			};
 		};
@@ -2155,18 +2231,18 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4sdglacog";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Acog";
 				script = "spawn player_removeAttchment;";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m4sd";
 			};
 			class UseAtt2 : UseAtt1{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4a1acog";
 			};
 		};
@@ -2228,28 +2304,28 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4sd";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4a1gl";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Acog";
 				script = "spawn player_useAttchment;";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m4sdglacog";
 			};
 			class UseAtt3 : UseAtt2{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m4sdglaim";
 			};
 			class UseAtt4 : UseAtt2{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m4sdgleotech";
 			};
 		};
@@ -2278,17 +2354,17 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4sdaim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4a1glaim";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m4sdgl";
 			};
 		};
@@ -2306,17 +2382,17 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4sdholo";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4a1glholo";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m4sdgl";
 			};
 		};
@@ -2331,17 +2407,17 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4sdacog";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4a1glacog";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m4sdgl";
 			};
 		};
@@ -2369,17 +2445,17 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach Acog";
 				script = "spawn player_useAttchment;";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_M4macog";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_M4maim";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_M4meotech";
 			};
 		};
@@ -2411,7 +2487,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_M4m";
 			};
 		};
@@ -2428,7 +2504,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_M4m";
 			};
 		};
@@ -2451,7 +2527,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_M4m";
 			};
 		};
@@ -2507,17 +2583,17 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach Acog";
 				script = "spawn player_useAttchment;";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m4sbracog";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m4sbraim";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m4sbreotech";
 			};
 		};
@@ -2561,7 +2637,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_M4sbr";
 			};
 		};
@@ -2578,7 +2654,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_M4sbr";
 			};
 		};
@@ -2595,7 +2671,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_M4sbr";
 			};
 		};
@@ -2684,7 +2760,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_mk12sd";
 			};
 		};
@@ -2749,7 +2825,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_MK12mod1sd";
 			};
 		};
@@ -2764,7 +2840,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_MK12";
 			};
 		};
@@ -2799,7 +2875,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_MK12mod1";
 			};
 		};
@@ -2854,6 +2930,15 @@ class CfgWeapons
 	};
 	class RH_M249: M249
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_useAttchment;";
+				text = "Attach ACOG";
+				att = "Attachment_ACOG";
+				out = "RH_M249acog";
+			};
+		};
 		scope=2;
 		magazines[] =
 		{
@@ -2981,6 +3066,15 @@ class CfgWeapons
 	};
 	class RH_M249acog: RH_M249
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach ACOG";
+				att = "Attachment_ACOG";
+				out = "RH_M249";
+			};
+		};
 		displayName="M249 ACOG";
 		model="\RH_m4\RH_m249acog.p3d";
 		picture="\RH_m4\inv\m249acog.paa";
@@ -3036,6 +3130,7 @@ class CfgWeapons
 	};
 	class RH_M249elcan: RH_M249
 	{
+		delete ItemActions;
 		displayName="M249 M145";
 		model="\RH_m4\RH_m249elcan.p3d";
 		picture="\RH_m4\inv\m249elcan.paa";
@@ -3091,6 +3186,15 @@ class CfgWeapons
 	};
 	class RH_M249p: RH_M249
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_useAttchment;";
+				text = "Attach ACOG";
+				att = "Attachment_ACOG";
+				out = "RH_M249pacog";
+			};
+		};
 		displayName="M249 Para";
 		model="\RH_m4\RH_m249p.p3d";
 		picture="\RH_m4\inv\m249p.paa";
@@ -3108,6 +3212,15 @@ class CfgWeapons
 	};
 	class RH_M249pacog: RH_M249p
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach ACOG";
+				att = "Attachment_ACOG";
+				out = "RH_M249p";
+			};
+		};
 		displayName="M249 Para ACOG";
 		model="\RH_m4\RH_m249pacog.p3d";
 		picture="\RH_m4\inv\m249pacog.paa";
@@ -3163,6 +3276,7 @@ class CfgWeapons
 	};
 	class RH_M249pelcan: RH_M249p
 	{
+		delete ItemActions;
 		displayName="M249 Para M145";
 		model="\RH_m4\RH_m249pelcan.p3d";
 		picture="\RH_m4\inv\m249pelcan.paa";
@@ -3234,6 +3348,21 @@ class CfgWeapons
 		class far: close
 		{
 		};
+		magazines[] =
+		{
+			"100Rnd_762x51_M240",
+			"100Rnd_762x51_M240SD",
+			"100Rnd_762x51_M240_hp",
+			"100Rnd_762x51_M240_tracer",
+			"100Rnd_762x51_M240_rubber",
+			"100Rnd_762x51_M240_bt",
+			"200Rnd_762x51_M240",
+			"200Rnd_762x51_M240SD",
+			"200Rnd_762x51_M240_hp",
+			"200Rnd_762x51_M240_tracer",
+			"200Rnd_762x51_M240_rubber",
+			"200Rnd_762x51_M240_bt"
+		};
 	};
 	class Mk_48: M240
 	{
@@ -3270,6 +3399,15 @@ class CfgWeapons
 	};
 	class RH_Mk48mod1: Mk_48
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_useAttchment;";
+				text = "Attach ACOG";
+				att = "Attachment_ACOG";
+				out = "RH_Mk48mod1acog";
+			};
+		};
 		scope=2;
 		displayName="Mk48 Mod1";
 		model="\RH_m4\RH_Mk48mod1.p3d";
@@ -3389,6 +3527,15 @@ class CfgWeapons
 	};
 	class RH_Mk48mod1acog: RH_Mk48mod1
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach ACOG";
+				att = "Attachment_ACOG";
+				out = "RH_Mk48mod1";
+			};
+		};
 		displayName="Mk48 Mod1 ACOG";
 		model="\RH_m4\RH_Mk48mod1acog.p3d";
 		picture="\RH_m4\inv\Mk48mod1acog.paa";
@@ -3445,6 +3592,7 @@ class CfgWeapons
 	};
 	class RH_Mk48mod1elcan: RH_Mk48mod1
 	{
+		delete ItemActions;
 		displayName="Mk48 Mod1 M145";
 		model="\RH_m4\RH_Mk48mod1elcan.p3d";
 		picture="\RH_m4\inv\Mk48mod1elcan.paa";

@@ -282,7 +282,7 @@ class cfgWeapons
 				isAttachment = 1;
 				text = "Attach Silencer";
 				script = "spawn player_useAttchment;";
-				att = "Attachment_Sup9";
+				att = "Attachment_Sup";
 				out = "RH_pmsd";
 			};
 		};
@@ -331,7 +331,7 @@ class cfgWeapons
 			isAttachment = 1;
 			text = "Detach Silencer";
 			script = "spawn player_removeAttchment;";
-			att = "Attachment_Sup9";
+			att = "Attachment_Sup";
 			out = "RH_pm";
 		};
 		displayName="Makarov PM SD";
@@ -382,7 +382,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_Sup9";
+				att = "Attachment_Sup";
 				out = "RH_apssd";
 			};
 		};
@@ -509,7 +509,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_Sup9";
+				att = "Attachment_Sup";
 				out = "RH_aps";
 			};
 		};
@@ -629,147 +629,14 @@ class cfgWeapons
 			libTextDesc="The APS is a simple blowback pistol, of al steel construction, with external hammer and a double action trigger. A three-position safety lever, located on the slide, also acts as fire mode selector, allowing for single-shot or full automatic fire. To slow the rate of fire down to controllable 600 rounds per minute, APS featured a plunger-type fire rate reducer, located in the grip. return spring is located around the barrel. Front sight is fixed to the slide, rear sight is adjustable for range, with settings for 25, 50 and optimistic 100 and 200 meters. To further improve the long range and full automatic mode accuracy, a shoulder stock / holster can be attached to the grip. early holsters / stocks were made from wood, latter from brow plastic.";
 		};
 	};
-	class RH_ak47_SUB: rifle
-	{
-		scope=2;
-		opticsZoomInit=0.375000;
-		model="\RH_aks\RH_ak47.p3d";
-		picture="\RH_aks\inv\ak47.paa";
-		UiPicture="\CA\weapons\data\Ico\i_regular_CA.paa";
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\Ca\weapons\Data\Anim\AK.rtm"
-		};
-		modelOptics="-";
-		optics=1;
-		dexterity=1.700000;
-		displayName="AK-47";
-		distanceZoomMin=300;
-		distanceZoomMax=300;
-		reloadMagazineSound[]=
-		{
-			"\RH_aks\sound\Ak47_reload.wss",
-			0.056234,
-			1,
-			20
-		};
-		magazines[] = 
-		{
-			"30Rnd_762x39_AK47",
-			"30Rnd_762x39_AK47_SD",
-			"30Rnd_762x39_AK47_hp",
-			"30Rnd_762x39_AK47_tracer",
-			"30Rnd_762x39_AK47_rubber",
-			"30Rnd_762x39_AK47_bt",
-			"vil_40Rnd_762x39_AK47",
-			"vil_40Rnd_762x39_AK47_SD",
-			"vil_40Rnd_762x39_AK47_hp",
-			"vil_40Rnd_762x39_AK47_tracer",
-			"vil_40Rnd_762x39_AK47_rubber",
-			"vil_40Rnd_762x39_AK47_bt",
-			"RH_75Rnd_762x39_mag",
-			"RH_75Rnd_762x39_mag_SD",
-			"RH_75Rnd_762x39_mag_hp",
-			"RH_75Rnd_762x39_mag_tracer",
-			"RH_75Rnd_762x39_mag_rubber",
-			"RH_75Rnd_762x39_mag_bt"
-		};
-		modes[]=
-		{
-			"Single",
-			"Fullauto"
-		};
-		class Single: Mode_SemiAuto
-		{
-			begin1[]=
-			{
-				"\RH_aks\sound\ak47.wss",
-				1.778279,
-				1,
-				1000
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-			multiplier=1;
-			burst=1;
-			dispersion=0.002800;
-			reloadTime=0.092000;
-			recoil="RH_AK47Recoil";
-			recoilProne="RH_AK47RecoilProne";
-			ffCount=1;
-			ffMagnitude=0.500000;
-			ffFrequency=11;
-			autofire=0;
-			flash="gunfire";
-			flashSize=0.100000;
-			useAction=0;
-			useActionTitle="";
-			showToPlayer=1;
-			aiRateOfFire=4.500000;
-			aiRateOfFireDistance=400;
-			minRange=2;
-			minRangeProbab=0.700000;
-			midRange=250;
-			midRangeProbab=0.800000;
-			maxRange=400;
-			maxRangeProbab=0.500000;
-		};
-		class FullAuto: Mode_FullAuto
-		{
-			begin1[]=
-			{
-				"\RH_aks\sound\ak47.wss",
-				1.778279,
-				1,
-				1000
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-			soundContinuous=0;
-			multiplier=1;
-			burst=1;
-			dispersion=0.002800;
-			reloadTime=0.092000;
-			recoil="RH_AK47Recoil";
-			recoilProne="RH_AK47RecoilProne";
-			ffCount=1;
-			ffMagnitude=0.500000;
-			ffFrequency=11;
-			autofire=2;
-			flash="gunfire";
-			flashSize=0.100000;
-			useAction=0;
-			useActionTitle="";
-			showToPlayer=1;
-			aiRateOfFire=0.100000;
-			aiRateOfFireDistance=100;
-			minRange=0.100000;
-			minRangeProbab=0.900000;
-			midRange=70;
-			midRangeProbab=0.800000;
-			maxRange=100;
-			maxRangeProbab=0.200000;
-		};
-		class Library
-		{
-			libTextDesc="The AK-47 Avtomat Kalashnikova 1947 is a gas-operated assault rifle used in most Eastern bloc countries during the Cold War. Adopted and standardized in 1947, it was designed by Mikhail Kalashnikov and originally produced by Russian manufacturer Izhevsk Mechanical Works. Compared with most auto-loading rifles of World War II, the AK-47 is compact, of comparative range, moderate power, and capable of selective fire. It was one of the first, true assault rifles and remains the most widely-used, known as the Best Automatic Assault Rifle. More AK-type rifles have been produced than of any other assault rifle type. Once manufacturing difficulties had been overcome, a redesigned version designated the AKM M for modernized or upgraded—in was introduced in 1959. This new model used a stamped sheet metal receiver and featured a slanted muzzle brake on the end of the barrel to compensate for muzzle rise under recoil.";
-		};
-	};
 	class RH_ak47: rifle
 	{
 		class ItemActions {
 			class UseAtt{
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak47gl";
 			};
 		};
@@ -904,37 +771,19 @@ class cfgWeapons
 			libTextDesc="The AK-47 Avtomat Kalashnikova 1947 is a gas-operated assault rifle used in most Eastern bloc countries during the Cold War. Adopted and standardized in 1947, it was designed by Mikhail Kalashnikov and originally produced by Russian manufacturer Izhevsk Mechanical Works. Compared with most auto-loading rifles of World War II, the AK-47 is compact, of comparative range, moderate power, and capable of selective fire. It was one of the first, true assault rifles and remains the most widely-used, known as the Best Automatic Assault Rifle. More AK-type rifles have been produced than of any other assault rifle type. Once manufacturing difficulties had been overcome, a redesigned version designated the AKM M for modernized or upgraded—in was introduced in 1959. This new model used a stamped sheet metal receiver and featured a slanted muzzle brake on the end of the barrel to compensate for muzzle rise under recoil.";
 		};
 	};
-	class RH_akm_SUB: RH_ak47_SUB
-	{
-		model="\RH_aks\RH_akm.p3d";
-		picture="\RH_aks\inv\akm.paa";
-		displayName="AKM";
-		class Single: Single
-		{
-			reloadtime=0.100000;
-			recoil="RH_AKMRecoil";
-			recoilProne="RH_AKMRecoilProne";
-		};
-		class FullAuto: FullAuto
-		{
-			reloadtime=0.100000;
-			recoil="RH_AKMRecoil";
-			recoilProne="RH_AKMRecoilProne";
-		};
-	};
-	class RH_akm: RH_ak47_SUB
+	class RH_akm: RH_ak47
 	{
 		class ItemActions {
 			class UseAtt{
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_akmsp";
 			};
 			class UseAtt1 : UseAtt{
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_akmgl";
 			};
 		};
@@ -954,8 +803,9 @@ class cfgWeapons
 			recoilProne="RH_AKMRecoilProne";
 		};
 	};
-	class RH_aks47: RH_ak47_SUB
+	class RH_aks47: RH_ak47
 	{
+		delete ItemActions;
 		model="\RH_aks\RH_aks47.p3d";
 		picture="\RH_aks\inv\aks47.paa";
 		displayName="AKs-47 w/o butt";
@@ -970,32 +820,35 @@ class cfgWeapons
 			recoilProne="RH_AKSRecoilProne";
 		};
 	};
-	class RH_aks47b: RH_ak47_SUB
+	class RH_aks47b: RH_ak47
 	{
+		delete ItemActions;
 		model="\RH_aks\RH_aks47b.p3d";
 		picture="\RH_aks\inv\aks47b.paa";
 		displayName="AKs-47";
 	};
-	class RH_aks47g: RH_ak47_SUB
+	class RH_aks47g: RH_ak47
 	{
+		delete ItemActions;
 		model="\RH_aks\RH_aks47g.p3d";
 		picture="\RH_aks\inv\aks47g.paa";
 		displayName="AKs-47 Gold";
 	};
-	class RH_aks47s: RH_ak47_SUB
+	class RH_aks47s: RH_ak47
 	{
+		delete ItemActions;
 		model="\RH_aks\RH_aks47s.p3d";
 		picture="\RH_aks\inv\aks47s.paa";
 		displayName="AKs-47 Silver";
 	};
-	class RH_akms: RH_akm_SUB
+	class RH_akms: RH_akm
 	{
 		class ItemActions {
 			class UseAtt{
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupAK";
 				out = "RH_akmssd";
 			};
 		};
@@ -1003,14 +856,14 @@ class cfgWeapons
 		picture="\RH_aks\inv\akms.paa";
 		displayName="AKMs";
 	};
-	class RH_akmsp: RH_akm_SUB
+	class RH_akmsp: RH_akm
 	{
 		class ItemActions {
 			class UseAtt{
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
-				text = "DEtach PSO";
-				att = "AttPSO";
+				text = "Detach PSO";
+				att = "Attachment_PSO1";
 				out = "RH_akm";
 			};
 		};
@@ -1034,14 +887,14 @@ class cfgWeapons
 			maxRangeProbab=0.100000;
 		};
 	};
-	class RH_akmssd: RH_akm_SUB
+	class RH_akmssd: RH_akm
 	{
 		class ItemActions {
 			class UseAtt{
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupAK";
 				out = "RH_akms";
 			};
 		};
@@ -1108,14 +961,14 @@ class cfgWeapons
 			};
 		};
 	};
-	class RH_ak47gl: RH_ak47_SUB
+	class RH_ak47gl: RH_ak47
 	{
 		class ItemActions {
 			class UseAtt{
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak47";
 			};
 		};
@@ -1162,11 +1015,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_AK47Muzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_AK47Muzzle: RH_ak47
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -1207,8 +1057,17 @@ class cfgWeapons
 			};
 		};
 	};
-	class RH_akmgl: RH_akm_SUB
+	class RH_akmgl: RH_akm
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
+				out = "RH_akm";
+			};
+		};
 		scope=2;
 		model="\RH_aks\RH_akmgl.p3d";
 		modelOptics="-";
@@ -1303,8 +1162,8 @@ class cfgWeapons
 			class UseAtt {
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_an94gl";
 			};
 		};
@@ -1483,8 +1342,8 @@ class cfgWeapons
 			class UseAtt {
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_an94";
 			};
 		};
@@ -1531,11 +1390,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ANMuzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_ANMuzzle: RH_an94
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -1690,7 +1546,7 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupAK";
 				out = "RH_aks74usd";
 			};
 		};
@@ -1802,7 +1658,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupAK";
 				out = "RH_aks74usdk";
 			};
 		};
@@ -1812,106 +1668,6 @@ class cfgWeapons
 		opticsDisablePeripherialVision=1;
 		distanceZoomMin=222;
 		distanceZoomMax=222;
-	};
-	class RH_aks74usd_SUB: RH_aks74u
-	{
-		scope=2;
-		model="\RH_aks\RH_aks74usd.p3d";
-		fireLightDuration=0;
-		fireLightIntensity=0;
-		distanceZoomMin=100;
-		distanceZoomMax=100;
-		picture="\RH_aks\inv\aks74usd.paa";
-		UiPicture="\CA\weapons\data\Ico\i_regular_CA.paa";
-		displayName="AKs-74u SD";
-		reloadMagazineSound[]=
-		{
-			"\RH_aks\sound\aks74u_reload.wss",
-			0.056234,
-			1,
-			20
-		};
-		modes[]=
-		{
-			"Single",
-			"FullAuto"
-		};
-		magazines[]=
-		{
-			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD",
-			"30Rnd_545x39_AK_hp",
-			"30Rnd_545x39_AK_tracer",
-			"30Rnd_545x39_AK_rubber",
-			"30Rnd_545x39_AK_bt",
-			"RH_45Rnd_545x39_mag",
-			"RH_45Rnd_545x39_magSD",
-			"RH_45Rnd_545x39_mag_hp",
-			"RH_45Rnd_545x39_mag_tracer",
-			"RH_45Rnd_545x39_mag_rubber",
-			"RH_45Rnd_545x39_mag_bt",
-			"75Rnd_545x39_RPK",
-			"75Rnd_545x39_RPKSD",
-			"75Rnd_545x39_RPK_hp",
-			"75Rnd_545x39_RPK_tracer",
-			"75Rnd_545x39_RPK_rubber",
-			"75Rnd_545x39_RPK_bt"
-		};
-		class Single: Mode_SemiAuto
-		{
-			begin1[]=
-			{
-				"\RH_aks\Sound\aks74usd.wss",
-				1.778279,
-				1,
-				50
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-			reloadTime=0.085000;
-			recoil="RH_AKS74URecoil";
-			recoilProne="RH_AKS74URecoilProne";
-			dispersion=0.003500;
-			minRange=1;
-			minRangeProbab=0.600000;
-			midRange=100;
-			midRangeProbab=0.800000;
-			maxRange=200;
-			maxRangeProbab=0.500000;
-		};
-		class FullAuto: Mode_FullAuto
-		{
-			begin1[]=
-			{
-				"\RH_aks\Sound\aks74usd.wss",
-				1.778279,
-				1,
-				50
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-			reloadTime=0.085000;
-			ffCount=30;
-			recoil="RH_AKS74URecoil";
-			recoilProne="RH_AKS74URecoilProne";
-			dispersion=0.003500;
-			minRange=0.100000;
-			minRangeProbab=0.900000;
-			midRange=60;
-			midRangeProbab=0.700000;
-			maxRange=100;
-			maxRangeProbab=0.500000;
-		};
-		class Library
-		{
-			libTextDesc="The AKS-74U is a assault rifle designed in the Soviet Union that was in production from the early 1980s until circa 1991. The AKS-74U Ukorochennyj shortened was developed in the late 1970s from the AKS-74, a shortened variant of the AK-74. The AKS-74U is the size of, and has the effective range of, a submachine gun. AKS-74U is capable of being fitted with a detachable PBS suppressor, as well as a suppressed 30 mm BS-1 Tishina model grenade launcher which fires HEDP grenades. The grenades from the BS-1 are launched by blank cartridges stored in a pistol grip box magazine.";
-		};
 	};
 	class RH_aks74usd: RH_aks74u
 	{
@@ -1926,7 +1682,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupAK";
 				out = "RH_aks74u";
 			};
 		};
@@ -2028,7 +1784,7 @@ class cfgWeapons
 			libTextDesc="The AKS-74U is a assault rifle designed in the Soviet Union that was in production from the early 1980s until circa 1991. The AKS-74U Ukorochennyj shortened was developed in the late 1970s from the AKS-74, a shortened variant of the AK-74. The AKS-74U is the size of, and has the effective range of, a submachine gun. AKS-74U is capable of being fitted with a detachable PBS suppressor, as well as a suppressed 30 mm BS-1 Tishina model grenade launcher which fires HEDP grenades. The grenades from the BS-1 are launched by blank cartridges stored in a pistol grip box magazine.";
 		};
 	};
-	class RH_aks74usdk: RH_aks74usd_SUB
+	class RH_aks74usdk: RH_aks74usd
 	{
 		class ItemActions {
 			class UseAtt {
@@ -2040,7 +1796,7 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupAK";
 				out = "RH_aks74uk";
 			};
 		};
@@ -2051,8 +1807,9 @@ class cfgWeapons
 		distanceZoomMin=120;
 		distanceZoomMax=120;
 	};
-	class RH_aks74upt: RH_aks74usd_SUB
+	class RH_aks74upt: RH_aks74usd
 	{
+		delete ItemActions;
 		scope=2;
 		model="\RH_aks\RH_aks74upt.p3d";
 		modelOptics="-";
@@ -2096,11 +1853,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_aks74uMuzzle",
+			"this",
 			"RH_bs1Muzzle"
-		};
-		class RH_aks74uMuzzle: RH_aks74usd
-		{
 		};
 		class RH_bs1Muzzle: GrenadeLauncher
 		{
@@ -2133,8 +1887,9 @@ class cfgWeapons
 			};
 		};
 	};
-	class RH_aks74uptk: RH_aks74usd_SUB
+	class RH_aks74uptk: RH_aks74usd
 	{
+		delete ItemActions;
 		scope=2;
 		model="\RH_aks\RH_aks74uptk.p3d";
 		modelOptics="-";
@@ -2178,11 +1933,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_aks74uMuzzle",
+			"this",
 			"RH_bs1Muzzle"
-		};
-		class RH_aks74uMuzzle: RH_aks74usdk
-		{
 		};
 		class RH_bs1Muzzle: GrenadeLauncher
 		{
@@ -2215,8 +1967,9 @@ class cfgWeapons
 			};
 		};
 	};
-	class RH_aks74uptsp: RH_aks74usd_SUB
+	class RH_aks74uptsp: RH_aks74usd
 	{
+		delete ItemActions;
 		scope=2;
 		model="\RH_aks\RH_aks74uptsp.p3d";
 		modelOptics="-";
@@ -2260,27 +2013,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_aks74uMuzzle",
+			"this",
 			"RH_bs1Muzzle"
-		};
-		class RH_aks74uMuzzle: RH_aks74usd
-		{
-			modelOptics="\RH_aks\NWD_PSO_1_1_AK74";
-			opticsZoomMin=0.071945;
-			opticsZoomMax=0.071945;
-			opticsFlare="true";
-			opticsDisablePeripherialVision="true";
-			distanceZoomMin=228;
-			distanceZoomMax=228;
-			class Single: Single
-			{
-				minRange=2;
-				minRangeProbab=0.500000;
-				midRange=200;
-				midRangeProbab=0.700000;
-				maxRange=300;
-				maxRangeProbab=0.100000;
-			};
 		};
 		class RH_bs1Muzzle: GrenadeLauncher
 		{
@@ -2320,17 +2054,17 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_rk95aim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_rk95ag";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupAK";
 				out = "RH_rk95sd";
 			};
 		};
@@ -2471,18 +2205,18 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_rk95sdaim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_rk95sdag";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Silencer";
 				script = "spawn player_removeAttchment;";
-				att = "AttSilencer";
+				att = "Attachment_SupAK";
 				out = "RH_rk95";
 			};
 		};
@@ -2556,12 +2290,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_rk95sd";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupAK";
 				out = "RH_Rk95sd";
 			};
 		};
@@ -2579,12 +2313,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_rk95sd";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupAK";
 				out = "RH_Rk95ag";
 			};
 		};
@@ -2611,13 +2345,13 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_rk95sd";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupAK";
 				out = "RH_Rk95sdaim";
 			};
 		};
@@ -2635,13 +2369,13 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_rk95sd";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupAK";
 				out = "RH_Rk95sdag";
 			};
 		};
@@ -2673,7 +2407,7 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Silencer";
-				att = "Attachment_Sup9";
+				att = "Attachment_Sup";
 				out = "RH_bizonsd";
 			};
 		};
@@ -2785,7 +2519,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_Sup9";
+				att = "Attachment_Sup";
 				out = "RH_bizonsdk";
 			};
 		};
@@ -2809,7 +2543,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_Sup9";
+				att = "Attachment_Sup";
 				out = "RH_bizon";
 			};
 		};
@@ -2861,7 +2595,7 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
-				att = "Attachment_Sup9";
+				att = "Attachment_Sup";
 				out = "RH_bizonk";
 			};
 		};
@@ -2884,12 +2618,12 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_ak74sp";
 			};
 			class UseAtt2 : UseAtt{
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak74gl";
 			};
 		};
@@ -2988,104 +2722,7 @@ class cfgWeapons
 			libTextDesc="The AK-74 is a 5.45 mm assault rifle developed in the early 1970s in the Soviet Union by Mikhail Kalashnikov. It was the first Soviet rifle to be chambered in an intermediate rifle caliber. It was introduced into service in 1974 (used to equip, among others, Soviet forces engaged in the Afghanistan conflict). The weapon’s name is an abbreviation for Avtomat Kalashnikova model 1974.";
 		};
 	};
-	class RH_ak74_SUB: AK_74
-	{
-		scope=2;
-		opticsZoomInit=0.375000;
-		model="\RH_aks\RH_ak74.p3d";
-		picture="\RH_aks\inv\ak74.paa";
-		UiPicture="\CA\weapons\data\Ico\i_regular_CA.paa";
-		displayName="AK-74";
-		reloadMagazineSound[]=
-		{
-			"\RH_aks\sound\ak74_reload.wss",
-			0.056234,
-			1,
-			20
-		};
-		modes[]=
-		{
-			"Single",
-			"FullAuto"
-		};
-		magazines[]=
-		{
-			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD",
-			"30Rnd_545x39_AK_hp",
-			"30Rnd_545x39_AK_tracer",
-			"30Rnd_545x39_AK_rubber",
-			"30Rnd_545x39_AK_bt",
-			"RH_45Rnd_545x39_mag",
-			"RH_45Rnd_545x39_magSD",
-			"RH_45Rnd_545x39_mag_hp",
-			"RH_45Rnd_545x39_mag_tracer",
-			"RH_45Rnd_545x39_mag_rubber",
-			"RH_45Rnd_545x39_mag_bt",
-			"75Rnd_545x39_RPK",
-			"75Rnd_545x39_RPKSD",
-			"75Rnd_545x39_RPK_hp",
-			"75Rnd_545x39_RPK_tracer",
-			"75Rnd_545x39_RPK_rubber",
-			"75Rnd_545x39_RPK_bt"
-		};
-		class Single: Mode_SemiAuto
-		{
-			begin1[]=
-			{
-				"\RH_aks\Sound\ak74.wss",
-				1.778279,
-				1,
-				1000
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-			reloadTime=0.100000;
-			recoil="RH_AKS74URecoil";
-			recoilProne="RH_AKS74URecoilProne";
-			dispersion=0.002500;
-			minRange=2;
-			minRangeProbab=0.500000;
-			midRange=250;
-			midRangeProbab=0.900000;
-			maxRange=400;
-			maxRangeProbab=0.100000;
-		};
-		class FullAuto: Mode_FullAuto
-		{
-			begin1[]=
-			{
-				"\RH_aks\Sound\ak74.wss",
-				1.778279,
-				1,
-				1000
-			};
-			soundBegin[]=
-			{
-				"begin1",
-				1
-			};
-			reloadTime=0.100000;
-			ffCount=30;
-			recoil="RH_AKS74URecoil";
-			recoilProne="RH_AKS74URecoilProne";
-			dispersion=0.002500;
-			minRange=0.100000;
-			minRangeProbab=0.900000;
-			midRange=60;
-			midRangeProbab=0.700000;
-			maxRange=100;
-			maxRangeProbab=0.400000;
-		};
-		class Library
-		{
-			libTextDesc="The AK-74 is a 5.45 mm assault rifle developed in the early 1970s in the Soviet Union by Mikhail Kalashnikov. It was the first Soviet rifle to be chambered in an intermediate rifle caliber. It was introduced into service in 1974 (used to equip, among others, Soviet forces engaged in the Afghanistan conflict). The weapon’s name is an abbreviation for Avtomat Kalashnikova model 1974.";
-		};
-	};
-	class RH_ak74m: RH_ak74_SUB
+	class RH_ak74m: RH_ak74
 	{
 		class ItemActions {
 			class UseAtt {
@@ -3097,12 +2734,12 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_ak74msp";
 			};
 			class UseAtt2 : UseAtt{
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak74mgl";
 			};
 		};
@@ -3122,13 +2759,13 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_ak74mglsp";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_removeAttchment;";
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak74m";
 			};
 		};
@@ -3170,16 +2807,13 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak74mMuzzle",
+			"this",
 			"RH_gp30Muzzle"
 		};
 		handAnim[]=
 		{
 			"OFP2_ManSkeleton",
 			"\Ca\weapons\data\Anim\M16GL.rtm"
-		};
-		class RH_ak74mMuzzle: RH_ak74m
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -3232,8 +2866,8 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak74mkgl";
 			};
 		};
@@ -3256,8 +2890,8 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak74mk";
 			};
 		};
@@ -3304,11 +2938,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak74mMuzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_ak74mMuzzle: RH_ak74mk
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -3356,13 +2987,13 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_ak74m";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak74mglsp";
 			};
 		};
@@ -3393,12 +3024,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_ak74mgl";
 			};
 			class UseAtt2 : UseAtt{
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak74msp";
 			};
 		};
@@ -3445,11 +3076,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak74mMuzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_ak74mMuzzle: RH_ak74msp
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -3492,6 +3120,7 @@ class cfgWeapons
 	};
 	class RH_ak74m1p29: RH_ak74m
 	{
+		delete ItemActions;
 		model="\RH_aks\RH_ak74m1p29.p3d";
 		picture="\RH_aks\inv\ak74m1p29.paa";
 		displayName="AK-74M 1p29";
@@ -3514,6 +3143,7 @@ class cfgWeapons
 	};
 	class RH_ak74mgl1p29: RH_ak74m
 	{
+		delete ItemActions;
 		scope=2;
 		model="\RH_aks\RH_ak74mgl1p29.p3d";
 		modelOptics="-";
@@ -3557,11 +3187,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak74mMuzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_ak74mMuzzle: RH_ak74m1p29
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -3614,12 +3241,12 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_aks74msp";
 			};
 			class UseAtt2 : UseAtt{
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_aks74mgl";
 			};
 		};
@@ -3639,13 +3266,13 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_aks74mglsp";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_removeAttchment;";
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_aks74m";
 			};
 		};
@@ -3692,11 +3319,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_aks74mMuzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_aks74mMuzzle: RH_aks74m
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -3749,8 +3373,8 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_aks74mkgl";
 			};
 		};
@@ -3773,8 +3397,8 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_aks74mk";
 			};
 		};
@@ -3821,11 +3445,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak74mMuzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_ak74mMuzzle: RH_aks74mk
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -3873,13 +3494,13 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_aks74m";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_aks74mglsp";
 			};
 		};
@@ -3910,13 +3531,13 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_aks74m";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_aks74mglsp";
 			};
 		};
@@ -3963,11 +3584,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak74mMuzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_ak74mMuzzle: RH_aks74msp
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -4010,6 +3628,7 @@ class cfgWeapons
 	};
 	class RH_aks74m1p29: RH_aks74m
 	{
+		delete ItemActions;
 		model="\RH_aks\RH_aks74m1p29.p3d";
 		picture="\RH_aks\inv\aks74m1p29.paa";
 		displayName="AKS-74M 1p29";
@@ -4032,6 +3651,7 @@ class cfgWeapons
 	};
 	class RH_aks74mgl1p29: RH_aks74m
 	{
+		delete ItemActions;
 		scope=2;
 		model="\RH_aks\RH_aks74mgl1p29.p3d";
 		modelOptics="-";
@@ -4075,11 +3695,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_aks74mMuzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_aks74mMuzzle: RH_aks74m1p29
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -4120,7 +3737,7 @@ class cfgWeapons
 			};
 		};
 	};
-	class RH_ak74gl: RH_ak74_SUB
+	class RH_ak74gl: RH_ak74
 	{
 		class ItemActions {
 			class UseAtt {
@@ -4132,13 +3749,13 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_ak74glsp";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_removeAttchment;";
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak74";
 			};
 		};
@@ -4180,16 +3797,13 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_AK74Muzzle",
+			"this",
 			"RH_gp30Muzzle"
 		};
 		handAnim[]=
 		{
 			"OFP2_ManSkeleton",
 			"\Ca\weapons\data\Anim\M16GL.rtm"
-		};
-		class RH_AK74Muzzle: RH_ak74
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -4230,7 +3844,7 @@ class cfgWeapons
 			};
 		};
 	};
-	class RH_ak74k: RH_ak74_SUB
+	class RH_ak74k: RH_ak74
 	{
 		class ItemActions {
 			class UseAtt {
@@ -4242,8 +3856,8 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak74kgl";
 			};
 		};
@@ -4266,8 +3880,8 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak74k";
 			};
 		};
@@ -4314,11 +3928,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_AK74Muzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_AK74Muzzle: RH_ak74k
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -4359,20 +3970,20 @@ class cfgWeapons
 			};
 		};
 	};
-	class RH_ak74sp: RH_ak74_SUB
+	class RH_ak74sp: RH_ak74
 	{
 		class ItemActions {
 			class UseAtt {
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_ak74";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak74glsp";
 			};
 		};
@@ -4396,14 +4007,16 @@ class cfgWeapons
 			maxRangeProbab=0.100000;
 		};
 	};
-	class RH_aks74: RH_ak74_SUB
+	class RH_aks74: RH_ak74
 	{
+		delete ItemActions;
 		model="\RH_aks\RH_aks74.p3d";
 		picture="\RH_aks\inv\aks74.paa";
 		displayName="AKS-74";
 	};
 	class RH_aks74gl: RH_aks74
 	{
+		delete ItemActions;
 		scope=2;
 		model="\RH_aks\RH_aks74gl.p3d";
 		modelOptics="-";
@@ -4447,11 +4060,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_AKS74Muzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_AKS74Muzzle: RH_aks74
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -4494,6 +4104,7 @@ class cfgWeapons
 	};
 	class RH_aks74k: RH_aks74
 	{
+		delete ItemActions;
 		model="\RH_aks\RH_aks74k.p3d";
 		picture="\RH_aks\inv\aks74k.paa";
 		displayName="AKS-74 Kobra";
@@ -4503,6 +4114,7 @@ class cfgWeapons
 	};
 	class RH_aks74kgl: RH_aks74k
 	{
+		delete ItemActions;
 		scope=2;
 		model="\RH_aks\RH_aks74kgl.p3d";
 		modelOptics="-";
@@ -4546,11 +4158,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_AK74Muzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_AK74Muzzle: RH_aks74k
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -4593,6 +4202,7 @@ class cfgWeapons
 	};
 	class RH_aks74sp: RH_aks74
 	{
+		delete ItemActions;
 		model="\RH_aks\RH_aks74sp.p3d";
 		picture="\RH_aks\inv\aks74sp.paa";
 		displayName="AKS-74 Sniper";
@@ -4613,24 +4223,24 @@ class cfgWeapons
 			maxRangeProbab=0.100000;
 		};
 	};
-	class RH_oc14: RH_ak74_SUB
+	class RH_oc14: RH_ak74
 	{
 		class ItemActions {
 			class UseAtt{
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupAK";
 				out = "RH_oc14sd";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_oc14sp";
 			};
 			class UseAtt2 : UseAtt{
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_oc14gl";
 			};
 		};
@@ -4727,18 +4337,18 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupAK";
 				out = "RH_oc14sdsp";
 			};
 			class UseAtt1 : UseAtt{
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_oc14glsp";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_oc14";
 			};
 		};
@@ -4769,13 +4379,13 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_oc14glsp";
 			};
 			class UseAtt1 : UseAtt{
 				script = "spawn player_removeAttchment;";
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_oc14";
 			};
 		};
@@ -4809,11 +4419,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_Oc14Muzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_Oc14Muzzle: RH_oc14
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -4861,12 +4468,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_oc14gl";
 			};
 			class UseAtt1 : UseAtt{
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_oc14sp";
 			};
 		};
@@ -4895,11 +4502,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_Oc14Muzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_Oc14Muzzle: RH_oc14sp
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -4947,13 +4551,13 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_oc14sdsp";
 			};
 			class UseAtt1 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupAK";
 				out = "RH_oc14";
 			};
 		};
@@ -5029,12 +4633,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_oc14sd";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupAK";
 				out = "RH_oc14sp";
 			};
 		};
@@ -5065,12 +4669,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_gr1sp";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupAK";
 				out = "RH_gr1sd";
 			};
 		};
@@ -5180,13 +4784,13 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_gr1";
 			};
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupAK";
 				out = "RH_gr1sdsp";
 			};
 		};
@@ -5217,13 +4821,13 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_gr1sdsp";
 			};
 			class UseAtt1 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupAK";
 				out = "RH_gr1";
 			};
 		};
@@ -5328,12 +4932,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_gr1sd";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupAK";
 				out = "RH_gr1sp";
 			};
 		};
@@ -5348,7 +4952,7 @@ class cfgWeapons
 		distanceZoomMin=182;
 		distanceZoomMax=182;
 	};
-	class RH_ak103: RH_ak74_SUB
+	class RH_ak103: RH_ak74
 	{
 		class ItemActions {
 			class UseAtt {
@@ -5360,12 +4964,12 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_ak103sp";
 			};
 			class UseAtt2 : UseAtt{
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak103gl";
 			};
 		};
@@ -5457,13 +5061,13 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_ak103glsp";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_removeAttchment;";
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak103";
 			};
 		};
@@ -5484,16 +5088,13 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak103Muzzle",
+			"this",
 			"RH_gp30Muzzle"
 		};
 		handAnim[]=
 		{
 			"OFP2_ManSkeleton",
 			"\Ca\weapons\data\Anim\M16GL.rtm"
-		};
-		class RH_ak103Muzzle: RH_ak103
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -5546,8 +5147,8 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak103kgl";
 			};
 		};
@@ -5570,8 +5171,8 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak103k";
 			};
 		};
@@ -5597,11 +5198,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak103Muzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_ak103Muzzle: RH_ak103k
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -5649,13 +5247,13 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_ak103";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak103glsp";
 			};
 		};
@@ -5686,12 +5284,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_ak103gl";
 			};
 			class UseAtt2 : UseAtt{
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak103sp";
 			};
 		};
@@ -5717,11 +5315,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak74mMuzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_ak74mMuzzle: RH_ak103sp
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -5764,6 +5359,7 @@ class cfgWeapons
 	};
 	class RH_ak103_1p29: RH_ak103
 	{
+		delete ItemActions;
 		model="\RH_aks\RH_ak103_1p29.p3d";
 		picture="\RH_aks\inv\ak103_1p29.paa";
 		displayName="AK-103 1p29";
@@ -5786,6 +5382,7 @@ class cfgWeapons
 	};
 	class RH_ak103gl1p29: RH_ak103
 	{
+		delete ItemActions;
 		scope=2;
 		model="\RH_aks\RH_ak103gl1p29.p3d";
 		modelOptics="-";
@@ -5808,11 +5405,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak103Muzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_ak103Muzzle: RH_ak103_1p29
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -5853,7 +5447,7 @@ class cfgWeapons
 			};
 		};
 	};
-	class RH_ak104: RH_ak74_SUB
+	class RH_ak104: RH_ak74
 	{
 		class ItemActions {
 			class UseAtt {
@@ -5865,12 +5459,12 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_ak104sp";
 			};
 			class UseAtt2 : UseAtt{
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak104gl";
 			};
 		};
@@ -5962,13 +5556,13 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_ak104glsp";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_removeAttchment;";
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak104";
 			};
 		};
@@ -5989,16 +5583,13 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak104Muzzle",
+			"this",
 			"RH_gp30Muzzle"
 		};
 		handAnim[]=
 		{
 			"OFP2_ManSkeleton",
 			"\Ca\weapons\data\Anim\M16GL.rtm"
-		};
-		class RH_ak104Muzzle: RH_ak104
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -6051,8 +5642,8 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak104kgl";
 			};
 		};
@@ -6075,8 +5666,8 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak104k";
 			};
 		};
@@ -6102,11 +5693,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak104Muzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_ak104Muzzle: RH_ak104k
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -6154,13 +5742,13 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_ak104";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak104glsp";
 			};
 		};
@@ -6191,12 +5779,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_ak104gl";
 			};
 			class UseAtt2 : UseAtt{
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak104sp";
 			};
 		};
@@ -6222,11 +5810,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak74mMuzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_ak74mMuzzle: RH_ak104sp
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -6269,6 +5854,7 @@ class cfgWeapons
 	};
 	class RH_ak104_1p29: RH_ak104
 	{
+		delete ItemActions;
 		model="\RH_aks\RH_ak104_1p29.p3d";
 		picture="\RH_aks\inv\ak104_1p29.paa";
 		displayName="AK-104 1p29";
@@ -6291,6 +5877,7 @@ class cfgWeapons
 	};
 	class RH_ak104gl1p29: RH_ak104
 	{
+		delete ItemActions;
 		scope=2;
 		model="\RH_aks\RH_ak104gl1p29.p3d";
 		modelOptics="-";
@@ -6313,11 +5900,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak104Muzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_ak104Muzzle: RH_ak104_1p29
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -6370,12 +5954,12 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_aks74psp";
 			};
 			class UseAtt2 : UseAtt{
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_aks74pgl";
 			};
 		};
@@ -6395,13 +5979,13 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_aks74pglsp";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_removeAttchment;";
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_aks74p";
 			};
 		};
@@ -6448,11 +6032,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak74pMuzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_ak74pMuzzle: RH_aks74p
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -6505,8 +6086,8 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_aks74pkgl";
 			};
 		};
@@ -6529,8 +6110,8 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_aks74pk";
 			};
 		};
@@ -6577,11 +6158,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak104Muzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_ak104Muzzle: RH_aks74pk
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -6629,13 +6207,13 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_aks74p";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_aks74pglsp";
 			};
 		};
@@ -6666,13 +6244,13 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_aks74p";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_aks74pglsp";
 			};
 		};
@@ -6719,11 +6297,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak74mMuzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_ak74mMuzzle: RH_aks74psp
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -6766,6 +6341,7 @@ class cfgWeapons
 	};
 	class RH_aks74p1p29: RH_aks74p
 	{
+		delete ItemActions;
 		model="\RH_aks\RH_aks74p1p29.p3d";
 		picture="\RH_aks\inv\aks74p1p29.paa";
 		displayName="AKS-74P 1p29";
@@ -6788,6 +6364,7 @@ class cfgWeapons
 	};
 	class RH_aks74pgl1p29: RH_aks74p
 	{
+		delete ItemActions;
 		scope=2;
 		model="\RH_aks\RH_aks74pgl1p29.p3d";
 		modelOptics="-";
@@ -6831,11 +6408,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_aks74pMuzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_aks74pMuzzle: RH_aks74p1p29
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -6888,12 +6462,12 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_ak105sp";
 			};
 			class UseAtt2 : UseAtt{
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak105gl";
 			};
 		};
@@ -6913,13 +6487,13 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_ak105glsp";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_removeAttchment;";
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak105";
 			};
 		};
@@ -6966,11 +6540,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak74pMuzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_ak74pMuzzle: RH_ak105
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -7023,8 +6594,8 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak105kgl";
 			};
 		};
@@ -7047,8 +6618,8 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak105k";
 			};
 		};
@@ -7095,11 +6666,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak104Muzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_ak104Muzzle: RH_ak105k
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -7147,13 +6715,13 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_ak105";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak105glsp";
 			};
 		};
@@ -7184,12 +6752,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_ak105gl";
 			};
 			class UseAtt2 : UseAtt{
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak105sp";
 			};
 		};
@@ -7236,11 +6804,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak74mMuzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_ak74mMuzzle: RH_ak105sp
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -7283,6 +6848,7 @@ class cfgWeapons
 	};
 	class RH_ak105_1p29: RH_ak105
 	{
+		delete ItemActions;
 		model="\RH_aks\RH_ak105_1p29.p3d";
 		picture="\RH_aks\inv\ak105_1p29.paa";
 		displayName="AK-105 1p29";
@@ -7305,6 +6871,7 @@ class cfgWeapons
 	};
 	class RH_ak105gl1p29: RH_ak105
 	{
+		delete ItemActions;
 		scope=2;
 		model="\RH_aks\RH_ak105gl1p29.p3d";
 		modelOptics="-";
@@ -7348,11 +6915,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak105Muzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_ak105Muzzle: RH_ak105_1p29
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -7405,12 +6969,12 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_ak107sp";
 			};
 			class UseAtt2 : UseAtt{
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak107gl";
 			};
 		};
@@ -7430,13 +6994,13 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_ak107glsp";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_removeAttchment;";
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak107";
 			};
 		};
@@ -7483,11 +7047,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak74pMuzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_ak74pMuzzle: RH_AK107
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -7540,8 +7101,8 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak107kgl";
 			};
 		};
@@ -7564,8 +7125,8 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak107k";
 			};
 		};
@@ -7612,11 +7173,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak104Muzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_ak104Muzzle: RH_AK107k
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -7664,13 +7222,13 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_ak107";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
-				text = "Attach GP30";
-				att = "AttGP30";
+				text = "Attach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak107glsp";
 			};
 		};
@@ -7701,12 +7259,12 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach PSO";
-				att = "AttPSO";
+				att = "Attachment_PSO1";
 				out = "RH_ak107gl";
 			};
 			class UseAtt2 : UseAtt{
-				text = "Detach GP30";
-				att = "AttGP30";
+				text = "Detach GP25";
+				att = "Attachment_GP25";
 				out = "RH_ak107sp";
 			};
 		};
@@ -7753,11 +7311,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_ak74mMuzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_ak74mMuzzle: RH_AK107sp
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -7800,6 +7355,7 @@ class cfgWeapons
 	};
 	class RH_AK107_1p29: RH_AK107
 	{
+		delete ItemActions;
 		model="\RH_aks\RH_AK107_1p29.p3d";
 		picture="\RH_aks\inv\AK107_1p29.paa";
 		displayName="AK-107 1p29";
@@ -7822,6 +7378,7 @@ class cfgWeapons
 	};
 	class RH_AK107gl1p29: RH_AK107
 	{
+		delete ItemActions;
 		scope=2;
 		model="\RH_aks\RH_AK107gl1p29.p3d";
 		modelOptics="-";
@@ -7865,11 +7422,8 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_AK107Muzzle",
+			"this",
 			"RH_gp30Muzzle"
-		};
-		class RH_AK107Muzzle: RH_AK107_1p29
-		{
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -7912,6 +7466,20 @@ class cfgWeapons
 	};
 	class RH_asval: VSS_vintorez
 	{
+		class ItemActions {
+			class UseAtt {
+				isAttachment = 1;
+				script = "spawn player_useAttchment;";
+				text = "Attach Kobra";
+				att = "Attachment_Kobra";
+				out = "RH_asvalk";
+			};
+			class UseAtt1 : UseAtt{
+				text = "Attach PSO";
+				att = "Attachment_PSO1";
+				out = "RH_asvalsp";
+			};
+		};
 		model="\RH_aks\RH_asval.p3d";
 		picture="\RH_aks\inv\asval.paa";
 		magazines[]=
@@ -8008,6 +7576,15 @@ class cfgWeapons
 	};
 	class RH_asvalk: RH_asval
 	{
+		class ItemActions {
+			class UseAtt {
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Kobra";
+				att = "Attachment_Kobra";
+				out = "RH_asval";
+			};
+		};
 		model="\RH_aks\RH_asvalk.p3d";
 		picture="\RH_aks\inv\asvalk.paa";
 		displayName="AS Val Kobra";
@@ -8017,6 +7594,15 @@ class cfgWeapons
 	};
 	class RH_asvalsp: RH_asval
 	{
+		class ItemActions {
+			class UseAtt {
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach PSO";
+				att = "Attachment_PSO1";
+				out = "RH_asval";
+			};
+		};
 		model="\RH_aks\RH_asvalsp.p3d";
 		picture="\RH_aks\inv\asvalsp.paa";
 		displayName="AS Val Sniper";
@@ -8028,8 +7614,9 @@ class cfgWeapons
 		distanceZoomMin=110;
 		distanceZoomMax=110;
 	};
-	class RH_rpk47: RH_akm_SUB
+	class RH_rpk47: RH_akm
 	{
+		delete ItemActions;
 		scope=2;
 		model="\RH_aks\RH_rpk47.p3d";
 		picture="\RH_aks\inv\rpk47.paa";
@@ -8137,8 +7724,9 @@ class cfgWeapons
 			libTextDesc="The RPK light machine gun, compared to the AKM rifle, has a new, heavier and extended barrel with an increased heat capacity. The barrel is permanently fixed to the receiver and cannot be replaced in field conditions; the barrel’s bore is chrome-lined. The barrel is equipped with a newly designed front sight base, gas block (without a bayonet lug) and an under-barrel cleaning rod guide.";
 		};
 	};
-	class RH_rpk74: RH_ak74_SUB
+	class RH_rpk74: RH_ak74
 	{
+		delete ItemActions;
 		scope=2;
 		model="\RH_aks\RH_rpk74.p3d";
 		picture="\RH_aks\inv\rpk74.paa";
@@ -8238,12 +7826,29 @@ class cfgWeapons
 	};
 	class RH_rpk74m: RH_rpk74
 	{
+		class ItemActions {
+			class UseAtt {
+				isAttachment = 1;
+				text = "Attach PSO";
+				att = "Attachment_PSO1";
+				out = "RH_rpk74m1p29";
+			};
+		};
 		model="\RH_aks\RH_rpk74m.p3d";
 		picture="\RH_aks\inv\rpk74m.paa";
 		displayName="RPK-74M";
 	};
 	class RH_rpk74m1p29: RH_rpk74m
 	{
+		class ItemActions {
+			class UseAtt {
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach PSO";
+				att = "Attachment_PSO1";
+				out = "RH_rpk74m";
+			};
+		};
 		model="\RH_aks\RH_rpk74m1p29.p3d";
 		picture="\RH_aks\inv\rpk74m1p29.paa";
 		displayName="RPK-74M 1p29";

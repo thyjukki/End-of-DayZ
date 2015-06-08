@@ -172,7 +172,7 @@ class CfgMagazines
 {
 	class CA_Magazine;
 	class 30Rnd_556x45_Stanag;
-	class RH_30Rnd_556x45_AK: 30Rnd_556x45_Stanag
+	class RH_30Rnd_556x45_AK: 30Rnd_556x45_Stanag//TODO(Jukki) Ak102 rounds
 	{
 		displayName="30Rnd. AK102";
 		picture="\RH_mgswp\inv\m_ak102.paa";
@@ -382,9 +382,51 @@ class CfgWeapons
 		class Burst;
 		class FullAuto;
 		class M203Muzzle;
+		magazines[] =
+		{
+			"20Rnd_556x45_Stanag",
+			"20Rnd_556x45_StanagSD",
+			"20Rnd_556x45_Stanag_hp",
+			"20Rnd_556x45_Stanag_tracer",
+			"20Rnd_556x45_Stanag_rubber",
+			"20Rnd_556x45_Stanag_bt",
+			"30Rnd_556x45_Stanag",
+			"30Rnd_556x45_StanagSD",
+			"30Rnd_556x45_Stanag_hp",
+			"30Rnd_556x45_Stanag_tracer",
+			"30Rnd_556x45_Stanag_rubber",
+			"30Rnd_556x45_Stanag_bt",
+			"100Rnd_556x45_BetaCMag",
+			"100Rnd_556x45_BetaCMagSD",
+			"100Rnd_556x45_BetaCMag_hp",
+			"100Rnd_556x45_BetaCMag_tracer",
+			"100Rnd_556x45_BetaCMag_rubber",
+			"100Rnd_556x45_BetaCMag_bt"
+		};
 	};
 	class M4A1: M16_base
 	{
+		magazines[] =
+		{
+			"20Rnd_556x45_Stanag",
+			"20Rnd_556x45_StanagSD",
+			"20Rnd_556x45_Stanag_hp",
+			"20Rnd_556x45_Stanag_tracer",
+			"20Rnd_556x45_Stanag_rubber",
+			"20Rnd_556x45_Stanag_bt",
+			"30Rnd_556x45_Stanag",
+			"30Rnd_556x45_StanagSD",
+			"30Rnd_556x45_Stanag_hp",
+			"30Rnd_556x45_Stanag_tracer",
+			"30Rnd_556x45_Stanag_rubber",
+			"30Rnd_556x45_Stanag_bt",
+			"100Rnd_556x45_BetaCMag",
+			"100Rnd_556x45_BetaCMagSD",
+			"100Rnd_556x45_BetaCMag_hp",
+			"100Rnd_556x45_BetaCMag_tracer",
+			"100Rnd_556x45_BetaCMag_rubber",
+			"100Rnd_556x45_BetaCMag_bt"
+		};
 	};
 	class RH_M4C: M4A1
 	{
@@ -393,27 +435,27 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach M203";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4cgl";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m4cacog";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m4caim";
 			};
 			class UseAtt3 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m4ceotech";
 			};
 			class UseAtt4 : UseAtt{
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4ctsd";
 			};
 		};
@@ -581,17 +623,17 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m4csaim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m4cseotech";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m4csacog";
 			};
 		};
@@ -614,7 +656,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_M4CS";
 			};
 		};
@@ -631,7 +673,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_M4CS";
 			};
 		};
@@ -648,7 +690,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_M4CS";
 			};
 		};
@@ -716,6 +758,7 @@ class CfgWeapons
 	};
 	class RH_M4CT: RH_M4C
 	{
+		delete ItemActions;
 		displayName="M4A1 Custom Tactical";
 		descriptionShort="Carbine<br/>Caliber: 5.56x45mm NATO<br/>IR light, vertical grip";
 		model="\RH_mgswp\RH_m4ct.p3d";
@@ -731,6 +774,7 @@ class CfgWeapons
 	};
 	class RH_M4CT_F: RH_M4CT
 	{
+		delete ItemActions;
 		descriptionShort="Carbine<br/>Caliber: 5.56x45mm NATO<br/>Flashlight, vertical grip";
 		irDistance=0;
 		class FlashLight
@@ -746,23 +790,24 @@ class CfgWeapons
 	};
 	class RH_M4CAIM: RH_M4C
 	{
+		delete ItemActions;
 		class ItemActions {
 			class UseAtt {
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4cglaim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4ctsdaim";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Aimpoint";
 				script = "spawn player_removeAttchment;";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m4c";
 			};
 		};
@@ -779,18 +824,18 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4cgleotech";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4ctsdeotech";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Holo";
 				script = "spawn player_removeAttchment;";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m4c";
 			};
 		};
@@ -807,18 +852,18 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4cglacog";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4ctsdacog";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Acog";
 				script = "spawn player_removeAttchment;";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m4c";
 			};
 		};
@@ -891,28 +936,28 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m4ctsdeotech";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m4ctsdacog";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m4ctsdaim";
 			};
 			class UseAtt3 : UseAtt{
 				text = "Attach M203";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4ctsdgl";
 			};
 			class UseAtt4 : UseAtt{
 				text = "Detach Silencer";
 				script = "spawn player_removeAttchment;";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4c";
 			};
 		};
@@ -964,6 +1009,7 @@ class CfgWeapons
 	};
 	class RH_M4CTSD_F: RH_M4CTSD
 	{
+		delete ItemActions;
 		descriptionShort="Suppressed carbine<br/>Caliber: 5.56x45mm NATO<br/>Flashlight, vertical grip";
 		irDistance=0;
 		class FlashLight
@@ -984,18 +1030,18 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach M203";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4ctsdglaim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Aimpoint";
 				script = "spawn player_removeAttchment;";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_M4CTSD";
 			};
 			class UseAtt2 : UseAtt1{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4caim";
 			};
 		};
@@ -1007,6 +1053,7 @@ class CfgWeapons
 	};
 	class RH_M4CTSDAIM_F: RH_M4CTSDAIM
 	{
+		delete ItemActions;
 		descriptionShort="Suppressed carbine<br/>Caliber: 5.56x45mm NATO<br/>Flashlight, vertical grip";
 		irDistance=0;
 		class FlashLight
@@ -1027,18 +1074,18 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4ctsdgleotech";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Holo";
 				script = "spawn player_removeAttchment;";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m4ctsd";
 			};
 			class UseAtt2 : UseAtt1{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4ceotech";
 			};
 		};
@@ -1050,6 +1097,7 @@ class CfgWeapons
 	};
 	class RH_M4CTSDEOTECH_F: RH_M4CTSDEOTECH
 	{
+		delete ItemActions;
 		descriptionShort="Suppressed carbine<br/>Caliber: 5.56x45mm NATO<br/>Flashlight, vertical grip";
 		irDistance=0;
 		class FlashLight
@@ -1070,18 +1118,18 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4ctsdglacog";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Acog";
 				script = "spawn player_removeAttchment;";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m4ctsd";
 			};
 			class UseAtt2 : UseAtt1{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4cacog";
 			};
 		};
@@ -1149,6 +1197,7 @@ class CfgWeapons
 	};
 	class RH_M4CTSDACOG_F: RH_M4CTSDACOG
 	{
+		delete ItemActions;
 		descriptionShort="Suppressed carbine<br/>Caliber: 5.56x45mm NATO<br/>Scope power: 4X<br/>Flashlight, vertical grip";
 		irDistance=0;
 		class FlashLight
@@ -1169,28 +1218,28 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4c";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Acog";
 				script = "spawn player_useAttchment;";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m4cglacog";
 			};
 			class UseAtt2 : UseAtt1{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m4cglaim";
 			};
 			class UseAtt3 : UseAtt1{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m4cgleotech";
 			};
 			class UseAtt4 : UseAtt1{
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4ctsdgl";
 			};
 		};
@@ -1219,18 +1268,18 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4caim";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_M4CGL";
 			};
 			class UseAtt3 : UseAtt{
 				text = "Attach Silencer";
 				script = "spawn player_useAttchment;";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4ctsdglaim";
 			};
 		};
@@ -1247,18 +1296,18 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_M4ceotech";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_M4CGL";
 			};
 			class UseAtt3 : UseAtt{
 				text = "Attach Silencer";
 				script = "spawn player_useAttchment;";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4ctsdgleotech";
 			};
 		};
@@ -1275,18 +1324,18 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_M4cacog";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_M4CGL";
 			};
 			class UseAtt3 : UseAtt{
 				text = "Attach Silencer";
 				script = "spawn player_useAttchment;";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4ctsdglacog";
 			};
 		};
@@ -1315,28 +1364,28 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_m4ctsd";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_m4cgl";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Acog";
 				script = "spawn player_useAttchment;";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m4ctsdglacog";
 			};
 			class UseAtt3 : UseAtt2{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m4ctsdglaim";
 			};
 			class UseAtt4 : UseAtt2{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m4ctsdgleotech";
 			};
 		};
@@ -1360,6 +1409,7 @@ class CfgWeapons
 	};
 	class RH_M4CTSDGL_F: RH_M4CTSDGL
 	{
+		delete ItemActions;
 		descriptionShort="Suppressed carbine with M203<br/>Caliber: 5.56x45mm NATO<br/>Flashlight";
 		irDistance=0;
 		class FlashLight
@@ -1380,17 +1430,17 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_M4CTSDAIM";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_M4CGLAIM";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_M4CTSDGL";
 			};
 		};
@@ -1402,6 +1452,7 @@ class CfgWeapons
 	};
 	class RH_M4CTSDGLAIM_F: RH_M4CTSDGLAIM
 	{
+		delete ItemActions;
 		descriptionShort="Suppressed carbine with M203<br/>Caliber: 5.56x45mm NATO<br/>Flashlight";
 		irDistance=0;
 		class FlashLight
@@ -1422,17 +1473,17 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_M4CTSDEOTECH";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_M4CGLEOTECH";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_M4CTSDGL";
 			};
 		};
@@ -1444,6 +1495,7 @@ class CfgWeapons
 	};
 	class RH_M4CTSDGLEOTECH_F: RH_M4CTSDGLEOTECH
 	{
+		delete ItemActions;
 		descriptionShort="Suppressed carbine with M203<br/>Caliber: 5.56x45mm NATO<br/>Flashlight";
 		irDistance=0;
 		class FlashLight
@@ -1464,17 +1516,17 @@ class CfgWeapons
 				isAttachment = 1;
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
-				att = "AttLauncher";
+				att = "Attachment_M203";
 				out = "RH_M4CTSDACOG";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_M4CGLACOG";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_M4CTSDGL";
 			};
 		};
@@ -1498,6 +1550,7 @@ class CfgWeapons
 	};
 	class RH_M4CTSDGLACOG_F: RH_M4CTSDGLACOG
 	{
+		delete ItemActions;
 		descriptionShort="Suppressed carbine with M203<br/>Caliber: 5.56x45mm NATO<br/>Scope power: 4X<br/>Flashlight";
 		irDistance=0;
 		class FlashLight
@@ -1518,17 +1571,17 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_m4cmkaim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_m4cmkeotech";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_m4cmkacog";
 			};
 		};
@@ -1556,7 +1609,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_M4CMK";
 			};
 		};
@@ -1573,7 +1626,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_M4CMK";
 			};
 		};
@@ -1590,7 +1643,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_M4CMK";
 			};
 		};
@@ -1626,6 +1679,20 @@ class CfgWeapons
 	};
 	class RH_M14EBR: M14_EP1
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_useAttchment;";
+				text = "Attach Scope";
+				att = "Attachment_SCOPED";
+				out = "RH_M14EBRsp";
+			};
+			class UseAtt1 : UseAtt{
+				text = "Attach Silencer";
+				att = "Attachment_SupNATO";
+				out = "RH_M14EBR_SD";
+			};
+		};
 		displayName="M14 EBR";
 		descriptionShort="Battle rifle<br/>Caliber: 7.62x51mm NATO";
 		model="\RH_mgswp\RH_m14ebr.p3d";
@@ -1711,6 +1778,21 @@ class CfgWeapons
 	};
 	class RH_M14EBRSP: RH_M14EBR
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Scope";
+				att = "Attachment_SCOPED";
+				out = "RH_M14EBR";
+			};
+			class UseAtt1 : UseAtt{
+				script = "spawn player_useAttchment;";
+				text = "Attach Silencer";
+				att = "Attachment_SupNATO";
+				out = "RH_M14EBRSP_SD";
+			};
+		};
 		displayName="M14 EBR Sniper";
 		descriptionShort="Marksman rifle<br/>Caliber: 7.62x51mm NATO<br/>Scope power: 3-12X";
 		model="\RH_mgswp\RH_m14ebrsp.p3d";
@@ -1748,6 +1830,7 @@ class CfgWeapons
 	};
 	class RH_M14EBRGC: RH_M14EBR
 	{
+		delete ItemAction;
 		displayName="M14 EBR ShortDot";
 		descriptionShort="Battle rifle<br/>Caliber: 7.62x51mm NATO<br/>Scope power: 1-4X";
 		model="\RH_mgswp\RH_m14ebrgc.p3d";
@@ -1797,6 +1880,21 @@ class CfgWeapons
 	};
 	class RH_M14EBR_SD: RH_M14EBR
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_useAttchment;";
+				text = "Attach Scope";
+				att = "Attachment_SCOPED";
+				out = "RH_M14EBRSP_SD";
+			};
+			class UseAtt1 : UseAtt{
+				script = "spawn player_removeAttchment;";
+				text = "Detach Silencer";
+				att = "Attachment_SupNATO";
+				out = "RH_M14EBR";
+			};
+		};
 		displayName="M14 EBR SD";
 		descriptionShort="Suppressed battle rifle<br/>Caliber: 7.62x51mm NATO";
 		model="\RH_mgswp\RH_m14ebr_sd.p3d";
@@ -1848,6 +1946,20 @@ class CfgWeapons
 	};
 	class RH_M14EBRSP_SD: RH_M14EBR_SD
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Scope";
+				att = "Attachment_SCOPED";
+				out = "RH_M14EBR_SD";
+			};
+			class UseAtt1 : UseAtt{
+				text = "Attach Silencer";
+				att = "Attachment_SupNATO";
+				out = "RH_M14EBRSP";
+			};
+		};
 		displayName="M14 EBR SD Sniper";
 		descriptionShort="Suppressed marksman rifle<br/>Caliber: 7.62x51mm NATO<br/>Scope power: 3-12X";
 		model="\RH_mgswp\RH_m14ebrsp_sd.p3d";
@@ -1934,6 +2046,15 @@ class CfgWeapons
 	};
 	class RH_MK21A5: RH_M14EBRSP
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_useAttchment;";
+				text = "Attach Silencer";
+				att = "Attachment_SupNATO";
+				out = "RH_MK21A5SD";
+			};
+		};
 		displayName="M21A5 EBR";
 		descriptionShort="Sniper rifle<br/>Caliber: 7.62x51mm NATO<br/>Scope power: 10X<br/>Bipod";
 		model="\RH_mgswp\RH_mk21a5.p3d";
@@ -1972,6 +2093,15 @@ class CfgWeapons
 	};
 	class RH_MK21A5SD: RH_M14EBRSP_SD
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Silencer";
+				att = "Attachment_SupNATO";
+				out = "RH_MK21A5";
+			};
+		};
 		displayName="M21A5 EBR SD";
 		descriptionShort="Suppressed sniper rifle<br/>Caliber: 7.62x51mm NATO<br/>Scope power: 10X<br/>Bipod";
 		model="\RH_mgswp\RH_mk21a5sd.p3d";
@@ -2010,6 +2140,30 @@ class CfgWeapons
 	};
 	class RH_MK14: RH_M14EBR
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_useAttchment;";
+				text = "Attach Acog";
+				att = "Attachment_ACOG";
+				out = "RH_MK14acog";
+			};
+			class UseAtt1 : UseAtt{
+				text = "Attach Aimpoint";
+				att = "Attachment_CCO";
+				out = "RH_MK14aim";
+			};
+			class UseAtt2 : UseAtt{
+				text = "Attach Holo";
+				att = "Attachment_Holo";
+				out = "RH_MK14eot";
+			};
+			class UseAtt3 : UseAtt{
+				text = "Attach Silencer";
+				att = "Attachment_SupNATO";
+				out = "RH_MK14SD";
+			};
+		};
 		displayName="Mk14 Mod 0";
 		descriptionShort="Assault rifle<br/>Caliber: 7.62x51mm NATO";
 		model="\RH_mgswp\RH_mk14.p3d";
@@ -2019,6 +2173,21 @@ class CfgWeapons
 	};
 	class RH_MK14AIM: RH_MK14
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Aimpoint";
+				att = "Attachment_CCO";
+				out = "RH_MK14";
+			};
+			class UseAtt1 : UseAtt{
+				script = "spawn player_useAttchment;";
+				text = "Attach Silencer";
+				att = "Attachment_SupNATO";
+				out = "RH_MK14SDAIM";
+			};
+		};
 		displayName="Mk14 Mod 0 CCO";
 		descriptionShort="Assault rifle<br/>Caliber: 7.62x51mm NATO<br/>Vertical grip";
 		model="\RH_mgswp\RH_mk14aim.p3d";
@@ -2033,6 +2202,21 @@ class CfgWeapons
 	};
 	class RH_MK14EOTECH: RH_MK14AIM
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Holo";
+				att = "Attachment_HOLO";
+				out = "RH_MK14";
+			};
+			class UseAtt1 : UseAtt{
+				script = "spawn player_useAttchment;";
+				text = "Attach Silencer";
+				att = "Attachment_SupNATO";
+				out = "RH_MK14SDHOLO";
+			};
+		};
 		displayName="Mk14 Mod 0 Holo";
 		model="\RH_mgswp\RH_mk14eotech.p3d";
 		picture="\RH_mgswp\inv\mk14eotech.paa";
@@ -2041,6 +2225,21 @@ class CfgWeapons
 	};
 	class RH_MK14ACOG: RH_MK14AIM
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach ACOG";
+				att = "Attachment_ACOG";
+				out = "RH_MK14";
+			};
+			class UseAtt1 : UseAtt{
+				script = "spawn player_useAttchment;";
+				text = "Attach Silencer";
+				att = "Attachment_SupNATO";
+				out = "RH_MK14SDACOG";
+			};
+		};
 		displayName="Mk14 Mod 0 ACOG";
 		descriptionShort="Assault rifle<br/>Caliber: 7.62x51mm NATO<br/>Scope power: 4X<br/>Vertical grip";
 		model="\RH_mgswp\RH_mk14acog.p3d";
@@ -2101,6 +2300,31 @@ class CfgWeapons
 	};
 	class RH_MK14SD: RH_M14EBR_SD
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_useAttchment;";
+				text = "Attach Acog";
+				att = "Attachment_ACOG";
+				out = "RH_MK14SDacog";
+			};
+			class UseAtt1 : UseAtt{
+				text = "Attach Aimpoint";
+				att = "Attachment_CCO";
+				out = "RH_MK14SDaim";
+			};
+			class UseAtt2 : UseAtt{
+				text = "Attach Holo";
+				att = "Attachment_Holo";
+				out = "RH_MK14SDeot";
+			};
+			class UseAtt3 : UseAtt{
+				script = "spawn player_removeAttchment;";
+				text = "Detach Silencer";
+				att = "Attachment_SupNATO";
+				out = "RH_MK14";
+			};
+		};
 		displayName="Mk14 Mod 0 SD";
 		descriptionShort="Suppressed assault rifle<br/>Caliber: 7.62x51mm NATO";
 		model="\RH_mgswp\RH_mk14sd.p3d";
@@ -2108,6 +2332,20 @@ class CfgWeapons
 	};
 	class RH_MK14SDAIM: RH_MK14SD
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Aimpoint";
+				att = "Attachment_CCO";
+				out = "RH_MK14SD";
+			};
+			class UseAtt1 : UseAtt{
+				text = "Detach Silencer";
+				att = "Attachment_SupNATO";
+				out = "RH_MK14AIM";
+			};
+		};
 		displayName="Mk14 Mod 0 SD CCO";
 		descriptionShort="Suppressed assault rifle<br/>Caliber: 7.62x51mm NATO<br/>Vertical grip";
 		model="\RH_mgswp\RH_mk14sdaim.p3d";
@@ -2122,6 +2360,20 @@ class CfgWeapons
 	};
 	class RH_MK14SDEOTECH: RH_MK14SDAIM
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Holo";
+				att = "Attachment_HOLO";
+				out = "RH_MK14SD";
+			};
+			class UseAtt1 : UseAtt{
+				text = "Detach Silencer";
+				att = "Attachment_SupNATO";
+				out = "RH_MK14HOLO";
+			};
+		};
 		displayName="Mk14 Mod 0 SD Holo";
 		model="\RH_mgswp\RH_mk14sdeotech.p3d";
 		picture="\RH_mgswp\inv\mk14sdeotech.paa";
@@ -2130,6 +2382,20 @@ class CfgWeapons
 	};
 	class RH_MK14SDACOG: RH_MK14SDAIM
 	{
+		class ItemActions {
+			class UseAtt{
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach ACOG";
+				att = "Attachment_ACOG";
+				out = "RH_MK14SD";
+			};
+			class UseAtt1 : UseAtt{
+				text = "Detach Silencer";
+				att = "Attachment_SupNATO";
+				out = "RH_MK14ACOG";
+			};
+		};
 		displayName="Mk14 Mod 0 SD ACOG";
 		descriptionShort="Suppressed assault rifle<br/>Caliber: 7.62x51mm NATO<br/>Scope power: 4X<br/>Vertical grip";
 		model="\RH_mgswp\RH_mk14sdacog.p3d";
@@ -2264,22 +2530,22 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_Scarl_acog";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_Scarl_aim";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_Scarl_eotech";
 			};
 			class UseAtt3 : UseAtt{
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_Scarl_sd_doc";
 			};
 		};
@@ -2417,13 +2683,13 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_Scarl";
 			};
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_Scarl_sd_aim";
 			};
 		};
@@ -2439,12 +2705,14 @@ class CfgWeapons
 	};
 	class RH_SCARLB_AIM: RH_SCARL_AIM
 	{
+		delete ItemAction;
 		descriptionShort="CQB rifle<br/>Caliber: 5.56x45mm NATO<br/>IR light<br/>Black";
 		model="\RH_mgswp\RH_scarLb_aim.p3d";
 		picture="\RH_mgswp\inv\scarlb_aim.paa";
 	};
 	class RH_SCARL_DOC: RH_SCARL_AIM
 	{
+		delete ItemAction;
 		displayName="SCAR-L CQC Docter";
 		model="\RH_mgswp\RH_scarL_doc.p3d";
 		picture="\RH_mgswp\inv\scarl_doc.paa";
@@ -2458,13 +2726,13 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_Scarl";
 			};
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_Scarl_sd_eotech";
 			};
 		};
@@ -2481,13 +2749,13 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_Scarl";
 			};
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_Scarl_sd_acog";
 			};
 		};
@@ -2555,6 +2823,7 @@ class CfgWeapons
 	};
 	class RH_SCARL_MK4: RH_SCARL_AIM
 	{
+		delete ItemAction;
 		displayName="SCAR-L CQC Mk4CQT";
 		descriptionShort="CQB rifle<br/>Caliber: 5.56x45mm NATO<br/>Scope power: 3X<br/>IR light";
 		model="\RH_mgswp\RH_Scarl_mk4.p3d";
@@ -2609,17 +2878,17 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_Scarl_gl_acog";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_Scarl_gl_aim";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_Scarl_gl_eotech";
 			};
 		};
@@ -2648,7 +2917,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_SCARL_GL";
 			};
 		};
@@ -2668,7 +2937,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_SCARL_GL";
 			};
 		};
@@ -2685,7 +2954,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_SCARL_GL";
 			};
 		};
@@ -2753,6 +3022,7 @@ class CfgWeapons
 	};
 	class RH_SCARLB_GL_ACOG: RH_SCARL_GL_ACOG
 	{
+		delete ItemAction;
 		descriptionShort="CQB rifle with EGLM<br/>Caliber: 5.56x45mm NATO<br/>Scope power: 4X<br>IR light<br>Black";
 		model="\RH_mgswp\RH_Scarlb_gl_acog.p3d";
 		picture="\RH_mgswp\inv\Scarlb_gl_acog.paa";
@@ -2764,12 +3034,12 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_Scarl_sd_doc";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_SCARL_AIM";
 			};
 		};
@@ -2820,7 +3090,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_Scarl";
 			};
 		};
@@ -2837,12 +3107,12 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_Scarl_sd_doc";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_SCARL_HOLO";
 			};
 		};
@@ -2854,6 +3124,7 @@ class CfgWeapons
 	};
 	class RH_SCARLB_SD_EOTECH: RH_SCARL_SD_EOTECH
 	{
+		delete ItemAction;
 		descriptionShort="Suppressed CQB rifle<br/>Caliber: 5.56x45mm NATO<br/>IR light<br>Black";
 		model="\RH_mgswp\RH_Scarlb_sd_eotech.p3d";
 		picture="\RH_mgswp\inv\scarlb_sd_eotech.paa";
@@ -2865,12 +3136,12 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_Scarl_sd_doc";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_SCARL_ACOG";
 			};
 		};
@@ -2938,6 +3209,7 @@ class CfgWeapons
 	};
 	class RH_SCARL_SD_GL_AIM: RH_SCARL_SD_AIM
 	{
+		delete ItemAction;
 		displayName="SCAR-L CQC EGLM SD CCO";
 		descriptionShort="Suppressed CQB rifle with EGLM<br/>Caliber: 5.56x45mm NATO<br/>IR light";
 		model="\RH_mgswp\RH_Scarl_sd_gl_aim.p3d";
@@ -2958,12 +3230,14 @@ class CfgWeapons
 	};
 	class RH_SCARLB_SD_GL_AIM: RH_SCARL_SD_GL_AIM
 	{
+		delete ItemAction;
 		descriptionShort="Suppressed CQB rifle with EGLM<br/>Caliber: 5.56x45mm NATO<br/>IR light<br>Black";
 		model="\RH_mgswp\RH_Scarlb_sd_gl_aim.p3d";
 		picture="\RH_mgswp\inv\Scarlb_sd_gl_aim.paa";
 	};
 	class RH_SCARL_SD_GL_EOTECH: RH_SCARL_SD_GL_AIM
 	{
+		delete ItemAction;
 		displayName="SCAR-L CQC EGLM SD Holo";
 		model="\RH_mgswp\RH_Scarl_sd_gl_eotech.p3d";
 		picture="\RH_mgswp\inv\Scarl_sd_gl_eotech.paa";
@@ -2972,6 +3246,7 @@ class CfgWeapons
 	};
 	class RH_SCARL_SD_GL_ACOG: RH_SCARL_SD_GL_AIM
 	{
+		delete ItemAction;
 		displayName="SCAR-L CQC EGLM SD ACOG";
 		descriptionShort="Suppressed CQB rifle with EGLM<br/>Caliber: 5.56x45mm NATO<br/>Scope power: 4X<br/>IR light";
 		model="\RH_mgswp\RH_Scarl_sd_gl_acog.p3d";
@@ -3065,22 +3340,22 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_scarh_acog";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_scarh_aim";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_scarh_eotech";
 			};
 			class UseAtt3 : UseAtt{
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_scarh_sd_doc";
 			};
 		};
@@ -3214,13 +3489,13 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_scarh_sd_aim";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Aimpoint";
 				script = "spawn player_removeAttchment;";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_SCARH";
 			};
 		};
@@ -3245,13 +3520,13 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_scarh_sd_eotech";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Holo";
 				script = "spawn player_removeAttchment;";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_SCARH";
 			};
 		};
@@ -3263,6 +3538,7 @@ class CfgWeapons
 	};
 	class RH_SCARHB_EOTECH: RH_SCARH_EOTECH
 	{
+		delete ItemAction;
 		descriptionShort="Assault rifle<br/>Caliber: 7.62x51mm NATO<br/>IR light, vertical grip<br/>Black";
 		model="\RH_mgswp\RH_Scarhb_eotech.p3d";
 		picture="\RH_mgswp\inv\scarhb_eotech.paa";
@@ -3274,13 +3550,13 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_scarh_sd_acog";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Acog";
 				script = "spawn player_removeAttchment;";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_SCARH";
 			};
 		};
@@ -3348,6 +3624,7 @@ class CfgWeapons
 	};
 	class RH_SCARH_MK4: RH_SCARH_AIM
 	{
+		delete ItemAction;
 		displayName="SCAR-H CQC Mk4CQT";
 		descriptionShort="Assault rifle<br/>Caliber: 7.62x51mm NATO<br/>Scope power: 3X<br/>IR light, vertical grip";
 		model="\RH_mgswp\RH_Scarh_mk4.p3d";
@@ -3397,6 +3674,7 @@ class CfgWeapons
 	};
 	class RH_SCARH_SPECTERDR: RH_SCARH_AIM
 	{
+		delete ItemAction;
 		displayName="SCAR-H CQC SpecterDR";
 		descriptionShort="Assault rifle<br/>Caliber: 7.62x51mm NATO<br/>Scope power: 1-4X<br/>IR light, vertical grip";
 		model="\RH_mgswp\RH_scarH_spectre.p3d";
@@ -3466,17 +3744,17 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_scarh_gl_acog";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_scarh_gl_aim";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_scarh_gl_eotech";
 			};
 		};
@@ -3505,7 +3783,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_SCARH_GL";
 			};
 		};
@@ -3525,7 +3803,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_SCARH_GL";
 			};
 		};
@@ -3542,7 +3820,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_SCARH_GL";
 			};
 		};
@@ -3610,12 +3888,14 @@ class CfgWeapons
 	};
 	class RH_SCARHB_GL_ACOG: RH_SCARH_GL_ACOG
 	{
+		delete ItemAction;
 		descriptionShort="Assault rifle with EGLM<br/>Caliber: 7.62x51mm NATO<br/>Scope power: 4X<br/>IR light<br/>Black";
 		model="\RH_mgswp\RH_Scarhb_gl_acog.p3d";
 		picture="\RH_mgswp\inv\Scarhb_gl_acog.paa";
 	};
 	class RH_SCARH_GL_SPECTERDR: RH_SCARH_GL_AIM
 	{
+		delete ItemAction;
 		displayName="SCAR-H CQC EGLM SpecterDR";
 		descriptionShort="Assault rifle with EGLM<br/>Caliber: 7.62x51mm NATO<br/>Scope power: 1-4X<br/>IR light";
 		model="\RH_mgswp\RH_scarH_gl_spectre.p3d";
@@ -3685,12 +3965,12 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_SCARH_SD";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_SCARH_AIM";
 			};
 		};
@@ -3736,6 +4016,7 @@ class CfgWeapons
 	};
 	class RH_SCARHB_SD_AIM: RH_SCARH_SD_AIM
 	{
+		delete ItemAction;
 		descriptionShort="Suppressed assault rifle<br/>Caliber: 7.62x51mm NATO<br/>IR light, vertical grip<br/>Black";
 		model="\RH_mgswp\RH_scarhb_sd_aim.p3d";
 		picture="\RH_mgswp\inv\scarhb_sd_aim.paa";
@@ -3747,12 +4028,12 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_SCARH_AIM";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_SCARH_EOTECH";
 			};
 		};
@@ -3769,12 +4050,12 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_SCARH_AIM";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_SupNATO";
 				out = "RH_SCARH_ACOG";
 			};
 		};
@@ -3842,6 +4123,7 @@ class CfgWeapons
 	};
 	class RH_SCARH_SD_GL_AIM: RH_SCARH_SD_AIM
 	{
+		delete ItemAction;
 		displayName="SCAR-H CQC EGLM SD CCO";
 		descriptionShort="Suppressed assault rifle with EGLM<br/>Caliber: 7.62x51mm NATO<br/>IR light";
 		model="\RH_mgswp\RH_scarh_sd_gl_aim.p3d";
@@ -3862,6 +4144,7 @@ class CfgWeapons
 	};
 	class RH_SCARH_SD_GL_EOTECH: RH_SCARH_SD_GL_AIM
 	{
+		delete ItemAction;
 		displayName="SCAR-H CQC EGLM SD Holo";
 		model="\RH_mgswp\RH_scarh_sd_gl_eotech.p3d";
 		picture="\RH_mgswp\inv\scarh_sd_gl_eotech.paa";
@@ -3870,6 +4153,7 @@ class CfgWeapons
 	};
 	class RH_SCARHB_SD_GL_EOTECH: RH_SCARH_SD_GL_EOTECH
 	{
+		delete ItemAction;
 		descriptionShort="Suppressed assault rifle with EGLM<br/>Caliber: 7.62x51mm NATO<br/>IR light<br/>Black";
 		model="\RH_mgswp\RH_scarhb_sd_gl_eotech.p3d";
 		picture="\RH_mgswp\inv\scarhb_sd_gl_eotech.paa";
@@ -3905,17 +4189,17 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_SCARAKAIM";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_SCARAKEOTECH";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_SCARAKACOG";
 			};
 		};
@@ -4012,7 +4296,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "AttAimpoint";
+				att = "Attachment_CCO";
 				out = "RH_SCARAK";
 			};
 		};
@@ -4027,6 +4311,7 @@ class CfgWeapons
 	};
 	class RH_SCARAKBAIM: RH_SCARAKAIM
 	{
+		delete ItemAction;
 		descriptionShort="Assault rifle<br/>Caliber: 7.62x39mm<br/>IR light, vertical grip<br/>Black";
 		model="\RH_mgswp\RH_scarAkBaim.p3d";
 		picture="\RH_mgswp\inv\scarAkbaim.paa";
@@ -4038,7 +4323,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Holo";
-				att = "AttHolo";
+				att = "Attachment_Holo";
 				out = "RH_SCARAK";
 			};
 		};
@@ -4055,7 +4340,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Acog";
-				att = "AttAcog";
+				att = "Attachment_ACOG";
 				out = "RH_SCARAK";
 			};
 		};
@@ -4421,9 +4706,39 @@ class CfgWeapons
 		class short;
 		class medium;
 		class far;
+
+		magazines[] =
+		{
+			"100Rnd_762x51_M240",
+			"100Rnd_762x51_M240SD",
+			"100Rnd_762x51_M240_hp",
+			"100Rnd_762x51_M240_tracer",
+			"100Rnd_762x51_M240_rubber",
+			"100Rnd_762x51_M240_bt",
+			"200Rnd_762x51_M240",
+			"200Rnd_762x51_M240SD",
+			"200Rnd_762x51_M240_hp",
+			"200Rnd_762x51_M240_tracer",
+			"200Rnd_762x51_M240_rubber",
+			"200Rnd_762x51_M240_bt"
+		};
 	};
 	class RH_M60E4: M60A4_EP1
 	{
+		class ItemActions {
+			class UseAtt {
+				isAttachment = 1;
+				script = "spawn player_useAttchment;";
+				text = "Attach Acog";
+				att = "Attachment_ACOG";
+				out = "RH_M60E4_ACOG";
+			};
+			class UseAtt1 : UseAtt{
+				text = "Attach Holo";
+				att = "Attachment_Holo";
+				out = "RH_M60E4_EOTECH";
+			};
+		};
 		displayName="M60E4";
 		descriptionShort="Medium machine gun<br/>Caliber: 7.62x51mm NATO<br/>Front grip, bipod";
 		model="\RH_mgswp\RH_m60e4.p3d";
@@ -4534,6 +4849,15 @@ class CfgWeapons
 	};
 	class RH_M60E4_EOTECH: RH_M60E4
 	{
+		class ItemActions {
+			class UseAtt {
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Holo";
+				att = "Attachment_HOLO";
+				out = "RH_M60E4";
+			};
+		};
 		displayName="M60E4 Holo";
 		model="\RH_mgswp\RH_m60e4eotech.p3d";
 		picture="\RH_mgswp\inv\m60e4eotech.paa";
@@ -4543,6 +4867,15 @@ class CfgWeapons
 	};
 	class RH_M60E4_ACOG: RH_M60E4_EOTECH
 	{
+		class ItemActions {
+			class UseAtt {
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Acog";
+				att = "Attachment_ACOG";
+				out = "RH_M60E4";
+			};
+		};
 		displayName="M60E4 ACOG";
 		descriptionShort="Medium machine gun<br/>Caliber: 7.62x51mm NATO<br/>Scope power: 4X<br/>Front grip, bipod";
 		model="\RH_mgswp\RH_m60e4acog.p3d";
@@ -4604,6 +4937,7 @@ class CfgWeapons
 	};
 	class RH_M60E4_ELCAN: RH_M60E4_ACOG
 	{
+		delete ItemAction;
 		displayName="M60E4 M145";
 		descriptionShort="Medium machine gun<br/>Caliber: 7.62x51mm NATO<br/>Scope power: 3.4X<br/>Front grip, bipod";
 		model="\RH_mgswp\RH_m60e4elcan.p3d";
@@ -4657,6 +4991,20 @@ class CfgWeapons
 	};
 	class RH_MK43: RH_M60E4
 	{
+		class ItemActions {
+			class UseAtt {
+				isAttachment = 1;
+				script = "spawn player_useAttchment;";
+				text = "Attach Acog";
+				att = "Attachment_ACOG";
+				out = "RH_MK43_ACOG";
+			};
+			class UseAtt1 : UseAtt{
+				text = "Attach Holo";
+				att = "Attachment_Holo";
+				out = "RH_MK43_EOTECH";
+			};
+		};
 		displayName="Mk43 Mod 1";
 		descriptionShort="Medium machine gun<br/>Caliber: 7.62x51mm NATO<br/>Vertical grip, bipod";
 		model="\RH_mgswp\RH_mk43.p3d";
@@ -4669,6 +5017,15 @@ class CfgWeapons
 	};
 	class RH_MK43_EOTECH: RH_M60E4_EOTECH
 	{
+		class ItemActions {
+			class UseAtt {
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Holo";
+				att = "Attachment_HOLO";
+				out = "RH_MK43";
+			};
+		};
 		displayName="Mk43 Mod 1 Holo";
 		descriptionShort="Medium machine gun<br/>Caliber: 7.62x51mm NATO<br/>IR light, vertical grip, bipod";
 		model="\RH_mgswp\RH_mk43eotech.p3d";
@@ -4684,6 +5041,15 @@ class CfgWeapons
 	};
 	class RH_MK43_ACOG: RH_M60E4_ACOG
 	{
+		class ItemActions {
+			class UseAtt {
+				isAttachment = 1;
+				script = "spawn player_removeAttchment;";
+				text = "Detach Acog";
+				att = "Attachment_ACOG";
+				out = "RH_MK43";
+			};
+		};
 		displayName="Mk43 Mod 1 ACOG";
 		descriptionShort="Medium machine gun<br/>Caliber: 7.62x51mm NATO<br/>Scope power: 4X<br/>IR light, vertical grip, bipod";
 		model="\RH_mgswp\RH_mk43acog.p3d";
@@ -4699,6 +5065,7 @@ class CfgWeapons
 	};
 	class RH_MK43_ELCAN: RH_M60E4_ELCAN
 	{
+		delete ItemAction;
 		displayName="Mk43 Mod 1 M145";
 		descriptionShort="Medium machine gun<br/>Caliber: 7.62x51mm NATO<br/>Scope power: 3.4X<br/>IR light, vertical grip, bipod";
 		model="\RH_mgswp\RH_mk43elcan.p3d";

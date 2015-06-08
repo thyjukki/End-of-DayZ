@@ -675,7 +675,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_mk22sd";
 			};
 		};
@@ -745,7 +745,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_mk22";
 			};
 		};
@@ -817,7 +817,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_mk22vsd";
 			};
 		};
@@ -832,7 +832,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_mk22v";
 			};
 		};
@@ -847,7 +847,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_uspsd";
 			};
 		};
@@ -927,7 +927,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_usp";
 			};
 		};
@@ -1069,7 +1069,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_m1911sd";
 			};
 		};
@@ -1143,7 +1143,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_m1911";
 			};
 		};
@@ -1524,7 +1524,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_m9sd";
 			};
 		};
@@ -1612,7 +1612,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_m9";
 			};
 		};
@@ -1845,7 +1845,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_g17sd";
 			};
 		};
@@ -1945,7 +1945,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_g17";
 			};
 		};
