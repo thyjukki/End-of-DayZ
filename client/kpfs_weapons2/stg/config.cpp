@@ -84,19 +84,7 @@ class CfgAmmo
 		airFriction=-0.000960;
 	};
 };
-class CfgMagazines
-{
-	class CA_Magazine;
-	class KPFS_30Rnd_792x33_STG44: CA_Magazine
-	{
-		scope=2;
-		displayName="$STR_KPFS_STG44_MAG";
-		picture="\kpfs_weapons2\data\icons\m_mp44_ca.paa";
-		ammo="KPFS_B_792x33_Ball";
-		count=30;
-		initSpeed=685;
-	};
-};
+
 class Mode_FullAuto;
 class Far;
 class Medium;
@@ -127,7 +115,11 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
-			"KPFS_30Rnd_792x33_STG44"
+			"KPFS_30Rnd_792x33_STG44",
+			"KPFS_30Rnd_792x33_STG44_hp",
+			"KPFS_30Rnd_792x33_STG44_tracer",
+			"KPFS_30Rnd_792x33_STG44_rubber",
+			"KPFS_30Rnd_792x33_STG44_bt"
 		};
 		modes[]=
 		{

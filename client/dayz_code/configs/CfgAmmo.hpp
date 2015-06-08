@@ -183,4 +183,5 @@ class CfgAmmo {
 	#include "CfgAmmo\r_762x51.hpp"
 	#include "CfgAmmo\r_762x39.hpp"
 	#include "CfgAmmo\r_762x54.hpp"
+	#include "CfgAmmo\r_792x33.hpp"
 };
