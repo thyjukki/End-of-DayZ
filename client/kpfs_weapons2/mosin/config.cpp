@@ -37,19 +37,7 @@ class CfgAmmo
 		airFriction=-0.000960;
 	};
 };
-class CfgMagazines
-{
-	class 10Rnd_762x54_SVD;
-	class KPFS_5Rnd_762x54_Mosin: 10Rnd_762x54_SVD
-	{
-		scope=2;
-		ammo="KPFS_B_762x54_Ball";
-		count=5;
-		initSpeed=800;
-		picture="\kpfs_weapons2\Data\icons\m_sks_ca.paa";
-		displayName="$STR_KPFS_MOSIN_MAG";
-	};
-};
+
 class Far;
 class Medium;
 class Short;
@@ -68,7 +56,11 @@ class cfgWeapons
 		picture="\kpfs_weapons2\data\icons\w_mosin_ca.paa";
 		magazines[]=
 		{
-			"KPFS_5Rnd_762x54_Mosin"
+			"KPFS_5Rnd_762x54_Mosin",
+			"KPFS_5Rnd_762x54_Mosin_hp",
+			"KPFS_5Rnd_762x54_Mosin_tracer",
+			"KPFS_5Rnd_762x54_Mosin_rubber",
+			"KPFS_5Rnd_762x54_Mosin_bt"
 		};
 		handAnim[]=
 		{
@@ -192,7 +184,11 @@ class cfgWeapons
 		picture="\kpfs_weapons2\data\icons\w_mosin_pu_ca.paa";
 		magazines[]=
 		{
-			"KPFS_5Rnd_762x54_Mosin"
+			"KPFS_5Rnd_762x54_Mosin",
+			"KPFS_5Rnd_762x54_Mosin_hp",
+			"KPFS_5Rnd_762x54_Mosin_tracer",
+			"KPFS_5Rnd_762x54_Mosin_rubber",
+			"KPFS_5Rnd_762x54_Mosin_bt"
 		};
 		UiPicture="\CA\weapons\data\Ico\i_sniper_CA.paa";
 		modelOptics="\kpfs_weapons2\optika_snipere";

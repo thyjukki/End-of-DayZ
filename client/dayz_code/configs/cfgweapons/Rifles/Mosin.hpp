@@ -1,4 +1,4 @@
-class Mosin_Nagant_broken: Rifle
+class Mosin_Nagant_broken: Rifle //TODO(Jukki) Check this out?
 {
 	handAnim[] = {"OFP2_ManSkeleton","\Ca\weapons\data\Anim\M24.rtm"}; // Hand positions	
 	type = "1";

@@ -1,6 +1,13 @@
 class SVD_DZ : SVD
 {
-	magazines[] = {10Rnd_762x54_SVD};
+	magazines[]=
+	{
+		"10Rnd_762x54_SVD",
+		"10Rnd_762x54_SVD_hp",
+		"10Rnd_762x54_SVD_tracer",
+		"10Rnd_762x54_SVD_rubber",
+		"10Rnd_762x54_SVD_bt"
+	};
 	
 	reloadTime = 0.06;
 	

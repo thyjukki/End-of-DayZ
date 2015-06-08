@@ -3798,6 +3798,27 @@ class CfgWeapons
 	};
 	class AK_47_M: AK_BASE
 	{
+		magazines[] = 
+		{
+			"30Rnd_762x39_AK47",
+			"30Rnd_762x39_AK47_SD",
+			"30Rnd_762x39_AK47_hp",
+			"30Rnd_762x39_AK47_tracer",
+			"30Rnd_762x39_AK47_rubber",
+			"30Rnd_762x39_AK47_bt",
+			"vil_40Rnd_762x39_AK47",
+			"vil_40Rnd_762x39_AK47_SD",
+			"vil_40Rnd_762x39_AK47_hp",
+			"vil_40Rnd_762x39_AK47_tracer",
+			"vil_40Rnd_762x39_AK47_rubber",
+			"vil_40Rnd_762x39_AK47_bt",
+			"RH_75Rnd_762x39_mag",
+			"RH_75Rnd_762x39_mag_SD",
+			"RH_75Rnd_762x39_mag_hp",
+			"RH_75Rnd_762x39_mag_tracer",
+			"RH_75Rnd_762x39_mag_rubber",
+			"RH_75Rnd_762x39_mag_bt"
+		};
 	};
 	class RH_SCARAK: AK_47_M
 	{

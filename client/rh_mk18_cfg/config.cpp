@@ -98,6 +98,15 @@ class CfgWeapons
 	class Rifle;
 	class M14_EP1: Rifle
 	{
+		magazines[] =
+		{
+			"20Rnd_762x51_DMR",
+			"20Rnd_762x51_DMRSD",
+			"20Rnd_762x51_DMR_hp",
+			"20Rnd_762x51_DMR_tracer",
+			"20Rnd_762x51_DMR_rubber",
+			"20Rnd_762x51_DMR_bt"
+		};
 	};
 	class M16_base: Rifle
 	{

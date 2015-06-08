@@ -475,25 +475,6 @@ class CfgMagazines {
 	};
 	
 	class 10Rnd_762x54_SVD;
-	class vil_10Rnd_SVDK : 10Rnd_762x54_SVD {
-		scope = public;
-		displayName = $STR_VIL_MN_SVDK;
-		picture = "\CA\weapons\data\equip\m_svd_ca.paa";
-		count = 10;
-		ammo = "Vil_B_93x64_Ball";
-		initSpeed = 800;
-		descriptionShort = $STR_VIL_MS_SVDK;
-	};
-	
-	class vil_10Rnd_762x54_SV : 10Rnd_762x54_SVD {
-		scope = public;
-		displayName = $STR_TGW_VIL_MN_SV98;
-		picture = "\CA\weapons\data\equip\m_svd_ca.paa";
-		count = 10;
-		ammo = "B_762x54_noTracer";
-		initSpeed = 870;
-		descriptionShort = $STR_TGW_VIL_MS_SV98;
-	};
 	
 	class vil_10Rnd_Mauser : 10Rnd_762x54_SVD {
 		scope = public;
@@ -3963,7 +3944,14 @@ class cfgWeapons {
 		maxRange = 700;
 		maxRangeProbab = 0.01;
 		begin1[] = {"\vilas_aks\sounds\svdk_fire1", 2.37828, 1.1, 1200};
-		magazines[] = {"vil_10Rnd_SVDK"};
+		magazines[] =
+		{
+			"vil_10Rnd_SVDK",
+			"vil_10Rnd_SVDK_hp",
+			"vil_10Rnd_SVDK_tracer",
+			"vil_10Rnd_SVDK_rubber",
+			"vil_10Rnd_SVDK_bt"
+		};
 		class Library {
 			libTextDesc = $STR_VIL_SVDK_LIB;
 		};
@@ -4011,7 +3999,14 @@ class cfgWeapons {
     				visionMode[] = {};
 			};
 		};
-		magazines[] = {"vil_10Rnd_762x54_SV"};
+		magazines[] =
+		{
+			"vil_10Rnd_762x54_SV",
+			"vil_10Rnd_762x54_SV_hp",
+			"vil_10Rnd_762x54_SV_tracer",
+			"vil_10Rnd_762x54_SV_rubber",
+			"vil_10Rnd_762x54_SV_bt"
+		};
 		reloadSound[] = {"\vilas_aks\sounds\SV98_Bolt", db10, 1, 20};	
 		begin1[] = {"\vilas_aks\sounds\sv98_fire1", 1.77828, 1, 1000};
 		reloadTime = 1.778;

@@ -15,7 +15,7 @@ class Mi17_base: Helicopter
 };
 
 class Mi17_base_CDF: Mi17_base {};
-class Mi17_DZ: Mi17_base_CDF {
+class Mi17_DZ: Mi17_base_CDF { //TODO(Jukki) What to do with the mags
 	displayname = $STR_VEH_NAME_MI17;
 	scope = 2;
 	side = 2;

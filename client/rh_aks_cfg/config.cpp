@@ -1626,7 +1626,11 @@ class cfgWeapons
 		aiRateOfFireDistance=600;
 		magazines[]=
 		{
-			"10Rnd_762x54_SVD"
+			"10Rnd_762x54_SVD",
+			"10Rnd_762x54_SVD_hp",
+			"10Rnd_762x54_SVD_tracer",
+			"10Rnd_762x54_SVD_rubber",
+			"10Rnd_762x54_SVD_bt"
 		};
 		class Library
 		{

@@ -9,7 +9,7 @@ class Pickup_PK_base : Car {
 	};
 };
 
-class Pickup_PK_INS: Pickup_PK_base {
+class Pickup_PK_INS: Pickup_PK_base {//TODO(Jukki) What to do with the mags?
 	crew = "";
 	faction = "INS";
 	hiddenselectionstextures[] = {"\ca\wheeled\datsun_armed\data\datsun_trup3_CO.paa"};
