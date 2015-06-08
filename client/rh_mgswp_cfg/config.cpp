@@ -790,7 +790,6 @@ class CfgWeapons
 	};
 	class RH_M4CAIM: RH_M4C
 	{
-		delete ItemActions;
 		class ItemActions {
 			class UseAtt {
 				isAttachment = 1;
