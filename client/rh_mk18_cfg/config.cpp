@@ -342,18 +342,18 @@ class CfgWeapons
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
 				att = "Attachment_M203";
-				out = "RH_Mk18glaeot";
+				out = "RH_Mk18dcglaeot";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Silencer";
 				att = "Attachment_SupNATO";
-				out = "RH_Mk18sdeot";
+				out = "RH_Mk18dcsdeot";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Holo";
 				script = "spawn player_removeAttchment;";
 				att = "Attachment_Holo";
-				out = "RH_Mk18";
+				out = "RH_Mk18dc";
 			};
 		};
 		displayName="Mk18 desert EOTech";
@@ -443,18 +443,18 @@ class CfgWeapons
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
 				att = "Attachment_M203";
-				out = "RH_Mk18sdacog";
+				out = "RH_Mk18dcsdacog";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Silencer";
 				att = "Attachment_SupNATO";
-				out = "RH_Mk18glacog";
+				out = "RH_Mk18dcglacog";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Acog";
 				script = "spawn player_removeAttchment;";
 				att = "Attachment_ACOG";
-				out = "RH_Mk18";
+				out = "RH_Mk18dc";
 			};
 		};
 		displayName="Mk18 desert ACOG";
@@ -554,23 +554,23 @@ class CfgWeapons
 				script = "spawn player_useAttchment;";
 				text = "Attach Holo";
 				att = "Attachment_Holo";
-				out = "RH_Mk18sdeot";
+				out = "RH_Mk18dcsdeot";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Acog";
 				att = "Attachment_ACOG";
-				out = "RH_Mk18sdacog";
+				out = "RH_Mk18dcsdacog";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Aimpoint";
 				att = "Attachment_CCO";
-				out = "RH_Mk18sdaim";
+				out = "RH_Mk18dcsdaim";
 			};
 			class UseAtt3 : UseAtt{
 				text = "Detach Silencer";
 				script = "spawn player_removeAttchment;";
 				att = "Attachment_SupNATO";
-				out = "RH_Mk18";
+				out = "RH_Mk18dc";
 			};
 		};
 		displayName="Mk18 desert SD";
@@ -613,12 +613,12 @@ class CfgWeapons
 				text = "Detach Aimpoint";
 				script = "spawn player_removeAttchment;";
 				att = "Attachment_CCO";
-				out = "RH_Mk18sd";
+				out = "RH_Mk18dcsd";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
 				att = "Attachment_SupNATO";
-				out = "RH_Mk18aim";
+				out = "RH_Mk18dcaim";
 			};
 		};
 		displayName="Mk18 desert SD Aimpoint";
@@ -747,12 +747,12 @@ class CfgWeapons
 				text = "Detach Holo";
 				script = "spawn player_removeAttchment;";
 				att = "Attachment_Holo";
-				out = "RH_Mk18sd";
+				out = "RH_Mk18dcsd";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
 				att = "Attachment_SupNATO";
-				out = "RH_Mk18holo";
+				out = "RH_Mk18dcholo";
 			};
 		};
 		displayName="Mk18 desert SD EOTech";
@@ -849,13 +849,13 @@ class CfgWeapons
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
 				att = "Attachment_M203";
-				out = "RH_Mk18";
+				out = "RH_Mk18dc";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Acog";
 				script = "spawn player_useAttchment;";
 				att = "Attachment_ACOG";
-				out = "RH_Mk18glacog";
+				out = "RH_Mk18dcglacog";
 			};
 			class UseAtt2 : UseAtt1{
 				text = "Attach Aimpoint";
@@ -909,12 +909,12 @@ class CfgWeapons
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
 				att = "Attachment_M203";
-				out = "RH_Mk18aim";
+				out = "RH_Mk18dcaim";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Aimpoint";
 				att = "Attachment_CCO";
-				out = "RH_Mk18gl";
+				out = "RH_Mk18dcgl";
 			};
 		};
 		displayName="Mk18 desert Aimpoint M203";
@@ -958,12 +958,12 @@ class CfgWeapons
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
 				att = "Attachment_M203";
-				out = "RH_Mk18eot";
+				out = "RH_Mk18dceot";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Holo";
 				att = "Attachment_Holo";
-				out = "RH_Mk18gl";
+				out = "RH_Mk18dcgl";
 			};
 		};
 		displayName="Mk18 desert EOTech M203";
@@ -1014,12 +1014,12 @@ class CfgWeapons
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
 				att = "Attachment_M203";
-				out = "RH_Mk18acog";
+				out = "RH_Mk18dcacog";
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Acog";
 				att = "Attachment_ACOG";
-				out = "RH_Mk18gl";
+				out = "RH_Mk18dcgl";
 			};
 		};
 		displayName="Mk18 desert ACOG M203";
