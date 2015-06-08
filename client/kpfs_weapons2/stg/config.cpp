@@ -63,27 +63,7 @@ class cfgRecoils
 		0.000000
 	};
 };
-class CfgAmmo
-{
-	class B_762x54_Ball;
-	class KPFS_B_792x33_Ball: B_762x54_Ball
-	{
-		hit=8;
-		indirectHit=0;
-		indirectHitRange=0;
-		cartridge="FxCartridge_762";
-		visibleFire=22;
-		audibleFire=18;
-		visibleFireTime=3;
-		cost=1;
-		airLock=1;
-		caliber=0.830000;
-		tracerScale=1;
-		tracerStartTime=0.075000;
-		tracerEndTime=1;
-		airFriction=-0.000960;
-	};
-};
+
 
 class Mode_FullAuto;
 class Far;
