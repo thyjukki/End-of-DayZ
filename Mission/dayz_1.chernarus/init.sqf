@@ -11,7 +11,7 @@ dayz_antihack = 0; // DayZ Antihack / 1 = enabled // 0 = disabled
 dayz_REsec = 1; // DayZ RE Security / 1 = enabled // 0 = disabled
 dayz_enableGhosting = false; //Enable disable the ghosting system.
 dayz_ghostTimer = 120; //Sets how long in seconds a player must be dissconnected before being able to login again.
-dayz_spawnselection = 1; //Turn on spawn selection 0 = random only spawns, 1 = Spawn choice based on limits
+dayz_spawnselection = 0; //Turn on spawn selection 0 = random only spawns, 1 = Spawn choice based on limits
 dayz_spawncarepkgs_clutterCutter = 0; //0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
 dayz_spawnCrashSite_clutterCutter = 0;	// heli crash options 0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
 dayz_spawnInfectedSite_clutterCutter = 0; // infected base spawn... 0: loot hidden in grass, 1: loot lifted, 2: no grass 

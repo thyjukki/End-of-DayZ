@@ -17,8 +17,8 @@ item12[] = {"Response",4,218,-175.000000,400.000000,-75.000000,450.000000,0.0000
 item13[] = {"Parse_Login",2,250,-75.000000,550.000000,25.000000,600.000000,0.000000,"Parse Login"};
 item14[] = {"Hive_Bad",4,218,125.000000,550.000000,225.000000,600.000000,10.000000,"Hive" \n "Bad"};
 item15[] = {"ERROR__Wrong_HIVE",2,250,325.000000,550.000000,425.000000,600.000000,0.000000,"ERROR:" \n "Wrong HIVE" \n "Version"};
-item16[] = {"Character_Setup",4,4314,-175.000000,600.000000,-75.000000,650.000000,0.000000,"Character" \n "Setup"};
-item17[] = {"Phase_One",2,250,-75.000000,650.000000,25.000000,700.000000,0.000000,"Phase One"};
+item16[] = {"Character_Setup",4,218,-175.000000,600.000000,-75.000000,650.000000,0.000000,"Character" \n "Setup"};
+item17[] = {"Phase_One",2,4346,-75.000000,650.000000,25.000000,700.000000,0.000000,"Phase One"};
 item18[] = {"Response",4,218,-175.000000,700.000000,-75.000000,750.000000,0.000000,"Response"};
 item19[] = {"Phase_Two",2,250,-75.000000,750.000000,25.000000,800.000000,0.000000,"Phase Two"};
 item20[] = {"Dead_Player",4,218,125.000000,750.000000,225.000000,800.000000,0.000000,"Dead" \n "Player"};
@@ -232,8 +232,8 @@ link121[] = {102,96};
 link122[] = {103,104};
 link123[] = {104,11};
 link124[] = {105,96};
-globals[] = {25.000000,1,0,0,0,640,480,1,255,6316128,1,-836.271484,-57.415649,992.292297,244.640610,624,599,1};
-window[] = {2,-1,-1,-1,-1,651,125,1145,125,3,642};
+globals[] = {25.000000,1,0,0,0,640,480,1,255,6316128,1,-319.358063,126.888573,1147.760742,489.832977,624,920,1};
+window[] = {2,-1,-1,-1,-1,734,208,1228,208,3,642};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -614,6 +614,7 @@ class FSM
        "				//if (_x == ""M14_EP1"") then { _x = ""M14_DZ"" };" \n
        "				if (_x == ""SVD"") then { _x = ""SVD_DZ"" }; " \n
        "				if (_x == ""SVD_CAMO"") then { _x = ""SVD_CAMO_DZ"" };" \n
+       "				" \n
        "				dayz_myBackpack addWeaponCargoGlobal [_x,(_backpackWpnQtys select _countr)];" \n
        "				_countr = _countr + 1;" \n
        "			} forEach _backpackWpnTypes;" \n
@@ -623,6 +624,10 @@ class FSM
        "			{" \n
        "				if (_x == ""BoltSteel"") then { _x = ""WoodenArrow"" }; // Convert BoltSteel to WoodenArrow" \n
        "				if (_x == ""ItemBloodbag"") then { _x = ""bloodBagONEG"" }; // Convert ItemBloodbag into universal blood type/rh bag" \n
+       "				_loaded= getNumber (configFile >> ""CfgMagazines"" >>_x  >> ""loadAble"");" \n
+       "				if (_loaded == 0) then {_x = getText (configFile >> ""CfgMagazines"" >> _x >> ""emptyMag"")};" \n
+       "			" \n
+       "				" \n
        "				dayz_myBackpack addMagazineCargoGlobal [_x,(_backpackMagQty select _countr)];" \n
        "				_countr = _countr + 1;" \n
        "			} forEach _backpackMagTypes;" \n
