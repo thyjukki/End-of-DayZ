@@ -1111,7 +1111,7 @@ class cfgWeapons
 		};
 		muzzles[]=
 		{
-			"RH_AKMMuzzle",
+			"this",
 			"RH_gp30Muzzle"
 		};
 		class RH_AKMMuzzle: RH_akm
