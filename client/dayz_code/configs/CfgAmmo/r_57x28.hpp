@@ -18,10 +18,10 @@ class B_57x28_TRACER : RH_smg_57x28mm_Round {
 };
 
 class B_57x28_RUBBER : RH_smg_57x28mm_Round {
-	airfriction = -0.01;
-	caliber = 0.1;
+	airfriction = -0.02;
+	caliber = 2;
 	hit = 1;
-	typicalspeed = 321;
+	typicalspeed = 250;
 	isRubber = 1;
 };
 

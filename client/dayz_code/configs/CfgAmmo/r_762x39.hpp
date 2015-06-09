@@ -55,8 +55,8 @@ class B_762x39_TRACER: B_762x39_Ball
 
 class B_762x39_RUBBER: B_762x39_Ball
 {
-	airfriction = -0.01;
-	caliber = 0.1;
+	airfriction = -0.02;
+	caliber = 2;
 	hit = 1;
 	isRubber = 1;
 	typicalSpeed=240;

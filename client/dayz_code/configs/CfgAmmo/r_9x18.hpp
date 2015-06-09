@@ -32,10 +32,10 @@ class B_9x18_TRACER : B_9x18_Ball {
 };
 
 class B_9x18_RUBBER : B_9x18_Ball {
-	airfriction = -0.01;
-	caliber = 0.1;
+	airfriction = -0.02;
+	caliber = 2;
 	hit = 1;
-	typicalspeed = 321;
+	typicalspeed = 250;
 	isRubber = 1;
 };
 

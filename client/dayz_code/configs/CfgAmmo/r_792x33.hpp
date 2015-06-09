@@ -34,11 +34,11 @@ class B_792x33_TRACER: B_792x33_Ball
 
 class B_792x33_RUBBER: B_792x33_Ball
 {
-	airfriction = -0.01;
-	caliber = 0.1;
+	airfriction = -0.02;
+	caliber = 2;
 	hit = 1;
 	isRubber = 1;
-	typicalspeed = 321;
+	typicalspeed = 250;
 };
 
 class B_792x33_BT: B_792x33_Ball

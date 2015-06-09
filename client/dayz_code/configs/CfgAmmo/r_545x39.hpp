@@ -31,11 +31,11 @@ class B_545x39_TRACER: B_545x39_Ball
 
 class B_545x39_RUBBER: B_545x39_Ball
 {
-	airfriction = -0.01;
-	caliber = 0.1;
+	airfriction = -0.02;
+	caliber = 2;
 	hit = 1;
 	isRubber = 1;
-	typicalspeed = 321;
+	typicalspeed = 250;
 };
 
 class B_545x39_BT: B_545x39_Ball

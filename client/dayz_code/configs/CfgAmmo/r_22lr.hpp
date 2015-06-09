@@ -28,10 +28,10 @@ class B_22LR_TRACER : RH_B_22LR_SD {
 };
 
 class B_22LR_RUBBER : RH_B_22LR_SD {
-	airfriction = -0.01;
-	caliber = 0.1;
+	airfriction = -0.02;
+	caliber = 2;
 	hit = 1;
-	typicalspeed = 321;
+	typicalspeed = 250;
 	isRubber = 1;
 };
 

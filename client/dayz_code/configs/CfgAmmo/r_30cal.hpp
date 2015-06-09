@@ -28,10 +28,10 @@ class B_30cal_TRACER : B_30cal_Ball {
 };
 
 class B_30cal_RUBBER : B_30cal_Ball {
-	airfriction = -0.01;
-	caliber = 0.1;
+	airfriction = -0.02;
+	caliber = 2;
 	hit = 1;
-	typicalspeed = 321;
+	typicalspeed = 250;
 	isRubber = 1;
 };
 

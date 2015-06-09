@@ -27,10 +27,10 @@ class RH_32ACP_TRACER: RH_32ACP
 
 class RH_32ACP_RUBBER: RH_32ACP
 {
-	airfriction = -0.01;
-	caliber = 0.1;
+	airfriction = -0.02;
+	caliber = 2;
 	hit = 1;
-	typicalspeed = 321;
+	typicalspeed = 250;
 	isRubber = 1;
 };
 
