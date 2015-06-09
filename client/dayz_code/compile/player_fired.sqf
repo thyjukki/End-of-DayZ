@@ -19,9 +19,9 @@ if (player ammo _weapon == 0) then {
 	_emptyMag = getText (configFile >> "CfgMagazines" >> _magazine >> "emptyMag");
 	if (_emptyMag != "") then {
 		player addMagazine _emptyMag;
-		_message = format ["Weapons %1 ammo %2 (%3) out, giving mag %4", _weapon, _ammo, _projectile ,_magazine];
+		/* _message = format ["Weapons %1 ammo %2 (%3) out, giving mag %4", _weapon, _ammo, _projectile ,_magazine];
 		hint _message;
-		diag_log _message;
+		diag_log _message; */
 	};
 };
 if (_ammo isKindOf "Melee") exitWith {
