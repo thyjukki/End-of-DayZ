@@ -25,7 +25,7 @@ class CfgBuildingLoot {
 		lootChance = 0.6;
 		lootPos[] = {};
 		lootType[] = {
-			{"ItemSodaClays",				"magazine",0.03},
+			{"ItemSodaClays",				"magazine",0.02},
 			{"ItemSodaMzly",				"magazine",0.02},
 			{"ItemMatchbox",				"weapon",0.03},
 			{"ItemBookBible",				"magazine",0.03},
