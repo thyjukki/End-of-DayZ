@@ -37,7 +37,7 @@ class B_762x54_RUBBER: B_762x54_Ball
 	caliber = 0.1;
 	hit = 1;
 	isRubber = 1;
-	typicalSpeed=150;
+	typicalspeed = 321;
 };
 
 class B_762x54_BT: B_762x54_Ball

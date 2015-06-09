@@ -39,7 +39,7 @@ class B_556x45_RUBBER: B_556x45_Ball
 	caliber = 0.1;
 	hit = 1;
 	isRubber = 1;
-	typicalSpeed=150;
+	typicalspeed = 321;
 };
 
 class B_556x45_BT: B_556x45_Ball

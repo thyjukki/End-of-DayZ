@@ -116,15 +116,6 @@ class CfgAmmo
 		airFriction=-0.001500;
 		caliber=0.300000;
 	};
-	class RH_762x25: BulletBase
-	{
-		hit=6;
-		cost=1;
-		cartridge="FxCartridge_Small";
-		typicalSpeed=420;
-		airFriction=-0.003000;
-		caliber=0.300000;
-	};
 };
 class CfgMagazines
 {

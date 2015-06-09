@@ -75,7 +75,7 @@ class 8Rnd_9x18_Makarov_tracer: 8Rnd_9x18_Makarov {
 class 8Rnd_9x18_Makarov_rubber: 8Rnd_9x18_Makarov {
 	scope=2;
 	baseBullet = 9x18_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="B_9x18_RUBBER";
 	displayName="Makarov Rubber Mag";
 	displayNameShort="Rubber";
@@ -158,7 +158,7 @@ class RH_20Rnd_9x18_aps_tracer: RH_20Rnd_9x18_aps {
 class RH_20Rnd_9x18_aps_rubber: RH_20Rnd_9x18_aps {
 	scope=2;
 	baseBullet = 9x18_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="B_9x18_RUBBER";
 	displayName="APS Rubber mag";
 	displayNameShort="Rubber";
@@ -252,7 +252,7 @@ class 64Rnd_9x19_Bizon_tracer: 64Rnd_9x19_Bizon {
 class 64Rnd_9x19_Bizon_rubber: 64Rnd_9x19_Bizon {
 	scope=2;
 	baseBullet = 9x18_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="B_9x18_RUBBER";
 	displayName="Bizon Rubber Mag";
 	displayNameShort="Rubber";

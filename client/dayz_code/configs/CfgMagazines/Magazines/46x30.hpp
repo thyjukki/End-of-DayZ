@@ -75,7 +75,7 @@ class 40Rnd_46x30_mp7_tracer: 40Rnd_46x30_mp7 {
 class 40Rnd_46x30_mp7_rubber: 40Rnd_46x30_mp7 {
 	scope=2;
 	baseBullet = 46x30_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="B_46x30_RUBBER";
 	displayName="MP7 Long Rubber Mag";
 	displayNameShort="Rubber";
@@ -165,7 +165,7 @@ class 20Rnd_46x30_mp7_tracer: 20Rnd_46x30_mp7 {
 class 20Rnd_46x30_mp7_rubber: 20Rnd_46x30_mp7 {
 	scope=2;
 	baseBullet = 46x30_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="B_46x30_RUBBER";
 	displayName="MP7 Rubber Mag";
 	displayNameShort="Rubber";

@@ -64,7 +64,7 @@ class RH_7Rnd_32cal_ppk_tracer: RH_7Rnd_32cal_ppk {
 class RH_7Rnd_32cal_ppk_rubber: RH_7Rnd_32cal_ppk {
 	scope=2;
 	baseBullet = 32ACP_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="RH_32ACP_RUBBER";
 	displayName="PPK Rubber Mag";
 	displayNameShort="Rubber";
@@ -145,7 +145,7 @@ class RH_20Rnd_32cal_vz61_tracer: RH_20Rnd_32cal_vz61 {
 class RH_20Rnd_32cal_vz61_rubber: RH_20Rnd_32cal_vz61 {
 	scope=2;
 	baseBullet = 32ACP_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="RH_32ACP_RUBBER";
 	displayName="Vz61 Rubber Mag";
 	displayNameShort="Rubber";

@@ -69,7 +69,7 @@ class 7Rnd_45ACP_1911_tracer: 7Rnd_45ACP_1911 {
 class 7Rnd_45ACP_1911_rubber: 7Rnd_45ACP_1911 {
 	scope=2;
 	baseBullet = 45ACP_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="RH_45ACP_RUBBER";
 	displayName="M1911 Rubber Mag";
 	displayNameShort="Rubber";
@@ -150,7 +150,7 @@ class RH_8Rnd_45cal_m1911_tracer: RH_8Rnd_45cal_m1911 {
 class RH_8Rnd_45cal_m1911_rubber: RH_8Rnd_45cal_m1911 {
 	scope=2;
 	baseBullet = 45ACP_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="RH_45ACP_RUBBER";
 	displayName="M1911 Rubber Mag";
 	displayNameShort="Rubber";
@@ -233,7 +233,7 @@ class RH_12Rnd_45cal_usp_tracer: RH_12Rnd_45cal_usp {
 class RH_12Rnd_45cal_usp_rubber: RH_12Rnd_45cal_usp {
 	scope=2;
 	baseBullet = 45ACP_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="RH_45ACP_RUBBER";
 	displayName="Uspm Rubber Mag";
 	displayNameShort="Rubber";
@@ -317,7 +317,7 @@ class RH_45ACP_25RND_UMP_Mag_rubber: RH_45ACP_25RND_UMP_Mag
 {
 	scope=2;
 	baseBullet = 45ACP_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="RH_45ACP_RUBBER";
 	displayName="UMP45 Rubber Mag";
 	displayNameShort="Rubber";
@@ -399,7 +399,7 @@ class RH_45ACP_13RND_Mag_rubber: RH_45ACP_13RND_Mag
 {
 	scope=2;
 	baseBullet = 45ACP_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="RH_45ACP_RUBBER";
 	displayName="G21 Magazine Rubber";
 };
@@ -481,7 +481,7 @@ class RH_45ACP_30RND_Mag_rubber: RH_45ACP_30RND_Mag
 {
 	scope=2;
 	baseBullet = 45ACP_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="RH_45ACP_RUBBER";
 	displayName="G21 Long Rubber Mag";
 	displayNameShort="Rubber";
@@ -565,7 +565,7 @@ class KPFS_30Rnd_45ACP_Thompson_rubber: KPFS_30Rnd_45ACP_Thompson
 {
 	scope=2;
 	baseBullet = 45ACP_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="RH_45ACP_RUBBER";
 	displayName="Thompson magazine Rubber";
 	descriptionShort="Caliber: .45 ACP Rubber<br/>Rounds: 30<br/>Used in: M1 Thompson";

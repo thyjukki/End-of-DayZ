@@ -180,6 +180,7 @@ class CfgAmmo {
 	#include "CfgAmmo\r_545x39.hpp"
 	#include "CfgAmmo\r_556x45.hpp"
 	#include "CfgAmmo\r_762x15.hpp"
+	#include "CfgAmmo\r_762x25.hpp"
 	#include "CfgAmmo\r_762x51.hpp"
 	#include "CfgAmmo\r_762x39.hpp"
 	#include "CfgAmmo\r_762x54.hpp"

@@ -6,11 +6,11 @@ class RH_8Rnd_762_tt33_Empty: emptiedMagazine
 	displayName="TT33 mag (Empty)";
 	picture="\RH_de\inv\m_tt33.paa";
 	model="\RH_de\mags\mag_tt33.p3d";
-	descriptionShort="Caliber: 762x15 mm<br/>Rounds: 8 <br/>Used in: TT33";
+	descriptionShort="Caliber: 762x25 mm<br/>Rounds: 8 <br/>Used in: TT33";
 	type=16;
 	class ammoType
 	{
-		class RH_762x25 {
+		class B_762x25 {
 			ammoMag = "RH_8Rnd_762_tt33";
 		};
 		class B_762x25_HP {
@@ -35,12 +35,12 @@ class RH_8Rnd_762_tt33: CA_Magazine
 	displayName="TT33 Mag";
 	picture="\RH_de\inv\m_tt33.paa";
 	model="\RH_de\mags\mag_tt33.p3d";
-	descriptionShort="Caliber: 762x15 mm<br/>Rounds: 8 <br/>Used in: TT33";
-	ammo="RH_762x25";
+	descriptionShort="Caliber: 762x25 mm<br/>Rounds: 8 <br/>Used in: TT33";
+	ammo="B_762x25";
 	type=16;
 	count=8;
 	initSpeed=420;
-	baseBullet = 762x15_x;
+	baseBullet = 762x25_x;
 	LOAD_AMMO
 
 	emptyMag = "RH_8Rnd_762_tt33_Empty";
@@ -48,34 +48,34 @@ class RH_8Rnd_762_tt33: CA_Magazine
 
 class RH_8Rnd_762_tt33_hp: RH_8Rnd_762_tt33 {
 	scope=2;
-	baseBullet = 762x15_HP_x;
-	ammo="B_762x15_HP";
+	baseBullet = 762x25_HP_x;
+	ammo="B_762x25_HP";
 	displayName="TT33 HP Mag";
 	displayNameShort="HP";
 };
 
 class RH_8Rnd_762_tt33_tracer: RH_8Rnd_762_tt33 {
 	scope=2;
-	baseBullet = 762x15_Tracer_x;
+	baseBullet = 762x25_Tracer_x;
 	tracersevery = 1;
-	ammo="B_762x15_TRACER";
+	ammo="B_762x25_TRACER";
 	displayName="TT33 Tracer Mag";
 	displayNameShort="Tracer";
 };
 
 class RH_8Rnd_762_tt33_rubber: RH_8Rnd_762_tt33 {
 	scope=2;
-	baseBullet = 762x15_RUBBER_x;
-	initSpeed=150;
-	ammo="B_762x15_RUBBER";
+	baseBullet = 762x25_RUBBER_x;
+	
+	ammo="B_762x25_RUBBER";
 	displayName="TT33 Rubber Mag";
 	displayNameShort="Rubber";
 };
 
 class RH_8Rnd_762_tt33_bt: RH_8Rnd_762_tt33 {
 	scope=2;
-	baseBullet = 762x15_BT_x;
-	ammo="B_762x15_BT";
+	baseBullet = 762x25_BT_x;
+	ammo="B_762x25_BT";
 	displayName="TT33 BT Mag";
 	displayNameShort="BT";
 };
@@ -88,7 +88,7 @@ class KPFS_71Rnd_762x25_PPSh_Empty: emptiedMagazine
 	scope=2;
 	displayName="PPSH mag (Empty)";
 	picture="\kpfs_weapons2\data\icons\m_ppsh_ca.paa";
-	descriptionShort="Caliber: 762x15 mm<br/>Rounds: 71 <br/>Used in: PPSH";
+	descriptionShort="Caliber: 762x25 mm<br/>Rounds: 71 <br/>Used in: PPSH";
 	type="2*256";
 	class ammoType
 	{
@@ -116,11 +116,11 @@ class KPFS_71Rnd_762x25_PPSh: CA_Magazine
 	scope=2;
 	displayName="PPSH Mag";
 	picture="\kpfs_weapons2\data\icons\m_ppsh_ca.paa";
-	descriptionShort="Caliber: 762x15 mm<br/>Rounds: 71 <br/>Used in: PPSH";
+	descriptionShort="Caliber: 762x25 mm<br/>Rounds: 71 <br/>Used in: PPSH";
 	ammo="RH_762x25";
 	count=71;
 	initSpeed=420;
-	baseBullet = 762x15_x;
+	baseBullet = 762x25_x;
 	type="2*256";
 	LOAD_AMMO
 
@@ -129,34 +129,34 @@ class KPFS_71Rnd_762x25_PPSh: CA_Magazine
 
 class KPFS_71Rnd_762x25_PPSh_hp: KPFS_71Rnd_762x25_PPSh {
 	scope=2;
-	baseBullet = 762x15_HP_x;
-	ammo="B_762x15_HP";
+	baseBullet = 762x25_HP_x;
+	ammo="B_762x25_HP";
 	displayName="PPSH HP Mag";
 	displayNameShort="HP";
 };
 
 class KPFS_71Rnd_762x25_PPSh_tracer: KPFS_71Rnd_762x25_PPSh {
 	scope=2;
-	baseBullet = 762x15_Tracer_x;
+	baseBullet = 762x25_Tracer_x;
 	tracersevery = 1;
-	ammo="B_762x15_TRACER";
+	ammo="B_762x25_TRACER";
 	displayName="PPSH Tracer Mag";
 	displayNameShort="Tracer";
 };
 
 class KPFS_71Rnd_762x25_PPSh_rubber: KPFS_71Rnd_762x25_PPSh {
 	scope=2;
-	baseBullet = 762x15_RUBBER_x;
-	initSpeed=150;
-	ammo="B_762x15_RUBBER";
+	baseBullet = 762x25_RUBBER_x;
+	
+	ammo="B_762x25_RUBBER";
 	displayName="PPSH Rubber Mag";
 	displayNameShort="Rubber";
 };
 
 class KPFS_71Rnd_762x25_PPSh_bt: KPFS_71Rnd_762x25_PPSh {
 	scope=2;
-	baseBullet = 762x15_BT_x;
-	ammo="B_762x15_BT";
+	baseBullet = 762x25_BT_x;
+	ammo="B_762x25_BT";
 	displayName="PPSH BT Mag";
 	displayNameShort="BT";
 };

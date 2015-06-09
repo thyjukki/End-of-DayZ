@@ -31,7 +31,7 @@ class B_22LR_RUBBER : RH_B_22LR_SD {
 	airfriction = -0.01;
 	caliber = 0.1;
 	hit = 1;
-	typicalspeed = 150;
+	typicalspeed = 321;
 	isRubber = 1;
 };
 

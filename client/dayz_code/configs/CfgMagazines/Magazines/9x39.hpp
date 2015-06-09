@@ -63,7 +63,7 @@ class RH_20Rnd_9x39_SP6_mag_tracer: RH_20Rnd_9x39_SP6_mag {
 class RH_20Rnd_9x39_SP6_mag_rubber: RH_20Rnd_9x39_SP6_mag {
 	scope=2;
 	baseBullet = 9x39_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="B_9x39_RUBBER";
 	displayName="OC14 Rubber Mag";
 	displayNameShort="Rubber";
@@ -138,7 +138,7 @@ class vil_10Rnd_9x39_SP6_VSS_tracer: vil_10Rnd_9x39_SP6_VSS {
 class vil_10Rnd_9x39_SP6_VSS_rubber: vil_10Rnd_9x39_SP6_VSS {
 	scope=2;
 	baseBullet = 9x39_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="B_9x39_RUBBER";
 	displayName="10Rnd SP6 Rubber Mag";
 };
@@ -210,7 +210,7 @@ class vil_20Rnd_9x39_SP6_VAL_tracer: vil_20Rnd_9x39_SP6_VAL {
 class vil_20Rnd_9x39_SP6_VAL_rubber: vil_20Rnd_9x39_SP6_VAL {
 	scope=2;
 	baseBullet = 9x39_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="B_9x39_RUBBER";
 	displayName="20Rnd SP6 Rubber Mag";
 };

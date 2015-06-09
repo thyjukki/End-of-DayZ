@@ -74,7 +74,7 @@ class 20Rnd_762x51_g3_tracer: 20Rnd_762x51_g3 {
 class 20Rnd_762x51_g3_rubber: 20Rnd_762x51_g3 {
 	scope=2;
 	baseBullet = 762x51_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="B_762x51_RUBBER";
 	displayName="G3 Rubber Mag";
 	displayNameShort="Rubber";
@@ -164,7 +164,7 @@ class 20Rnd_762x51_FNFAL_tracer: 20Rnd_762x51_FNFAL {
 class 20Rnd_762x51_FNFAL_rubber: 20Rnd_762x51_FNFAL {
 	scope=2;
 	baseBullet = 762x51_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="B_762x51_RUBBER";
 	displayName="FAL Rubber Mag";
 	displayNameShort="Rubber";
@@ -254,7 +254,7 @@ class RH_20Rnd_762x51_AR10_tracer: RH_20Rnd_762x51_AR10 {
 class RH_20Rnd_762x51_AR10_rubber: RH_20Rnd_762x51_AR10 {
 	scope=2;
 	baseBullet = 762x51_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="B_762x51_RUBBER";
 	displayName="AR10 Rubber Mag";
 	displayNameShort="Rubber";
@@ -345,7 +345,7 @@ class 20Rnd_762x51_DMR_tracer: 20Rnd_762x51_DMR {
 class 20Rnd_762x51_DMR_rubber: 20Rnd_762x51_DMR {
 	scope=2;
 	baseBullet = 762x51_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="B_762x51_RUBBER";
 	displayName="M14 Rubber Mag";
 	displayNameShort="Rubber";
@@ -453,7 +453,7 @@ class 100Rnd_762x51_M240_tracer: 100Rnd_762x51_M240 {
 class 100Rnd_762x51_M240_rubber: 100Rnd_762x51_M240 {
 	scope=2;
 	baseBullet = 762x51_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="B_762x51_RUBBER";
 	displayName="M240 Rubber Mag";
 	displayNameShort="Rubber";
@@ -550,7 +550,7 @@ class 200Rnd_762x51_M240_tracer: 200Rnd_762x51_M240 {
 class 200Rnd_762x51_M240_rubber: 200Rnd_762x51_M240 {
 	scope=2;
 	baseBullet = 762x51_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="B_762x51_RUBBER";
 	displayName="M240 200Rnd Rubber Mag";
 	displayNameShort="Rubber";
@@ -643,7 +643,7 @@ class KPFS_250Rnd_MG42_tracer: KPFS_250Rnd_MG42 {
 class KPFS_250Rnd_MG42_rubber: KPFS_250Rnd_MG42 {
 	scope=2;
 	baseBullet = 762x51_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="B_762x51_RUBBER";
 	displayName="MG42 Rubber Mag";
 	displayNameShort="Rubber";
@@ -733,7 +733,7 @@ class 20Rnd_762x51_B_SCAR_tracer: 20Rnd_762x51_B_SCAR {
 class 20Rnd_762x51_B_SCAR_rubber: 20Rnd_762x51_B_SCAR {
 	scope=2;
 	baseBullet = 762x51_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="B_762x51_RUBBER";
 	displayName="SCAR-H Rubber Mag";
 	displayNameShort="Rubber";
@@ -823,7 +823,7 @@ class KPFS_8Rnd_cal30_60_Gar_tracer: KPFS_8Rnd_cal30_60_Gar {
 class KPFS_8Rnd_cal30_60_Gar_rubber: KPFS_8Rnd_cal30_60_Gar {
 	scope=2;
 	baseBullet = 762x51_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="B_762x51_RUBBER";
 	displayName="M1 Garand Rubber Mag";
 	displayNameShort="Rubber";

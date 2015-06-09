@@ -67,7 +67,7 @@ class RH_7Rnd_50_AE_tracer: RH_7Rnd_50_AE {
 class RH_7Rnd_50_AE_rubber: RH_7Rnd_50_AE {
 	scope=2;
 	baseBullet = 50_AE_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="B_50_AE_RUBBER";
 	displayName="Desert Eagle Rubber Mag";
 	displayNameShort="Rubber";

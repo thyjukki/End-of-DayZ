@@ -63,7 +63,7 @@ class RH_10Rnd_22LR_mk2_tracer: RH_10Rnd_22LR_mk2 {
 class RH_10Rnd_22LR_mk2_rubber: RH_10Rnd_22LR_mk2 {
 	scope=2;
 	baseBullet = 22LR_RUBBER_x;
-	initSpeed=150;
+	
 	ammo="B_22LR_RUBBER";
 	displayName="MK2 Rubber Mag";
 	displayNameShort="Rubber";

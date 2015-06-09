@@ -38,7 +38,7 @@ class B_792x33_RUBBER: B_792x33_Ball
 	caliber = 0.1;
 	hit = 1;
 	isRubber = 1;
-	typicalSpeed=150;
+	typicalspeed = 321;
 };
 
 class B_792x33_BT: B_792x33_Ball
