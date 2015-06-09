@@ -36,16 +36,7 @@ class KPFS_15Rnd_cal30_Carbine: CA_Magazine
 	count=10;
 	initSpeed=853;
 	baseBullet = 30cal_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Unload";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "KPFS_15Rnd_cal30_Carbine_Empty";
 };

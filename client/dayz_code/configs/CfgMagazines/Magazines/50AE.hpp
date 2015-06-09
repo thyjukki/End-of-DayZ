@@ -42,16 +42,7 @@ class RH_7Rnd_50_AE: CA_Magazine
 	count=7;
 	initSpeed=421;
 	baseBullet = 50_AE_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "RH_7Rnd_50_AE_Empty";
 };

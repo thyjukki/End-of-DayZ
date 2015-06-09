@@ -41,16 +41,7 @@ class 40Rnd_46x30_mp7: CA_Magazine
 	count=40;
 	initSpeed=735;
 	baseBullet = 46x30_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "40Rnd_46x30_mp7_Empty";
 };
@@ -140,16 +131,7 @@ class 20Rnd_46x30_mp7: CA_Magazine
 	count=20;
 	initSpeed=735;
 	baseBullet = 46x30_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "20Rnd_46x30_mp7_Empty";
 };

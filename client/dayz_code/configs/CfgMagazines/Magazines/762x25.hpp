@@ -41,16 +41,7 @@ class RH_8Rnd_762_tt33: CA_Magazine
 	count=8;
 	initSpeed=420;
 	baseBullet = 762x15_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "RH_8Rnd_762_tt33_Empty";
 };
@@ -131,16 +122,7 @@ class KPFS_71Rnd_762x25_PPSh: CA_Magazine
 	initSpeed=420;
 	baseBullet = 762x15_x;
 	type="2*256";
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "KPFS_71Rnd_762x25_PPSh_Empty";
 };

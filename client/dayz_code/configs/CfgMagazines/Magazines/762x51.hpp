@@ -40,16 +40,7 @@ class 20Rnd_762x51_g3: CA_Magazine
 	count=20;
 	initSpeed=780;
 	baseBullet = 762x51_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "20Rnd_762x51_g3_Empty";
 };
@@ -139,16 +130,7 @@ class 20Rnd_762x51_FNFAL: CA_Magazine
 	count=20;
 	initSpeed=780;
 	baseBullet = 762x51_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "20Rnd_762x51_FNFAL_Empty";
 };
@@ -238,16 +220,7 @@ class RH_20Rnd_762x51_AR10: CA_Magazine
 	count=20;
 	initSpeed=780;
 	baseBullet = 762x51_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "RH_20Rnd_762x51_AR10_Empty";
 };
@@ -338,16 +311,7 @@ class 20Rnd_762x51_DMR: CA_Magazine
 	count=20;
 	initSpeed=780;
 	baseBullet = 762x51_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "20Rnd_762x51_DMR_Empty";
 };
@@ -455,16 +419,7 @@ class 100Rnd_762x51_M240: CA_Magazine
 	initSpeed=780;
 	baseBullet = 762x51_x;
 	nameSound = "mgun";
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "100Rnd_762x51_M240_Empty";
 };
@@ -561,16 +516,7 @@ class 200Rnd_762x51_M240: CA_Magazine
 	initSpeed=780;
 	baseBullet = 762x51_x;
 	nameSound = "mgun";
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "200Rnd_762x51_M240_Empty";
 };
@@ -663,16 +609,7 @@ class KPFS_250Rnd_MG42: CA_Magazine
 	initSpeed=780;
 	baseBullet = 762x51_x;
 	type="2* 256";
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "KPFS_250Rnd_MG42_Empty";
 };
@@ -762,16 +699,7 @@ class 20Rnd_762x51_B_SCAR: CA_Magazine
 	count=20;
 	initSpeed=780;
 	baseBullet = 762x51_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "20Rnd_762x51_B_SCAR_Empty";
 };
@@ -861,16 +789,7 @@ class KPFS_8Rnd_cal30_60_Gar: CA_Magazine
 	count=8;
 	initSpeed=780;
 	baseBullet = 762x51_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "KPFS_8Rnd_cal30_60_Gar_Empty";
 };

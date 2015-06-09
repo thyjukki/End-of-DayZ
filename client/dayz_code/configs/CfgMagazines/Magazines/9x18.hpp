@@ -41,16 +41,7 @@ class 8Rnd_9x18_Makarov: CA_Magazine
 	count=8;
 	initSpeed=320;
 	baseBullet = 9x18_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "8Rnd_9x18_Makarov_Empty";
 };
@@ -135,7 +126,6 @@ class RH_20Rnd_9x18_aps: 8Rnd_9x18_Makarov
 	displayName="APS mag";
 	descriptionShort="Caliber: 9x18 mm APS <br/>Rounds: 20 <br/>Used in: APS";
 	count=20;
-
 	emptyMag = "RH_20Rnd_9x18_aps_Empty";
 };
 
@@ -227,16 +217,7 @@ class 64Rnd_9x19_Bizon: CA_Magazine
 	count=64;
 	initSpeed=320;
 	baseBullet = 9x18_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Unload";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "64Rnd_9x19_Bizon_Empty";
 };

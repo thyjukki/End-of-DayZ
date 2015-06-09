@@ -43,16 +43,7 @@ class 7Rnd_45ACP_1911: CA_Magazine
 	count=8;
 	initSpeed=260;
 	baseBullet = 45ACP_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 	emptyMag = "7Rnd_45ACP_1911_Empty";
 };
 
@@ -133,16 +124,7 @@ class RH_8Rnd_45cal_m1911: CA_Magazine
 	count=8;
 	initSpeed=260;
 	baseBullet = 45ACP_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 	emptyMag = "RH_8Rnd_45cal_m1911_Empty";
 };
 
@@ -224,16 +206,7 @@ class RH_12Rnd_45cal_usp: CA_Magazine
 	count=12;
 	initSpeed=260;
 	baseBullet = 45ACP_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 	emptyMag = "RH_12Rnd_45cal_usp_Empty";
 };
 
@@ -315,16 +288,7 @@ class RH_45ACP_25RND_UMP_Mag: CA_Magazine
 	displayName="UMP45 Mag";
 	descriptionShort="Caliber: .45 ACP<br/>Rounds: 25<br/>Used in: UMP";
 	baseBullet = 45ACP_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 	emptyMag = "RH_45ACP_25RND_UMP_Mag_Empty";
 };
 
@@ -406,16 +370,7 @@ class RH_45ACP_13RND_Mag: CA_Magazine
 	count=13;
 	descriptionShort="Caliber: .45 ACP<br/>Rounds: 13<br/>Used in: Kriss Vector";
 	baseBullet = 45ACP_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 	emptyMag = "RH_45ACP_13RND_Mag_Empty";
 };
 
@@ -497,16 +452,7 @@ class RH_45ACP_30RND_Mag: CA_Magazine
 	count=30;
 	descriptionShort="Caliber: .45 ACP<br/>Rounds: 30<br/>Used in: Kriss Vector";
 	baseBullet = 45ACP_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 	emptyMag = "RH_45ACP_30RND_Mag_Empty";
 };
 
@@ -590,16 +536,7 @@ class KPFS_30Rnd_45ACP_Thompson: CA_Magazine
 	model="\RH_de\mags\mag_muzi.p3d";
 	descriptionShort="Caliber: .45 ACP<br/>Rounds: 30<br/>Used in: M1 Thompson";
 	baseBullet = 45ACP_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 	emptyMag = "KPFS_30Rnd_45ACP_Thompson_Empty";
 };
 

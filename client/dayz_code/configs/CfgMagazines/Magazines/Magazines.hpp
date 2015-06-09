@@ -6,6 +6,18 @@
 	script = "spawn player_combineMag; r_action_count = r_action_count + 1;";\
 };
 
+#define LOAD_AMMO 	class ItemActions {\
+		class loadMag {\
+			text = "Load";\
+			script = "spawn player_loadAmmo;";\
+		};\
+		class unLoadMag {\
+			text = "Un Load";\
+			script = "spawn player_unloadAmmo;";\
+		};\
+	};
+
+
 #include "EmptyMag.hpp"
 #include "9x18.hpp"
 #include "9x19.hpp"

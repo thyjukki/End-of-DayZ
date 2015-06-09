@@ -38,16 +38,7 @@ class RH_10Rnd_22LR_mk2: CA_Magazine
 	count=10;
 	initSpeed=290;
 	baseBullet = 22LR_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "RH_10Rnd_22LR_mk2_Empty";
 };

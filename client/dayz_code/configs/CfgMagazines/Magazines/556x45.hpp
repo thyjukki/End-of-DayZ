@@ -41,16 +41,7 @@ class 20Rnd_556x45_Stanag: CA_Magazine
 	count=20;
 	initSpeed=930;
 	baseBullet = 556x45_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Unload";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "20Rnd_556x45_Stanag_Empty";
 };
@@ -140,16 +131,7 @@ class 30Rnd_556x45_Stanag: CA_Magazine
 	count=30;
 	initSpeed=930;
 	baseBullet = 556x45_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Unload";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "30Rnd_556x45_Stanag_Empty";
 };
@@ -241,16 +223,7 @@ class 30Rnd_556x45_G36: CA_Magazine
 	count=30;
 	initSpeed=930;
 	baseBullet = 556x45_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Unload";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "30Rnd_556x45_G36_Empty";
 };
@@ -342,16 +315,7 @@ class 30Rnd_556x45_Aug: CA_Magazine
 	count=30;
 	initSpeed=930;
 	baseBullet = 556x45_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Unload";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "30Rnd_556x45_Aug_Empty";
 };
@@ -445,16 +409,7 @@ class 100Rnd_556x45_BetaCMag: CA_Magazine
 	count=100;
 	initSpeed=930;
 	baseBullet = 556x45_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Unload";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "100Rnd_556x45_BetaCMag_Empty";
 };
@@ -544,16 +499,7 @@ class R3F_25Rnd_556x45_FAMAS: CA_Magazine
 	count=25;
 	initSpeed=930;
 	baseBullet = 556x45_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Unload";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "R3F_25Rnd_556x45_FAMAS_Empty";
 };
@@ -650,16 +596,7 @@ class 200Rnd_556x45_M249: CA_Magazine
 	lastRoundsTracer=0;
 	nameSound = "mgun";
 	baseBullet = 556x45_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Unload";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "200Rnd_556x45_M249_Empty";
 };

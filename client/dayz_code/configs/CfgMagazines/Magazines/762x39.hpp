@@ -37,16 +37,7 @@ class 30Rnd_762x39_AK47 : CA_Magazine
 	baseBullet = 762x39_x;
 	ammo="B_762x39_Ball";
 	count=30;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 	emptyMag = "30Rnd_762x39_AK47_Empty";
 };
 
@@ -134,16 +125,7 @@ class vil_40Rnd_762x39_AK47 : CA_Magazine
 	baseBullet = 762x39_x;
 	ammo="B_762x39_Ball";
 	count=40;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 	emptyMag = "vil_40Rnd_762x39_AK47_Empty";
 };
 
@@ -322,16 +304,7 @@ class 30Rnd_762x39_SA58 : CA_Magazine
 	baseBullet = 762x39_x;
 	ammo="B_762x39_Ball";
 	count=30;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 	emptyMag = "30Rnd_762x39_SA58_Empty";
 };
 
@@ -423,16 +396,7 @@ class KPFS_100Rnd_762x39_RPD : CA_Magazine
 	type=2*256;
 	count=100;
 	magazineReloadTime=8;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 	emptyMag = "KPFS_100Rnd_762x39_RPD_Empty";
 };
 
@@ -520,16 +484,7 @@ class KPFS_10Rnd_762x39_SKS : CA_Magazine
 	baseBullet = 762x39_x;
 	ammo="B_762x39_Ball";
 	count=10;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 	emptyMag = "KPFS_10Rnd_762x39_SKS_Empty";
 };
 

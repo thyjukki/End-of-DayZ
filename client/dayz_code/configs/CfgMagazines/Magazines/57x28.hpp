@@ -39,16 +39,7 @@ class RH_57x28mm_50RND_Mag: 30Rnd_9x19_MP5
 	count=50;
 	initSpeed=400;
 	baseBullet = 57x28_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "RH_57x28mm_50RND_Mag_Empty";
 };

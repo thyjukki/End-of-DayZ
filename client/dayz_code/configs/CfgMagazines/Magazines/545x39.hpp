@@ -39,16 +39,7 @@ class 30Rnd_545x39_AK: CA_Magazine
 	count=30;
 	initSpeed=900;
 	baseBullet = 545x39_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Unload";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "30Rnd_545x39_AK_Empty";
 };
@@ -138,16 +129,7 @@ class RH_45Rnd_545x39_mag: CA_Magazine
 	count=45;
 	initSpeed=900;
 	baseBullet = 545x39_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Unload";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "RH_45Rnd_545x39_mag_Empty";
 };
@@ -240,16 +222,7 @@ class 75Rnd_545x39_RPK: CA_Magazine
 	count=75;
 	initSpeed=900;
 	baseBullet = 545x39_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Unload";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "75Rnd_545x39_RPK_Empty";
 };

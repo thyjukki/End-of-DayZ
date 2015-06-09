@@ -38,16 +38,7 @@ class RH_7Rnd_32cal_ppk: CA_Magazine
 	initSpeed=300;
 	baseBullet = 45ACP_x;
 	description = "Caliber: .32 ACP<br/>Rounds: 7<br/>Used in: PPK";
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 	emptyMag = "RH_7Rnd_32cal_ppk_Empty";
 };
 
@@ -127,16 +118,7 @@ class RH_20Rnd_32cal_vz61: CA_Magazine
 	initSpeed=300;
 	baseBullet = 45ACP_x;
 	description = "Caliber: .32 ACP<br/>Rounds: 20<br/>Used in: vz61";
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 	emptyMag = "RH_20Rnd_32cal_vz61_Empty";
 };
 

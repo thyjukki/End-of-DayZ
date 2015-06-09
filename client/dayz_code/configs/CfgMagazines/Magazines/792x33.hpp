@@ -34,16 +34,7 @@ class KPFS_30Rnd_792x33_STG44: CA_Magazine
 	count=30;
 	initSpeed=685;
 	baseBullet = 792x33_x;
-	class ItemActions {
-		class loadMag {
-			text = "Load";
-			script = "spawn player_loadAmmo;";
-		};
-		class unLoadMag {
-			text = "Un Load";
-			script = "spawn player_unloadAmmo;";
-		};
-	};
+	LOAD_AMMO
 
 	emptyMag = "KPFS_30Rnd_792x33_STG44_Empty";
 };
