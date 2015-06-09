@@ -15,7 +15,8 @@
 			text = "Un Load";\
 			script = "spawn player_unloadAmmo;";\
 		};\
-	};
+	};\
+	loadAble=1;
 
 
 #include "EmptyMag.hpp"

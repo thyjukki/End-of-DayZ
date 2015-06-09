@@ -217,7 +217,6 @@ class 64Rnd_9x19_Bizon: CA_Magazine
 	count=64;
 	initSpeed=320;
 	baseBullet = 9x18_x;
-	LOAD_AMMO
 
 	emptyMag = "64Rnd_9x19_Bizon_Empty";
 };
@@ -228,6 +227,7 @@ class 64Rnd_9x19_SD_Bizon: 64Rnd_9x19_Bizon {
 	picture = "\z\addons\dayz_communityweapons\magazines\data\m_bizonsd_ca.paa";
 	initSpeed=320;
 	ammo="B_9x18_SD";
+	LOAD_AMMO
 	displayName="Bizon SD Mag";
 	displayNameShort="SD";
 };

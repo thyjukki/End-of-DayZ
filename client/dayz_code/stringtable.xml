@@ -7215,6 +7215,9 @@
 			<French>Vous ne pouvez pas porter 2 armes principales !</French>
 			<Czech>Nelze mít najednou dvě hlavní zbraně!</Czech>
 		</Key>
+		<Key ID="str_player_load_mag_in_back">
+			<English>You can&apos;t carry loaded magazines in backpack!</English>
+		</Key>
 		<Key ID="str_player_ammo_CannotCount">
 			<English>Can&apos;t count magazines!</English>
 			<Russian>Не удалось пересчитать магазины!</Russian>
