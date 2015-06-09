@@ -625,7 +625,7 @@ class FSM
        "				if (_x == ""BoltSteel"") then { _x = ""WoodenArrow"" }; // Convert BoltSteel to WoodenArrow" \n
        "				if (_x == ""ItemBloodbag"") then { _x = ""bloodBagONEG"" }; // Convert ItemBloodbag into universal blood type/rh bag" \n
        "				_loaded= getNumber (configFile >> ""CfgMagazines"" >>_x  >> ""loadAble"");" \n
-       "				if (_loaded == 0) then {_x = getText (configFile >> ""CfgMagazines"" >> _x >> ""emptyMag"")};" \n
+       "				if (_loaded == 1) then {_x = getText (configFile >> ""CfgMagazines"" >> _x >> ""emptyMag"")};" \n
        "			" \n
        "				" \n
        "				dayz_myBackpack addMagazineCargoGlobal [_x,(_backpackMagQty select _countr)];" \n
