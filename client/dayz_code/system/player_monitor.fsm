@@ -1,7 +1,7 @@
 /*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, DayZ Player Monitor">*/
 /*%FSM<HEAD>*/
 /*
-item0[] = {"init",0,250,-75.000000,-200.000000,25.000000,-150.000000,0.000000,"init"};
+item0[] = {"init",0,4346,-75.000000,-200.000000,25.000000,-150.000000,0.000000,"init"};
 item1[] = {"isServer",4,218,50.000000,-200.000000,150.000000,-150.000000,0.000000,"isServer"};
 item2[] = {"wait",2,250,50.000000,-125.000000,150.000000,-75.000000,0.000000,"wait"};
 item3[] = {"Allow_Connection",4,218,50.000000,-50.000000,150.000000,0.000000,0.000000,"Allow" \n "Connection"};
@@ -18,7 +18,7 @@ item13[] = {"Parse_Login",2,250,-75.000000,550.000000,25.000000,600.000000,0.000
 item14[] = {"Hive_Bad",4,218,125.000000,550.000000,225.000000,600.000000,10.000000,"Hive" \n "Bad"};
 item15[] = {"ERROR__Wrong_HIVE",2,250,325.000000,550.000000,425.000000,600.000000,0.000000,"ERROR:" \n "Wrong HIVE" \n "Version"};
 item16[] = {"Character_Setup",4,218,-175.000000,600.000000,-75.000000,650.000000,0.000000,"Character" \n "Setup"};
-item17[] = {"Phase_One",2,4346,-75.000000,650.000000,25.000000,700.000000,0.000000,"Phase One"};
+item17[] = {"Phase_One",2,250,-75.000000,650.000000,25.000000,700.000000,0.000000,"Phase One"};
 item18[] = {"Response",4,218,-175.000000,700.000000,-75.000000,750.000000,0.000000,"Response"};
 item19[] = {"Phase_Two",2,250,-75.000000,750.000000,25.000000,800.000000,0.000000,"Phase Two"};
 item20[] = {"Dead_Player",4,218,125.000000,750.000000,225.000000,800.000000,0.000000,"Dead" \n "Player"};
@@ -59,54 +59,47 @@ item54[] = {"Server_Loading",2,250,-75.000000,250.000000,25.000000,300.000000,0.
 item55[] = {"Too_Long",4,218,125.000000,250.000000,225.000000,300.000000,0.000000,"Too" \n "Long"};
 item56[] = {"Server_Ready",4,218,-175.000000,300.000000,-75.000000,350.000000,0.000000,"Server Ready"};
 item57[] = {"New_Character_57",4,218,-200.000000,550.000000,-100.000000,600.000000,5.000000,"New" \n "Character" \n "57"};
-item58[] = {"Gender_Selection",2,250,-325.000000,550.000000,-225.000000,600.000000,0.000000,"Gender Selection" \n "Dialog" \n "58"};
-item59[] = {"Gender__Selected",4,218,-700.000000,575.000000,-600.000000,625.000000,0.000000,"Gender " \n "Selected" \n "59"};
-item60[] = {"Character_Type_6",2,250,-825.000000,550.000000,-725.000000,600.000000,0.000000,"Character" \n "Type" \n "60"};
-item61[] = {"Region_Selection",2,250,-800.000000,725.000000,-700.000000,775.000000,0.000000,"Region Selection" \n "Dialog" \n "61"};
-item62[] = {"Region_Selected",4,218,-425.000000,700.000000,-325.000000,750.000000,0.000000,"Region" \n "Selected" \n "62"};
-item63[] = {"Region_Process_6",2,250,-300.000000,725.000000,-200.000000,775.000000,0.000000,"Region Process" \n "63"};
-item64[] = {"",7,210,-954.000000,671.000000,-946.000061,679.000000,0.000000,""};
-item65[] = {"Spawn_Process_65",2,250,-300.000000,650.000000,-200.000000,700.000000,0.000000,"Spawn Process" \n "65"};
-item66[] = {"Selection_Enabled",4,218,-925.000000,725.000000,-825.000000,775.000000,0.000000,"Selection" \n "Enabled" \n "66"};
-item67[] = {"Selection_Disabled",4,218,-925.000000,650.000000,-825.000000,700.000000,0.000000,"Selection" \n "Disabled" \n "67"};
-item68[] = {"",7,210,-954.000061,571.000000,-946.000000,579.000000,0.000000,""};
-item69[] = {"",7,210,-953.999939,746.000000,-946.000000,754.000000,0.000000,""};
-item70[] = {"",7,210,-178.999969,746.000000,-171.000031,754.000000,0.000000,""};
-item71[] = {"",7,210,-178.999969,671.000000,-171.000031,679.000000,0.000000,""};
-item72[] = {"ERROR__Date_Time",2,250,325.000000,950.000000,425.000000,1000.000000,0.000000,"ERROR:" \n "Date/Time" \n "not synced!"};
-item73[] = {"sleep",4,218,525.000000,950.000000,625.000000,1000.000000,0.000000,"sleep"};
-item74[] = {"get_ready_to_clo_1",2,250,325.000000,250.000000,425.000000,300.000000,0.000000,"get ready to close"};
-item75[] = {"sleep_",4,218,525.000000,250.000000,625.000000,300.000000,0.000000,"sleep" \n ""};
-item76[] = {"pbo_s__are_missi",4,218,125.000000,50.000000,225.000000,100.000000,2.000000,"pbo's " \n "are missing"};
-item77[] = {"",7,210,821.000000,571.000000,829.000000,579.000000,0.000000,""};
-item78[] = {"",7,210,821.000000,771.000000,829.000000,779.000000,0.000000,""};
-item79[] = {"",7,210,821.000000,971.000000,829.000000,979.000000,0.000000,""};
-item80[] = {"",7,210,821.000000,871.000000,829.000000,879.000000,0.000000,""};
-item81[] = {"",7,210,821.000000,71.000000,829.000000,79.000000,0.000000,""};
-item82[] = {"",7,210,821.000000,171.000000,829.000000,179.000000,0.000000,""};
-item83[] = {"",7,210,821.000000,271.000000,829.000000,279.000000,0.000000,""};
-item84[] = {"Gender_Closed_84",4,218,-450.000000,525.000000,-350.000000,575.000000,0.000000,"Gender" \n "Closed" \n "84"};
-item85[] = {"reopen_Region_85",4,218,-800.000000,800.000000,-700.000000,850.000000,0.000000,"reopen" \n "Region" \n "85"};
-item86[] = {"Default_Male_215",4,218,-700.000000,525.000000,-600.000000,575.000000,0.000000,"Default" \n "Male" \n "215"};
-item87[] = {"Default_Region_2",4,218,-425.000000,750.000000,-325.000000,800.000000,0.000000,"Default" \n "Region" \n "217"};
-item88[] = {"",7,210,-129.000000,671.000000,-121.000000,679.000000,0.000000,""};
-item89[] = {"Gender_Opened_22",4,218,-450.000000,575.000000,-350.000000,625.000000,0.000000,"Gender" \n "Opened" \n "220"};
-item90[] = {"Waiting_for_Gender",2,250,-575.000000,550.000000,-475.000000,600.000000,0.000000,"Waiting for" \n "Gender Selection" \n "221"};
-item91[] = {"Region_Opened_22",4,218,-675.000000,700.000000,-575.000000,750.000000,0.000000,"Region" \n "Opened" \n "223"};
-item92[] = {"Waiting_for__Region",2,250,-550.000000,725.000000,-450.000000,775.000000,0.000000,"Waiting for " \n "Region Selection" \n "224"};
-item93[] = {"Reopen__Gender_2",4,218,-325.000000,475.000000,-225.000000,525.000000,0.000000,"Reopen" \n " Gender" \n "225"};
-item94[] = {"Region__Closed_2",4,218,-675.000000,750.000000,-575.000000,800.000000,0.000000,"Region " \n "Closed" \n "227"};
-item95[] = {"Client_Not_Ready",4,218,-225.000000,450.000000,-125.000000,500.000000,0.000000,"Client Not Ready"};
-item96[] = {"Update_player",2,250,-425.000000,375.000000,-325.000000,425.000000,0.000000,"Update player"};
-item97[] = {"sleep",4,218,-550.000000,375.000000,-450.000000,425.000000,0.000000,"sleep"};
-item98[] = {"",7,210,821.000000,371.000000,829.000000,379.000000,0.000000,""};
-item99[] = {"Ghost_System",2,250,-75.000000,450.000000,25.000000,500.000000,0.000000,"Ghost System"};
-item100[] = {"Client_Ready",4,218,-175.000000,500.000000,-75.000000,550.000000,0.000000,"Client Ready"};
-item101[] = {"Reset",2,250,-425.000000,325.000000,-325.000000,375.000000,0.000000,"Reset"};
-item102[] = {"Sleep",4,218,-550.000000,325.000000,-450.000000,375.000000,0.000000,"Sleep"};
-item103[] = {"",7,210,-279.000000,371.000000,-271.000000,379.000000,0.000000,""};
-item104[] = {"retry_Login",4,218,-250.000000,350.000000,-150.000000,400.000000,0.000000,"retry Login"};
-item105[] = {"",7,210,-379.000031,471.000000,-371.000000,479.000000,0.000000,""};
+item58[] = {"Character_Type_6",2,250,-825.000000,550.000000,-725.000000,600.000000,0.000000,"Character" \n "Type" \n "60"};
+item59[] = {"Region_Selection",2,250,-800.000000,725.000000,-700.000000,775.000000,0.000000,"Region Selection" \n "Dialog" \n "61"};
+item60[] = {"Region_Selected",4,218,-425.000000,700.000000,-325.000000,750.000000,0.000000,"Region" \n "Selected" \n "62"};
+item61[] = {"Region_Process_6",2,250,-300.000000,725.000000,-200.000000,775.000000,0.000000,"Region Process" \n "63"};
+item62[] = {"",7,210,-954.000000,671.000000,-946.000061,679.000000,0.000000,""};
+item63[] = {"Spawn_Process_65",2,250,-300.000000,650.000000,-200.000000,700.000000,0.000000,"Spawn Process" \n "65"};
+item64[] = {"Selection_Enabled",4,218,-925.000000,725.000000,-825.000000,775.000000,0.000000,"Selection" \n "Enabled" \n "66"};
+item65[] = {"Selection_Disabled",4,218,-925.000000,650.000000,-825.000000,700.000000,0.000000,"Selection" \n "Disabled" \n "67"};
+item66[] = {"",7,210,-954.000061,571.000000,-946.000000,579.000000,0.000000,""};
+item67[] = {"",7,210,-953.999939,746.000000,-946.000000,754.000000,0.000000,""};
+item68[] = {"",7,210,-178.999969,746.000000,-171.000031,754.000000,0.000000,""};
+item69[] = {"",7,210,-178.999969,671.000000,-171.000031,679.000000,0.000000,""};
+item70[] = {"ERROR__Date_Time",2,250,325.000000,950.000000,425.000000,1000.000000,0.000000,"ERROR:" \n "Date/Time" \n "not synced!"};
+item71[] = {"sleep",4,218,525.000000,950.000000,625.000000,1000.000000,0.000000,"sleep"};
+item72[] = {"get_ready_to_clo_1",2,250,325.000000,250.000000,425.000000,300.000000,0.000000,"get ready to close"};
+item73[] = {"sleep_",4,218,525.000000,250.000000,625.000000,300.000000,0.000000,"sleep" \n ""};
+item74[] = {"pbo_s__are_missi",4,218,125.000000,50.000000,225.000000,100.000000,2.000000,"pbo's " \n "are missing"};
+item75[] = {"",7,210,821.000000,571.000000,829.000000,579.000000,0.000000,""};
+item76[] = {"",7,210,821.000000,771.000000,829.000000,779.000000,0.000000,""};
+item77[] = {"",7,210,821.000000,971.000000,829.000000,979.000000,0.000000,""};
+item78[] = {"",7,210,821.000000,871.000000,829.000000,879.000000,0.000000,""};
+item79[] = {"",7,210,821.000000,71.000000,829.000000,79.000000,0.000000,""};
+item80[] = {"",7,210,821.000000,171.000000,829.000000,179.000000,0.000000,""};
+item81[] = {"",7,210,821.000000,271.000000,829.000000,279.000000,0.000000,""};
+item82[] = {"reopen_Region_85",4,218,-800.000000,800.000000,-700.000000,850.000000,0.000000,"reopen" \n "Region" \n "85"};
+item83[] = {"Default_Region_2",4,218,-425.000000,750.000000,-325.000000,800.000000,0.000000,"Default" \n "Region" \n "217"};
+item84[] = {"",7,210,-129.000000,671.000000,-121.000000,679.000000,0.000000,""};
+item85[] = {"Region_Opened_22",4,218,-675.000000,700.000000,-575.000000,750.000000,0.000000,"Region" \n "Opened" \n "223"};
+item86[] = {"Waiting_for__Region",2,250,-550.000000,725.000000,-450.000000,775.000000,0.000000,"Waiting for " \n "Region Selection" \n "224"};
+item87[] = {"Region__Closed_2",4,218,-675.000000,750.000000,-575.000000,800.000000,0.000000,"Region " \n "Closed" \n "227"};
+item88[] = {"Client_Not_Ready",4,218,-225.000000,450.000000,-125.000000,500.000000,0.000000,"Client Not Ready"};
+item89[] = {"Update_player",2,250,-425.000000,375.000000,-325.000000,425.000000,0.000000,"Update player"};
+item90[] = {"sleep",4,218,-550.000000,375.000000,-450.000000,425.000000,0.000000,"sleep"};
+item91[] = {"",7,210,821.000000,371.000000,829.000000,379.000000,0.000000,""};
+item92[] = {"Ghost_System",2,250,-75.000000,450.000000,25.000000,500.000000,0.000000,"Ghost System"};
+item93[] = {"Client_Ready",4,218,-175.000000,500.000000,-75.000000,550.000000,0.000000,"Client Ready"};
+item94[] = {"Reset",2,250,-425.000000,325.000000,-325.000000,375.000000,0.000000,"Reset"};
+item95[] = {"Sleep",4,218,-550.000000,325.000000,-450.000000,375.000000,0.000000,"Sleep"};
+item96[] = {"",7,210,-279.000000,371.000000,-271.000000,379.000000,0.000000,""};
+item97[] = {"retry_Login",4,218,-250.000000,350.000000,-150.000000,400.000000,0.000000,"retry Login"};
+item98[] = {"",7,210,-379.000031,471.000000,-371.000000,479.000000,0.000000,""};
 link0[] = {0,1};
 link1[] = {0,5};
 link2[] = {1,2};
@@ -122,7 +115,7 @@ link11[] = {9,10};
 link12[] = {10,34};
 link13[] = {11,12};
 link14[] = {11,45};
-link15[] = {12,99};
+link15[] = {12,92};
 link16[] = {13,14};
 link17[] = {13,16};
 link18[] = {13,57};
@@ -146,16 +139,16 @@ link35[] = {28,29};
 link36[] = {29,30};
 link37[] = {30,31};
 link38[] = {31,53};
-link39[] = {33,72};
-link40[] = {34,82};
-link41[] = {35,77};
-link42[] = {36,78};
-link43[] = {37,80};
+link39[] = {33,70};
+link40[] = {34,80};
+link41[] = {35,75};
+link42[] = {36,76};
+link43[] = {37,78};
 link44[] = {38,6};
-link45[] = {38,76};
+link45[] = {38,74};
 link46[] = {39,38};
 link47[] = {40,41};
-link48[] = {41,81};
+link48[] = {41,79};
 link49[] = {42,43};
 link50[] = {43,25};
 link51[] = {44,11};
@@ -164,76 +157,66 @@ link53[] = {46,44};
 link54[] = {46,47};
 link55[] = {47,48};
 link56[] = {48,49};
-link57[] = {49,98};
+link57[] = {49,91};
 link58[] = {51,42};
 link59[] = {52,33};
 link60[] = {52,51};
 link61[] = {53,32};
 link62[] = {54,55};
 link63[] = {54,56};
-link64[] = {55,74};
+link64[] = {55,72};
 link65[] = {56,11};
 link66[] = {57,58};
-link67[] = {58,89};
-link68[] = {58,93};
-link69[] = {59,60};
-link70[] = {60,68};
-link71[] = {61,85};
-link72[] = {61,91};
-link73[] = {62,63};
-link74[] = {63,70};
-link75[] = {64,67};
-link76[] = {64,69};
-link77[] = {65,71};
-link78[] = {66,61};
-link79[] = {67,65};
-link80[] = {68,64};
-link81[] = {69,66};
-link82[] = {70,71};
-link83[] = {71,88};
-link84[] = {72,73};
-link85[] = {73,79};
-link86[] = {74,75};
-link87[] = {75,83};
-link88[] = {76,40};
-link89[] = {77,50};
-link90[] = {78,77};
-link91[] = {79,80};
-link92[] = {80,78};
-link93[] = {81,82};
-link94[] = {82,83};
-link95[] = {83,98};
-link96[] = {84,58};
-link97[] = {85,61};
-link98[] = {86,60};
-link99[] = {87,63};
-link100[] = {88,16};
-link101[] = {89,90};
-link102[] = {90,59};
-link103[] = {90,84};
-link104[] = {90,86};
-link105[] = {91,92};
-link106[] = {92,62};
-link107[] = {92,87};
-link108[] = {92,94};
-link109[] = {93,58};
-link110[] = {94,61};
-link111[] = {95,105};
+link67[] = {58,66};
+link68[] = {59,82};
+link69[] = {59,85};
+link70[] = {60,61};
+link71[] = {61,68};
+link72[] = {62,65};
+link73[] = {62,67};
+link74[] = {63,69};
+link75[] = {64,59};
+link76[] = {65,63};
+link77[] = {66,62};
+link78[] = {67,64};
+link79[] = {68,69};
+link80[] = {69,84};
+link81[] = {70,71};
+link82[] = {71,77};
+link83[] = {72,73};
+link84[] = {73,81};
+link85[] = {74,40};
+link86[] = {75,50};
+link87[] = {76,75};
+link88[] = {77,78};
+link89[] = {78,76};
+link90[] = {79,80};
+link91[] = {80,81};
+link92[] = {81,91};
+link93[] = {82,59};
+link94[] = {83,61};
+link95[] = {84,16};
+link96[] = {85,86};
+link97[] = {86,60};
+link98[] = {86,83};
+link99[] = {86,87};
+link100[] = {87,59};
+link101[] = {88,98};
+link102[] = {89,90};
+link103[] = {89,96};
+link104[] = {90,94};
+link105[] = {91,50};
+link106[] = {92,88};
+link107[] = {92,93};
+link108[] = {93,13};
+link109[] = {94,95};
+link110[] = {94,96};
+link111[] = {95,89};
 link112[] = {96,97};
-link113[] = {96,103};
-link114[] = {97,101};
-link115[] = {98,50};
-link116[] = {99,95};
-link117[] = {99,100};
-link118[] = {100,13};
-link119[] = {101,102};
-link120[] = {101,103};
-link121[] = {102,96};
-link122[] = {103,104};
-link123[] = {104,11};
-link124[] = {105,96};
-globals[] = {25.000000,1,0,0,0,640,480,1,255,6316128,1,-235.451324,42.981750,937.732300,527.222046,624,920,1};
-window[] = {2,-1,-1,-32000,-32030,630,104,1124,104,3,642};
+link113[] = {97,11};
+link114[] = {98,89};
+globals[] = {25.000000,1,0,0,0,640,480,1,255,6316128,1,-496.678131,262.467682,5.187805,-790.272461,878,920,1};
+window[] = {2,-1,-1,-32000,-32030,578,53,1073,52,3,896};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -508,7 +491,7 @@ class FSM
         class New_Character_57
         {
           priority = 5.000000;
-          to="Gender_Selection";
+          to="Character_Type_6";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/"(_isNew and !isNil 'dayz_preloadFinished') and {(dayz_preloadFinished)}"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
@@ -1358,52 +1341,13 @@ class FSM
       };
     };
     /*%FSM</STATE>*/
-    /*%FSM<STATE "Gender_Selection">*/
-    class Gender_Selection
-    {
-      name = "Gender_Selection";
-      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Gender_Selection'];};" \n
-       "endLoadingScreen;" \n
-       "" \n
-       "_gender = createDialog 'RscDisplayGenderSelect';" \n
-       "" \n
-       "dayz_loadScreenMsg = localize 'STR_UI_GENDER_TITLE';" \n
-       "_timeNem=diag_tickTime;" \n
-       "_model = 'Survivor2_DZ';" \n
-       "dayz_preloadFinished=nil;//do not remove this"/*%FSM</STATEINIT""">*/;
-      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-      class Links
-      {
-        /*%FSM<LINK "Reopen__Gender_2">*/
-        class Reopen__Gender_2
-        {
-          priority = 0.000000;
-          to="Gender_Selection";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"!_gender"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/"closeDialog 0;"/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
-        /*%FSM<LINK "Gender_Opened_22">*/
-        class Gender_Opened_22
-        {
-          priority = 0.000000;
-          to="Waiting_for_Gender";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"_gender"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
-      };
-    };
-    /*%FSM</STATE>*/
     /*%FSM<STATE "Character_Type_6">*/
     class Character_Type_6
     {
       name = "Character_Type_6";
       init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Character_Type_6'];};" \n
        "" \n
-       "_model = dayz_selectGender;"/*%FSM</STATEINIT""">*/;
+       "_model = [""Citizen1"",""Citizen2"",""Citizen3"",""Citizen4"",""Rocker1"",""Rocker2"",""Rocker3"",""Rocker4"",""Villager1"",""Villager2"",""Villager3"",""Villager4"",""Woodlander1"",""Woodlander3"",""Woodlander4"",""Worker1"",""Worker2"",""Worker3"",""Worker4"",""Taliban2"",""Taliban3"",""Taliban7"",""Taliban9"",""Taliban12"",""Terrorist"",""Terrorist3"",""Terrorist4"",""ffaa_terrorista_ham_PK"",""WDL_Mercenary_Default8""] select floor (random 29);"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -1562,53 +1506,6 @@ class FSM
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/"(diag_tickTime - _myTime) > 2"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
-      };
-    };
-    /*%FSM</STATE>*/
-    /*%FSM<STATE "Waiting_for_Gender">*/
-    class Waiting_for_Gender
-    {
-      name = "Waiting_for_Gender";
-      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Waiting_for_Gender'];};" \n
-       "" \n
-       "_timeNemGender = diag_tickTime;"/*%FSM</STATEINIT""">*/;
-      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-      class Links
-      {
-        /*%FSM<LINK "Gender_Closed_84">*/
-        class Gender_Closed_84
-        {
-          priority = 0.000000;
-          to="Gender_Selection";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"dayz_DisplayGenderSelect and !dialog"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
-        /*%FSM<LINK "Default_Male_215">*/
-        class Default_Male_215
-        {
-          priority = 0.000000;
-          to="Character_Type_6";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"((diag_tickTime - _timeNemGender) > 60)"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/"dayz_selectGender = ""Survivor2_DZ"";"/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
-        /*%FSM<LINK "Gender__Selected">*/
-        class Gender__Selected
-        {
-          priority = 0.000000;
-          to="Character_Type_6";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"!dayz_DisplayGenderSelect"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/"_model = uiNameSpace getVariable 'dayz_selectGender';" \n
-           "" \n
-           "closeDialog 0;" \n
-           "" \n
-           "//startLoadingScreen ['','RscDisplayLoadCustom'];"/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
       };

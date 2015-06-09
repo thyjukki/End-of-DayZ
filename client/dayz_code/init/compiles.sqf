@@ -357,16 +357,7 @@ if (!isDedicated) then {
 			(_display displayCtrl 158) ctrlShow false;
 		};
 
-		// Prevent carrying 2 rifles 'exploit'
-		if (primaryWeapon player == "" && dayz_onBack != "" && !(dayz_onBack in MeleeWeapons)) then {
-			["gear"] call player_switchWeapon;
-		};
-
-		if (primaryWeapon player != "" && (primaryWeapon player in MeleeWeapons || dayz_onBack in MeleeWeapons)) then {
-			(_display displayCtrl 1204) ctrlShow true;
-		} else {
-			(_display displayCtrl 1204) ctrlShow false;
-		};
+		(_display displayCtrl 1204) ctrlShow true;
 
 		if (DayZ_onBack != "") then {
 			(_display displayCtrl 1208) ctrlShow true;

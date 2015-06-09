@@ -473,7 +473,7 @@ class RscDisplayGear {
 					y = 0.364;
 					w = 0.309;
 					h = 0.174;
-					onMouseEnter = "if ((DayZ_onBack != """") && (dayz_onBack in MeleeWeapons)) then {mouseOverCarry = true;} else {mouseOverCarry = false;};";
+					onMouseEnter = "if (DayZ_onBack != """") then {mouseOverCarry = true;} else {mouseOverCarry = false;};";
 					onMouseExit = "mouseOverCarry = false;";
 					colorActive[] = {1,1,1,1};
 					colorBackground[] = {0.74,0.74,0.74,0.2}; // has no effect
