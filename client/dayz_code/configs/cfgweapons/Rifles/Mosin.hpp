@@ -105,6 +105,50 @@ class Mosin_Nagant_Scoped : Mosin_Nagant_Base
 	distanceZoomMin = 110;
 	distanceZoomMax = 110;
 
+	class OpticsModes
+	{
+		class Scope
+		{
+			OpticsID=1;
+			UseModelOptics=1;
+			MemoryPointCamera="Eye";
+			opticsPPEffects[]=
+			{
+				"OpticsCHAbera3",
+				"OpticsBlur3"
+			};
+			OpticsFlare=1;
+			opticsDisablePeripherialVision=1;
+			OpticsZoomInit=0.042500;
+			opticsZoomMin=0.042500;
+			opticsZoomMax=0.042500;
+			distanceZoomMin=300;
+			distanceZoomMax=300;
+			discreteDistance[]={100,200,300,400,500,600,700,800,900,1000};
+			discreteDistanceInitIndex=2;
+			VisionMode[]=
+			{
+				"Normal"
+			};
+			CameraDir="";
+		};
+		class Ironsights
+		{
+			OpticsID=2;
+			UseModelOptics=0;
+			MemoryPointCamera="Eye";
+			OpticsPPEffects[]={};
+			OpticsFlare=0;
+			OpticsDisablePeripherialVision=0;
+			OpticsZoomMin=0.250000;
+			OpticsZoomMax=1.100000;
+			OpticsZoomInit=0.500000;
+			DistanceZoomMin=200;
+			DistanceZoomMax=200;
+			VisionMode[]={};
+			CameraDir="";
+		};
+	};
 	class ItemActions {
 		class UseAtt {
 			isAttachment = 1;
