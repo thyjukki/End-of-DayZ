@@ -399,17 +399,6 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 		
 		_timer1 = diag_tickTime;
 	};
-	
-	//Two primary guns pickup exploit fix
-	if ((primaryWeapon player != "") && (!(primaryWeapon player in MeleeWeapons)) && (dayz_onBack != "") && (!(dayz_onBack in MeleeWeapons)) && (isNull (findDisplay 106)) &&
-	(animationState player != "amovpknlmstpslowwrfldnon_amovpknlmstpsraswrfldnon" OR animationState player != "amovpercmstpslowwrfldnon_amovpercmstpsraswrfldnon" OR animationState player != "amovpercmstpslowwrfldnon_amovpercmstpsraswrfldnon")) then {
-		cutText [localize "str_player_ammo_2primary","PLAIN DOWN"];
-		player playActionNow "stop";
-		player action ["dropWeapon", player, primaryWeapon player];
-		sleep 3;
-		["gear"] call player_switchWeapon;
-		sleep 1;
-	};
 
 	//Crowbar ammo fix
 	//"MeleeCrowbar" call dayz_meleeMagazineCheck;
