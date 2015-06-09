@@ -605,14 +605,14 @@ class CfgBuildingLoot {
 			{"",							"food",0.50},
 			{"",							"medical",0.50},
 		//Attachements
-			{"AttAimpoint",					"magazine",0.02},
-			{"AttHolo",						"magazine",0.02},
-			{"AttLauncher",					"magazine",0.03},
-			{"AttGP30",						"magazine",0.03},
-			{"AttScope",					"magazine",0.01},
-			{"AttAcog",						"magazine",0.01},
-			{"AttPSO",						"magazine",0.02},
-			{"AttKobra",					"magazine",0.02}
+			{"Attachment_CCO",					"magazine",0.02},
+			{"Attachment_Holo",						"magazine",0.02},
+			{"Attachment_M203",					"magazine",0.03},
+			{"Attachment_GP25",						"magazine",0.03},
+			{"Attachment_SCOPED",					"magazine",0.01},
+			{"Attachment_ACOG",						"magazine",0.01},
+			{"Attachment_PSO1",						"magazine",0.02},
+			{"Attachment_Kobra",					"magazine",0.02}
 		};
 	};
 	class HeliCrashWEST: Default {
@@ -842,11 +842,11 @@ class CfgBuildingLoot {
 			{"Skin_Camo1_DZ",				"magazine",0.13},
 			{"Skin_Sniper1_DZ",				"magazine",0.04},
 		//Attachements
-			{"AttSilencer",					"magazine",0.01},
-			{"AttAimpoint",					"magazine",0.06},
-			{"AttHolo",						"magazine",0.06},
-			{"AttLauncher",					"magazine",0.06},
-			{"AttAcog",						"magazine",0.04},
+			{"Attachment_Sup",					"magazine",0.01},
+			{"Attachment_CCO",					"magazine",0.06},
+			{"Attachment_Holo",						"magazine",0.06},
+			{"Attachment_M203",					"magazine",0.06},
+			{"Attachment_ACOG",						"magazine",0.04},
 		//bags
 			{"DZ_CivilBackpack_EP1",		"backpack",0.05}, // 24
 			{"DZ_Backpack_EP1",				"backpack",0.05}, // 24
@@ -1004,13 +1004,13 @@ class CfgBuildingLoot {
 			{"VIL_AK_105",					"weapon",0.10},
 			{"VIL_AK_105_C",				"weapon",0.10},
 		//Attachements
-			{"AttSilencer",					"magazine",0.01},
-			{"AttGP30",						"magazine",0.08},
-			{"AttPSO",						"magazine",0.08},
-			{"AttKobra",					"magazine",0.08},
-			{"AttAimpoint",					"magazine",0.04},
-			{"AttHolo",						"magazine",0.06},
-			{"AttAcog",						"magazine",0.02},
+			{"Attachment_Sup",					"magazine",0.01},
+			{"Attachment_GP25",						"magazine",0.08},
+			{"Attachment_PSO1",						"magazine",0.08},
+			{"Attachment_Kobra",					"magazine",0.08},
+			{"Attachment_CCO",					"magazine",0.04},
+			{"Attachment_Holo",						"magazine",0.06},
+			{"Attachment_ACOG",						"magazine",0.02},
 		//special
 			{"MedBox2",						"object",0.15},
 			{"AmmoBoxSmall_762",			"object",0.15},
@@ -1212,9 +1212,9 @@ class CfgBuildingLoot {
 			{"DZ_Backpack_NVG",				"backpack",0.01},
 			{"DZ_Backpack_UCP",				"backpack",0.01},
 		//Attachements
-			{"AttGP30",						"magazine",0.03},
-			{"AttPSO",						"magazine",0.02},
-			{"AttKobra",					"magazine",0.02},
+			{"Attachment_GP25",						"magazine",0.03},
+			{"Attachment_PSO1",						"magazine",0.02},
+			{"Attachment_Kobra",					"magazine",0.02},
 		//special
 		//mags special
 			{"ItemSandbag",					"magazine",0.04},		
@@ -1398,9 +1398,9 @@ class CfgBuildingLoot {
 			{"Skin_Sniper1_DZ",				"magazine",0.01},
 			{"10Rnd_762x54_SVD",			"magazine",0.04},
 	    //Attachements
-			{"AttGP30",						"magazine",0.07},
-			{"AttPSO",						"magazine",0.05},
-			{"AttKobra",					"magazine",0.05},
+			{"Attachment_GP25",						"magazine",0.07},
+			{"Attachment_PSO1",						"magazine",0.05},
+			{"Attachment_Kobra",					"magazine",0.05},
 		//object
 			{"DZ_Backpack_OD",				"backpack",0.01},
 			{"DZ_Backpack_DES",				"backpack",0.01},
@@ -1722,9 +1722,9 @@ class CfgBuildingLoot {
 			{"DZ_Backpack_NVG",				"backpack",0.01},
 			{"DZ_Backpack_UCP",				"backpack",0.01},
 		//Attachements
-			{"AttGP30",						"magazine",0.06},
-			{"AttPSO",						"magazine",0.04},
-			{"AttKobra",					"magazine",0.04},
+			{"Attachment_GP25",						"magazine",0.06},
+			{"Attachment_PSO1",						"magazine",0.04},
+			{"Attachment_Kobra",					"magazine",0.04},
 		//special
 		//mags special
 			{"ItemSandbag",					"magazine",0.04},		
@@ -1880,9 +1880,9 @@ class CfgBuildingLoot {
 			{"DZ_Backpack_NVG",				"backpack",0.01},
 			{"DZ_Backpack_UCP",				"backpack",0.01},
 		//Attachements
-			{"AttGP30",						"magazine",0.06},
-			{"AttPSO",						"magazine",0.04},
-			{"AttKobra",					"magazine",0.04},
+			{"Attachment_GP25",						"magazine",0.06},
+			{"Attachment_PSO1",						"magazine",0.04},
+			{"Attachment_Kobra",					"magazine",0.04},
 		//special
 		//mags special
 			{"ItemSandbag",					"magazine",0.04},		
@@ -2040,9 +2040,9 @@ class CfgBuildingLoot {
 			{"DZ_Backpack_NVG",				"backpack",0.01},
 			{"DZ_Backpack_UCP",				"backpack",0.01},
 		//Attachements
-			{"AttGP30",						"magazine",0.06},
-			{"AttPSO",						"magazine",0.04},
-			{"AttKobra",					"magazine",0.04},
+			{"Attachment_GP25",						"magazine",0.06},
+			{"Attachment_PSO1",						"magazine",0.04},
+			{"Attachment_Kobra",					"magazine",0.04},
 		//special
 		//mags special
 			{"ItemSandbag",					"magazine",0.04},		
