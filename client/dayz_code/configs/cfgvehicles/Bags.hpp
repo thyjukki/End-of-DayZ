@@ -61,7 +61,7 @@ class DZ_Gru_Pack_EP1: Bag_Base_EP1
 	Picture = "\SG_GRU\BACKPACK_GRU_CA.paa";
 	mapsize = 2;
 	transportMaxWeapons = 1;
-	transportMaxMagazines = 12;
+	transportMaxMagazines = 14;
 	class eventHandlers
 	{
 		init="[(_this select 0),'CfgVehicles','DZ_Gru_Pack_EP1'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
@@ -78,7 +78,7 @@ class DZ_Assault_Pack_EP1: Bag_Base_EP1
 	mapSize = 2;
 	model = "\ca\weapons_e\AmmoBoxes\backpack_us_assault.p3d";
 	transportMaxWeapons = 1;
-	transportMaxMagazines = 12;
+	transportMaxMagazines = 14;
 	class eventHandlers
 	{
 		init="[(_this select 0),'CfgVehicles','DZ_Assault_Pack_EP1'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
@@ -112,7 +112,7 @@ class DZ_ALICE_Pack_EP1: Bag_Base_EP1
 	mapsize = 2;
 	model = "\ca\weapons_e\AmmoBoxes\backpack_tk_alice.p3d";
 	transportMaxWeapons = 1;
-	transportMaxMagazines = 18;
+	transportMaxMagazines = 20;
 	class eventHandlers
 	{
 		init="[(_this select 0),'CfgVehicles','DZ_ALICE_Pack_EP1'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
@@ -128,8 +128,8 @@ class DZ_TK_Assault_Pack_EP1 : Bag_Base_EP1
 	picture = "\ca\weapons_e\data\icons\backpack_CIVIL_ASSAULT_CA.paa";
 	icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
 	model = "\ca\weapons_e\AmmoBoxes\backpack_civil_assault.p3d";
-	transportMaxWeapons = 2;
-	transportMaxMagazines = 16;
+	transportMaxWeapons = 1;
+	transportMaxMagazines = 18;
 	class eventHandlers
 	{
 		init="[(_this select 0),'CfgVehicles','DZ_TK_Assault_Pack_EP1'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
@@ -145,8 +145,8 @@ class DZ_British_ACU : Bag_Base_EP1
 	model = "\ca\weapons_baf\Backpack_Small_BAF";
 	picture = "\ca\weapons_baf\data\UI\backpack_BAF_CA.paa";
 	icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
-	transportMaxWeapons = 3;
-	transportMaxMagazines = 18;
+	transportMaxWeapons = 1;
+	transportMaxMagazines = 20;
 	class eventHandlers
 	{
 		init="[(_this select 0),'CfgVehicles','DZ_British_ACU'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
@@ -162,11 +162,187 @@ class DZ_CivilBackpack_EP1: Bag_Base_EP1
 	icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
 	mapsize = 2;
 	model = "\ca\weapons_e\AmmoBoxes\backpack_acr.p3d";
-	transportMaxWeapons = 4;
-	transportMaxMagazines = 20;
+	transportMaxWeapons = 1;
+	transportMaxMagazines = 22;
 	class eventHandlers
 	{
 		init="[(_this select 0),'CfgVehicles','DZ_CivilBackpack_EP1'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
+	};	
+};
+
+		
+class DZ_Backpack_OD : DZ_CivilBackpack_EP1 {
+	scope = public;
+	displayName = "Backpack (OD)";
+	picture = "\ca\weapons_e\data\icons\backpack_ACR_CA.paa";
+	icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
+	mapsize = 2;
+	model = "\len_backpacks\backpack_odr.p3d";
+	class eventHandlers
+	{
+		init="[(_this select 0),'CfgVehicles','DZ_Backpack_OD'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
+	};	
+};
+
+class DZ_Backpack_DES : DZ_Backpack_OD {
+	displayName = "Backpack (Des)";
+	model = "\len_backpacks\backpack_des.p3d";
+	class eventHandlers
+	{
+		init="[(_this select 0),'CfgVehicles','DZ_Backpack_DES'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
+	};	
+};
+
+class DZ_Backpack_3DES : DZ_Backpack_OD {
+	displayName = "Backpack (3 Color Desert)";
+	model = "\len_backpacks\backpack_3ds.p3d";
+	class eventHandlers
+	{
+		init="[(_this select 0),'CfgVehicles','DZ_Backpack_3DES'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
+	};	
+};
+
+class DZ_Backpack_WDL : DZ_Backpack_OD {
+	displayName = "Backpack (M81 Woodland)";
+	model = "\len_backpacks\backpack_wdl.p3d";
+	class eventHandlers
+	{
+		init="[(_this select 0),'CfgVehicles','DZ_Backpack_WDL'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
+	};	
+};
+
+class DZ_Backpack_MAR : DZ_Backpack_OD {
+	displayName = "Backpack (Marpat Woodland)";
+	model = "\len_backpacks\backpack_mar.p3d";
+	class eventHandlers
+	{
+		init="[(_this select 0),'CfgVehicles','DZ_Backpack_MAR'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
+	};	
+};
+
+class DZ_Backpack_DMAR : DZ_Backpack_OD {
+	displayName = "Backpack (Marpat Desert)";
+	model = "\len_backpacks\backpack_dmr.p3d";
+	class eventHandlers
+	{
+		init="[(_this select 0),'CfgVehicles','DZ_Backpack_DMAR'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
+	};	
+};
+
+class DZ_Backpack_UCP : DZ_Backpack_OD {
+	displayName = "Backpack (UCP)";
+	model = "\len_backpacks\backpack_ucp.p3d";
+	class eventHandlers
+	{
+		init="[(_this select 0),'CfgVehicles','DZ_Backpack_UCP'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
+	};	
+};
+
+class DZ_Backpack_6DES : DZ_Backpack_OD {
+	displayName = "Backpack (6 Color Desert)";
+	model = "\len_backpacks\backpack_6ds.p3d";
+	class eventHandlers
+	{
+		init="[(_this select 0),'CfgVehicles','DZ_Backpack_6DES'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
+	};	
+};
+
+class DZ_Backpack_TAK : DZ_Backpack_OD {
+	displayName = "Backpack (Takistani DPM)";
+	model = "\len_backpacks\backpack_tak.p3d";
+	class eventHandlers
+	{
+		init="[(_this select 0),'CfgVehicles','DZ_Backpack_TAK'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
+	};	
+};
+
+class DZ_Backpack_NVG : DZ_Backpack_OD {
+	displayName = "Backpack (NVG Camo)";
+	model = "\len_backpacks\backpack_nvg.p3d";
+	class eventHandlers
+	{
+		init="[(_this select 0),'CfgVehicles','DZ_Backpack_NVG'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
+	};	
+};
+
+class DZ_Backpack_BLK : DZ_Backpack_OD {
+	displayName = "Backpack (Black)";
+	model = "\len_backpacks\backpack_blk.p3d";
+	class eventHandlers
+	{
+		init="[(_this select 0),'CfgVehicles','DZ_Backpack_BLK'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
+	};	
+};
+
+class DZ_Backpack_DPM : DZ_Backpack_OD {
+	displayName = "Backpack (British DPM)";
+	model = "\len_backpacks\backpack_dpm.p3d";
+	class eventHandlers
+	{
+		init="[(_this select 0),'CfgVehicles','DZ_Backpack_DPM'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
+	};	
+};
+
+class DZ_Backpack_FIN : DZ_Backpack_OD {
+	displayName = "Backpack (Finnish M05)";
+	model = "\len_backpacks\backpack_fin.p3d";
+	class eventHandlers
+	{
+		init="[(_this select 0),'CfgVehicles','DZ_Backpack_FIN'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
+	};	
+};
+
+class DZ_Backpack_MTC : DZ_Backpack_OD {
+	displayName = "Backpack (Multicam)";
+	model = "\len_backpacks\backpack_mtc.p3d";
+	class eventHandlers
+	{
+		init="[(_this select 0),'CfgVehicles','DZ_Backpack_MTC'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
+	};	
+};
+
+class DZ_Backpack_NOR : DZ_Backpack_OD {
+	displayName = "Backpack (Digital Pattern)";
+	model = "\len_backpacks\backpack_nor.p3d";
+	class eventHandlers
+	{
+		init="[(_this select 0),'CfgVehicles','DZ_Backpack_NOR'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
+	};	
+};
+
+class DZ_Backpack_WIN : DZ_Backpack_OD {
+	displayName = "Backpack (Winter)";
+	model = "\len_backpacks\backpack_win.p3d";
+	class eventHandlers
+	{
+		init="[(_this select 0),'CfgVehicles','DZ_Backpack_WIN'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
+	};	
+};
+
+class DZ_Backpack_ATC : DZ_Backpack_OD {
+	displayName = "Backpack (ATACS)";
+	model = "\len_backpacks\backpack_atc.p3d";
+	class eventHandlers
+	{
+		init="[(_this select 0),'CfgVehicles','DZ_Backpack_ATC'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
+	};	
+};
+
+class DZ_Backpack_MTL : DZ_Backpack_OD {
+	displayName = "Backpack (Mitchell Pattern)";
+	model = "\len_backpacks\backpack_mtl.p3d";
+	class eventHandlers
+	{
+		init="[(_this select 0),'CfgVehicles','DZ_Backpack_MTL'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
+	};	
+};
+
+class DZ_Backpack_FTN : DZ_Backpack_OD {
+	displayName = "Backpack (Fictional Flecktarn)";
+	model = "\len_backpacks\backpack_ftn.p3d";
+	class eventHandlers
+	{
+		init="[(_this select 0),'CfgVehicles','DZ_Backpack_FTN'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
 	};	
 };
 
@@ -179,8 +355,8 @@ class DZ_Backpack_EP1: Bag_Base_EP1
 	icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
 	mapsize = 2;
 	model = "\ca\weapons_e\AmmoBoxes\backpack_us.p3d";
-	transportMaxWeapons = 6;
-	transportMaxMagazines = 24;
+	transportMaxWeapons = 1;
+	transportMaxMagazines = 26;
 	class eventHandlers
 	{
 		init="[(_this select 0),'CfgVehicles','DZ_Backpack_EP1'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
@@ -196,8 +372,8 @@ class DZ_Backpack_EP1_des: Bag_Base_EP1
 	picture = "\ksk_mod\backpack_des_ca.paa";
 	icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
 	mapsize = 2;
-	transportMaxWeapons = 6;
-	transportMaxMagazines = 24;
+	transportMaxWeapons = 1;
+	transportMaxMagazines = 26;
 	class eventHandlers
 	{
 		init="[(_this select 0),'CfgVehicles','DZ_Backpack_EP1_des'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
@@ -213,8 +389,8 @@ class DZ_Backpack_EP1_wdl: Bag_Base_EP1
 	picture = "\ksk_mod\backpack_wdl_ca.paa";
 	icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
 	mapsize = 2;
-	transportMaxWeapons = 6;
-	transportMaxMagazines = 24;
+	transportMaxWeapons = 1;
+	transportMaxMagazines = 26;
 	class eventHandlers
 	{
 		init="[(_this select 0),'CfgVehicles','DZ_Backpack_EP1_wdl'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
@@ -246,6 +422,7 @@ class DZ_Apo_Pack2: DZ_Apo_Pack1
 	model = "\ice_apo_resistance\Backpack2.p3d";
 	picture = "\ice_apo_resistance\icons\backpack2_ca.paa";
 	icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
+	transportMaxMagazines = 16;
 	class eventHandlers
 	{
 		init="[(_this select 0),'CfgVehicles','DZ_Apo_Pack2'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
@@ -260,6 +437,7 @@ class DZ_Apo_Pack3: DZ_Apo_Pack1
 	model = "\ice_apo_resistance\Backpack3.p3d";
 	picture = "\ice_apo_resistance\icons\backpack3_ca.paa";
 	icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
+	transportMaxMagazines = 18;
 	class eventHandlers
 	{
 		init="[(_this select 0),'CfgVehicles','DZ_Apo_Pack3'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
@@ -275,6 +453,7 @@ class DZ_Apo_Pack4: DZ_Apo_Pack1
 	model = "\ice_apo_resistance\Backpack4.p3d";
 	picture = "\ice_apo_resistance\icons\backpack4_ca.paa";
 	icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
+	transportMaxMagazines = 12;
 	class eventHandlers
 	{
 		init="[(_this select 0),'CfgVehicles','DZ_Apo_Pack4'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
