@@ -232,8 +232,8 @@ link121[] = {102,96};
 link122[] = {103,104};
 link123[] = {104,11};
 link124[] = {105,96};
-globals[] = {25.000000,1,0,0,0,640,480,1,255,6316128,1,-258.891632,66.422157,1058.611450,578.982178,624,920,1};
-window[] = {2,-1,-1,-32000,-32030,734,208,1228,208,3,642};
+globals[] = {25.000000,1,0,0,0,640,480,1,255,6316128,1,-235.451324,42.981750,937.732300,527.222046,624,920,1};
+window[] = {2,-1,-1,-32000,-32030,630,104,1124,104,3,642};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -624,8 +624,12 @@ class FSM
        "			{" \n
        "				if (_x == ""BoltSteel"") then { _x = ""WoodenArrow"" }; // Convert BoltSteel to WoodenArrow" \n
        "				if (_x == ""ItemBloodbag"") then { _x = ""bloodBagONEG"" }; // Convert ItemBloodbag into universal blood type/rh bag" \n
-       "				_loaded= getNumber (configFile >> ""CfgMagazines"" >>_x  >> ""loadAble"");" \n
-       "				if (_loaded == 1) then {_x = getText (configFile >> ""CfgMagazines"" >> _x >> ""emptyMag"")};" \n
+       "				" \n
+       "				diag_log format [""Putting mag %1 to backpack"", _x];" \n
+       "				if (getNumber (configFile >> ""CfgMagazines"" >>_x  >> ""loadAble"") == 1) then {" \n
+       "					_x = getText (configFile >> ""CfgMagazines"" >> _x >> ""emptyMag"");" \n
+       "					diag_log format [""Magazine was loaded, giving %1"", _x];" \n
+       "				};" \n
        "			" \n
        "				" \n
        "				dayz_myBackpack addMagazineCargoGlobal [_x,(_backpackMagQty select _countr)];" \n
