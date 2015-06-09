@@ -92,7 +92,7 @@ class KPFS_71Rnd_762x25_PPSh_Empty: emptiedMagazine
 	type="2*256";
 	class ammoType
 	{
-		class RH_762x25 {
+		class B_762x25 {
 			ammoMag = "KPFS_71Rnd_762x25_PPSh";
 		};
 		class B_762x25_HP {
@@ -117,7 +117,7 @@ class KPFS_71Rnd_762x25_PPSh: CA_Magazine
 	displayName="PPSH Mag";
 	picture="\kpfs_weapons2\data\icons\m_ppsh_ca.paa";
 	descriptionShort="Caliber: 762x25 mm<br/>Rounds: 71 <br/>Used in: PPSH";
-	ammo="RH_762x25";
+	ammo="B_762x25";
 	count=71;
 	initSpeed=420;
 	baseBullet = 762x25_x;
