@@ -1,15 +1,3 @@
-class Mosin_Nagant_broken: Rifle //TODO(Jukki) Check this out?
-{
-	handAnim[] = {"OFP2_ManSkeleton","\Ca\weapons\data\Anim\M24.rtm"}; // Hand positions	
-	type = "1";
-	scope = 2;
-	model = "z\addons\dayz_communityweapons\models\mosin_nagant\mosin_1891_animated";
-	displayName = "Mosin Nagant (BROKEN)";
-	descriptionShort="This weapon is broken<br />Attachments:<br />Ammo:";
-	picture = "\z\addons\dayz_communityweapons\models\mosin_nagant\images\1891.paa";
-	drySound[] = {""};
-};
-
 class Mosin_Nagant_Base: Rifle
 {
 	handAnim[] = {"OFP2_ManSkeleton","\Ca\weapons\data\Anim\M24.rtm"}; // Hand positions	
@@ -28,7 +16,13 @@ class Mosin_Nagant_Base: Rifle
 	drySound[] = {"Ca\sounds\Weapons\rifles\dry",0.01,1,10};
 	modelOptics = "-";
 	reloadMagazineSound[] = {z\addons\dayz_communityweapons\models\mosin_nagant\sound\reload.ogg, 0.010000, 1};
-	magazines[] = {"Mosin_Nagant_Ammo"};
+	magazines[] = {
+		"KPFS_5Rnd_762x54_Mosin",
+		"KPFS_5Rnd_762x54_Mosin_hp",
+		"KPFS_5Rnd_762x54_Mosin_tracer",
+		"KPFS_5Rnd_762x54_Mosin_rubber",
+		"KPFS_5Rnd_762x54_Mosin_bt"
+	};
 	modes[] = {"Single"};
 	dexterity = 1.57;
 	weaponInfoType = "RscWeaponZeroing";
@@ -367,7 +361,13 @@ class Mosin_Nagant_Belt_Scoped_FL : Mosin_Nagant_Base
 	class Mosin_Nagant_Carbine : Mosin_Nagant
 	{
 		model = "z\addons\dayz_communityweapons\models\mosin_nagant\mosin_m44_animated";
-		magazines[] = {"Mosin_Nagant_Ammo"};
+		magazines[] = {
+			"KPFS_5Rnd_762x54_Mosin",
+			"KPFS_5Rnd_762x54_Mosin_hp",
+			"KPFS_5Rnd_762x54_Mosin_tracer",
+			"KPFS_5Rnd_762x54_Mosin_rubber",
+			"KPFS_5Rnd_762x54_Mosin_bt"
+		};
 		displayName = "Mosin Carbine (CUSTOM)";
 		descriptionShort="<br />Attachments: <br />Ammo: Mosin Nagant Ammo";
 		picture = "\z\addons\dayz_communityweapons\models\mosin_nagant\images\carbine.paa";
@@ -432,7 +432,13 @@ class Mosin_Nagant_Belt_Scoped_FL : Mosin_Nagant_Base
 	class Mosin_Nagant_Carbine_FL :  Mosin_Nagant_Carbine
 	{
 		model = "z\addons\dayz_communityweapons\models\mosin_nagant\mosin_m44_FL_animated";
-		magazines[] = {"Mosin_Nagant_Ammo"};
+		magazines[] = {
+			"KPFS_5Rnd_762x54_Mosin",
+			"KPFS_5Rnd_762x54_Mosin_hp",
+			"KPFS_5Rnd_762x54_Mosin_tracer",
+			"KPFS_5Rnd_762x54_Mosin_rubber",
+			"KPFS_5Rnd_762x54_Mosin_bt"
+		};
 		displayName = "Mosin Carbine (CUSTOM)";
 		descriptionShort="<br />Attachments: Flashlight<br />Ammo: Mosin Nagant Ammo";
 		picture = "\z\addons\dayz_communityweapons\models\mosin_nagant\images\carbine_FL.paa";

@@ -46,7 +46,6 @@ class CfgAddons {
 #include "Configs\CfgTownGenerator\CfgTownGeneratorChernarus.hpp"
 #include "Configs\CfgGrid\CfgGrid.hpp"
 #include "Configs\CfgFaces.hpp"
-#include "Configs\CfgGlasses.hpp"
 #include "Configs\CfgArma.hpp"
 #include "Configs\CfgRecoils.hpp"
 #include "gui\padlock\padlock_ui.hpp"

@@ -1,4 +1,4 @@
-class Attachment_Sup : CA_Magazine//TODO(Jukki) Name this maybe bit better, used in most non m4 and ak weapons
+class Attachment_Sup : CA_Magazine
 {
 	scope = public;
 	count = 1;
