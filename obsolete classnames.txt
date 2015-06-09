@@ -16,3 +16,4 @@ M249 -> RH_M249
 Mk48mod1 -> RH_Mk48mod1
 M60A4_EP1 -> RH_M60E4
 RH_mk14ebr -> RH_M14EBR
+KPFS_Mosin_Nagant -> Mosin_Nagant
