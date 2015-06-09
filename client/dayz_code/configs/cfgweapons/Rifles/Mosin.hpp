@@ -1,15 +1,3 @@
-class Mosin_Nagant_broken: Rifle //TODO(Jukki) Check this out?
-{
-	handAnim[] = {"OFP2_ManSkeleton","\Ca\weapons\data\Anim\M24.rtm"}; // Hand positions	
-	type = "1";
-	scope = 2;
-	model = "z\addons\dayz_communityweapons\models\mosin_nagant\mosin_1891_animated";
-	displayName = "Mosin Nagant (BROKEN)";
-	descriptionShort="This weapon is broken<br />Attachments:<br />Ammo:";
-	picture = "\z\addons\dayz_communityweapons\models\mosin_nagant\images\1891.paa";
-	drySound[] = {""};
-};
-
 class Mosin_Nagant_Base: Rifle
 {
 	handAnim[] = {"OFP2_ManSkeleton","\Ca\weapons\data\Anim\M24.rtm"}; // Hand positions	
@@ -28,7 +16,13 @@ class Mosin_Nagant_Base: Rifle
 	drySound[] = {"Ca\sounds\Weapons\rifles\dry",0.01,1,10};
 	modelOptics = "-";
 	reloadMagazineSound[] = {z\addons\dayz_communityweapons\models\mosin_nagant\sound\reload.ogg, 0.010000, 1};
-	magazines[] = {"Mosin_Nagant_Ammo"};
+	magazines[] = {
+		"KPFS_5Rnd_762x54_Mosin",
+		"KPFS_5Rnd_762x54_Mosin_hp",
+		"KPFS_5Rnd_762x54_Mosin_tracer",
+		"KPFS_5Rnd_762x54_Mosin_rubber",
+		"KPFS_5Rnd_762x54_Mosin_bt"
+	};
 	modes[] = {"Single"};
 	dexterity = 1.57;
 	weaponInfoType = "RscWeaponZeroing";
@@ -64,20 +58,16 @@ class Mosin_Nagant: Mosin_Nagant_Base
 	displayName = "Mosin Nagant (CUSTOM)";
 	descriptionShort="<br />Attachments: <br />Ammo: Mosin Nagant Ammo";
 	picture = "\z\addons\dayz_communityweapons\models\mosin_nagant\images\1891.paa";
-	
-	class Attachments
-	{
-		attachments[] =
-		{
-			"Attachment_FL",
-			"Attachment_SCOPED",
-			"Attachment_BELT"
+
+	class ItemActions {
+		class UseAtt {
+			isAttachment = 1;
+			text = "Attach Scope";
+			script = "spawn player_useAttchment;";
+			att = "Attachment_SCOPED";
+			out = "Mosin_Nagant_Scoped";
 		};
-		
-		Attachment_FL = "Mosin_Nagant_FL";
-		Attachment_SCOPED = "Mosin_Nagant_Scoped";
-		Attachment_BELT = "Mosin_Nagant_Belt";
-	};
+	};	
 };
 	
 // -------------------------------- Mosin 1891 Variants --------------------------------------//
@@ -98,22 +88,6 @@ class Mosin_Nagant_FL : Mosin_Nagant_Base
 		scale[] = {1, 1, 0.5};
 		brightness = 0.1;
 	};
-	
-	class Attachments
-	{
-		attachments[] = {"Attachment_SCOPED","Attachment_BELT"};
-		Attachment_SCOPED = "Mosin_Nagant_Scoped_FL";
-		Attachment_BELT = "Mosin_Nagant_Belt_FL";
-	};
-	
-	class ItemActions
-	{
-		class RemoveFlashlight
-		{
-			text = "Remove Flashlight";
-			script = "; ['Attachment_FL',_id,'Mosin_Nagant'] call player_removeAttachment";
-		};
-	};
 };
 
 class Mosin_Nagant_Scoped : Mosin_Nagant_Base
@@ -130,22 +104,16 @@ class Mosin_Nagant_Scoped : Mosin_Nagant_Base
 	opticsZoomMax = 0.071945;
 	distanceZoomMin = 110;
 	distanceZoomMax = 110;
-	
-	class Attachments
-	{
-		attachments[] = {"Attachment_FL","Attachment_BELT"};
-		Attachment_FL = "Mosin_Nagant_Scoped_FL";
-		Attachment_BELT = "Mosin_Nagant_Belt_Scoped";
-	};
-	
-	class ItemActions
-	{
-		class RemoveScope
-		{
-			text = "Remove Scope";
-			script = "; ['Attachment_SCOPED',_id,'Mosin_Nagant'] call player_removeAttachment";
+
+	class ItemActions {
+		class UseAtt {
+			isAttachment = 1;
+			text = "Detach Scope";
+			script = "spawn player_removeAttchment;";
+			att = "Attachment_SCOPED";
+			out = "Mosin_Nagant";
 		};
-	};
+	};	
 };
 	
 class Mosin_Nagant_Scoped_FL : Mosin_Nagant_Base
@@ -171,27 +139,7 @@ class Mosin_Nagant_Scoped_FL : Mosin_Nagant_Base
 		scale[] = {1, 1, 0.5};
 		brightness = 0.1;
 	};
-	
-	class Attachments
-	{
-		attachments[] = {"Attachment_BELT"};
-		Attachment_BELT = "Mosin_Nagant_Belt_Scoped_FL";
-	};
-	
-	class ItemActions
-	{
-		class RemoveFlashlight
-		{
-			text = "Remove Flashlight";
-			script = "; ['Attachment_FL',_id,'Mosin_Nagant_Scoped'] call player_removeAttachment";
-		};
-		
-		class RemoveScope
-		{
-			text = "Remove Scope";
-			script = "; ['Attachment_SCOPED',_id,'Mosin_Nagant_FL'] call player_removeAttachment";
-		};
-	};
+
 };
 class Mosin_Nagant_Belt : Mosin_Nagant_Base
 {
@@ -367,7 +315,13 @@ class Mosin_Nagant_Belt_Scoped_FL : Mosin_Nagant_Base
 	class Mosin_Nagant_Carbine : Mosin_Nagant
 	{
 		model = "z\addons\dayz_communityweapons\models\mosin_nagant\mosin_m44_animated";
-		magazines[] = {"Mosin_Nagant_Ammo"};
+		magazines[] = {
+			"KPFS_5Rnd_762x54_Mosin",
+			"KPFS_5Rnd_762x54_Mosin_hp",
+			"KPFS_5Rnd_762x54_Mosin_tracer",
+			"KPFS_5Rnd_762x54_Mosin_rubber",
+			"KPFS_5Rnd_762x54_Mosin_bt"
+		};
 		displayName = "Mosin Carbine (CUSTOM)";
 		descriptionShort="<br />Attachments: <br />Ammo: Mosin Nagant Ammo";
 		picture = "\z\addons\dayz_communityweapons\models\mosin_nagant\images\carbine.paa";
@@ -432,7 +386,13 @@ class Mosin_Nagant_Belt_Scoped_FL : Mosin_Nagant_Base
 	class Mosin_Nagant_Carbine_FL :  Mosin_Nagant_Carbine
 	{
 		model = "z\addons\dayz_communityweapons\models\mosin_nagant\mosin_m44_FL_animated";
-		magazines[] = {"Mosin_Nagant_Ammo"};
+		magazines[] = {
+			"KPFS_5Rnd_762x54_Mosin",
+			"KPFS_5Rnd_762x54_Mosin_hp",
+			"KPFS_5Rnd_762x54_Mosin_tracer",
+			"KPFS_5Rnd_762x54_Mosin_rubber",
+			"KPFS_5Rnd_762x54_Mosin_bt"
+		};
 		displayName = "Mosin Carbine (CUSTOM)";
 		descriptionShort="<br />Attachments: Flashlight<br />Ammo: Mosin Nagant Ammo";
 		picture = "\z\addons\dayz_communityweapons\models\mosin_nagant\images\carbine_FL.paa";

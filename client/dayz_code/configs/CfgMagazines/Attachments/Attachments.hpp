@@ -15,6 +15,6 @@
 
 #include "Attachment_Sup.hpp"
 #include "Attachment_SupNATO.hpp"
-#include "Attachment_SupAK.hpp"//TODO(Jukki) rename the item
+#include "Attachment_SupAK.hpp"
 
 #include "Attachment_Ghillie.hpp"
