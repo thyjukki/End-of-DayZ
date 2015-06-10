@@ -305,7 +305,6 @@ dayz_resetSelfActions = {
 	s_player_fillwater2 = -1;
 	s_player_fillfuel = -1;
 	s_player_grabflare = -1;
-	s_player_vehicleGear = -1;
 	s_player_removeflare = -1;
 	s_player_painkiller = -1;
 	s_player_studybody = -1;

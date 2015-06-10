@@ -38,16 +38,6 @@ if (_canPickLight and !dayz_hasLight) then {
 	s_player_removeflare = -1;
 };
 
-//Open gear in vehicle
-if (_inVehicle) then {
-	if (s_player_vehicleGear < 0) then {
-		s_player_vehicleGear = player addAction ["Gear", "\z\addons\dayz_code\actions\openVehicleGear.sqf","", 0.5, false, true];
-	};
-} else {
-	player removeAction s_player_vehicleGear;
-	s_player_vehicleGear = -1;
-};
-
 if (dayz_onBack != "" && !dayz_onBackActive && !_inVehicle && !_onLadder && !r_player_unconscious) then {
 	if (s_player_equip_carry < 0) then {
 		_text = getText (configFile >> "CfgWeapons" >> dayz_onBack >> "displayName");
@@ -60,7 +50,7 @@ if (dayz_onBack != "" && !dayz_onBackActive && !_inVehicle && !_onLadder && !r_p
 
 if (!r_player_unconscious) then {
 	if (s_player_change_view < 0) then {
-		s_player_change_view = player addAction ["<t color='#888800'>Viewdistance</t>","\z\addons\dayz_code\vdg\scripts\addAction.sqf",[],0,false,true];
+		s_player_change_view = _vehicle addAction ["<t color='#888800'>Viewdistance</t>","\z\addons\dayz_code\vdg\scripts\addAction.sqf",[],0,false,true, "", "vehicle player != player"];
 	};
 } else {
 	player removeAction s_player_change_view;
