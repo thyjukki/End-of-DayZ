@@ -19,6 +19,7 @@ _Viralzed = typeOf _source in DayZ_ViralZeds;
 _isMinor = (_hit in USEC_MinorWounds);
 _isHeadHit = (_hit == "head_hit");
 _isPlayer = (isPlayer _source);
+_isRubber = getNumber (configFile >> "CfgAmmo" >> _ammo >> "isRubber");
 
 // anti-hack for local explosions (HelicopterExploSmall, HelicopterExploBig, SmallSecondary...) spawned by hackers
 //diag_log [ diag_ticktime, __FILE__, _this];
@@ -70,6 +71,24 @@ if (_unit == player) then {
             private ["_unit"];
             _unit = _this select 0;
             cutText [localize "str_player_tranquilized", "PLAIN DOWN"]; 
+			//systemChat format ["YOU HAVE BEEN TRANQUILISED"];
+            //sleep 2; 
+            // 0 fadeSound 0.05;
+            //sleep 5; 
+            [_unit,0.01] call fnc_usec_damageUnconscious;
+            _unit setVariable ["NORRN_unconscious", true, true];
+            r_player_timeout = round(random 60);
+            r_player_unconscious = true;
+            player setVariable["medForceUpdate",true,true];
+            player setVariable ["unconsciousTime", r_player_timeout, true];
+        };
+    };
+    
+    if ((_isRubber == 1) and (!_unconscious) and (vehicle player == player) and (_isHeadHit)) then {
+        [_unit] spawn {
+            private ["_unit"];
+            _unit = _this select 0;
+            //cutText [localize "str_player_tranquilized", "PLAIN DOWN"]; 
 			//systemChat format ["YOU HAVE BEEN TRANQUILISED"];
             //sleep 2; 
             // 0 fadeSound 0.05;
