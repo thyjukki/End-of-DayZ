@@ -11,6 +11,7 @@ class Mission
 		"dayz_communityassets",
 		"dayz_weapons",
 		"dayz_equip",
+		"dayz_vehicle",
 		"cacharacters_pmc",
 		"ard_tsf_units",
 		"bb_mercenary",

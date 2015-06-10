@@ -26,6 +26,7 @@ class CfgActions {
 	class DropMagazine : None { show = 0; };
 	class PutMagazine : None { show = 0; };
 	class DeactivateMine : None { show = 0; };
+	//class Gear : None { show = 0; };
 /*
 "None"
 "GetInCommander"
