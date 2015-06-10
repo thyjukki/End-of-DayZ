@@ -176,7 +176,7 @@ class RH_20Rnd_9x18_aps_bt: RH_20Rnd_9x18_aps {
 
 /* Bizon */
 
-class 64Rnd_9x19_Bizon_Empty: emptiedMagazine
+class 64Rnd_9x18_Bizon_Empty: emptiedMagazine
 {
 	scope=2;
 	displayname = "Bizon Mag (Empty)";
@@ -186,27 +186,27 @@ class 64Rnd_9x19_Bizon_Empty: emptiedMagazine
 	class ammoType
 	{
 		class RH_B_9x18_Ball {
-			ammoMag = "64Rnd_9x19_Bizon";
+			ammoMag = "64Rnd_9x18_Bizon";
 		};
 		class RH_B_9x18_SD {
 			ammoMag = "64Rnd_9x19_SD_Bizon";
 		};
 		class B_9x18_HP {
-			ammoMag = "64Rnd_9x19_Bizon_hp";
+			ammoMag = "64Rnd_9x18_Bizon_hp";
 		};
 		class B_9x18_TRACER {
-			ammoMag = "64Rnd_9x19_Bizon_tracer";
+			ammoMag = "64Rnd_9x18_Bizon_tracer";
 		};
 		class B_9x18_RUBBER {
-			ammoMag = "64Rnd_9x19_Bizon_rubber";
+			ammoMag = "64Rnd_9x18_Bizon_rubber";
 		};
 		class B_9x18_BT {
-			ammoMag = "64Rnd_9x19_Bizon_bt";
+			ammoMag = "64Rnd_9x18_Bizon_bt";
 		};
 	};
 };
 
-class 64Rnd_9x19_Bizon: CA_Magazine
+class 64Rnd_9x18_Bizon: CA_Magazine
 {
 	scope=2;
 	displayName="Bizon mag";
@@ -218,10 +218,10 @@ class 64Rnd_9x19_Bizon: CA_Magazine
 	initSpeed=320;
 	baseBullet = 9x18_x;
 
-	emptyMag = "64Rnd_9x19_Bizon_Empty";
+	emptyMag = "64Rnd_9x18_Bizon_Empty";
 };
 
-class 64Rnd_9x19_SD_Bizon: 64Rnd_9x19_Bizon {
+class 64Rnd_9x19_SD_Bizon: 64Rnd_9x18_Bizon {
 	scope=2;
 	baseBullet = 9x18_SD_x;
 	picture = "\z\addons\dayz_communityweapons\magazines\data\m_bizonsd_ca.paa";
@@ -232,7 +232,7 @@ class 64Rnd_9x19_SD_Bizon: 64Rnd_9x19_Bizon {
 	displayNameShort="SD";
 };
 
-class 64Rnd_9x19_Bizon_hp: 64Rnd_9x19_Bizon {
+class 64Rnd_9x18_Bizon_hp: 64Rnd_9x18_Bizon {
 	scope=2;
 	baseBullet = 9x18_HP_x;
 	ammo="B_9x18_HP";
@@ -240,7 +240,7 @@ class 64Rnd_9x19_Bizon_hp: 64Rnd_9x19_Bizon {
 	displayNameShort="HP";
 };
 
-class 64Rnd_9x19_Bizon_tracer: 64Rnd_9x19_Bizon {
+class 64Rnd_9x18_Bizon_tracer: 64Rnd_9x18_Bizon {
 	scope=2;
 	baseBullet = 9x18_Tracer_x;
 	ammo="B_9x18_TRACER";
@@ -249,7 +249,7 @@ class 64Rnd_9x19_Bizon_tracer: 64Rnd_9x19_Bizon {
 	displayNameShort="Tracer";
 };
 
-class 64Rnd_9x19_Bizon_rubber: 64Rnd_9x19_Bizon {
+class 64Rnd_9x18_Bizon_rubber: 64Rnd_9x18_Bizon {
 	scope=2;
 	baseBullet = 9x18_RUBBER_x;
 	
@@ -258,7 +258,7 @@ class 64Rnd_9x19_Bizon_rubber: 64Rnd_9x19_Bizon {
 	displayNameShort="Rubber";
 };
 
-class 64Rnd_9x19_Bizon_bt: 64Rnd_9x19_Bizon {
+class 64Rnd_9x18_Bizon_bt: 64Rnd_9x18_Bizon {
 	scope=2;
 	baseBullet = 9x18_BT_x;
 	ammo="B_9x18_BT";

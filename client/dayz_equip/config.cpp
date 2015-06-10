@@ -2080,8 +2080,8 @@ class CfgVehicles {
 				count = 5;
 			};
 			
-			class _xx_64Rnd_9x19_Bizon {
-				magazine = "64Rnd_9x19_Bizon";
+			class _xx_64Rnd_9x18_Bizon {
+				magazine = "64Rnd_9x18_Bizon";
 				count = 20;
 			};
 			

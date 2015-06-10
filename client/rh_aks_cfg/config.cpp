@@ -2416,12 +2416,12 @@ class cfgWeapons
 		picture="\rh_aks\inv\bizon.paa";
 		magazines[]=
 		{
-			64Rnd_9x19_Bizon,
+			64Rnd_9x18_Bizon,
 			64Rnd_9x19_SD_Bizon,
-			64Rnd_9x19_Bizon_hp,
-			64Rnd_9x19_Bizon_tracer,
-			64Rnd_9x19_Bizon_rubber,
-			64Rnd_9x19_Bizon_bt
+			64Rnd_9x18_Bizon_hp,
+			64Rnd_9x18_Bizon_tracer,
+			64Rnd_9x18_Bizon_rubber,
+			64Rnd_9x18_Bizon_bt
 		};
 		displayName="Bizon";
 		drySound[]=
@@ -7951,9 +7951,9 @@ class cfgVehicles
 				magazine="RH_45Rnd_545x39_mag";
 				count=200;
 			};
-			class _xx_64Rnd_9x19_Bizon
+			class _xx_64Rnd_9x18_Bizon
 			{
-				magazine="64Rnd_9x19_Bizon";
+				magazine="64Rnd_9x18_Bizon";
 				count=200;
 			};
 			class _xx_64Rnd_9x19_SD_Bizon
