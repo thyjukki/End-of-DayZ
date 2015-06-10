@@ -24,8 +24,8 @@ switch (_iClass) do {
 				if (_magQty > 3) then
 				{
 					_selectedMag = _mags call BIS_fnc_selectRandom;
-					_emptyMag = getNumber (configFile >> "CfgMagazines" >> _selectedMag >> "isEmptyMag");
-
+					_emptyMag = getText (configFile >> "CfgMagazines" >> _selectedMag >> "emptyMag");
+					
 					if ((_emptyMag != "") && ((random 10) > 5)) then
 					{
 						_item addMagazineCargoGlobal [_emptyMag, 1];
