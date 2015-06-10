@@ -749,7 +749,7 @@ class 20Rnd_762x51_B_SCAR_bt: 20Rnd_762x51_B_SCAR {
 
 
 
-/* Scar-h */
+/* M1 Garand */
 class KPFS_8Rnd_cal30_60_Gar_Empty: emptiedMagazine
 {
 	scope=2;

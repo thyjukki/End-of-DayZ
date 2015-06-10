@@ -11,7 +11,7 @@ class RH_57x28mm_50RND_Mag_Empty: emptiedMagazine
 			ammoMag = "RH_57x28mm_50RND_Mag";
 		};
 		class RH_smg_57x28mm_SD_Round {
-			ammoMag = "RH_smg_57x28mm_SD_Round";
+			ammoMag = "RH_57x28mm_50RND_SD_Mag";
 		};
 		class B_57x28_HP {
 			ammoMag = "RH_57x28mm_50RND_Mag_hp";

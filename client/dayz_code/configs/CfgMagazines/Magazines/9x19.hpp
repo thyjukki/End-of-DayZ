@@ -656,7 +656,7 @@ class RH_19Rnd_9x19_g18_Empty: emptiedMagazine
 	class ammoType
 	{
 		class RH_B_9x19_Ball {
-			ammoMag = "RH_19Rnd_9x19_g18_g18";
+			ammoMag = "RH_19Rnd_9x19_g18";
 		};
 		class RH_B_9x19_SD {
 			ammoMag = "RH_19Rnd_9x19_g18SD";

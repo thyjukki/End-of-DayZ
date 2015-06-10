@@ -40,7 +40,6 @@
 #include "762x39.hpp"
 #include "762x51.hpp"
 #include "762x54r.hpp"
-#include "765x17.hpp"
 #include "792x33.hpp"
 #include "Misc.hpp"
 #include "Shotgun.hpp"

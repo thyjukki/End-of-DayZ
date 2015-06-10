@@ -44,7 +44,8 @@ class CfgBuildingLoot {
 			{"ItemRadio",					"weapon",0.01},
 		//multiple spawns	
 			{"",							"Trash",0.30},
-			{"",							"ammo",0.10},
+			{"",							"civilianMagazines",0.10},
+			{"",							"civilianAmmo",0.10},
 			{"",							"generic",0.20}
 		};
 	};
@@ -78,8 +79,8 @@ class CfgBuildingLoot {
 			{"ItemWaterbottleUnfilled",		"magazine",0.05},
 			{"ItemWaterbottle",				"magazine",0.03},
 			{"ItemRadio",					"weapon",0.02},
-			{"KPFS_Mosin_Nagant",			"weapon",0.04},
-			{"KPFS_Mosin_Nagant_PU",		"weapon",0.01},
+			{"Mosin_Nagant",			"weapon",0.04},
+			{"Mosin_Nagant_Scoped",		"weapon",0.01},
 			{"KPFS_KarS",					"weapon",0.04},
 			{"KPFS_M1_Carbine",				"weapon",0.02},
 			{"KPFS_M1_Garand",				"weapon",0.02},
@@ -87,7 +88,10 @@ class CfgBuildingLoot {
 			{"huntingrifle",				"weapon",0.01},
 		//Multiple spawns	
 			{"",							"Residential",0.60},
-			{"",							"ammo",0.10},
+			{"",							"civilianMagazines",0.10},
+			{"",							"militaryMagazines",0.05},
+			{"",							"civilianAmmo",0.10},
+			{"",							"militaryAmmo",0.05},
 			{"",							"Trash",0.30},
 			{"",							"generic",0.20}
 		};
@@ -97,7 +101,7 @@ class CfgBuildingLoot {
 		lootPos[] = {};
 		lootType[] = {
 		//one spawn
-			{"ItemSandbag",					"magazine",0.04},
+			{"ItemSandbag",					"magazine",0.04}, //TODO(Skippy) I think these should include western weapons and ammo
 			{"WeaponHolder_ItemTent",		"object",0.01},
 			{"WeaponHolder_ItemCamoNet",	"object",0.01},
 			{"WeaponHolder_ItemDomeTent",	"object",0.02},
@@ -117,8 +121,8 @@ class CfgBuildingLoot {
 			{"ItemWaterbottleUnfilled",		"magazine",0.06},
 			{"ItemWaterbottle",				"magazine",0.10},
 			{"ItemRadio",					"weapon",0.02},
-			{"KPFS_Mosin_Nagant",			"weapon",0.04},
-			{"KPFS_Mosin_Nagant_PU",		"weapon",0.01},
+			{"Mosin_Nagant",				"weapon",0.04},
+			{"Mosin_Nagant_Scoped",			"weapon",0.01},
 			{"KPFS_KarS",					"weapon",0.04},
 			{"KPFS_M1_Carbine",				"weapon",0.02},
 			{"KPFS_M1_Garand",				"weapon",0.02},
@@ -148,7 +152,13 @@ class CfgBuildingLoot {
 			{"transfusionKit",				"magazine",0.04},
 			{"FoodMRE",						"magazine",0.25},
 			{"WeaponHolder_ItemHatchet",	"object",0.02},
-			{"",							"ammo",0.10}
+			{"",							"Residential",0.60},
+			{"",							"civilianMagazines",0.10},
+			{"",							"militaryMagazines",0.10},
+			{"",							"westernMagazines",0.10},
+			{"",							"civilianAmmo",0.10},
+			{"",							"militaryAmmo",0.10},
+			{"",							"westernAmmo",0.10}
 		};
 	};	
 	class Residential: Default {
@@ -197,7 +207,7 @@ class CfgBuildingLoot {
 			{"ItemWaterbottleUnfilled",		"magazine",0.04},
 			{"ItemWaterbottle",				"magazine",0.02},
 			{"ItemRadio",					"weapon",0.02},
-			{"KPFS_Mosin_Nagant",			"weapon",0.01},
+			{"Mosin_Nagant",			"weapon",0.01},
 			{"KPFS_KarS",					"weapon",0.01},
 			{"KPFS_M1_Carbine",				"weapon",0.01},
 			{"KPFS_M1_Garand",				"weapon",0.01},
@@ -205,7 +215,8 @@ class CfgBuildingLoot {
 		//multiple spawns	
 			{"",							"Residential",0.50},
 			{"",							"Trash",1},
-			{"",							"ammo",0.10},
+			{"",							"civilianMagazines",0.10},
+			{"",							"civilianAmmo",0.10},
 			{"",							"generic",0.50}
 		};
 	};
@@ -248,7 +259,8 @@ class CfgBuildingLoot {
 			{"ItemRadio",					"weapon",0.02},
 		//multiple spawns	
 			{"",							"Trash",0.35},
-			{"",							"ammo",0.10},
+			{"",							"civilianMagazines",0.10},
+			{"",							"civilianAmmo",0.10},
 			{"",							"generic",0.35}
 		};
 	};
@@ -289,8 +301,8 @@ class CfgBuildingLoot {
 			{"FoodChipsSulahoops",			"magazine",0.02},
 			{"equip_string",				"magazine",0.04},
 			{"ItemWaterbottleUnfilled",		"magazine",0.04},
-			{"KPFS_Mosin_Nagant",			"weapon",0.04},
-			{"KPFS_Mosin_Nagant_PU",		"weapon",0.01},
+			{"Mosin_Nagant",			"weapon",0.04},
+			{"Mosin_Nagant_Scoped",		"weapon",0.01},
 			{"KPFS_KarS",					"weapon",0.04},
 			{"KPFS_M1_Carbine",				"weapon",0.02},
 			{"KPFS_M1_Garand",				"weapon",0.02},
@@ -304,7 +316,10 @@ class CfgBuildingLoot {
 		//bags
 		//multiple spawns		
 			{"",							"Trash",0.30},
-			{"",							"ammo",0.10},
+			{"",							"civilianMagazines",0.10},
+			{"",							"militaryMagazines",0.5},
+			{"",							"civilianAmmo",0.10},
+			{"",							"militaryAmmo",0.5},
 			{"",							"generic",0.20}
 		};
 	};
@@ -411,7 +426,10 @@ class CfgBuildingLoot {
 		//special
 			{"equip_nails",					"magazine",0.06},
 		//multiple spawns
-			{"",							"ammo",0.10},		
+			{"",							"civilianMagazines",0.10},
+			{"",							"militaryMagazines",0.4},
+			{"",							"civilianAmmo",0.10},
+			{"",							"militaryAmmo",0.4},
 			{"",							"Trash",0.30},
 			{"",							"Food",0.50}
 		};
@@ -450,7 +468,8 @@ class CfgBuildingLoot {
 			//med
 		//multiple spawns
 			{"",							"Trash",0.30},
-			{"",							"ammo",0.10},
+			{"",							"civilianMagazines",0.10},
+			{"",							"civilianAmmo",0.10},
 			{"",							"generic",0.40}
 		};
 	};
@@ -529,8 +548,8 @@ class CfgBuildingLoot {
 			{"Crossbow_DZ",					"weapon",0.01},
 			{"MR43",						"weapon",0.03},
 			{"MeleeBaseBallBat",			"weapon",0.02},
-			{"KPFS_Mosin_Nagant",			"weapon",0.04},
-			{"KPFS_Mosin_Nagant_PU",		"weapon",0.01},
+			{"Mosin_Nagant",			"weapon",0.04},
+			{"Mosin_Nagant_Scoped",		"weapon",0.01},
 			{"KPFS_KarS",					"weapon",0.04},
 			{"KPFS_M1_Carbine",				"weapon",0.02},
 			{"KPFS_M1_Garand",				"weapon",0.02},
@@ -600,7 +619,12 @@ class CfgBuildingLoot {
 			{"DZ_Backpack_MTC",				"backpack",0.01},
 		//multiple spawns
 			{"",							"Trash",0.10},
-			{"",							"ammo",0.20},
+			{"",							"civilianMagazines",0.5},
+			{"",							"militaryMagazines",0.10},
+			{"",							"westernMagazines",0.10},
+			{"",							"civilianAmmo",0.5},
+			{"",							"militaryAmmo",0.10},
+			{"",							"westernAmmo",0.10}
 			{"",							"generic",0.50},
 			{"",							"food",0.50},
 			{"",							"medical",0.50},
@@ -810,8 +834,8 @@ class CfgBuildingLoot {
 			{"RH_ar10",						"weapon",0.05},
 			{"RH_ar10s",					"weapon",0.03},		
 			{"RH_m39emr",					"weapon",0.01},
-			{"RH_mk14ebr",					"weapon",0.01},
-			{"RH_mk14ebrsp",				"weapon",0.01},				
+			{"RH_M14EBR",					"weapon",0.01},
+			{"RH_M14EBRsp",					"weapon",0.01},				
 			{"RH_Scarh",					"weapon",0.02},
 			{"RH_Scarh_aim",				"weapon",0.01},
 			{"RH_Scarh_acog",				"weapon",0.01},
@@ -854,7 +878,10 @@ class CfgBuildingLoot {
 			{"DZ_Backpack_EP1_wdl",			"backpack",0.05}, // 24
 		//multiple spawns
 			{"",							"medical",0.25},
-			{"",							"ammo",0.15},
+			{"",							"civilianMagazines",0.4},
+			{"",							"westernMagazines",0.15},
+			{"",							"civilianAmmo",0.4},
+			{"",							"westernAmmo",0.20}
 			{"",							"militaryWEST",0.30}
 		};
 	};
@@ -1027,7 +1054,10 @@ class CfgBuildingLoot {
 			{"DZ_Backpack_EP1_wdl",			"backpack",0.02}, // 24
 		//multiple spawns
 			{"",							"medical",0.25},
-			{"",							"ammo",0.10},
+			{"",							"civilianMagazines",0.4},
+			{"",							"militaryMagazines",0.10},
+			{"",							"civilianAmmo",0.6},
+			{"",							"militaryAmmo",0.20},
 			{"",							"militaryEAST",0.30}
 		};
 	};
@@ -1221,7 +1251,12 @@ class CfgBuildingLoot {
 		//multiple spawns
 			{"",							"military",0.90},
 			{"",							"Trash",0.50},
-			{"",							"ammo",0.40},
+			{"",							"civilianMagazines",0.03},
+			{"",							"militaryMagazines",0.10},
+			{"",							"westernMagazines",0.4},
+			{"",							"civilianAmmo",0.01},
+			{"",							"militaryAmmo",0.15},
+			{"",							"westernAmmo",0.04}
 			{"",							"generic",0.30},
 			{"",							"medical",0.10}
 		};
@@ -1416,7 +1451,12 @@ class CfgBuildingLoot {
 			{"",							"military",0.90},
 			{"",							"Trash",0.40},
 			{"",							"generic",0.30},
-			{"",							"ammo",0.40},
+			{"",							"civilianMagazines",0.02},
+			{"",							"militaryMagazines",0.20},
+			{"",							"westernMagazines",0.06},
+			{"",							"civilianAmmo",0.01},
+			{"",							"militaryAmmo",0.40},
+			{"",							"westernAmmo",0.10}
 			{"",							"medical",0.10}
 		};
 	};
@@ -1446,8 +1486,8 @@ class CfgBuildingLoot {
 			{"MR43",						"weapon",0.08}, 			
 			{"Winchester1866",				"weapon",0.06},	
 			{"LeeEnfield",					"weapon",0.06},
-			{"KPFS_Mosin_Nagant",			"weapon",0.04},
-			{"KPFS_Mosin_Nagant_PU",		"weapon",0.01},
+			{"Mosin_Nagant",			"weapon",0.04},
+			{"Mosin_Nagant_Scoped",		"weapon",0.01},
 			{"KPFS_KarS",					"weapon",0.04},
 			{"KPFS_M1_Carbine",				"weapon",0.02},
 			{"KPFS_M1_Garand",				"weapon",0.02},
@@ -1479,7 +1519,10 @@ class CfgBuildingLoot {
 			{"DZ_Backpack_TAK",				"backpack",0.01},
 			{"equip_string",				"magazine",0.04},	
 			{"",							"Trash",0.20},
-			{"",							"ammo",0.10},
+			{"",							"civilianMagazines",0.06},
+			{"",							"militaryMagazines",0.04},
+			{"",							"civilianAmmo",0.15},
+			{"",							"militaryAmmo",0.10},
 			{"",							"generic",0.30}
 		};
 	};
@@ -1572,7 +1615,10 @@ class CfgBuildingLoot {
 		//multiple spawns
 			{"",							"military",0.70},
 			{"",							"Trash",0.20},
-			{"",							"ammo",0.10},
+			{"",							"civilianMagazines",0.06},
+			{"",							"militaryMagazines",0.04},
+			{"",							"civilianAmmo",0.15},
+			{"",							"militaryAmmo",0.10},
 			{"",							"generic",0.30},
 			{"",							"medical",0.20}
 		};
@@ -1731,7 +1777,12 @@ class CfgBuildingLoot {
 		//multiple spawns
 			{"",							"military",0.90},
 			{"",							"Trash",0.20},
-			{"",							"ammo",0.50},
+			{"",							"civilianMagazines",0.03},
+			{"",							"militaryMagazines",0.20},
+			{"",							"westernMagazines",0.10},
+			{"",							"civilianAmmo",0.01},
+			{"",							"militaryAmmo",0.40},
+			{"",							"westernAmmo",0.20}
 			{"",							"generic",0.30},
 			{"",							"medical",0.10}
 //loot goes here
@@ -1889,7 +1940,12 @@ class CfgBuildingLoot {
 		//multiple spawns
 			{"",							"military",0.90},
 			{"",							"Trash",0.50},
-			{"",							"ammo",0.40},
+			{"",							"civilianMagazines",0.03},
+			{"",							"militaryMagazines",0.20},
+			{"",							"westernMagazines",0.10},
+			{"",							"civilianAmmo",0.01},
+			{"",							"militaryAmmo",0.40},
+			{"",							"westernAmmo",0.20}
 			{"",							"generic",0.30},
 			{"",							"medical",0.10}
 		};
@@ -2049,7 +2105,12 @@ class CfgBuildingLoot {
 		//multiple spawns
 			{"",							"military",0.90},
 			{"",							"Trash",0.50},
-			{"",							"ammo",0.40},
+			{"",							"civilianMagazines",0.03},
+			{"",							"militaryMagazines",0.20},
+			{"",							"westernMagazines",0.10},
+			{"",							"civilianAmmo",0.01},
+			{"",							"militaryAmmo",0.40},
+			{"",							"westernAmmo",0.20}
 			{"",							"generic",0.30},
 			{"",							"medical",0.10}
 		};
