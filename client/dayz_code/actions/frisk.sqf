@@ -17,6 +17,10 @@ if ( primaryweapon _unit != "") exitWith
 {
 	cutText ["The person is armed..." , "PLAIN DOWN"];
 };
+if (dayZ_OnBack != "") exitWith
+{
+	cutText ["The has weapon on his back..." , "PLAIN DOWN"];
+};
 if (vehicle player == player) then
 {
 	//not in a vehicle
