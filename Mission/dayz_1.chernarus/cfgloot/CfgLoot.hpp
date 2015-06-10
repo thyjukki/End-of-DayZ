@@ -220,6 +220,9 @@ class CfgLoot {
 		{"kpfs_6Rnd_635x15",0.03},// this little bugger still needs to be decided on
 		{"6Rnd_45ACP",0.03},// this little bugger still needs to be decided on
 		{"15Rnd_W1866_Slug",0.03}, //shotguns
+		{"10x_303",0.04},
+		{"2Rnd_shotgun_74Pellets",0.08},
+		{"15Rnd_W1866_Slug",0.06},
 		{"8Rnd_B_Beneli_74Slug",0.03},
 		{"8Rnd_B_Beneli_Pellets",0.04}//Hey remember to have the last line not contain a ,
 	};
@@ -458,7 +461,10 @@ class CfgLoot {
 		{"20Rnd_762x51_B_SCAR_hp",0.03},
 		{"20Rnd_762x51_B_SCAR_tracer",0.03},
 		{"20Rnd_762x51_B_SCAR_rubber",0.03},
-		{"20Rnd_762x51_B_SCAR_bt",0.03}//remember ending
+		{"20Rnd_762x51_B_SCAR_bt",0.03},
+		{"5x_22_LR_17_HMR",0.01},
+		{"UKF_5Rnd_338_Mag",0.01},
+		//remember ending
 	};
 	
 	
@@ -601,9 +607,6 @@ class CfgLoot {
 	civilian[] = {
 		{"ItemBandage",0.06},
 		{"ItemPainkiller",0.03},
-		{"8Rnd_9x18_Makarov",0.04},
-		{"6Rnd_45ACP",0.04},
-		{"2Rnd_shotgun_74Pellets",0.08},
 		{"ItemSodaLirik",0.02},
 		{"ItemSodaPeppsy",0.02},
 		{"FoodCanBakedBeans",0.03},
@@ -611,9 +614,6 @@ class CfgLoot {
 	};
 	viralloot[] = {
 		{"ItemBandage",0.02},
-		{"8Rnd_9x18_Makarov",0.04},
-		{"6Rnd_45ACP",0.04},
-		{"2Rnd_shotgun_74Pellets",0.08},
 		{"ItemSodaPepsi",0.04},
 		{"FoodCanFrankBeans",0.05},
 		{"FoodCanPasta",0.05},
@@ -675,12 +675,6 @@ class CfgLoot {
 		{"ItemTrashPaperMusic",0.03},
 		{"ItemAntibacterialWipe",0.03},
 		{"ItemHeatPack",0.04},
-		{"8Rnd_9x18_Makarov",0.09},
-		{"6Rnd_45ACP",0.04},
-		{"2Rnd_shotgun_74Pellets",0.08},
-		{"5x_22_LR_17_HMR",0.01},
-		{"10x_303",0.04},
-		{"15Rnd_W1866_Slug",0.06},
 		{"WoodenArrow",0.04},
 		{"HandRoadFlare",0.10},
 		{"ItemPainkiller",0.02},
@@ -731,45 +725,6 @@ class CfgLoot {
 		{"ItemPainkiller",0.02},
 		{"ItemMorphine",0.01},
 		{"ItemHeatPack",0.04},
-		{"7Rnd_45ACP_1911",0.04},
-		{"30Rnd_556x45_Stanag",0.02},
-		{"75Rnd_545x39_RPK",0.02},
-		{"20Rnd_762x51_DMR",0.02},
-		{"RH_45ACP_30RND_Mag",0.03},
-		{"RH_45ACP_13RND_Mag",0.03},
-		{"RH_9mm_32RND_Mag",0.03},
-		{"RH_9mm_32RND_SD_Mag",0.03},
-		{"RH_45ACP_25RND_Mag",0.03},
-		{"RH_57x28mm_50RND_Mag",0.03},
-		{"RH_57x28mm_50RND_SD_Mag",0.03},
-		{"RH_7Rnd_50_AE",0.03},
-		{"RH_13Rnd_9x19_bhp",0.03},
-		{"RH_8Rnd_9x19_Mk",0.03},
-		{"RH_8Rnd_9x19_Mksd",0.03},
-		{"RH_15Rnd_9x19_usp",0.03},
-		{"RH_15Rnd_9x19_uspsd",0.03},
-		{"RH_8Rnd_45cal_m1911",0.03},
-		{"RH_20Rnd_9x19_M93",0.03},
-		{"17Rnd_9x19_glock17",0.03},
-		{"RH_19Rnd_9x19_g18",0.03},
-		{"RH_33Rnd_9x19_g18",0.03},
-		{"RH_10Rnd_22LR_mk2",0.03},
-		{"RH_8Rnd_762_tt33",0.03},
-		{"RH_7Rnd_32cal_ppk",0.03},
-		{"RH_6Rnd_44_Mag",0.03},
-		{"RH_6Rnd_357_Mag",0.03},
-		{"40Rnd_46x30_mp7",0.02},
-		{"40Rnd_46x30_sd_mp7",0.02},
-		{"20Rnd_46x30_mp7",0.03},
-		{"20Rnd_46x30_sd_mp7",0.03},
-		{"20Rnd_762x51_g3",0.03},
-		{"15Rnd_9x19_M9SD",0.01},
-		{"8Rnd_9x18_MakarovSD",0.01},
-		{"15Rnd_9x19_M9",0.03},
-		{"30Rnd_762x39_AK47",0.02},
-		{"30Rnd_545x39_AK",0.02},
-		{"5Rnd_762x51_M24",0.01},
-		{"8Rnd_B_Beneli_74Slug",0.04},
 		{"1Rnd_HE_M203",0.01},
 		{"FlareWhite_M203",0.02},
 		{"FlareGreen_M203",0.02},
@@ -779,10 +734,6 @@ class CfgLoot {
 		{"SmokeShell",0.04},
 		{"SmokeShellRed",0.04},
 		{"SmokeShellGreen",0.04},
-		{"8Rnd_B_Beneli_Pellets",0.04},
-		{"30Rnd_556x45_StanagSD",0.01},
-		{"30Rnd_9x19_MP5",0.02},
-		{"30Rnd_9x19_MP5SD",0.01},
 		{"HandChemGreen",0.04},
 		{"HandChemBlue",0.04},
 		{"HandChemRed",0.04},
@@ -805,15 +756,7 @@ class CfgLoot {
 		{"FoodMRE",0.03},
 		{"ItemTrashToiletpaper",0.01},
 		{"ItemTrashRazor",0.01},
-		{"ItemCards",0.02},
-		{"20Rnd_762x51_B_SCAR",0.01},
-		{"UKF_5Rnd_338_Mag",0.01},
-		{"KPFS_10Rnd_762x39_SKS",0.03},
-		{"KPFS_5Rnd_762x54_Mosin",0.03},
-		{"KPFS_15Rnd_cal30_Carbine",0.02},
-		{"KPFS_8Rnd_cal30_60_Gar",0.01},
-		{"KPFS_30Rnd_45ACP_Thompson",0.02},
-		{"KPFS_30Rnd_762x43_STG44",0.02}
+		{"ItemCards",0.02}
 	};
 };
 
