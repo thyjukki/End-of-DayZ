@@ -1,7 +1,7 @@
 class 30cal_x1 : baseBullet {
 	scope = public;
 	displayName = ".30 carbine (x1)";
-	ammo = "RH_B_30cal_SD";
+	ammo = "B_30cal_Ball";
 	bulletCount = 1;
 	baseName = "30cal_x";
 	baseDesc = "30cal";
