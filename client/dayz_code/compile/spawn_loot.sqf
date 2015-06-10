@@ -21,8 +21,19 @@ switch (_iClass) do {
 		//	if (_mags select 0 == "Quiver") then { _mags set [0, "WoodenArrow"] }; // Prevent spawning a Quiver
 			if (!(_iItem in MeleeWeapons)) then {
 				_magQty = round(random 10);
-				if (_magQty > 3) then {
-					_item addMagazineCargoGlobal [(_mags select 0), (round(random 1) + 1)];
+				if (_magQty > 3) then
+				{
+					_selectedMag = _mags call BIS_fnc_selectRandom;
+					_emptyMag = getNumber (configFile >> "CfgMagazines" >> _selectedMag >> "isEmptyMag")
+
+					if (_emptyMag != "" && round(random 10) > 5) then
+					{
+						_item addMagazineCargoGlobal [_emptyMag, 1];
+					}
+					else
+					{
+						_item addMagazineCargoGlobal [_selectedMag, 1];
+					};
 				};
 			};
 		};
