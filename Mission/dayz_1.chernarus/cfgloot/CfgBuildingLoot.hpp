@@ -624,7 +624,7 @@ class CfgBuildingLoot {
 			{"",							"westernMagazines",0.10},
 			{"",							"civilianAmmo",0.5},
 			{"",							"militaryAmmo",0.10},
-			{"",							"westernAmmo",0.10}
+			{"",							"westernAmmo",0.10},
 			{"",							"generic",0.50},
 			{"",							"food",0.50},
 			{"",							"medical",0.50},
@@ -881,7 +881,7 @@ class CfgBuildingLoot {
 			{"",							"civilianMagazines",0.4},
 			{"",							"westernMagazines",0.15},
 			{"",							"civilianAmmo",0.4},
-			{"",							"westernAmmo",0.20}
+			{"",							"westernAmmo",0.20},
 			{"",							"militaryWEST",0.30}
 		};
 	};
@@ -1256,7 +1256,7 @@ class CfgBuildingLoot {
 			{"",							"westernMagazines",0.4},
 			{"",							"civilianAmmo",0.01},
 			{"",							"militaryAmmo",0.15},
-			{"",							"westernAmmo",0.04}
+			{"",							"westernAmmo",0.04},
 			{"",							"generic",0.30},
 			{"",							"medical",0.10}
 		};
@@ -1456,7 +1456,7 @@ class CfgBuildingLoot {
 			{"",							"westernMagazines",0.06},
 			{"",							"civilianAmmo",0.01},
 			{"",							"militaryAmmo",0.40},
-			{"",							"westernAmmo",0.10}
+			{"",							"westernAmmo",0.10},
 			{"",							"medical",0.10}
 		};
 	};
@@ -1782,7 +1782,7 @@ class CfgBuildingLoot {
 			{"",							"westernMagazines",0.10},
 			{"",							"civilianAmmo",0.01},
 			{"",							"militaryAmmo",0.40},
-			{"",							"westernAmmo",0.20}
+			{"",							"westernAmmo",0.20},
 			{"",							"generic",0.30},
 			{"",							"medical",0.10}
 //loot goes here
@@ -1945,7 +1945,7 @@ class CfgBuildingLoot {
 			{"",							"westernMagazines",0.10},
 			{"",							"civilianAmmo",0.01},
 			{"",							"militaryAmmo",0.40},
-			{"",							"westernAmmo",0.20}
+			{"",							"westernAmmo",0.20},
 			{"",							"generic",0.30},
 			{"",							"medical",0.10}
 		};
@@ -2110,7 +2110,7 @@ class CfgBuildingLoot {
 			{"",							"westernMagazines",0.10},
 			{"",							"civilianAmmo",0.01},
 			{"",							"militaryAmmo",0.40},
-			{"",							"westernAmmo",0.20}
+			{"",							"westernAmmo",0.20},
 			{"",							"generic",0.30},
 			{"",							"medical",0.10}
 		};
