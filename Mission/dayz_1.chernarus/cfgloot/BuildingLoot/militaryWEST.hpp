@@ -5,10 +5,6 @@ militaryWEST[] = {
 	{"ItemMorphine",0.02},
 	{"ItemHeatPack",0.02},
 //ammo
-	{"30Rnd_556x45_Stanag",0.04},
-	{"7Rnd_45ACP_1911",0.05},
-	{"15Rnd_9x19_M9",0.02},
-	{"8Rnd_B_Beneli_74Slug",0.04},
 	{"1Rnd_HE_M203",0.01},
 	{"FlareWhite_M203",0.01},
 	{"FlareGreen_M203",0.01},
@@ -21,13 +17,6 @@ militaryWEST[] = {
 	{"HandChemGreen",0.02},
 	{"HandChemBlue",0.02},
 	{"HandChemRed",0.02},
-	{"100Rnd_556x45_BetaCMag",0.02},
-	{"100Rnd_556x45_M249",0.01},
-	{"100Rnd_556x45_BetaCMag",0.01},
-	{"20Rnd_762x51_B_SCAR",0.01},
-	{"UKF_5Rnd_338_Mag",0.01},
-	{"30Rnd_556x45_G36",0.01},
-	{"30Rnd_556x45_G36SD",0.01},
 //drinks
 	{"ItemWaterbottleUnfilled",0.02},
 //food

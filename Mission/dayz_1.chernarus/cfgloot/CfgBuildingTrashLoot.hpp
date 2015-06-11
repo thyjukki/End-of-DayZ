@@ -51,14 +51,6 @@ Trash[] = {
 	{"ItemPainkiller",0.01},
 	{"ItemMorphine",0.01},
 	{"ItemEpinephrine",0.01},
-	///Civ Ammo
-	{"7Rnd_45ACP_1911",0.01},
-	{"RH_8Rnd_9x19_Mk",0.01},
-	{"RH_8Rnd_762_tt33",0.01},
-	{"2Rnd_shotgun_74Pellets",0.01},
-	{"8Rnd_B_Beneli_74Slug",0.01},
-	{"8Rnd_9x18_Makarov",0.01},
-	{"6Rnd_45ACP",0.01},
 	///Civ Random
 	{"HandRoadFlare",0.01},
 	{"ItemWaterbottleUnfilled",0.01},

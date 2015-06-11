@@ -4,14 +4,7 @@ Supermarket[] = {
 	{"ItemPainkiller",0.03},
 	{"ItemAntibacterialWipe",0.04},
 //ammo
-	{"8Rnd_9x18_Makarov",0.05},
-	//{"7Rnd_45ACP_1911",0.03}, //military/police
-	{"10x_303",0.04},
-	{"6Rnd_45ACP",0.05},
-	{"15Rnd_W1866_Slug",0.06},
-	//{"15Rnd_W1866_Pellet",0.02}, //1866 slugs only
 	{"WoodenArrow",0.04},
-	//{"2Rnd_shotgun_74Slug",0.05}, //pellets preferred for m43
 	{"2Rnd_shotgun_74Pellets",0.08},
 	{"HandChemGreen",0.04},
 	{"HandChemBlue",0.04},
