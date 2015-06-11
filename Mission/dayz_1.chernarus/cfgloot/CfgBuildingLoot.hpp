@@ -460,7 +460,8 @@ class CfgBuildingLoot {
 	class InfectedCamps: Default { //5
 		lootPos[] = {};
 		lootType[] = {
-		//No Objects IMPORTANT
+		//No Objects IMPORTANTc
+		// TODO(Skippy) do not place backpacks or hatchets in here since they are clasified as objects and cant be placed in infected camps
 		//one spawn
 		//drinks
 			{"ItemWaterbottleUnfilled",		"generic",0.01},
@@ -519,7 +520,6 @@ class CfgBuildingLoot {
 			{"Binocular",					"tool",0.06},
 			{"ItemCrowbar",					"tool",0.08},
 			{"ItemRadio",					"weapon",0.02},
-			{"WeaponHolder_ItemHatchet",	"object",0.02},
 			{"ItemDIY_wood",				"weapon",0.02},
 		//weapons
 			{"RH_pm",						"weapon",0.05},
@@ -593,14 +593,6 @@ class CfgBuildingLoot {
 			{"PartWoodPile",				"magazine",0.06},
 			{"Skin_Camo1_DZ",				"magazine",0.01},
 			{"ItemBookBible",				"magazine",0.02},
-		//bags
-			{"DZ_TK_Assault_Pack_EP1",		"object",0.03}, // 16
-			{"DZ_CivilBackpack_EP1",		"object",0.01}, // 24
-			{"DZ_Backpack_EP1",				"object",0.01}, // 24
-			{"DZ_Backpack_EP1_des",			"object",0.01}, // 24
-			{"DZ_Backpack_EP1_wdl",			"object",0.01}, // 24
-		    {"DZ_Backpack_ATC",				"object",0.01},
-			{"DZ_Backpack_MTC",				"object",0.01},
 		//multiple spawns
 			{"",							"Trash",0.10},
 			{"",							"civilianMagazines",0.5},
