@@ -824,7 +824,7 @@ class Rubbish5: Industrial {
 	zedPos[] = {{-0.369629,0.078125,-0.274689}};	
 	maxRoaming = 0;
 };
-class Land_Mil_Guardhouse: MilitarySpecial {
+class Land_Mil_Guardhouse: Military {
 	maxRoaming = 3;
 	lootPos[] = {
 		{-1.50049,2.88184,-1.66295},
@@ -849,18 +849,6 @@ class Land_Mil_Guardhouse: MilitarySpecial {
 		{-5.44434,-10.3384,-1.99812},
 	};
 	lootChance = 0.5;
-	lootType[] = {
-		{"RH_gr1","weapon",0.01},
-		{"DZ_TK_Assault_Pack_EP1","object",0.01},		
-		{"RH_akm","weapon",0.02},
-		{"RH_ak74","weapon",0.02},
-		{"RH_usp","weapon",0.03},
-		{"Binocular","weapon",0.03},
-		{"RH_m1911old","weapon",0.04},	
-		{"ItemMap","weapon",0.04},
-		{"RH_pm","weapon",0.04}, 
-		{"","military",0.40}
-	};
 };
 class Land_komin: Industrial {
 	lootPos[] = {{0.126953,2.88086,12.4362}};	
@@ -871,7 +859,7 @@ class Land_komin: Industrial {
 class Land_Ind_Pec_01: Industrial {
 	lootPos[] = {{-1.73682,-10.9668,-22.3766},{3.95752,-12.5781,-17.425},{-0.951172,-0.967773,-3.83344},{-0.181641,15.7451,0.253754},{-0.237793,-13.3857,6.21796},{-6.78613,-7.21973,14.7371}};	
 	zedPos[] = {{-1.73682,-10.9668,-22.3766},{3.95752,-12.5781,-17.425},{-0.951172,-0.967773,-3.83344},{-0.181641,15.7451,0.253754},{-0.237793,-13.3857,6.21796},{-6.78613,-7.21973,14.7371}};	
-	lootChance = 0.2;
+	lootChance = 0.4;
 	maxRoaming = 0;
 };
 class Land_Ind_SiloVelke_01: Industrial {
@@ -884,7 +872,7 @@ class Land_Misc_Garb_Heap_EP1: Industrial {
 	lootPos[] = {{-0.625488,-0.126953,-0.255127}};	
 	zedPos[] = {{-0.625488,-0.126953,-0.255127}};	
 	maxRoaming = 0;
-	lootChance = 0.1;
+	lootChance = 0.2;
 };
 class Land_Shed_M02: Industrial {
 	lootPos[] = {{-0.0136719,-1.44629,-1.54199}};	
@@ -963,7 +951,7 @@ class Land_GuardShed: Residential {
 class Land_tent_east: Military {
 	lootPos[] = {{2.06,-0.97,-1.74},{-1.82,1.71,-1.74}};
 	zedPos[] = {{2.06,-0.97,-1.74},{-1.82,1.71,-1.74}};
-	lootChance = 0.3;
+	lootChance = 0.4;
 	minRoaming = 2;
 	maxRoaming = 3;
 };
@@ -977,7 +965,7 @@ class RU_WarfareBFieldhHospital: MASH {
 class RU_WarfareBBarracks: Residential {
 	lootPos[] = {{-2.81,2.49,1.3},{-0.72,-0.03,1.31},{2.06,-2.63,0.52},{-0.38,-2.29,1.87},{2.43,2.04,1.08},{-0.01,2.35,0.55}};
 	zedPos[] = {{-2.81,2.49,1.3},{-0.72,-0.03,1.31},{2.06,-2.63,0.52},{-0.38,-2.29,1.87},{2.43,2.04,1.08},{-0.01,2.35,0.55}};
-	lootChance = 0.1;
+	lootChance = 0.3;
 	maxRoaming = 0;
 };
 
