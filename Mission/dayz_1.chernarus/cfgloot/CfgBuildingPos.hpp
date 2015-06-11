@@ -206,7 +206,16 @@ class Land_SS_hangar: Military {
 		{"WeaponHolder_PartWheel","object",0.02},
 		{"WeaponHolder_PartGeneric","object",0.03},
 		{"ItemTankTrap","magazine",0.03},
-		{"","Hangar",0.30},
+		{"",							"military",0.90},
+		{"",							"Trash",0.50},
+		{"",							"civilianMagazines",0.03},
+		{"",							"militaryMagazines",0.10},
+		{"",							"westernMagazines",0.4},
+		{"",							"civilianAmmo",0.01},
+		{"",							"militaryAmmo",0.15},
+		{"",							"westernAmmo",0.04},
+		{"",							"generic",0.30},
+		{"",							"medical",0.10}
 	};
 };
 class Land_A_Pub_01: Residential {

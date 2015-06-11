@@ -57,10 +57,10 @@ switch (_iClass) do {
 		} foreach getArray (missionConfigFile >> "cfgLoot" >> _iClass);
 		
 		diag_log format ["Spawn_Loot: spawning from %1", _iClass];
-		//_qty = 0;
-		//_max = ceil(random 2) + 1;
+		_qty = 0;
+		_max = ceil(random 2) + 1;
 		
-		//while {_qty < _max} do {
+		while {_qty < _max} do {
 			_index = dayz_CLBase find _iClass;
 			_weights = dayz_CLChances select _index;
 			_cntWeights = count _weights;
@@ -86,7 +86,7 @@ switch (_iClass) do {
 					//_qty = _qty + 1;
 				};
 			};
-		//};
+		};
 		
 		if (_iItem != "") then {
 			_item addWeaponCargoGlobal [_iItem,1];

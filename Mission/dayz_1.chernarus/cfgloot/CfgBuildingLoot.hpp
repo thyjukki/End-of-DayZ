@@ -415,7 +415,7 @@ class CfgBuildingLoot {
 			{"",							"civilianAmmo",0.10},
 			{"",							"militaryAmmo",0.4},
 			{"",							"Trash",0.30},
-			{"",							"Food",0.50}
+			{"",							"food",0.50}
 		};
 	};	
 	class Office: Residential {
