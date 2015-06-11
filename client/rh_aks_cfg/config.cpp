@@ -2296,7 +2296,7 @@ class cfgWeapons
 			class UseAtt2 : UseAtt{
 				text = "Detach Silencer";
 				att = "Attachment_SupAK";
-				out = "RH_Rk95sd";
+				out = "RH_Rk95aim";
 			};
 		};
 		displayName="RK-95 SD Aimpoint";

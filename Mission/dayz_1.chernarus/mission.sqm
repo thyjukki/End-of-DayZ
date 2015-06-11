@@ -20,6 +20,7 @@ class Mission
 		"ard_tsf_units_east",
 		"ksk_mod",
 		"dapwwiira",
+		"vilas_rw_forces_co",
 		"kpfs_tri_char_winter",
 		"kpfs_tri_char_woodland",
 		"kpfs_tri_char_desert",

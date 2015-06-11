@@ -463,7 +463,7 @@ class CfgLoot {
 		{"20Rnd_762x51_B_SCAR_rubber",0.03},
 		{"20Rnd_762x51_B_SCAR_bt",0.03},
 		{"5x_22_LR_17_HMR",0.01},
-		{"UKF_5Rnd_338_Mag",0.01},
+		{"UKF_5Rnd_338_Mag",0.01}
 		//remember ending
 	};
 	
