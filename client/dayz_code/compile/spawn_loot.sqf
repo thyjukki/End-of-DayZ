@@ -83,7 +83,7 @@ switch (_iClass) do {
 					_item addMagazineCargoGlobal [_canType,1];
 					_uniq set [count _uniq, _canType];
 					//diag_log ("uniq: "+str(_uniq));
-					//_qty = _qty + 1;
+					_qty = _qty + 1;
 				};
 			};
 		};

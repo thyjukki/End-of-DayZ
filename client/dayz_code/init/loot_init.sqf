@@ -42,13 +42,13 @@ _config = missionConfigFile >> "cfgLoot";
 		_itemChances = getArray (_config select _i);
 		_weighted = [];
 		_j = 0;
-		_items = [];
+		//_items = [];
 		for "_l" from 0 to ((count _itemChances) - 1) do {
-			diag_log ("Item: "+str(_itemChances select _l));
+			//diag_log ("Item: "+str(_itemChances select _l));
 			_weight = round (((_itemChances select _l) select 1) * 100);
 			for "_k" from 0 to (_weight - 1) do {
 				_weighted set [_j + _k, _l];
-				_items set [count _items, ((_itemChances select _l) select 0)];
+				//_items set [count _items, ((_itemChances select _l) select 0)];
 			};
 			_j = _j + _weight;
 		};
@@ -56,7 +56,7 @@ _config = missionConfigFile >> "cfgLoot";
 		//dayz_CLItemNames set [count dayz_CLBase, _items];
 		dayz_CLChances set [count dayz_CLChances, _weighted];
 		
-		diag_log format["CFGLoot: %1, Array: %2", _classname, _items];
+		//diag_log format["CFGLoot: %1, Array: %2", _classname, _items];
 	};
 diag_log ("BaseLoot: " +str(dayz_CLBase));
 dayz_ZombieBuildings = [];
