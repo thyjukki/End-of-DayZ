@@ -41,7 +41,7 @@ if (r_ammo_selected_mode == 2) then
 		
 		_mag_out = getText(configFile >> "CfgMagazines" >> _selected_mag >> "ammoType" >> _ammo_type >> "ammoMag");
 		_mag_limit = getNumber (configFile >> "CfgMagazines" >> _mag_out >> "count");
-		diag_log format ["Testing, empty magazine %1 (%2), with ammo %3 (%4)", _selected_mag, _mag_limit, _ammo_type, _ammo_count];
+		//diag_log format ["Testing, empty magazine %1 (%2), with ammo %3 (%4)", _selected_mag, _mag_limit, _ammo_type, _ammo_count];
 		
 	}
 	else
@@ -63,7 +63,7 @@ if (r_ammo_selected_mode == 2) then
 			_Break = true;
 		};
 
-		diag_log format ["Testing, magazine %1 (%2/%3), with ammo %4 (%5)", _selected_mag, _mag_cur, _mag_limit, _ammo_type, _ammo_count];
+		//diag_log format ["Testing, magazine %1 (%2/%3), with ammo %4 (%5)", _selected_mag, _mag_cur, _mag_limit, _ammo_type, _ammo_count];
 	};
 	if (_Break) exitWith{};
 
@@ -140,7 +140,7 @@ if (r_ammo_selected_mode == 2) then
 			if (_base10 > 0) then
 			{
 				_giving = _toBoGiven + str(_base10*10);
-				diag_log format ["_base10, %1 (%2), giving %3", _base10*10, _extra_ammo,_giving];
+				//diag_log format ["_base10, %1 (%2), giving %3", _base10*10, _extra_ammo,_giving];
 				_isOK = [player,_giving] call BIS_fnc_invAdd;
 
 				if (!_isOK) then
@@ -166,7 +166,7 @@ if (r_ammo_selected_mode == 2) then
 			if (_base1 > 0) then
 			{
 				_giving = _toBoGiven + str(_base1);
-				diag_log format ["_base1, %1 (%2), giving %3", _base1, _extra_ammo,_giving];
+				//diag_log format ["_base1, %1 (%2), giving %3", _base1, _extra_ammo,_giving];
 				_isOK = [player,_giving] call BIS_fnc_invAdd;
 
 				if (!_isOK) then

@@ -9,7 +9,7 @@ _item = _this select 0;
 _selectedSlot = _this select 1;
 _dialog = findDisplay 106;
 _control = _dialog displayCtrl _selectedSlot;
-diag_log format [ "UNLOAD AMMO (%1/%2)", _selectedSlot, _control];
+//diag_log format [ "UNLOAD AMMO (%1/%2)", _selectedSlot, _control];
 if (!(_item in magazines player)) exitWith {systemChat "Item not found"};
 
 _config = configFile >> "CfgMagazines" >> _item;
@@ -44,7 +44,7 @@ if (_mag_cur <= 10) then {
 
 	if (_base10 > 0) then {
 		_giving = _toBoGiven + str(_base10);
-		diag_log format ["_base10, %1 (%2), giving %3", _base10, _mag_cur,_giving];
+		//diag_log format ["_base10, %1 (%2), giving %3", _base10, _mag_cur,_giving];
 		_isOK = [player,_giving] call BIS_fnc_invAdd;
 		if (!_isOK) then {
 			_nearByPile = nearestObjects [getPosATL player, ["WeaponHolder","WeaponHolderBase"], 2];
@@ -64,7 +64,7 @@ if (_mag_cur <= 10) then {
 	
 	if (_base1 > 0) then {
 		_giving = _toBoGiven + str(_base1);
-		diag_log format ["_base1, %1 (%2), giving %3", _base1, _mag_cur,_giving];
+		//diag_log format ["_base1, %1 (%2), giving %3", _base1, _mag_cur,_giving];
 		_isOK = [player,_giving] call BIS_fnc_invAdd;
 		if (!_isOK) then {
 			_nearByPile = nearestObjects [getPosATL player, ["WeaponHolder","WeaponHolderBase"], 2];

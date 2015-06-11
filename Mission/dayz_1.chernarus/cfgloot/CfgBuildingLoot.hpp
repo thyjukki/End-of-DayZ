@@ -289,10 +289,6 @@ class CfgBuildingLoot {
 			{"equip_rope",					"magazine",0.03},
 			{"equip_duct_tape",				"magazine",0.03},
 			{"PartWoodPile",				"magazine",0.08},
-			{"2Rnd_shotgun_74Pellets",		"magazine",0.08},
-			{"5x_22_LR_17_HMR",				"magazine",0.01},
-			{"10x_303",						"magazine",0.04},
-			{"15Rnd_W1866_Slug",			"magazine",0.02},
 			{"WoodenArrow",					"magazine",0.04},
 			{"FoodCanBoneboy",				"magazine",0.01},
 			{"equip_nails",					"magazine",0.06},
@@ -307,12 +303,6 @@ class CfgBuildingLoot {
 			{"KPFS_M1_Carbine",				"weapon",0.02},
 			{"KPFS_M1_Garand",				"weapon",0.02},
 			{"KPFS_M1_Garand_M84",			"weapon",0.01},
-			{"KPFS_10Rnd_762x39_SKS",		"magazine",0.03},
-			{"KPFS_5Rnd_762x54_Mosin",		"magazine",0.03},
-			{"KPFS_15Rnd_cal30_Carbine",	"magazine",0.02},
-			{"KPFS_8Rnd_cal30_60_Gar",		"magazine",0.01},
-			{"KPFS_30Rnd_45ACP_Thompson",	"magazine",0.02},
-			{"KPFS_30Rnd_762x43_STG44",		"magazine",0.02},
 		//bags
 		//multiple spawns		
 			{"",							"Trash",0.30},
@@ -366,13 +356,7 @@ class CfgBuildingLoot {
 			{"ItemPainkiller",				"magazine",0.03},
 			{"ItemAntibacterialWipe",		"magazine",0.04},
 		//ammo
-			{"8Rnd_9x18_Makarov",			"magazine",0.05},
-			//{"7Rnd_45ACP_1911",0.03}, //military/police
-			{"10x_303",						"magazine",0.04},
-			{"RH_6Rnd_357_Mag",				"magazine",0.05},
-			{"15Rnd_W1866_Slug",			"magazine",0.06},
 			{"WoodenArrow",					"magazine",0.04},
-			{"2Rnd_shotgun_74Pellets",		"magazine",0.08},
 			{"HandChemGreen",				"magazine",0.04},
 			{"HandChemBlue",				"magazine",0.04},
 			{"HandChemRed",					"magazine",0.04},
@@ -1431,7 +1415,6 @@ class CfgBuildingLoot {
 			{"100Rnd_762x54_PK",			"magazine",0.04},
 			{"Skin_Camo1_DZ",				"magazine",0.02},
 			{"Skin_Sniper1_DZ",				"magazine",0.01},
-			{"10Rnd_762x54_SVD",			"magazine",0.04},
 	    //Attachements
 			{"Attachment_GP25",						"magazine",0.07},
 			{"Attachment_PSO1",						"magazine",0.05},
@@ -1501,9 +1484,6 @@ class CfgBuildingLoot {
 		//med
 			{"ItemBandage",					"magazine",0.5},
 			{"ItemHeatPack",				"magazine",0.02},
-			{"5x_22_LR_17_HMR",				"magazine",0.03},
-			{"15Rnd_W1866_Slug",			"magazine",0.06},
-			{"10x_303",						"magazine",0.03},
 			{"8Rnd_B_Beneli_74Slug",		"magazine",0.06},
 			{"2Rnd_shotgun_74Pellets",		"magazine",0.08},
 			{"WoodenArrow",					"magazine",0.10},
