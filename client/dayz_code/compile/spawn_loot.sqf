@@ -56,6 +56,7 @@ switch (_iClass) do {
 			_itemTypes set [count _itemTypes, _x select 0]
 		} foreach getArray (missionConfigFile >> "cfgLoot" >> _iClass);
 		
+		diag_log format ["Spawn_Loot: spawning from %1", _iClass];
 		//_qty = 0;
 		//_max = ceil(random 2) + 1;
 		
