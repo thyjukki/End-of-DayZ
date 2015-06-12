@@ -547,7 +547,6 @@ class CfgBuildingLoot {
 			{"Binocular",					"tool",0.06},
 			{"ItemCrowbar",					"tool",0.08},
 			{"ItemRadio",					"weapon",0.02},
-			{"WeaponHolder_ItemHatchet",	"object",0.02},
 			{"ItemDIY_wood",				"weapon",0.02},
 		//weapons
 			{"RH_pm",						"weapon",0.05},
