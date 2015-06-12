@@ -337,13 +337,13 @@ class CfgWeapons
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
 				att = "Attachment_M203";
-				out = "RH_m16a1gl";
+				out = "RH_m16a1sglgl";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Acog";
 				script = "spawn player_removeAttchment;";
 				att = "Attachment_ACOG";
-				out = "RH_m16a2";
+				out = "RH_m16a1";
 			};
 		};
 		displayName="M16A1 Scope";
@@ -437,7 +437,7 @@ class CfgWeapons
 		class ItemActions {
 			class UseAtt {
 				isAttachment = 1;
-				text = "Attach Acog";
+				text = "Detach Acog";
 				script = "spawn player_removeAttchment;";
 				att = "Attachment_ACOG";
 				out = "RH_M16a1gl";
@@ -801,6 +801,7 @@ class CfgWeapons
 	};
 	class RH_M16a3c: RH_M16a3
 	{
+		delete ItemActions;
 		model="\RH_m4\RH_M16a3c.p3d";
 		picture="\RH_m4\inv\M16a3c.paa";
 	};
@@ -863,16 +864,16 @@ class CfgWeapons
 		class ItemActions {
 			class UseAtt {
 				isAttachment = 1;
-				text = "Detach M203";
-				script = "spawn player_removeAttchment;";
+				text = "Attacach M203";
+				script = "spawn player_useAttchment;";
 				att = "Attachment_M203";
-				out = "RH_m16a3aim";
+				out = "RH_m16a3sgl";
 			};
 			class UseAtt1 : UseAtt{
-				text = "Detach Aimpoint";
+				text = "Detach Acog";
 				script = "spawn player_removeAttchment;";
-				att = "Attachment_CCO";
-				out = "RH_m16a3gl";
+				att = "Attachment_ACOG";
+				out = "RH_m16a3";
 			};
 		};
 		displayName="M16A3 Scope";
@@ -939,11 +940,10 @@ class CfgWeapons
 				text = "Detach M203";
 				script = "spawn player_removeAttchment;";
 				att = "Attachment_M203";
-				out = "RH_m16a3gl";
+				out = "RH_m16a3s";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Acog";
-				script = "spawn player_removeAttchment;";
 				att = "Attachment_ACOG";
 				out = "RH_m16a3gl";
 			};
@@ -1128,7 +1128,8 @@ class CfgWeapons
 				att = "Attachment_M203";
 				out = "RH_m16a4";
 			};
-			class UseAtt1 : UseAtt{
+			class UseAtt1 {
+				isAttachment = 1;
 				text = "Attach Acog";
 				script = "spawn player_useAttchment;";
 				att = "Attachment_ACOG";
