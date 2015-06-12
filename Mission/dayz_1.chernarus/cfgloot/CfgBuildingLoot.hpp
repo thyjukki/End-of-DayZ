@@ -70,11 +70,11 @@ class CfgBuildingLoot {
 			{"Winchester1866",				"weapon",0.02},
 			{"equip_rope",					"magazine",0.10},
 			{"PartWoodPile",				"magazine",0.10},
-			{"DZ_Backpack_WIN",				"backpack",0.01},
-			{"DZ_Backpack_BLK",				"backpack",0.01},
-			{"DZ_Backpack_FIN",				"backpack",0.01},
-			{"DZ_Assault_Pack_EP1",			"backpack",0.05},
-			{"DZ_Czech_Vest_Puch",			"backpack",0.07},
+			{"DZ_Backpack_WIN",				"object",0.01},
+			{"DZ_Backpack_BLK",				"object",0.01},
+			{"DZ_Backpack_FIN",				"object",0.01},
+			{"DZ_Assault_Pack_EP1",			"object",0.05},
+			{"DZ_Czech_Vest_Puch",			"object",0.07},
 			{"equip_cable_tie",				"magazine",0.02},
 			{"ItemWaterbottleUnfilled",		"magazine",0.10},
 			{"ItemWaterbottle",				"magazine",0.10},
@@ -200,18 +200,18 @@ class CfgBuildingLoot {
 			{"RH_m1911old",					"weapon",0.02},
 			{"MeleeBaseBallBat",			"weapon",0.08},
 			{"WeaponHolder_ItemFuelcan",	"object",0.01},
-			{"DZ_Backpack_BLK",				"backpack",0.01},
-			{"DZ_Backpack_WIN",				"backpack",0.01},
+			{"DZ_Backpack_BLK",				"object",0.01},
+			{"DZ_Backpack_WIN",				"object",0.01},
 			{"equip_herb_box",				"magazine",0.03},
 			{"equip_pvc_box",				"magazine",0.03},
 			{"ItemPainkiller",				"magazine",0.10},
 			{"ItemBandage",					"magazine",0.10},
-			{"DZ_Patrol_Pack_EP1",			"backpack",0.08},
-			{"DZ_Assault_Pack_EP1",			"backpack",0.06},
-			{"DZ_Apo_Pack1",				"backpack",0.03},
-			{"DZ_Apo_Pack2",				"backpack",0.03},
-			{"DZ_Apo_Pack3",				"backpack",0.03},
-			{"DZ_Apo_Pack4",				"backpack",0.03},
+			{"DZ_Patrol_Pack_EP1",			"object",0.08},
+			{"DZ_Assault_Pack_EP1",			"object",0.06},
+			{"DZ_Apo_Pack1",				"object",0.03},
+			{"DZ_Apo_Pack2",				"object",0.03},
+			{"DZ_Apo_Pack3",				"object",0.03},
+			{"DZ_Apo_Pack4",				"object",0.03},
 			{"WeaponHolder_ItemTent",		"object",0.01},
 			{"ItemTrashPaper",				"magazine",0.05},
 			{"ItemTrashPaperMusic",			"magazine",0.05},
@@ -323,12 +323,12 @@ class CfgBuildingLoot {
 			{"WeaponHolder_ItemHatchet",	"object",0.05},
 			{"MeleeMachete",				"weapon",0.04},
 		//backpacks
-			{"DZ_Backpack_NOR",				"backpack",0.01},
-			{"DZ_Patrol_Pack_EP1",			"backpack",0.05}, 
-			{"DZ_Czech_Vest_Puch",			"backpack",0.02}, 
-			{"DZ_TK_Assault_Pack_EP1",		"backpack",0.02}, 
-			{"DZ_Gru_Pack_EP1",				"backpack",0.02}, 
-			{"DZ_ALICE_Pack_EP1",			"backpack",0.01}, 
+			{"DZ_Backpack_NOR",				"object",0.01},
+			{"DZ_Patrol_Pack_EP1",			"object",0.05}, 
+			{"DZ_Czech_Vest_Puch",			"object",0.02}, 
+			{"DZ_TK_Assault_Pack_EP1",		"object",0.02}, 
+			{"DZ_Gru_Pack_EP1",				"object",0.02}, 
+			{"DZ_ALICE_Pack_EP1",			"object",0.01}, 
 		//multiple spawns		
 			{"",							"Trash",0.40},
 			{"",							"civilianMagazines",0.20},
@@ -374,11 +374,11 @@ class CfgBuildingLoot {
 			{"equip_duct_tape",				"magazine",0.03},
 			{"PartWoodPile",				"magazine",0.04},
 		//backpacks
-			{"DZ_Patrol_Pack_EP1",			"backpack",0.05}, 
-			{"DZ_Czech_Vest_Puch",			"backpack",0.02}, 
-			{"DZ_TK_Assault_Pack_EP1",		"backpack",0.02}, 
-			{"DZ_Gru_Pack_EP1",				"backpack",0.02}, 
-			{"DZ_ALICE_Pack_EP1",			"backpack",0.01}, 
+			{"DZ_Patrol_Pack_EP1",			"object",0.05}, 
+			{"DZ_Czech_Vest_Puch",			"object",0.02}, 
+			{"DZ_TK_Assault_Pack_EP1",		"object",0.02}, 
+			{"DZ_Gru_Pack_EP1",				"object",0.02}, 
+			{"DZ_ALICE_Pack_EP1",			"object",0.01}, 
 		//med
 			{"ItemPainkiller",				"magazine",0.03},
 			{"ItemAntibacterialWipe",		"magazine",0.04},
@@ -461,11 +461,11 @@ class CfgBuildingLoot {
 			{"RH_tt33",						"weapon",0.05},
 			{"MeleeBaseBallBat",			"weapon",0.02},
 		//backpacks
-			{"DZ_Patrol_Pack_EP1",			"backpack",0.05}, 
-			{"DZ_Czech_Vest_Puch",			"backpack",0.02}, 
-			{"DZ_TK_Assault_Pack_EP1",		"backpack",0.02}, 
-			{"DZ_Gru_Pack_EP1",				"backpack",0.02}, 
-			{"DZ_ALICE_Pack_EP1",			"backpack",0.01}, 
+			{"DZ_Patrol_Pack_EP1",			"object",0.05}, 
+			{"DZ_Czech_Vest_Puch",			"object",0.02}, 
+			{"DZ_TK_Assault_Pack_EP1",		"object",0.02}, 
+			{"DZ_Gru_Pack_EP1",				"object",0.02}, 
+			{"DZ_ALICE_Pack_EP1",			"object",0.01}, 
 		//medical
 			{"ItemAntibacterialWipe",		"magazine",0.04},
 			{"ItemPainkiller",				"magazine",0.04},	
@@ -621,14 +621,7 @@ class CfgBuildingLoot {
 			{"PartWoodPile",				"magazine",0.06},
 			{"Skin_Camo1_DZ",				"magazine",0.01},
 			{"ItemBookBible",				"magazine",0.02},
-		//bags
-			{"DZ_TK_Assault_Pack_EP1",		"backpack",0.03}, // 16
-			{"DZ_CivilBackpack_EP1",		"backpack",0.01}, // 24
-			{"DZ_Backpack_EP1",				"backpack",0.01}, // 24
-			{"DZ_Backpack_EP1_des",			"backpack",0.01}, // 24
-			{"DZ_Backpack_EP1_wdl",			"backpack",0.01}, // 24
-		    {"DZ_Backpack_ATC",				"backpack",0.01},
-			{"DZ_Backpack_MTC",				"backpack",0.01},
+		//bags No backspacks in infected camps, engine limitation
 		//multiple spawns
 			{"",							"Trash",0.10},
 			{"",							"civilianMagazines",0.50},
@@ -888,10 +881,10 @@ class CfgBuildingLoot {
 			{"Attachment_ACOG",				"magazine",0.50},
 			{"Attachment_SCOPED",			"magazine",0.20},
 		//bags
-			{"DZ_CivilBackpack_EP1",		"backpack",0.55}, // 24
-			{"DZ_Backpack_EP1",				"backpack",0.55}, // 24
-			{"DZ_Backpack_EP1_des",			"backpack",0.55}, // 24
-			{"DZ_Backpack_EP1_wdl",			"backpack",0.55}, // 24
+			{"DZ_CivilBackpack_EP1",		"object",0.55}, // 24
+			{"DZ_Backpack_EP1",				"object",0.55}, // 24
+			{"DZ_Backpack_EP1_des",			"object",0.55}, // 24
+			{"DZ_Backpack_EP1_wdl",			"object",0.55}, // 24
 		//multiple spawns
 			{"",							"medical",0.55},
 			{"",							"civilianMagazines",0.20},
@@ -1060,10 +1053,10 @@ class CfgBuildingLoot {
 		//mags special
 			{"Skin_Sniper1_DZ",				"magazine",0.75},
 		//bags
-			{"DZ_CivilBackpack_EP1",		"backpack",0.15}, 
-			{"DZ_Backpack_EP1",				"backpack",0.15}, 
-			{"DZ_Backpack_EP1_des",			"backpack",0.15}, 
-			{"DZ_Backpack_EP1_wdl",			"backpack",0.15}, 
+			{"DZ_CivilBackpack_EP1",		"object",0.15}, 
+			{"DZ_Backpack_EP1",				"object",0.15}, 
+			{"DZ_Backpack_EP1_des",			"object",0.15}, 
+			{"DZ_Backpack_EP1_wdl",			"object",0.15}, 
 		//multiple spawns
 			{"",							"medical",0.25},
 			{"",							"civilianMagazines",0.30},
@@ -1233,16 +1226,16 @@ class CfgBuildingLoot {
 			{"RH_bizon",					"weapon",0.04},
 			{"RH_bizonsd",					"weapon",0.02},
 		   //backpack
-			{"DZ_Backpack_OD",				"backpack",0.01},
-			{"DZ_Backpack_DES",				"backpack",0.01},
-			{"DZ_Backpack_3DES",			"backpack",0.01},
-			{"DZ_Backpack_WDL",				"backpack",0.01},
-			{"DZ_Backpack_MAR",				"backpack",0.01},
-			{"DZ_Backpack_DPM",				"backpack",0.01},
-			{"DZ_British_ACU",				"backpack",0.01}, 
-			{"DZ_Gun_Pack_EP1",				"backpack",0.01}, 	
-			{"DZ_Backpack_NVG",				"backpack",0.01},
-			{"DZ_Backpack_UCP",				"backpack",0.01},
+			{"DZ_Backpack_OD",				"object",0.01},
+			{"DZ_Backpack_DES",				"object",0.01},
+			{"DZ_Backpack_3DES",			"object",0.01},
+			{"DZ_Backpack_WDL",				"object",0.01},
+			{"DZ_Backpack_MAR",				"object",0.01},
+			{"DZ_Backpack_DPM",				"object",0.01},
+			{"DZ_British_ACU",				"object",0.01}, 
+			{"DZ_Gun_Pack_EP1",				"object",0.01}, 	
+			{"DZ_Backpack_NVG",				"object",0.01},
+			{"DZ_Backpack_UCP",				"object",0.01},
 		//Attachements
 			{"Attachment_GP25",						"magazine",0.13},
 			{"Attachment_PSO1",						"magazine",0.13},
@@ -1423,16 +1416,16 @@ class CfgBuildingLoot {
 			{"Attachment_PSO1",						"magazine",0.05},
 			{"Attachment_Kobra",					"magazine",0.05},
 		//object
-			{"DZ_Backpack_OD",				"backpack",0.01},
-			{"DZ_Backpack_DES",				"backpack",0.01},
-			{"DZ_Backpack_3DES",			"backpack",0.01},
-			{"DZ_Backpack_WDL",				"backpack",0.01},
-			{"DZ_Backpack_MAR",				"backpack",0.01},
-			{"DZ_Backpack_DPM",				"backpack",0.01},
-			{"DZ_British_ACU",				"backpack",0.01}, // 18
-			{"DZ_CivilBackpack_EP1",		"backpack",0.01}, // 24	
-			{"DZ_Backpack_NVG",				"backpack",0.01},
-			{"DZ_Backpack_UCP",				"backpack",0.01},	
+			{"DZ_Backpack_OD",				"object",0.01},
+			{"DZ_Backpack_DES",				"object",0.01},
+			{"DZ_Backpack_3DES",			"object",0.01},
+			{"DZ_Backpack_WDL",				"object",0.01},
+			{"DZ_Backpack_MAR",				"object",0.01},
+			{"DZ_Backpack_DPM",				"object",0.01},
+			{"DZ_British_ACU",				"object",0.01}, // 18
+			{"DZ_CivilBackpack_EP1",		"object",0.01}, // 24	
+			{"DZ_Backpack_NVG",				"object",0.01},
+			{"DZ_Backpack_UCP",				"object",0.01},	
 		//multiple spawns
 			{"",							"military",0.90},
 			{"",							"Trash",0.50},
@@ -1494,10 +1487,10 @@ class CfgBuildingLoot {
 			{"equip_duct_tape",				"magazine",0.03},
 			{"FoodNutmix",					"magazine",0.03},
 		//backpacks
-			{"DZ_British_ACU",				"backpack",0.02}, 
-			{"DZ_Backpack_6DES",			"backpack",0.01},
-			{"DZ_Backpack_DMAR",			"backpack",0.01},
-			{"DZ_Backpack_TAK",				"backpack",0.01},
+			{"DZ_British_ACU",				"object",0.02}, 
+			{"DZ_Backpack_6DES",			"object",0.01},
+			{"DZ_Backpack_DMAR",			"object",0.01},
+			{"DZ_Backpack_TAK",				"object",0.01},
 		//multiple spawns
 			{"",							"Trash",0.20},
 			{"",							"civilianMagazines",0.06},
@@ -1567,17 +1560,17 @@ class CfgBuildingLoot {
 			{"RH_bizon",					"weapon",0.01},
 			{"RH_bizonsd",					"weapon",0.01},
 		   //backpack
-			{"DZ_Backpack_OD",				"backpack",0.01},
-			{"DZ_Backpack_DES",				"backpack",0.01},
-			{"DZ_Backpack_3DES",			"backpack",0.01},
-			{"DZ_Backpack_WDL",				"backpack",0.01},
-			{"DZ_Backpack_MAR",				"backpack",0.01},
-			{"DZ_Backpack_DPM",				"backpack",0.01},
-			{"DZ_British_ACU",				"backpack",0.01}, 
-			{"DZ_Gun_Pack_EP1",				"backpack",0.01}, 
-			{"DZ_CivilBackpack_EP1",		"backpack",0.01}, 
-			{"DZ_Backpack_NVG",				"backpack",0.01},
-			{"DZ_Backpack_UCP",				"backpack",0.01},
+			{"DZ_Backpack_OD",				"object",0.01},
+			{"DZ_Backpack_DES",				"object",0.01},
+			{"DZ_Backpack_3DES",			"object",0.01},
+			{"DZ_Backpack_WDL",				"object",0.01},
+			{"DZ_Backpack_MAR",				"object",0.01},
+			{"DZ_Backpack_DPM",				"object",0.01},
+			{"DZ_British_ACU",				"object",0.01}, 
+			{"DZ_Gun_Pack_EP1",				"object",0.01}, 
+			{"DZ_CivilBackpack_EP1",		"object",0.01}, 
+			{"DZ_Backpack_NVG",				"object",0.01},
+			{"DZ_Backpack_UCP",				"object",0.01},
 		//Attachements
 		//special
 		//mags special
@@ -1716,16 +1709,16 @@ class CfgBuildingLoot {
 			{"RH_bizon",					"weapon",0.04},
 			{"RH_bizonsd",					"weapon",0.02},
 		   //backpack
-			{"DZ_Backpack_OD",				"backpack",0.01},
-			{"DZ_Backpack_DES",				"backpack",0.01},
-			{"DZ_Backpack_3DES",			"backpack",0.01},
-			{"DZ_Backpack_WDL",				"backpack",0.01},
-			{"DZ_Backpack_MAR",				"backpack",0.01},
-			{"DZ_Backpack_DPM",				"backpack",0.01},
-			{"DZ_British_ACU",				"backpack",0.01}, 
-			{"DZ_Gun_Pack_EP1",				"backpack",0.01}, 
-			{"DZ_Backpack_NVG",				"backpack",0.01},
-			{"DZ_Backpack_UCP",				"backpack",0.01},
+			{"DZ_Backpack_OD",				"object",0.01},
+			{"DZ_Backpack_DES",				"object",0.01},
+			{"DZ_Backpack_3DES",			"object",0.01},
+			{"DZ_Backpack_WDL",				"object",0.01},
+			{"DZ_Backpack_MAR",				"object",0.01},
+			{"DZ_Backpack_DPM",				"object",0.01},
+			{"DZ_British_ACU",				"object",0.01}, 
+			{"DZ_Gun_Pack_EP1",				"object",0.01}, 
+			{"DZ_Backpack_NVG",				"object",0.01},
+			{"DZ_Backpack_UCP",				"object",0.01},
 		//Attachements
 			{"Attachment_GP25",						"magazine",0.06},
 			{"Attachment_PSO1",						"magazine",0.04},
@@ -1869,16 +1862,16 @@ class CfgBuildingLoot {
 			{"RH_bizon",					"weapon",0.04},
 			{"RH_bizonsd",					"weapon",0.02},
 		   //backpack
-			{"DZ_Backpack_OD",				"backpack",0.01},
-			{"DZ_Backpack_DES",				"backpack",0.01},
-			{"DZ_Backpack_3DES",			"backpack",0.01},
-			{"DZ_Backpack_WDL",				"backpack",0.01},
-			{"DZ_Backpack_MAR",				"backpack",0.01},
-			{"DZ_Backpack_DPM",				"backpack",0.01},
-			{"DZ_British_ACU",				"backpack",0.01}, 
-			{"DZ_Gun_Pack_EP1",				"backpack",0.01}, 	
-			{"DZ_Backpack_NVG",				"backpack",0.01},
-			{"DZ_Backpack_UCP",				"backpack",0.01},
+			{"DZ_Backpack_OD",				"object",0.01},
+			{"DZ_Backpack_DES",				"object",0.01},
+			{"DZ_Backpack_3DES",			"object",0.01},
+			{"DZ_Backpack_WDL",				"object",0.01},
+			{"DZ_Backpack_MAR",				"object",0.01},
+			{"DZ_Backpack_DPM",				"object",0.01},
+			{"DZ_British_ACU",				"object",0.01}, 
+			{"DZ_Gun_Pack_EP1",				"object",0.01}, 	
+			{"DZ_Backpack_NVG",				"object",0.01},
+			{"DZ_Backpack_UCP",				"object",0.01},
 		//Attachements
 			{"Attachment_GP25",				"magazine",0.06},
 			{"Attachment_PSO1",				"magazine",0.04},
@@ -2023,17 +2016,17 @@ class CfgBuildingLoot {
 			{"RH_bizon",					"weapon",0.04},
 			{"RH_bizonsd",					"weapon",0.02},
 		   //backpack
-			{"DZ_Backpack_OD",				"backpack",0.01},
-			{"DZ_Backpack_DES",				"backpack",0.01},
-			{"DZ_Backpack_3DES",			"backpack",0.01},
-			{"DZ_Backpack_WDL",				"backpack",0.01},
-			{"DZ_Backpack_MAR",				"backpack",0.01},
-			{"DZ_Backpack_DPM",				"backpack",0.01},
-			{"DZ_British_ACU",				"backpack",0.01}, // 18
-			{"DZ_Gun_Pack_EP1",				"backpack",0.01}, // 24	
-			{"DZ_CivilBackpack_EP1",		"backpack",0.01}, // 24	
-			{"DZ_Backpack_NVG",				"backpack",0.01},
-			{"DZ_Backpack_UCP",				"backpack",0.01},
+			{"DZ_Backpack_OD",				"object",0.01},
+			{"DZ_Backpack_DES",				"object",0.01},
+			{"DZ_Backpack_3DES",			"object",0.01},
+			{"DZ_Backpack_WDL",				"object",0.01},
+			{"DZ_Backpack_MAR",				"object",0.01},
+			{"DZ_Backpack_DPM",				"object",0.01},
+			{"DZ_British_ACU",				"object",0.01}, // 18
+			{"DZ_Gun_Pack_EP1",				"object",0.01}, // 24	
+			{"DZ_CivilBackpack_EP1",		"object",0.01}, // 24	
+			{"DZ_Backpack_NVG",				"object",0.01},
+			{"DZ_Backpack_UCP",				"object",0.01},
 		//Attachements
 			{"Attachment_GP25",						"magazine",0.06},
 			{"Attachment_PSO1",						"magazine",0.04},
