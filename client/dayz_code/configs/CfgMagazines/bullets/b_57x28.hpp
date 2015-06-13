@@ -321,10 +321,10 @@ class 57x28_x40 : 57x28_x1 {
 	};
 };
 
-class 57x28_x100 : 57x28_x1 {
+class 57x28_x50 : 57x28_x1 {
 	scope = public;
-	displayName = "57x28 (x100)";
-	bulletCount = 100;
+	displayName = "57x28 (x50)";
+	bulletCount = 50;
 	
 	class ItemActions {
 		class Stack {
