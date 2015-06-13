@@ -15,7 +15,7 @@ class zZombie_Slow_Base : zZombie_Base {
 	identityTypes[] = {"zombie1", "zombie2"};
 	class TalkTopics {};
 	languages[] = {};
-	damageScale = 600;
+	damageScale = 2000;
 	sepsisChance = 18;
 	forcedSpeed = 2;
 	

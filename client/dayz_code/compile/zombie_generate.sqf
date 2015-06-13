@@ -132,9 +132,10 @@ if ((_maxlocalspawned < _maxControlledZombies) and (dayz_CurrentNearByZombies < 
 			_position = getPosATL _agent;
 
 			_favStance = (
-				switch ceil(random(3^0.5)^2) do {
+				switch ceil(random(5)) do {
 					//case 3: {"DOWN"}; // prone
 					case 2: {"middle"}; // Kneel "middle"
+					case 3: {"middle"}; // Kneel "middle"
 					default {"Up"}; // stand-up
 				}
 			);

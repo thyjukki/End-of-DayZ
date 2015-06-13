@@ -17,7 +17,7 @@ class Swarm_Base : Citizen1 {
 	class TalkTopics {};
 	languages[] = {};
 	armor = 1;
-	damageScale = 200;
+	damageScale = 1000;
 	sepsisChance = 10;
 	forcedSpeed = 6;
 
