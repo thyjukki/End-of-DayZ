@@ -46,6 +46,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"762x39_x1",
+			"762x39_SD_x1",
+			"762x39_HP_x1",
+			"762x39_TRACER_x1",
+			"762x39_RUBBER_x1",
+			"762x39_BT_x1",
 			"KPFS_100Rnd_762x39_RPD",
 			"KPFS_100Rnd_762x39_RPD_SD",
 			"KPFS_100Rnd_762x39_RPD_hp",

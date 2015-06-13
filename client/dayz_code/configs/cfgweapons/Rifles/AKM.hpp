@@ -8,6 +8,12 @@ class AKM_DZ : AK_47_M
 	
 	magazines[] = 
 	{
+		"762x39_x1",
+		"762x39_SD_x1",
+		"762x39_HP_x1",
+		"762x39_TRACER_x1",
+		"762x39_RUBBER_x1",
+		"762x39_BT_x1",
 		"30Rnd_762x39_AK47",
 		"30Rnd_762x39_AK47_SD",
 		"30Rnd_762x39_AK47_hp",

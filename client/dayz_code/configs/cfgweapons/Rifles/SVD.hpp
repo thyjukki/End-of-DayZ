@@ -2,6 +2,11 @@ class SVD_DZ : SVD
 {
 	magazines[]=
 	{
+		"762x54_x1",
+		"762x54_HP_x1",
+		"762x54_TRACER_x1",
+		"762x54_RUBBER_x1",
+		"762x54_BT_x1",
 		"10Rnd_762x54_SVD",
 		"10Rnd_762x54_SVD_hp",
 		"10Rnd_762x54_SVD_tracer",

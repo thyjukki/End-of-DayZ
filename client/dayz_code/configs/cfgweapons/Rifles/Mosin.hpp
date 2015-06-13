@@ -17,6 +17,11 @@ class Mosin_Nagant_Base: Rifle
 	modelOptics = "-";
 	reloadMagazineSound[] = {z\addons\dayz_communityweapons\models\mosin_nagant\sound\reload.ogg, 0.010000, 1};
 	magazines[] = {
+		"762x54_x1",
+		"762x54_HP_x1",
+		"762x54_TRACER_x1",
+		"762x54_RUBBER_x1",
+		"762x54_BT_x1_x1",
 		"KPFS_5Rnd_762x54_Mosin",
 		"KPFS_5Rnd_762x54_Mosin_hp",
 		"KPFS_5Rnd_762x54_Mosin_tracer",
@@ -360,6 +365,11 @@ class Mosin_Nagant_Belt_Scoped_FL : Mosin_Nagant_Base
 	{
 		model = "z\addons\dayz_communityweapons\models\mosin_nagant\mosin_m44_animated";
 		magazines[] = {
+			"762x54_x1",
+			"762x54_HP_x1",
+			"762x54_TRACER_x1",
+			"762x54_RUBBER_x1",
+			"762x54_BT_x1_x1",
 			"KPFS_5Rnd_762x54_Mosin",
 			"KPFS_5Rnd_762x54_Mosin_hp",
 			"KPFS_5Rnd_762x54_Mosin_tracer",
@@ -431,6 +441,11 @@ class Mosin_Nagant_Belt_Scoped_FL : Mosin_Nagant_Base
 	{
 		model = "z\addons\dayz_communityweapons\models\mosin_nagant\mosin_m44_FL_animated";
 		magazines[] = {
+			"762x54_x1",
+			"762x54_HP_x1",
+			"762x54_TRACER_x1",
+			"762x54_RUBBER_x1",
+			"762x54_BT_x1_x1",
 			"KPFS_5Rnd_762x54_Mosin",
 			"KPFS_5Rnd_762x54_Mosin_hp",
 			"KPFS_5Rnd_762x54_Mosin_tracer",

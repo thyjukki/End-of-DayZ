@@ -8,6 +8,12 @@ class Mk48_CCO_DZ : Mk_48
 	
 	magazines[] =
 	{
+		"762x51_x1",
+		"762x51_SD_x1",
+		"762x51_HP_x1",
+		"762x51_TRACER_x1",
+		"762x51_RUBBER_x1",
+		"762x51_BT_x1",
 		"100Rnd_762x51_M240",
 		"100Rnd_762x51_M240SD",
 		"100Rnd_762x51_M240_hp",

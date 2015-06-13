@@ -146,6 +146,17 @@ class CfgWeapons
 	{
 		magazines[]=
 		{
+		"556x45_x1",
+		"556x45_SD_x1",
+		"556x45_HP_x1",
+		"556x45_TRACER_x1",
+		"556x45_RUBBER_x1",
+		"556x45_BT_x1",
+			"30Rnd_556x45_Aug",
+			"30Rnd_556x45_Aug",
+			"30Rnd_556x45_Aug",
+			"30Rnd_556x45_Aug",
+			"30Rnd_556x45_Aug",
 			"30Rnd_556x45_Aug",
 			"30Rnd_556x45_AugSD",
 			"30Rnd_556x45_Aug_hp",

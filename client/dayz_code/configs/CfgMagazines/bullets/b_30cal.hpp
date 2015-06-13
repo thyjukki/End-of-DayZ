@@ -345,6 +345,30 @@ class 30cal_x50 : 30cal_x1 {
 	};
 };
 
+class 30cal_x100 : 30cal_x1 {
+	scope = public;
+	displayName = ".30 carbine (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"30cal_x50",
+			"30cal_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 30cal_HP_x1 : 30cal_x1 {
 	scope = public;
 	displayName = ".30 carbine HP (x1)";
@@ -355,6 +379,7 @@ class 30cal_HP_x1 : 30cal_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: .30 carbine Hollow Point rounds";
+	displayNameShort="HP";
 	
 	class ItemActions {
 		class Stack {
@@ -692,6 +717,30 @@ class 30cal_HP_x50 : 30cal_HP_x1 {
 	};
 };
 
+class 30cal_HP_x100 : 30cal_HP_x1 {
+	scope = public;
+	displayName = ".30 carbine HP (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"30cal_HP_x50",
+			"30cal_HP_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 30cal_TRACER_x1 : 30cal_x1 {
 	scope = public;
 	displayName = ".30 carbine Tracer (x1)";
@@ -702,6 +751,7 @@ class 30cal_TRACER_x1 : 30cal_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: .30 carbine Tracer rounds";
+	displayNameShort="Tracer";
 	
 	class ItemActions {
 		class Stack {
@@ -1039,6 +1089,30 @@ class 30cal_TRACER_x50 : 30cal_TRACER_x1 {
 	};
 };
 
+class 30cal_TRACER_x100 : 30cal_TRACER_x1 {
+	scope = public;
+	displayName = ".30 carbine Tracer (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"30cal_TRACER_x50",
+			"30cal_TRACER_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 30cal_RUBBER_x1 : 30cal_x1 {
 	scope = public;
 	displayName = ".30 carbine Rubber (x1)";
@@ -1049,6 +1123,7 @@ class 30cal_RUBBER_x1 : 30cal_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: .30 carbine Rubber rounds";
+	displayNameShort="Rubber";
 	
 	class ItemActions {
 		class Stack {
@@ -1386,6 +1461,30 @@ class 30cal_RUBBER_x50 : 30cal_RUBBER_x1 {
 	};
 };
 
+class 30cal_RUBBER_x100 : 30cal_RUBBER_x1 {
+	scope = public;
+	displayName = ".30 carbine Rubber (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"30cal_RUBBER_x50",
+			"30cal_RUBBER_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 30cal_BT_x1 : 30cal_x1 {
 	scope = public;
 	displayName = ".30 carbine Ballistic Tip (x1)";
@@ -1396,6 +1495,7 @@ class 30cal_BT_x1 : 30cal_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: .30 carbine Ballistic Tip rounds";
+	displayNameShort="BT";
 	
 	class ItemActions {
 		class Stack {
@@ -1725,6 +1825,30 @@ class 30cal_BT_x50 : 30cal_BT_x1 {
 			out[] = {
 			"30cal_BT_x40",
 			"30cal_BT_x10"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
+class 30cal_BT_x100 : 30cal_BT_x1 {
+	scope = public;
+	displayName = ".30 carbine Ballistic Tip (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"30cal_BT_x50",
+			"30cal_BT_x50"};
 		};
 		class loadMag {
 			text = "Load to...";

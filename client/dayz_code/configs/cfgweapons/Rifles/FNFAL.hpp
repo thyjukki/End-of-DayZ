@@ -6,6 +6,12 @@ class FNFAL_DZ : FN_FAL
 	
 	magazines[] =
 	{
+		"762x51_x1",
+		"762x51_SD_x1",
+		"762x51_HP_x1",
+		"762x51_TRACER_x1",
+		"762x51_RUBBER_x1",
+		"762x51_BT_x1",
 		"20Rnd_762x51_FNFAL",
 		"20Rnd_762x51_FNFALSD",
 		"20Rnd_762x51_FNFAL_hp",

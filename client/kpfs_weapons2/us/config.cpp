@@ -271,6 +271,11 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"30cal_x1",
+			"30cal_HP_x1",
+			"30cal_RUBBER_x1",
+			"30cal_TRACER_x1",
+			"30cal_BT_x1",
 			"KPFS_15Rnd_cal30_Carbine",
 			"KPFS_15Rnd_cal30_Carbine_hp",
 			"KPFS_15Rnd_cal30_Carbine_tracer",
@@ -385,6 +390,12 @@ class cfgWeapons
 		opticsZoomMax=0.420000;
 		magazines[]=
 		{
+			"762x51_x1",
+			"762x51_SD_x1",
+			"762x51_HP_x1",
+			"762x51_TRACER_x1",
+			"762x51_RUBBER_x1",
+			"762x51_BT_x1",
 			"KPFS_8Rnd_cal30_60_Gar",
 			"KPFS_8Rnd_cal30_60_GarSD",
 			"KPFS_8Rnd_cal30_60_Gar_hp",
@@ -520,6 +531,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"762x51_x1",
+			"762x51_SD_x1",
+			"762x51_HP_x1",
+			"762x51_TRACER_x1",
+			"762x51_RUBBER_x1",
+			"762x51_BT_x1",
 			"KPFS_8Rnd_cal30_60_Gar",
 			"KPFS_8Rnd_cal30_60_GarSD",
 			"KPFS_8Rnd_cal30_60_Gar_hp",
@@ -614,6 +631,11 @@ class cfgWeapons
 		distanceZoomMax=50;
 		magazines[]=
 		{
+			"45ACP_x1",
+			"45ACP_HP_x1",
+			"45ACP_TRACER_x1",
+			"45ACP_RUBBER_x1",
+			"45ACP_BT_x1",
 			"KPFS_30Rnd_45ACP_Thompson",
 			"KPFS_30Rnd_45ACP_Thompson_hp",
 			"KPFS_30Rnd_45ACP_Thompson_tracer",

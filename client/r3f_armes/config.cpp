@@ -307,6 +307,12 @@ class CfgWeapons
 		value=1000;
 		magazines[]=
 		{
+			"556x45_x1",
+			"556x45_SD_x1",
+			"556x45_HP_x1",
+			"556x45_TRACER_x1",
+			"556x45_RUBBER_x1",
+			"556x45_BT_x1",
 			"R3F_25Rnd_556x45_FAMAS",
 			"R3F_25Rnd_556x45_FAMASSD",
 			"R3F_25Rnd_556x45_FAMAS_hp",
@@ -521,6 +527,12 @@ class CfgWeapons
 		value=1000;
 		magazines[]=
 		{
+			"556x45_x1",
+			"556x45_SD_x1",
+			"556x45_HP_x1",
+			"556x45_TRACER_x1",
+			"556x45_RUBBER_x1",
+			"556x45_BT_x1",
 			"R3F_25Rnd_556x45_FAMAS",
 			"R3F_25Rnd_556x45_FAMASSD",
 			"R3F_25Rnd_556x45_FAMAS_hp",
@@ -834,15 +846,6 @@ class CfgWeapons
 			"OFP2_ManSkeleton",
 			"\r3f_armes\Anim\Famas_HG.rtm"
 		};
-		magazines[]=
-		{
-			"R3F_25Rnd_556x45_FAMAS",
-			"R3F_25Rnd_556x45_FAMASSD",
-			"R3F_25Rnd_556x45_FAMAS_hp",
-			"R3F_25Rnd_556x45_FAMAS_tracer",
-			"R3F_25Rnd_556x45_FAMAS_rubber",
-			"R3F_25Rnd_556x45_FAMAS_bt"
-		};
 		distanceZoomMin=150;
 		distanceZoomMax=150;
 		class Single: Mode_SemiAuto
@@ -1028,15 +1031,6 @@ class CfgWeapons
 		descriptionShort="$STR_R3F_Famas_F1_J4_M203_SD_DESC";
 		model="\r3f_armes\Famas_F1_J4_M203_SD.p3d";
 		picture="\r3f_armes\Data\Icons\R3F_Famas_F1_J4_M203_SD.paa";
-		magazines[]=
-		{
-			"R3F_25Rnd_556x45_FAMAS",
-			"R3F_25Rnd_556x45_FAMASSD",
-			"R3F_25Rnd_556x45_FAMAS_hp",
-			"R3F_25Rnd_556x45_FAMAS_tracer",
-			"R3F_25Rnd_556x45_FAMAS_rubber",
-			"R3F_25Rnd_556x45_FAMAS_bt"
-		};
 		class Single: Mode_SemiAuto
 		{
 			sound[]=
@@ -1214,15 +1208,6 @@ class CfgWeapons
 		descriptionShort="$STR_R3F_Famas_surb_EOT_SD_DESC";
 		model="\r3f_armes\famas_surb_EOT_SD.p3d";
 		picture="\r3f_armes\Data\Icons\R3F_Famas_surb_EOT_SD.paa";
-		magazines[]=
-		{
-			"R3F_25Rnd_556x45_FAMAS",
-			"R3F_25Rnd_556x45_FAMASSD",
-			"R3F_25Rnd_556x45_FAMAS_hp",
-			"R3F_25Rnd_556x45_FAMAS_tracer",
-			"R3F_25Rnd_556x45_FAMAS_rubber",
-			"R3F_25Rnd_556x45_FAMAS_bt"
-		};
 		distanceZoomMin=150;
 		distanceZoomMax=150;
 		class Single: Mode_SemiAuto
@@ -1359,6 +1344,12 @@ class CfgWeapons
 		picture="\r3f_armes\Data\Icons\R3F_Famas_G2.paa";
 		magazines[]=
 		{
+			"556x45_x1",
+			"556x45_SD_x1",
+			"556x45_HP_x1",
+			"556x45_TRACER_x1",
+			"556x45_RUBBER_x1",
+			"556x45_BT_x1",
 			"20Rnd_556x45_Stanag",
 			"20Rnd_556x45_StanagSD",
 			"20Rnd_556x45_Stanag_hp",
@@ -1481,6 +1472,12 @@ class CfgWeapons
 		picture="\r3f_armes\Data\Icons\R3F_Famas_G2.paa";
 		magazines[]=
 		{
+			"556x45_x1",
+			"556x45_SD_x1",
+			"556x45_HP_x1",
+			"556x45_TRACER_x1",
+			"556x45_RUBBER_x1",
+			"556x45_BT_x1",
 			"20Rnd_556x45_Stanag",
 			"20Rnd_556x45_StanagSD",
 			"20Rnd_556x45_Stanag_hp",
@@ -2437,6 +2434,12 @@ class CfgWeapons
 		};
 		magazines[]=
 		{
+			"556x45_x1",
+			"556x45_SD_x1",
+			"556x45_HP_x1",
+			"556x45_TRACER_x1",
+			"556x45_RUBBER_x1",
+			"556x45_BT_x1",
 			"100Rnd_556x45_M249",
 			"100Rnd_556x45_M249SD",
 			"100Rnd_556x45_M249_hp",
@@ -2669,6 +2672,12 @@ class CfgWeapons
 		dexterity=0.400000;
 		magazines[] =
 		{
+			"762x51_x1",
+			"762x51_SD_x1",
+			"762x51_HP_x1",
+			"762x51_TRACER_x1",
+			"762x51_RUBBER_x1",
+			"762x51_BT_x1",
 			"100Rnd_762x51_M240",
 			"100Rnd_762x51_M240SD",
 			"100Rnd_762x51_M240_hp",

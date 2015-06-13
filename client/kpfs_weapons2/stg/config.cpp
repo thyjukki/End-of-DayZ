@@ -95,6 +95,11 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"792x33_x1",
+			"792x33_BT_x1",
+			"792x33_TRACER_x1",
+			"792x33_RUBBER_x1",
+			"792x33_BT_x1",
 			"KPFS_30Rnd_792x33_STG44",
 			"KPFS_30Rnd_792x33_STG44_hp",
 			"KPFS_30Rnd_792x33_STG44_tracer",

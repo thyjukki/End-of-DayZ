@@ -99,6 +99,12 @@ class CfgWeapons
 		cursoraim="\ca\Weapons\Data\w_lock";
 		magazines[]=
 		{
+			"762x51_x1",
+			"762x51_SD_x1",
+			"762x51_HP_x1",
+			"762x51_TRACER_x1",
+			"762x51_RUBBER_x1",
+			"762x51_BT_x1",
 			"KPFS_250Rnd_MG42",
 			"KPFS_250Rnd_MG42SD",
 			"KPFS_250Rnd_MG42_hp",

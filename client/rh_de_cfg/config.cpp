@@ -88,16 +88,7 @@ class CfgAmmo
 	class Default;
 	class BulletCore;
 	class BulletBase;
-	class B_9x19_SD;
-	class RH_50_AE_Ball: BulletBase
-	{
-		hit=9.500000;
-		cartridge="FxCartridge_Small";
-		cost=1;
-		typicalSpeed=421;
-		airFriction=-0.001650;
-		caliber=0.700000;
-	};
+
 	class RH_44mag_ball: BulletBase
 	{
 		hit=8.500000;
@@ -195,6 +186,11 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"50_AE_x1",
+			"50_AE_HP_x1",
+			"50_AE_TRACER_x1",
+			"50_AE_RUBBER_x1",
+			"50_AE_HP_x1",
 			"RH_7Rnd_50_AE",
 			"RH_7Rnd_50_AE_hp",
 			"RH_7Rnd_50_AE_tracer",
@@ -454,6 +450,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"9x19_x1",
+			"9x19_SD_x1",
+			"9x19_HP_x1",
+			"9x19_TRACER_x1",
+			"9x19_RUBBER_x1",
+			"9x19_BT_x1",
 			"RH_13Rnd_9x19_bhp",
 			"RH_13Rnd_9x19_bhp_sd",
 			"RH_13Rnd_9x19_bhp_hp",
@@ -515,6 +517,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"9x19_x1",
+			"9x19_SD_x1",
+			"9x19_HP_x1",
+			"9x19_TRACER_x1",
+			"9x19_RUBBER_x1",
+			"9x19_BT_x1",
 			"RH_15Rnd_9x19_usp",
 			"RH_15Rnd_9x19_uspsd",
 			"RH_15Rnd_9x19_usp_hp",
@@ -582,6 +590,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"9x19_x1",
+			"9x19_SD_x1",
+			"9x19_HP_x1",
+			"9x19_TRACER_x1",
+			"9x19_RUBBER_x1",
+			"9x19_BT_x1",
 			"RH_8Rnd_9x19_P38",
 			"RH_8Rnd_9x19_p38SD",
 			"RH_8Rnd_9x19_p38_hp",
@@ -643,6 +657,11 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"32ACP_x1",
+			"32ACP_HP_x1",
+			"32ACP_TRACER_x1",
+			"32ACP_RUBBER_x1",
+			"32ACP_BT_x1",
 			"RH_7Rnd_32cal_ppk",
 			"RH_7Rnd_32cal_ppk_hp",
 			"RH_7Rnd_32cal_ppk_tracer",
@@ -712,6 +731,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"9x19_x1",
+			"9x19_SD_x1",
+			"9x19_HP_x1",
+			"9x19_TRACER_x1",
+			"9x19_RUBBER_x1",
+			"9x19_BT_x1",
 			"RH_8Rnd_9x19_Mk",
 			"RH_8Rnd_9x19_Mksd",
 			"RH_8Rnd_9x19_Mk_hp",
@@ -784,6 +809,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"9x19_x1",
+			"9x19_SD_x1",
+			"9x19_HP_x1",
+			"9x19_TRACER_x1",
+			"9x19_RUBBER_x1",
+			"9x19_BT_x1",
 			"RH_8Rnd_9x19_Mk",
 			"RH_8Rnd_9x19_Mksd",
 			"RH_8Rnd_9x19_Mk_hp",
@@ -884,6 +915,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"9x19_x1",
+			"9x19_SD_x1",
+			"9x19_HP_x1",
+			"9x19_TRACER_x1",
+			"9x19_RUBBER_x1",
+			"9x19_BT_x1",
 			"RH_15Rnd_9x19_usp",
 			"RH_15Rnd_9x19_uspsd",
 			"RH_15Rnd_9x19_usp_hp",
@@ -966,6 +1003,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"9x19_x1",
+			"9x19_SD_x1",
+			"9x19_HP_x1",
+			"9x19_TRACER_x1",
+			"9x19_RUBBER_x1",
+			"9x19_BT_x1",
 			"RH_15Rnd_9x19_usp",
 			"RH_15Rnd_9x19_uspsd",
 			"RH_15Rnd_9x19_usp_hp",
@@ -1037,6 +1080,11 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"45ACP_x1",
+			"45ACP_HP_x1",
+			"45ACP_TRACER_x1",
+			"45ACP_RUBBER_x1",
+			"45ACP_BT_x1",
 			"RH_12Rnd_45cal_usp",
 			"RH_12Rnd_45cal_usp_hp",
 			"RH_12Rnd_45cal_usp_tracer",
@@ -1106,6 +1154,11 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"45ACP_x1",
+			"45ACP_HP_x1",
+			"45ACP_TRACER_x1",
+			"45ACP_RUBBER_x1",
+			"45ACP_BT_x1",
 			"RH_8Rnd_45cal_m1911",
 			"RH_8Rnd_45cal_m1911_hp",
 			"RH_8Rnd_45cal_m1911_tracer",
@@ -1182,7 +1235,11 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
-
+			"45ACP_x1",
+			"45ACP_HP_x1",
+			"45ACP_TRACER_x1",
+			"45ACP_RUBBER_x1",
+			"45ACP_BT_x1",
 			"RH_8Rnd_45cal_m1911",
 			"RH_8Rnd_45cal_m1911_hp",
 			"RH_8Rnd_45cal_m1911_tracer",
@@ -1248,6 +1305,11 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"45ACP_x1",
+			"45ACP_HP_x1",
+			"45ACP_TRACER_x1",
+			"45ACP_RUBBER_x1",
+			"45ACP_BT_x1",
 			"RH_8Rnd_45cal_m1911",
 			"RH_8Rnd_45cal_m1911_hp",
 			"RH_8Rnd_45cal_m1911_tracer",
@@ -1313,6 +1375,11 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"762x25_x1",
+			"762x25_HP_x1",
+			"762x25_RUBBER_x1",
+			"762x25_TRACER_x1",
+			"762x25_BT_x1",
 			"RH_8Rnd_762_tt33",
 			"RH_8Rnd_762_tt33_hp",
 			"RH_8Rnd_762_tt33_tracer",
@@ -1373,6 +1440,11 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"22LR_x1",
+			"22LR_HP_x1",
+			"22LR_RUBBER_x1",
+			"22LR_TRACER_x1",
+			"22LR_BT_x1",
 			"RH_10Rnd_22LR_mk2",
 			"RH_10Rnd_22LR_mk2_hp",
 			"RH_10Rnd_22LR_mk2_tracer",
@@ -1410,6 +1482,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"9x19_x1",
+			"9x19_SD_x1",
+			"9x19_HP_x1",
+			"9x19_TRACER_x1",
+			"9x19_RUBBER_x1",
+			"9x19_BT_x1",
 			"RH_20Rnd_9x19_M93",
 			"RH_20Rnd_9x19_M93SD",
 			"RH_20Rnd_9x19_M93_hp",
@@ -1538,6 +1616,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"9x19_x1",
+			"9x19_SD_x1",
+			"9x19_HP_x1",
+			"9x19_TRACER_x1",
+			"9x19_RUBBER_x1",
+			"9x19_BT_x1",
 			"RH_20Rnd_9x19_M93",
 			"RH_20Rnd_9x19_M93SD",
 			"RH_20Rnd_9x19_M93_hp",
@@ -1628,6 +1712,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"9x19_x1",
+			"9x19_SD_x1",
+			"9x19_HP_x1",
+			"9x19_TRACER_x1",
+			"9x19_RUBBER_x1",
+			"9x19_BT_x1",
 			"RH_20Rnd_9x19_M93",
 			"RH_20Rnd_9x19_M93SD",
 			"RH_20Rnd_9x19_M93_hp",
@@ -1724,6 +1814,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"9x19_x1",
+			"9x19_SD_x1",
+			"9x19_HP_x1",
+			"9x19_TRACER_x1",
+			"9x19_RUBBER_x1",
+			"9x19_BT_x1",
 			"RH_19Rnd_9x19_g18",
 			"RH_19Rnd_9x19_g18SD",
 			"RH_19Rnd_9x19_g18_hp",
@@ -1864,6 +1960,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"9x19_x1",
+			"9x19_SD_x1",
+			"9x19_HP_x1",
+			"9x19_TRACER_x1",
+			"9x19_RUBBER_x1",
+			"9x19_BT_x1",
 			"RH_19Rnd_9x19_g18",
 			"RH_19Rnd_9x19_g18SD",
 			"RH_19Rnd_9x19_g18_hp",
@@ -1964,28 +2066,6 @@ class cfgWeapons
 			1,
 			20
 		};
-		magazines[]=
-		{
-			"RH_19Rnd_9x19_g18",
-			"RH_19Rnd_9x19_g18SD",
-			"RH_19Rnd_9x19_g18_hp",
-			"RH_19Rnd_9x19_g18_tracer",
-			"RH_19Rnd_9x19_g18_rubber",
-			"RH_19Rnd_9x19_g18_bt",
-			"RH_33Rnd_9x19_g18",
-			"RH_33Rnd_9x19_g18SD",
-			"RH_33Rnd_9x19_g18_hp",
-			"RH_33Rnd_9x19_g18_tracer",
-			"RH_33Rnd_9x19_g18_rubber",
-			"RH_33Rnd_9x19_g18_bt",
-			"17Rnd_9x19_glock17",
-			"17Rnd_9x19_glock17sd",
-			"17Rnd_9x19_glock17SD",
-			"17Rnd_9x19_glock17_hp",
-			"17Rnd_9x19_glock17_tracer",
-			"17Rnd_9x19_glock17_rubber",
-			"17Rnd_9x19_glock17_bt"
-		};
 		modes[]=
 		{
 			"Single"
@@ -2057,6 +2137,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"9x19_x1",
+			"9x19_SD_x1",
+			"9x19_HP_x1",
+			"9x19_TRACER_x1",
+			"9x19_RUBBER_x1",
+			"9x19_BT_x1",
 			"RH_19Rnd_9x19_g18",
 			"RH_19Rnd_9x19_g18SD",
 			"RH_19Rnd_9x19_g18_hp",
@@ -2147,8 +2233,13 @@ class cfgWeapons
 			1,
 			20
 		};
-		magazines[]=
+		magazines[]=	
 		{
+			"32ACP_x1",
+			"32ACP_HP_x1",
+			"32ACP_TRACER_x1",
+			"32ACP_RUBBER_x1",
+			"32ACP_BT_x1",
 			"RH_20Rnd_32cal_vz61",
 			"RH_20Rnd_32cal_vz61_hp",
 			"RH_20Rnd_32cal_vz61_tracer",
@@ -2261,6 +2352,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"9x19_x1",
+			"9x19_SD_x1",
+			"9x19_HP_x1",
+			"9x19_TRACER_x1",
+			"9x19_RUBBER_x1",
+			"9x19_BT_x1",
 			"RH_30Rnd_9x19_tec",
 			"RH_30Rnd_9x19_tecSD",
 			"RH_30Rnd_9x19_tec_hp",
@@ -2374,6 +2471,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"9x19_x1",
+			"9x19_SD_x1",
+			"9x19_HP_x1",
+			"9x19_TRACER_x1",
+			"9x19_RUBBER_x1",
+			"9x19_BT_x1",
 			"RH_32Rnd_9x19_Muzi",
 			"RH_32Rnd_9x19_MuziSD",
 			"RH_32Rnd_9x19_Muzi_hp",

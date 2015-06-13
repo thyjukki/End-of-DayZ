@@ -21,7 +21,7 @@ class 40Rnd_46x30_mp7_Empty: emptiedMagazine
 		class B_46x30_TRACER {
 			ammoMag = "40Rnd_46x30_mp7_tracer";
 		};
-		class B__RUBBER {
+		class B_46x30_RUBBER {
 			ammoMag = "40Rnd_46x30_mp7_rubber";
 		};
 		class B_46x30_BT {
@@ -111,7 +111,7 @@ class 20Rnd_46x30_mp7_Empty: emptiedMagazine
 		class B_46x30_TRACER {
 			ammoMag = "20Rnd_46x30_mp7_tracer";
 		};
-		class B__RUBBER {
+		class B_46x30_RUBBER {
 			ammoMag = "20Rnd_46x30_mp7_rubber";
 		};
 		class B_46x30_BT {

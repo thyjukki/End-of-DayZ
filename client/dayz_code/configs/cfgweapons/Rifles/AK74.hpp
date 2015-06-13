@@ -4,6 +4,12 @@ class AK_BASE: Rifle
 {
 	/*magazines[] = 
 	{
+		"762x39_x1",
+		"762x39_SD_x1",
+		"762x39_HP_x1",
+		"762x39_TRACER_x1",
+		"762x39_RUBBER_x1",
+		"762x39_BT_x1",
 		"30Rnd_762x39_AK47",
 		"30Rnd_762x39_AK47_SD",
 		"30Rnd_762x39_AK47_hp",
@@ -30,6 +36,12 @@ class AK_74 : AK_BASE
 {
 	magazines[]=
 	{
+		"545x39_x1",
+		"545x39_SD_x1",
+		"545x39_HP_x1",
+		"545x39_TRACER_x1",
+		"545x39_RUBBER_x1",
+		"545x39_BT_x1",
 		"30Rnd_545x39_AK",
 		"30Rnd_545x39_AKSD",
 		"30Rnd_545x39_AK_hp",

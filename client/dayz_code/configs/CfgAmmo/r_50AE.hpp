@@ -1,6 +1,14 @@
 
 //46x30
-class RH_50_AE_Ball;
+class RH_50_AE_Ball: BulletBase
+{
+	hit=9.500000;
+	cartridge="FxCartridge_Small";
+	cost=1;
+	typicalSpeed=421;
+	airFriction=-0.001650;
+	caliber=0.700000;
+};
 
 class B_50_AE_HP : RH_50_AE_Ball {
 	airfriction = -0.001893;

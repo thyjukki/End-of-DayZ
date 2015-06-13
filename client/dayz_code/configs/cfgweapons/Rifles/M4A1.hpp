@@ -11,6 +11,12 @@ class M4A1_DZ : M4A1
 	
 	magazines[] =
 	{
+		"556x45_x1",
+		"556x45_SD_x1",
+		"556x45_HP_x1",
+		"556x45_TRACER_x1",
+		"556x45_RUBBER_x1",
+		"556x45_BT_x1",
 		"20Rnd_556x45_Stanag",
 		"20Rnd_556x45_StanagSD",
 		"20Rnd_556x45_Stanag_hp",

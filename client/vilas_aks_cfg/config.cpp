@@ -643,6 +643,12 @@ class cfgWeapons {
 		discreteDistanceInitIndex = 1;
 		magazines[] = 
 		{
+			"762x39_x1",
+			"762x39_SD_x1",
+			"762x39_HP_x1",
+			"762x39_TRACER_x1",
+			"762x39_RUBBER_x1",
+			"762x39_BT_x1",
 			"30Rnd_762x39_AK47",
 			"30Rnd_762x39_AK47_SD",
 			"30Rnd_762x39_AK47_hp",
@@ -671,6 +677,12 @@ class cfgWeapons {
 		discreteDistanceInitIndex = 1;
 		magazines[] = 
 		{
+			"762x39_x1",
+			"762x39_SD_x1",
+			"762x39_HP_x1",
+			"762x39_TRACER_x1",
+			"762x39_RUBBER_x1",
+			"762x39_BT_x1",
 			"30Rnd_762x39_AK47",
 			"30Rnd_762x39_AK47_SD",
 			"30Rnd_762x39_AK47_hp",
@@ -700,6 +712,12 @@ class cfgWeapons {
 		modes[] = {"FullAuto", "Single"};
 		magazines[] = 
 		{
+			"762x39_x1",
+			"762x39_SD_x1",
+			"762x39_HP_x1",
+			"762x39_TRACER_x1",
+			"762x39_RUBBER_x1",
+			"762x39_BT_x1",
 			"30Rnd_762x39_AK47",
 			"30Rnd_762x39_AK47_SD",
 			"30Rnd_762x39_AK47_hp",
@@ -1345,6 +1363,12 @@ class cfgWeapons {
 		dexterity = 1.21;
 		magazines[] = 
 		{
+			"762x39_x1",
+			"762x39_SD_x1",
+			"762x39_HP_x1",
+			"762x39_TRACER_x1",
+			"762x39_RUBBER_x1",
+			"762x39_BT_x1",
 			"30Rnd_762x39_AK47",
 			"30Rnd_762x39_AK47_SD",
 			"30Rnd_762x39_AK47_hp",
@@ -1455,27 +1479,6 @@ class cfgWeapons {
 		displayName = $STR_TGW_VIL_RPK75;
 		model = "\vilas_aks\vil_rpk75";
 		picture = "\CA\weapons\AK\data\Equip\w_RPK_74_CA.paa";
-		magazines[] = 
-		{
-			"30Rnd_762x39_AK47",
-			"30Rnd_762x39_AK47_SD",
-			"30Rnd_762x39_AK47_hp",
-			"30Rnd_762x39_AK47_tracer",
-			"30Rnd_762x39_AK47_rubber",
-			"30Rnd_762x39_AK47_bt",
-			"vil_40Rnd_762x39_AK47",
-			"vil_40Rnd_762x39_AK47_SD",
-			"vil_40Rnd_762x39_AK47_hp",
-			"vil_40Rnd_762x39_AK47_tracer",
-			"vil_40Rnd_762x39_AK47_rubber",
-			"vil_40Rnd_762x39_AK47_bt",
-			"RH_75Rnd_762x39_mag",
-			"RH_75Rnd_762x39_mag_SD",
-			"RH_75Rnd_762x39_mag_hp",
-			"RH_75Rnd_762x39_mag_tracer",
-			"RH_75Rnd_762x39_mag_rubber",
-			"RH_75Rnd_762x39_mag_bt"
-		};
 	};
 	
 	class vil_RPK75_Romania : vil_RPK {
@@ -1484,27 +1487,6 @@ class cfgWeapons {
 			author = $STR_AUTHOR_VILAS;
 		};
 		displayName = $STR_VIL_AES10;
-		magazines[] = 
-		{
-			"30Rnd_762x39_AK47",
-			"30Rnd_762x39_AK47_SD",
-			"30Rnd_762x39_AK47_hp",
-			"30Rnd_762x39_AK47_tracer",
-			"30Rnd_762x39_AK47_rubber",
-			"30Rnd_762x39_AK47_bt",
-			"vil_40Rnd_762x39_AK47",
-			"vil_40Rnd_762x39_AK47_SD",
-			"vil_40Rnd_762x39_AK47_hp",
-			"vil_40Rnd_762x39_AK47_tracer",
-			"vil_40Rnd_762x39_AK47_rubber",
-			"vil_40Rnd_762x39_AK47_bt",
-			"RH_75Rnd_762x39_mag",
-			"RH_75Rnd_762x39_mag_SD",
-			"RH_75Rnd_762x39_mag_hp",
-			"RH_75Rnd_762x39_mag_tracer",
-			"RH_75Rnd_762x39_mag_rubber",
-			"RH_75Rnd_762x39_mag_bt"
-		};
 		picture = "\vilas_aks\ico\rom_rpk.paa";
 		model = "\vilas_aks\vil_rpk75rom";
 		class Library {
@@ -1518,27 +1500,6 @@ class cfgWeapons {
 			author = $STR_AUTHOR_VILAS;
 		};
 		displayName = $STR_VIL_M72;
-		magazines[] = 
-		{
-			"30Rnd_762x39_AK47",
-			"30Rnd_762x39_AK47_SD",
-			"30Rnd_762x39_AK47_hp",
-			"30Rnd_762x39_AK47_tracer",
-			"30Rnd_762x39_AK47_rubber",
-			"30Rnd_762x39_AK47_bt",
-			"vil_40Rnd_762x39_AK47",
-			"vil_40Rnd_762x39_AK47_SD",
-			"vil_40Rnd_762x39_AK47_hp",
-			"vil_40Rnd_762x39_AK47_tracer",
-			"vil_40Rnd_762x39_AK47_rubber",
-			"vil_40Rnd_762x39_AK47_bt",
-			"RH_75Rnd_762x39_mag",
-			"RH_75Rnd_762x39_mag_SD",
-			"RH_75Rnd_762x39_mag_hp",
-			"RH_75Rnd_762x39_mag_tracer",
-			"RH_75Rnd_762x39_mag_rubber",
-			"RH_75Rnd_762x39_mag_bt"
-		};
 		model = "\vilas_aks\vil_m72";
 		picture = "\vilas_aks\ico\m72_rpk.paa";
 		class Library {
@@ -1619,6 +1580,12 @@ class cfgWeapons {
 		modes[] = {"manual", "close", "short", "medium", "Single"};
 		magazines[]=
 		{
+			"545x39_x1",
+			"545x39_SD_x1",
+			"545x39_HP_x1",
+			"545x39_TRACER_x1",
+			"545x39_RUBBER_x1",
+			"545x39_BT_x1",
 			"30Rnd_545x39_AK",
 			"30Rnd_545x39_AKSD",
 			"30Rnd_545x39_AK_hp",
@@ -1774,6 +1741,11 @@ class cfgWeapons {
 		modes[] = {"Single","Full"};
 		magazines[]=
 		{
+			"9x39_x1",
+			"9x39_HP_x1",
+			"9x39_TRACER_x1",
+			"9x39_RUBBER_x1",
+			"9x39_BT_x1",
 			"vil_10Rnd_9x39_SP6_VSS",
 			"vil_10Rnd_9x39_SP6_VSS_hp",
 			"vil_10Rnd_9x39_SP6_VSS_tracer",
@@ -1850,19 +1822,6 @@ class cfgWeapons {
 			};
 		};
 		modes[] = {"Single","Full"};
-		magazines[]=
-		{
-			"vil_10Rnd_9x39_SP6_VSS",
-			"vil_10Rnd_9x39_SP6_VSS_hp",
-			"vil_10Rnd_9x39_SP6_VSS_tracer",
-			"vil_10Rnd_9x39_SP6_VSS_rubber",
-			"vil_10Rnd_9x39_SP6_VSS_bt",
-			"vil_20Rnd_9x39_SP6_VAL",
-			"vil_20Rnd_9x39_SP6_VAL_hp",
-			"vil_20Rnd_9x39_SP6_VAL_tracer",
-			"vil_20Rnd_9x39_SP6_VAL_rubber",
-			"vil_20Rnd_9x39_SP6_VAL_bt"
-		};
 		class Single : Single {
 			dispersion = 0.0018;
 			begin1[] = {"\vilas_aks\sounds\vintorez_fire1", db10, 1, 50};
@@ -2298,6 +2257,12 @@ class cfgWeapons {
 		picture = "\vilas_aks\ico\akmsb.paa";
 		magazines[] = 
 		{
+			"762x39_x1",
+			"762x39_SD_x1",
+			"762x39_HP_x1",
+			"762x39_TRACER_x1",
+			"762x39_RUBBER_x1",
+			"762x39_BT_x1",
 			"30Rnd_762x39_AK47",
 			"30Rnd_762x39_AK47_SD",
 			"30Rnd_762x39_AK47_hp",
@@ -2661,6 +2626,12 @@ class cfgWeapons {
 		discreteDistanceInitIndex = 0;
 		magazines[]=
 		{
+			"545x39_x1",
+			"545x39_SD_x1",
+			"545x39_HP_x1",
+			"545x39_TRACER_x1",
+			"545x39_RUBBER_x1",
+			"545x39_BT_x1",
 			"30Rnd_545x39_AK",
 			"30Rnd_545x39_AKSD",
 			"30Rnd_545x39_AK_hp",
@@ -2772,6 +2743,12 @@ class cfgWeapons {
 		UiPicture = "\CA\weapons\data\Ico\i_regular_CA.paa";
 		magazines[]=
 		{
+			"545x39_x1",
+			"545x39_SD_x1",
+			"545x39_HP_x1",
+			"545x39_TRACER_x1",
+			"545x39_RUBBER_x1",
+			"545x39_BT_x1",
 			"30Rnd_545x39_AK",
 			"30Rnd_545x39_AKSD",
 			"30Rnd_545x39_AK_hp",
@@ -2910,27 +2887,6 @@ class cfgWeapons {
 		picture = "\vilas_aks\ico\aksp.paa";
 		displayName = $STR_TGW_VIL_AKS74P;
 		UiPicture = "\CA\weapons\data\Ico\i_regular_CA.paa";
-		magazines[]=
-		{
-			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD",
-			"30Rnd_545x39_AK_hp",
-			"30Rnd_545x39_AK_tracer",
-			"30Rnd_545x39_AK_rubber",
-			"30Rnd_545x39_AK_bt",
-			"RH_45Rnd_545x39_mag",
-			"RH_45Rnd_545x39_magSD",
-			"RH_45Rnd_545x39_mag_hp",
-			"RH_45Rnd_545x39_mag_tracer",
-			"RH_45Rnd_545x39_mag_rubber",
-			"RH_45Rnd_545x39_mag_bt",
-			"75Rnd_545x39_RPK",
-			"75Rnd_545x39_RPKSD",
-			"75Rnd_545x39_RPK_hp",
-			"75Rnd_545x39_RPK_tracer",
-			"75Rnd_545x39_RPK_rubber",
-			"75Rnd_545x39_RPK_bt"
-		};
 	};	 
 
 	class vil_AK_74P : vil_AK_74 {
@@ -3133,27 +3089,6 @@ class cfgWeapons {
 		displayName = $STR_VIL_AK74M_FSB;
 		UiPicture = "\CA\weapons\data\Ico\i_regular_CA.paa";
 		handAnim[] = {"OFP2_ManSkeleton", "\Ca\weapons\data\Anim\Mk48.rtm"};
-		magazines[]=
-		{
-			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD",
-			"30Rnd_545x39_AK_hp",
-			"30Rnd_545x39_AK_tracer",
-			"30Rnd_545x39_AK_rubber",
-			"30Rnd_545x39_AK_bt",
-			"RH_45Rnd_545x39_mag",
-			"RH_45Rnd_545x39_magSD",
-			"RH_45Rnd_545x39_mag_hp",
-			"RH_45Rnd_545x39_mag_tracer",
-			"RH_45Rnd_545x39_mag_rubber",
-			"RH_45Rnd_545x39_mag_bt",
-			"75Rnd_545x39_RPK",
-			"75Rnd_545x39_RPKSD",
-			"75Rnd_545x39_RPK_hp",
-			"75Rnd_545x39_RPK_tracer",
-			"75Rnd_545x39_RPK_rubber",
-			"75Rnd_545x39_RPK_bt"
-		};
 		class Library {
 			libTextDesc = $STR_VIL_AK74M_FSB_LIB;
 		};
@@ -3172,27 +3107,6 @@ class cfgWeapons {
 		model = "\vilas_aks\vil_ak_74m_eot_FSB_45";
 		picture = "\vilas_aks\ico\w_vil_ak74m_eot_45_ca.paa";
 		displayName = $STR_VIL_AK74M_FSB_RPK;
-		magazines[]=
-		{
-			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD",
-			"30Rnd_545x39_AK_hp",
-			"30Rnd_545x39_AK_tracer",
-			"30Rnd_545x39_AK_rubber",
-			"30Rnd_545x39_AK_bt",
-			"RH_45Rnd_545x39_mag",
-			"RH_45Rnd_545x39_magSD",
-			"RH_45Rnd_545x39_mag_hp",
-			"RH_45Rnd_545x39_mag_tracer",
-			"RH_45Rnd_545x39_mag_rubber",
-			"RH_45Rnd_545x39_mag_bt",
-			"75Rnd_545x39_RPK",
-			"75Rnd_545x39_RPKSD",
-			"75Rnd_545x39_RPK_hp",
-			"75Rnd_545x39_RPK_tracer",
-			"75Rnd_545x39_RPK_rubber",
-			"75Rnd_545x39_RPK_bt"
-		};
 		class Library {
 			libTextDesc = $STR_VIL_AK74M_RPK_LIB;
 		};
@@ -3204,27 +3118,6 @@ class cfgWeapons {
 		model = "\vilas_aks\vil_ak_74m_eot_FSB_60";
 		picture = "\vilas_aks\ico\w_vil_ak74m_eot_60_ca.paa";
 		displayName = $STR_VIL_AK74M_FSB_QUAD;
-		magazines[]=
-		{
-			"30Rnd_545x39_AK",
-			"30Rnd_545x39_AKSD",
-			"30Rnd_545x39_AK_hp",
-			"30Rnd_545x39_AK_tracer",
-			"30Rnd_545x39_AK_rubber",
-			"30Rnd_545x39_AK_bt",
-			"RH_45Rnd_545x39_mag",
-			"RH_45Rnd_545x39_magSD",
-			"RH_45Rnd_545x39_mag_hp",
-			"RH_45Rnd_545x39_mag_tracer",
-			"RH_45Rnd_545x39_mag_rubber",
-			"RH_45Rnd_545x39_mag_bt",
-			"75Rnd_545x39_RPK",
-			"75Rnd_545x39_RPKSD",
-			"75Rnd_545x39_RPK_hp",
-			"75Rnd_545x39_RPK_tracer",
-			"75Rnd_545x39_RPK_rubber",
-			"75Rnd_545x39_RPK_bt"
-		};
 		weaponInfoType = "RscWeaponEmpty";
 		discreteDistance[] = {300};
 		discreteDistanceInitIndex = 0;
@@ -3417,6 +3310,12 @@ class cfgWeapons {
 		UiPicture = "\CA\weapons\data\Ico\i_regular_CA.paa";
 		magazines[] = 
 		{
+			"762x39_x1",
+			"762x39_SD_x1",
+			"762x39_HP_x1",
+			"762x39_TRACER_x1",
+			"762x39_RUBBER_x1",
+			"762x39_BT_x1",
 			"30Rnd_762x39_AK47",
 			"30Rnd_762x39_AK47_SD",
 			"30Rnd_762x39_AK47_hp",
@@ -3484,6 +3383,12 @@ class cfgWeapons {
 		UiPicture = "\CA\weapons\data\Ico\i_regular_CA.paa";
 		magazines[]=
 		{
+			"545x39_x1",
+			"545x39_SD_x1",
+			"545x39_HP_x1",
+			"545x39_TRACER_x1",
+			"545x39_RUBBER_x1",
+			"545x39_BT_x1",
 			"30Rnd_545x39_AK",
 			"30Rnd_545x39_AKSD",
 			"30Rnd_545x39_AK_hp",
@@ -3567,6 +3472,12 @@ class cfgWeapons {
 		UiPicture = "\CA\weapons\data\Ico\i_regular_CA.paa";
 		magazines[]=
 		{
+			"545x39_x1",
+			"545x39_SD_x1",
+			"545x39_HP_x1",
+			"545x39_TRACER_x1",
+			"545x39_RUBBER_x1",
+			"545x39_BT_x1",
 			"30Rnd_545x39_AK",
 			"30Rnd_545x39_AKSD",
 			"30Rnd_545x39_AK_hp",
@@ -3946,6 +3857,11 @@ class cfgWeapons {
 		begin1[] = {"\vilas_aks\sounds\svdk_fire1", 2.37828, 1.1, 1200};
 		magazines[] =
 		{
+			"762x54_x1",
+			"762x54_HP_x1",
+			"762x54_TRACER_x1",
+			"762x54_RUBBER_x1",
+			"762x54_BT_x1_x1",
 			"vil_10Rnd_SVDK",
 			"vil_10Rnd_SVDK_hp",
 			"vil_10Rnd_SVDK_tracer",
@@ -4001,6 +3917,11 @@ class cfgWeapons {
 		};
 		magazines[] =
 		{
+			"762x54_x1",
+			"762x54_HP_x1",
+			"762x54_TRACER_x1",
+			"762x54_RUBBER_x1",
+			"762x54_BT_x1_x1",
 			"vil_10Rnd_762x54_SV",
 			"vil_10Rnd_762x54_SV_hp",
 			"vil_10Rnd_762x54_SV_tracer",
@@ -4103,6 +4024,12 @@ class cfgWeapons {
 		modes[] = {"FullAuto", "Burst", "Single"};
 		magazines[]=
 		{
+			"545x39_x1",
+			"545x39_SD_x1",
+			"545x39_HP_x1",
+			"545x39_TRACER_x1",
+			"545x39_RUBBER_x1",
+			"545x39_BT_x1",
 			"30Rnd_545x39_AK",
 			"30Rnd_545x39_AKSD",
 			"30Rnd_545x39_AK_hp",

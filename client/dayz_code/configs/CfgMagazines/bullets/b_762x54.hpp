@@ -345,6 +345,30 @@ class 762x54_x50 : 762x54_x1 {
 	};
 };
 
+class 762x54_x100 : 762x54_x1 {
+	scope = public;
+	displayName = "7.62x54R (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"762x54_x50",
+			"762x54_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 762x54_HP_x1 : 762x54_x1 {
 	scope = public;
 	displayName = "7.62x54R HP (x1)";
@@ -355,6 +379,7 @@ class 762x54_HP_x1 : 762x54_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 7.62x54R Hollow Point rounds";
+	displayNameShort="HP";
 	
 	class ItemActions {
 		class Stack {
@@ -692,6 +717,30 @@ class 762x54_HP_x50 : 762x54_HP_x1 {
 	};
 };
 
+class 762x54_HP_x100 : 762x54_HP_x1 {
+	scope = public;
+	displayName = "7.62x54R HP (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"762x54_HP_x50",
+			"762x54_HP_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 762x54_TRACER_x1 : 762x54_x1 {
 	scope = public;
 	displayName = "7.62x54R Tracer (x1)";
@@ -702,6 +751,7 @@ class 762x54_TRACER_x1 : 762x54_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 7.62x54R Tracer rounds";
+	displayNameShort="Tracer";
 	
 	class ItemActions {
 		class Stack {
@@ -1039,6 +1089,30 @@ class 762x54_TRACER_x50 : 762x54_TRACER_x1 {
 	};
 };
 
+class 762x54_TRACER_x100 : 762x54_TRACER_x1 {
+	scope = public;
+	displayName = "7.62x54R Tracer (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"762x54_TRACER_x50",
+			"762x54_TRACER_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 762x54_RUBBER_x1 : 762x54_x1 {
 	scope = public;
 	displayName = "7.62x54R Rubber (x1)";
@@ -1049,6 +1123,7 @@ class 762x54_RUBBER_x1 : 762x54_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 7.62x54R Rubber rounds";
+	displayNameShort="Rubber";
 	
 	class ItemActions {
 		class Stack {
@@ -1386,6 +1461,30 @@ class 762x54_RUBBER_x50 : 762x54_RUBBER_x1 {
 	};
 };
 
+class 762x54_RUBBER_x100 : 762x54_RUBBER_x1 {
+	scope = public;
+	displayName = "7.62x54R Rubber (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"762x54_RUBBER_x50",
+			"762x54_RUBBER_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 762x54_BT_x1 : 762x54_x1 {
 	scope = public;
 	displayName = "7.62x54R Ballistic Tip (x1)";
@@ -1396,6 +1495,7 @@ class 762x54_BT_x1 : 762x54_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 7.62x54R Ballistic Tip rounds";
+	displayNameShort="BT";
 	
 	class ItemActions {
 		class Stack {
@@ -1725,6 +1825,30 @@ class 762x54_BT_x50 : 762x54_BT_x1 {
 			out[] = {
 			"762x54_BT_x40",
 			"762x54_BT_x10"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
+class 762x54_BT_x100 : 762x54_BT_x1 {
+	scope = public;
+	displayName = "7.62x54R Ballistic Tip (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"762x54_BT_x50",
+			"762x54_BT_x50"};
 		};
 		class loadMag {
 			text = "Load to...";

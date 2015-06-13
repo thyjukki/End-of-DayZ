@@ -87,6 +87,12 @@ class CfgWeapons
 		};
 		magazines[]=
 		{
+			"762x51_x1",
+			"762x51_SD_x1",
+			"762x51_HP_x1",
+			"762x51_TRACER_x1",
+			"762x51_RUBBER_x1",
+			"762x51_BT_x1",
 			"20Rnd_762x51_g3",
 			"20Rnd_762x51_g3SD",
 			"20Rnd_762x51_g3_hp",
@@ -196,6 +202,12 @@ class CfgWeapons
 		};
 		magazines[]=
 		{
+			"762x51_x1",
+			"762x51_SD_x1",
+			"762x51_HP_x1",
+			"762x51_TRACER_x1",
+			"762x51_RUBBER_x1",
+			"762x51_BT_x1",
 			"20Rnd_762x51_g3",
 			"20Rnd_762x51_g3SD",
 			"20Rnd_762x51_g3_hp",
@@ -314,6 +326,12 @@ class CfgWeapons
 		};
 		magazines[]=
 		{
+			"762x51_x1",
+			"762x51_SD_x1",
+			"762x51_HP_x1",
+			"762x51_TRACER_x1",
+			"762x51_RUBBER_x1",
+			"762x51_BT_x1",
 			"20Rnd_762x51_g3",
 			"20Rnd_762x51_g3SD",
 			"20Rnd_762x51_g3_hp",
@@ -432,6 +450,12 @@ class CfgWeapons
 		};
 		magazines[]=
 		{
+			"762x51_x1",
+			"762x51_SD_x1",
+			"762x51_HP_x1",
+			"762x51_TRACER_x1",
+			"762x51_RUBBER_x1",
+			"762x51_BT_x1",
 			"20Rnd_762x51_g3",
 			"20Rnd_762x51_g3SD",
 			"20Rnd_762x51_g3_hp",
@@ -550,6 +574,12 @@ class CfgWeapons
 		};
 		magazines[]=
 		{
+			"762x51_x1",
+			"762x51_SD_x1",
+			"762x51_HP_x1",
+			"762x51_TRACER_x1",
+			"762x51_RUBBER_x1",
+			"762x51_BT_x1",
 			"20Rnd_762x51_g3",
 			"20Rnd_762x51_g3SD",
 			"20Rnd_762x51_g3_hp",
@@ -675,6 +705,12 @@ class CfgWeapons
 		};
 		magazines[]=
 		{
+			"762x51_x1",
+			"762x51_SD_x1",
+			"762x51_HP_x1",
+			"762x51_TRACER_x1",
+			"762x51_RUBBER_x1",
+			"762x51_BT_x1",
 			"20Rnd_762x51_g3",
 			"20Rnd_762x51_g3SD",
 			"20Rnd_762x51_g3_hp",
@@ -796,6 +832,12 @@ class CfgWeapons
 		};
 		magazines[]=
 		{
+			"762x51_x1",
+			"762x51_SD_x1",
+			"762x51_HP_x1",
+			"762x51_TRACER_x1",
+			"762x51_RUBBER_x1",
+			"762x51_BT_x1",
 			"20Rnd_762x51_g3",
 			"20Rnd_762x51_g3SD",
 			"20Rnd_762x51_g3_hp",
@@ -917,6 +959,18 @@ class CfgWeapons
 		};
 		magazines[]=
 		{
+			"762x51_x1",
+			"762x51_SD_x1",
+			"762x51_HP_x1",
+			"762x51_TRACER_x1",
+			"762x51_RUBBER_x1",
+			"762x51_BT_x1",
+			"762x51_x1",
+			"762x51_SD_x1",
+			"762x51_HP_x1",
+			"762x51_TRACER_x1",
+			"762x51_RUBBER_x1",
+			"762x51_BT_x1",
 			"20Rnd_762x51_g3",
 			"20Rnd_762x51_g3SD",
 			"20Rnd_762x51_g3_hp",

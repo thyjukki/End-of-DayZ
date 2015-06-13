@@ -1668,6 +1668,12 @@ class CfgWeapons
 		class Single;
 		magazines[] =
 		{
+			"762x51_x1",
+			"762x51_SD_x1",
+			"762x51_HP_x1",
+			"762x51_TRACER_x1",
+			"762x51_RUBBER_x1",
+			"762x51_BT_x1",
 			"20Rnd_762x51_DMR",
 			"20Rnd_762x51_DMRSD",
 			"20Rnd_762x51_DMR_hp",
@@ -1715,6 +1721,12 @@ class CfgWeapons
 		};
 		magazines[] =
 		{
+			"762x51_x1",
+			"762x51_SD_x1",
+			"762x51_HP_x1",
+			"762x51_TRACER_x1",
+			"762x51_RUBBER_x1",
+			"762x51_BT_x1",
 			"20Rnd_762x51_DMR",
 			"20Rnd_762x51_DMRSD",
 			"20Rnd_762x51_DMR_hp",
@@ -1902,6 +1914,12 @@ class CfgWeapons
 		fireLightIntensity=0.000000;
 		magazines[] =
 		{
+			"762x51_x1",
+			"762x51_SD_x1",
+			"762x51_HP_x1",
+			"762x51_TRACER_x1",
+			"762x51_RUBBER_x1",
+			"762x51_BT_x1",
 			"20Rnd_762x51_DMR",
 			"20Rnd_762x51_DMRSD",
 			"20Rnd_762x51_DMR_hp",
@@ -3312,6 +3330,12 @@ class CfgWeapons
 	{
 		magazines[] =
 		{
+			"762x51_x1",
+			"762x51_SD_x1",
+			"762x51_HP_x1",
+			"762x51_TRACER_x1",
+			"762x51_RUBBER_x1",
+			"762x51_BT_x1",
 			"20Rnd_762x51_B_SCAR",
 			"20Rnd_762x51_B_SCARSD",
 			"20Rnd_762x51_B_SCAR_hp",
@@ -3324,6 +3348,12 @@ class CfgWeapons
 	{
 		magazines[] =
 		{
+			"762x51_x1",
+			"762x51_SD_x1",
+			"762x51_HP_x1",
+			"762x51_TRACER_x1",
+			"762x51_RUBBER_x1",
+			"762x51_BT_x1",
 			"20Rnd_762x51_B_SCAR",
 			"20Rnd_762x51_B_SCARSD",
 			"20Rnd_762x51_B_SCAR_hp",
@@ -4161,6 +4191,12 @@ class CfgWeapons
 	{
 		magazines[] = 
 		{
+			"762x39_x1",
+			"762x39_SD_x1",
+			"762x39_HP_x1",
+			"762x39_TRACER_x1",
+			"762x39_RUBBER_x1",
+			"762x39_BT_x1",
 			"30Rnd_762x39_AK47",
 			"30Rnd_762x39_AK47_SD",
 			"30Rnd_762x39_AK47_hp",
@@ -4708,6 +4744,12 @@ class CfgWeapons
 
 		magazines[] =
 		{
+			"762x51_x1",
+			"762x51_SD_x1",
+			"762x51_HP_x1",
+			"762x51_TRACER_x1",
+			"762x51_RUBBER_x1",
+			"762x51_BT_x1",
 			"100Rnd_762x51_M240",
 			"100Rnd_762x51_M240SD",
 			"100Rnd_762x51_M240_hp",

@@ -345,6 +345,30 @@ class 762x51_x50 : 762x51_x1 {
 	};
 };
 
+class 762x51_x100 : 762x51_x1 {
+	scope = public;
+	displayName = "762x51mm (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"762x51_x50",
+			"762x51_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 762x51_HP_x1 : 762x51_x1 {
 	scope = public;
 	displayName = "762x51mm HP (x1)";
@@ -355,6 +379,7 @@ class 762x51_HP_x1 : 762x51_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 762x51mm Hollow Point rounds";
+	displayNameShort="HP";
 	
 	class ItemActions {
 		class Stack {
@@ -692,6 +717,30 @@ class 762x51_HP_x50 : 762x51_HP_x1 {
 	};
 };
 
+class 762x51_HP_x100 : 762x51_HP_x1 {
+	scope = public;
+	displayName = "762x51mm HP (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"762x51_HP_x50",
+			"762x51_HP_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 762x51_TRACER_x1 : 762x51_x1 {
 	scope = public;
 	displayName = "762x51mm Tracer (x1)";
@@ -702,6 +751,7 @@ class 762x51_TRACER_x1 : 762x51_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 762x51mm Tracer rounds";
+	displayNameShort="Tracer";
 	
 	class ItemActions {
 		class Stack {
@@ -1039,6 +1089,30 @@ class 762x51_TRACER_x50 : 762x51_TRACER_x1 {
 	};
 };
 
+class 762x51_TRACER_x100 : 762x51_TRACER_x1 {
+	scope = public;
+	displayName = "762x51mm Tracer (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"762x51_TRACER_x50",
+			"762x51_TRACER_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 762x51_RUBBER_x1 : 762x51_x1 {
 	scope = public;
 	displayName = "762x51mm Rubber (x1)";
@@ -1049,6 +1123,7 @@ class 762x51_RUBBER_x1 : 762x51_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 762x51mm Rubber rounds";
+	displayNameShort="Rubber";
 	
 	class ItemActions {
 		class Stack {
@@ -1386,6 +1461,30 @@ class 762x51_RUBBER_x50 : 762x51_RUBBER_x1 {
 	};
 };
 
+class 762x51_RUBBER_x100 : 762x51_RUBBER_x1 {
+	scope = public;
+	displayName = "762x51mm Rubber (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"762x51_RUBBER_x50",
+			"762x51_RUBBER_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 762x51_BT_x1 : 762x51_x1 {
 	scope = public;
 	displayName = "762x51mm Ballistic Tip (x1)";
@@ -1396,6 +1495,7 @@ class 762x51_BT_x1 : 762x51_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 762x51mm Ballistic Tip rounds";
+	displayNameShort="BT";
 	
 	class ItemActions {
 		class Stack {
@@ -1733,6 +1833,30 @@ class 762x51_BT_x50 : 762x51_BT_x1 {
 	};
 };
 
+class 762x51_BT_x100 : 762x51_BT_x1 {
+	scope = public;
+	displayName = "762x51mm Ballistic Tip (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"762x51_BT_x50",
+			"762x51_BT_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 
 class 762x51_SD_x1 : 762x51_x1 {
 	scope = public;
@@ -1744,6 +1868,7 @@ class 762x51_SD_x1 : 762x51_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 762x51mm SD rounds";
+	displayNameShort="SD";
 	
 	class ItemActions {
 		class Stack {
@@ -2073,6 +2198,30 @@ class 762x51_SD_x50 : 762x51_SD_x1 {
 			out[] = {
 			"762x51_SD_x40",
 			"762x51_SD_x10"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
+class 762x51_SD_x100 : 762x51_SD_x1 {
+	scope = public;
+	displayName = "762x51mm SD (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"762x51_SD_x50",
+			"762x51_SD_x50"};
 		};
 		class loadMag {
 			text = "Load to...";

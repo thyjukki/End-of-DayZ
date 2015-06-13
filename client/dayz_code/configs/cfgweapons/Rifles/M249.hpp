@@ -9,6 +9,12 @@ class M249_CCO_DZ : M249
 	
 	magazines[] =
 	{
+		"556x45_x1",
+		"556x45_SD_x1",
+		"556x45_HP_x1",
+		"556x45_TRACER_x1",
+		"556x45_RUBBER_x1",
+		"556x45_BT_x1",
 		"100Rnd_556x45_M249",
 		"100Rnd_556x45_M249SD",
 		"100Rnd_556x45_M249_hp",

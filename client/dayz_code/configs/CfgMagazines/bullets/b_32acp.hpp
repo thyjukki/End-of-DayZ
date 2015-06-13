@@ -345,6 +345,30 @@ class 32ACP_x50 : 32ACP_x1 {
 	};
 };
 
+class 32ACP_x100 : 32ACP_x1 {
+	scope = public;
+	displayName = ".32 ACP (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"32ACP_x50",
+			"32ACP_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 32ACP_HP_x1 : 32ACP_x1 {
 	scope = public;
 	displayName = ".32 ACP HP (x1)";
@@ -355,6 +379,7 @@ class 32ACP_HP_x1 : 32ACP_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: .32 ACP Hollow Point rounds";
+	displayNameShort="HP";
 	
 	class ItemActions {
 		class Stack {
@@ -692,6 +717,30 @@ class 32ACP_HP_x50 : 32ACP_HP_x1 {
 	};
 };
 
+class 32ACP_HP_x100 : 32ACP_HP_x1 {
+	scope = public;
+	displayName = ".32 ACP HP (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"32ACP_HP_x50",
+			"32ACP_HP_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 32ACP_TRACER_x1 : 32ACP_x1 {
 	scope = public;
 	displayName = ".32 ACP Tracer (x1)";
@@ -702,6 +751,7 @@ class 32ACP_TRACER_x1 : 32ACP_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: .32 ACP Tracer rounds";
+	displayNameShort="Tracer";
 	
 	class ItemActions {
 		class Stack {
@@ -1039,6 +1089,30 @@ class 32ACP_TRACER_x50 : 32ACP_TRACER_x1 {
 	};
 };
 
+class 32ACP_TRACER_x100 : 32ACP_TRACER_x1 {
+	scope = public;
+	displayName = ".32 ACP Tracer (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"32ACP_TRACER_x50",
+			"32ACP_TRACER_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 32ACP_RUBBER_x1 : 32ACP_x1 {
 	scope = public;
 	displayName = ".32 ACP Rubber (x1)";
@@ -1049,6 +1123,7 @@ class 32ACP_RUBBER_x1 : 32ACP_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: .32 ACP Rubber rounds";
+	displayNameShort="Rubber";
 	
 	class ItemActions {
 		class Stack {
@@ -1396,6 +1471,7 @@ class 32ACP_BT_x1 : 32ACP_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: .32 ACP Ballistic Tip rounds";
+	displayNameShort="BT";
 	
 	class ItemActions {
 		class Stack {
@@ -1725,6 +1801,30 @@ class 32ACP_BT_x50 : 32ACP_BT_x1 {
 			out[] = {
 			"32ACP_BT_x40",
 			"32ACP_BT_x10"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
+class 32ACP_BT_x100 : 32ACP_BT_x1 {
+	scope = public;
+	displayName = ".32 ACP Ballistic Tip (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"32ACP_BT_x50",
+			"32ACP_BT_x50"};
 		};
 		class loadMag {
 			text = "Load to...";

@@ -321,10 +321,10 @@ class 57x28_x40 : 57x28_x1 {
 	};
 };
 
-class 57x28_x50 : 57x28_x1 {
+class 57x28_x100 : 57x28_x1 {
 	scope = public;
-	displayName = "57x28 (x50)";
-	bulletCount = 50;
+	displayName = "57x28 (x100)";
+	bulletCount = 100;
 	
 	class ItemActions {
 		class Stack {
@@ -345,6 +345,30 @@ class 57x28_x50 : 57x28_x1 {
 	};
 };
 
+class 57x28_x100 : 57x28_x1 {
+	scope = public;
+	displayName = "57x28 (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"57x28_x50",
+			"57x28_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 57x28_SD_x1 : 57x28_x1 {
 	scope = public;
 	displayName = "57x28 Sub Sonic (x1)";
@@ -355,6 +379,7 @@ class 57x28_SD_x1 : 57x28_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 57x28 Sub Sonic rounds";
+	displayNameShort="SD";
 	
 	class ItemActions {
 		class Stack {
@@ -671,7 +696,7 @@ class 57x28_SD_x40 : 57x28_SD_x1 {
 class 57x28_SD_x50 : 57x28_SD_x1 {
 	scope = public;
 	displayName = "57x28 Sub Sonic (x50)";
-	bulletCount = 50;
+	bulletCount = 60;
 	
 	class ItemActions {
 		class Stack {
@@ -692,6 +717,30 @@ class 57x28_SD_x50 : 57x28_SD_x1 {
 	};
 };
 
+class 57x28_SD_x100 : 57x28_SD_x1 {
+	scope = public;
+	displayName = "57x28 Sub Sonic (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"57x28_SD_x50",
+			"57x28_SD_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 57x28_HP_x1 : 57x28_x1 {
 	scope = public;
 	displayName = "57x28 HP (x1)";
@@ -702,6 +751,7 @@ class 57x28_HP_x1 : 57x28_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 57x28 Hollow Point rounds";
+	displayNameShort="HP";
 	
 	class ItemActions {
 		class Stack {
@@ -1039,6 +1089,30 @@ class 57x28_HP_x50 : 57x28_HP_x1 {
 	};
 };
 
+class 57x28_HP_x100 : 57x28_HP_x1 {
+	scope = public;
+	displayName = "57x28 HP (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"57x28_HP_x50",
+			"57x28_HP_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 57x28_TRACER_x1 : 57x28_x1 {
 	scope = public;
 	displayName = "57x28 Tracer (x1)";
@@ -1049,6 +1123,7 @@ class 57x28_TRACER_x1 : 57x28_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 57x28 Tracer rounds";
+	displayNameShort="Tracer";
 	
 	class ItemActions {
 		class Stack {
@@ -1386,6 +1461,30 @@ class 57x28_TRACER_x50 : 57x28_TRACER_x1 {
 	};
 };
 
+class 57x28_TRACER_x100 : 57x28_TRACER_x1 {
+	scope = public;
+	displayName = "57x28 Tracer (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"57x28_TRACER_x50",
+			"57x28_TRACER_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 57x28_RUBBER_x1 : 57x28_x1 {
 	scope = public;
 	displayName = "57x28 Rubber (x1)";
@@ -1396,6 +1495,7 @@ class 57x28_RUBBER_x1 : 57x28_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 57x28 Rubber rounds";
+	displayNameShort="Rubber";
 	
 	class ItemActions {
 		class Stack {
@@ -1712,7 +1812,7 @@ class 57x28_RUBBER_x40 : 57x28_RUBBER_x1 {
 class 57x28_RUBBER_x50 : 57x28_RUBBER_x1 {
 	scope = public;
 	displayName = "57x28 Rubber (x50)";
-	bulletCount = 50;
+	bulletCount = 100;
 	
 	class ItemActions {
 		class Stack {
@@ -1733,6 +1833,30 @@ class 57x28_RUBBER_x50 : 57x28_RUBBER_x1 {
 	};
 };
 
+class 57x28_RUBBER_x100 : 57x28_RUBBER_x1 {
+	scope = public;
+	displayName = "57x28 Rubber (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"57x28_RUBBER_x50",
+			"57x28_RUBBER_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 57x28_BT_x1 : 57x28_x1 {
 	scope = public;
 	displayName = "57x28 Ballistic Tip (x1)";
@@ -1743,6 +1867,7 @@ class 57x28_BT_x1 : 57x28_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 57x28 Ballistic Tip rounds";
+	displayNameShort="BT";
 	
 	class ItemActions {
 		class Stack {
@@ -2056,10 +2181,10 @@ class 57x28_BT_x40 : 57x28_BT_x1 {
 	};
 };
 
-class 57x28_BT_x50 : 57x28_BT_x1 {
+class 57x28_BT_x100 : 57x28_BT_x1 {
 	scope = public;
-	displayName = "57x28 Ballistic Tip (x50)";
-	bulletCount = 50;
+	displayName = "57x28 Ballistic Tip (x100)";
+	bulletCount = 100;
 	
 	class ItemActions {
 		class Stack {

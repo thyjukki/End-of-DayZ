@@ -157,6 +157,12 @@ class cfgWeapons
 	class MP5SD: Rifle 
 	{
 		magazines[] = {
+			"9x19_x1",
+			"9x19_SD_x1",
+			"9x19_HP_x1",
+			"9x19_TRACER_x1",
+			"9x19_RUBBER_x1",
+			"9x19_BT_x1",
 			"30Rnd_9x19_MP5",
 			"30Rnd_9x19_MP5SD",
 			"30Rnd_9x19_MP5_hp",
@@ -168,6 +174,12 @@ class cfgWeapons
 	class MP5A5: MP5SD 
 	{
 		magazines[] = {
+			"9x19_x1",
+			"9x19_SD_x1",
+			"9x19_HP_x1",
+			"9x19_TRACER_x1",
+			"9x19_RUBBER_x1",
+			"9x19_BT_x1",
 			"30Rnd_9x19_MP5",
 			"30Rnd_9x19_MP5SD",
 			"30Rnd_9x19_MP5_hp",
@@ -331,7 +343,14 @@ class cfgWeapons
 		model="\RH_smg\RH_mp5a4.p3d";
 		picture="\RH_smg\inv\mp5a4.paa";
 		UiPicture="\CA\weapons\data\Ico\i_regular_CA.paa";
+		displayName="HK MP5A4";
 		magazines[] = {
+			"9x19_x1",
+			"9x19_SD_x1",
+			"9x19_HP_x1",
+			"9x19_TRACER_x1",
+			"9x19_RUBBER_x1",
+			"9x19_BT_x1",
 			"30Rnd_9x19_MP5",
 			"30Rnd_9x19_MP5SD",
 			"30Rnd_9x19_MP5_hp",
@@ -339,7 +358,6 @@ class cfgWeapons
 			"30Rnd_9x19_MP5_rubber",
 			"30Rnd_9x19_MP5_bt"
 		};
-		displayName="HK MP5A4";
 		handAnim[]=
 		{
 			"OFP2_ManSkeleton"
@@ -762,14 +780,6 @@ class cfgWeapons
 		displayName="HK MP5SD6";
 		model="\RH_smg\RH_mp5sd6.p3d";
 		picture="\RH_smg\inv\mp5sd6.paa";
-		magazines[] = {
-			"30Rnd_9x19_MP5",
-			"30Rnd_9x19_MP5SD",
-			"30Rnd_9x19_MP5_hp",
-			"30Rnd_9x19_MP5_tracer",
-			"30Rnd_9x19_MP5_rubber",
-			"30Rnd_9x19_MP5_bt"
-		};
 		fireLightDuration=0;
 		fireLightIntensity=0;
 		class Single: Single
@@ -975,6 +985,11 @@ class cfgWeapons
 		picture="\RH_smg\inv\kriss.paa";
 		magazines[]=
 		{
+			"45ACP_x1",
+			"45ACP_HP_x1",
+			"45ACP_TRACER_x1",
+			"45ACP_RUBBER_x1",
+			"45ACP_BT_x1",
 			"RH_45ACP_30RND_Mag",
 			"RH_45ACP_30RND_Mag_hp",
 			"RH_45ACP_30RND_Mag_tracer",
@@ -1279,6 +1294,12 @@ class cfgWeapons
 		picture="\RH_smg\inv\uzi.paa";
 		magazines[]=
 		{
+			"9x19_x1",
+			"9x19_SD_x1",
+			"9x19_HP_x1",
+			"9x19_TRACER_x1",
+			"9x19_RUBBER_x1",
+			"9x19_BT_x1",
 			"RH_32Rnd_9x19_Muzi",
 			"RH_32Rnd_9x19_MuziSD",
 			"RH_32Rnd_9x19_Muzi_hp",
@@ -1355,21 +1376,6 @@ class cfgWeapons
 		displayName="UZI Mini";
 		model="\RH_smg\RH_uzim.p3d";
 		picture="\RH_smg\inv\uzim.paa";
-		magazines[]=
-		{
-			"RH_32Rnd_9x19_Muzi",
-			"RH_32Rnd_9x19_MuziSD",
-			"RH_32Rnd_9x19_Muzi_hp",
-			"RH_32Rnd_9x19_Muzi_tracer",
-			"RH_32Rnd_9x19_Muzi_rubber",
-			"RH_32Rnd_9x19_Muzi_bt",
-			"RH_9mm_32RND_Mag",
-			"RH_9mm_32RND_MagSD",
-			"RH_9mm_32RND_Mag_hp",
-			"RH_9mm_32RND_Mag_tracer",
-			"RH_9mm_32RND_Mag_rubber",
-			"RH_9mm_32RND_Mag_bt"
-		};
 		handAnim[]=
 		{
 			"OFP2_ManSkeleton",
@@ -1397,21 +1403,6 @@ class cfgWeapons
 		displayName="Uzi SD";
 		model="\RH_smg\RH_uzisd.p3d";
 		picture="\RH_smg\inv\uzisd.paa";
-		magazines[]=
-		{
-			"RH_32Rnd_9x19_Muzi",
-			"RH_32Rnd_9x19_MuziSD",
-			"RH_32Rnd_9x19_Muzi_hp",
-			"RH_32Rnd_9x19_Muzi_tracer",
-			"RH_32Rnd_9x19_Muzi_rubber",
-			"RH_32Rnd_9x19_Muzi_bt",
-			"RH_9mm_32RND_Mag",
-			"RH_9mm_32RND_MagSD",
-			"RH_9mm_32RND_Mag_hp",
-			"RH_9mm_32RND_Mag_tracer",
-			"RH_9mm_32RND_Mag_rubber",
-			"RH_9mm_32RND_Mag_bt"
-		};
 		fireLightDuration=0;
 		fireLightIntensity=0;
 		class Single: Single
@@ -1484,6 +1475,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"9x19_x1",
+			"9x19_SD_x1",
+			"9x19_HP_x1",
+			"9x19_TRACER_x1",
+			"9x19_RUBBER_x1",
+			"9x19_BT_x1",
 			"RH_32Rnd_9x19_Muzi",
 			"RH_32Rnd_9x19_MuziSD",
 			"RH_32Rnd_9x19_Muzi_hp",
@@ -1954,6 +1951,11 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"45ACP_x1",
+			"45ACP_HP_x1",
+			"45ACP_TRACER_x1",
+			"45ACP_RUBBER_x1",
+			"45ACP_BT_x1",
 			"RH_45ACP_25RND_UMP_Mag",
 			"RH_45ACP_25RND_UMP_Mag_hp",
 			"RH_45ACP_25RND_UMP_Mag_tracer",
@@ -2106,14 +2108,6 @@ class cfgWeapons
 		displayName="HK UMP45 SD";
 		model="\RH_smg\RH_umpsd.p3d";
 		picture="\RH_smg\inv\umpsd.paa";
-		magazines[]=
-		{
-			"RH_45ACP_25RND_UMP_Mag",
-			"RH_45ACP_25RND_UMP_Mag_hp",
-			"RH_45ACP_25RND_UMP_Mag_tracer",
-			"RH_45ACP_25RND_UMP_Mag_rubber",
-			"RH_45ACP_25RND_UMP_Mag_bt"
-		};
 		fireLightDuration=0;
 		fireLightIntensity=0;
 		class Single: Single
@@ -2228,6 +2222,12 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
+			"57x28_x1",
+			"57x28_HP_x1",
+			"57x28_SD_x1",
+			"57x28_TRACER_x1",
+			"57x28_RUBBER_x1",
+			"57x28_BT_x1",
 			"RH_57x28mm_50RND_Mag",
 			"RH_57x28mm_50RND_SD_Mag",
 			"RH_57x28mm_50RND_Mag_hp",

@@ -345,6 +345,30 @@ class 45ACP_x50 : 45ACP_x1 {
 	};
 };
 
+class 45ACP_x100 : 45ACP_x1 {
+	scope = public;
+	displayName = ".45 ACP (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"45ACP_x50",
+			"45ACP_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 45ACP_HP_x1 : 45ACP_x1 {
 	scope = public;
 	displayName = ".45 ACP HP (x1)";
@@ -355,6 +379,7 @@ class 45ACP_HP_x1 : 45ACP_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: .45 ACP Hollow Point rounds";
+	displayNameShort="HP";
 	
 	class ItemActions {
 		class Stack {
@@ -692,6 +717,30 @@ class 45ACP_HP_x50 : 45ACP_HP_x1 {
 	};
 };
 
+class 45ACP_HP_x100 : 45ACP_HP_x1 {
+	scope = public;
+	displayName = ".45 ACP HP (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"45ACP_HP_x50",
+			"45ACP_HP_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 45ACP_TRACER_x1 : 45ACP_x1 {
 	scope = public;
 	displayName = ".45 ACP Tracer (x1)";
@@ -702,6 +751,7 @@ class 45ACP_TRACER_x1 : 45ACP_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: .45 ACP Tracer rounds";
+	displayNameShort="TRACER";
 	
 	class ItemActions {
 		class Stack {
@@ -1039,6 +1089,30 @@ class 45ACP_TRACER_x50 : 45ACP_TRACER_x1 {
 	};
 };
 
+class 45ACP_TRACER_x100 : 45ACP_TRACER_x1 {
+	scope = public;
+	displayName = ".45 ACP Tracer (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"45ACP_TRACER_x50",
+			"45ACP_TRACER_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 45ACP_RUBBER_x1 : 45ACP_x1 {
 	scope = public;
 	displayName = ".45 ACP Rubber (x1)";
@@ -1049,6 +1123,7 @@ class 45ACP_RUBBER_x1 : 45ACP_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: .45 ACP Rubber rounds";
+	displayNameShort="Rubber";
 	
 	class ItemActions {
 		class Stack {
@@ -1386,9 +1461,33 @@ class 45ACP_RUBBER_x50 : 45ACP_RUBBER_x1 {
 	};
 };
 
+class 45ACP_RUBBER_x100 : 45ACP_RUBBER_x1 {
+	scope = public;
+	displayName = ".45 ACP Rubber (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"45ACP_RUBBER_x50",
+			"45ACP_RUBBER_x50"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
 class 45ACP_BT_x1 : 45ACP_x1 {
 	scope = public;
-	displayName = ".45 ACP Ballistic Tip (x1)";
+	displayName = ".45 ACP BT (x1)";
 	ammo = "RH_45ACP_BT";
 	bulletCount = 1;
 	baseName = "45ACP_BT_x";
@@ -1396,6 +1495,7 @@ class 45ACP_BT_x1 : 45ACP_x1 {
 	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: .45 ACP Ballistic Tip rounds";
+	displayNameShort="HP";
 	
 	class ItemActions {
 		class Stack {
@@ -1411,7 +1511,7 @@ class 45ACP_BT_x1 : 45ACP_x1 {
 
 class 45ACP_BT_x2 : 45ACP_BT_x1 {
 	scope = public;
-	displayName = ".45 ACP Ballistic Tip (x2)";
+	displayName = ".45 ACP BT (x2)";
 	bulletCount = 2;
 	
 	class ItemActions {
@@ -1435,7 +1535,7 @@ class 45ACP_BT_x2 : 45ACP_BT_x1 {
 
 class 45ACP_BT_x3 : 45ACP_BT_x1 {
 	scope = public;
-	displayName = ".45 ACP Ballistic Tip (x3)";
+	displayName = ".45 ACP BT (x3)";
 	bulletCount = 3;
 	
 	class ItemActions {
@@ -1460,7 +1560,7 @@ class 45ACP_BT_x3 : 45ACP_BT_x1 {
 
 class 45ACP_BT_x4 : 45ACP_BT_x1 {
 	scope = public;
-	displayName = ".45 ACP Ballistic Tip (x4)";
+	displayName = ".45 ACP BT (x4)";
 	bulletCount = 4;
 	
 	class ItemActions {
@@ -1486,7 +1586,7 @@ class 45ACP_BT_x4 : 45ACP_BT_x1 {
 
 class 45ACP_BT_x5 : 45ACP_BT_x1 {
 	scope = public;
-	displayName = ".45 ACP Ballistic Tip (x5)";
+	displayName = ".45 ACP BT (x5)";
 	bulletCount = 5;
 	
 	class ItemActions {
@@ -1513,7 +1613,7 @@ class 45ACP_BT_x5 : 45ACP_BT_x1 {
 
 class 45ACP_BT_x6 : 45ACP_BT_x1 {
 	scope = public;
-	displayName = ".45 ACP Ballistic Tip (x6)";
+	displayName = ".45 ACP BT (x6)";
 	bulletCount = 6;
 	
 	class ItemActions {
@@ -1537,7 +1637,7 @@ class 45ACP_BT_x6 : 45ACP_BT_x1 {
 
 class 45ACP_BT_x7 : 45ACP_BT_x1 {
 	scope = public;
-	displayName = ".45 ACP Ballistic Tip (x7)";
+	displayName = ".45 ACP BT (x7)";
 	bulletCount = 7;
 	
 	class ItemActions {
@@ -1562,7 +1662,7 @@ class 45ACP_BT_x7 : 45ACP_BT_x1 {
 
 class 45ACP_BT_x8 : 45ACP_BT_x1 {
 	scope = public;
-	displayName = ".45 ACP Ballistic Tip (x8)";
+	displayName = ".45 ACP BT (x8)";
 	bulletCount = 8;
 	
 	class ItemActions {
@@ -1588,7 +1688,7 @@ class 45ACP_BT_x8 : 45ACP_BT_x1 {
 
 class 45ACP_BT_x9 : 45ACP_BT_x1 {
 	scope = public;
-	displayName = ".45 ACP Ballistic Tip (x9)";
+	displayName = ".45 ACP BT (x9)";
 	bulletCount = 9;
 	
 	class ItemActions {
@@ -1615,7 +1715,7 @@ class 45ACP_BT_x9 : 45ACP_BT_x1 {
 
 class 45ACP_BT_x10 : 45ACP_BT_x1 {
 	scope = public;
-	displayName = ".45 ACP Ballistic Tip (x10)";
+	displayName = ".45 ACP BT (x10)";
 	bulletCount = 10;
 	
 	class ItemActions {
@@ -1639,7 +1739,7 @@ class 45ACP_BT_x10 : 45ACP_BT_x1 {
 
 class 45ACP_BT_x20 : 45ACP_BT_x1 {
 	scope = public;
-	displayName = ".45 ACP Ballistic Tip (x20)";
+	displayName = ".45 ACP BT (x20)";
 	bulletCount = 20;
 	
 	class ItemActions {
@@ -1663,7 +1763,7 @@ class 45ACP_BT_x20 : 45ACP_BT_x1 {
 
 class 45ACP_BT_x30 : 45ACP_BT_x1 {
 	scope = public;
-	displayName = ".45 ACP Ballistic Tip (x30)";
+	displayName = ".45 ACP BT (x30)";
 	bulletCount = 30;
 	
 	class ItemActions {
@@ -1687,7 +1787,7 @@ class 45ACP_BT_x30 : 45ACP_BT_x1 {
 
 class 45ACP_BT_x40 : 45ACP_BT_x1 {
 	scope = public;
-	displayName = ".45 ACP Ballistic Tip (x40)";
+	displayName = ".45 ACP BT (x40)";
 	bulletCount = 40;
 	
 	class ItemActions {
@@ -1711,7 +1811,7 @@ class 45ACP_BT_x40 : 45ACP_BT_x1 {
 
 class 45ACP_BT_x50 : 45ACP_BT_x1 {
 	scope = public;
-	displayName = ".45 ACP Ballistic Tip (x50)";
+	displayName = ".45 ACP BT (x50)";
 	bulletCount = 50;
 	
 	class ItemActions {
@@ -1725,6 +1825,30 @@ class 45ACP_BT_x50 : 45ACP_BT_x1 {
 			out[] = {
 			"45ACP_BT_x40",
 			"45ACP_BT_x10"};
+		};
+		class loadMag {
+			text = "Load to...";
+			script = "spawn player_loadAmmo;";
+		};
+	};
+};
+
+class 45ACP_BT_x100 : 45ACP_BT_x1 {
+	scope = public;
+	displayName = ".45 ACP BT (x100)";
+	bulletCount = 100;
+	
+	class ItemActions {
+		class Stack {
+			text = "Stack..";
+			script = "spawn player_combineAmmo;";
+		};
+		class Split {
+			text = "Split to x50...";
+			script = "spawn player_splitAmmo;";
+			out[] = {
+			"45ACP_BT_x50",
+			"45ACP_BT_x50"};
 		};
 		class loadMag {
 			text = "Load to...";

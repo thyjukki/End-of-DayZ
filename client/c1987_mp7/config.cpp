@@ -210,6 +210,12 @@ class CfgWeapons
 		};
 		magazines[]=
 		{
+			"46x30_x1",
+			"46x30_SD_x1",
+			"46x30_HP_x1",
+			"46x30_TRACER_x1",
+			"46x30_RUBBER_x1",
+			"46x30_BT_x1",
 			"40Rnd_46x30_mp7",
 			"40Rnd_46x30_sd_mp7",
 			"40Rnd_46x30_mp7_hp",
