@@ -16,7 +16,13 @@ switch (_iClass) do {
 		//Item is a weapon, add it and a random quantity of magazines
 		_item = createVehicle ["WeaponHolder", _iPos, [], _radius, "CAN_COLLIDE"];
 		_item addWeaponCargoGlobal [_iItem,1];
-		_mags = [] + getArray (configFile >> "cfgWeapons" >> _iItem >> "magazines");
+		_mags = [];
+		{
+			_isCount = getNumber (configFile >> "cfgMagazines" >> _iItem >> "bulletCount");
+			if (_isCount > 0)
+				_mags = _mags + _x;
+		} forEach getArray (configFile >> "cfgWeapons" >> _iItem >> "magazines");
+
 		if ((count _mags) > 0) then {
 		//	if (_mags select 0 == "Quiver") then { _mags set [0, "WoodenArrow"] }; // Prevent spawning a Quiver
 			if (!(_iItem in MeleeWeapons)) then {
