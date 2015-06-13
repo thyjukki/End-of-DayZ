@@ -313,7 +313,7 @@ class CfgBuildingLoot {
 			{"PartWoodPile",				"magazine",0.08},
 			{"FoodCanBoneboy",				"magazine",0.01},
 			{"equip_nails",					"magazine",0.06},
-			{"ItemNails"					"magazine",0.06},  //dont remove these 
+			{"ItemNails",					"magazine",0.06},  //dont remove these 
 			{"FoodCanCurgon",				"magazine",0.02},
 			{"FoodCanRusStew",				"magazine",0.02},
 			{"FoodChipsSulahoops",			"magazine",0.02},
@@ -436,7 +436,7 @@ class CfgBuildingLoot {
 			{"FoodCakeCremeCakeClean",		"magazine",0.03},
 		//special
 			{"equip_nails",					"magazine",0.06},
-			{"ItemNails"					"magazine",0.06},  //dont remove these 
+			{"ItemNails",					"magazine",0.06},  //dont remove these 
 		//multiple spawns
 			{"",							"civilianMagazines",0.20},
 			{"",							"militaryMagazines",0.05},
