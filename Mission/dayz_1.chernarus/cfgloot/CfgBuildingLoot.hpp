@@ -264,6 +264,7 @@ class CfgBuildingLoot {
 			{"equip_duct_tape",				"magazine",0.10},
 			{"equip_hose",					"magazine",0.10},
 			{"equip_nails",					"magazine",0.10},
+			{"ItemNails"					"magazine",0.10},  //dont remove these 
 			{"equip_rag",					"magazine",0.05},
 			{"equip_scrapelectronics",		"magazine",0.05},
 			{"equip_cable_tie",				"magazine",0.05},
@@ -312,6 +313,7 @@ class CfgBuildingLoot {
 			{"PartWoodPile",				"magazine",0.08},
 			{"FoodCanBoneboy",				"magazine",0.01},
 			{"equip_nails",					"magazine",0.06},
+			{"ItemNails"					"magazine",0.06},  //dont remove these 
 			{"FoodCanCurgon",				"magazine",0.02},
 			{"FoodCanRusStew",				"magazine",0.02},
 			{"FoodChipsSulahoops",			"magazine",0.02},
@@ -434,6 +436,7 @@ class CfgBuildingLoot {
 			{"FoodCakeCremeCakeClean",		"magazine",0.03},
 		//special
 			{"equip_nails",					"magazine",0.06},
+			{"ItemNails"					"magazine",0.06},  //dont remove these 
 		//multiple spawns
 			{"",							"civilianMagazines",0.20},
 			{"",							"militaryMagazines",0.05},
