@@ -4243,6 +4243,33 @@ class cfgWeapons {
 		UiPicture = "\CA\weapons\data\Ico\i_regular_CA.paa";
 		modes[] = {"FullAuto", "Single"};
 
+		magazines[]=
+		{
+			"545x39_x1",
+			"545x39_SD_x1",
+			"545x39_HP_x1",
+			"545x39_TRACER_x1",
+			"545x39_RUBBER_x1",
+			"545x39_BT_x1",
+			"30Rnd_545x39_AK",
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt",
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
+		};
 		class Single :  Single {
 			reloadTime = 0.07;
 			recoil = "recoil_single_primary_2outof10";
