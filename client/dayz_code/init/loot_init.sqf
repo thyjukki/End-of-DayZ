@@ -45,6 +45,7 @@ _config = missionConfigFile >> "cfgLoot";
 		//_items = [];
 		for "_l" from 0 to ((count _itemChances) - 1) do {
 			//diag_log ("Item: "+str(_itemChances select _l));
+			player addMagazine (_itemChances select _l);
 			_weight = round (((_itemChances select _l) select 1) * 100);
 			for "_k" from 0 to (_weight - 1) do {
 				_weighted set [_j + _k, _l];

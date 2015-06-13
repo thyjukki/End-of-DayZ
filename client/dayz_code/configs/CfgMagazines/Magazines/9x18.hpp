@@ -189,7 +189,7 @@ class 64Rnd_9x18_Bizon_Empty: emptiedMagazine
 			ammoMag = "64Rnd_9x18_Bizon";
 		};
 		class RH_B_9x18_SD {
-			ammoMag = "64Rnd_9x19_SD_Bizon";
+			ammoMag = "64Rnd_9x18_SD_Bizon";
 		};
 		class B_9x18_HP {
 			ammoMag = "64Rnd_9x18_Bizon_hp";
@@ -221,7 +221,7 @@ class 64Rnd_9x18_Bizon: CA_Magazine
 	emptyMag = "64Rnd_9x18_Bizon_Empty";
 };
 
-class 64Rnd_9x19_SD_Bizon: 64Rnd_9x18_Bizon {
+class 64Rnd_9x18_SD_Bizon: 64Rnd_9x18_Bizon {
 	scope=2;
 	baseBullet = 9x18_SD_x;
 	picture = "\z\addons\dayz_communityweapons\magazines\data\m_bizonsd_ca.paa";

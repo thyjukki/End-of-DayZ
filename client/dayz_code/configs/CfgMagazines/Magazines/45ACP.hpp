@@ -169,7 +169,7 @@ class RH_12Rnd_45cal_usp_Empty: emptiedMagazine
 {
 	scope=2;
 	displayName="Uspm Mag (Empty)";
-	description = "Caliber: .45 ACP<br/>Rounds: 12<br/>Used in: USP M";
+	descriptionShort = "Caliber: .45 ACP<br/>Rounds: 12<br/>Used in: USP M";
 	picture="\RH_de\inv\m_usp.paa";
 	model="\RH_de\mags\mag_uspm.p3d";
 	type=16;
@@ -198,7 +198,7 @@ class RH_12Rnd_45cal_usp: CA_Magazine
 {
 	scope=2;
 	displayName="Uspm Mag";
-	description = "Caliber: .45 ACP<br/>Rounds: 12<br/>Used in: USP M";
+	descriptionShort = "Caliber: .45 ACP<br/>Rounds: 12<br/>Used in: USP M";
 	picture="\RH_de\inv\m_usp.paa";
 	model="\RH_de\mags\mag_uspm.p3d";
 	type=16;
@@ -508,10 +508,10 @@ class KPFS_30Rnd_45ACP_Thompson_Empty: emptiedMagazine
 	class ammoType
 	{
 		class RH_45ACP {
-			ammoMag = "KPFS_30Rnd_45ACP_Thompson_Mag";
+			ammoMag = "KPFS_30Rnd_45ACP_Thompson";
 		};
 		class RH_45ACP_HP {
-			ammoMag = "KPFS_30Rnd_45ACP_Thompson_Mag_hp";
+			ammoMag = "KPFS_30Rnd_45ACP_Thompson_hp";
 		};
 		class RH_45ACP_TRACER {
 			ammoMag = "KPFS_30Rnd_45ACP_Thompson_tracer";

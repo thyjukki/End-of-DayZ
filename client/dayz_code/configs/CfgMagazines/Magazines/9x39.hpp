@@ -10,7 +10,7 @@ class RH_20Rnd_9x39_SP6_mag_Empty: emptiedMagazine
 	class ammoType
 	{
 		class B_9x39_Ball {
-			ammoMag = "RH_20Rnd_9x39_SP6";
+			ammoMag = "RH_20Rnd_9x39_SP6_mag";
 		};
 		class B_9x39_HP {
 			ammoMag = "RH_20Rnd_9x39_SP6_mag_hp";
