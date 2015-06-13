@@ -1,5 +1,10 @@
 
-class Man;
+class Land;
+class Man : Land
+{
+	extCameraPosition[] = {0.4, -0.2, -1}; // Deadfast third person camera
+};
+
 class CAManBase: Man
 {
 	class TalkTopics;
