@@ -19,8 +19,9 @@ switch (_iClass) do {
 		_mags = [];
 		{
 			_isCount = getNumber (configFile >> "cfgMagazines" >> _iItem >> "bulletCount");
-			if (_isCount > 0)
+			if (_isCount > 0) then {
 				_mags = _mags + _x;
+			};
 		} forEach getArray (configFile >> "cfgWeapons" >> _iItem >> "magazines");
 
 		if ((count _mags) > 0) then {
