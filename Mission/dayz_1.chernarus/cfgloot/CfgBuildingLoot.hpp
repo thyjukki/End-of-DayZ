@@ -264,7 +264,7 @@ class CfgBuildingLoot {
 			{"equip_duct_tape",				"magazine",0.10},
 			{"equip_hose",					"magazine",0.10},
 			{"equip_nails",					"magazine",0.10},
-			{"ItemNails"					"magazine",0.10},  //dont remove these 
+			{"ItemNails",					"magazine",0.10},  //dont remove these 
 			{"equip_rag",					"magazine",0.05},
 			{"equip_scrapelectronics",		"magazine",0.05},
 			{"equip_cable_tie",				"magazine",0.05},
