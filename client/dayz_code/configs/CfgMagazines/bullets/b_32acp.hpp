@@ -5,7 +5,7 @@ class 32ACP_x1 : baseBullet {
 	bulletCount = 1;
 	baseName = "32ACP_x";
 	baseDesc = ".32 ACP";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_ball.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: .32 ACP rounds";
 	
@@ -376,7 +376,7 @@ class 32ACP_HP_x1 : 32ACP_x1 {
 	bulletCount = 1;
 	baseName = "32ACP_HP_x";
 	baseDesc = ".32 ACP Hollow Point";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_hp.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: .32 ACP Hollow Point rounds";
 	displayNameShort="HP";
@@ -748,7 +748,7 @@ class 32ACP_TRACER_x1 : 32ACP_x1 {
 	bulletCount = 1;
 	baseName = "32ACP_TRACER_x";
 	baseDesc = ".32 ACP Tracer";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_tracer.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: .32 ACP Tracer rounds";
 	displayNameShort="Tracer";
@@ -1120,7 +1120,7 @@ class 32ACP_RUBBER_x1 : 32ACP_x1 {
 	bulletCount = 1;
 	baseName = "32ACP_RUBBER_x";
 	baseDesc = ".32 ACP Rubber";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_rubber.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: .32 ACP Rubber rounds";
 	displayNameShort="Rubber";
@@ -1468,7 +1468,7 @@ class 32ACP_BT_x1 : 32ACP_x1 {
 	bulletCount = 1;
 	baseName = "32ACP_BT_x";
 	baseDesc = ".32 ACP Ballistic Tip";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_bt.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: .32 ACP Ballistic Tip rounds";
 	displayNameShort="BT";

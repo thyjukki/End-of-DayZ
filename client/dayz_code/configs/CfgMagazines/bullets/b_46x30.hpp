@@ -5,7 +5,7 @@ class 46x30_x1 : baseBullet {
 	bulletCount = 1;
 	baseName = "46x30_x";
 	baseDesc = "46x30";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_ball.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 4.6x30 mmrounds";
 	
@@ -376,7 +376,7 @@ class 46x30_SD_x1 : 46x30_x1 {
 	bulletCount = 1;
 	baseName = "46x30_SD_x";
 	baseDesc = "4.6x30 mmSub Sonic";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_hp.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 4.6x30 mmSub Sonic rounds";
 	displayNameShort="SD";
@@ -748,7 +748,7 @@ class 46x30_HP_x1 : 46x30_x1 {
 	bulletCount = 1;
 	baseName = "46x30_HP_x";
 	baseDesc = "4.6x30 mmHollow Point";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_tracer.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 4.6x30 mmHollow Point rounds";
 	displayNameShort="HP";
@@ -1120,7 +1120,7 @@ class 46x30_TRACER_x1 : 46x30_x1 {
 	bulletCount = 1;
 	baseName = "46x30_TRACER_x";
 	baseDesc = "4.6x30 mmTracer";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_rubber.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 4.6x30 mmTracer rounds";
 	displayNameShort="Tracer";
@@ -1492,7 +1492,7 @@ class 46x30_RUBBER_x1 : 46x30_x1 {
 	bulletCount = 1;
 	baseName = "46x30_RUBBER_x";
 	baseDesc = "4.6x30 mmRubber";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_bt.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 4.6x30 mmRubber rounds";
 	displayNameShort="Rubber";
@@ -1864,7 +1864,7 @@ class 46x30_BT_x1 : 46x30_x1 {
 	bulletCount = 1;
 	baseName = "46x30_BT_x";
 	baseDesc = "4.6x30 mmBallistic Tip";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_sd.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 4.6x30 mmBallistic Tip rounds";
 	displayNameShort="BT";

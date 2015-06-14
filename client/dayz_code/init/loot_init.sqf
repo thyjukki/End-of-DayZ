@@ -15,8 +15,8 @@ for "_i" from 0 to ((count _config) - 1) do {
 			_weighted = [];
 			_j = 0;
 			for "_l" from 0 to ((count _itemChances) - 1) do {
+				/* JUKKI START DEBUGING
 				diag_log ("Item: "+str(_itemChances select _l));
-				// * JUKKI START DEBUGING
 				_class = "";
 				_iItem = ((_itemChances select _l) select 0);
 				_class = ((_itemChances select _l) select 1);
@@ -33,7 +33,7 @@ for "_i" from 0 to ((count _config) - 1) do {
 					};
 				};
 				
-				// */ JUKKI END
+				JUKKI END */ 
 				_weight = round (((_itemChances select _l) select 2) * 100);
 					for "_k" from 0 to (_weight - 1) do
 					{

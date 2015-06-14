@@ -5,7 +5,7 @@ class 57x28_x1 : baseBullet {
 	bulletCount = 1;
 	baseName = "57x28_x";
 	baseDesc = "57x28";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_ball.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 57x28 rounds";
 	
@@ -376,7 +376,7 @@ class 57x28_SD_x1 : 57x28_x1 {
 	bulletCount = 1;
 	baseName = "57x28_SD_x";
 	baseDesc = "57x28 Sub Sonic";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_sd.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 57x28 Sub Sonic rounds";
 	displayNameShort="SD";
@@ -748,7 +748,7 @@ class 57x28_HP_x1 : 57x28_x1 {
 	bulletCount = 1;
 	baseName = "57x28_HP_x";
 	baseDesc = "57x28 Hollow Point";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_hp.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 57x28 Hollow Point rounds";
 	displayNameShort="HP";
@@ -1120,7 +1120,7 @@ class 57x28_TRACER_x1 : 57x28_x1 {
 	bulletCount = 1;
 	baseName = "57x28_TRACER_x";
 	baseDesc = "57x28 Tracer";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_tracer.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 57x28 Tracer rounds";
 	displayNameShort="Tracer";
@@ -1492,7 +1492,7 @@ class 57x28_RUBBER_x1 : 57x28_x1 {
 	bulletCount = 1;
 	baseName = "57x28_RUBBER_x";
 	baseDesc = "57x28 Rubber";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_rubber.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 57x28 Rubber rounds";
 	displayNameShort="Rubber";
@@ -1864,7 +1864,7 @@ class 57x28_BT_x1 : 57x28_x1 {
 	bulletCount = 1;
 	baseName = "57x28_BT_x";
 	baseDesc = "57x28 Ballistic Tip";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_bt.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 57x28 Ballistic Tip rounds";
 	displayNameShort="BT";

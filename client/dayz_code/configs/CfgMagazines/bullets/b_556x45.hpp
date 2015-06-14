@@ -5,7 +5,7 @@ class 556x45_x1 : baseBullet {
 	bulletCount = 1;
 	baseName = "556x45_x";
 	baseDesc = "5.56x45mm";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_ball.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 5.56x45mm rounds";
 	
@@ -376,7 +376,7 @@ class 556x45_HP_x1 : 556x45_x1 {
 	bulletCount = 1;
 	baseName = "556x45_HP_x";
 	baseDesc = "5.56x45mm Hollow Point";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_hp.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 5.56x45mm Hollow Point rounds";
 	displayNameShort="HP";
@@ -748,7 +748,7 @@ class 556x45_TRACER_x1 : 556x45_x1 {
 	bulletCount = 1;
 	baseName = "556x45_TRACER_x";
 	baseDesc = "5.56x45mm Tracer";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_tracer.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 5.56x45mm Tracer rounds";
 	displayNameShort="Tracer";
@@ -1120,7 +1120,7 @@ class 556x45_RUBBER_x1 : 556x45_x1 {
 	bulletCount = 1;
 	baseName = "556x45_RUBBER_x";
 	baseDesc = "5.56x45mm Rubber";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_rubber.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 5.56x45mm Rubber rounds";
 	displayNameShort="Rubber";
@@ -1492,7 +1492,7 @@ class 556x45_BT_x1 : 556x45_x1 {
 	bulletCount = 1;
 	baseName = "556x45_BT_x";
 	baseDesc = "5.56x45mm Ballistic Tip";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_bt.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 5.56x45mm Ballistic Tip rounds";
 	displayNameShort="BT";
@@ -1865,7 +1865,7 @@ class 556x45_SD_x1 : 556x45_x1 {
 	bulletCount = 1;
 	baseName = "556x45_SD_x";
 	baseDesc = "5.56x45mm SD";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_sd.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 5.56x45mm SD rounds";
 	displayNameShort="SD";

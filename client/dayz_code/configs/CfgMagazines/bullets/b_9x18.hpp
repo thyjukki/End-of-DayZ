@@ -5,7 +5,7 @@ class 9x18_x : baseBullet {
 	bulletCount = 1;
 	baseName = "9x18_x";
 	baseDesc = "9x18";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_ball.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 9x18 mm rounds";
 	
@@ -384,7 +384,7 @@ class 9x18_SD_x : 9x18_x {
 	bulletCount = 1;
 	baseName = "9x18_SD_x";
 	baseDesc = "9x18 mmSub Sonic";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_sd.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 9x18 mm Sub Sonic rounds";
 	
@@ -763,7 +763,7 @@ class 9x18_HP_x : 9x18_x {
 	bulletCount = 1;
 	baseName = "9x18_HP_x";
 	baseDesc = "9x18 mm Hollow Point";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_hp.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 9x18 mm Hollow Point rounds";
 	
@@ -1142,7 +1142,7 @@ class 9x18_TRACER_x : 9x18_x {
 	bulletCount = 1;
 	baseName = "9x18_TRACER_x";
 	baseDesc = "9x18 mmTracer";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_tracer.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 9x18 mm Tracer rounds";
 	
@@ -1521,7 +1521,7 @@ class 9x18_RUBBER_x : 9x18_x {
 	bulletCount = 1;
 	baseName = "9x18_RUBBER_x";
 	baseDesc = "9x18 mmRubber";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_rubber.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 9x18 mm Rubber rounds";
 	
@@ -1900,7 +1900,7 @@ class 9x18_BT_x : 9x18_x {
 	bulletCount = 1;
 	baseName = "9x18_BT_x";
 	baseDesc = "9x18 mm BT";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_bt.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 9x18 mm Ballistic Tip rounds";
 	
