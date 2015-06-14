@@ -62,6 +62,10 @@ if (_unit == player) then {
                     PVDZ_send = [_source,"Humanity",[_source,_humanityHit,30]];
                     publicVariableServer "PVDZ_send";
                 };
+			
+				_dist = _unit distance _source;
+				PVDZ_plr_Hit = [_unit, _source, currentweapon _source, _dist];
+				publicVariableServer "PVDZ_plr_Hit";
             };
         };
     };

@@ -10,8 +10,8 @@ class Mosin_Nagant_Base: Rifle
 	cursoraimon = "\ca\Weapons\Data\clear_empty";
 	ballisticsComputer = 0;
 	model = "z\addons\dayz_communityweapons\models\mosin_nagant\mosin_1891_animated";
-	displayName = "Mosin Nagant (CUSTOM)";
-	descriptionShort="<br />Attachments: <br />Ammo: Mosin Nagant Ammo";
+	displayName = "Mosin Nagant";
+	descriptionShort="<br />Ammo: 7.62x54R mm";
 	picture = "\z\addons\dayz_communityweapons\models\mosin_nagant\images\1891.paa";
 	drySound[] = {"Ca\sounds\Weapons\rifles\dry",0.01,1,10};
 	modelOptics = "-";

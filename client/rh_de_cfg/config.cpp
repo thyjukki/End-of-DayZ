@@ -143,6 +143,7 @@ class cfgWeapons
 	class Pistol;
 	class RH_deagle: Pistol
 	{
+		descriptionShort="<br />Ammo: .50 AE";
 		scope=2;
 		model="\RH_de\RH_deagle.p3d";
 		modelOptics="-";
@@ -285,6 +286,7 @@ class cfgWeapons
 		{
 			"RH_6Rnd_44_Mag"
 		};
+		descriptionShort="<br />Ammo: .44 Magnum";
 		dispersion=0.008500;
 		ffCount=1;
 		recoil="RH_45ACP_PistolRecoil";
@@ -345,6 +347,7 @@ class cfgWeapons
 		{
 			"RH_6Rnd_44_Mag"
 		};
+		descriptionShort="<br />Ammo: .44 magnum";
 		dispersion=0.008500;
 		ffCount=1;
 		recoil="RH_45ACP_PistolRecoil";
@@ -399,6 +402,7 @@ class cfgWeapons
 		{
 			"RH_6Rnd_357_Mag"
 		};
+		descriptionShort="<br />Ammo: .357";
 		dispersion=0.008500;
 		ffCount=1;
 		recoil="RH_45ACP_PistolRecoil";
@@ -463,6 +467,7 @@ class cfgWeapons
 			"RH_13Rnd_9x19_bhp_rubber",
 			"RH_13Rnd_9x19_bhp_bt"
 		};
+		descriptionShort="<br />Ammo: 9x19 mm";
 		dispersion=0.011000;
 		ffCount=1;
 		recoil="RH_9x19_PistolRecoil";
@@ -530,6 +535,7 @@ class cfgWeapons
 			"RH_15Rnd_9x19_usp_rubber",
 			"RH_15Rnd_9x19_usp_bt"
 		};
+		descriptionShort="<br />Ammo: 9x19 mm";
 		dispersion=0.011000;
 		ffCount=1;
 		recoil="RH_9x19_PistolRecoil";
@@ -603,6 +609,7 @@ class cfgWeapons
 			"RH_8Rnd_9x19_p38_rubber",
 			"RH_8Rnd_9x19_p38_bt"
 		};
+		descriptionShort="<br />Ammo: 9x19 mm";
 		dispersion=0.011000;
 		ffCount=1;
 		recoil="RH_pistolBase";
@@ -668,6 +675,7 @@ class cfgWeapons
 			"RH_7Rnd_32cal_ppk_rubber",
 			"RH_7Rnd_32cal_ppk_bt"
 		};
+		descriptionShort="<br />Ammo: .32 ACP";
 		dispersion=0.011000;
 		ffCount=1;
 		recoil="RH_vz61Recoil";
@@ -744,6 +752,7 @@ class cfgWeapons
 			"RH_8Rnd_9x19_Mk_rubber",
 			"RH_8Rnd_9x19_Mk_bt"
 		};
+		descriptionShort="<br />Ammo: 9x19 mm";
 		dispersion=0.011000;
 		ffCount=1;
 		recoil="RH_9x19_PistolRecoil";
@@ -822,6 +831,7 @@ class cfgWeapons
 			"RH_8Rnd_9x19_Mk_rubber",
 			"RH_8Rnd_9x19_Mk_bt"
 		};
+		descriptionShort="<br />Ammo: 9x19 mm";
 		dispersion=0.011000;
 		ffCount=1;
 		recoil="RH_9x19_PistolRecoil";
@@ -928,6 +938,7 @@ class cfgWeapons
 			"RH_15Rnd_9x19_usp_rubber",
 			"RH_15Rnd_9x19_usp_bt"
 		};
+		descriptionShort="<br />Ammo: 9x19 mm";
 		dispersion=0.011000;
 		ffCount=1;
 		recoil="RH_9x19_PistolRecoil";
@@ -1016,6 +1027,7 @@ class cfgWeapons
 			"RH_15Rnd_9x19_usp_rubber",
 			"RH_15Rnd_9x19_usp_bt"
 		};
+		descriptionShort="<br />Ammo: 9x19 mm";
 		dispersion=0.008100;
 		ffCount=1;
 		recoil="RH_9x19_PistolRecoil";
@@ -1091,6 +1103,7 @@ class cfgWeapons
 			"RH_12Rnd_45cal_usp_rubber",
 			"RH_12Rnd_45cal_usp_bt"
 		};
+		descriptionShort="<br />Ammo: .45 ACP";
 		dispersion=0.008000;
 		ffCount=1;
 		recoil="RH_45ACP_PistolRecoil";
@@ -1170,6 +1183,7 @@ class cfgWeapons
 			"7Rnd_45ACP_1911_rubber",
 			"7Rnd_45ACP_1911_bt"
 		};
+		descriptionShort="<br />Ammo: .45 ACP";
 		dispersion=0.008500;
 		ffCount=1;
 		aiRateOfFire=2;
@@ -1251,6 +1265,7 @@ class cfgWeapons
 			"7Rnd_45ACP_1911_rubber",
 			"7Rnd_45ACP_1911_bt"
 		};
+		descriptionShort="<br />Ammo: .45 ACP";
 		dispersion=0.007500;
 		ffCount=1;
 		recoil="RH_45ACP_PistolRecoil";
@@ -1321,6 +1336,7 @@ class cfgWeapons
 			"7Rnd_45ACP_1911_rubber",
 			"7Rnd_45ACP_1911_bt"
 		};
+		descriptionShort="<br />Ammo: .45 ACP";
 		dispersion=0.008500;
 		ffCount=1;
 		aiRateOfFire=2;
@@ -1386,6 +1402,7 @@ class cfgWeapons
 			"RH_8Rnd_762_tt33_rubber",
 			"RH_8Rnd_762_tt33_bt"
 		};
+		descriptionShort="<br />Ammo: 7.62x25 mm";
 		dispersion=0.008500;
 		ffCount=1;
 		aiRateOfFire=1.500000;
@@ -1451,6 +1468,7 @@ class cfgWeapons
 			"RH_10Rnd_22LR_mk2_rubber",
 			"RH_10Rnd_22LR_mk2_bt"
 		};
+		descriptionShort="<br />Ammo: .22 LR";
 		dispersion=0.008500;
 		ffCount=1;
 		aiRateOfFire=2;
@@ -1501,6 +1519,7 @@ class cfgWeapons
 			"15Rnd_9x19_M9_rubber",
 			"15Rnd_9x19_M9_bt"
 		};
+		descriptionShort="<br />Ammo: 9x19 mm";
 		modes[]=
 		{
 			"Single",
@@ -1635,6 +1654,7 @@ class cfgWeapons
 			"15Rnd_9x19_M9_rubber",
 			"15Rnd_9x19_M9_bt"
 		};
+		descriptionShort="<br />Ammo: 9x19 mm";
 		modes[]=
 		{
 			"Single"
@@ -1731,6 +1751,7 @@ class cfgWeapons
 			"15Rnd_9x19_M9_rubber",
 			"15Rnd_9x19_M9_bt"
 		};
+		descriptionShort="<br />Ammo: 9x19 mm";
 		modes[]=
 		{
 			"Single"
@@ -1840,6 +1861,7 @@ class cfgWeapons
 			"17Rnd_9x19_glock17_rubber",
 			"17Rnd_9x19_glock17_bt"
 		};
+		descriptionShort="<br />Ammo: 9x19 mm";
 		modes[]=
 		{
 			"Single",
@@ -1986,6 +2008,7 @@ class cfgWeapons
 			"17Rnd_9x19_glock17_rubber",
 			"17Rnd_9x19_glock17_bt"
 		};
+		descriptionShort="<br />Ammo: 9x19 mm";
 		modes[]=
 		{
 			"Single"
@@ -2163,6 +2186,7 @@ class cfgWeapons
 			"17Rnd_9x19_glock17_rubber",
 			"17Rnd_9x19_glock17_bt"
 		};
+		descriptionShort="<br />Ammo: 9x19 mm";
 		modes[]=
 		{
 			"Single"
@@ -2246,6 +2270,7 @@ class cfgWeapons
 			"RH_20Rnd_32cal_vz61_rubber",
 			"RH_20Rnd_32cal_vz61_bt"
 		};
+		descriptionShort="<br />Ammo: .32 ACP";
 		modes[]=
 		{
 			"Single",
@@ -2365,6 +2390,7 @@ class cfgWeapons
 			"RH_30Rnd_9x19_tec_rubber",
 			"RH_30Rnd_9x19_tec_bt"
 		};
+		descriptionShort="<br />Ammo: 9x19 mm";
 		modes[]=
 		{
 			"Single",
@@ -2490,6 +2516,7 @@ class cfgWeapons
 			"RH_9mm_32RND_Mag_rubber",
 			"RH_9mm_32RND_Mag_bt"
 		};
+		descriptionShort="<br />Ammo: 9x19 mm";
 		modes[]=
 		{
 			"Single",
