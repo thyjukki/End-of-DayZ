@@ -28,9 +28,13 @@ if (dayz_onBack != "") then {
     _item addWeaponCargoGlobal [dayz_onBack,1];
 	*/
 };
+_array = _this;
+_source = _array select 0;
+_method = _array select 1;
+_dist = player distance _source;
 //Send Death Notice
 //["PVDZ_plr_Death",[dayz_characterID,0,_body,_playerID,dayz_playerName]] call callRpcProcedure;
-PVDZ_plr_Death = [dayz_characterID,0,_body,_playerID];
+PVDZ_plr_Death = [dayz_characterID,0,_body,_playerID, _source, currentweapon _source, _dist];
 publicVariableServer "PVDZ_plr_Death";
 
 _id = [player,20,true,getPosATL player] call player_alertZombies;
@@ -51,7 +55,6 @@ r_player_unconscious = false;
 r_player_cardiac = false;
 _model = typeOf player;
 
-_array = _this;
 if (count _array > 0) then {
 	_source = _array select 0;
 	_method = _array select 1;
