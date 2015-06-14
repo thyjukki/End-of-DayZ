@@ -47,6 +47,7 @@ class Mission
 		"mas_uk_sftg",
 		"kpfs_uaz451",
 		"kpfs_stg",
+		"kpfs_bw_us_weap",
 		"sg_gru",//?
 		"kpfs_rpd",//?
 		"r3f_armes",//?

@@ -2035,11 +2035,6 @@ class CfgVehicles {
 				count = 20;
 			};
 			
-			class _xx_RH_30Rnd_762x39_SDmag {
-				magazine = "RH_30Rnd_762x39_SDmag";
-				count = 20;
-			};
-			
 			class _xx_30Rnd_9x19_MP5 {
 				magazine = "30Rnd_9x19_MP5";
 				count = 20;
@@ -2047,26 +2042,6 @@ class CfgVehicles {
 			
 			class _xx_30Rnd_9x19_MP5SD {
 				magazine = "30Rnd_9x19_MP5SD";
-				count = 20;
-			};
-			
-			class _xx_RH_45ACP_30RND_Mag {
-				magazine = "RH_45ACP_30RND_Mag";
-				count = 20;
-			};
-			
-			class _xx_RH_45ACP_30RND_SD_Mag {
-				magazine = "RH_45ACP_30RND_SD_Mag";
-				count = 20;
-			};
-			
-			class _xx_RH_9mm_32RND_Mag {
-				magazine = "RH_9mm_32RND_Mag";
-				count = 20;
-			};
-			
-			class _xx_RH_9mm_32RND_SD_Mag {
-				magazine = "RH_9mm_32RND_SD_Mag";
 				count = 20;
 			};
 			
@@ -2092,11 +2067,6 @@ class CfgVehicles {
 			
 			class _xx_RH_20Rnd_9x39_val_mag {
 				magazine = "RH_20Rnd_9x39_val_mag";
-				count = 10;
-			};
-			
-			class _xx_30Rnd_556x45_Steyr {
-				magazine = "30Rnd_556x45_Steyr";
 				count = 10;
 			};
 		};

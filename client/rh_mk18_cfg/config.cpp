@@ -20,7 +20,7 @@ class CfgPatches
 			"RH_Mk18gl",
 			"RH_Mk18glaim",
 			"RH_Mk18glacog",
-			"RH_Mk18glaeot",
+			"RH_Mk18gleot",
 			"RH_mk18d",
 			"RH_Mk18daim",
 			"RH_Mk18dacog",
@@ -307,7 +307,7 @@ class CfgWeapons
 				text = "Attach M203";
 				script = "spawn player_useAttchment;";
 				att = "Attachment_M203";
-				out = "RH_Mk18glaeot";
+				out = "RH_Mk18gleot";
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Silencer";
@@ -783,7 +783,7 @@ class CfgWeapons
 			class UseAtt3 : UseAtt1{
 				text = "Attach Holo";
 				att = "Attachment_Holo";
-				out = "RH_Mk18glaeot";
+				out = "RH_Mk18gleot";
 			};
 		};
 		displayName="Mk18 M203";
@@ -865,7 +865,7 @@ class CfgWeapons
 			class UseAtt3 : UseAtt1{
 				text = "Attach Holo";
 				att = "Attachment_Holo";
-				out = "RH_Mk18glaeot";
+				out = "RH_Mk18gleot";
 			};
 		};
 		displayName="Mk18 desert M203";
