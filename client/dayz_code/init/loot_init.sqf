@@ -16,6 +16,23 @@ for "_i" from 0 to ((count _config) - 1) do {
 			_j = 0;
 			for "_l" from 0 to ((count _itemChances) - 1) do {
 			//diag_log ("Item: "+str(_itemChances select _l));
+			// * JUKKI START DEBUGING
+			_iItem = ((_itemChances select _l) select 1);
+			_class = ((_itemChances select _l) select 3);
+			switch (_class) do {
+				case "weapon": {
+					player addWeapon _iItem;
+				};
+				case "magazine": {
+					player addMagazine _iItem;
+				};
+				case "object": {
+					//Item is one object as a special weaponholder
+					_item = createVehicle [_iItem, (getPos player), [], 0.0, "CAN_COLLIDE"];
+				};
+			};
+			
+			// */ JUKKI END
 			_weight = round (((_itemChances select _l) select 2) * 100);
 				for "_k" from 0 to (_weight - 1) do
 				{
@@ -45,7 +62,7 @@ _config = missionConfigFile >> "cfgLoot";
 		//_items = [];
 		for "_l" from 0 to ((count _itemChances) - 1) do {
 			//diag_log ("Item: "+str(_itemChances select _l));
-			player addMagazine (_itemChances select _l);
+			//player addMagazine (_itemChances select _l);
 			_weight = round (((_itemChances select _l) select 1) * 100);
 			for "_k" from 0 to (_weight - 1) do {
 				_weighted set [_j + _k, _l];

@@ -22,6 +22,24 @@ if (_mag_cur <= 10) then {
 
 	player addMagazine _giving;
 } else {
+	while {_mag_cur > 100} do {
+		_mag_cur = _mag_cur - 100;
+		_giving = _toBoGiven + str(100);
+		_isOK = [player,_giving] call BIS_fnc_invAdd;
+		if (!_isOK) then {
+			_nearByPile = nearestObjects [getPosATL player, ["WeaponHolder","WeaponHolderBase"], 2];
+			_pile = if (count _nearByPile > 0) then {_nearByPile select 0};
+			if (count _nearByPile == 0) then {
+				_pos = player modeltoWorld [0,1,0];
+				_pos set [2, 0];
+				//diag_log format [ "%1 itempos:%2 _nearByPile:%3", __FILE__, _pos, _nearByPile];
+				_pile = createVehicle ["WeaponHolder", _pos, [], 0.0, "CAN_COLLIDE"];
+				_pile setPosATL _pos;
+			};
+			_pile addMagazineCargoGlobal [_giving,1];
+		};
+	};
+
 	if (_mag_cur > 50) then {
 		_mag_cur = _mag_cur - 50;
 		_giving = _toBoGiven + str(50);
@@ -82,8 +100,6 @@ if (_mag_cur <= 10) then {
 };
 
 player addMagazine getText (_config >> "emptyMag");
-closedialog 0;
 cutText [format["Unloaded %1 %2 rounds from %3",getText (configFile >> "CfgMagazines" >> _toBoGiven >> "baseDesc"),getText (_config >> "displayName")], "PLAIN DOWN"];
 
-_selectedSlot setIDCAmmoCount 0;
 sleep 1;

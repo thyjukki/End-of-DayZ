@@ -41,6 +41,11 @@ if (r_ammo_selected_mode == 1) then
 		
 	} else {
 	
+		while {_total_ammo > 100} then {
+			_total_ammo = _total_ammo - 100;
+			player addMagazine (_toBoGiven + "100");
+		};
+	
 		if (_total_ammo > 50) then {
 			_total_ammo = _total_ammo - 50;
 			player addMagazine (_toBoGiven + "50");

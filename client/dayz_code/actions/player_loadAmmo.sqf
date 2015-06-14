@@ -112,6 +112,29 @@ if (r_ammo_selected_mode == 2) then
 		}
 		else
 		{
+			while {_extra_ammo > 100} do
+			{
+				_extra_ammo = _extra_ammo - 100;
+				_giving = _toBoGiven + str(100);
+				_isOK = [player,_giving] call BIS_fnc_invAdd;
+				if (!_isOK) then
+				{
+					_nearByPile = nearestObjects [getPosATL player, ["WeaponHolder","WeaponHolderBase"], 2];
+					_pile = if (count _nearByPile > 0) then {_nearByPile select 0};
+
+					if (count _nearByPile == 0) then
+					{
+						_pos = player modeltoWorld [0,1,0];
+						_pos set [2, 0];
+						//diag_log format [ "%1 itempos:%2 _nearByPile:%3", __FILE__, _pos, _nearByPile];
+						_pile = createVehicle ["WeaponHolder", _pos, [], 0.0, "CAN_COLLIDE"];
+						_pile setPosATL _pos;
+					};
+
+					_pile addMagazineCargoGlobal [_giving,1];
+				};
+			};
+
 			if (_extra_ammo > 50) then
 			{
 				_extra_ammo = _extra_ammo - 50;
