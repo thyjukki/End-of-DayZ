@@ -83,56 +83,7 @@ class cfgRecoils
 	RH_vz61Recoil[]={0,0.006000,0.020000,0.005000,0.006000,0.020000,0.090000,0,-0.007000,0.100000,0,0};
 	RH_9x19_SMG_Recoil[]={0,0.004000,-0.001000,0.010000,0.004000,0.006000,0.020000,0.002000,0.006000,0.100000,0,0};
 };
-class CfgAmmo
-{
-	class Default;
-	class BulletCore;
-	class BulletBase;
 
-	class RH_44mag_ball: BulletBase
-	{
-		hit=8.500000;
-		cost=1;
-		cartridge="FxCartridge_Small";
-		typicalSpeed=260;
-		airFriction=-0.001500;
-		caliber=0.500000;
-	};
-	class RH_357mag_ball: BulletBase
-	{
-		hit=8.900000;
-		cost=1;
-		cartridge="FxCartridge_Small";
-		typicalSpeed=260;
-		airFriction=-0.001500;
-		caliber=0.300000;
-	};
-};
-class CfgMagazines
-{
-	class Default;
-	class CA_Magazine;
-	class RH_6Rnd_44_Mag: CA_Magazine
-	{
-		scope=2;
-		displayName=".44 Magnum";
-		picture="\RH_de\inv\m_44m.paa";
-		type=16;
-		ammo="RH_44mag_ball";
-		count=6;
-		initSpeed=421;
-	};
-	class RH_6Rnd_357_Mag: CA_Magazine
-	{
-		scope=2;
-		displayName=".357 Magnum";
-		picture="\RH_de\inv\m_44m.paa";
-		type=16;
-		ammo="RH_357mag_ball";
-		count=6;
-		initSpeed=421;
-	};
-};
 class Mode_SemiAuto;
 class Mode_Burst;
 class Mode_FullAuto;
@@ -284,7 +235,41 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
-			"RH_6Rnd_44_Mag"
+			"44_x1",
+			"44_x2",
+			"44_x3",
+			"44_x4",
+			"44_x5",
+			"44_x6",
+			"44_HP_x1",
+			"44_HP_x2",
+			"44_HP_x3",
+			"44_HP_x4",
+			"44_HP_x5",
+			"44_HP_x6",
+			"44_TRACER_x1",
+			"44_TRACER_x2",
+			"44_TRACER_x3",
+			"44_TRACER_x4",
+			"44_TRACER_x5",
+			"44_TRACER_x6",
+			"44_RUBBER_x1",
+			"44_RUBBER_x2",
+			"44_RUBBER_x3",
+			"44_RUBBER_x4",
+			"44_RUBBER_x5",
+			"44_RUBBER_x6",
+			"44_BT_x1",
+			"44_BT_x2",
+			"44_BT_x3",
+			"44_BT_x4",
+			"44_BT_x5",
+			"44_BT_x6",
+			"RH_6Rnd_44_Mag",
+			"RH_6Rnd_44_Mag_hp",
+			"RH_6Rnd_44_Mag_tracer",
+			"RH_6Rnd_44_Mag_rubber",
+			"RH_6Rnd_44_Mag_bt"
 		};
 		descriptionShort="<br />Ammo: .44 Magnum";
 		dispersion=0.008500;
@@ -345,7 +330,41 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
-			"RH_6Rnd_44_Mag"
+			"44_x1",
+			"44_x2",
+			"44_x3",
+			"44_x4",
+			"44_x5",
+			"44_x6",
+			"44_HP_x1",
+			"44_HP_x2",
+			"44_HP_x3",
+			"44_HP_x4",
+			"44_HP_x5",
+			"44_HP_x6",
+			"44_TRACER_x1",
+			"44_TRACER_x2",
+			"44_TRACER_x3",
+			"44_TRACER_x4",
+			"44_TRACER_x5",
+			"44_TRACER_x6",
+			"44_RUBBER_x1",
+			"44_RUBBER_x2",
+			"44_RUBBER_x3",
+			"44_RUBBER_x4",
+			"44_RUBBER_x5",
+			"44_RUBBER_x6",
+			"44_BT_x1",
+			"44_BT_x2",
+			"44_BT_x3",
+			"44_BT_x4",
+			"44_BT_x5",
+			"44_BT_x6",
+			"RH_6Rnd_44_Mag",
+			"RH_6Rnd_44_Mag_hp",
+			"RH_6Rnd_44_Mag_tracer",
+			"RH_6Rnd_44_Mag_rubber",
+			"RH_6Rnd_44_Mag_bt"
 		};
 		descriptionShort="<br />Ammo: .44 magnum";
 		dispersion=0.008500;
@@ -400,7 +419,41 @@ class cfgWeapons
 		};
 		magazines[]=
 		{
-			"RH_6Rnd_357_Mag"
+			"357_x1",
+			"357_x2",
+			"357_x3",
+			"357_x4",
+			"357_x5",
+			"357_x6",
+			"357_HP_x1",
+			"357_HP_x2",
+			"357_HP_x3",
+			"357_HP_x4",
+			"357_HP_x5",
+			"357_HP_x6",
+			"357_TRACER_x1",
+			"357_TRACER_x2",
+			"357_TRACER_x3",
+			"357_TRACER_x4",
+			"357_TRACER_x5",
+			"357_TRACER_x6",
+			"357_RUBBER_x1",
+			"357_RUBBER_x2",
+			"357_RUBBER_x3",
+			"357_RUBBER_x4",
+			"357_RUBBER_x5",
+			"357_RUBBER_x6",
+			"357_BT_x1",
+			"357_BT_x2",
+			"357_BT_x3",
+			"357_BT_x4",
+			"357_BT_x5",
+			"357_BT_x6",
+			"RH_6Rnd_357_Mag",
+			"RH_6Rnd_357_Mag_hp",
+			"RH_6Rnd_357_Mag_tracer",
+			"RH_6Rnd_357_Mag_rubber",
+			"RH_6Rnd_357_Mag_bt"
 		};
 		descriptionShort="<br />Ammo: .357";
 		dispersion=0.008500;

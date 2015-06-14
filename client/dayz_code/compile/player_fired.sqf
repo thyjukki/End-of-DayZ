@@ -24,6 +24,15 @@ if (player ammo _weapon == 0) then {
 		diag_log _message; */
 	};
 };
+
+_giveMag = getText (configFile >> "CfgMagazines" >> _magazine >> "takeOne");
+if (_giveMag != "") then {
+	player addMagazine _giveMag;
+	/* _message = format ["Weapons %1 ammo %2 (%3) out, giving mag %4", _weapon, _ammo, _projectile ,_magazine];
+	hint _message;
+	diag_log _message; */
+};
+
 if (_ammo isKindOf "Melee") exitWith {
 	// Added Nutrition-Factor for work
 	//[Type,Blood[Calories,Hunger,Thrist,Temp]

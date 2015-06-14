@@ -317,13 +317,9 @@ class CfgMissions
 class CfgSurvival {
 	class Inventory {
 		class Default {
-			RandomMagazines = 3;
-			//weapons[] = {"Makarov"};
-			//GuaranteedMagazines[] = {"ItemBandage","8Rnd_9x18_Makarov","8Rnd_9x18_Makarov","HandRoadFlare"};
+			weapons[] = {"ItemRadio"};
 			GuaranteedMagazines[] = {"ItemBandage","HandRoadFlare"};
-			RandomPossibilitieMagazines[] = {"ItemBandage","ItemPainkiller"};
 			backpackWeapon = "";
-			//backpack = "DZ_Patrol_Pack_EP1";
 		};
 	};
 	class Meat {

@@ -323,7 +323,6 @@ class cfgWeapons
 			"9x18_TRACER_x1",
 			"9x18_RUBBER_x1",
 			"9x18_BT_x1",
-			"8Rnd_9x18_Makarov_Empty",
 			"8Rnd_9x18_Makarov",
 			"8Rnd_9x18_MakarovSD",
 			"8Rnd_9x18_Makarov_hp",
@@ -688,6 +687,7 @@ class cfgWeapons
 			1,
 			20
 		};
+		descriptionShort="<br />Ammo: 7.62x39 mm";
 		magazines[] = 
 		{
 			"762x39_x1",
@@ -1082,9 +1082,6 @@ class cfgWeapons
 			"this",
 			"RH_gp30Muzzle"
 		};
-		class RH_AKMMuzzle: RH_akm
-		{
-		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
 			displayName="GP30 Grenadelauncher";
@@ -1149,6 +1146,7 @@ class cfgWeapons
 		optics=1;
 		dexterity=1.700000;
 		displayName="AN-94";
+		descriptionShort="<br />Ammo: 5.45x39 mm";
 		reloadMagazineSound[]=
 		{
 			"\RH_aks\sound\an94_reload.wss",
@@ -1434,6 +1432,7 @@ class cfgWeapons
 			1,
 			20
 		};
+		descriptionShort="<br />Ammo: 7.62x54R mm";
 		dispersion=0.001000;
 		recoil="RH_SVDRecoil";
 		recoilProne="RH_SVDRecoilProne";
@@ -1529,6 +1528,7 @@ class cfgWeapons
 		picture="\RH_aks\inv\aks74u.paa";
 		UiPicture="\CA\weapons\data\Ico\i_regular_CA.paa";
 		displayName="AKs-74u";
+		descriptionShort="<br />Ammo: 5.45x39 mm";
 		reloadMagazineSound[]=
 		{
 			"\RH_aks\sound\aks74u_reload.wss",
@@ -2042,6 +2042,7 @@ class cfgWeapons
 			};
 		};
 		scope=2;
+		descriptionShort="<br />Ammo: 7.62x39 mm";
 		opticsZoomInit=0.375000;
 		model="\RH_aks\RH_rk95.p3d";
 		picture="\RH_aks\inv\rk95.paa";

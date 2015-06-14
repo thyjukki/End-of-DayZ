@@ -3,6 +3,11 @@ class Flare : GrenadeLauncher {
 		class MolotovCocktailMuzzle : ThrowMuzzle {
 			displayName = $STR_ACTION_THROW;
 			magazines[] = {
+				"SmokeShell", 
+				"SmokeShellRed", 
+				"SmokeShellGreen", 
+				"HandGrenade_east", 
+				"HandGrenade_west", 
 				"TrashJackDaniels", 
 				"ItemSodaEmpty", 
 				"TrashTinCan",

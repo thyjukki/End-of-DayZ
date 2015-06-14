@@ -30,6 +30,7 @@ class 30Rnd_762x39_AK47_Empty: emptiedMagazine {
 
 class 30Rnd_762x39_AK47 : CA_Magazine
 {
+	scope=2;
 	displayname = "AK-47 Mag";
 	descriptionshort = "Caliber:7.62x39mm<br/>Rounds: 30<br/>AK47 based weapons";
 	model = "z\addons\dayz_communityweapons\magazines\ak47.p3d";
@@ -43,6 +44,7 @@ class 30Rnd_762x39_AK47 : CA_Magazine
 
 
 class 30Rnd_762x39_AK47_SD: 30Rnd_762x39_AK47 {
+	scope=2;
 	ammo = "B_762x39_SD";
 	displayname = "AK-47 SD Mag";
 	initSpeed=320;
@@ -119,6 +121,7 @@ class vil_40Rnd_762x39_AK47_Empty: emptiedMagazine {
 
 class vil_40Rnd_762x39_AK47 : CA_Magazine
 {
+	scope=2;
 	displayname = "AK47 Long Mag";
 	descriptionshort = "Caliber:7.62x39mm <br/>Rounds: 40<br/>Used In: AK47 based weapons";
 	picture = "\vilas_aks\ico\m_vil_rpk_ca.paa";
@@ -210,6 +213,7 @@ class RH_75Rnd_762x39_mag_Empty: emptiedMagazine {
 
 class RH_75Rnd_762x39_mag: 30Rnd_762x39_AK47
 {
+	scope=2;
 	displayName="AK47 DrumMag";
 	descriptionshort = "Caliber:7.62x39mm <br/>Rounds: 75 <br/>Used in: AK47 based weapons";
 	picture="\RH_aks\inv\m_rpk.paa";
@@ -297,6 +301,7 @@ class 30Rnd_762x39_SA58_Empty: emptiedMagazine {
 
 class 30Rnd_762x39_SA58 : CA_Magazine
 {
+	scope=2;
 	displayname = "SA58 Mag";
 	descriptionshort = "Caliber:7.62x39mm<br/>Rounds: 30<br/>AK47 based weapons";
 	model = "z\addons\dayz_communityweapons\magazines\ak47.p3d";
@@ -388,6 +393,7 @@ class KPFS_100Rnd_762x39_RPD_Empty: emptiedMagazine {
 
 class KPFS_100Rnd_762x39_RPD : CA_Magazine
 {
+	scope=2;
 	displayname = "RPD Mag";
 	descriptionshort = "Caliber:7.62x39mm<br/>Rounds: 100<br/>Used in: RPD";
 	picture="\kpfs_weapons2\data\icons\m_rpd_ca.paa";
@@ -478,6 +484,7 @@ class KPFS_10Rnd_762x39_SKS_Empty: emptiedMagazine {
 
 class KPFS_10Rnd_762x39_SKS : CA_Magazine
 {
+	scope=2;
 	displayname = "SKS Mag";
 	descriptionshort = "Caliber:7.62x39mm <br/>Rounds: 10<br/>Used In: SKS";
 	picture="\Ca\weapons\Data\Equip\m_M24_CA.paa";
@@ -490,10 +497,10 @@ class KPFS_10Rnd_762x39_SKS : CA_Magazine
 
 
 class KPFS_10Rnd_762x39_SKS_SD: KPFS_10Rnd_762x39_SKS {
+	scope=2;
 	ammo = "B_762x39_SD";
 	displayname = "SKS SD Mag";
 	initSpeed=320;
-	scope = 2;
 	baseBullet = 762x39_SD_x;
 	displayNameShort="SD";
 };

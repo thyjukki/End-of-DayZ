@@ -35,7 +35,7 @@ class B_9x18_RUBBER : B_9x18_Ball {
 	airfriction = -0.02;
 	caliber = 2;
 	hit = 1;
-	typicalspeed = 250;
+	typicalspeed = 310;
 	isRubber = 1;
 };
 

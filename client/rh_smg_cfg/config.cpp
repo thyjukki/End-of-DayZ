@@ -209,6 +209,7 @@ class cfgWeapons
 		displayName="HK 53";
 		UiPicture="\CA\weapons\data\Ico\i_regular_CA.paa";
 		picture="\RH_smg\inv\hk53.paa";
+		descriptionShort="<br />Ammo: 5.56x45 mm";
 		reloadMagazineSound[]=
 		{
 			"\RH_smg\sound\HK53_reload.wss",
@@ -980,6 +981,7 @@ class cfgWeapons
 				out = "RH_krisssd";
 			};
 		};
+		descriptionShort="<br />Ammo: .45 ACP";
 		displayName="TDI Kriss";
 		model="\RH_smg\RH_kriss.p3d";
 		picture="\RH_smg\inv\kriss.paa";
@@ -1285,13 +1287,14 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_uzisd";
 			};
 		};
 		displayName="UZI";
 		model="\RH_smg\RH_uzi.p3d";
 		picture="\RH_smg\inv\uzi.paa";
+		descriptionShort="<br />Ammo: 9x19 mm";
 		magazines[]=
 		{
 			"9x19_x1",
@@ -1396,7 +1399,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_uzi";
 			};
 		};
@@ -1454,6 +1457,7 @@ class cfgWeapons
 	class RH_mac10: RH_mp5a5
 	{
 		delete ItemActions;
+		descriptionShort="<br />Ammo: 9x19 mm";
 		scope=2;
 		modelOptics="-";
 		optics=1;
@@ -1599,10 +1603,11 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_tmpsd";
 			};
 		};
+		descriptionShort="<br />Ammo: 9x19 mm";
 		displayName="Steyr TMP";
 		model="\RH_smg\RH_tmp.p3d";
 		picture="\RH_smg\inv\tmp.paa";
@@ -1667,7 +1672,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_tmpsdaim";
 			};
 		};
@@ -1691,7 +1696,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_tmpsdeot";
 			};
 		};
@@ -1720,7 +1725,7 @@ class cfgWeapons
 			class UseAtt2 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_tmp";
 			};
 		};
@@ -1772,7 +1777,7 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_tmpaim";
 			};
 		};
@@ -1795,7 +1800,7 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_tmpeot";
 			};
 		};
@@ -1822,6 +1827,7 @@ class cfgWeapons
 				out = "RH_pp2000eot";
 			};
 		};
+		descriptionShort="<br />Ammo: 9x19 mm";
 		displayName="PP-2000";
 		model="\RH_smg\RH_pp2000.p3d";
 		picture="\RH_smg\inv\pp2000.paa";
@@ -1926,10 +1932,11 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_umpsd";
 			};
 		};
+		descriptionShort="<br />Ammo: .45 ACP";
 		scope=2;
 		displayName="HK UMP45";
 		model="\RH_smg\RH_UMP.p3d";
@@ -2038,7 +2045,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_umpsdaim";
 			};
 		};
@@ -2062,7 +2069,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_umpsdeot";
 			};
 		};
@@ -2101,7 +2108,7 @@ class cfgWeapons
 			class UseAtt2 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_ump";
 			};
 		};
@@ -2153,7 +2160,7 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_umpaim";
 			};
 		};
@@ -2176,7 +2183,7 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_umpeot";
 			};
 		};
@@ -2220,6 +2227,7 @@ class cfgWeapons
 			1,
 			25
 		};
+		descriptionShort="<br />Ammo: 5.7x28 mm";
 		magazines[]=
 		{
 			"57x28_x1",
@@ -2317,7 +2325,7 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_p90isd";
 			};
 		};
@@ -2337,7 +2345,7 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_p90sdaim";
 			};
 		};
@@ -2360,7 +2368,7 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_p90sdeot";
 			};
 		};
@@ -2428,7 +2436,7 @@ class cfgWeapons
 			class UseAtt2 : UseAtt{
 				text = "Detach Silencer";
 				script = "spawn player_removeAttchment;";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_p90i";
 			};
 		};
@@ -2448,7 +2456,7 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_p90iaim";
 			};
 		};
@@ -2471,7 +2479,7 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach Silencer";
-				att = "AttSilencer";
+				att = "Attachment_Sup";
 				out = "RH_p90ieot";
 			};
 		};

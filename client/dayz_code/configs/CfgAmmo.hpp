@@ -171,6 +171,8 @@ class CfgAmmo {
 	#include "CfgAmmo\r_9x19.hpp"
 	#include "CfgAmmo\r_9x39.hpp"
 	#include "CfgAmmo\r_22lr.hpp"
+	#include "CfgAmmo\r_44.hpp"
+	#include "CfgAmmo\r_357.hpp"
 	#include "CfgAmmo\r_30cal.hpp"
 	#include "CfgAmmo\r_32acp.hpp"
 	#include "CfgAmmo\r_45acp.hpp"

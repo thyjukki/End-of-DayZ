@@ -46,6 +46,7 @@ class cfgWeapons
 			"KPFS_10Rnd_762x39_SKS_bt"
 		};
 		displayName="$STR_KPFS_SKS";
+		descriptionShort="<br />Ammo: 7.62x39 mm";
 		dexterity=1.570000;
 		reloadMagazineSound[]=
 		{
