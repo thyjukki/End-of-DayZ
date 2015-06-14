@@ -16,6 +16,7 @@ _config = configFile >> "CfgMagazines" >> _item;
 
 _toBoGiven = getText (_config >> "baseBullet");
 _mag_cur = gearSlotAmmoCount _control;
+_selectedSlot setIDCAmmoCount 0;
 
 if (_mag_cur <= 10) then {
 	_giving = _toBoGiven + str(_mag_cur);
