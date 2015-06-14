@@ -15,30 +15,31 @@ for "_i" from 0 to ((count _config) - 1) do {
 			_weighted = [];
 			_j = 0;
 			for "_l" from 0 to ((count _itemChances) - 1) do {
-			//diag_log ("Item: "+str(_itemChances select _l));
-			// * JUKKI START DEBUGING
-			_iItem = ((_itemChances select _l) select 1);
-			_class = ((_itemChances select _l) select 3);
-			switch (_class) do {
-				case "weapon": {
-					player addWeapon _iItem;
+				diag_log ("Item: "+str(_itemChances select _l));
+				// * JUKKI START DEBUGING
+				_class = "";
+				_iItem = ((_itemChances select _l) select 0);
+				_class = ((_itemChances select _l) select 1);
+				switch (_class) do {
+					case "weapon": {
+						player addWeapon _iItem;
+					};
+					case "magazine": {
+						player addMagazine _iItem;
+					};
+					case "object": {
+						//Item is one object as a special weaponholder
+						_item = createVehicle [_iItem, (getPos player), [], 0.0, "CAN_COLLIDE"];
+					};
 				};
-				case "magazine": {
-					player addMagazine _iItem;
-				};
-				case "object": {
-					//Item is one object as a special weaponholder
-					_item = createVehicle [_iItem, (getPos player), [], 0.0, "CAN_COLLIDE"];
-				};
-			};
-			
-			// */ JUKKI END
-			_weight = round (((_itemChances select _l) select 2) * 100);
-				for "_k" from 0 to (_weight - 1) do
-				{
-					_weighted set [_j + _k, _l];
-				};
-			_j = _j + _weight;
+				
+				// */ JUKKI END
+				_weight = round (((_itemChances select _l) select 2) * 100);
+					for "_k" from 0 to (_weight - 1) do
+					{
+						_weighted set [_j + _k, _l];
+					};
+				_j = _j + _weight;
 			};
 		dayz_CBLChances set [count dayz_CBLChances, _weighted];
 		dayz_CBLBase set [count dayz_CBLBase, _classname];
