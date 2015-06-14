@@ -1865,7 +1865,7 @@ class 762x51_SD_x1 : 762x51_x1 {
 	bulletCount = 1;
 	baseName = "762x51_SD_x";
 	baseDesc = "7.62x51mm SD";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	picture = "\dayz_equip\textures\equip_sd.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 7.62x51mm SD rounds";
 	displayNameShort="SD";
