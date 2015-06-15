@@ -114,7 +114,7 @@ class CfgWeapons
 		};
 		reloadTime=2;
 		backgroundReload=1;
-		modelOptics="\DGR_Scopes\reticles\Dagger_10x_Mil_Line_Illum.p3d";
+		modelOptics="\UKF_L115A3\scope\P3L-Fine_mildot.p3d";
 		class OpticsModes
 		{
 			class StepScope

@@ -46,7 +46,7 @@ class UKF_5Rnd_338_Mag_hp: UKF_5Rnd_338_Mag {
 	scope=2;
 	baseBullet = 338_HP_x;
 	ammo="B_338mag_HP";
-	displayName="L115 Mag Tracer";
+	displayName="L115 Mag HP";
 	displayNameShort="HP";
 };
 
@@ -63,7 +63,7 @@ class UKF_5Rnd_338_Mag_rubber: UKF_5Rnd_338_Mag {
 	scope=2;
 	baseBullet = 338_RUBBER_x;
 	ammo="B_338mag_RUBBER";
-	displayName="L115 Mag Tracer";
+	displayName="L115 Mag Rubber";
 	displayNameShort="Rubber";
 };
 
@@ -71,7 +71,7 @@ class UKF_5Rnd_338_Mag_bt: UKF_5Rnd_338_Mag {
 	scope=2;
 	baseBullet = 338_BT_x;
 	ammo="B_338mag_BT";
-	displayName="L115 Mag Tracer";
+	displayName="L115 Mag BT";
 	displayNameShort="BT";
 };
 
@@ -125,7 +125,7 @@ class M24a3_10Rnd_Mag_hp: M24a3_10Rnd_Mag {
 	scope=2;
 	baseBullet = 338_HP_x;
 	ammo="B_338mag_HP";
-	displayName="M24a3 Mag Tracer";
+	displayName="M24a3 Mag HP";
 	displayNameShort="HP";
 };
 
@@ -142,7 +142,7 @@ class M24a3_10Rnd_Mag_rubber: M24a3_10Rnd_Mag {
 	scope=2;
 	baseBullet = 338_RUBBER_x;
 	ammo="B_338mag_RUBBER";
-	displayName="M24a3 Mag Tracer";
+	displayName="M24a3 Mag Rubber";
 	displayNameShort="Rubber";
 };
 
@@ -150,6 +150,6 @@ class M24a3_10Rnd_Mag_bt: M24a3_10Rnd_Mag {
 	scope=2;
 	baseBullet = 338_BT_x;
 	ammo="B_338mag_BT";
-	displayName="M24a3 Mag Tracer";
+	displayName="M24a3 Mag BT";
 	displayNameShort="BT";
 };

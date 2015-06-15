@@ -109,7 +109,7 @@ class CfgWeapons
 		ace_sa_zerooffset=0;
 		ace_sa_zeroelev=0;
 		ace_sa_defaultwindage=0;
-		modelOptics="\DGR_Scopes\reticles\Dagger_18x_H59.p3d";
+		modelOptics="\UKF_L115A3\scope\P3L-Fine_mildot.p3d";
 		class OpticsModes
 		{
 			class StepScope

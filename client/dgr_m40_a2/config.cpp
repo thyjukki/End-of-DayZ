@@ -107,36 +107,26 @@ class CfgWeapons
 		ace_sa_zerooffset=0;
 		ace_sa_zeroelev=0;
 		ace_sa_defaultwindage=0;
-		modelOptics="\DGR_Scopes\reticles\Dagger_12x_Round_Dot_Gen2.p3d";
+		modelOptics="\UKF_L115A3\scope\P3L-Fine_mildot.p3d";
 		class OpticsModes
 		{
 			class StepScope
 			{
-				visionMode[]=
-				{
-					"Normal"
-				};
-				opticsID=1;
-				useModelOptics=1;
-				opticsPPEffects[]=
-				{
-					"OpticsCHAbera1",
-					"OpticsBlur1"
-				};
-				opticsZoomMin=0.015580;
-				opticsZoomMax=0.062300;
-				opticsZoomInit=0.015580;
-				distanceZoomMin=1;
-				distanceZoomMax=3000;
-				memoryPointCamera="opticView";
-				opticsFlare=1;
-				opticsDisablePeripherialVision=1;
-				cameraDir="";
-				weaponInfoType="RscWeaponEmpty";
-				discreteInitIndex=0;
-				discreteDistance[]={333};
-				discreteDistanceInitIndex=0;
-				discretefov[]={0.062300,0.031150,0.020770,0.015580};
+				opticsID = 1;
+				useModelOptics = 1;
+				opticsPPEffects[] = {"OpticsCHAbera1","OpticsBlur1"};
+				opticsZoomMin = 0.0249;
+				opticsZoomMax = 0.0249;
+				opticsZoomInit = 0.0249;
+				memoryPointCamera = "Konec hlavne";
+				opticsFlare = 1;
+				opticsDisablePeripherialVision = 1;
+				distanceZoomMin = 300;
+				distanceZoomMax = 300;
+				cameraDir = "";
+				visionMode[] = {"Normal"};
+				discreteDistance[] = {100,200,300,400,500,600,700,800};
+				discreteDistanceInitIndex = 2;
 			};
 			class Kolimator
 			{
