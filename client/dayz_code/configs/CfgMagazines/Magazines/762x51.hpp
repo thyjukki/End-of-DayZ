@@ -836,3 +836,92 @@ class KPFS_8Rnd_cal30_60_Gar_bt: KPFS_8Rnd_cal30_60_Gar {
 	displayName="M1 Garand BT Mag";
 	displayNameShort="BT";
 };
+
+
+/* HK417 */
+class RH_20Rnd_762x51_hk417_Empty: emptiedMagazine
+{
+	scope=2;
+	displayName="HK 417 Mag (Empty)";
+	picture="\RH_hk416\inv\m_hk417.paa";
+	descriptionShort="Caliber: 7.62x51 mm NATO<br/>Rounds: 20 <br/>Used in: HK 417";
+	class ammoType
+	{
+		class B_762x51_Ball {
+			ammoMag = "RH_20Rnd_762x51_hk417";
+		};
+		class B_762x51_SD {
+			ammoMag = "RH_20Rnd_762x51_hk417SD";
+		};
+		class B_762x51_HP {
+			ammoMag = "RH_20Rnd_762x51_hk417_hp";
+		};
+		class B_762x51_TRACER {
+			ammoMag = "RH_20Rnd_762x51_hk417_tracer";
+		};
+		class B_762x51_RUBBER {
+			ammoMag = "RH_20Rnd_762x51_hk417_rubber";
+		};
+		class B_762x51_BT {
+			ammoMag = "RH_20Rnd_762x51_hk417_bt";
+		};
+	};
+};
+
+class RH_20Rnd_762x51_hk417: CA_Magazine
+{
+	scope=2;
+	displayName="HK 417 Mag";
+	picture="\RH_hk416\inv\m_hk417.paa";
+	descriptionShort="Caliber: 7.62x51 mm NATO<br/>Rounds: 20 <br/>Used in: HK 417";
+	ammo="B_762x51_Ball";
+	count=8;
+	initSpeed=780;
+	baseBullet = 762x51_x;
+	LOAD_AMMO
+
+	emptyMag = "RH_20Rnd_762x51_hk417_Empty";
+};
+
+class RH_20Rnd_762x51_hk417SD: RH_20Rnd_762x51_hk417 {
+	scope=2;
+	baseBullet = 762x51_SD_x;
+	initSpeed=320;
+	ammo="B_762x51_SD";
+	displayName="HK 417 SD Mag";
+	displayNameShort="SD";
+};
+
+class RH_20Rnd_762x51_hk417_hp: RH_20Rnd_762x51_hk417 {
+	scope=2;
+	baseBullet = 762x51_HP_x;
+	ammo="B_762x51_HP";
+	displayName="HK 417 HP Mag";
+	displayNameShort="HP";
+};
+
+class RH_20Rnd_762x51_hk417_tracer: RH_20Rnd_762x51_hk417 {
+	scope=2;
+	baseBullet = 762x51_Tracer_x;
+	tracersevery = 1;
+	ammo="B_762x51_TRACER";
+	displayName="HK 417 Tracer Mag";
+	displayNameShort="Tracer";
+};
+
+class RH_20Rnd_762x51_hk417_rubber: RH_20Rnd_762x51_hk417 {
+	scope=2;
+	baseBullet = 762x51_RUBBER_x;
+	
+	ammo="B_762x51_RUBBER";
+	displayName="HK 417 Rubber Mag";
+	displayNameShort="Rubber";
+};
+
+class RH_20Rnd_762x51_hk417_bt: RH_20Rnd_762x51_hk417 {
+	scope=2;
+	baseBullet = 762x51_BT_x;
+	ammo="B_762x51_BT";
+	displayName="HK 417 BT Mag";
+	displayNameShort="BT";
+};
