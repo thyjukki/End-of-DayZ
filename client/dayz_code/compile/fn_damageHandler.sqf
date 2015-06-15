@@ -84,12 +84,12 @@ if (_unit == player) then {
         };
     };
     
-    if ((_isRubber == 1) and (!_unconscious) and (vehicle player == player) and (_isHeadHit)) then {
+    if ((_isRubber == 1) and (!_unconscious) and (vehicle player == player) and ((_isHeadHit) or ((random 10) < 3))) then {
 		diag_log("Should go unconsciousTime");
         [_unit] spawn {
             private ["_unit"];
             _unit = _this select 0;
-            //cutText [localize "str_player_tranquilized", "PLAIN DOWN"]; 
+            cutText [localize "str_player_rubbered", "PLAIN DOWN"]; 
 			//systemChat format ["YOU HAVE BEEN TRANQUILISED"];
             //sleep 2; 
             // 0 fadeSound 0.05;

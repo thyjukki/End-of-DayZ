@@ -1642,6 +1642,9 @@
 			<French>Vous êtes sous tranquilisant</French>
 			<Czech>BYLI JSTE OMRÁČENI!</Czech>
 		</Key>
+		<Key ID="str_player_rubbered">
+			<English>YOU HAVE BEEN SHOT BY RUBBER BULLET!</English>
+		</Key>
 		<Key ID="str_disassembleMissingTool">
 			<English>Missing %1 to dissassemble building.</English>
 			<Russian>Для разборки нужно иметь %1</Russian>

@@ -42,7 +42,8 @@ _transmove = (switch true do {
     default {""}; // already prone, or swimming, or onladder
 });
 //diag_log [ __FILE__, diag_tickTime, "current player move:",toString _anim, "collapse move:",_transmove, "duration:",r_player_timeout ];
-if (_transmove != "") then { player playmove _transmove; };
+//if (_transmove != "") then { player playmove _transmove; }; //TODO(Jukki) Figure out how to fix this?
+player playmove "CanNotMove";
 
 _start = diag_tickTime;
 _timeout = abs r_player_timeout;
