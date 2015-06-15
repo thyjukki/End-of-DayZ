@@ -960,7 +960,6 @@ class CfgBuildingLoot {
 			{"RH_akmgl",					"weapon",3.20},
 			{"RH_an94",						"weapon",3.20},
 			{"RH_an94gl",					"weapon",3.20},
-			{"RH_ak74m1p29",				"weapon",3.20},
 			{"RH_rk95ag",					"weapon",3.20},
 			{"RH_rk95aim",					"weapon",3.20},
 			{"RH_rk95sd",					"weapon",3.20},
@@ -1291,7 +1290,6 @@ class CfgBuildingLoot {
 			{"RH_akmgl",					"weapon",0.09},
 			{"RH_an94",						"weapon",0.08},
 			{"RH_an94gl",					"weapon",0.06},
-			{"RH_ak74m1p29",				"weapon",0.04},
 			{"RH_rk95ag",					"weapon",0.02},
 			{"RH_rk95aim",					"weapon",0.02},
 			{"RH_rk95sd",					"weapon",0.01},
@@ -1311,7 +1309,6 @@ class CfgBuildingLoot {
 			{"RH_rpk74",					"weapon",0.04},
 			{"RH_rpk74m",					"weapon",0.04},
 			{"RH_rpk47",					"weapon",0.03},
-			{"RH_rpk74m1p29",				"weapon",0.02},
 			//smgs
 			{"RH_uzi",						"weapon",0.05},
 			{"RH_mac10",					"weapon",0.05},

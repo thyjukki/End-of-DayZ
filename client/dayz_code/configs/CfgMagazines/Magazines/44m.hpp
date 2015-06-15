@@ -1,4 +1,4 @@
-// TODO(Do revolvers need magazines?
+
 class RH_6Rnd_44_Mag_Empty: emptiedMagazine
 {
 	scope=2;
