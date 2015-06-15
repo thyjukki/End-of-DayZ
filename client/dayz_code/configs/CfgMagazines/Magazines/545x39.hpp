@@ -126,6 +126,7 @@ class RH_45Rnd_545x39_mag: CA_Magazine
 	descriptionshort = "Caliber: 5.45x39mm <br/>Rounds: 45 <br/>Used in: AK-74 based weapons";
 	picture="\RH_aks\inv\m_rpk74.paa";
 	model="\RH_aks\mags\mag_rpk74.p3d";
+	ammo="B_545x39_Ball";
 	count=45;
 	initSpeed=900;
 	baseBullet = 545x39_x;

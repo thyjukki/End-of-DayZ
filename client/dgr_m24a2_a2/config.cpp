@@ -54,7 +54,7 @@ class CfgWeapons
 			"M24a3_10Rnd_Mag_hp",
 			"M24a3_10Rnd_Mag_tracer",
 			"M24a3_10Rnd_Mag_rubber",
-			"M24a3_10Rnd_Mag_hp"
+			"M24a3_10Rnd_Mag_bt"
 		};
 		displayname="M24A3";
 		dispersion=0.000190;
