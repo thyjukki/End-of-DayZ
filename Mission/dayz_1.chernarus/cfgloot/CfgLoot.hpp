@@ -1866,7 +1866,7 @@ class CfgLoot {
 		{"FoodCanRusPork",0.01},
 		{"FoodCanRusPeas",0.01},
 		{"FoodCanRusMilk",0.01},
-		{"FoodCanRusCorn",0.01],
+		{"FoodCanRusCorn",0.01},
 		{"FoodPistachio",0.01},
 		{"FoodNutmix",0.01},
 		{"ItemCards",0.02}
