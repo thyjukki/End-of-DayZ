@@ -1956,7 +1956,6 @@ class cfgWeapons
 		delete ItemActions;
 		scope=2;
 		model="\RH_aks\RH_aks74uptsp.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AKs-74u PSO sd w/Bs-1";
@@ -2941,7 +2940,6 @@ class cfgWeapons
 		};
 		scope=2;
 		model="\RH_aks\RH_ak74mglsp.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AK-74Mw/GP30 Sniper";
@@ -3047,7 +3045,6 @@ class cfgWeapons
 		delete ItemActions;
 		scope=2;
 		model="\RH_aks\RH_ak74mgl1p29.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AK-74Mw/GP30 1p29";
@@ -3270,7 +3267,6 @@ class cfgWeapons
 		};
 		scope=2;
 		model="\RH_aks\RH_aks74mkgl.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AKS-74Mw/GP30 Kobra";
@@ -3391,7 +3387,6 @@ class cfgWeapons
 		};
 		scope=2;
 		model="\RH_aks\RH_aks74mglsp.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AKS-74Mw/GP30 Sniper";
@@ -3497,7 +3492,6 @@ class cfgWeapons
 		delete ItemActions;
 		scope=2;
 		model="\RH_aks\RH_aks74mgl1p29.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AKS-74Mw/GP30 1p29";
@@ -3704,7 +3698,6 @@ class cfgWeapons
 		};
 		scope=2;
 		model="\RH_aks\RH_ak74kgl.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AK-74w/GP30 Kobra";
@@ -3895,7 +3888,6 @@ class cfgWeapons
 		delete ItemActions;
 		scope=2;
 		model="\RH_aks\RH_aks74kgl.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AKS-74w/GP30 Kobra";
@@ -4236,7 +4228,6 @@ class cfgWeapons
 		};
 		scope=2;
 		model="\RH_aks\RH_oc14glsp.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="Groza-9 Sniper w/GP30";
@@ -4253,6 +4244,22 @@ class cfgWeapons
 		{
 			"this",
 			"RH_gp30Muzzle"
+		};
+		modelOptics="\RH_aks\NWD_GScope_1";
+		opticsZoomMin=0.071945;
+		opticsZoomMax=0.071945;
+		opticsFlare="true";
+		opticsDisablePeripherialVision="true";
+		distanceZoomMin=182;
+		distanceZoomMax=182;
+		class Single: Single
+		{
+			minRange=2;
+			minRangeProbab=0.500000;
+			midRange=200;
+			midRangeProbab=0.800000;
+			maxRange=300;
+			maxRangeProbab=0.300000;
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -4884,7 +4891,6 @@ class cfgWeapons
 		};
 		scope=2;
 		model="\RH_aks\RH_ak74kgl.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AK-103w/GP30 Kobra";
@@ -5004,7 +5010,6 @@ class cfgWeapons
 		};
 		scope=2;
 		model="\RH_aks\RH_ak103glsp.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AK-103w/GP30 Sniper";
@@ -5110,7 +5115,6 @@ class cfgWeapons
 		delete ItemActions;
 		scope=2;
 		model="\RH_aks\RH_ak103gl1p29.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AK-103w/GP30 1p29";
@@ -5421,7 +5425,6 @@ class cfgWeapons
 		};
 		scope=2;
 		model="\RH_aks\RH_ak104kgl.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AK-104w/GP30 Kobra";
@@ -5541,7 +5544,6 @@ class cfgWeapons
 		};
 		scope=2;
 		model="\RH_aks\RH_ak104glsp.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AK-104w/GP30 Sniper";
@@ -5647,7 +5649,6 @@ class cfgWeapons
 		delete ItemActions;
 		scope=2;
 		model="\RH_aks\RH_ak104gl1p29.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AK-104w/GP30 1p29";
@@ -5774,7 +5775,6 @@ class cfgWeapons
 		};
 		scope=2;
 		model="\RH_aks\RH_aks74pgl.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AKS-74Pw/GP30";
@@ -5882,7 +5882,6 @@ class cfgWeapons
 		distanceZoomMax=322;
 		scope=2;
 		model="\RH_aks\RH_aks74pkgl.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AKS-74Pw/GP30 Kobra";
@@ -6016,7 +6015,6 @@ class cfgWeapons
 		};
 		scope=2;
 		model="\RH_aks\RH_aks74pglsp.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AKS-74Pw/GP30 Sniper";
@@ -6106,7 +6104,6 @@ class cfgWeapons
 		delete ItemActions;
 		scope=2;
 		model="\RH_aks\RH_aks74pgl1p29.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AKS-74Pw/GP30 1p29";
@@ -6338,7 +6335,6 @@ class cfgWeapons
 		};
 		scope=2;
 		model="\RH_aks\RH_ak105kgl.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AK-105w/GP30 Kobra";
@@ -6455,7 +6451,6 @@ class cfgWeapons
 		};
 		scope=2;
 		model="\RH_aks\RH_ak105glsp.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AK-105w/GP30 Sniper";
@@ -6561,7 +6556,6 @@ class cfgWeapons
 		delete ItemActions;
 		scope=2;
 		model="\RH_aks\RH_ak105gl1p29.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AK-105w/GP30 1p29";
@@ -6793,7 +6787,6 @@ class cfgWeapons
 		};
 		scope=2;
 		model="\RH_aks\RH_AK107kgl.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AK-107w/GP30 Kobra";
@@ -6910,7 +6903,6 @@ class cfgWeapons
 		};
 		scope=2;
 		model="\RH_aks\RH_AK107glsp.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AK-107w/GP30 Sniper";
@@ -7016,7 +7008,6 @@ class cfgWeapons
 		delete ItemActions;
 		scope=2;
 		model="\RH_aks\RH_AK107gl1p29.p3d";
-		modelOptics="-";
 		optics=1;
 		dexterity=1.400000;
 		displayName="AK-107w/GP30 1p29";
