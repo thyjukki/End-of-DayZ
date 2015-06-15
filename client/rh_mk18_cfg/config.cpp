@@ -989,14 +989,52 @@ class CfgWeapons
 		displayName="Mk18 ACOG M203";
 		model="\RH_mk18\RH_Mk18glacog";
 		picture="\RH_mk18\inv\mk18glacog.paa";
+		class OpticsModes
+		{
+			class ACOG
+			{
+				opticsID=1;
+				useModelOptics=1;
+				opticsPPEffects[]=
+				{
+					"OpticsCHAbera1",
+					"OpticsBlur1"
+				};
+				opticsZoomMin=0.071945;
+				opticsZoomMax=0.071945;
+				opticsZoomInit=0.071945;
+				memoryPointCamera="opticView";
+				visionMode[]=
+				{
+					"Normal"
+				};
+				opticsFlare=1;
+				opticsDisablePeripherialVision=1;
+				distanceZoomMin=189;
+				distanceZoomMax=189;
+				cameraDir="";
+			};
+			class Kolimator: ACOG
+			{
+				opticsID=2;
+				useModelOptics=0;
+				opticsPPEffects[]={};
+				opticsFlare=0;
+				opticsDisablePeripherialVision=0;
+				opticsZoomMin=0.250000;
+				opticsZoomMax=1.100000;
+				opticsZoomInit=0.500000;
+				memoryPointCamera="eye";
+				visionMode[]={};
+				distanceZoomMin=300;
+				distanceZoomMax=300;
+			};
+		};
 		muzzles[]=
 		{
-			"RH_MkMuzzle",
+			"this",
 			"RH_M203Muzzle",
 			"RH_M203Muzzle_AI"
-		};
-		class RH_MkMuzzle: RH_Mk18acog
-		{
 		};
 	};
 	class RH_Mk18dglacog: RH_Mk18glacog

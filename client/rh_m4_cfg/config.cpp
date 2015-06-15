@@ -243,27 +243,6 @@ class CfgWeapons
 				out = "RH_m16a1s";
 			};
 		};
-		magazines[] =
-		{
-			"20Rnd_556x45_Stanag",
-			"20Rnd_556x45_StanagSD",
-			"20Rnd_556x45_Stanag_hp",
-			"20Rnd_556x45_Stanag_tracer",
-			"20Rnd_556x45_Stanag_rubber",
-			"20Rnd_556x45_Stanag_bt",
-			"30Rnd_556x45_Stanag",
-			"30Rnd_556x45_StanagSD",
-			"30Rnd_556x45_Stanag_hp",
-			"30Rnd_556x45_Stanag_tracer",
-			"30Rnd_556x45_Stanag_rubber",
-			"30Rnd_556x45_Stanag_bt",
-			"100Rnd_556x45_BetaCMag",
-			"100Rnd_556x45_BetaCMagSD",
-			"100Rnd_556x45_BetaCMag_hp",
-			"100Rnd_556x45_BetaCMag_tracer",
-			"100Rnd_556x45_BetaCMag_rubber",
-			"100Rnd_556x45_BetaCMag_bt"
-		};
 		displayName="M16A1";
 		model="\RH_m4\RH_m16a1.p3d";
 		picture="\RH_m4\inv\m16a1.paa";
@@ -458,6 +437,44 @@ class CfgWeapons
 				text = "Detach M203";
 				att = "Attachment_M203";
 				out = "RH_M16a1s";
+			};
+		};
+		class OpticsModes
+		{
+			class ACOG
+			{
+				opticsID=1;
+				useModelOptics=1;
+				opticsPPEffects[]=
+				{
+					"OpticsCHAbera1",
+					"OpticsBlur1"
+				};
+				opticsZoomMin=0.071945;
+				opticsZoomMax=0.071945;
+				opticsZoomInit=0.071945;
+				memoryPointCamera="opticView";
+				visionMode[]=
+				{
+					"Normal"
+				};
+				opticsFlare=1;
+				opticsDisablePeripherialVision=1;
+				distanceZoomMin=189;
+				distanceZoomMax=189;
+				cameraDir="";
+			};
+			class Kolimator: ACOG
+			{
+				opticsID=2;
+				useModelOptics=0;
+				opticsFlare=0;
+				opticsDisablePeripherialVision=0;
+				opticsZoomMin=0.250000;
+				opticsZoomMax=1.100000;
+				opticsZoomInit=0.500000;
+				memoryPointCamera="eye";
+				visionMode[]={};
 			};
 		};
 		displayName="M16A1 M203 Scope";
@@ -1274,6 +1291,12 @@ class CfgWeapons
 		picture="\RH_m4\inv\ar10.paa";
 		magazines[]=
 		{
+			"762x51_x1",
+			"762x51_SD_x1",
+			"762x51_HP_x1",
+			"762x51_TRACER_x1",
+			"762x51_RUBBER_x1",
+			"762x51_BT_x1",
 			"RH_20Rnd_762x51_AR10",
 			"RH_20Rnd_762x51_AR10SD",
 			"RH_20Rnd_762x51_AR10_hp",
@@ -2107,27 +2130,6 @@ class CfgWeapons
 				out = "RH_m4a1";
 			};
 		};
-		magazines[]=
-		{
-			"20Rnd_556x45_Stanag",
-			"20Rnd_556x45_StanagSD",
-			"20Rnd_556x45_Stanag_hp",
-			"20Rnd_556x45_Stanag_tracer",
-			"20Rnd_556x45_Stanag_rubber",
-			"20Rnd_556x45_Stanag_bt",
-			"30Rnd_556x45_Stanag",
-			"30Rnd_556x45_StanagSD",
-			"30Rnd_556x45_Stanag_hp",
-			"30Rnd_556x45_Stanag_tracer",
-			"30Rnd_556x45_Stanag_rubber",
-			"30Rnd_556x45_Stanag_bt",
-			"100Rnd_556x45_BetaCMag",
-			"100Rnd_556x45_BetaCMagSD",
-			"100Rnd_556x45_BetaCMag_hp",
-			"100Rnd_556x45_BetaCMag_tracer",
-			"100Rnd_556x45_BetaCMag_rubber",
-			"100Rnd_556x45_BetaCMag_bt"
-		};
 		displayName="M4A1 SD";
 		model="\RH_m4\RH_m4sd.p3d";
 		picture="\RH_m4\inv\m4a1sd.paa";
@@ -2750,27 +2752,6 @@ class CfgWeapons
 		class Single: Single
 		{
 		};
-		magazines[] =
-		{
-			"20Rnd_556x45_Stanag",
-			"20Rnd_556x45_StanagSD",
-			"20Rnd_556x45_Stanag_hp",
-			"20Rnd_556x45_Stanag_tracer",
-			"20Rnd_556x45_Stanag_rubber",
-			"20Rnd_556x45_Stanag_bt",
-			"30Rnd_556x45_Stanag",
-			"30Rnd_556x45_StanagSD",
-			"30Rnd_556x45_Stanag_hp",
-			"30Rnd_556x45_Stanag_tracer",
-			"30Rnd_556x45_Stanag_rubber",
-			"30Rnd_556x45_Stanag_bt",
-			"100Rnd_556x45_BetaCMag",
-			"100Rnd_556x45_BetaCMagSD",
-			"100Rnd_556x45_BetaCMag_hp",
-			"100Rnd_556x45_BetaCMag_tracer",
-			"100Rnd_556x45_BetaCMag_rubber",
-			"100Rnd_556x45_BetaCMag_bt"
-		};
 	};
 	class RH_MK12: M4SPR
 	{
@@ -2921,6 +2902,12 @@ class CfgWeapons
 		};
 		magazines[] =
 		{
+			"556x45_x1",
+			"556x45_SD_x1",
+			"556x45_HP_x1",
+			"556x45_TRACER_x1",
+			"556x45_RUBBER_x1",
+			"556x45_BT_x1",
 			"100Rnd_556x45_M249",
 			"100Rnd_556x45_M249SD",
 			"100Rnd_556x45_M249_hp",
@@ -2961,6 +2948,12 @@ class CfgWeapons
 		scope=2;
 		magazines[] =
 		{
+			"556x45_x1",
+			"556x45_SD_x1",
+			"556x45_HP_x1",
+			"556x45_TRACER_x1",
+			"556x45_RUBBER_x1",
+			"556x45_BT_x1",
 			"100Rnd_556x45_M249",
 			"100Rnd_556x45_M249SD",
 			"100Rnd_556x45_M249_hp",

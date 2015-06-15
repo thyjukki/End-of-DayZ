@@ -270,8 +270,64 @@ class cfgWeapons
 	class rifle;
 	class AK_BASE;
 	class AKS_BASE;
-	class AK_74;
-	class AKS_74_U;
+	class AK_74 : AK_BASE {
+		magazines[]=
+		{
+			"545x39_x1",
+			"545x39_SD_x1",
+			"545x39_HP_x1",
+			"545x39_TRACER_x1",
+			"545x39_RUBBER_x1",
+			"545x39_BT_x1",
+			"30Rnd_545x39_AK",
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt",
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
+		};
+	};
+	class AKS_74_U : AKS_BASE {
+		magazines[]=
+		{
+			"545x39_x1",
+			"545x39_SD_x1",
+			"545x39_HP_x1",
+			"545x39_TRACER_x1",
+			"545x39_RUBBER_x1",
+			"545x39_BT_x1",
+			"30Rnd_545x39_AK",
+			"30Rnd_545x39_AKSD",
+			"30Rnd_545x39_AK_hp",
+			"30Rnd_545x39_AK_tracer",
+			"30Rnd_545x39_AK_rubber",
+			"30Rnd_545x39_AK_bt",
+			"RH_45Rnd_545x39_mag",
+			"RH_45Rnd_545x39_magSD",
+			"RH_45Rnd_545x39_mag_hp",
+			"RH_45Rnd_545x39_mag_tracer",
+			"RH_45Rnd_545x39_mag_rubber",
+			"RH_45Rnd_545x39_mag_bt",
+			"75Rnd_545x39_RPK",
+			"75Rnd_545x39_RPKSD",
+			"75Rnd_545x39_RPK_hp",
+			"75Rnd_545x39_RPK_tracer",
+			"75Rnd_545x39_RPK_rubber",
+			"75Rnd_545x39_RPK_bt"
+		};
+	};
 	class VSS_vintorez;
 	class Makarov;
 	class MakarovSD;
@@ -1794,6 +1850,9 @@ class cfgWeapons
 			"OFP2_ManSkeleton",
 			"\Ca\weapons\data\Anim\M16GL.rtm"
 		};
+		opticsDisablePeripherialVision=1;
+		distanceZoomMin=120;
+		distanceZoomMax=120;
 		muzzles[]=
 		{
 			"this",
@@ -1858,6 +1917,9 @@ class cfgWeapons
 			"this",
 			"RH_bs1Muzzle"
 		};
+		opticsDisablePeripherialVision=1;
+		distanceZoomMin=120;
+		distanceZoomMax=120;
 		class RH_bs1Muzzle: GrenadeLauncher
 		{
 			displayName="BS-1 Tishina Grenadelauncher";
@@ -1916,6 +1978,22 @@ class cfgWeapons
 		{
 			"this",
 			"RH_bs1Muzzle"
+		};
+		modelOptics="\RH_aks\NWD_PSO_1_1_AK74";
+		opticsZoomMin=0.071945;
+		opticsZoomMax=0.071945;
+		opticsFlare="true";
+		opticsDisablePeripherialVision="true";
+		distanceZoomMin=228;
+		distanceZoomMax=228;
+		class Single: Single
+		{
+			minRange=2;
+			minRangeProbab=0.500000;
+			midRange=200;
+			midRangeProbab=0.700000;
+			maxRange=300;
+			maxRangeProbab=0.100000;
 		};
 		class RH_bs1Muzzle: GrenadeLauncher
 		{
@@ -2644,6 +2722,9 @@ class cfgWeapons
 		displayName="AK-74Mw/GP30";
 		picture="\RH_aks\inv\ak74mgl.paa";
 		UiPicture="\CA\weapons\data\Ico\i_regular_CA.paa";
+		opticsDisablePeripherialVision=0;
+		distanceZoomMin=322;
+		distanceZoomMax=322;
 		reloadMagazineSound[]=
 		{
 			"\RH_aks\sound\ak74m_reload.wss",
@@ -2883,6 +2964,22 @@ class cfgWeapons
 			"this",
 			"RH_gp30Muzzle"
 		};
+		modelOptics="\RH_aks\NWD_PSO_1_1_ak74";
+		opticsZoomMin=0.071945;
+		opticsZoomMax=0.071945;
+		opticsFlare="true";
+		opticsDisablePeripherialVision="true";
+		distanceZoomMin=182;
+		distanceZoomMax=182;
+		class Single: Single
+		{
+			minRange=2;
+			minRangeProbab=0.600000;
+			midRange=400;
+			midRangeProbab=0.800000;
+			maxRange=500;
+			maxRangeProbab=0.100000;
+		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
 			displayName="GP30 Grenadelauncher";
@@ -2973,6 +3070,13 @@ class cfgWeapons
 			"this",
 			"RH_gp30Muzzle"
 		};
+		modelOptics="\RH_aks\fnc_1P29";
+		opticsZoomMin=0.071945;
+		opticsZoomMax=0.071945;
+		distanceZoomMin=322;
+		distanceZoomMax=322;
+		opticsFlare="true";
+		opticsDisablePeripherialVision="true";
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
 			displayName="GP30 Grenadelauncher";
@@ -3172,6 +3276,9 @@ class cfgWeapons
 		displayName="AKS-74Mw/GP30 Kobra";
 		picture="\RH_aks\inv\aks74mkgl.paa";
 		UiPicture="\CA\weapons\data\Ico\i_regular_CA.paa";
+		opticsDisablePeripherialVision=1;
+		distanceZoomMin=322;
+		distanceZoomMax=322;
 		reloadMagazineSound[]=
 		{
 			"\RH_aks\sound\ak74m_reload.wss",
@@ -3307,6 +3414,22 @@ class cfgWeapons
 			"this",
 			"RH_gp30Muzzle"
 		};
+		modelOptics="\RH_aks\NWD_PSO_1_1_ak74";
+		opticsZoomMin=0.071945;
+		opticsZoomMax=0.071945;
+		opticsFlare="true";
+		opticsDisablePeripherialVision="true";
+		distanceZoomMin=182;
+		distanceZoomMax=182;
+		class Single: Single
+		{
+			minRange=2;
+			minRangeProbab=0.600000;
+			midRange=400;
+			midRangeProbab=0.800000;
+			maxRange=500;
+			maxRangeProbab=0.100000;
+		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
 			displayName="GP30 Grenadelauncher";
@@ -3396,6 +3519,22 @@ class cfgWeapons
 		{
 			"this",
 			"RH_gp30Muzzle"
+		};
+		modelOptics="\RH_aks\fnc_1P29";
+		opticsZoomMin=0.071945;
+		opticsZoomMax=0.071945;
+		distanceZoomMin=322;
+		distanceZoomMax=322;
+		opticsFlare="true";
+		opticsDisablePeripherialVision="true";
+		class Single: Single
+		{
+			minRange=2;
+			minRangeProbab=0.600000;
+			midRange=400;
+			midRangeProbab=0.800000;
+			maxRange=500;
+			maxRangeProbab=0.100000;
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -3588,6 +3727,9 @@ class cfgWeapons
 			"this",
 			"RH_gp30Muzzle"
 		};
+		opticsDisablePeripherialVision=0;
+		distanceZoomMin=322;
+		distanceZoomMax=322;
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
 			displayName="GP30 Grenadelauncher";
@@ -3776,6 +3918,9 @@ class cfgWeapons
 			"this",
 			"RH_gp30Muzzle"
 		};
+		opticsDisablePeripherialVision=1;
+		distanceZoomMin=322;
+		distanceZoomMax=322;
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
 			displayName="GP30 Grenadelauncher";
@@ -4762,6 +4907,9 @@ class cfgWeapons
 			"this",
 			"RH_gp30Muzzle"
 		};
+		opticsDisablePeripherialVision=0;
+		distanceZoomMin=322;
+		distanceZoomMax=322;
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
 			displayName="GP30 Grenadelauncher";
@@ -4874,6 +5022,22 @@ class cfgWeapons
 			"OFP2_ManSkeleton",
 			"\Ca\weapons\data\Anim\M16GL.rtm"
 		};
+		modelOptics="\RH_aks\NWD_PSO_1_1_ak74";
+		opticsZoomMin=0.071945;
+		opticsZoomMax=0.071945;
+		opticsFlare="true";
+		opticsDisablePeripherialVision="true";
+		distanceZoomMin=182;
+		distanceZoomMax=182;
+		class Single: Single
+		{
+			minRange=2;
+			minRangeProbab=0.600000;
+			midRange=400;
+			midRangeProbab=0.800000;
+			maxRange=500;
+			maxRangeProbab=0.100000;
+		};
 		muzzles[]=
 		{
 			"this",
@@ -4968,6 +5132,22 @@ class cfgWeapons
 		{
 			"this",
 			"RH_gp30Muzzle"
+		};
+		modelOptics="\RH_aks\fnc_1P29";
+		opticsZoomMin=0.071945;
+		opticsZoomMax=0.071945;
+		distanceZoomMin=322;
+		distanceZoomMax=322;
+		opticsFlare="true";
+		opticsDisablePeripherialVision="true";
+		class Single: Single
+		{
+			minRange=2;
+			minRangeProbab=0.600000;
+			midRange=400;
+			midRangeProbab=0.800000;
+			maxRange=500;
+			maxRangeProbab=0.100000;
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -5247,6 +5427,9 @@ class cfgWeapons
 		displayName="AK-104w/GP30 Kobra";
 		picture="\RH_aks\inv\ak104kgl.paa";
 		UiPicture="\CA\weapons\data\Ico\i_regular_CA.paa";
+		opticsDisablePeripherialVision=0;
+		distanceZoomMin=322;
+		distanceZoomMax=322;
 		reloadMagazineSound[]=
 		{
 			"\RH_aks\sound\ak104_reload.wss",
@@ -5364,6 +5547,22 @@ class cfgWeapons
 		displayName="AK-104w/GP30 Sniper";
 		picture="\RH_aks\inv\ak104glsp.paa";
 		UiPicture="\CA\weapons\data\Ico\i_regular_CA.paa";
+		modelOptics="\RH_aks\NWD_PSO_1_1_ak74";
+		opticsZoomMin=0.071945;
+		opticsZoomMax=0.071945;
+		opticsFlare="true";
+		opticsDisablePeripherialVision="true";
+		distanceZoomMin=182;
+		distanceZoomMax=182;
+		class Single: Single
+		{
+			minRange=2;
+			minRangeProbab=0.600000;
+			midRange=400;
+			midRangeProbab=0.800000;
+			maxRange=500;
+			maxRangeProbab=0.100000;
+		};
 		reloadMagazineSound[]=
 		{
 			"\RH_aks\sound\ak74m_reload.wss",
@@ -5454,6 +5653,22 @@ class cfgWeapons
 		displayName="AK-104w/GP30 1p29";
 		picture="\RH_aks\inv\ak104gl1p29.paa";
 		UiPicture="\CA\weapons\data\Ico\i_regular_CA.paa";
+		modelOptics="\RH_aks\fnc_1P29";
+		opticsZoomMin=0.071945;
+		opticsZoomMax=0.071945;
+		distanceZoomMin=322;
+		distanceZoomMax=322;
+		opticsFlare="true";
+		opticsDisablePeripherialVision="true";
+		class Single: Single
+		{
+			minRange=2;
+			minRangeProbab=0.600000;
+			midRange=400;
+			midRangeProbab=0.800000;
+			maxRange=500;
+			maxRangeProbab=0.100000;
+		};
 		reloadMagazineSound[]=
 		{
 			"\RH_aks\sound\ak104_reload.wss",
@@ -5662,6 +5877,9 @@ class cfgWeapons
 				out = "RH_aks74pk";
 			};
 		};
+		opticsDisablePeripherialVision=1;
+		distanceZoomMin=322;
+		distanceZoomMax=322;
 		scope=2;
 		model="\RH_aks\RH_aks74pkgl.p3d";
 		modelOptics="-";
@@ -5780,6 +5998,22 @@ class cfgWeapons
 				out = "RH_aks74pglsp";
 			};
 		};
+		modelOptics="\RH_aks\NWD_PSO_1_1_ak74";
+		opticsZoomMin=0.071945;
+		opticsZoomMax=0.071945;
+		opticsFlare="true";
+		opticsDisablePeripherialVision="true";
+		distanceZoomMin=182;
+		distanceZoomMax=182;
+		class Single: Single
+		{
+			minRange=2;
+			minRangeProbab=0.600000;
+			midRange=400;
+			midRangeProbab=0.800000;
+			maxRange=500;
+			maxRangeProbab=0.100000;
+		};
 		scope=2;
 		model="\RH_aks\RH_aks74pglsp.p3d";
 		modelOptics="-";
@@ -5894,6 +6128,22 @@ class cfgWeapons
 		{
 			"this",
 			"RH_gp30Muzzle"
+		};
+		modelOptics="\RH_aks\fnc_1P29";
+		opticsZoomMin=0.071945;
+		opticsZoomMax=0.071945;
+		distanceZoomMin=322;
+		distanceZoomMax=322;
+		opticsFlare="true";
+		opticsDisablePeripherialVision="true";
+		class Single: Single
+		{
+			minRange=2;
+			minRangeProbab=0.600000;
+			midRange=400;
+			midRangeProbab=0.800000;
+			maxRange=500;
+			maxRangeProbab=0.100000;
 		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
@@ -6228,6 +6478,22 @@ class cfgWeapons
 			"this",
 			"RH_gp30Muzzle"
 		};
+		modelOptics="\RH_aks\NWD_PSO_1_1_ak74";
+		opticsZoomMin=0.071945;
+		opticsZoomMax=0.071945;
+		opticsFlare="true";
+		opticsDisablePeripherialVision="true";
+		distanceZoomMin=182;
+		distanceZoomMax=182;
+		class Single: Single
+		{
+			minRange=2;
+			minRangeProbab=0.600000;
+			midRange=400;
+			midRangeProbab=0.800000;
+			maxRange=500;
+			maxRangeProbab=0.100000;
+		};
 		class RH_gp30Muzzle: GrenadeLauncher
 		{
 			displayName="GP30 Grenadelauncher";
@@ -6312,6 +6578,22 @@ class cfgWeapons
 		{
 			"OFP2_ManSkeleton",
 			"\Ca\weapons\data\Anim\M16GL.rtm"
+		};
+		modelOptics="\RH_aks\fnc_1P29";
+		opticsZoomMin=0.071945;
+		opticsZoomMax=0.071945;
+		distanceZoomMin=322;
+		distanceZoomMax=322;
+		opticsFlare="true";
+		opticsDisablePeripherialVision="true";
+		class Single: Single
+		{
+			minRange=2;
+			minRangeProbab=0.600000;
+			midRange=400;
+			midRangeProbab=0.800000;
+			maxRange=500;
+			maxRangeProbab=0.100000;
 		};
 		muzzles[]=
 		{
@@ -6646,6 +6928,22 @@ class cfgWeapons
 			"OFP2_ManSkeleton",
 			"\Ca\weapons\data\Anim\M16GL.rtm"
 		};
+		modelOptics="\RH_aks\NWD_PSO_1_1_ak74";
+		opticsZoomMin=0.071945;
+		opticsZoomMax=0.071945;
+		opticsFlare="true";
+		opticsDisablePeripherialVision="true";
+		distanceZoomMin=182;
+		distanceZoomMax=182;
+		class Single: Single
+		{
+			minRange=2;
+			minRangeProbab=0.600000;
+			midRange=400;
+			midRangeProbab=0.800000;
+			maxRange=500;
+			maxRangeProbab=0.100000;
+		};
 		muzzles[]=
 		{
 			"this",
@@ -6724,6 +7022,22 @@ class cfgWeapons
 		displayName="AK-107w/GP30 1p29";
 		picture="\RH_aks\inv\AK107gl1p29.paa";
 		UiPicture="\CA\weapons\data\Ico\i_regular_CA.paa";
+		modelOptics="\RH_aks\fnc_1P29";
+		opticsZoomMin=0.071945;
+		opticsZoomMax=0.071945;
+		distanceZoomMin=322;
+		distanceZoomMax=322;
+		opticsFlare="true";
+		opticsDisablePeripherialVision="true";
+		class Single: Single
+		{
+			minRange=2;
+			minRangeProbab=0.600000;
+			midRange=400;
+			midRangeProbab=0.800000;
+			maxRange=500;
+			maxRangeProbab=0.100000;
+		};
 		reloadMagazineSound[]=
 		{
 			"\RH_aks\sound\AK107_reload.wss",
