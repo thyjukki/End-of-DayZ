@@ -48,7 +48,6 @@ class 30Rnd_762x39_AK47_SD: 30Rnd_762x39_AK47 {
 	ammo = "B_762x39_SD";
 	displayname = "AK-47 SD Mag";
 	initSpeed=320;
-	scope = 2;
 	baseBullet = 762x39_SD_x;
 	displayNameShort="SD";
 };

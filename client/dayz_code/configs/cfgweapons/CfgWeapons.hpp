@@ -56,21 +56,11 @@ class CfgWeapons
 	#include "Rifles\G36.hpp"
 	#include "Rifles\G36C.hpp"
 	
-	class M4A1;
-	class M4A1_AIM_SD_camo;
-	#include "Rifles\M4A1.hpp"
-	
-	class M14_EP1;
-	#include "Rifles\M14.hpp"
-	
 	class M24;
 	#include "Rifles\M24.hpp"
 	
 	class M40A3;
 	#include "Rifles\M40A3.hpp"
-	
-	class M249;
-	#include "Rifles\M249.hpp"
 	
 	class M240;
 	#include "Rifles\M240.hpp"
@@ -95,11 +85,6 @@ class CfgWeapons
 	class MP5A5;
 	class MP5SD;
 	#include "Rifles\MP5.hpp"
-	
-	class M16A2;
-	class M16A2GL;
-	#include "Rifles\M16A2.hpp"
-	#include "Rifles\M16A4.hpp"
 	
 	class Sa58V_EP1;
 	class Sa58V_CCO_EP1;

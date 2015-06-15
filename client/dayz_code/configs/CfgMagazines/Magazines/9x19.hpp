@@ -1155,7 +1155,7 @@ class RH_9mm_32RND_Mag: CA_Magazine
 
 	emptyMag = "RH_9mm_32RND_Mag_Empty";
 };
-//TODO(Jukki) Make sure RH uses same ammo
+
 class RH_9mm_32RND_MagSD: RH_9mm_32RND_Mag {
 	scope=2;
 	baseBullet = 9x19_SD_x;

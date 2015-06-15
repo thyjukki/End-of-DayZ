@@ -159,7 +159,7 @@ class 10Rnd_762x54_SVD_bt: 10Rnd_762x54_SVD {
 
 
 
-/* Mosin */ //TODO(Jukki) Should this have something else than mags?
+/* Mosin */
 class KPFS_5Rnd_762x54_Mosin_Empty: emptiedMagazine
 {
 	scope=2;

@@ -25,6 +25,7 @@ class 762x54_x2 : 762x54_x1 {
 	scope = public;
 	displayName = "7.62x54R (x2)";
 	bulletCount = 2;
+	takeOne="762x54_x1";
 	
 	class ItemActions {
 		class Stack {
@@ -49,6 +50,7 @@ class 762x54_x3 : 762x54_x1 {
 	scope = public;
 	displayName = "7.62x54R (x3)";
 	bulletCount = 3;
+	takeOne="762x54_x2";
 	
 	class ItemActions {
 		class Stack {
@@ -74,6 +76,7 @@ class 762x54_x4 : 762x54_x1 {
 	scope = public;
 	displayName = "7.62x54R (x4)";
 	bulletCount = 4;
+	takeOne="762x54_x3";
 	
 	class ItemActions {
 		class Stack {
@@ -100,6 +103,7 @@ class 762x54_x5 : 762x54_x1 {
 	scope = public;
 	displayName = "7.62x54R (x5)";
 	bulletCount = 5;
+	takeOne="762x54_x4";
 	
 	class ItemActions {
 		class Stack {
@@ -127,6 +131,7 @@ class 762x54_x6 : 762x54_x1 {
 	scope = public;
 	displayName = "7.62x54R (x6)";
 	bulletCount = 6;
+	takeOne="762x54_x5";
 	
 	class ItemActions {
 		class Stack {
@@ -397,6 +402,7 @@ class 762x54_HP_x2 : 762x54_HP_x1 {
 	scope = public;
 	displayName = "7.62x54R HP (x2)";
 	bulletCount = 2;
+	takeOne="762x54_HP_x1";
 	
 	class ItemActions {
 		class Stack {
@@ -421,6 +427,7 @@ class 762x54_HP_x3 : 762x54_HP_x1 {
 	scope = public;
 	displayName = "7.62x54R HP (x3)";
 	bulletCount = 3;
+	takeOne="762x54_HP_x2";
 	
 	class ItemActions {
 		class Stack {
@@ -446,6 +453,7 @@ class 762x54_HP_x4 : 762x54_HP_x1 {
 	scope = public;
 	displayName = "7.62x54R HP (x4)";
 	bulletCount = 4;
+	takeOne="762x54_HP_x3";
 	
 	class ItemActions {
 		class Stack {
@@ -472,6 +480,7 @@ class 762x54_HP_x5 : 762x54_HP_x1 {
 	scope = public;
 	displayName = "7.62x54R HP (x5)";
 	bulletCount = 5;
+	takeOne="762x54_HP_x4";
 	
 	class ItemActions {
 		class Stack {
@@ -499,6 +508,7 @@ class 762x54_HP_x6 : 762x54_HP_x1 {
 	scope = public;
 	displayName = "7.62x54R HP (x6)";
 	bulletCount = 6;
+	takeOne="762x54_HP_x5";
 	
 	class ItemActions {
 		class Stack {
@@ -769,6 +779,7 @@ class 762x54_TRACER_x2 : 762x54_TRACER_x1 {
 	scope = public;
 	displayName = "7.62x54R Tracer (x2)";
 	bulletCount = 2;
+	takeOne="762x54_TRACER_x1";
 	
 	class ItemActions {
 		class Stack {
@@ -793,6 +804,7 @@ class 762x54_TRACER_x3 : 762x54_TRACER_x1 {
 	scope = public;
 	displayName = "7.62x54R Tracer (x3)";
 	bulletCount = 3;
+	takeOne="762x54_TRACER_x2";
 	
 	class ItemActions {
 		class Stack {
@@ -818,6 +830,7 @@ class 762x54_TRACER_x4 : 762x54_TRACER_x1 {
 	scope = public;
 	displayName = "7.62x54R Tracer (x4)";
 	bulletCount = 4;
+	takeOne="762x54_TRACER_x3";
 	
 	class ItemActions {
 		class Stack {
@@ -844,6 +857,7 @@ class 762x54_TRACER_x5 : 762x54_TRACER_x1 {
 	scope = public;
 	displayName = "7.62x54R Tracer (x5)";
 	bulletCount = 5;
+	takeOne="762x54_TRACER_x4";
 	
 	class ItemActions {
 		class Stack {
@@ -871,6 +885,7 @@ class 762x54_TRACER_x6 : 762x54_TRACER_x1 {
 	scope = public;
 	displayName = "7.62x54R Tracer (x6)";
 	bulletCount = 6;
+	takeOne="762x54_TRACER_x5";
 	
 	class ItemActions {
 		class Stack {
@@ -1141,6 +1156,7 @@ class 762x54_RUBBER_x2 : 762x54_RUBBER_x1 {
 	scope = public;
 	displayName = "7.62x54R Rubber (x2)";
 	bulletCount = 2;
+	takeOne="762x54_RUBBER_x1";
 	
 	class ItemActions {
 		class Stack {
@@ -1165,6 +1181,7 @@ class 762x54_RUBBER_x3 : 762x54_RUBBER_x1 {
 	scope = public;
 	displayName = "7.62x54R Rubber (x3)";
 	bulletCount = 3;
+	takeOne="762x54_RUBBER_x2";
 	
 	class ItemActions {
 		class Stack {
@@ -1190,6 +1207,7 @@ class 762x54_RUBBER_x4 : 762x54_RUBBER_x1 {
 	scope = public;
 	displayName = "7.62x54R Rubber (x4)";
 	bulletCount = 4;
+	takeOne="762x54_RUBBER_x3";
 	
 	class ItemActions {
 		class Stack {
@@ -1216,6 +1234,7 @@ class 762x54_RUBBER_x5 : 762x54_RUBBER_x1 {
 	scope = public;
 	displayName = "7.62x54R Rubber (x5)";
 	bulletCount = 5;
+	takeOne="762x54_RUBBER_x4";
 	
 	class ItemActions {
 		class Stack {
@@ -1243,6 +1262,7 @@ class 762x54_RUBBER_x6 : 762x54_RUBBER_x1 {
 	scope = public;
 	displayName = "7.62x54R Rubber (x6)";
 	bulletCount = 6;
+	takeOne="762x54_RUBBER_x5";
 	
 	class ItemActions {
 		class Stack {
@@ -1513,6 +1533,7 @@ class 762x54_BT_x2 : 762x54_BT_x1 {
 	scope = public;
 	displayName = "7.62x54R Ballistic Tip (x2)";
 	bulletCount = 2;
+	takeOne="762x54_BT_x1";
 	
 	class ItemActions {
 		class Stack {
@@ -1537,6 +1558,7 @@ class 762x54_BT_x3 : 762x54_BT_x1 {
 	scope = public;
 	displayName = "7.62x54R Ballistic Tip (x3)";
 	bulletCount = 3;
+	takeOne="762x54_BT_x2";
 	
 	class ItemActions {
 		class Stack {
@@ -1562,6 +1584,7 @@ class 762x54_BT_x4 : 762x54_BT_x1 {
 	scope = public;
 	displayName = "7.62x54R Ballistic Tip (x4)";
 	bulletCount = 4;
+	takeOne="762x54_BT_x3";
 	
 	class ItemActions {
 		class Stack {
@@ -1588,6 +1611,7 @@ class 762x54_BT_x5 : 762x54_BT_x1 {
 	scope = public;
 	displayName = "7.62x54R Ballistic Tip (x5)";
 	bulletCount = 5;
+	takeOne="762x54_BT_x4";
 	
 	class ItemActions {
 		class Stack {
@@ -1615,6 +1639,7 @@ class 762x54_BT_x6 : 762x54_BT_x1 {
 	scope = public;
 	displayName = "7.62x54R Ballistic Tip (x6)";
 	bulletCount = 6;
+	takeOne="762x54_BT_x5";
 	
 	class ItemActions {
 		class Stack {

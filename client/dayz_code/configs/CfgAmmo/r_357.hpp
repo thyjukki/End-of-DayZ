@@ -1,6 +1,6 @@
 
 //357 mag
-class RH_357mag_ball: BulletBase
+class B_357mag_ball: BulletBase
 {
 	hit=8.900000;
 	cost=1;
