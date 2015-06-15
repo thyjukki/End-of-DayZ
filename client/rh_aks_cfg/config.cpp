@@ -4647,6 +4647,34 @@ class cfgWeapons
 			maxRange=400;
 			maxRangeProbab=0.100000;
 		};
+		descriptionShort="<br />Ammo: 7.62x39 mm";
+		magazines[] = 
+		{
+			"762x39_x1",
+			"762x39_SD_x1",
+			"762x39_HP_x1",
+			"762x39_TRACER_x1",
+			"762x39_RUBBER_x1",
+			"762x39_BT_x1",
+			"30Rnd_762x39_AK47",
+			"30Rnd_762x39_AK47_SD",
+			"30Rnd_762x39_AK47_hp",
+			"30Rnd_762x39_AK47_tracer",
+			"30Rnd_762x39_AK47_rubber",
+			"30Rnd_762x39_AK47_bt",
+			"vil_40Rnd_762x39_AK47",
+			"vil_40Rnd_762x39_AK47_SD",
+			"vil_40Rnd_762x39_AK47_hp",
+			"vil_40Rnd_762x39_AK47_tracer",
+			"vil_40Rnd_762x39_AK47_rubber",
+			"vil_40Rnd_762x39_AK47_bt",
+			"RH_75Rnd_762x39_mag",
+			"RH_75Rnd_762x39_mag_SD",
+			"RH_75Rnd_762x39_mag_hp",
+			"RH_75Rnd_762x39_mag_tracer",
+			"RH_75Rnd_762x39_mag_rubber",
+			"RH_75Rnd_762x39_mag_bt"
+		};
 		class FullAuto: Mode_FullAuto
 		{
 			begin1[]=
@@ -5092,6 +5120,34 @@ class cfgWeapons
 				att = "Attachment_GP25";
 				out = "RH_ak104gl";
 			};
+		};
+		descriptionShort="<br />Ammo: 7.62x39 mm";
+		magazines[] = 
+		{
+			"762x39_x1",
+			"762x39_SD_x1",
+			"762x39_HP_x1",
+			"762x39_TRACER_x1",
+			"762x39_RUBBER_x1",
+			"762x39_BT_x1",
+			"30Rnd_762x39_AK47",
+			"30Rnd_762x39_AK47_SD",
+			"30Rnd_762x39_AK47_hp",
+			"30Rnd_762x39_AK47_tracer",
+			"30Rnd_762x39_AK47_rubber",
+			"30Rnd_762x39_AK47_bt",
+			"vil_40Rnd_762x39_AK47",
+			"vil_40Rnd_762x39_AK47_SD",
+			"vil_40Rnd_762x39_AK47_hp",
+			"vil_40Rnd_762x39_AK47_tracer",
+			"vil_40Rnd_762x39_AK47_rubber",
+			"vil_40Rnd_762x39_AK47_bt",
+			"RH_75Rnd_762x39_mag",
+			"RH_75Rnd_762x39_mag_SD",
+			"RH_75Rnd_762x39_mag_hp",
+			"RH_75Rnd_762x39_mag_tracer",
+			"RH_75Rnd_762x39_mag_rubber",
+			"RH_75Rnd_762x39_mag_bt"
 		};
 		model="\RH_aks\RH_ak104.p3d";
 		picture="\RH_aks\inv\ak104.paa";
