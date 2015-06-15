@@ -71,7 +71,6 @@
 // server only
 if (isServer) then {
 	"PVDZ_plr_Death"		addPublicVariableEventHandler {_id = (_this select 1) spawn server_playerDied};
-	"PVDZ_plr_Hit"			addPublicVariableEventHandler {_id = (_this select 1) spawn server_playerHit};
 	"PVDZ_plr_Save"			addPublicVariableEventHandler {_id = (_this select 1) call server_playerSync;};
 	"PVDZ_obj_Publish"		addPublicVariableEventHandler {(_this select 1) call server_publishObj};
 	"PVDZ_veh_Save" 		addPublicVariableEventHandler {(_this select 1) call server_updateObject};
