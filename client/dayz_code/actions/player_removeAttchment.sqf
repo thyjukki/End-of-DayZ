@@ -8,7 +8,8 @@ if (_onLadder) exitWith {cutText [(localize "str_player_21") , "PLAIN DOWN"]};
 
 _weapon = _this select 0;
 _config = configFile >> "cfgWeapons" >> _weapon;
-_giveAtt = getText(_config >> "ItemActions" >> _this select 1 >> "att");
+_giveAtt = _this select 1;
+_giveWep = _this select 2;
 
 
 _empty = [player] call BIS_fnc_invSlotsEmpty;
@@ -23,9 +24,13 @@ if (_emptymagslotcount > 0) then
 	[player,_dis,true,(getPosATL player)] call player_alertZombies;
 
 	sleep 5;
-	player removeWeapon _weapon;
+	if (carryClick) then {
+		DayZ_onBack = _giveWep;
+	} else {
+		player removeWeapon _weapon;
 
-	player addWeapon getText(_config >> "ItemActions" >> _this select 1 >> "out");
+		player addWeapon _giveWep;
+	};
 	
 	player addMagazine _giveAtt;
 

@@ -352,6 +352,7 @@ class RscDisplayGear {
 					text = "";
 					x = 0;
 					y = 0 * safezoneH;
+					width = 200;
 				};
 
 				class RscButton_1601: RscButtonActionMenu {
@@ -359,6 +360,7 @@ class RscDisplayGear {
 					text = "";
 					x = 0;
 					y = 0.025 * safezoneH;
+					width = 200;
 				};
 
 				class RscButton_1602: RscButtonActionMenu {
@@ -366,6 +368,7 @@ class RscDisplayGear {
 					text = "";
 					x = 0;
 					y = 0.05 * safezoneH;
+					width = 200;
 				};
 
 				class RscButton_1603: RscButtonActionMenu {
@@ -373,6 +376,7 @@ class RscDisplayGear {
 					text = "";
 					x = 0;
 					y = 0.075 * safezoneH;
+					width = 200;
 				};
 
 				class RscButton_1604: RscButtonActionMenu {
@@ -380,6 +384,7 @@ class RscDisplayGear {
 					text = "";
 					x = 0;
 					y = 0.1 * safezoneH;
+					width = 200;
 				};
 
 				class RscButton_1605: RscButtonActionMenu {
@@ -387,6 +392,7 @@ class RscDisplayGear {
 					text = "";
 					x = 0;
 					y = 0.125 * safezoneH;
+					width = 200;
 				};
 
 				class RscButton_1606: RscButtonActionMenu {
@@ -394,6 +400,7 @@ class RscDisplayGear {
 					text = "";
 					x = 0;
 					y = 0.15 * safezoneH;
+					width = 200;
 				};
 
 				class RscButton_1607: RscButtonActionMenu {
@@ -401,6 +408,7 @@ class RscDisplayGear {
 					text = "";
 					x = 0;
 					y = 0.175 * safezoneH;
+					width = 200;
 				};
 
 				class RscButton_1608: RscButtonActionMenu {
@@ -408,6 +416,7 @@ class RscDisplayGear {
 					text = "";
 					x = 0;
 					y = 0.2 * safezoneH;
+					width = 200;
 				};
 
 				class RscButton_1609: RscButtonActionMenu {
@@ -415,6 +424,7 @@ class RscDisplayGear {
 					text = "";
 					x = 0;
 					y = 0.225 * safezoneH;
+					width = 200;
 				};
 			};
 		};

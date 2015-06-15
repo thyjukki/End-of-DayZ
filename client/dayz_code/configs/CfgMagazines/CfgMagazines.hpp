@@ -44,6 +44,7 @@ class CfgMagazines
 	#include "bullets\b_22lr.hpp"
 	#include "bullets\b_44.hpp"
 	#include "bullets\b_357.hpp"
+	#include "bullets\b_338.hpp"
 	#include "bullets\b_30cal.hpp"
 	#include "bullets\b_32acp.hpp"
 	#include "bullets\b_45acp.hpp"

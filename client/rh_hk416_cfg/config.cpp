@@ -202,7 +202,7 @@ class cfgWeapons
 			class UseAtt4 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_hk416sd";
 			};
 		};
@@ -458,7 +458,7 @@ class cfgWeapons
 			class UseAtt4 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_hk416";
 			};
 		};
@@ -517,7 +517,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_hk416aim";
 			};
 			class UseAtt2 : UseAtt{
@@ -547,7 +547,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_hk416eotech";
 			};
 			class UseAtt2 : UseAtt{
@@ -577,7 +577,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_hk416sdaim";
 			};
 			class UseAtt2 : UseAtt{
@@ -607,7 +607,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_hk416sdeotech";
 			};
 			class UseAtt2 : UseAtt{
@@ -632,7 +632,7 @@ class cfgWeapons
 				script = "spawn player_removeAttchment;";
 				text = "Detach ACOG";
 				att = "Attachment_ACOG";
-				out = "RH_hk416sd";
+				out = "RH_hk416";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
@@ -709,7 +709,7 @@ class cfgWeapons
 			class UseAtt3 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_hk416sdgl";
 			};
 			class UseAtt5 : UseAtt{
@@ -793,10 +793,13 @@ class cfgWeapons
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_hk416sdglaim";
 			};
 		};
+		opticsDisablePeripherialVision=1;
+		distanceZoomMin=100;
+		distanceZoomMax=100;
 		displayName="HK416 Aimpoint AG36";
 		model="\RH_hk416\RH_hk416glaim.p3d";
 		picture="\RH_hk416\inv\hk416glaim.paa";
@@ -877,10 +880,13 @@ class cfgWeapons
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_hk416sdgleotech";
 			};
 		};
+		opticsDisablePeripherialVision=1;
+		distanceZoomMin=100;
+		distanceZoomMax=100;
 		displayName="Hk416 Eotech AG36";
 		model="\RH_hk416\RH_hk416gleotech.p3d";
 		picture="\RH_hk416\inv\Hk416gleotech.paa";
@@ -966,6 +972,45 @@ class cfgWeapons
 		{
 			"this",
 			"RH_AG36Muzzle"
+		};
+		modelOptics="\RH_hk416\NWD_acog_ta31f"; //TODO(Jukki) Try if this is the right way to do it
+		class OpticsModes
+		{
+			class ACOG
+			{
+				opticsID=1;
+				useModelOptics=1;
+				opticsPPEffects[]=
+				{
+					"OpticsCHAbera1",
+					"OpticsBlur1"
+				};
+				opticsZoomMin=0.071945;
+				opticsZoomMax=0.071945;
+				opticsZoomInit=0.071945;
+				memoryPointCamera="opticView";
+				visionMode[]=
+				{
+					"Normal"
+				};
+				opticsFlare="true";
+				opticsDisablePeripherialVision="true";
+				distanceZoomMin=189;
+				distanceZoomMax=189;
+				cameraDir="";
+			};
+			class Kolimator: ACOG
+			{
+				opticsID=2;
+				useModelOptics=0;
+				opticsFlare="false";
+				opticsDisablePeripherialVision="false";
+				opticsZoomMin=0.250000;
+				opticsZoomMax=1.100000;
+				opticsZoomInit=0.500000;
+				memoryPointCamera="eye";
+				visionMode[]={};
+			};
 		};
 		dexterity=1.590000;
 		class RH_AG36Muzzle: GrenadeLauncher
@@ -1118,6 +1163,9 @@ class cfgWeapons
 			"OFP2_ManSkeleton",
 			"\Ca\weapons\data\Anim\M16GL.rtm"
 		};
+		opticsDisablePeripherialVision=1;
+		distanceZoomMin=100;
+		distanceZoomMax=100;
 		muzzles[]=
 		{
 			"this",
@@ -1196,6 +1244,9 @@ class cfgWeapons
 			"RH_AG36Muzzle"
 		};
 		dexterity=1.590000;
+		opticsDisablePeripherialVision=1;
+		distanceZoomMin=100;
+		distanceZoomMax=100;
 		class RH_AG36Muzzle: GrenadeLauncher
 		{
 			displayName="M203";
@@ -1262,6 +1313,41 @@ class cfgWeapons
 			"OFP2_ManSkeleton",
 			"\Ca\weapons\data\Anim\M16GL.rtm"
 		};
+		class ACOG
+		{
+			opticsID=1;
+			useModelOptics=1;
+			opticsPPEffects[]=
+			{
+				"OpticsCHAbera1",
+				"OpticsBlur1"
+			};
+			opticsZoomMin=0.071945;
+			opticsZoomMax=0.071945;
+			opticsZoomInit=0.071945;
+			memoryPointCamera="opticView";
+			visionMode[]=
+			{
+				"Normal"
+			};
+			opticsFlare="true";
+			opticsDisablePeripherialVision="true";
+			distanceZoomMin=189;
+			distanceZoomMax=189;
+			cameraDir="";
+		};
+		class Kolimator: ACOG
+		{
+			opticsID=2;
+			useModelOptics=0;
+			opticsFlare="false";
+			opticsDisablePeripherialVision="false";
+			opticsZoomMin=0.250000;
+			opticsZoomMax=1.100000;
+			opticsZoomInit=0.500000;
+			memoryPointCamera="eye";
+			visionMode[]={};
+		};
 		muzzles[]=
 		{
 			"this",
@@ -1327,7 +1413,7 @@ class cfgWeapons
 			class UseAtt2 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_hk416gl";
 			};
 			class UseAtt3 : UseAtt{
@@ -1405,7 +1491,7 @@ class cfgWeapons
 			class UseAtt2 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_hk416glaim";
 			};
 			class UseAtt3 : UseAtt{
@@ -1424,6 +1510,9 @@ class cfgWeapons
 			"OFP2_ManSkeleton",
 			"\Ca\weapons\data\Anim\M16GL.rtm"
 		};
+		opticsDisablePeripherialVision=1;
+		distanceZoomMin=100;
+		distanceZoomMax=100;
 		muzzles[]=
 		{
 			"this",
@@ -1483,7 +1572,7 @@ class cfgWeapons
 			class UseAtt2 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_hk416gleotech";
 			};
 			class UseAtt3 : UseAtt{
@@ -1502,6 +1591,9 @@ class cfgWeapons
 			"OFP2_ManSkeleton",
 			"\Ca\weapons\data\Anim\M16GL.rtm"
 		};
+		opticsDisablePeripherialVision=1;
+		distanceZoomMin=100;
+		distanceZoomMax=100;
 		muzzles[]=
 		{
 			"this",
@@ -1579,7 +1671,7 @@ class cfgWeapons
 			class UseAtt4 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_hk417sd";
 			};
 		};
@@ -1683,7 +1775,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_hk417sdaim";
 			};
 		};
@@ -1707,7 +1799,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_hk417sdeotech";
 			};
 		};
@@ -1731,7 +1823,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_hk417sdacog";
 			};
 		};
@@ -1791,7 +1883,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_hk417sdsp";
 			};
 		};
@@ -2006,7 +2098,7 @@ class cfgWeapons
 			class UseAtt4 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_hk417";
 			};
 		};
@@ -2065,7 +2157,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_hk417aim";
 			};
 		};
@@ -2089,7 +2181,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_hk417eotech";
 			};
 		};
@@ -2113,7 +2205,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_hk417acog";
 			};
 		};
@@ -2173,7 +2265,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_hk417sp";
 			};
 		};
@@ -2328,6 +2420,9 @@ class cfgWeapons
 			"RH_AG36Muzzle"
 		};
 		dexterity=1.590000;
+		opticsDisablePeripherialVision=1;
+		distanceZoomMin=100;
+		distanceZoomMax=100;
 		class RH_AG36Muzzle: GrenadeLauncher
 		{
 			displayName="AG36";
@@ -2399,6 +2494,9 @@ class cfgWeapons
 			"this",
 			"RH_AG36Muzzle"
 		};
+		opticsDisablePeripherialVision=1;
+		distanceZoomMin=100;
+		distanceZoomMax=100;
 		dexterity=1.590000;
 		class RH_AG36Muzzle: GrenadeLauncher
 		{
@@ -2465,6 +2563,45 @@ class cfgWeapons
 		{
 			"OFP2_ManSkeleton",
 			"\Ca\weapons\data\Anim\M16GL.rtm"
+		};
+		modelOptics="\RH_hk416\NWD_acog_ta31f";
+		class OpticsModes
+		{
+			class ACOG
+			{
+				opticsID=1;
+				useModelOptics=1;
+				opticsPPEffects[]=
+				{
+					"OpticsCHAbera1",
+					"OpticsBlur1"
+				};
+				opticsZoomMin=0.071945;
+				opticsZoomMax=0.071945;
+				opticsZoomInit=0.071945;
+				memoryPointCamera="opticView";
+				visionMode[]=
+				{
+					"Normal"
+				};
+				opticsFlare="true";
+				opticsDisablePeripherialVision="true";
+				distanceZoomMin=189;
+				distanceZoomMax=189;
+				cameraDir="";
+			};
+			class Kolimator: ACOG
+			{
+				opticsID=2;
+				useModelOptics=0;
+				opticsFlare="false";
+				opticsDisablePeripherialVision="false";
+				opticsZoomMin=0.250000;
+				opticsZoomMax=1.100000;
+				opticsZoomInit=0.500000;
+				memoryPointCamera="eye";
+				visionMode[]={};
+			};
 		};
 		muzzles[]=
 		{
@@ -2600,6 +2737,46 @@ class cfgWeapons
 			"\RH_hk416\Anim\RH_scargl.rtm"
 		};
 		dexterity=1.590000;
+
+		modelOptics="\RH_hk416\NWD_acog_ta31f.p3d";
+		class OpticsModes
+		{
+			class ACOG
+			{
+				opticsID=1;
+				useModelOptics=1;
+				opticsPPEffects[]=
+				{
+					"OpticsCHAbera1",
+					"OpticsBlur1"
+				};
+				opticsZoomMin=0.071945;
+				opticsZoomMax=0.071945;
+				opticsZoomInit=0.071945;
+				memoryPointCamera="opticView";
+				visionMode[]=
+				{
+					"Normal"
+				};
+				opticsFlare="true";
+				opticsDisablePeripherialVision="true";
+				distanceZoomMin=189;
+				distanceZoomMax=189;
+				cameraDir="";
+			};
+			class Kolimator: ACOG
+			{
+				opticsID=2;
+				useModelOptics=0;
+				opticsFlare="false";
+				opticsDisablePeripherialVision="false";
+				opticsZoomMin=0.250000;
+				opticsZoomMax=1.100000;
+				opticsZoomInit=0.500000;
+				memoryPointCamera="eye";
+				visionMode[]={};
+			};
+		};
 		muzzles[]=
 		{
 			"this",
@@ -2816,7 +2993,7 @@ class cfgWeapons
 			class UseAtt3 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_massd";
 			};
 		};
@@ -2883,7 +3060,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_massdaim";
 			};
 		};
@@ -2907,7 +3084,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_massdeotech";
 			};
 		};
@@ -2931,7 +3108,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_massdacog";
 			};
 		};
@@ -3003,7 +3180,7 @@ class cfgWeapons
 			class UseAtt3 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_mas";
 			};
 		};
@@ -3062,7 +3239,7 @@ class cfgWeapons
 			class UseAtt3 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_masaim";
 			};
 		};
@@ -3086,7 +3263,7 @@ class cfgWeapons
 			class UseAtt3 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_maseotech";
 			};
 		};
@@ -3110,7 +3287,7 @@ class cfgWeapons
 			class UseAtt3 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_masacog";
 			};
 		};
@@ -3182,7 +3359,7 @@ class cfgWeapons
 			class UseAtt3 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_masbsd";
 			};
 		};
@@ -3207,7 +3384,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_masbsdaim";
 			};
 		};
@@ -3231,7 +3408,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_masbsdeotech";
 			};
 		};
@@ -3255,7 +3432,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_masbsdacog";
 			};
 		};
@@ -3327,7 +3504,7 @@ class cfgWeapons
 			class UseAtt3 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_masb";
 			};
 		};
@@ -3386,7 +3563,7 @@ class cfgWeapons
 			class UseAtt3 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_masbaim";
 			};
 		};
@@ -3410,7 +3587,7 @@ class cfgWeapons
 			class UseAtt3 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_masbeotech";
 			};
 		};
@@ -3434,7 +3611,7 @@ class cfgWeapons
 			class UseAtt3 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_NATO";
+				att = "Attachment_SupNATO";
 				out = "RH_masbacog";
 			};
 		};

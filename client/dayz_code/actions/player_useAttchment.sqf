@@ -6,8 +6,8 @@ if (_onLadder) exitWith {cutText [(localize "str_player_21") , "PLAIN DOWN"]};
 
 _weapon = _this select 0;
 _config = configFile >> "cfgWeapons" >> _weapon;
-
-_requiredAtt = getText(_config >> "ItemActions" >> _this select 1 >> "att");
+_requiredAtt = _this select 1;
+_giveWep = _this select 2;
 
 if (_requiredAtt in magazines player) then 
 {
@@ -18,9 +18,13 @@ if (_requiredAtt in magazines player) then
 	[player,_dis,true,(getPosATL player)] call player_alertZombies;
 
 	sleep 5;
-	player removeWeapon _weapon;
+	if (carryClick) then {
+		DayZ_onBack = _giveWep;
+	} else {
+		player removeWeapon _weapon;
 
-	player addWeapon getText(_config >> "ItemActions" >> "UseAtt" >> "out");
+		player addWeapon _giveWep;
+	};
 
 	cutText [format["Attachment %1 succesfully applied.",getText (configFile >> "CfgMagazines" >> _requiredAtt >> "displayName")], "PLAIN DOWN"];
 	player removeMagazine _requiredAtt;

@@ -361,15 +361,187 @@ class 20Rnd_762x51_DMR_bt: 20Rnd_762x51_DMR {
 
 
 
-//TODO(Jukki) What to do with this?
-class 5Rnd_762x51_M24 : CA_Magazine
+
+/* M40 */
+class 10Rnd_762x51_M40_Empty: emptiedMagazine
 {
-	class ItemActions
+	scope=2;
+	displayName="M40 Mag (Empty)";
+	descriptionShort = "Caliber: 7.62x51mm NATO<br/>Rounds: 10<br/>Used in: M40";
+	picture = "\ca\weapons\data\equip\M_US_DMR_CA.paa";
+	model = "\dayz_equip\models\mag20.p3d";
+	class ammoType
 	{
-		COMBINE_MAG
+		class B_762x51_Ball {
+			ammoMag = "10Rnd_762x51_M40";
+		};
+		class B_762x51_SD {
+			ammoMag = "10Rnd_762x51_M40SD";
+		};
+		class B_762x51_HP {
+			ammoMag = "10Rnd_762x51_M40_hp";
+		};
+		class B_762x51_TRACER {
+			ammoMag = "10Rnd_762x51_M40_tracer";
+		};
+		class B_762x51_RUBBER {
+			ammoMag = "10Rnd_762x51_M40_rubber";
+		};
+		class B_762x51_BT {
+			ammoMag = "10Rnd_762x51_M40_bt";
+		};
 	};
+};
+
+class 10Rnd_762x51_M40: CA_Magazine
+{
+	scope=2;
+	displayName="M40 Mag";
+	picture = "\ca\weapons\data\equip\M_US_DMR_CA.paa";
+	model = "\dayz_equip\models\mag20.p3d";
+	descriptionShort = "Caliber: 7.62x51mm NATO<br/>Rounds: 10<br/>Used in: M40";
+	ammo="B_762x51_Ball";
+	count=10;
+	initSpeed=780;
+	baseBullet = 762x51_x;
+	LOAD_AMMO
+
+	emptyMag = "10Rnd_762x51_M40_Empty";
+};
+
+class 10Rnd_762x51_M40SD: 10Rnd_762x51_M40 {
+	scope=2;
+	baseBullet = 762x51_SD_x;
+	initSpeed=310;
+	ammo="B_762x51_SD";
+	displayName="M40 SD Mag";
+	displayNameShort="SD";
+};
+
+class 10Rnd_762x51_M40_hp: 10Rnd_762x51_M40 {
+	scope=2;
+	baseBullet = 762x51_HP_x;
+	ammo="B_762x51_HP";
+	displayName="M40 HP Mag";
+	displayNameShort="HP";
+};
+
+class 10Rnd_762x51_M40_tracer: 10Rnd_762x51_M40 {
+	scope=2;
+	baseBullet = 762x51_Tracer_x;
+	tracersevery = 1;
+	ammo="B_762x51_TRACER";
+	displayName="M40 Tracer Mag";
+	displayNameShort="Tracer";
+};
+
+class 10Rnd_762x51_M40_rubber: 10Rnd_762x51_M40 {
+	scope=2;
+	baseBullet = 762x51_RUBBER_x;
+	
+	ammo="B_762x51_RUBBER";
+	displayName="M40 Rubber Mag";
+	displayNameShort="Rubber";
+};
+
+class 10Rnd_762x51_M40_bt: 10Rnd_762x51_M40 {
+	scope=2;
+	baseBullet = 762x51_BT_x;
+	ammo="B_762x51_BT";
+	displayName="M40 BT Mag";
+	displayNameShort="BT";
+};
+
+
+
+/* M24 */
+class 5Rnd_762x51_M24_Empty: emptiedMagazine
+{
+	scope=2;
+	displayName="M24 Mag (Empty)";
+	descriptionShort = "Caliber: 7.62x51mm NATO<br/>Rounds: 5<br/>Used in: M24";
+	picture = "\Ca\weapons\Data\Equip\m_M24_CA.paa";
+	model = "\ca\CommunityConfigurationProject_E\Gameplay_ActualModelsOfWeaponMagazinesVisibleOnTheGround\p3d\5Rnd_762x51_M24.p3d";
+	class ammoType
+	{
+		class B_762x51_Ball {
+			ammoMag = "5Rnd_762x51_M24";
+		};
+		class B_762x51_SD {
+			ammoMag = "5Rnd_762x51_M24SD";
+		};
+		class B_762x51_HP {
+			ammoMag = "5Rnd_762x51_M24_hp";
+		};
+		class B_762x51_TRACER {
+			ammoMag = "5Rnd_762x51_M24_tracer";
+		};
+		class B_762x51_RUBBER {
+			ammoMag = "5Rnd_762x51_M24_rubber";
+		};
+		class B_762x51_BT {
+			ammoMag = "5Rnd_762x51_M24_bt";
+		};
+	};
+};
+
+class 5Rnd_762x51_M24: CA_Magazine
+{
+	scope=2;
+	displayName="M24 Mag";
+	picture = "\Ca\weapons\Data\Equip\m_M24_CA.paa";
+	model = "\ca\CommunityConfigurationProject_E\Gameplay_ActualModelsOfWeaponMagazinesVisibleOnTheGround\p3d\5Rnd_762x51_M24.p3d";
+	descriptionShort = "Caliber: 7.62x51mm NATO<br/>Rounds: 5<br/>Used in: M24";
+	ammo="B_762x51_Ball";
+	count=5;
+	initSpeed=780;
+	baseBullet = 762x51_x;
+	LOAD_AMMO
 
 	emptyMag = "5Rnd_762x51_M24_Empty";
+};
+
+class 5Rnd_762x51_M24SD: 5Rnd_762x51_M24 {
+	scope=2;
+	baseBullet = 762x51_SD_x;
+	initSpeed=320;
+	ammo="B_762x51_SD";
+	displayName="M24 SD Mag";
+	displayNameShort="SD";
+};
+
+class 5Rnd_762x51_M24_hp: 5Rnd_762x51_M24 {
+	scope=2;
+	baseBullet = 762x51_HP_x;
+	ammo="B_762x51_HP";
+	displayName="M24 HP Mag";
+	displayNameShort="HP";
+};
+
+class 5Rnd_762x51_M24_tracer: 5Rnd_762x51_M24 {
+	scope=2;
+	baseBullet = 762x51_Tracer_x;
+	tracersevery = 1;
+	ammo="B_762x51_TRACER";
+	displayName="M24 Tracer Mag";
+	displayNameShort="Tracer";
+};
+
+class 5Rnd_762x51_M24_rubber: 5Rnd_762x51_M24 {
+	scope=2;
+	baseBullet = 762x51_RUBBER_x;
+	
+	ammo="B_762x51_RUBBER";
+	displayName="M24 Rubber Mag";
+	displayNameShort="Rubber";
+};
+
+class 5Rnd_762x51_M24_bt: 5Rnd_762x51_M24 {
+	scope=2;
+	baseBullet = 762x51_BT_x;
+	ammo="B_762x51_BT";
+	displayName="M24 BT Mag";
+	displayNameShort="BT";
 };
 
 
@@ -875,7 +1047,7 @@ class RH_20Rnd_762x51_hk417: CA_Magazine
 	picture="\RH_hk416\inv\m_hk417.paa";
 	descriptionShort="Caliber: 7.62x51 mm NATO<br/>Rounds: 20 <br/>Used in: HK 417";
 	ammo="B_762x51_Ball";
-	count=8;
+	count=20;
 	initSpeed=780;
 	baseBullet = 762x51_x;
 	LOAD_AMMO

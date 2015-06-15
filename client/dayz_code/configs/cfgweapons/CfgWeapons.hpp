@@ -82,10 +82,6 @@ class CfgWeapons
 	
 	#include "Rifles\Mosin.hpp"
 	
-	class MP5A5;
-	class MP5SD;
-	#include "Rifles\MP5.hpp"
-	
 	class Sa58V_EP1;
 	class Sa58V_CCO_EP1;
 	class Sa58V_RCO_EP1;
