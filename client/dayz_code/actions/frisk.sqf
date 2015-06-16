@@ -34,6 +34,7 @@ _FeelEmpty = false;
 _HasSphere = "";
 _HasSharp = "";
 _HasRadio = "";
+_HasChloroform = "";
 _Output = "";
 _FinalOutput = "";
 
@@ -105,6 +106,13 @@ if (_finished) then
 			_HasRadio = " A static noise emits from one of the pockets.";
 		};
 	};
+	if (random 1 < 0.4) then
+	{
+		if (("ItemChloroform" in _mags)) then
+		{
+			_HasChloroform = " You Find a medical Bottle containing some liquid.";
+		};
+	};
 	if (random 1 < 0.5) then
 	{
 		if (("ItemMachete" in _weapons) or ("ItemHatchet" in _weapons) or ("ItemKnife" in _weapons) or ("ItemTrashRazor" in _mags)) then
@@ -133,7 +141,7 @@ if (_finished) then
 		};
 	};
 	
-	_FinalOutput = _Output + _HasSphere + _HasRadio + _HasSharp;
+	_FinalOutput = _Output + _HasSphere + _HasRadio + _HasChloroform + _HasSharp;
 	cutText [_FinalOutput, "PLAIN DOWN"];
 }
 else

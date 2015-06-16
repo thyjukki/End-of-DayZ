@@ -3,11 +3,6 @@ class Flare : GrenadeLauncher {
 		class MolotovCocktailMuzzle : ThrowMuzzle {
 			displayName = $STR_ACTION_THROW;
 			magazines[] = {
-				"SmokeShell", 
-				"SmokeShellRed", 
-				"SmokeShellGreen", 
-				"HandGrenade_east", 
-				"HandGrenade_west", 
 				"TrashJackDaniels", 
 				"ItemSodaEmpty", 
 				"TrashTinCan",
@@ -52,5 +47,15 @@ class Flare : GrenadeLauncher {
 				"ItemSodaSherbetEmpty",
 				"ItemSodaSmashtEmpty"
 			};          
+		};
+		class ThrowSmokeMuzzle : ThrowMuzzle {
+			displayName = "Throw Smoke";
+			magazines[] = {
+				"SmokeShell", 
+				"SmokeShellRed", 
+				"SmokeShellGreen"
+			};          
+			cursor = "Vehicle_Grenade_W";
+			cursorAim = "\ca\Weapons\Data\clear_empty";
 		};
 	}; 

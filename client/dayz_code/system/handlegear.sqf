@@ -17,6 +17,9 @@ IGUI_GEAR_filterPistols = (_activeFilter select 5);
 IGUI_GEAR_filterPistolAmmo = (_activeFilter select 6);
 */
 
+r_ammo_selected_slot = 0;
+r_ammo_selected_mode = 0;
+r_ammo_selected = "";
 _doFilter = false;
 
 _filterSets = [
@@ -51,7 +54,6 @@ if (typeName(_data select 0) == "CONTROL") then {
 	_control = (_data select 0);
 	_display = ctrlParent _control;
 };
-
 
 /*-------------------------------------------*/
 _lbSelectedItem = {
