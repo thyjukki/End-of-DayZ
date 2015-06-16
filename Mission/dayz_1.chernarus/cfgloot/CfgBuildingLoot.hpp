@@ -1197,7 +1197,7 @@ class CfgBuildingLoot {
 			{"",							"militaryAmmo",1.00},
 			{"",							"westernAmmo",0.10},
 			{"",							"generic",0.40},
-			{"",							"medical",0.40}
+			{"",							"medical",0.05}
 		};
 	};
 	class MilitarySpecial: Default {
@@ -1357,7 +1357,7 @@ class CfgBuildingLoot {
 			{"",							"civilianAmmo",0.40},
 			{"",							"militaryAmmo",0.60},
 			{"",							"westernAmmo",0.10},
-			{"",							"medical",0.30}
+			{"",							"medical",0.05}
 		};
 	};
 	class Hunting: Default {
@@ -1504,7 +1504,7 @@ class CfgBuildingLoot {
 			{"",							"civilianAmmo",0.20},
 			{"",							"militaryAmmo",0.20},
 			{"",							"generic",0.60},
-			{"",							"medical",0.60}
+			{"",							"medical",0.05}
 		};
 	};
 	class MilitaryMilHouse: Default {
@@ -1528,18 +1528,18 @@ class CfgBuildingLoot {
 			{"ItemMatchbox",				"weapon",0.07},
 		//weapons
 			//GL
-			{"FlareWhite_M203",				"magazine",0.03},
-			{"FlareGreen_M203",				"magazine",0.03},
-			{"FlareRed_M203",				"magazine",0.03},
-			{"FlareYellow_M203",			"magazine",0.03},
-			{"1Rnd_Smoke_M203",				"magazine",0.03},
-			{"1Rnd_SmokeRed_M203",			"magazine",0.03},
-			{"1Rnd_SmokeGreen_M203",		"magazine",0.03},
-			{"1Rnd_SmokeYellow_M203",		"magazine",0.03},
-			{"HandGrenade_East",			"magazine",0.02},
-			{"1Rnd_HE_GP25",				"magazine",0.02},
-			{"RH_1Rnd_30mm",				"magazine",0.02},
-		//pistols
+			{"FlareWhite_M203",				"magazine",0.01},
+			{"FlareGreen_M203",				"magazine",0.01},
+			{"FlareRed_M203",				"magazine",0.01},
+			{"FlareYellow_M203",			"magazine",0.01},
+			{"1Rnd_Smoke_M203",				"magazine",0.01},
+			{"1Rnd_SmokeRed_M203",			"magazine",0.01},
+			{"1Rnd_SmokeGreen_M203",		"magazine",0.01},
+			{"1Rnd_SmokeYellow_M203",		"magazine",0.01},
+			{"HandGrenade_East",			"magazine",0.03},
+			{"1Rnd_HE_GP25",				"magazine",0.03},
+			{"RH_1Rnd_30mm",				"magazine",0.03},
+		//pistol
 			{"RH_m1911old",					"weapon",0.05},
 			{"RH_m1911",					"weapon",0.02},
 			{"RH_deagle",					"weapon",0.01},
@@ -1636,7 +1636,7 @@ class CfgBuildingLoot {
 			{"",							"militaryAmmo",0.60},
 			{"",							"westernAmmo",0.10},
 			{"",							"generic",0.40},
-			{"",							"medical",0.40}
+			{"",							"medical",0.05}
 //loot goes here
 		};
 	};
@@ -1661,17 +1661,17 @@ class CfgBuildingLoot {
 			{"ItemMatchbox",				"weapon",0.07},
 		//weapons
 		//GL
-			{"FlareWhite_M203",				"magazine",0.03},
-			{"FlareGreen_M203",				"magazine",0.03},
-			{"FlareRed_M203",				"magazine",0.03},
-			{"FlareYellow_M203",			"magazine",0.03},
-			{"1Rnd_Smoke_M203",				"magazine",0.03},
-			{"1Rnd_SmokeRed_M203",			"magazine",0.03},
-			{"1Rnd_SmokeGreen_M203",		"magazine",0.03},
-			{"1Rnd_SmokeYellow_M203",		"magazine",0.03},
-			{"HandGrenade_East",			"magazine",0.02},
-			{"1Rnd_HE_GP25",				"magazine",0.02},
-			{"RH_1Rnd_30mm",				"magazine",0.02},
+			{"FlareWhite_M203",				"magazine",0.01},
+			{"FlareGreen_M203",				"magazine",0.01},
+			{"FlareRed_M203",				"magazine",0.01},
+			{"FlareYellow_M203",			"magazine",0.01},
+			{"1Rnd_Smoke_M203",				"magazine",0.01},
+			{"1Rnd_SmokeRed_M203",			"magazine",0.01},
+			{"1Rnd_SmokeGreen_M203",		"magazine",0.01},
+			{"1Rnd_SmokeYellow_M203",		"magazine",0.01},
+			{"HandGrenade_East",			"magazine",0.03},
+			{"1Rnd_HE_GP25",				"magazine",0.03},
+			{"RH_1Rnd_30mm",				"magazine",0.03},
 		//pistols
 			{"RH_m1911old",					"weapon",0.05},
 			{"RH_m1911",					"weapon",0.02},
@@ -1768,7 +1768,7 @@ class CfgBuildingLoot {
 			{"",							"militaryAmmo",0.50},
 			{"",							"westernAmmo",0.10},
 			{"",							"generic",0.40},
-			{"",							"medical",0.40}
+			{"",							"medical",0.05}
 		};
 	};
 	class MilitaryBarracksSmall: Default {
@@ -1793,17 +1793,17 @@ class CfgBuildingLoot {
 			{"ItemMatchbox",				"weapon",0.07},
 		//weapons
 		//GL
-			{"FlareWhite_M203",				"magazine",0.03},
-			{"FlareGreen_M203",				"magazine",0.03},
-			{"FlareRed_M203",				"magazine",0.03},
-			{"FlareYellow_M203",			"magazine",0.03},
-			{"1Rnd_Smoke_M203",				"magazine",0.03},
-			{"1Rnd_SmokeRed_M203",			"magazine",0.03},
-			{"1Rnd_SmokeGreen_M203",		"magazine",0.03},
-			{"1Rnd_SmokeYellow_M203",		"magazine",0.03},
-			{"HandGrenade_East",			"magazine",0.02},
-			{"1Rnd_HE_GP25",				"magazine",0.02},
-			{"RH_1Rnd_30mm",				"magazine",0.02},
+			{"FlareWhite_M203",				"magazine",0.01},
+			{"FlareGreen_M203",				"magazine",0.01},
+			{"FlareRed_M203",				"magazine",0.01},
+			{"FlareYellow_M203",			"magazine",0.01},
+			{"1Rnd_Smoke_M203",				"magazine",0.01},
+			{"1Rnd_SmokeRed_M203",			"magazine",0.01},
+			{"1Rnd_SmokeGreen_M203",		"magazine",0.01},
+			{"1Rnd_SmokeYellow_M203",		"magazine",0.01},
+			{"HandGrenade_East",			"magazine",0.04},
+			{"1Rnd_HE_GP25",				"magazine",0.04},
+			{"RH_1Rnd_30mm",				"magazine",0.04},
 		//pistols
 			{"RH_m1911old",					"weapon",0.05},
 			{"RH_m1911",					"weapon",0.02},
@@ -1902,7 +1902,7 @@ class CfgBuildingLoot {
 			{"",							"militaryAmmo",0.60},
 			{"",							"westernAmmo",0.10},
 			{"",							"generic",0.60},
-			{"",							"medical",0.60}
+			{"",							"medical",0.05}
 		};
 	};
 
