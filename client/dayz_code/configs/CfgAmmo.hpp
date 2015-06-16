@@ -33,19 +33,7 @@ class CfgAmmo {
 		indirecthit = 0;
 		indirecthitrange = 0;
 	};
-//1911
-	class B_45ACP_Ball : BulletBase {
-		airfriction = -0.0013522;
-		audiblefire = 16;
-		caliber = 0.33; //33
-		cartridge = "FxCartridge_9mm";
-		cost = 5;
-		hit = 9;
-		indirecthit = 0;
-		indirecthitrange = 0;
-		typicalspeed = 260;
-		visiblefire = 16;
-	};
+
 
 	class Bolt;
 	class WoodenArrow : Bolt {
