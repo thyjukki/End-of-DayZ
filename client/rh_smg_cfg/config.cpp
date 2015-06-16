@@ -94,36 +94,6 @@ class cfgRecoils
 	RH_subMachineGunBase[]={0,0.0049999999,0.0049999999,0.0049999999,0.0070000002,0.0060000001,0.090000004,0.0020000001,-0.0015,0.1,0,0};
 	RH_SMG_M203GLBase[]={0,0.029999999,0.050000001,0.13,0.0099999998,-0.001,0.25999999,0,0};
 };
-class CfgAmmo
-{
-	class Default;
-	class BulletCore;
-	class BulletBase;
-	class RH_smg_57x28mm_Round: BulletBase
-	{
-		hit=7;
-		cartridge="FxCartridge_9mm";
-		indirectHit=0;
-		indirectHitRange=0;
-		cost=1;
-		airFriction=-0.001425;
-		caliber=0.5;
-	};
-	class RH_smg_57x28mm_SD_Round: BulletBase
-	{
-		hit=6;
-		cartridge="FxCartridge_9mm";
-		indirectHit=0;
-		indirectHitRange=0;
-		visibleFire=0.07;
-		audibleFire=0.07;
-		visibleFireTime=2;
-		cost=1;
-		typicalSpeed=320;
-		airFriction=-0.00060000003;
-		caliber=0.5;
-	};
-};
 
 class Mode_SemiAuto
 {

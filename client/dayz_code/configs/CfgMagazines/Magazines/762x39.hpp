@@ -212,9 +212,6 @@ class RH_75Rnd_762x39_mag_Empty: emptiedMagazine {
 
 class RH_75Rnd_762x39_mag: CA_Magazine
 {
-	ammo="B_762x39_Ball";
-	count=40;
-	LOAD_AMMO
 	scope=2;
 	displayName="AK47 DrumMag";
 	descriptionshort = "Caliber:7.62x39mm <br/>Rounds: 75 <br/>Used in: AK47 based weapons";

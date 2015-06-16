@@ -34,6 +34,9 @@ if (r_ammo_selected_mode == 1) then
 	_ammo2_count = getNumber (configFile >> "CfgMagazines" >> _selected_ammo >> "bulletCount");
 	_total_ammo = _ammo_count + _ammo2_count;
 	
+	[player,_item,1] call BIS_fnc_invRemove;
+	[player,_selected_ammo,1] call BIS_fnc_invRemove;
+	
 	if (_total_ammo > 0 && _total_ammo <= 10) then {
 		_toBoGiven = _toBoGiven + str(_total_ammo);
 		
@@ -41,7 +44,7 @@ if (r_ammo_selected_mode == 1) then
 		
 	} else {
 	
-		while {_total_ammo > 100} then {
+		while {_total_ammo >= 100} then {
 			_total_ammo = _total_ammo - 100;
 			player addMagazine (_toBoGiven + "100");
 		};
@@ -91,9 +94,6 @@ if (r_ammo_selected_mode == 1) then
 			};
 		};
 	};
-	
-	[player,_item] call BIS_fnc_invRemove;
-	[player,_selected_ammo] call BIS_fnc_invRemove;
 
 	systemChat format ["%1 combined with %2",  getText (configFile >> "CfgMagazines" >> _item >> "displayName") , getText (configFile >> "CfgMagazines" >> r_ammo_selected >> "displayName")];
 
