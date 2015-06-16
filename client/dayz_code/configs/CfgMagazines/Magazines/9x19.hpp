@@ -7,10 +7,10 @@ class 30Rnd_9x19_MP5_Empty: emptiedMagazine {
 	scope = 2;
 	class ammoType
 	{
-		class B_9x19 {
+		class B_9x19_Ball {
 			ammoMag = "30Rnd_9x19_MP5";
 		};
-		class B_9x19 {
+		class B_9x19_SD {
 			ammoMag = "30Rnd_9x19_MP5SD";
 		};
 		class B_9x19_HP {
@@ -100,10 +100,10 @@ class 15Rnd_9x19_M9_Empty: emptiedMagazine
 	type=16;
 	class ammoType
 	{
-		class B_9x19 {
+		class B_9x19_Ball {
 			ammoMag = "15Rnd_9x19_M9";
 		};
-		class B_9x19 {
+		class B_9x19_SD {
 			ammoMag = "15Rnd_9x19_M9SD";
 		};
 		class B_9x19_HP {
@@ -191,10 +191,10 @@ class 17Rnd_9x19_glock17_Empty: emptiedMagazine
 	type=16;
 	class ammoType
 	{
-		class B_9x19 {
+		class B_9x19_Ball {
 			ammoMag = "17Rnd_9x19_glock17";
 		};
-		class B_9x19 {
+		class B_9x19_SD {
 			ammoMag = "17Rnd_9x19_glock17SD";
 		};
 		class B_9x19_HP {
@@ -284,10 +284,10 @@ class RH_13Rnd_9x19_bhp_Empty: emptiedMagazine
 	picture="\RH_de\inv\m_mk22.paa";
 	class ammoType
 	{
-		class B_9x19 {
+		class B_9x19_Ball {
 			ammoMag = "RH_13Rnd_9x19_bhp";
 		};
-		class B_9x19 {
+		class B_9x19_SD {
 			ammoMag = "RH_13Rnd_9x19_bhp_sd";
 		};
 		class B_9x19_HP {
@@ -377,10 +377,10 @@ class RH_8Rnd_9x19_Mk_Empty: emptiedMagazine
 	picture="\RH_de\inv\m_mk22.paa";
 	class ammoType
 	{
-		class B_9x19 {
+		class B_9x19_Ball {
 			ammoMag = "RH_8Rnd_9x19_Mk";
 		};
-		class B_9x19 {
+		class B_9x19_SD {
 			ammoMag = "RH_8Rnd_9x19_Mksd";
 		};
 		class B_9x19_HP {
@@ -469,10 +469,10 @@ class RH_15Rnd_9x19_usp_Empty: emptiedMagazine
 	picture="\RH_de\inv\m_usp.paa";
 	class ammoType
 	{
-		class B_9x19 {
+		class B_9x19_Ball {
 			ammoMag = "RH_15Rnd_9x19_usp";
 		};
-		class B_9x19 {
+		class B_9x19_SD {
 			ammoMag = "RH_15Rnd_9x19_uspsd";
 		};
 		class B_9x19_HP {
@@ -562,10 +562,10 @@ class RH_20Rnd_9x19_M93_Empty: emptiedMagazine
 	picture="\RH_de\inv\m_m93.paa";
 	class ammoType
 	{
-		class B_9x19 {
+		class B_9x19_Ball {
 			ammoMag = "RH_20Rnd_9x19_M93";
 		};
-		class B_9x19 {
+		class B_9x19_SD {
 			ammoMag = "RH_20Rnd_9x19_M93SD";
 		};
 		class B_9x19_HP {
@@ -655,10 +655,10 @@ class RH_19Rnd_9x19_g18_Empty: emptiedMagazine
 	picture="\RH_de\inv\m_g18.paa";
 	class ammoType
 	{
-		class B_9x19 {
+		class B_9x19_Ball {
 			ammoMag = "RH_19Rnd_9x19_g18";
 		};
-		class B_9x19 {
+		class B_9x19_SD {
 			ammoMag = "RH_19Rnd_9x19_g18SD";
 		};
 		class B_9x19_HP {
@@ -747,10 +747,10 @@ class RH_33Rnd_9x19_g18_Empty: emptiedMagazine
 	picture="\RH_de\inv\m_g18.paa";
 	class ammoType
 	{
-		class B_9x19 {
+		class B_9x19_Ball {
 			ammoMag = "RH_33Rnd_9x19_g18";
 		};
-		class B_9x19 {
+		class B_9x19_SD {
 			ammoMag = "RH_33Rnd_9x19_g18SD";
 		};
 		class B_9x19_HP {
@@ -840,10 +840,10 @@ class RH_30Rnd_9x19_tec_Empty: emptiedMagazine
 	picture="\RH_de\inv\m_tec9.paa";
 	class ammoType
 	{
-		class B_9x19 {
+		class B_9x19_Ball {
 			ammoMag = "RH_30Rnd_9x19_tec";
 		};
-		class B_9x19 {
+		class B_9x19_SD {
 			ammoMag = "RH_30Rnd_9x19_tecSD";
 		};
 		class B_9x19_HP {
@@ -934,10 +934,10 @@ class RH_32Rnd_9x19_Muzi_Empty: emptiedMagazine
 	picture="\RH_de\inv\m_muzi.paa";
 	class ammoType
 	{
-		class B_9x19 {
+		class B_9x19_Ball {
 			ammoMag = "RH_32Rnd_9x19_Muzi";
 		};
-		class B_9x19 {
+		class B_9x19_SD {
 			ammoMag = "RH_32Rnd_9x19_MuziSD";
 		};
 		class B_9x19_HP {
@@ -1027,10 +1027,10 @@ class RH_8Rnd_9x19_p38_Empty: emptiedMagazine
 	picture="\RH_de\inv\m_p38.paa";
 	class ammoType
 	{
-		class B_9x19 {
+		class B_9x19_Ball {
 			ammoMag = "RH_8Rnd_9x19_p38";
 		};
-		class B_9x19 {
+		class B_9x19_SD {
 			ammoMag = "RH_8Rnd_9x19_p38SD";
 		};
 		class B_9x19_HP {
@@ -1119,10 +1119,10 @@ class RH_9mm_32RND_Mag_Empty: emptiedMagazine
 	picture="\RH_smg\inv\m_uzi.paa";
 	class ammoType
 	{
-		class B_9x19 {
+		class B_9x19_Ball {
 			ammoMag = "RH_9mm_32RND_Mag";
 		};
-		class B_9x19 {
+		class B_9x19_SD {
 			ammoMag = "RH_9mm_32RND_MagSD";
 		};
 		class B_9x19_HP {
