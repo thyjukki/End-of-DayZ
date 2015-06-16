@@ -2773,7 +2773,7 @@ class cfgWeapons
 				out = "RH_ak74mgl";
 			};
 			class UseAtt2 : UseAtt{
-				script = "spawn player_useAttchment;";
+				script = "spawn player_removeAttchment;";
 				text = "Detach GP25";
 				att = "Attachment_GP25";
 				out = "RH_ak74mk";
@@ -2892,6 +2892,7 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach GP25";
+				script = "spawn player_removeAttchment;";
 				att = "Attachment_GP25";
 				out = "RH_ak74msp";
 			};
@@ -3108,6 +3109,7 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach PSO";
+				script = "spawn player_useAttchment;";
 				att = "Attachment_PSO1";
 				out = "RH_aks74mglsp";
 			};
@@ -3217,7 +3219,7 @@ class cfgWeapons
 				out = "RH_aks74mgl";
 			};
 			class UseAtt2 : UseAtt{
-				script = "spawn player_useAttchment;";
+				script = "spawn player_removeAttchment;";
 				text = "Detach GP25";
 				att = "Attachment_GP25";
 				out = "RH_aks74mk";
@@ -3648,7 +3650,7 @@ class cfgWeapons
 				out = "RH_ak74gl";
 			};
 			class UseAtt2 : UseAtt{
-				script = "spawn player_useAttchment;";
+				script = "spawn player_removeAttchment;";
 				text = "Detach GP25";
 				att = "Attachment_GP25";
 				out = "RH_ak74k";
@@ -4180,6 +4182,7 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach GP25";
+				script = "spawn player_removeAttchment;";
 				att = "Attachment_GP25";
 				out = "RH_oc14sp";
 			};
@@ -4344,6 +4347,7 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
+				script = "spawn player_removeAttchment;";
 				att = "Attachment_SupAK";
 				out = "RH_oc14sp";
 			};
@@ -4601,6 +4605,7 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Detach Silencer";
+				script = "spawn player_removeAttchment;";
 				att = "Attachment_SupAK";
 				out = "RH_gr1sp";
 			};
@@ -4841,7 +4846,7 @@ class cfgWeapons
 				out = "RH_ak103gl";
 			};
 			class UseAtt2 : UseAtt{
-				script = "spawn player_useAttchment;";
+				script = "spawn player_removeAttchment;";
 				text = "Detach GP25";
 				att = "Attachment_GP25";
 				out = "RH_ak103k";
@@ -4962,6 +4967,7 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach GP25";
+				script = "spawn player_removeAttchment;";
 				att = "Attachment_GP25";
 				out = "RH_ak103sp";
 			};
@@ -5375,7 +5381,7 @@ class cfgWeapons
 				out = "RH_ak104gl";
 			};
 			class UseAtt2 : UseAtt{
-				script = "spawn player_useAttchment;";
+				script = "spawn player_removeAttchment;";
 				text = "Detach GP25";
 				att = "Attachment_GP25";
 				out = "RH_ak104k";
@@ -5495,6 +5501,7 @@ class cfgWeapons
 				out = "RH_ak104gl";
 			};
 			class UseAtt2 : UseAtt{
+				script = "spawn player_removeAttchment;";
 				text = "Detach GP25";
 				att = "Attachment_GP25";
 				out = "RH_ak104sp";
@@ -5829,7 +5836,7 @@ class cfgWeapons
 				out = "RH_aks74pgl";
 			};
 			class UseAtt2 : UseAtt{
-				script = "spawn player_useAttchment;";
+				script = "spawn player_removeAttchment;";
 				text = "Detach GP25";
 				att = "Attachment_GP25";
 				out = "RH_aks74pk";
@@ -6177,6 +6184,7 @@ class cfgWeapons
 			};
 			class UseAtt1 : UseAtt{
 				text = "Attach PSO";
+				script = "spawn player_useAttchment;";
 				att = "Attachment_PSO1";
 				out = "RH_ak105glsp";
 			};
@@ -6286,7 +6294,7 @@ class cfgWeapons
 				out = "RH_ak105gl";
 			};
 			class UseAtt2 : UseAtt{
-				script = "spawn player_useAttchment;";
+				script = "spawn player_removeAttchment;";
 				text = "Detach GP25";
 				att = "Attachment_GP25";
 				out = "RH_ak105k";
@@ -6403,6 +6411,7 @@ class cfgWeapons
 				out = "RH_ak105gl";
 			};
 			class UseAtt2 : UseAtt{
+				script = "spawn player_removeAttchment;";
 				text = "Detach GP25";
 				att = "Attachment_GP25";
 				out = "RH_ak105sp";
@@ -6629,6 +6638,7 @@ class cfgWeapons
 				out = "RH_ak107kgl";
 			};
 			class UseAtt1 : UseAtt{
+				script = "spawn player_useAttchment;";
 				text = "Attach PSO";
 				att = "Attachment_PSO1";
 				out = "RH_ak107glsp";
@@ -6739,7 +6749,7 @@ class cfgWeapons
 				out = "RH_ak107gl";
 			};
 			class UseAtt2 : UseAtt{
-				script = "spawn player_useAttchment;";
+				script = "spawn player_removeAttchment;";
 				text = "Detach GP25";
 				att = "Attachment_GP25";
 				out = "RH_ak107k";
@@ -6857,6 +6867,7 @@ class cfgWeapons
 			};
 			class UseAtt2 : UseAtt{
 				text = "Detach GP25";
+				script = "spawn player_removeAttchment;";
 				att = "Attachment_GP25";
 				out = "RH_ak107sp";
 			};

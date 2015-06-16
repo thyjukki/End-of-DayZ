@@ -38,6 +38,7 @@ class cfgWeapons
 			"762x39_HP_x1",
 			"762x39_TRACER_x1",
 			"762x39_RUBBER_x1",
+			"762x39_BT_x1",
 			"KPFS_10Rnd_762x39_SKS",
 			"KPFS_10Rnd_762x39_SKS_SD",
 			"KPFS_10Rnd_762x39_SKS_hp",
