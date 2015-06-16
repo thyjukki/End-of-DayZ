@@ -1181,9 +1181,9 @@ class CfgBuildingLoot {
 			{"DZ_Backpack_NVG",				"object",0.01},
 			{"DZ_Backpack_UCP",				"object",0.01},
 		//Attachements
-			{"Attachment_GP25",						"magazine",0.13},
-			{"Attachment_PSO1",						"magazine",0.13},
-			{"Attachment_Kobra",					"magazine",0.13},
+			{"Attachment_GP25",				"magazine",0.13},
+			{"Attachment_PSO1",				"magazine",0.13},
+			{"Attachment_Kobra",			"magazine",0.13},
 		//special
 		//mags special
 			{"ItemSandbag",					"magazine",0.04},		
@@ -1191,7 +1191,7 @@ class CfgBuildingLoot {
 			{"",							"military",0.90},
 			{"",							"Trash",0.80},
 			{"",							"civilianMagazines",1.00},
-			{"",							"militaryMagazines",1.00},
+			{"",							"militaryMagazines",2.00},
 			{"",							"westernMagazines",0.10},
 			{"",							"civilianAmmo",1.00},
 			{"",							"militaryAmmo",1.00},
@@ -1333,9 +1333,9 @@ class CfgBuildingLoot {
 			{"WeaponHolder_ItemCamoNet",	"object",0.03},
 		//mags special
 	    //Attachements
-			{"Attachment_GP25",						"magazine",0.07},
-			{"Attachment_PSO1",						"magazine",0.05},
-			{"Attachment_Kobra",					"magazine",0.05},
+			{"Attachment_GP25",				"magazine",0.07},
+			{"Attachment_PSO1",				"magazine",0.05},
+			{"Attachment_Kobra",			"magazine",0.05},
 		//object
 			{"DZ_Backpack_OD",				"object",0.01},
 			{"DZ_Backpack_DES",				"object",0.01},
@@ -1352,7 +1352,7 @@ class CfgBuildingLoot {
 			{"",							"Trash",0.50},
 			{"",							"generic",0.40},
 			{"",							"civilianMagazines",0.40},
-			{"",							"militaryMagazines",0.60},
+			{"",							"militaryMagazines",1.60},
 			{"",							"westernMagazines",0.10},
 			{"",							"civilianAmmo",0.40},
 			{"",							"militaryAmmo",0.60},
@@ -1500,7 +1500,7 @@ class CfgBuildingLoot {
 			{"",							"military",0.70},
 			{"",							"Trash",0.50},
 			{"",							"civilianMagazines",0.20},
-			{"",							"militaryMagazines",0.20},
+			{"",							"militaryMagazines",0.70},
 			{"",							"civilianAmmo",0.20},
 			{"",							"militaryAmmo",0.20},
 			{"",							"generic",0.60},
@@ -1620,9 +1620,9 @@ class CfgBuildingLoot {
 			{"DZ_Backpack_NVG",				"object",0.01},
 			{"DZ_Backpack_UCP",				"object",0.01},
 		//Attachements
-			{"Attachment_GP25",						"magazine",0.06},
-			{"Attachment_PSO1",						"magazine",0.04},
-			{"Attachment_Kobra",					"magazine",0.04},
+			{"Attachment_GP25",				"magazine",0.06},
+			{"Attachment_PSO1",				"magazine",0.04},
+			{"Attachment_Kobra",			"magazine",0.04},
 		//special
 		//mags special
 			{"ItemSandbag",					"magazine",0.04},		
@@ -1630,10 +1630,10 @@ class CfgBuildingLoot {
 			{"",							"military",0.90},
 			{"",							"Trash",0.40},
 			{"",							"civilianMagazines",0.20},
-			{"",							"militaryMagazines",0.40},
+			{"",							"militaryMagazines",0.70},
 			{"",							"westernMagazines",0.10},
 			{"",							"civilianAmmo",0.20},
-			{"",							"militaryAmmo",0.40},
+			{"",							"militaryAmmo",0.60},
 			{"",							"westernAmmo",0.10},
 			{"",							"generic",0.40},
 			{"",							"medical",0.40}
@@ -1762,7 +1762,7 @@ class CfgBuildingLoot {
 			{"",							"military",0.90},
 			{"",							"Trash",0.60},
 			{"",							"civilianMagazines",0.20},
-			{"",							"militaryMagazines",0.50},
+			{"",							"militaryMagazines",0.80},
 			{"",							"westernMagazines",0.10},
 			{"",							"civilianAmmo",0.20},
 			{"",							"militaryAmmo",0.50},
@@ -1886,9 +1886,9 @@ class CfgBuildingLoot {
 			{"DZ_Backpack_NVG",				"object",0.01},
 			{"DZ_Backpack_UCP",				"object",0.01},
 		//Attachements
-			{"Attachment_GP25",						"magazine",0.06},
-			{"Attachment_PSO1",						"magazine",0.04},
-			{"Attachment_Kobra",					"magazine",0.04},
+			{"Attachment_GP25",				"magazine",0.06},
+			{"Attachment_PSO1",				"magazine",0.04},
+			{"Attachment_Kobra",			"magazine",0.04},
 		//special
 		//mags special
 			{"ItemSandbag",					"magazine",0.04},		
@@ -1896,7 +1896,7 @@ class CfgBuildingLoot {
 			{"",							"military",0.90},
 			{"",							"Trash",0.50},
 			{"",							"civilianMagazines",0.40},
-			{"",							"militaryMagazines",0.60},
+			{"",							"militaryMagazines",0.80},
 			{"",							"westernMagazines",0.10},
 			{"",							"civilianAmmo",0.40},
 			{"",							"militaryAmmo",0.60},
