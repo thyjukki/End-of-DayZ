@@ -1,6 +1,6 @@
 
 //46x30
-class RH_50_AE_Ball: BulletBase
+class B_50_AE_Ball: BulletBase
 {
 	hit=9.500000;
 	cartridge="FxCartridge_Small";
@@ -10,21 +10,21 @@ class RH_50_AE_Ball: BulletBase
 	caliber=0.700000;
 };
 
-class B_50_AE_HP : RH_50_AE_Ball {
+class B_50_AE_HP : B_50_AE_Ball {
 	airfriction = -0.001893;
 	hit = 11;
 	typicalspeed = 350;
 	visiblefiretime = 2;
 };
 
-class B_50_AE_TRACER : RH_50_AE_Ball {
+class B_50_AE_TRACER : B_50_AE_Ball {
 	model = "\ca\Weapons\Data\bullettracer\tracer_red";
 	tracerendtime = 1;
 	tracerscale = 1;
 	tracerstarttime = 0.05;
 };
 
-class B_50_AE_RUBBER : RH_50_AE_Ball {
+class B_50_AE_RUBBER : B_50_AE_Ball {
 	airfriction = -0.02;
 	caliber = 2;
 	hit = 1;
@@ -32,7 +32,7 @@ class B_50_AE_RUBBER : RH_50_AE_Ball {
 	isRubber = 1;
 };
 
-class B_50_AE_BT: RH_50_AE_Ball
+class B_50_AE_BT: B_50_AE_Ball
 {
 	hit=11;
 };

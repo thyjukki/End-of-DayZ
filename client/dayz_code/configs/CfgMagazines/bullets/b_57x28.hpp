@@ -1,7 +1,7 @@
 class 57x28_x1 : baseBullet {
 	scope = public;
 	displayName = "57x28 (x1)";
-	ammo = "RH_smg_57x28mm_Round";
+	ammo = "B_57x28_Ball";
 	bulletCount = 1;
 	baseName = "57x28_x";
 	baseDesc = "57x28";
@@ -372,7 +372,7 @@ class 57x28_x100 : 57x28_x1 {
 class 57x28_SD_x1 : 57x28_x1 {
 	scope = public;
 	displayName = "57x28 Sub Sonic (x1)";
-	ammo = "RH_smg_57x28mm_SD_Round";
+	ammo = "B_57x28_SD";
 	bulletCount = 1;
 	baseName = "57x28_SD_x";
 	baseDesc = "57x28 Sub Sonic";

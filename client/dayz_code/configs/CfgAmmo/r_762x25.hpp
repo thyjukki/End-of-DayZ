@@ -1,4 +1,4 @@
-class B_762x25: BulletBase
+class B_762x25_Ball: BulletBase
 {
 	hit=6;
 	cost=1;
@@ -8,14 +8,14 @@ class B_762x25: BulletBase
 	caliber=0.300000;
 };
 				
-class B_762x25_HP: B_762x25
+class B_762x25_HP: B_762x25_Ball
 {
 	hit=8;
 	airFriction=-0.003500;
 	typicalSpeed=370;
 };
 
-class B_762x25_TRACER: B_762x25
+class B_762x25_TRACER: B_762x25_Ball
 {
 	model = "\ca\Weapons\Data\bullettracer\tracer_red";
 	tracerendtime = 1;
@@ -24,7 +24,7 @@ class B_762x25_TRACER: B_762x25
 	nvgOnly=0;
 };
 
-class B_762x25_RUBBER: B_762x25
+class B_762x25_RUBBER: B_762x25_Ball
 {
 	airfriction = -0.02;
 	caliber = 2;
@@ -33,7 +33,7 @@ class B_762x25_RUBBER: B_762x25
 	typicalspeed = 250;
 };
 
-class B_762x25_BT: B_762x25
+class B_762x25_BT: B_762x25_Ball
 {
 	hit=8;
 };

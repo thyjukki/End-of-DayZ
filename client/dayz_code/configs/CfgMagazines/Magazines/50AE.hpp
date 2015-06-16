@@ -11,7 +11,7 @@ class RH_7Rnd_50_AE_Empty: emptiedMagazine
 	type=16;
 	class ammoType
 	{
-		class RH_50_AE_Ball {
+		class B_50_AE_Ball {
 			ammoMag = "RH_7Rnd_50_AE";
 		};
 		class B_50_AE_HP {
@@ -38,7 +38,7 @@ class RH_7Rnd_50_AE: CA_Magazine
 	model="\RH_de\mags\mag_de.p3d";
 	descriptionShort="Caliber: .50 AE <br/>Rounds: 7 <br/>Used in: Desert Eagle";
 	type=16;
-	ammo="RH_50_AE_Ball";
+	ammo="B_50_AE_Ball";
 	count=7;
 	initSpeed=421;
 	baseBullet = 50_AE_x;

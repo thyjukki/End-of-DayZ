@@ -112,7 +112,7 @@ if (r_ammo_selected_mode == 2) then
 		}
 		else
 		{
-			while {_extra_ammo > 100} do
+			while {_extra_ammo >= 100} do
 			{
 				_extra_ammo = _extra_ammo - 100;
 				_giving = _toBoGiven + str(100);

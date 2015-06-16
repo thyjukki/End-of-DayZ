@@ -1,7 +1,7 @@
 class 22LR_x1 : baseBullet {
 	scope = public;
 	displayName = "22LR (x1)";
-	ammo = "RH_B_22LR_SD";
+	ammo = "B_22LR_SD";
 	bulletCount = 1;
 	baseName = "22LR_x";
 	baseDesc = "22LR";

@@ -1,7 +1,7 @@
 class 50_AE_x1 : baseBullet {
 	scope = public;
 	displayName = ".50 AE (x1)";
-	ammo = "RH_7Rnd_50_AE";
+	ammo = "B_50_AE_Ball";
 	bulletCount = 1;
 	baseName = "50_AE_x";
 	baseDesc = "50_AE";

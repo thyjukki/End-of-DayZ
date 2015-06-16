@@ -23,7 +23,7 @@ if (_mag_cur <= 10) then {
 
 	player addMagazine _giving;
 } else {
-	while {_mag_cur > 100} do {
+	while {_mag_cur >= 100} do {
 		_mag_cur = _mag_cur - 100;
 		_giving = _toBoGiven + str(100);
 		_isOK = [player,_giving] call BIS_fnc_invAdd;

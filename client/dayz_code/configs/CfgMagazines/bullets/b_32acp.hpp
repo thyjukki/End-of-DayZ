@@ -1,7 +1,7 @@
 class 32ACP_x1 : baseBullet {
 	scope = public;
 	displayName = ".32 ACP (x1)";
-	ammo = "RH_32ACP";
+	ammo = "B_32ACP_Ball";
 	bulletCount = 1;
 	baseName = "32ACP_x";
 	baseDesc = ".32 ACP";
@@ -372,7 +372,7 @@ class 32ACP_x100 : 32ACP_x1 {
 class 32ACP_HP_x1 : 32ACP_x1 {
 	scope = public;
 	displayName = ".32 ACP HP (x1)";
-	ammo = "RH_32ACP_HP";
+	ammo = "B_32ACP_HP";
 	bulletCount = 1;
 	baseName = "32ACP_HP_x";
 	baseDesc = ".32 ACP Hollow Point";
@@ -744,7 +744,7 @@ class 32ACP_HP_x100 : 32ACP_HP_x1 {
 class 32ACP_TRACER_x1 : 32ACP_x1 {
 	scope = public;
 	displayName = ".32 ACP Tracer (x1)";
-	ammo = "RH_32ACP_TRACER";
+	ammo = "B_32ACP_TRACER";
 	bulletCount = 1;
 	baseName = "32ACP_TRACER_x";
 	baseDesc = ".32 ACP Tracer";
@@ -1116,7 +1116,7 @@ class 32ACP_TRACER_x100 : 32ACP_TRACER_x1 {
 class 32ACP_RUBBER_x1 : 32ACP_x1 {
 	scope = public;
 	displayName = ".32 ACP Rubber (x1)";
-	ammo = "RH_32ACP_RUBBER";
+	ammo = "B_32ACP_RUBBER";
 	bulletCount = 1;
 	baseName = "32ACP_RUBBER_x";
 	baseDesc = ".32 ACP Rubber";
@@ -1464,7 +1464,7 @@ class 32ACP_RUBBER_x50 : 32ACP_RUBBER_x1 {
 class 32ACP_BT_x1 : 32ACP_x1 {
 	scope = public;
 	displayName = ".32 ACP Ballistic Tip (x1)";
-	ammo = "RH_32ACP_BT";
+	ammo = "B_32ACP_BT";
 	bulletCount = 1;
 	baseName = "32ACP_BT_x";
 	baseDesc = ".32 ACP Ballistic Tip";

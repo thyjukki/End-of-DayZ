@@ -6,7 +6,7 @@ class KPFS_30Rnd_792x33_STG44_Empty: emptiedMagazine {
 	scope = 2;
 	class ammoType
 	{
-		class RH_B_792x33_Ball {
+		class B_792x33_Ball {
 			ammoMag = "KPFS_30Rnd_792x33_STG44";
 		};
 		class B_792x33_HP {

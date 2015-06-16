@@ -10,7 +10,7 @@ class RH_8Rnd_762_tt33_Empty: emptiedMagazine
 	type=16;
 	class ammoType
 	{
-		class B_762x25 {
+		class B_762x25_Ball {
 			ammoMag = "RH_8Rnd_762_tt33";
 		};
 		class B_762x25_HP {
@@ -36,7 +36,7 @@ class RH_8Rnd_762_tt33: CA_Magazine
 	picture="\RH_de\inv\m_tt33.paa";
 	model="\RH_de\mags\mag_tt33.p3d";
 	descriptionShort="Caliber: 762x25 mm<br/>Rounds: 8 <br/>Used in: TT33";
-	ammo="B_762x25";
+	ammo="B_762x25_Ball";
 	type=16;
 	count=8;
 	initSpeed=420;
@@ -92,7 +92,7 @@ class KPFS_71Rnd_762x25_PPSh_Empty: emptiedMagazine
 	type="2*256";
 	class ammoType
 	{
-		class B_762x25 {
+		class B_762x25_Ball {
 			ammoMag = "KPFS_71Rnd_762x25_PPSh";
 		};
 		class B_762x25_HP {
@@ -117,7 +117,7 @@ class KPFS_71Rnd_762x25_PPSh: CA_Magazine
 	displayName="PPSH Mag";
 	picture="\kpfs_weapons2\data\icons\m_ppsh_ca.paa";
 	descriptionShort="Caliber: 762x25 mm<br/>Rounds: 71 <br/>Used in: PPSH";
-	ammo="B_762x25";
+	ammo="B_762x25_Ball";
 	count=71;
 	initSpeed=420;
 	baseBullet = 762x25_x;

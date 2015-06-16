@@ -1,5 +1,5 @@
 
-class RH_32ACP: BulletBase
+class B_32ACP_Ball: BulletBase
 {
 	hit=6.500000;
 	cost=1;
@@ -9,14 +9,14 @@ class RH_32ACP: BulletBase
 	caliber=0.300000;
 };
 
-class RH_32ACP_HP: RH_32ACP
+class B_32ACP_HP: B_32ACP_Ball
 {
 	hit=6;
 	typicalSpeed=270;
 	airFriction=-0.002000;
 };
 
-class RH_32ACP_TRACER: RH_32ACP
+class B_32ACP_TRACER: B_32ACP_Ball
 {
 	hit=5;
 	model = "\ca\Weapons\Data\bullettracer\tracer_red";
@@ -25,7 +25,7 @@ class RH_32ACP_TRACER: RH_32ACP
 	tracerstarttime = 0.05;
 };
 
-class RH_32ACP_RUBBER: RH_32ACP
+class B_32ACP_RUBBER: B_32ACP_Ball
 {
 	airfriction = -0.02;
 	caliber = 2;
@@ -34,7 +34,7 @@ class RH_32ACP_RUBBER: RH_32ACP
 	isRubber = 1;
 };
 
-class RH_32ACP_BT: RH_32ACP
+class B_32ACP_BT: B_32ACP_Ball
 {
 	hit=6;
 };

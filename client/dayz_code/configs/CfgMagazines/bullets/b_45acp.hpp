@@ -1,7 +1,7 @@
 class 45ACP_x1 : baseBullet {
 	scope = public;
 	displayName = ".45 ACP (x1)";
-	ammo = "RH_45ACP";
+	ammo = "B_45ACP_Ball";
 	bulletCount = 1;
 	baseName = "45ACP_x";
 	baseDesc = ".45 ACP";
@@ -372,7 +372,7 @@ class 45ACP_x100 : 45ACP_x1 {
 class 45ACP_HP_x1 : 45ACP_x1 {
 	scope = public;
 	displayName = ".45 ACP HP (x1)";
-	ammo = "RH_45ACP_HP";
+	ammo = "B_45ACP_HP";
 	bulletCount = 1;
 	baseName = "45ACP_HP_x";
 	baseDesc = ".45 ACP Hollow Point";
@@ -744,7 +744,7 @@ class 45ACP_HP_x100 : 45ACP_HP_x1 {
 class 45ACP_TRACER_x1 : 45ACP_x1 {
 	scope = public;
 	displayName = ".45 ACP Tracer (x1)";
-	ammo = "RH_45ACP_TRACER";
+	ammo = "B_45ACP_TRACER";
 	bulletCount = 1;
 	baseName = "45ACP_TRACER_x";
 	baseDesc = ".45 ACP Tracer";
@@ -1116,7 +1116,7 @@ class 45ACP_TRACER_x100 : 45ACP_TRACER_x1 {
 class 45ACP_RUBBER_x1 : 45ACP_x1 {
 	scope = public;
 	displayName = ".45 ACP Rubber (x1)";
-	ammo = "RH_45ACP_RUBBER";
+	ammo = "B_45ACP_RUBBER";
 	bulletCount = 1;
 	baseName = "45ACP_RUBBER_x";
 	baseDesc = ".45 ACP Rubber";
@@ -1488,7 +1488,7 @@ class 45ACP_RUBBER_x100 : 45ACP_RUBBER_x1 {
 class 45ACP_BT_x1 : 45ACP_x1 {
 	scope = public;
 	displayName = ".45 ACP BT (x1)";
-	ammo = "RH_45ACP_BT";
+	ammo = "B_45ACP_BT";
 	bulletCount = 1;
 	baseName = "45ACP_BT_x";
 	baseDesc = ".45 ACP Ballistic Tip";

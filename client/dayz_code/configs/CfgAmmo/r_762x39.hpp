@@ -13,7 +13,7 @@ class B_762x39_Ball: BulletBase {
 	visiblefire = 18;
 };
 
-class B_762x39_SD: BulletBase //RH_B_762x39SD_Ball
+class B_762x39_SD: BulletBase
 {
 	hit=7;
 	typicalSpeed=290;

@@ -7,10 +7,10 @@ class RH_57x28mm_50RND_Mag_Empty: emptiedMagazine
 	descriptionShort="Caliber: 57x28 mm<br/>Rounds: 50 <br/>Used in: P90";
 	class ammoType
 	{
-		class RH_smg_57x28mm_Round {
+		class B_57x28_Ball {
 			ammoMag = "RH_57x28mm_50RND_Mag";
 		};
-		class RH_smg_57x28mm_SD_Round {
+		class B_57x28_SD {
 			ammoMag = "RH_57x28mm_50RND_SD_Mag";
 		};
 		class B_57x28_HP {
@@ -35,7 +35,7 @@ class RH_57x28mm_50RND_Mag: 30Rnd_9x19_MP5
 	model="\RH_smg\mags\mag_p90.p3d";
 	picture="\RH_smg\inv\m_p90.paa";
 	descriptionShort="Caliber: 57x28 mm<br/>Rounds: 50 <br/>Used in: P90";
-	ammo="RH_smg_57x28mm_Round";
+	ammo="B_57x28_Ball";
 	count=50;
 	initSpeed=400;
 	baseBullet = 57x28_x;
@@ -48,7 +48,7 @@ class RH_57x28mm_50RND_SD_Mag: RH_57x28mm_50RND_Mag {
 	scope=2;
 	baseBullet = 57x28_SD_x;
 	initSpeed=320;
-	ammo="RH_smg_57x28mm_SD_Round";
+	ammo="B_57x28_SD";
 	displayName="P90 SD Mag";
 	displayNameShort="SD";
 };

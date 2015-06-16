@@ -1,19 +1,13 @@
-class RH_45ACP: BulletBase
-{
-	hit=5;
-	typicalSpeed=260;
-	airFriction=-0.001500;
-	caliber=0.300000;
-};
+class B_45ACP_Ball;
 
-class RH_45ACP_HP: RH_45ACP
+class B_45ACP_HP: B_45ACP_Ball
 {
 	hit=6;
 	typicalSpeed=240;
 	airFriction=-0.002000;
 };
 
-class RH_45ACP_TRACER: RH_45ACP
+class B_45ACP_TRACER: B_45ACP_Ball
 {
 	hit=5;
 	model = "\ca\Weapons\Data\bullettracer\tracer_red";
@@ -22,7 +16,7 @@ class RH_45ACP_TRACER: RH_45ACP
 	tracerstarttime = 0.05;
 };
 
-class RH_45ACP_RUBBER: RH_45ACP
+class B_45ACP_RUBBER: B_45ACP_Ball
 {
 	airfriction = -0.02;
 	caliber = 2;
@@ -31,7 +25,7 @@ class RH_45ACP_RUBBER: RH_45ACP
 	isRubber = 1;
 };
 
-class RH_45ACP_BT: RH_45ACP
+class B_45ACP_BT: B_45ACP_Ball
 {
 	hit=6;
 };

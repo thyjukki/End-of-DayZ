@@ -1,15 +1,33 @@
 
 //57x28
-class RH_smg_57x28mm_Round;
+class B_57x28_Ball: BulletBase
+{
+	hit=7;
+	cartridge="FxCartridge_9mm";
+	indirectHit=0;
+	indirectHitRange=0;
+	cost=1;
+	airFriction=-0.001425;
+	caliber=0.5;
+};
+class B_57x28_SD: B_57x28_Ball
+{
+	hit=6;
+	visibleFire=0.07;
+	audibleFire=0.07;
+	visibleFireTime=2;
+	typicalSpeed=320;
+	airFriction=-0.00060000003;
+};
 
-class B_57x28_HP : RH_smg_57x28mm_Round {
+class B_57x28_HP : B_57x28_Ball {
 	airFriction=-0.00060000003;
 	hit = 10;
 	typicalspeed = 320;
 	visiblefiretime = 2;
 };
 
-class B_57x28_TRACER : RH_smg_57x28mm_Round {
+class B_57x28_TRACER : B_57x28_Ball {
 	model = "\ca\Weapons\Data\bullettracer\tracer_red";
 	tracerendtime = 1;
 	tracerscale = 1;
@@ -17,7 +35,7 @@ class B_57x28_TRACER : RH_smg_57x28mm_Round {
 	nvgOnly=0;
 };
 
-class B_57x28_RUBBER : RH_smg_57x28mm_Round {
+class B_57x28_RUBBER : B_57x28_Ball {
 	airfriction = -0.02;
 	caliber = 2;
 	hit = 1;
@@ -25,7 +43,7 @@ class B_57x28_RUBBER : RH_smg_57x28mm_Round {
 	isRubber = 1;
 };
 
-class B_57x28_BT: RH_smg_57x28mm_Round
+class B_57x28_BT: B_57x28_Ball
 {
 	hit=10;
 };

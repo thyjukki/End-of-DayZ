@@ -9,7 +9,7 @@ class RH_10Rnd_22LR_mk2_Empty: emptiedMagazine {
 	scope = 2;
 	class ammoType
 	{
-		class RH_B_22LR_SD {
+		class B_22LR_SD {
 			ammoMag = "RH_10Rnd_22LR_mk2";
 		};
 		class B_22LR_HP {
@@ -34,7 +34,7 @@ class RH_10Rnd_22LR_mk2: CA_Magazine
 	displayname = "MK2 Mag";
 	picture="\RH_de\inv\m_mk2.paa";
 	model="\RH_de\mags\mag_mk2.p3d";
-	ammo="RH_B_22LR_SD";
+	ammo="B_22LR_SD";
 	count=10;
 	initSpeed=290;
 	baseBullet = 22LR_x;

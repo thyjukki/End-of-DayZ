@@ -1,7 +1,7 @@
 class 762x25_x1 : baseBullet {
 	scope = public;
 	displayName = "7.62x25 (x1)";
-	ammo = "B_762x25";
+	ammo = "B_762x25_Ball";
 	bulletCount = 1;
 	baseName = "762x25_x";
 	baseDesc = "762x25";

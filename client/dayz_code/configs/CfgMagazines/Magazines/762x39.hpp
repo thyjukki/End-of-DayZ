@@ -210,15 +210,21 @@ class RH_75Rnd_762x39_mag_Empty: emptiedMagazine {
 	};
 };
 
-class RH_75Rnd_762x39_mag: 30Rnd_762x39_AK47
+class RH_75Rnd_762x39_mag: CA_Magazine
 {
+	ammo="B_762x39_Ball";
+	count=40;
+	LOAD_AMMO
 	scope=2;
 	displayName="AK47 DrumMag";
 	descriptionshort = "Caliber:7.62x39mm <br/>Rounds: 75 <br/>Used in: AK47 based weapons";
 	picture="\RH_aks\inv\m_rpk.paa";
 	model="\RH_aks\mags\mag_rpk.p3d";
+	ammo="B_762x39_Ball";
+	baseBullet = 762x39_x;
 	count=75;
 	type="2*256";
+	LOAD_AMMO
 
 	emptyMag = "RH_75Rnd_762x39_mag_Empty";
 };
