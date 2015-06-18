@@ -76,15 +76,15 @@ if (isServer) then {
 
 if (dayz_POIs) then {
 		execVM "\z\addons\dayz_code\system\mission\chernarus\poi\init.sqf"; 
-		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\DeadForest.sqf";
-		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\ZelenogorskBuildings.sqf";
-		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\Twains.sqf";
-		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\Settlement.sqf";
-		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\BalotaPC.sqf";
-		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\Prud.sqf";
-		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\TCamp.sqf";
-		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\PC.sqf";
-		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\Settlement2.sqf";
+
+		//execVM "\z\addons\dayz_code\system\mission\chernarus\poi\Settlement.sqf";
+		execVM "\z\addons\dayz_code\system\mission\chernarus\poi\BalotaPC.sqf";
+		execVM "\z\addons\dayz_code\system\mission\chernarus\poi\Prud.sqf";
+		execVM "\z\addons\dayz_code\system\mission\chernarus\poi\TCamp.sqf";
+		execVM "\z\addons\dayz_code\system\mission\chernarus\poi\PC.sqf";
+		execVM "\z\addons\dayz_code\system\mission\chernarus\poi\Settlement2.sqf";
+		execVM "\z\addons\dayz_code\system\mission\chernarus\poi\MersPC.sqf";
+
 	};
 
 if (!isDedicated) then {
