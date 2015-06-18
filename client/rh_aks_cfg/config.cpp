@@ -3959,6 +3959,7 @@ class cfgWeapons
 		model="\RH_aks\RH_oc14.p3d";
 		picture="\RH_aks\inv\oc14.paa";
 		displayName="Groza-9";
+		descriptionShort="<br />Ammo: 9x39 mm";
 		reloadMagazineSound[]=
 		{
 			"\RH_aks\sound\oc14_reload.wss",
@@ -4391,6 +4392,7 @@ class cfgWeapons
 		model="\RH_aks\RH_gr1.p3d";
 		picture="\RH_aks\inv\gr1.paa";
 		displayName="Groza-7.62";
+		descriptionShort="<br />Ammo: 7.62x39 mm";
 		reloadMagazineSound[]=
 		{
 			"\RH_aks\sound\oc14_reload.wss",
