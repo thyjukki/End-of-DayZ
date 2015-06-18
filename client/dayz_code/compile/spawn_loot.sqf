@@ -18,9 +18,10 @@ switch (_iClass) do {
 		_item addWeaponCargoGlobal [_iItem,1];
 		_mags = [];
 		{
-			_isCount = getNumber (configFile >> "cfgMagazines" >> _iItem >> "bulletCount");
-			if (_isCount > 0) then {
-				_mags = _mags + _x;
+			_isCount = getText (configFile >> "cfgMagazines" >> _iItem >> "bulletCount");
+			if (!(isNil ('_isCount')) && (_isCount  == "")) then {
+				_mags set [count _mags, _x];
+				diag_log format ["Adding magazines to array: %1", _x];
 			};
 		} forEach getArray (configFile >> "cfgWeapons" >> _iItem >> "magazines");
 
@@ -28,9 +29,11 @@ switch (_iClass) do {
 		//	if (_mags select 0 == "Quiver") then { _mags set [0, "WoodenArrow"] }; // Prevent spawning a Quiver
 			if (!(_iItem in MeleeWeapons)) then {
 				_magQty = round(random 10);
+				diag_log format ["Testing magazine change: %1",_magQty];
 				if (_magQty > 3) then
 				{
 					_selectedMag = _mags call BIS_fnc_selectRandom;
+					diag_log format ["Selected magazine: %1",_selectedMag];
 					_emptyMag = getText (configFile >> "CfgMagazines" >> _selectedMag >> "emptyMag");
 					
 					if ((_emptyMag != "") && ((random 10) > 5)) then
