@@ -82,8 +82,8 @@ if (dayz_POIs) then {
 		execVM "\z\addons\dayz_code\system\mission\chernarus\poi\Prud.sqf";
 		execVM "\z\addons\dayz_code\system\mission\chernarus\poi\TCamp.sqf";
 		execVM "\z\addons\dayz_code\system\mission\chernarus\poi\PC.sqf";
-		execVM "\z\addons\dayz_code\system\mission\chernarus\poi\Settlement2.sqf";
-		execVM "\z\addons\dayz_code\system\mission\chernarus\poi\MersPC.sqf";
+		//execVM "\z\addons\dayz_code\system\mission\chernarus\poi\Settlement2.sqf";
+		//execVM "\z\addons\dayz_code\system\mission\chernarus\poi\MersPC.sqf";
 
 	};
 
