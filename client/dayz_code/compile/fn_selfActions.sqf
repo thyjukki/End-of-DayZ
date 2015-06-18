@@ -50,11 +50,7 @@ if (dayz_onBack != "" && !dayz_onBackActive && !_inVehicle && !_onLadder && !r_p
 
 if (!r_player_unconscious) then {
 	if (s_player_change_view < 0) then {
-		if (_inVehicle) then {
-			s_player_change_view = _vehicle addAction ["<t color='#888800'>Viewdistance</t>","\z\addons\dayz_code\vdg\scripts\addAction.sqf",[],0,false,true, "", "vehicle player != player"];
-		} else {
-			s_player_change_view = player addAction ["<t color='#888800'>Viewdistance</t>","\z\addons\dayz_code\vdg\scripts\addAction.sqf",[],0,false,true];
-		};
+		s_player_change_view = player addAction ["<t color='#888800'>Viewdistance</t>","\z\addons\dayz_code\vdg\scripts\addAction.sqf",[],0.1,false,true];
 	};
 } else {
 	player removeAction s_player_change_view;
