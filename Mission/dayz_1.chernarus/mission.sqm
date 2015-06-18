@@ -294,7 +294,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=8;
+		items=15;
 		class Item0
 		{
 			position[]={7839,0,8414};
@@ -341,6 +341,48 @@ class Mission
 		{
 			position[]={12048,0,8352};
 			name="spawn5"; //spawn_berezino
+			type="Empty";
+		};
+		class Item8
+		{
+			position[]={9155.458,223.98959,3895.1787};
+			name="spawn6";
+			type="Empty";
+		};
+		class Item9
+		{
+			position[]={11277.854,254.03262,5491.8501};
+			name="spawn7";
+			type="Empty";
+		};
+		class Item10
+		{
+			position[]={9678.3691,288.6488,9341.4619};
+			name="spawn8";
+			type="Empty";
+		};
+		class Item11
+		{
+			position[]={2195.7637,173.42288,5191.71};
+			name="spawn9";
+			type="Empty";
+		};
+		class Item12
+		{
+			position[]={2885.7773,270.74664,9700.4834};
+			name="spawn10";
+			type="Empty";
+		};
+		class Item13
+		{
+			position[]={6855.606,390.43573,11431.038};
+			name="spawn11";
+			type="Empty";
+		};
+		class Item14
+		{
+			position[]={7434.8745,217.27036,5176.2075};
+			name="spawn12";
 			type="Empty";
 		};
 	};
