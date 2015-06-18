@@ -185,7 +185,7 @@ class RH_75Rnd_762x39_mag_Empty: emptiedMagazine {
 	descriptionshort = "Caliber:7.62x39mm <br/>Rounds: 75 <br/>Used in: AK47 based weapons";
 	picture="\RH_aks\inv\m_rpk.paa";
 	model="\RH_aks\mags\mag_rpk.p3d";
-	type="2*256";
+	type=2*		256;
 	scope = 2;
 	class ammoType
 	{
@@ -220,7 +220,7 @@ class RH_75Rnd_762x39_mag: CA_Magazine
 	ammo="B_762x39_Ball";
 	baseBullet = 762x39_x;
 	count=75;
-	type="2*256";
+	type=2*		256;
 	LOAD_AMMO
 
 	emptyMag = "RH_75Rnd_762x39_mag_Empty";
