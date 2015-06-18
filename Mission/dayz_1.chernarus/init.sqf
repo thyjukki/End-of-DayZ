@@ -74,13 +74,8 @@ if (isServer) then {
 	//Must be global spawned, So players dont fall thought buildings (might be best to spilt these to important, not important)
 };
 
-if (dayz_POIs) then { execVM "\z\addons\dayz_code\system\mission\chernarus\poi\init.sqf"; };
-
-if (!isDedicated) then {
-	if (dayz_infectiousWaterholes) then { execVM "\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\init.sqf"; };
-	if (dayz_antihack != 0) then {
-		execVM "\z\addons\dayz_code\system\mission\chernarus\security\init.sqf";
-		call compile preprocessFileLineNumbers "\z\addons\dayz_code\system\antihack.sqf";
+if (dayz_POIs) then {
+		execVM "\z\addons\dayz_code\system\mission\chernarus\poi\init.sqf"; 
 		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\DeadForest.sqf";
 		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\ZelenogorskBuildings.sqf";
 		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\Twains.sqf";
@@ -90,6 +85,13 @@ if (!isDedicated) then {
 		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\TCamp.sqf";
 		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\PC.sqf";
 		[] execVM "\z\addons\dayz_code\system\mission\chernarus\poi\Settlement2.sqf";
+	};
+
+if (!isDedicated) then {
+	if (dayz_infectiousWaterholes) then { execVM "\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\init.sqf"; };
+	if (dayz_antihack != 0) then {
+		execVM "\z\addons\dayz_code\system\mission\chernarus\security\init.sqf";
+		call compile preprocessFileLineNumbers "\z\addons\dayz_code\system\antihack.sqf";
 	};
 	
 	// remove annoying benches
