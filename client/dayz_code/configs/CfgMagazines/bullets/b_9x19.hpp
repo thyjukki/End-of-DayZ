@@ -8,6 +8,7 @@ class 9x19_x : baseBullet {
 	picture = "\dayz_equip\textures\equip_ball.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 9x19 rounds";
+	initSpeed=400;
 	
 	class ItemActions {
 		class Stack {
@@ -383,6 +384,7 @@ class 9x19_SD_x1 : 9x19_x {
 	bulletCount = 1;
 	baseName = "9x19_SD_x";
 	baseDesc = "9x19 SD";
+	initSpeed=320;
 	picture = "\dayz_equip\textures\equip_sd.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 9x19 SD rounds";

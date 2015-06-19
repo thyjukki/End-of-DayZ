@@ -36,7 +36,7 @@ class RH_7Rnd_32cal_ppk: CA_Magazine
 	ammo="B_32ACP_Ball";
 	count=7;
 	initSpeed=300;
-	baseBullet = 45ACP_x;
+	baseBullet = 32ACP_x;
 	description = "Caliber: .32 ACP<br/>Rounds: 7<br/>Used in: PPK";
 	LOAD_AMMO
 	emptyMag = "RH_7Rnd_32cal_ppk_Empty";
@@ -116,7 +116,7 @@ class RH_20Rnd_32cal_vz61: CA_Magazine
 	ammo="B_32ACP_Ball";
 	count=20;
 	initSpeed=300;
-	baseBullet = 45ACP_x;
+	baseBullet = 32ACP_x;
 	description = "Caliber: .32 ACP<br/>Rounds: 20<br/>Used in: vz61";
 	LOAD_AMMO
 	emptyMag = "RH_20Rnd_32cal_vz61_Empty";

@@ -5,6 +5,7 @@ class 9x18_x : baseBullet {
 	bulletCount = 1;
 	baseName = "9x18_x";
 	baseDesc = "9x18";
+	initSpeed=320;
 	picture = "\dayz_equip\textures\equip_ball.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 9x18 mm rounds";
@@ -382,6 +383,7 @@ class 9x18_SD_x : 9x18_x {
 	displayName = "9x18 mm SD (x1)";
 	ammo = "B_9x18_SD";
 	bulletCount = 1;
+	initSpeed=310;
 	baseName = "9x18_SD_x";
 	baseDesc = "9x18 mmSub Sonic";
 	picture = "\dayz_equip\textures\equip_sd.paa";

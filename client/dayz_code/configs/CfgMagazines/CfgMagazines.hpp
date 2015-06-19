@@ -36,6 +36,7 @@ class CfgMagazines
 		scope = private;
 		count=1;
 		bulletCount = 1;
+		tracersevery = 1;
 	};
 
 	#include "bullets\b_9x18.hpp"

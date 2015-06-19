@@ -36,7 +36,7 @@ class RH_20Rnd_9x39_SP6_mag: 30Rnd_545x39_AK
 	model="\RH_aks\mags\mag_oc14.p3d";
 	ammo="B_9x39_Ball";
 	count=20;
-	initSpeed=295;
+	initSpeed=300;
 	baseBullet = 9x39_x;
 	LOAD_AMMO
 

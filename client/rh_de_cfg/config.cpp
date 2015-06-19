@@ -1169,6 +1169,7 @@ class cfgWeapons
 	};
 	class RH_m1911: Pistol
 	{
+		initSpeed=260;
 		class ItemActions {
 			class UseAtt {
 				isAttachment = 1;

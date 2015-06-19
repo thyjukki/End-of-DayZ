@@ -127,6 +127,7 @@ class RH_20Rnd_9x18_aps: 8Rnd_9x18_Makarov
 	descriptionShort="Caliber: 9x18 mm APS <br/>Rounds: 20 <br/>Used in: APS";
 	count=20;
 	emptyMag = "RH_20Rnd_9x18_aps_Empty";
+	LOAD_AMMO
 };
 
 class RH_20Rnd_9x18_apsSD: RH_20Rnd_9x18_aps {
@@ -217,6 +218,7 @@ class 64Rnd_9x18_Bizon: CA_Magazine
 	count=64;
 	initSpeed=320;
 	baseBullet = 9x18_x;
+	LOAD_AMMO
 
 	emptyMag = "64Rnd_9x18_Bizon_Empty";
 };
@@ -225,9 +227,8 @@ class 64Rnd_9x18_SD_Bizon: 64Rnd_9x18_Bizon {
 	scope=2;
 	baseBullet = 9x18_SD_x;
 	picture = "\z\addons\dayz_communityweapons\magazines\data\m_bizonsd_ca.paa";
-	initSpeed=320;
+	initSpeed=310;
 	ammo="B_9x18_SD";
-	LOAD_AMMO
 	displayName="Bizon SD Mag";
 	displayNameShort="SD";
 };

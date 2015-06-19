@@ -4,6 +4,7 @@ class 32ACP_x1 : baseBullet {
 	ammo = "B_32ACP_Ball";
 	bulletCount = 1;
 	baseName = "32ACP_x";
+	initSpeed=300;
 	baseDesc = ".32 ACP";
 	picture = "\dayz_equip\textures\equip_ball.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";

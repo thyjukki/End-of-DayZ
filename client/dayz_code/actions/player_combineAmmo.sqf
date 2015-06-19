@@ -1,4 +1,18 @@
-private ["_item","_config","_consume","_create","_item_ammo","_consume_magsize","_create_magsize","_consume_type","_slotstart","_slotend","_dialog","_qty_total_ammo","_qty_consume_ammo","_qty_create_ammo","_qty_consume_mags","_qty_create_mags","_qty_free_slots","_control","_mag","_qtynew_create_ammo","_qtynew_consume_ammo","_qtynew_create_mags","_qtynew_consume_mags","_qtynew_consume_mags_full","_qtynew_create_mags_full","_qtynew_consume_ammo_rest","_qtynew_create_ammo_rest"];
+private [
+"_item",
+"_isOK",
+"_selectedSlot",
+"_config",
+"_selected_ammo",
+"_ammo",
+"_ammo2",
+"_total_ammo",
+"_ammo_count",
+"_ammo2_count",
+"_toBoGiven",
+"_base10",
+"_base1"
+];
 disableSerialization;
 call gear_ui_init;
 
@@ -45,7 +59,7 @@ if (r_ammo_selected_mode == 1) then
 		
 	} else {
 	
-		while {_total_ammo >= 100} then {
+		while {_total_ammo >= 100} do {
 			_total_ammo = _total_ammo - 100;
 			player addMagazine (_toBoGiven + "100");
 		};

@@ -5,6 +5,7 @@ class 22LR_x1 : baseBullet {
 	bulletCount = 1;
 	baseName = "22LR_x";
 	baseDesc = "22LR";
+	initSpeed=290;
 	picture = "\dayz_equip\textures\equip_ball.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 22LR rounds";
