@@ -5,6 +5,7 @@ class 46x30_x1 : baseBullet {
 	bulletCount = 1;
 	baseName = "46x30_x";
 	baseDesc = "46x30";
+	initSpeed=735;
 	picture = "\dayz_equip\textures\equip_ball.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 4.6x30 mmrounds";
@@ -375,6 +376,7 @@ class 46x30_SD_x1 : 46x30_x1 {
 	ammo = "C1987_B_46x30_sd_Ball";
 	bulletCount = 1;
 	baseName = "46x30_SD_x";
+	initSpeed=700;
 	baseDesc = "4.6x30 mmSub Sonic";
 	picture = "\dayz_equip\textures\equip_hp.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";

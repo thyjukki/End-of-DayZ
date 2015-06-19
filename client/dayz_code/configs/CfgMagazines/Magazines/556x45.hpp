@@ -49,7 +49,7 @@ class 20Rnd_556x45_Stanag: CA_Magazine
 class 20Rnd_556x45_StanagSD: 20Rnd_556x45_Stanag {
 	scope=2;
 	baseBullet = 556x45_SD_x;
-	initSpeed=320;
+	initSpeed=330;
 	ammo="B_556x45_SD";
 	displayName="STANAG VN SD Mag";
 	displayNameShort="SD";

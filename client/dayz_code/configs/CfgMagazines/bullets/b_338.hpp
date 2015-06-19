@@ -4,6 +4,7 @@ class 338_x1 : baseBullet {
 	ammo = "B_338mag_ball";
 	bulletCount = 1;
 	baseName = "338_x";
+	initSpeed=936;
 	baseDesc = ".338 Magnum";
 	picture = "\dayz_equip\textures\equip_ball.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";

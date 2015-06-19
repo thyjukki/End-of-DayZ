@@ -5,6 +5,7 @@ class 45ACP_x1 : baseBullet {
 	bulletCount = 1;
 	baseName = "45ACP_x";
 	baseDesc = ".45 ACP";
+	initSpeed=260;
 	picture = "\dayz_equip\textures\equip_ball.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: .45 ACP rounds";

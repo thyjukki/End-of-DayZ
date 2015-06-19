@@ -1,5 +1,6 @@
 class 545x39_x1 : baseBullet {
 	scope = public;
+	initSpeed=900;
 	displayName = "5.45x39mm (x1)";
 	ammo = "B_545x39_Ball";
 	bulletCount = 1;
@@ -1864,6 +1865,7 @@ class 545x39_SD_x1 : 545x39_x1 {
 	ammo = "B_545x39_SD";
 	bulletCount = 1;
 	baseName = "545x39_SD_x";
+	initSpeed=320;
 	baseDesc = "5.45x39mm SD";
 	picture = "\dayz_equip\textures\equip_sd.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";

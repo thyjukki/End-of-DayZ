@@ -8,6 +8,7 @@ class 50_AE_x1 : baseBullet {
 	picture = "\dayz_equip\textures\equip_ball.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: .50 AE rounds";
+	initSpeed=421;
 	
 	class ItemActions {
 		class Stack {

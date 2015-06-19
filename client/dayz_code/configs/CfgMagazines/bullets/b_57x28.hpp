@@ -5,6 +5,7 @@ class 57x28_x1 : baseBullet {
 	bulletCount = 1;
 	baseName = "57x28_x";
 	baseDesc = "5.7x28";
+	initSpeed=400;
 	picture = "\dayz_equip\textures\equip_ball.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 57x28 rounds";
@@ -373,6 +374,7 @@ class 57x28_SD_x1 : 57x28_x1 {
 	scope = public;
 	displayName = "5.7x28 Sub Sonic (x1)";
 	ammo = "B_57x28_SD";
+	initSpeed=320;
 	bulletCount = 1;
 	baseName = "57x28_SD_x";
 	baseDesc = "5.7x28 Sub Sonic";

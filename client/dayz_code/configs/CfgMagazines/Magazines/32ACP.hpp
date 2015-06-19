@@ -45,7 +45,7 @@ class RH_7Rnd_32cal_ppk: CA_Magazine
 class RH_7Rnd_32cal_ppk_hp: RH_7Rnd_32cal_ppk {
 	scope=2;
 	baseBullet = 32ACP_HP_x;
-	initSpeed=270;
+	//initSpeed=270;
 	ammo="B_32ACP_HP";
 	displayName="PPK HP Mag";
 	displayNameShort="HP";
@@ -126,7 +126,7 @@ class RH_20Rnd_32cal_vz61: CA_Magazine
 class RH_20Rnd_32cal_vz61_hp: RH_20Rnd_32cal_vz61 {
 	scope=2;
 	baseBullet = 32ACP_HP_x;
-	initSpeed=270;
+	//initSpeed=270;
 	ammo="B_32ACP_HP";
 	displayName="Vz61 HP Mag";
 	displayNameShort="HP";

@@ -50,7 +50,7 @@ class 7Rnd_45ACP_1911: CA_Magazine
 class 7Rnd_45ACP_1911_hp: 7Rnd_45ACP_1911 {
 	scope=2;
 	baseBullet = 45ACP_HP_x;
-	initSpeed=240;
+	//initSpeed=240;
 	ammo="B_45ACP_HP";
 	displayName="M1911 HP Mag";
 	displayNameShort="HP";
@@ -131,7 +131,7 @@ class RH_8Rnd_45cal_m1911: CA_Magazine
 class RH_8Rnd_45cal_m1911_hp: RH_8Rnd_45cal_m1911 {
 	scope=2;
 	baseBullet = 45ACP_HP_x;
-	initSpeed=240;
+	//initSpeed=240;
 	ammo="B_45ACP_HP";
 	displayName="M1911 HP Mag";
 	displayNameShort="HP";
@@ -214,7 +214,7 @@ class RH_12Rnd_45cal_usp: CA_Magazine
 class RH_12Rnd_45cal_usp_hp: RH_12Rnd_45cal_usp {
 	scope=2;
 	baseBullet = 45ACP_HP_x;
-	initSpeed=240;
+	//initSpeed=240;
 	ammo="B_45ACP_HP";
 	displayName="Uspm HP Mag";
 	displayNameShort="HP";
@@ -296,7 +296,7 @@ class RH_45ACP_25RND_UMP_Mag_hp: RH_45ACP_25RND_UMP_Mag
 {
 	scope=2;
 	baseBullet = 45ACP_HP_x;
-	initSpeed=240;
+	//initSpeed=240;
 	ammo="B_45ACP_HP";
 	displayName="UMP45 HP Mag";
 	displayNameShort="HP";
@@ -368,6 +368,7 @@ class RH_45ACP_13RND_Mag: CA_Magazine
 	model="\RH_smg\mags\mag_kriss.p3d";
 	picture="\RH_smg\inv\m_kriss.paa";
 	count=13;
+	initSpeed=260;
 	descriptionShort="Caliber: .45 ACP<br/>Rounds: 13<br/>Used in: Kriss Vector";
 	baseBullet = 45ACP_x;
 	LOAD_AMMO
@@ -378,7 +379,7 @@ class RH_45ACP_13RND_Mag_hp: RH_45ACP_13RND_Mag
 {
 	scope=2;
 	baseBullet = 45ACP_HP_x;
-	initSpeed=240;
+	//initSpeed=240;
 	ammo="B_45ACP_HP";
 	displayName="G21 HP Mag";
 	displayNameShort="HP";
@@ -450,6 +451,7 @@ class RH_45ACP_30RND_Mag: CA_Magazine
 	model="\RH_smg\mags\mag_kriss.p3d";
 	picture="\RH_smg\inv\m_kriss.paa";
 	count=30;
+	initSpeed=260;
 	descriptionShort="Caliber: .45 ACP<br/>Rounds: 30<br/>Used in: Kriss Vector";
 	baseBullet = 45ACP_x;
 	LOAD_AMMO
@@ -460,7 +462,7 @@ class RH_45ACP_30RND_Mag_hp: RH_45ACP_30RND_Mag
 {
 	scope=2;
 	baseBullet = 45ACP_HP_x;
-	initSpeed=240;
+	//initSpeed=240;
 	ammo="B_45ACP_HP";
 	displayName="G21 Long HP Mag";
 	displayNameShort="HP";
@@ -544,7 +546,7 @@ class KPFS_30Rnd_45ACP_Thompson_hp: KPFS_30Rnd_45ACP_Thompson
 {
 	scope=2;
 	baseBullet = 45ACP_HP_x;
-	initSpeed=240;
+	//initSpeed=240;
 	ammo="B_45ACP_HP";
 	displayName="Thompson magazine HP";
 	descriptionShort="Caliber: .45 ACP Hollow Point<br/>Rounds: 30<br/>Used in: M1 Thompson";

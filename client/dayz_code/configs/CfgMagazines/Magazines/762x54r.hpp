@@ -36,7 +36,7 @@ class 100Rnd_762x54_PK: CA_Magazine
 	descriptionShort="Caliber: 7.62x54R mm<br/>Rounds: 100 <br/>Used in: PK";
 	ammo="B_762x54_Ball";
 	count=100;
-	initSpeed=780;
+	initSpeed=870;
 	baseBullet = 762x54_x;
 	type="2 * 		256";
 	LOAD_AMMO

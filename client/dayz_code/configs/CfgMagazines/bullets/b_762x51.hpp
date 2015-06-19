@@ -4,6 +4,7 @@ class 762x51_x1 : baseBullet {
 	ammo = "B_762x51_Ball";
 	bulletCount = 1;
 	baseName = "762x51_x";
+	initSpeed=780;
 	baseDesc = "7.62x51mm";
 	picture = "\dayz_equip\textures\equip_ball.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
@@ -1864,6 +1865,7 @@ class 762x51_SD_x1 : 762x51_x1 {
 	ammo = "B_762x51_SD";
 	bulletCount = 1;
 	baseName = "762x51_SD_x";
+	initSpeed=320;
 	baseDesc = "7.62x51mm SD";
 	picture = "\dayz_equip\textures\equip_sd.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";

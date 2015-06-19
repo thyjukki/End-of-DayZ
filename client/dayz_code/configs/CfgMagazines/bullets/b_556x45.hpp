@@ -4,6 +4,7 @@ class 556x45_x1 : baseBullet {
 	ammo = "B_556x45_Ball";
 	bulletCount = 1;
 	baseName = "556x45_x";
+	initSpeed=930;
 	baseDesc = "5.56x45mm";
 	picture = "\dayz_equip\textures\equip_ball.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
@@ -1865,6 +1866,7 @@ class 556x45_SD_x1 : 556x45_x1 {
 	bulletCount = 1;
 	baseName = "556x45_SD_x";
 	baseDesc = "5.56x45mm SD";
+	initSpeed=330;
 	picture = "\dayz_equip\textures\equip_sd.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
 	descriptionShort = "Caliber: 5.56x45mm SD rounds";
