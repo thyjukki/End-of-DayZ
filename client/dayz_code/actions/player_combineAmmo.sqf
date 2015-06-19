@@ -13,15 +13,16 @@ _config = configFile >> "CfgMagazines" >> _item;
 if (r_ammo_selected_mode == 1) then
 {
 	_selected_ammo = r_ammo_selected;
-	r_ammo_selected_slot = 0;
-	r_ammo_selected = "";
-	r_ammo_selected_mode = 0;
 
 	if (r_ammo_selected_slot == _selectedSlot) exitWith {systemChat "Select diferent item.";};
 	
 	if (!(_selected_ammo in magazines player)) exitWith {
 		systemChat "Original item not in inventory anymore.";
 	};
+
+	r_ammo_selected_slot = 0;
+	r_ammo_selected = "";
+	r_ammo_selected_mode = 0;
 
 	_ammo = getText (configFile >> "CfgMagazines" >> _item >> "ammo");
 	_ammo2 = getText (configFile >> "CfgMagazines" >> _selected_ammo >> "ammo");
