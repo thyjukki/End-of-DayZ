@@ -17,7 +17,7 @@ class CfgMods {
 		hidePicture = 0;
 		hideName = 0;
 		action = "http://endofdayz.org/mybb/index.php";
-		version = "EndOfDayZ 1.1";
+		version = "EndOfDayZ 1.1.1";
 		hiveVersion = 0.96;
 		requiredAddons[] = {"Chernarus"};
 	};
