@@ -85,6 +85,8 @@ class CfgBuildingLoot {
 			{"KPFS_M1_Carbine",				"weapon",0.01},
 			{"KPFS_M1_Garand",				"weapon",0.01},
 			{"KPFS_M1_Garand_M84",			"weapon",0.01},
+			{"RH_ak47_Civ",					"weapon",0.01},
+			{"RH_M4_Civ",					"weapon",0.01},
 			{"huntingrifle",				"weapon",0.01},
 		//Multiple spawns	
 			{"",							"Residential",0.60},
@@ -92,6 +94,8 @@ class CfgBuildingLoot {
 			{"",							"militaryMagazines",0.05},
 			{"",							"civilianAmmo",0.20},
 			{"",							"militaryAmmo",0.05},
+			{"",							"westernMagazines",0.01},
+			{"",							"westernAmmo",0.01},
 			{"",							"Trash",0.50},
 			{"",							"generic",0.20}
 		};
@@ -106,6 +110,7 @@ class CfgBuildingLoot {
 			{"RH_m16a3",					"weapon",0.01},
 			{"RH_m16a4",					"weapon",0.01},
 			{"RH_m4",						"weapon",0.01},
+			{"RH_M4_Civ",					"weapon",0.10},
 			{"RH_m4a1",						"weapon",0.01},
 			{"G36C_DZ",						"weapon",0.01},
 			{"G36K_Camo_DZ",				"weapon",0.01},
@@ -231,7 +236,8 @@ class CfgBuildingLoot {
 			{"",							"Trash",1.00},
 			{"",							"civilianMagazines",0.20},
 			{"",							"civilianAmmo",0.20},
-			{"",							"generic",0.50}
+			{"",							"generic",0.50},
+			{"",							"westernAmmo",0.20}
 		};
 	};
 	class Industrial: Default { //254
@@ -300,6 +306,7 @@ class CfgBuildingLoot {
 			{"KPFS_M1_Carbine",				"weapon",0.02},
 			{"KPFS_M1_Garand",				"weapon",0.02},
 			{"KPFS_M1_Garand_M84",			"weapon",0.01},
+			{"RH_ak47_Civ",					"weapon",0.01},
 		//one spawn
 			{"ItemSandbag",					"magazine",0.04},	
 			{"WeaponHolder_ItemJerrycan",	"object",0.03},	
@@ -352,7 +359,13 @@ class CfgBuildingLoot {
 			{"RH_python",					"weapon",0.01},
 			{"Winchester1866",				"weapon",0.03},
 			{"Crossbow_DZ",					"weapon",0.01},
-			{"MR43",						"weapon", 0.01},
+			{"MR43",						"weapon",0.05},
+			{"Mosin_Nagant",				"weapon",0.03},
+			{"KPFS_KarS",					"weapon",0.03},
+			{"KPFS_M1_Carbine",				"weapon",0.01},
+			{"KPFS_M1_Garand",				"weapon",0.01},
+			{"RH_M4_Civ",					"weapon",0.01},
+			{"RH_ak47_Civ",					"weapon",0.01},
 		//tools
 			{"WeaponHolder_ItemHatchet",	"object",0.02},
 			{"ItemWatch",					"generic",0.05},
@@ -437,6 +450,8 @@ class CfgBuildingLoot {
 			{"",							"militaryMagazines",0.05},
 			{"",							"civilianAmmo",0.20},
 			{"",							"militaryAmmo",0.05},
+			{"",							"westernMagazines",0.05},
+			{"",							"westernAmmoAmmo",0.01},
 			{"",							"Trash",0.60},
 			{"",							"food",0.80}
 		};
@@ -567,6 +582,7 @@ class CfgBuildingLoot {
 			{"RH_m16a3",					"weapon",0.01},
 			{"RH_m16a4",					"weapon",0.01},
 			{"RH_m4",						"weapon",0.01},
+			{"RH_M4_Civ",					"weapon",0.10},
 			{"RH_m4a1",						"weapon",0.01},
 			{"G36C_DZ",						"weapon",0.01},
 			{"G36K_Camo_DZ",				"weapon",0.01},
@@ -574,6 +590,7 @@ class CfgBuildingLoot {
 			{"RH_m4sbr",					"weapon",0.01},
 			{"huntingrifle",				"weapon",0.04},
 			{"RH_ak74",						"weapon",0.12},
+			{"RH_ak47_Civ",					"weapon",0.20},
 		//special
 			{"PartGeneric",					"generic",0.04},
 			{"PartWheel",					"generic",0.02},
@@ -1405,6 +1422,7 @@ class CfgBuildingLoot {
 			{"KPFS_M1_Carbine",				"weapon",0.01},
 			{"KPFS_M1_Garand",				"weapon",0.01},
 			{"KPFS_M1_Garand_M84",			"weapon",0.01},
+			{"RH_ak47_Civ",					"weapon",0.01},
 		//special
 			{"WeaponHolder_ItemDomeTent",	"object",0.02},
 			{"ItemSandbag",					"magazine",0.04},

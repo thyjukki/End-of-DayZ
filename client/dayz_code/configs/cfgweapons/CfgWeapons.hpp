@@ -31,6 +31,8 @@ class CfgWeapons
 	class AK_47_M;
 	#include "Rifles\AKM.hpp"
 	
+	#include "Rifles\M4A1.hpp"
+	
 	class DMR : Rifle
 	{
 		class Single;
