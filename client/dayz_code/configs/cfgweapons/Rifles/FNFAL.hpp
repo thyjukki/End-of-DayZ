@@ -24,18 +24,23 @@ class FNFAL_DZ : FN_FAL
 	
 	distanceZoomMin = 300;
 	distanceZoomMax = 300;
-	
-	class Attachments
-	{
-		attachments[] =
-		{
-			"Attachment_CCO",
-			"Attachment_Holo"
+
+	class ItemActions {
+		class UseAtt {
+			isAttachment = 1;
+			text = "Attach Aimpoint";
+			script = "spawn player_useAttchment;";
+			att = "Attachment_CCO";
+			out = "FNFAL_CCO_DZ";
 		};
-		
-		Attachment_CCO = "FNFAL_CCO_DZ";
-		Attachment_Holo = "FNFAL_Holo_DZ";
-	};
+		class UseAtt1: UseAtt {
+			isAttachment = 1;
+			text = "Attach Holo";
+			script = "spawn player_useAttchment;";
+			att = "Attachment_HOLO";
+			out = "FNFAL_HOLO_DZ";
+		};
+	};	
 };
 
 class FNFAL_CCO_DZ : FNFAL_DZ
@@ -43,17 +48,17 @@ class FNFAL_CCO_DZ : FNFAL_DZ
 	model = "z\addons\dayz_communityweapons\fnfal\fnfal_cco.p3d";
 	picture = "\z\addons\dayz_communityweapons\fnfal\data\w_fnfal_cco_ca.paa";
 	displayName = $STR_DZ_WPN_FNFAL_CCO_NAME;
-	
-	class Attachments {};
-	
-	class ItemActions
-	{
-		class RemoveCCO
-		{
-			text = $STR_DZ_ATT_CCO_RMVE;
-			script = "; ['Attachment_CCO',_id,'FNFAL_DZ'] call player_removeAttachment";
+
+
+	class ItemActions {
+		class UseAtt {
+			isAttachment = 1;
+			text = "Detach Aimpoint";
+			script = "spawn player_removeAttchment;";
+			att = "Attachment_CCO";
+			out = "FNFAL_DZ";
 		};
-	};
+	};	
 };
 
 class FNFAL_Holo_DZ : FNFAL_CCO_DZ
@@ -61,15 +66,16 @@ class FNFAL_Holo_DZ : FNFAL_CCO_DZ
 	model = "z\addons\dayz_communityweapons\fnfal\fnfal_holo.p3d";
 	picture = "\z\addons\dayz_communityweapons\fnfal\data\w_fnfal_holo_ca.paa";
 	displayName = $STR_DZ_WPN_FNFAL_HOLO_NAME;
-	
-	class ItemActions
-	{
-		class RemoveHolo
-		{
-			text = $STR_DZ_ATT_HOLO_RMVE;
-			script = "; ['Attachment_Holo',_id,'FNFAL_DZ'] call player_removeAttachment";
+
+	class ItemActions {
+		class UseAtt1 {
+			isAttachment = 1;
+			text = "Detach Holo";
+			script = "spawn player_removeAttchment;";
+			att = "Attachment_HOLO";
+			out = "FNFAL_DZ";
 		};
-	};
+	};	
 };
 
 class FNFAL_ANPVS4_DZ : FN_FAL_ANPVS4
