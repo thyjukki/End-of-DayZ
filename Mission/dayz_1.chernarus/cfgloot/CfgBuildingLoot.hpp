@@ -75,7 +75,6 @@ class CfgBuildingLoot {
 			{"DZ_Backpack_FIN",				"object",0.01},
 			{"DZ_Assault_Pack_EP1",			"object",0.05},
 			{"DZ_Czech_Vest_Puch",			"object",0.07},
-			{"equip_cable_tie",				"magazine",0.02},
 			{"ItemWaterbottleUnfilled",		"magazine",0.10},
 			{"ItemWaterbottle",				"magazine",0.10},
 			{"ItemRadio",					"weapon",0.10},
@@ -222,7 +221,6 @@ class CfgBuildingLoot {
 			{"WeaponHolder_ItemTent",		"object",0.01},
 			{"ItemTrashPaper",				"magazine",0.05},
 			{"ItemTrashPaperMusic",			"magazine",0.05},
-			{"equip_cable_tie",				"magazine",0.05},
 			{"ItemWaterbottleUnfilled",		"magazine",0.04},
 			{"ItemWaterbottle",				"magazine",0.04},
 			{"ItemRadio",					"weapon",0.02},
@@ -275,7 +273,6 @@ class CfgBuildingLoot {
 			//{"ItemNails",					"magazine",0.10},  //TODO(Jukki) Removing thease for now since they dont seem to exist
 			{"equip_rag",					"magazine",0.05},
 			{"equip_scrapelectronics",		"magazine",0.05},
-			{"equip_cable_tie",				"magazine",0.05},
 			{"ItemWaterbottleUnfilled",		"magazine",0.05},
 			{"ItemRadio",					"weapon",0.02},
 			{"ItemDIY_wood",				"weapon",0.01},

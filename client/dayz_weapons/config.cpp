@@ -396,7 +396,7 @@ class cfgWeapons {
 		type = VSoft;
 		displayName = $STR_MAG_ACTION2_4;
 		canDrop = false;
-		muzzles[] = {"RoadFlareMuzzle", "ChemLightMuzzle", "MolotovCocktailMuzzle"};
+		muzzles[] = {"RoadFlareMuzzle", "ChemLightMuzzle", "MolotovCocktailMuzzle", "ThrowSmokeMuzzle"};
 		
 		class ThrowMuzzle : GrenadeLauncher {
 			cursor = "Air_Dot";
@@ -439,6 +439,16 @@ class cfgWeapons {
 		class MolotovCocktailMuzzle : ThrowMuzzle {
 			displayName = "Throw";
 			magazines[] = {"TrashJackDaniels", "ItemSodaEmpty", "TrashTinCan"};
+			cursor = "Vehicle_Grenade_W";
+			cursorAim = "\ca\Weapons\Data\clear_empty";
+		};
+		class ThrowSmokeMuzzle : ThrowMuzzle {
+			displayName = "Smoke";
+			magazines[] = {
+				"SmokeShell", 
+				"SmokeShellRed", 
+				"SmokeShellGreen"
+			};          
 			cursor = "Vehicle_Grenade_W";
 			cursorAim = "\ca\Weapons\Data\clear_empty";
 		};

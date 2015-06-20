@@ -87,6 +87,7 @@ player allowDamage true;
 
 player addWeapon "Loot";
 player addWeapon "Flare";
+player addWeapon "Throw";
 
 sleep 0.1;
 //melee check
