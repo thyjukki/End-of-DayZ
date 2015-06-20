@@ -828,6 +828,9 @@ class CfgBuildingLoot {
 			{"RH_g18",						"weapon",2.02},
 			{"RH_g19",						"weapon",2.04},
 		///7.62x51mm/Heavy Weapons
+			{"FNFAL_DZ",					"weapon",0.15},
+			{"FNFAL_CCO_DZ",				"weapon",0.10},
+			{"FNFAL_HOLO_DZ",				"weapon",0.10},
 			{"RH_m14acog",					"weapon",0.10},
 			{"RH_m14",						"weapon",0.15},
 			{"RH_m14aim",					"weapon",0.15},

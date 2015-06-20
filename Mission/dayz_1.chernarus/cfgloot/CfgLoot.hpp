@@ -425,13 +425,13 @@ class CfgLoot {
 		{"20Rnd_762x51_g3_tracer",0.01},
 		{"20Rnd_762x51_g3_rubber",0.01},
 		{"20Rnd_762x51_g3_bt",0.01},
-		{"20Rnd_762x51_FNFAL_Empty",0.00}, //do we even have FNFAL here //atm nope
-		{"20Rnd_762x51_FNFAL",0.00},
-		{"20Rnd_762x51_FNFALSD",0.00},
-		{"20Rnd_762x51_FNFAL_hp",0.00},
-		{"20Rnd_762x51_FNFAL_tracer",0.00},
-		{"20Rnd_762x51_FNFAL_rubber",0.00},
-		{"20Rnd_762x51_FNFAL_bt",0.00},
+		{"20Rnd_762x51_FNFAL_Empty",0.03}, //do we even have FNFAL here //atm nope
+		{"20Rnd_762x51_FNFAL",0.01},
+		{"20Rnd_762x51_FNFALSD",0.01},
+		{"20Rnd_762x51_FNFAL_hp",0.01},
+		{"20Rnd_762x51_FNFAL_tracer",0.01},
+		{"20Rnd_762x51_FNFAL_rubber",0.01},
+		{"20Rnd_762x51_FNFAL_bt",0.01},
 		{"RH_20Rnd_762x51_AR10_Empty",0.02}, //do we even have AR10 here //yes
 		{"RH_20Rnd_762x51_AR10",0.01}, 
 		{"RH_20Rnd_762x51_AR10SD",0.01},
