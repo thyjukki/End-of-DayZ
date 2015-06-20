@@ -6,26 +6,40 @@ class G36C_DZ : G36C
 	
 	magazines[] =
 	{
-		30Rnd_556x45_G36,
-		30Rnd_556x45_G36SD,
-		30Rnd_556x45_G36_hp,
-		30Rnd_556x45_G36_tracer,
-		30Rnd_556x45_G36_rubber,
-		30Rnd_556x45_G36_bt
+		"545x39_x1",
+		"545x39_SD_x1",
+		"545x39_HP_x1",
+		"545x39_TRACER_x1",
+		"545x39_RUBBER_x1",
+		"545x39_BT_x1",
+		"30Rnd_556x45_G36",
+		"30Rnd_556x45_G36SD",
+		"30Rnd_556x45_G36_hp",
+		"30Rnd_556x45_G36_tracer",
+		"30Rnd_556x45_G36_rubber",
+		"30Rnd_556x45_G36_bt"
 	};
-	
-	class Attachments
-	{
-		attachments[] =
-		{
-			"Attachment_CCO",
-			"Attachment_Holo",
-			"Attachment_Sup556"
+
+	class ItemActions {
+		class UseAtt {
+			isAttachment = 1;
+			text = "Attach Aimpoint";
+			script = "spawn player_useAttchment;";
+			att = "Attachment_CCO";
+			out = "G36C_CCO_DZ";
 		};
-		
-		Attachment_CCO = "G36C_CCO_DZ";
-		Attachment_Holo = "G36C_Holo_DZ";
-		Attachment_Sup556 = "G36C_SD_DZ";
+		class UseAtt1: UseAtt {
+			text = "Attach Holo";
+			script = "spawn player_useAttchment;";
+			att = "Attachment_HOLO";
+			out = "G36C_Holo_DZ";
+		};
+		class UseAtt2: UseAtt {
+			text = "Attach Silencer";
+			script = "spawn player_useAttchment;";
+			att = "Attachment_SupNATO";
+			out = "G36C_SD_DZ";
+		};
 	};
 };
 
@@ -37,32 +51,40 @@ class G36C_SD_DZ : G36_C_SD_eotech
 	
 	magazines[] =
 	{
-		30Rnd_556x45_G36,
-		30Rnd_556x45_G36SD,
-		30Rnd_556x45_G36_hp,
-		30Rnd_556x45_G36_tracer,
-		30Rnd_556x45_G36_rubber,
-		30Rnd_556x45_G36_bt
+		"545x39_x1",
+		"545x39_SD_x1",
+		"545x39_HP_x1",
+		"545x39_TRACER_x1",
+		"545x39_RUBBER_x1",
+		"545x39_BT_x1",
+		"30Rnd_556x45_G36",
+		"30Rnd_556x45_G36SD",
+		"30Rnd_556x45_G36_hp",
+		"30Rnd_556x45_G36_tracer",
+		"30Rnd_556x45_G36_rubber",
+		"30Rnd_556x45_G36_bt"
 	};
 	
-	class Attachments
-	{
-		attachments[] =
-		{
-			"Attachment_CCO",
-			"Attachment_Holo"
+
+	class ItemActions {
+		class UseAtt {
+			isAttachment = 1;
+			text = "Attach Aimpoint";
+			script = "spawn player_useAttchment;";
+			att = "Attachment_CCO";
+			out = "G36C_CCO_SD_DZ";
 		};
-		
-		Attachment_CCO = "G36C_CCO_SD_DZ";
-		Attachment_Holo = "G36C_Holo_SD_DZ";
-	};
-	
-	class ItemActions
-	{
-		class RemoveSuppressor
-		{
-			text = $STR_DZ_ATT_SUP556_RMVE;
-			script = "; ['Attachment_Sup556',_id,'G36C_DZ'] call player_removeAttachment";
+		class UseAtt1: UseAtt {
+			text = "Attach Holo";
+			script = "spawn player_useAttchment;";
+			att = "Attachment_HOLO";
+			out = "G36C_Holo_SD_DZ";
+		};
+		class UseAtt2: UseAtt {
+			text = "Detach Silencer";
+			script = "spawn player_useAttchment;";
+			att = "Attachment_SupNATO";
+			out = "G36C_DZ";
 		};
 	};
 };
@@ -73,22 +95,20 @@ class G36C_CCO_DZ : G36C_DZ
 	picture = "\z\addons\dayz_communityweapons\g36c\data\w_g36c_cco_ca.paa";
 	displayName = $STR_DZ_WPN_G36C_CCO_NAME;
 	
-	class Attachments
-	{
-		attachments[] =
-		{
-			"Attachment_Sup556"
+
+	class ItemActions {
+		class UseAtt {
+			isAttachment = 1;
+			text = "Attach Silencer";
+			script = "spawn player_useAttchment;";
+			att = "Attachment_SupNATO";
+			out = "G36C_CCO_SD_DZ";
 		};
-		
-		Attachment_Sup556 = "G36C_CCO_SD_DZ";
-	};
-	
-	class ItemActions
-	{
-		class RemoveCCO
-		{
-			text = $STR_DZ_ATT_CCO_RMVE;
-			script = "; ['Attachment_CCO',_id,'G36C_DZ'] call player_removeAttachment";
+		class UseAtt1: UseAtt {
+			text = "Detach Aimpoint";
+			script = "spawn player_removeAttchment;";
+			att = "Attachment_CCO";
+			out = "G36C_DZ";
 		};
 	};
 };
@@ -99,19 +119,20 @@ class G36C_CCO_SD_DZ : G36C_SD_DZ
 	picture = "\z\addons\dayz_communityweapons\g36c\data\w_g36c_cco_sd_ca.paa";
 	displayName = $STR_DZ_WPN_G36C_CCO_SD_NAME;
 	
-	class Attachments {};
-	
-	class ItemActions
-	{
-		class RemoveCCO
-		{
-			text = $STR_DZ_ATT_CCO_RMVE;
-			script = "; ['Attachment_CCO',_id,'G36C_SD_DZ'] call player_removeAttachment";
+
+	class ItemActions {
+		class UseAtt {
+			isAttachment = 1;
+			text = "Detach Silencer";
+			script = "spawn player_removeAttchment;";
+			att = "Attachment_SupNATO";
+			out = "G36C_CCO_DZ";
 		};
-		class RemoveSuppressor
-		{
-			text = $STR_DZ_ATT_SUP556_RMVE;
-			script = "; ['Attachment_Sup556',_id,'G36C_CCO_DZ'] call player_removeAttachment";
+		class UseAtt1: UseAtt {
+			text = "Detach Aimpoint";
+			script = "spawn player_removeAttchment;";
+			att = "Attachment_CCO";
+			out = "G36C_SD_DZ";
 		};
 	};
 };
@@ -122,22 +143,20 @@ class G36C_Holo_DZ : G36C_DZ
 	picture = "\z\addons\dayz_communityweapons\g36c\data\w_g36c_holo_ca.paa";
 	displayName = $STR_DZ_WPN_G36C_HOLO_NAME;
 	
-	class Attachments
-	{
-		attachments[] =
-		{
-			"Attachment_Sup556"
+
+	class ItemActions {
+		class UseAtt {
+			isAttachment = 1;
+			text = "Attach Silencer";
+			script = "spawn player_useAttchment;";
+			att = "Attachment_SupNATO";
+			out = "G36C_Holo_SD_DZ";
 		};
-		
-		Attachment_Sup556 = "G36C_Holo_SD_DZ";
-	};
-	
-	class ItemActions
-	{
-		class RemoveHolo
-		{
-			text = $STR_DZ_ATT_HOLO_RMVE;
-			script = "; ['Attachment_Holo',_id,'G36C_DZ'] call player_removeAttachment";
+		class UseAtt1: UseAtt {
+			text = "Detach Holo";
+			script = "spawn player_removeAttchment;";
+			att = "Attachment_HOLO";
+			out = "G36C_DZ";
 		};
 	};
 };
@@ -148,19 +167,20 @@ class G36C_Holo_SD_DZ : G36C_SD_DZ
 	picture = "\z\addons\dayz_communityweapons\g36c\data\w_g36c_holo_sd_ca.paa";
 	displayName = $STR_DZ_WPN_G36C_HOLO_SD_NAME;
 	
-	class Attachments {};
-	
-	class ItemActions
-	{
-		class RemoveHolo
-		{
-			text = $STR_DZ_ATT_HOLO_RMVE;
-			script = "; ['Attachment_Holo',_id,'G36C_SD_DZ'] call player_removeAttachment";
+
+	class ItemActions {
+		class UseAtt {
+			isAttachment = 1;
+			text = "Detach Silencer";
+			script = "spawn player_removeAttchment;";
+			att = "Attachment_SupNATO";
+			out = "G36C_Holo_DZ";
 		};
-		class RemoveSuppressor
-		{
-			text = $STR_DZ_ATT_SUP556_RMVE;
-			script = "; ['Attachment_Sup556',_id,'G36C_Holo_DZ'] call player_removeAttachment";
+		class UseAtt1: UseAtt {
+			text = "Detach Holo";
+			script = "spawn player_removeAttchment;";
+			att = "Attachment_HOLO";
+			out = "G36C_SD_DZ";
 		};
 	};
 };

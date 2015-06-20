@@ -34,7 +34,6 @@ class FNFAL_DZ : FN_FAL
 			out = "FNFAL_CCO_DZ";
 		};
 		class UseAtt1: UseAtt {
-			isAttachment = 1;
 			text = "Attach Holo";
 			script = "spawn player_useAttchment;";
 			att = "Attachment_HOLO";

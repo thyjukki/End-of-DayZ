@@ -6,12 +6,18 @@ class G36K_Camo_DZ : G36C
 	
 	magazines[] =
 	{
-		30Rnd_556x45_G36,
-		30Rnd_556x45_G36SD,
-		30Rnd_556x45_G36_hp,
-		30Rnd_556x45_G36_tracer,
-		30Rnd_556x45_G36_rubber,
-		30Rnd_556x45_G36_bt
+		"545x39_x1",
+		"545x39_SD_x1",
+		"545x39_HP_x1",
+		"545x39_TRACER_x1",
+		"545x39_RUBBER_x1",
+		"545x39_BT_x1",
+		"30Rnd_556x45_G36",
+		"30Rnd_556x45_G36SD",
+		"30Rnd_556x45_G36_hp",
+		"30Rnd_556x45_G36_tracer",
+		"30Rnd_556x45_G36_rubber",
+		"30Rnd_556x45_G36_bt"
 	};
 	
 	//G36 Optic
@@ -77,15 +83,16 @@ class G36K_Camo_DZ : G36C
 	};
 	//G36 Optic end
 	
-	class Attachments
-	{
-		attachments[] =
-		{
-			"Attachment_Sup556"
+
+	class ItemActions {
+		class UseAtt {
+			isAttachment = 1;
+			text = "Attach Silencer";
+			script = "spawn player_useAttchment;";
+			att = "Attachment_SupNATO";
+			out = "G36K_Camo_SD_DZ";
 		};
-		
-		Attachment_Sup556 = "G36K_Camo_SD_DZ";
-	};
+	};	
 };
 
 class G36K_Camo_SD_DZ : G36_C_SD_eotech
@@ -96,8 +103,18 @@ class G36K_Camo_SD_DZ : G36_C_SD_eotech
 	
 	magazines[] =
 	{
-		30Rnd_556x45_G36SD,
-		30Rnd_556x45_G36
+		"545x39_x1",
+		"545x39_SD_x1",
+		"545x39_HP_x1",
+		"545x39_TRACER_x1",
+		"545x39_RUBBER_x1",
+		"545x39_BT_x1",
+		"30Rnd_556x45_G36",
+		"30Rnd_556x45_G36SD",
+		"30Rnd_556x45_G36_hp",
+		"30Rnd_556x45_G36_tracer",
+		"30Rnd_556x45_G36_rubber",
+		"30Rnd_556x45_G36_bt"
 	};
 	
 	//G36 Optic
@@ -163,54 +180,14 @@ class G36K_Camo_SD_DZ : G36_C_SD_eotech
 	};
 	//G36 Optic end
 	
-	class ItemActions
-	{
-		class RemoveSuppressor
-		{
-			text = $STR_DZ_ATT_SUP556_RMVE;
-			script = "; ['Attachment_Sup556',_id,'G36K_Camo_DZ'] call player_removeAttachment";
-		};
-	};
-};
 
-class G36A_Camo_DZ : G36K_Camo_DZ
-{
-	model = "z\addons\dayz_communityweapons\g36\g36a_camo.p3d";
-	picture = "\z\addons\dayz_communityweapons\g36\data\w_g36a_camo_ca.paa";
-	displayName = $STR_DZ_WPN_G36A_CAMO_NAME;
-	
-	dexterity = 1.66;
-	
-	class Single : Single
-	{
-		dispersion = 0.0007;
-	};
-	
-	class Burst : Burst
-	{
-		dispersion = 0.0007;
-	};
-	
-	class FullAuto : FullAuto
-	{
-		dispersion = 0.0007;
-	};
-	
-	class Attachments {};
-};
-
-/*class G36A_Camo_SD_DZ : G36K_Camo_SD_DZ
-{
-	model = "z\addons\dayz_communityweapons\g36\g36a_camo_sd";
-	picture = "\z\addons\dayz_communityweapons\g36\data\w_g36a_camo_sd_ca.paa";
-	displayName = $STR_DZ_WPN_G36K_CAMO_SD_NAME;
-	
-	class ItemActions
-	{
-		class RemoveSuppressor
-		{
-			text = $STR_DZ_ATT_SUP556_RMVE;
-			script = "; ['Attachment_Sup556',_id,'G36K_Camo_DZ'] call player_removeAttachment";
+	class ItemActions {
+		class UseAtt {
+			isAttachment = 1;
+			text = "Detach Silencer";
+			script = "spawn player_removeAttchment;";
+			att = "Attachment_SupNATO";
+			out = "G36K_Camo_DZ";
 		};
-	};
-};*/
+	};	
+};
