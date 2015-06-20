@@ -88,7 +88,7 @@ class Survivor_DZ : Civilian {
 	respawnWeapons[] = {"Throw", "Put"};
 	respawnMagazines[] = {};
 	weaponSlots = 1	 + 	4	 + 12*		256	 + 2*	4096	 + 	2	 + 8*	16  + 12*131072;
-	canHideBodies = true;
+	canHideBodies = false;
 	backpack = "";
 	canCarryBackPack = 1;
 	enableGPS = 1;
@@ -300,6 +300,19 @@ class Camo1_DZ: Survivor_DZ { //BAF_Soldier_L_W
 	};
 	hiddenSelections[] = {"Camo","Camo2","Camo3"};
 	hiddenSelectionsTextures[] = {"\ca\characters_W_baf\data\camo_dpm_co.paa","\ca\characters_W_baf\data\armour_dpm_co.paa","\ca\characters_W_baf\data\equip_dpm_co.paa"};
+};
+
+
+
+
+
+// Redefining some of the skins.
+class CDF_Commander : CDF_Soldier_Base
+{
+	weaponSlots = 1	 + 	4	 + 12*		256	 + 2*	4096	 + 	2	 + 8*	16  + 12*131072;
+	canHideBodies = false;
+	backpack = "";
+	canCarryBackPack = 1;
 };
 
 /*	
