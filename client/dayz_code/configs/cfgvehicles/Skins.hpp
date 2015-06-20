@@ -304,7 +304,7 @@ class Camo1_DZ: Survivor_DZ { //BAF_Soldier_L_W
 
 
 
-
+class CDF_Soldier_Base;
 
 // Redefining some of the skins.
 class CDF_Commander : CDF_Soldier_Base
