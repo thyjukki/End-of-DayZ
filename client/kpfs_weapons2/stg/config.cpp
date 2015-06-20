@@ -81,6 +81,7 @@ class cfgWeapons
 		UiPicture="\CA\weapons\data\Ico\i_regular_CA.paa";
 		dexterity=1.500000;
 		cursor="RifleCursor";
+		descriptionShort="Caliber: 7.92x33";
 		drySound[]=
 		{
 			"\ca\Weapons\Data\Sound\AK47_dry_v1",
