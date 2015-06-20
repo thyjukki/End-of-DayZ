@@ -1146,7 +1146,7 @@ class CfgBuildingLoot {
 			{"VIL_ABAKAN_GP",				"weapon",0.10},
 			{"VIL_ABAKAN_P29",				"weapon",0.10},
 		//shotguns
-			{"M1014",						"weapon",0.09},
+			{"M1014_DZ",					"weapon",0.09},
 			{"Remington870_lamp",			"weapon",0.09},
 		//smgs
 			{"RH_uzi",						"weapon",0.05},
@@ -1455,7 +1455,7 @@ class CfgBuildingLoot {
 			{"RH_bull",						"weapon",0.02},
 			{"RH_python",					"weapon",0.01},
 		//shotguns
-			{"M1014",						"weapon",0.10},
+			{"M1014_DZ",					"weapon",0.10},
 			{"Remington870_lamp",			"weapon",0.10},
 		//smgs
 			{"RH_uzi",						"weapon",0.01},
@@ -1585,7 +1585,7 @@ class CfgBuildingLoot {
 			{"VIL_ABAKAN_GP",				"weapon",0.10},
 			{"VIL_ABAKAN_P29",				"weapon",0.10},
 		//shotguns
-			{"M1014",						"weapon",0.09},
+			{"M1014_DZ",					"weapon",0.09},
 			{"Remington870_lamp",			"weapon",0.09},
 		//smgs
 			{"RH_uzi",						"weapon",0.05},
@@ -1717,7 +1717,7 @@ class CfgBuildingLoot {
 			{"VIL_ABAKAN_GP",				"weapon",0.10},
 			{"VIL_ABAKAN_P29",				"weapon",0.10},
 		//shotguns
-			{"M1014",						"weapon",0.09},
+			{"M1014_DZ",					"weapon",0.09},
 			{"Remington870_lamp",			"weapon",0.09},
 		//smgs
 			{"RH_uzi",						"weapon",0.05},
@@ -1850,7 +1850,7 @@ class CfgBuildingLoot {
 			{"VIL_ABAKAN_GP",				"weapon",0.10},
 			{"VIL_ABAKAN_P29",				"weapon",0.10},
 		//shotguns
-			{"M1014",						"weapon",0.09},
+			{"M1014_DZ",					"weapon",0.09},
 			{"Remington870_lamp",			"weapon",0.09},
 		//smgs
 			{"RH_uzi",						"weapon",0.05},

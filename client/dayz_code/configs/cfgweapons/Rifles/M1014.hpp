@@ -19,18 +19,22 @@ class M1014_DZ : M1014
 	
 	distanceZoomMin=50;
 	distanceZoomMax=50;
-	
-	class Attachments
-	{
-		attachments[] =
-		{
-			"Attachment_CCO",
-			"Attachment_Holo"
+
+	class ItemActions {
+		class UseAtt {
+			isAttachment = 1;
+			text = "Attach Aimpoint";
+			script = "spawn player_useAttchment;";
+			att = "Attachment_CCO";
+			out = "M1014_CCO_DZ";
 		};
-		
-		Attachment_CCO = "M1014_CCO_DZ";
-		Attachment_Holo = "M1014_Holo_DZ";
-	};
+		class UseAtt1: UseAtt {
+			text = "Attach Holo";
+			script = "spawn player_useAttchment;";
+			att = "Attachment_HOLO";
+			out = "M1014_Holo_DZ";
+		};
+	};	
 };
 
 class M1014_CCO_DZ : M1014_DZ
@@ -41,17 +45,16 @@ class M1014_CCO_DZ : M1014_DZ
 	
 	distanceZoomMin=75;
 	distanceZoomMax=75;
-	
-	class Attachments {};
-	
-	class ItemActions
-	{
-		class RemoveCCO
-		{
-			text = $STR_DZ_ATT_CCO_RMVE;
-			script = "; ['Attachment_CCO',_id,'M1014_DZ'] call player_removeAttachment";
+
+	class ItemActions {
+		class UseAtt {
+			isAttachment = 1;
+			text = "Detach Aimpoint";
+			script = "spawn player_removeAttchment;";
+			att = "Attachment_CCO";
+			out = "M1014_DZ";
 		};
-	};
+	};	
 };
 
 class M1014_Holo_DZ : M1014_CCO_DZ
@@ -59,13 +62,14 @@ class M1014_Holo_DZ : M1014_CCO_DZ
 	model = "z\addons\dayz_communityweapons\m1014\m1014_holo.p3d";
 	picture = "\z\addons\dayz_communityweapons\m1014\data\w_m1014_holo_ca.paa";
 	displayName = $STR_DZ_WPN_M1014_HOLO_NAME;
-	
-	class ItemActions
-	{
-		class RemoveHolo
-		{
-			text = $STR_DZ_ATT_HOLO_RMVE;
-			script = "; ['Attachment_Holo',_id,'M1014_DZ'] call player_removeAttachment";
+
+	class ItemActions {
+		class UseAtt1 {
+			isAttachment = 1;
+			text = "Detach Holo";
+			script = "spawn player_removeAttchment;";
+			att = "Attachment_HOLO";
+			out = "M1014_DZ";
 		};
-	};
+	};	
 };
