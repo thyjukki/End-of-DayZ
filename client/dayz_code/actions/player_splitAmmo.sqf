@@ -37,7 +37,7 @@ forEach _create;
 
 if (!_isOK) then {
 	closeDialog 0;
-	cutText ["Not enought room, some ammo droped to ground.", "PLAIN DOWN"];
+	cutText ["Not enough room, some ammo was dropped onto the ground.", "PLAIN DOWN"];
 };
 
 player removeMagazine _item;
