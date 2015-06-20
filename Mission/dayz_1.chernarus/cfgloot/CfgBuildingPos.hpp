@@ -1037,6 +1037,7 @@ class Land_Ind_Quarry: Industrial {
 
 class Land_sloup_vn: Industrial { 
 	lootPos[] = {};
+	maxRoaming = 0;
 };
 
 class Land_Misc_Scaffolding: HouseRoaming {

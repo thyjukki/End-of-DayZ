@@ -696,3 +696,8 @@ if(!isDedicated) then {
 	Dayz_constructionContext = [];
 	Dayz_freefall = [ time, 0, 0.1 ];
 };
+
+
+// Set all sides to be friendly so they can enter cars
+EAST setFriend [WEST, 1];
+WEST setFriend [EAST, 1];
