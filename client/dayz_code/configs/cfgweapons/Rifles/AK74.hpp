@@ -39,7 +39,7 @@ class AK_74 : AK_BASE
 class RH_ak47;
 class RH_ak47_Civ: RH_ak47
 {
-	delete ItemActions;
+	class ItemActions {};
 	scope=2;
 	displayName="AK 47 Civ";
 	descriptionShort="<br />Ammo: 7.62x39 mm<br />Civilian, semi auto only";
