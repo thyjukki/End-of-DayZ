@@ -17,31 +17,31 @@ class Mosin_Nagant_Base: Rifle
 	modelOptics = "-";
 	reloadMagazineSound[] = {z\addons\dayz_communityweapons\models\mosin_nagant\sound\reload.ogg, 0.010000, 1};
 	magazines[] = {
-			"762x54_x1",
-			"762x54_x2",
-			"762x54_x3",
-			"762x54_x4",
-			"762x54_x5",
-			"762x54_HP_x1",
-			"762x54_HP_x2",
-			"762x54_HP_x3",
-			"762x54_HP_x4",
-			"762x54_HP_x5",
-			"762x54_TRACER_x1",
-			"762x54_TRACER_x2",
-			"762x54_TRACER_x3",
-			"762x54_TRACER_x4",
-			"762x54_TRACER_x5",
-			"762x54_RUBBER_x1",
-			"762x54_RUBBER_x2",
-			"762x54_RUBBER_x3",
-			"762x54_RUBBER_x4",
-			"762x54_RUBBER_x5",
-			"762x54_BT_x1",
-			"762x54_BT_x2",
-			"762x54_BT_x3",
-			"762x54_BT_x4",
-			"762x54_BT_x5",
+		"762x54_x1",
+		"762x54_x2",
+		"762x54_x3",
+		"762x54_x4",
+		"762x54_x5",
+		"762x54_HP_x1",
+		"762x54_HP_x2",
+		"762x54_HP_x3",
+		"762x54_HP_x4",
+		"762x54_HP_x5",
+		"762x54_TRACER_x1",
+		"762x54_TRACER_x2",
+		"762x54_TRACER_x3",
+		"762x54_TRACER_x4",
+		"762x54_TRACER_x5",
+		"762x54_RUBBER_x1",
+		"762x54_RUBBER_x2",
+		"762x54_RUBBER_x3",
+		"762x54_RUBBER_x4",
+		"762x54_RUBBER_x5",
+		"762x54_BT_x1",
+		"762x54_BT_x2",
+		"762x54_BT_x3",
+		"762x54_BT_x4",
+		"762x54_BT_x5",
 		"KPFS_5Rnd_762x54_Mosin",
 		"KPFS_5Rnd_762x54_Mosin_hp",
 		"KPFS_5Rnd_762x54_Mosin_tracer",
@@ -81,7 +81,7 @@ class Mosin_Nagant: Mosin_Nagant_Base
 	scope = 2;	
 	model = "z\addons\dayz_communityweapons\models\mosin_nagant\mosin_1891_animated";
 	displayName = "Mosin Nagant (CUSTOM)";
-	descriptionShort="<br />Attachments: <br />Ammo: Mosin Nagant Ammo";
+	descriptionShort="<br />Attachments: <br />Ammo: 7.62x54R";
 	picture = "\z\addons\dayz_communityweapons\models\mosin_nagant\images\1891.paa";
 
 	class ItemActions {
@@ -101,7 +101,7 @@ class Mosin_Nagant_FL : Mosin_Nagant_Base
 	scope = 2;
 	model = "z\addons\dayz_communityweapons\models\mosin_nagant\mosin_1891_FL_animated";
 	displayName = "Mosin Nagant (CUSTOM)";
-	descriptionShort="<br />Attachments: Flashlight<br />Ammo: Mosin Nagant Ammo";
+	descriptionShort="<br />Attachments: Flashlight<br />Ammo: 7.62x54R";
 	picture = "\z\addons\dayz_communityweapons\models\mosin_nagant\images\1891_FL.paa";
 	dexterity = 1.6;
 	class FlashLight {
@@ -120,7 +120,7 @@ class Mosin_Nagant_Scoped : Mosin_Nagant_Base
 	scope = 2;
 	model = "z\addons\dayz_communityweapons\models\mosin_nagant\mosin_1891_scoped_animated";
 	displayName = "Mosin Nagant (CUSTOM)";
-	descriptionShort="<br />Attachments: Hunting Scope<br />Ammo: Mosin Nagant Ammo";
+	descriptionShort="<br />Attachments: Hunting Scope<br />Ammo: 7.62x54R";
 	picture = "\z\addons\dayz_communityweapons\models\mosin_nagant\images\1891S.paa";
 	dexterity = 1.6;
 	opticsPPEffects[] = {"OpticsCHAbera2","OpticsBlur2"};
@@ -190,7 +190,7 @@ class Mosin_Nagant_Scoped_FL : Mosin_Nagant_Base
 	scope = 2;
 	model = "z\addons\dayz_communityweapons\models\mosin_nagant\mosin_1891_scoped_FL_animated";
 	displayName = "Mosin Nagant (CUSTOM)";
-	descriptionShort="<br />Attachments: Hunting Scope and Flashlight<br />Ammo: Mosin Nagant Ammo";
+	descriptionShort="<br />Attachments: Hunting Scope and Flashlight<br />Ammo: 7.62x54R";
 	picture = "\z\addons\dayz_communityweapons\models\mosin_nagant\images\1891S_FL.paa";
 	dexterity = 1.6;
 	opticsPPEffects[] = {"OpticsCHAbera2","OpticsBlur2"};
@@ -243,7 +243,7 @@ class Mosin_Nagant_Belt_FL : Mosin_Nagant_Base
 	scope = 2;	
 	model = "z\addons\dayz_communityweapons\models\mosin_nagant\mosin_1891_belt_FL_animated";
 	displayName = "Mosin Nagant (CUSTOM)";
-	descriptionShort="<br />Attachments: Ammo Belt and Flashlight<br />Ammo: Mosin Nagant Ammo";
+	descriptionShort="<br />Attachments: Ammo Belt and Flashlight<br />Ammo: 7.62x54R";
 	picture = "\z\addons\dayz_communityweapons\models\mosin_nagant\images\1891B_FL.paa";
 	dexterity = 1.6;
 	magazineReloadTime = 4.7;
@@ -286,7 +286,7 @@ class Mosin_Nagant_Belt_Scoped : Mosin_Nagant_Base
 	scope = 2;	
 	model = "z\addons\dayz_communityweapons\models\mosin_nagant\mosin_1891_belt_scoped_animated";
 	displayName = "Mosin Nagant (CUSTOM)";
-	descriptionShort="<br />Attachments: Hunting Scope and Ammo Belt<br />Ammo: Mosin Nagant Ammo";
+	descriptionShort="<br />Attachments: Hunting Scope and Ammo Belt<br />Ammo: 7.62x54R";
 	picture = "\z\addons\dayz_communityweapons\models\mosin_nagant\images\1891SB.paa";
 	dexterity = 1.6;
 	magazineReloadTime = 4.7;
@@ -319,7 +319,7 @@ class Mosin_Nagant_Belt_Scoped_FL : Mosin_Nagant_Base
 	scope = 2;	
 	model = "z\addons\dayz_communityweapons\models\mosin_nagant\mosin_1891_belt_scoped_FL_animated";
 	displayName = "Mosin Nagant (CUSTOM)";
-	descriptionShort="<br />Attachments: Hunting Scope, Ammo Belt and Flashlight<br />Ammo: Mosin Nagant Ammo";
+	descriptionShort="<br />Attachments: Hunting Scope, Ammo Belt and Flashlight<br />Ammo: 7.62x54R";
 	picture = "\z\addons\dayz_communityweapons\models\mosin_nagant\images\1891SB_FL.paa";
 	dexterity = 1.6;
 	magazineReloadTime = 4.7;
