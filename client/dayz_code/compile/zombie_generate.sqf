@@ -5,6 +5,7 @@ _doLoiter = _this select 1; // wonder around
 _unitTypes = _this select 2; // class of wanted models
 //_wildspawns = _this select 3;
 _bypass = _this select 3;
+_favStance = _this select 4;
 
 
 _maxlocalspawned = round(dayz_spawnZombies);
@@ -131,14 +132,6 @@ if ((_maxlocalspawned < _maxControlledZombies) and (dayz_CurrentNearByZombies < 
 
 			_position = getPosATL _agent;
 
-			_favStance = (
-				switch ceil(random(5)) do {
-					//case 3: {"DOWN"}; // prone
-					case 2: {"middle"}; // Kneel "middle"
-					case 3: {"middle"}; // Kneel "middle"
-					default {"Up"}; // stand-up
-				}
-			);
 			_agent setUnitPos _favStance;
 
 			_agent setVariable ["stance", _favStance];

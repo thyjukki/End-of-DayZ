@@ -2,9 +2,10 @@
         Created exclusively for ArmA2:OA - DayZMod.
         Please request permission to use/alter/distribute from project leader (R4Z0R49)
 */
-private ["_wreck","_maxlocalspawned","_maxControlledZombies","_iPos","_nearByZed","_nearByPlayer","_rnd","_positions","_zombieChance","_unitTypes","_min","_max","_num","_clean","_obj","_type","_config","_canLoot","_originalPos","_fastRun","_enabled","_i","_Pos"];
+private ["_wreck","_favStance","_maxlocalspawned","_maxControlledZombies","_iPos","_nearByZed","_nearByPlayer","_rnd","_positions","_zombieChance","_unitTypes","_min","_max","_num","_clean","_obj","_type","_config","_canLoot","_originalPos","_fastRun","_enabled","_i","_Pos"];
 _obj = 			_this select 0;
 _wreck = false;
+_favStance = "";
 if (count _this > 1) then {
 	_wreck = 			_this select 1;
 };
@@ -25,7 +26,15 @@ _enabled = false;
 
 if (_canLoot ) then {
 	//Get zombie class
-	if (floor(random 20) == 0) then
+	_favStance = (
+		switch ceil(random(5)) do {
+			//case 3: {"DOWN"}; // prone
+			case 2: {"middle"}; // Kneel "middle"
+			case 3: {"middle"}; // Kneel "middle"
+			default {"Up"}; // stand-up
+		}
+	);
+	if (floor(random 20) >19 || _favStance == "middle") then
 	{
 		_unitTypes = 	getArray (_config >> "zombieClass");
 	} else {
@@ -42,7 +51,7 @@ if (_canLoot ) then {
 	{
 		//_iPos = _obj modelToWorld _originalPos;
 		if ((_maxlocalspawned < _maxControlledZombies) and (dayz_CurrentNearByZombies < dayz_maxNearByZombies) and (dayz_currentGlobalZombies < dayz_maxGlobalZeds)) then {
-			[_originalPos,true,_unitTypes,_wreck] call zombie_generate;
+			[_originalPos,true,_unitTypes,_wreck, _favStance] call zombie_generate;
 		};
 	};
 
@@ -62,7 +71,7 @@ if (_canLoot ) then {
 					//diag_log ("BUILDING: " + _type + " / " + str(_nearByZed) + " / " + str(_nearByPlayer));
 					if ((_maxlocalspawned < _maxControlledZombies) and (dayz_CurrentNearByZombies < dayz_maxNearByZombies) and (dayz_currentGlobalZombies < dayz_maxGlobalZeds)) then {
 						if (!_nearByPlayer and !_nearByZed) then {
-							[_iPos,false,_unitTypes,false] call zombie_generate;
+							[_iPos,false,_unitTypes,false, _favStance] call zombie_generate;
 						};
 					};
 				};
