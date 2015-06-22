@@ -64,7 +64,7 @@ class RH_7Rnd_32cal_ppk_tracer: RH_7Rnd_32cal_ppk {
 class RH_7Rnd_32cal_ppk_rubber: RH_7Rnd_32cal_ppk {
 	scope=2;
 	baseBullet = 32ACP_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_32ACP_RUBBER";
 	displayName="PPK Rubber Mag";
 	displayNameShort="Rubber";

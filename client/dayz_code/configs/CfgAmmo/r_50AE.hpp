@@ -11,9 +11,8 @@ class B_50_AE_Ball: BulletBase
 };
 
 class B_50_AE_HP : B_50_AE_Ball {
-	airfriction = -0.001893;
+	airfriction = -0.003;
 	hit = 11;
-	typicalspeed = 350;
 	visiblefiretime = 2;
 };
 
@@ -25,10 +24,9 @@ class B_50_AE_TRACER : B_50_AE_Ball {
 };
 
 class B_50_AE_RUBBER : B_50_AE_Ball {
-	airfriction = -0.02;
-	caliber = 2;
 	hit = 1;
-	typicalspeed = 250;
+	typicalspeed = 200;
+	airFriction=-0.00500;
 	isRubber = 1;
 };
 

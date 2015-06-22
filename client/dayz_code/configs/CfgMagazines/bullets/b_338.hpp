@@ -1133,6 +1133,7 @@ class 338_RUBBER_x1 : 338_x1 {
 	scope = public;
 	displayName = ".338 Magnum Rubber (x1)";
 	ammo = "B_338mag_RUBBER";
+	initSpeed=200;
 	bulletCount = 1;
 	baseName = "338_RUBBER_x";
 	baseDesc = ".338 Magnum Rubber";

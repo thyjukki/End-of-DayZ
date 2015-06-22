@@ -10,6 +10,7 @@ class B_338mag_ball: BulletBase
 	audibleFire=18;
 	visibleFireTime=3;
 	airLock=1;
+	typicalspeed = 936;
 	cost=20;
 	airFriction=-0.000517;
 	caliber=1.780000;
@@ -30,10 +31,9 @@ class B_338mag_TRACER : B_338mag_ball {
 };
 
 class B_338mag_RUBBER : B_338mag_ball {
-	airfriction = -0.02;
-	caliber = 2;
 	hit = 1;
-	typicalspeed = 250;
+	typicalspeed = 200;
+	airFriction=-0.00500;
 	isRubber = 1;
 };
 

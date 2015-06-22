@@ -1117,6 +1117,7 @@ class 762x25_TRACER_x100 : 762x25_TRACER_x1 {
 class 762x25_RUBBER_x1 : 762x25_x1 {
 	scope = public;
 	displayName = "7.62x25 Rubber (x1)";
+	initSpeed=200;
 	ammo = "B_762x25_RUBBER";
 	bulletCount = 1;
 	baseName = "762x25_RUBBER_x";

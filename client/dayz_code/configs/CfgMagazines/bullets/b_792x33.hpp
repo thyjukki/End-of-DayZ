@@ -1119,6 +1119,7 @@ class 792x33_RUBBER_x1 : 792x33_x1 {
 	displayName = "7.92x33 Rubber (x1)";
 	ammo = "B_792x33_RUBBER";
 	bulletCount = 1;
+	initSpeed=200;
 	baseName = "792x33_RUBBER_x";
 	baseDesc = "7.92x33 Rubber";
 	picture = "\dayz_equip\textures\equip_rubber.paa";

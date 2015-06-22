@@ -8,6 +8,7 @@ class B_762x51_Ball : BulletBase
 	audibleFire = 18;
 	visibleFireTime = 3;
 	cost = 1.2;
+	typicalSpeed=780;
 	airLock = 1;
 	model = "\ca\Weapons\Data\bullettracer\tracer_red";
 	tracerScale = 0;
@@ -28,8 +29,7 @@ class B_762x51_SD : B_762x51_Ball {
 class B_762x51_HP: B_762x51_Ball
 {
 	hit = 14;
-	typicalSpeed = 320;
-	airFriction = -0.00098;
+	airFriction = -0.001;
 };
 
 class B_762x51_TRACER: B_762x51_Ball
@@ -43,11 +43,10 @@ class B_762x51_TRACER: B_762x51_Ball
 
 class B_762x51_RUBBER: B_762x51_Ball
 {
-	airfriction = -0.02;
-	caliber = 2;
 	hit = 1;
+	typicalspeed = 200;
+	airFriction=-0.00500;
 	isRubber = 1;
-	typicalspeed = 250;
 };
 
 class B_762x51_BT: B_762x51_Ball

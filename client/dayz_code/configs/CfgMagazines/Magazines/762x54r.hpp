@@ -64,7 +64,7 @@ class 100Rnd_762x54_PK_tracer: 100Rnd_762x54_PK {
 class 100Rnd_762x54_PK_rubber: 100Rnd_762x54_PK {
 	scope=2;
 	baseBullet = 762x54_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_762x54_RUBBER";
 	displayName="PK Rubber Mag";
 	displayNameShort="Rubber";
@@ -142,7 +142,7 @@ class 10Rnd_762x54_SVD_tracer: 10Rnd_762x54_SVD {
 class 10Rnd_762x54_SVD_rubber: 10Rnd_762x54_SVD {
 	scope=2;
 	baseBullet = 762x54_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_762x54_RUBBER";
 	displayName="SVD Rubber Mag";
 	displayNameShort="Rubber";
@@ -223,7 +223,7 @@ class KPFS_5Rnd_762x54_Mosin_tracer: KPFS_5Rnd_762x54_Mosin {
 class KPFS_5Rnd_762x54_Mosin_rubber: KPFS_5Rnd_762x54_Mosin {
 	scope=2;
 	baseBullet = 762x54_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_762x54_RUBBER";
 	displayName="Mosin Rubber Mag";
 	displayNameShort="Rubber";
@@ -304,7 +304,7 @@ class vil_10Rnd_762x54_SV_tracer: vil_10Rnd_762x54_SV {
 class vil_10Rnd_762x54_SV_rubber: vil_10Rnd_762x54_SV {
 	scope=2;
 	baseBullet = 762x54_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_762x54_RUBBER";
 	displayName="SV98 Rubber Mag";
 	displayNameShort="Rubber";
@@ -386,7 +386,7 @@ class vil_10Rnd_SVDK_tracer: vil_10Rnd_SVDK {
 class vil_10Rnd_SVDK_rubber: vil_10Rnd_SVDK {
 	scope=2;
 	baseBullet = 762x54_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_762x54_RUBBER";
 	displayName="SVDK Rubber Mag";
 	displayNameShort="Rubber";

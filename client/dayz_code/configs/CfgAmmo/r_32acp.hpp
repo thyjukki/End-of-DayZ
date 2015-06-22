@@ -12,7 +12,6 @@ class B_32ACP_Ball: BulletBase
 class B_32ACP_HP: B_32ACP_Ball
 {
 	hit=6;
-	typicalSpeed=270;
 	airFriction=-0.002000;
 };
 
@@ -27,10 +26,9 @@ class B_32ACP_TRACER: B_32ACP_Ball
 
 class B_32ACP_RUBBER: B_32ACP_Ball
 {
-	airfriction = -0.02;
-	caliber = 2;
 	hit = 1;
-	typicalspeed = 250;
+	typicalspeed = 200;
+	airFriction=-0.00500;
 	isRubber = 1;
 };
 

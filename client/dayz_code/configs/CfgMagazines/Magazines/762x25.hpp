@@ -66,7 +66,7 @@ class RH_8Rnd_762_tt33_tracer: RH_8Rnd_762_tt33 {
 class RH_8Rnd_762_tt33_rubber: RH_8Rnd_762_tt33 {
 	scope=2;
 	baseBullet = 762x25_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_762x25_RUBBER";
 	displayName="TT33 Rubber Mag";
 	displayNameShort="Rubber";
@@ -147,7 +147,7 @@ class KPFS_71Rnd_762x25_PPSh_tracer: KPFS_71Rnd_762x25_PPSh {
 class KPFS_71Rnd_762x25_PPSh_rubber: KPFS_71Rnd_762x25_PPSh {
 	scope=2;
 	baseBullet = 762x25_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_762x25_RUBBER";
 	displayName="PPSH Rubber Mag";
 	displayNameShort="Rubber";

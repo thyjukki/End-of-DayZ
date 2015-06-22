@@ -63,6 +63,7 @@ class UKF_5Rnd_338_Mag_rubber: UKF_5Rnd_338_Mag {
 	scope=2;
 	baseBullet = 338_RUBBER_x;
 	ammo="B_338mag_RUBBER";
+	initSpeed=200;
 	displayName="L115 Mag Rubber";
 	displayNameShort="Rubber";
 };
@@ -142,6 +143,7 @@ class M24a3_10Rnd_Mag_rubber: M24a3_10Rnd_Mag {
 	scope=2;
 	baseBullet = 338_RUBBER_x;
 	ammo="B_338mag_RUBBER";
+	initSpeed=200;
 	displayName="M24a3 Mag Rubber";
 	displayNameShort="Rubber";
 };

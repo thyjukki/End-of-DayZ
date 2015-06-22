@@ -75,7 +75,7 @@ class 20Rnd_556x45_Stanag_tracer: 20Rnd_556x45_Stanag {
 class 20Rnd_556x45_Stanag_rubber: 20Rnd_556x45_Stanag {
 	scope=2;
 	baseBullet = 556x45_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_556x45_RUBBER";
 	displayName="STANAG VN Rubber Mag";
 	displayNameShort="Rubber";
@@ -165,7 +165,7 @@ class 30Rnd_556x45_Stanag_tracer: 30Rnd_556x45_Stanag {
 class 30Rnd_556x45_Stanag_rubber: 30Rnd_556x45_Stanag {
 	scope=2;
 	baseBullet = 556x45_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_556x45_RUBBER";
 	displayName="STANAG Rubber Mag";
 	displayNameShort="Rubber";
@@ -257,7 +257,7 @@ class 30Rnd_556x45_G36_tracer: 30Rnd_556x45_G36 {
 class 30Rnd_556x45_G36_rubber: 30Rnd_556x45_G36 {
 	scope=2;
 	baseBullet = 556x45_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_556x45_RUBBER";
 	displayName="G36 Rubber Mag";
 	displayNameShort="Rubber";
@@ -349,7 +349,7 @@ class 30Rnd_556x45_Aug_tracer: 30Rnd_556x45_Aug {
 class 30Rnd_556x45_Aug_rubber: 30Rnd_556x45_Aug {
 	scope=2;
 	baseBullet = 556x45_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_556x45_RUBBER";
 	displayName="AUG Rubber Mag";
 	displayNameShort="Rubber";
@@ -443,7 +443,7 @@ class 100Rnd_556x45_BetaCMag_tracer: 100Rnd_556x45_BetaCMag {
 class 100Rnd_556x45_BetaCMag_rubber: 100Rnd_556x45_BetaCMag {
 	scope=2;
 	baseBullet = 556x45_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_556x45_RUBBER";
 	displayName="BetaC Rubber Mag";
 	displayNameShort="Rubber";
@@ -533,7 +533,7 @@ class R3F_25Rnd_556x45_FAMAS_tracer: R3F_25Rnd_556x45_FAMAS {
 class R3F_25Rnd_556x45_FAMAS_rubber: R3F_25Rnd_556x45_FAMAS {
 	scope=2;
 	baseBullet = 556x45_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_556x45_RUBBER";
 	displayName="Famas Rubber Mag";
 	displayNameShort="Rubber";
@@ -630,7 +630,7 @@ class 200Rnd_556x45_M249_tracer: 200Rnd_556x45_M249 {
 class 200Rnd_556x45_M249_rubber: 200Rnd_556x45_M249 {
 	scope=2;
 	baseBullet = 556x45_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_556x45_RUBBER";
 	displayName="M249 Rubber Mag";
 	displayNameShort="Rubber";
@@ -712,7 +712,7 @@ class 200Rnd_556x45_L110A1_tracer: 200Rnd_556x45_L110A1 {
 class 200Rnd_556x45_L110A1_rubber: 200Rnd_556x45_L110A1 {
 	scope=2;
 	baseBullet = 556x45_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_556x45_RUBBER";
 	displayName="L110A1 Rubber Mag";
 	displayNameShort="Rubber";
@@ -797,7 +797,7 @@ class 100Rnd_556x45_M249_tracer: 100Rnd_556x45_M249 {
 class 100Rnd_556x45_M249_rubber: 100Rnd_556x45_M249 {
 	scope=2;
 	baseBullet = 556x45_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_556x45_RUBBER";
 	displayName="M249 100Rnd. Rubber Mag";
 	displayNameShort="Rubber";

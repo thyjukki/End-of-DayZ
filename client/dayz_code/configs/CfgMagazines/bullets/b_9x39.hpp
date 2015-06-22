@@ -3,7 +3,7 @@ class 9x39_x1 : baseBullet {
 	displayName = "9x39 (x1)";
 	ammo = "B_9x39_Ball";
 	bulletCount = 1;
-	initSpeed=300;
+	initSpeed=320;
 	baseName = "9x39_x";
 	baseDesc = "9x39";
 	picture = "\dayz_equip\textures\equip_ball.paa";
@@ -1119,6 +1119,7 @@ class 9x39_RUBBER_x1 : 9x39_x1 {
 	displayName = "9x39 Rubber (x1)";
 	ammo = "B_9x39_RUBBER";
 	bulletCount = 1;
+	initSpeed=200;
 	baseName = "9x39_RUBBER_x";
 	baseDesc = "9x39 Rubber";
 	picture = "\dayz_equip\textures\equip_rubber.paa";

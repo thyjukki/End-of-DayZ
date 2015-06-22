@@ -4,7 +4,7 @@ class 30cal_x1 : baseBullet {
 	ammo = "B_30cal_Ball";
 	bulletCount = 1;
 	baseName = "30cal_x";
-	initSpeed=853;
+	initSpeed=850;
 	baseDesc = "30cal";
 	picture = "\dayz_equip\textures\equip_ball.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
@@ -1120,6 +1120,7 @@ class 30cal_RUBBER_x1 : 30cal_x1 {
 	ammo = "B_30cal_RUBBER";
 	bulletCount = 1;
 	baseName = "30cal_RUBBER_x";
+	initSpeed=200;
 	baseDesc = ".30 carbine Rubber";
 	picture = "\dayz_equip\textures\equip_rubber.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";

@@ -3,6 +3,7 @@ class 44_x1 : baseBullet {
 	displayName = ".44 Magnum (x1)";
 	ammo = "B_44mag_ball";
 	bulletCount = 1;
+	initSpeed=421;
 	baseName = "44_x";
 	baseDesc = ".44 Magnum";
 	picture = "\dayz_equip\textures\equip_ball.paa";
@@ -1133,6 +1134,7 @@ class 44_RUBBER_x1 : 44_x1 {
 	displayName = ".44 Magnum Rubber (x1)";
 	ammo = "B_44mag_RUBBER";
 	bulletCount = 1;
+	initSpeed=200;
 	baseName = "44_RUBBER_x";
 	baseDesc = ".44 Magnum Rubber";
 	picture = "\dayz_equip\textures\equip_rubber.paa";

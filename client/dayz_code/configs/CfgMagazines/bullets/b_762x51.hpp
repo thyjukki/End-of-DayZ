@@ -1118,6 +1118,7 @@ class 762x51_RUBBER_x1 : 762x51_x1 {
 	scope = public;
 	displayName = "7.62x51mm Rubber (x1)";
 	ammo = "B_762x51_RUBBER";
+	initSpeed=200;
 	bulletCount = 1;
 	baseName = "762x51_RUBBER_x";
 	baseDesc = "7.62x51mm Rubber";

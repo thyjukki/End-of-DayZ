@@ -1134,6 +1134,7 @@ class 357_RUBBER_x1 : 357_x1 {
 	displayName = ".357 Magnum Rubber (x1)";
 	ammo = "B_357mag_RUBBER";
 	bulletCount = 1;
+	initSpeed=200;
 	baseName = "357_RUBBER_x";
 	baseDesc = ".357 Magnum Rubber";
 	picture = "\dayz_equip\textures\equip_rubber.paa";

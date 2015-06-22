@@ -1,9 +1,10 @@
 class B_545x39_Ball : BulletBase
 {
-	caliber=1;
+	caliber=0.5;
 	indirectHit=0;
 	indirectHitRange=0;
 	cost=1;
+	typicalspeed = 900;
 	airFriction=-0.001412;
 	cartridge="FxCartridge_556";
 	model = "\ca\Weapons\Data\bullettracer\tracer_red";
@@ -13,12 +14,26 @@ class B_545x39_Ball : BulletBase
 	nvgOnly=0;
 	hit=7;
 };
-				
+
+class B_545x39_SD : BulletBase
+{
+	hit=6;
+	indirectHit=0;
+	indirectHitRange=0;
+	visibleFire=0.07;
+	typicalspeed = 320;
+	audibleFire=0.07;
+	visibleFireTime=2;
+	cost=1;
+	typicalSpeed=320;
+	airFriction=-0.0006;
+	caliber=0.5;
+};
+
 class B_545x39_HP: B_545x39_Ball
 {
 	hit=10;
 	airFriction=-0.0006;
-	typicalSpeed=320;
 };
 
 class B_545x39_TRACER: B_545x39_Ball
@@ -31,11 +46,10 @@ class B_545x39_TRACER: B_545x39_Ball
 
 class B_545x39_RUBBER: B_545x39_Ball
 {
-	airfriction = -0.02;
-	caliber = 2;
 	hit = 1;
+	typicalspeed = 200;
+	airFriction=-0.00500;
 	isRubber = 1;
-	typicalspeed = 250;
 };
 
 class B_545x39_BT: B_545x39_Ball

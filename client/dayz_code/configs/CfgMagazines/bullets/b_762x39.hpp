@@ -2,6 +2,7 @@ class 762x39_x1 : baseBullet {
 	scope = public;
 	displayName = "7.62x39mm (x1)";
 	ammo = "B_762x39_Ball";
+	initSpeed=710;
 	bulletCount = 1;
 	baseName = "762x39_x";
 	baseDesc = "7.62x39mm";
@@ -1117,6 +1118,7 @@ class 762x39_RUBBER_x1 : 762x39_x1 {
 	scope = public;
 	displayName = "7.62x39mm Rubber (x1)";
 	ammo = "B_762x39_RUBBER";
+	initSpeed=200;
 	bulletCount = 1;
 	baseName = "762x39_RUBBER_x";
 	baseDesc = "7.62x39mm Rubber";

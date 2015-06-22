@@ -39,7 +39,7 @@ class 8Rnd_9x18_Makarov: CA_Magazine
 	type=16;
 	ammo="B_9x18_Ball";
 	count=8;
-	initSpeed=320;
+	initSpeed=350;
 	baseBullet = 9x18_x;
 	LOAD_AMMO
 
@@ -75,7 +75,7 @@ class 8Rnd_9x18_Makarov_tracer: 8Rnd_9x18_Makarov {
 class 8Rnd_9x18_Makarov_rubber: 8Rnd_9x18_Makarov {
 	scope=2;
 	baseBullet = 9x18_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_9x18_RUBBER";
 	displayName="Makarov Rubber Mag";
 	displayNameShort="Rubber";
@@ -159,7 +159,7 @@ class RH_20Rnd_9x18_aps_tracer: RH_20Rnd_9x18_aps {
 class RH_20Rnd_9x18_aps_rubber: RH_20Rnd_9x18_aps {
 	scope=2;
 	baseBullet = 9x18_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_9x18_RUBBER";
 	displayName="APS Rubber mag";
 	displayNameShort="Rubber";
@@ -216,7 +216,7 @@ class 64Rnd_9x18_Bizon: CA_Magazine
 	model = "z\addons\dayz_communityweapons\magazines\bizon.p3d";
 	ammo="B_9x18_Ball";
 	count=64;
-	initSpeed=320;
+	initSpeed=350;
 	baseBullet = 9x18_x;
 	LOAD_AMMO
 
@@ -253,7 +253,7 @@ class 64Rnd_9x18_Bizon_tracer: 64Rnd_9x18_Bizon {
 class 64Rnd_9x18_Bizon_rubber: 64Rnd_9x18_Bizon {
 	scope=2;
 	baseBullet = 9x18_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_9x18_RUBBER";
 	displayName="Bizon Rubber Mag";
 	displayNameShort="Rubber";

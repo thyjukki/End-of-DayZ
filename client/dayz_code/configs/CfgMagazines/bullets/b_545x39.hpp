@@ -1119,6 +1119,7 @@ class 545x39_RUBBER_x1 : 545x39_x1 {
 	displayName = "5.45x39mm Rubber (x1)";
 	ammo = "B_545x39_RUBBER";
 	bulletCount = 1;
+	initSpeed=200;
 	baseName = "545x39_RUBBER_x";
 	baseDesc = "5.45x39mm Rubber";
 	picture = "\dayz_equip\textures\equip_rubber.paa";

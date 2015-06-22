@@ -1119,6 +1119,7 @@ class 45ACP_RUBBER_x1 : 45ACP_x1 {
 	displayName = ".45 ACP Rubber (x1)";
 	ammo = "B_45ACP_RUBBER";
 	bulletCount = 1;
+	initSpeed=200;
 	baseName = "45ACP_RUBBER_x";
 	baseDesc = ".45 ACP Rubber";
 	picture = "\dayz_equip\textures\equip_rubber.paa";

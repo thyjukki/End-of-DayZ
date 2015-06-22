@@ -1120,6 +1120,7 @@ class 556x45_RUBBER_x1 : 556x45_x1 {
 	ammo = "B_556x45_RUBBER";
 	bulletCount = 1;
 	baseName = "556x45_RUBBER_x";
+	initSpeed=200;
 	baseDesc = "5.56x45mm Rubber";
 	picture = "\dayz_equip\textures\equip_rubber.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";

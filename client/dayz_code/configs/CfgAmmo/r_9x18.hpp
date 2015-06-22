@@ -21,10 +21,8 @@ class B_9x18_SD : B_9x18_Ball {
 };
 
 class B_9x18_HP : B_9x18_Ball {
-	airfriction = -0.001893;
+	airfriction = -0.003;
 	hit = 7;
-	typicalspeed = 310;
-	visiblefiretime = 2;
 };
 
 class B_9x18_TRACER : B_9x18_Ball {
@@ -32,10 +30,9 @@ class B_9x18_TRACER : B_9x18_Ball {
 };
 
 class B_9x18_RUBBER : B_9x18_Ball {
-	airfriction = -0.02;
-	caliber = 2;
 	hit = 1;
-	typicalspeed = 310;
+	typicalspeed = 200;
+	airFriction=-0.00500;
 	isRubber = 1;
 };
 

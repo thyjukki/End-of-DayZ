@@ -8,7 +8,7 @@ class RH_6Rnd_44_Mag_Empty: emptiedMagazine
 	class ammoType
 	{
 		class B_44mag_ball {
-			ammoMag = "RH_6Rnd_44_Mag_PK";
+			ammoMag = "RH_6Rnd_44_Mag";
 		};
 		class B_44mag_HP {
 			ammoMag = "RH_6Rnd_44_Mag_hp";
@@ -63,6 +63,7 @@ class RH_6Rnd_44_Mag_rubber: RH_6Rnd_44_Mag {
 	scope=2;
 	baseBullet = 44_RUBBER_x;
 	ammo="B_44mag_RUBBER";
+	initSpeed=200;
 	displayName=".44 SL Tracer";
 	displayNameShort="Rubber";
 };

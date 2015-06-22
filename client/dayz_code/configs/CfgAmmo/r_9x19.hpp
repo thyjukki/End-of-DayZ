@@ -3,7 +3,7 @@
 class B_9x19_Ball : B_9x18_Ball {
 	hit=5;
 	cost=5;
-	typicalSpeed=398;
+	typicalSpeed=400;
 	airFriction=-0.001513;
 	visibleFire=16;
 	audibleFire=16;
@@ -15,15 +15,13 @@ class B_9x19_SD : B_9x19_Ball {
 	audibleFire=0.035;
 	visibleFireTime=2;
 	cost=5;
-	typicalSpeed=315;
+	typicalSpeed=320;
 	airFriction=-0.001312;
 };
 
 class B_9x19_HP : B_9x19_Ball {
-	airfriction = -0.001893;
+	airfriction = -0.003;
 	hit = 7;
-	typicalspeed = 315;
-	visiblefiretime = 2;
 };
 
 class B_9x19_TRACER : B_9x19_Ball {
@@ -35,10 +33,9 @@ class B_9x19_TRACER : B_9x19_Ball {
 };
 
 class B_9x19_RUBBER : B_9x19_Ball {
-	airfriction = -0.02;
-	caliber = 2;
 	hit = 1;
-	typicalspeed = 250;
+	typicalspeed = 200;
+	airFriction=-0.00500;
 	isRubber = 1;
 };
 

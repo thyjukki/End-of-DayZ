@@ -11,8 +11,7 @@ class B_762x25_Ball: BulletBase
 class B_762x25_HP: B_762x25_Ball
 {
 	hit=8;
-	airFriction=-0.003500;
-	typicalSpeed=370;
+	airFriction=-0.004000;
 };
 
 class B_762x25_TRACER: B_762x25_Ball
@@ -26,11 +25,10 @@ class B_762x25_TRACER: B_762x25_Ball
 
 class B_762x25_RUBBER: B_762x25_Ball
 {
-	airfriction = -0.02;
-	caliber = 2;
 	hit = 1;
+	typicalspeed = 200;
+	airFriction=-0.00500;
 	isRubber = 1;
-	typicalspeed = 250;
 };
 
 class B_762x25_BT: B_762x25_Ball

@@ -64,6 +64,7 @@ class RH_6Rnd_357_Mag_rubber: RH_6Rnd_357_Mag {
 	scope=2;
 	baseBullet = 357_RUBBER_x;
 	ammo="B_357mag_RUBBER";
+	initSpeed=200;
 	displayName=".357 SL Tracer";
 	displayNameShort="Rubber";
 };

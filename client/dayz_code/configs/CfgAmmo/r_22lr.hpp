@@ -7,16 +7,15 @@ class B_22LR_SD: BulletBase
 	audibleFire=0.035000;
 	visibleFireTime=2;
 	cost=1;
-	typicalSpeed=278;
+	typicalSpeed=290;
 	airFriction=-0.001500;
 	hit=6;
 	caliber=0.100000;
 };
 
 class B_22LR_HP : B_22LR_SD {
-	airfriction = -0.001893;
+	airfriction = -0.003;
 	hit = 8;
-	typicalspeed = 270;
 	visiblefiretime = 2;
 };
 
@@ -28,10 +27,9 @@ class B_22LR_TRACER : B_22LR_SD {
 };
 
 class B_22LR_RUBBER : B_22LR_SD {
-	airfriction = -0.02;
-	caliber = 2;
 	hit = 1;
-	typicalspeed = 250;
+	typicalspeed = 200;
+	airFriction=-0.00500;
 	isRubber = 1;
 };
 

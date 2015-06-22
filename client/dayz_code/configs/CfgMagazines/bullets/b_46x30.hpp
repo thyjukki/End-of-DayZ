@@ -1,7 +1,7 @@
 class 46x30_x1 : baseBullet {
 	scope = public;
 	displayName = "4.6x30 mm(x1)";
-	ammo = "C1987_B_46x30_Ball";
+	ammo = "B_46x30_Ball";
 	bulletCount = 1;
 	baseName = "46x30_x";
 	baseDesc = "46x30";
@@ -373,10 +373,10 @@ class 46x30_x100 : 46x30_x1 {
 class 46x30_SD_x1 : 46x30_x1 {
 	scope = public;
 	displayName = "4.6x30 mmBallistic Tip (x1)";
-	ammo = "C1987_B_46x30_sd_Ball";
+	ammo = "B_46x30_SD";
 	bulletCount = 1;
 	baseName = "46x30_SD_x";
-	initSpeed=700;
+	initSpeed=650;
 	baseDesc = "4.6x30 mmSub Sonic";
 	picture = "\dayz_equip\textures\equip_hp.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";
@@ -1121,6 +1121,7 @@ class 46x30_TRACER_x1 : 46x30_x1 {
 	ammo = "B_46x30_TRACER";
 	bulletCount = 1;
 	baseName = "46x30_TRACER_x";
+	initSpeed=200;
 	baseDesc = "4.6x30 mmTracer";
 	picture = "\dayz_equip\textures\equip_rubber.paa";
 	model = "\dayz_equip\models\ammo_acp45.p3d";

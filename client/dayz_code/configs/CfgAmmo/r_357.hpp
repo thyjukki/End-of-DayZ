@@ -5,7 +5,7 @@ class B_357mag_ball: BulletBase
 	hit=8.900000;
 	cost=1;
 	cartridge="FxCartridge_Small";
-	typicalSpeed=260;
+	typicalSpeed=421;
 	airFriction=-0.001500;
 	caliber=0.300000;
 };
@@ -13,8 +13,6 @@ class B_357mag_ball: BulletBase
 class B_357mag_HP : B_357mag_ball {
 	airfriction = -0.001893;
 	hit = 10;
-	typicalspeed = 250;
-	visiblefiretime = 2;
 };
 
 class B_357mag_TRACER : B_357mag_ball {
@@ -25,10 +23,9 @@ class B_357mag_TRACER : B_357mag_ball {
 };
 
 class B_357mag_RUBBER : B_357mag_ball {
-	airfriction = -0.02;
-	caliber = 2;
 	hit = 1;
-	typicalspeed = 250;
+	typicalspeed = 200;
+	airFriction=-0.00500;
 	isRubber = 1;
 };
 

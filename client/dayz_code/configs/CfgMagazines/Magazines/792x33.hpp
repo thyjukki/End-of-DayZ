@@ -59,7 +59,7 @@ class KPFS_30Rnd_792x33_STG44_tracer: KPFS_30Rnd_792x33_STG44 {
 class KPFS_30Rnd_792x33_STG44_rubber: KPFS_30Rnd_792x33_STG44 {
 	scope=2;
 	baseBullet = 792x33_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_792x33_RUBBER";
 	displayName="STG Rubber Mag";
 	displayNameShort="Rubber";

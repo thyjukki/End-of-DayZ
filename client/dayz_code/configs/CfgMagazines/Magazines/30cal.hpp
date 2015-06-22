@@ -34,7 +34,7 @@ class KPFS_15Rnd_cal30_Carbine: CA_Magazine
 	picture="\kpfs_weapons2\data\icons\m_carbine_ca.paa";
 	ammo="B_30cal_Ball";
 	count=10;
-	initSpeed=853;
+	initSpeed=850;
 	baseBullet = 30cal_x;
 	LOAD_AMMO
 
@@ -61,7 +61,7 @@ class KPFS_15Rnd_cal30_Carbine_tracer: KPFS_15Rnd_cal30_Carbine {
 class KPFS_15Rnd_cal30_Carbine_rubber: KPFS_15Rnd_cal30_Carbine {
 	scope=2;
 	baseBullet = 30cal_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_30cal_RUBBER";
 	displayName="M1 Carbine Rubber Mag";
 	displayNameShort="Rubber";

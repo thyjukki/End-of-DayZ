@@ -73,7 +73,7 @@ class RH_57x28mm_50RND_Mag_tracer: RH_57x28mm_50RND_Mag {
 class RH_57x28mm_50RND_Mag_rubber: RH_57x28mm_50RND_Mag {
 	scope=2;
 	baseBullet = 57x28_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_57x28_RUBBER";
 	displayName="P90 Rubber Mag";
 	displayNameShort="Rubber";

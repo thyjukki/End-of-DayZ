@@ -1119,6 +1119,7 @@ class 32ACP_RUBBER_x1 : 32ACP_x1 {
 	displayName = ".32 ACP Rubber (x1)";
 	ammo = "B_32ACP_RUBBER";
 	bulletCount = 1;
+	initSpeed=200;
 	baseName = "32ACP_RUBBER_x";
 	baseDesc = ".32 ACP Rubber";
 	picture = "\dayz_equip\textures\equip_rubber.paa";

@@ -16,7 +16,8 @@ class B_762x39_Ball: BulletBase {
 class B_762x39_SD: BulletBase
 {
 	hit=7;
-	typicalSpeed=290;
+	caliber = 0.83;
+	typicalSpeed=320;
 	airFriction=-0.000550;
 	caliber = 0.83;
 	supersonicCrackNear[]=
@@ -34,8 +35,6 @@ class B_762x39_SD: BulletBase
 	visibleFire=0.200000;
 	audibleFire=0.200000;
 	visibleFireTime=0.500000;
-	tracerColor[]={0,0,0,0};
-	tracerColorR[]={0,0,0,0};
 	cartridge="FxCartridge_762";
 };
 
@@ -43,7 +42,6 @@ class B_762x39_HP: B_762x39_Ball
 {
 	hit=10;
 	airFriction=-0.000550;
-	typicalSpeed=290;
 };
 
 class B_762x39_TRACER: B_762x39_Ball
@@ -56,11 +54,10 @@ class B_762x39_TRACER: B_762x39_Ball
 
 class B_762x39_RUBBER: B_762x39_Ball
 {
-	airfriction = -0.02;
-	caliber = 2;
 	hit = 1;
+	typicalspeed = 200;
+	airFriction=-0.00500;
 	isRubber = 1;
-	typicalSpeed=240;
 };
 
 class B_762x39_BT: B_762x39_Ball

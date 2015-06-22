@@ -1119,6 +1119,7 @@ class 22LR_RUBBER_x1 : 22LR_x1 {
 	displayName = "22LR Rubber (x1)";
 	ammo = "B_22LR_RUBBER";
 	bulletCount = 1;
+	initSpeed=200;
 	baseName = "22LR_RUBBER_x";
 	baseDesc = "22LR Rubber";
 	picture = "\dayz_equip\textures\equip_rubber.paa";

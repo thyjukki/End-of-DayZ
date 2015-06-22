@@ -1505,6 +1505,7 @@ class 9x19_RUBBER_x1 : 9x19_x {
 	scope = public;
 	displayName = "9x19 Rubber (x1)";
 	ammo = "B_9x19_RUBBER";
+	initSpeed=200;
 	bulletCount = 1;
 	baseName = "9x19_RUBBER_x";
 	baseDesc = "9x19 Rubber";

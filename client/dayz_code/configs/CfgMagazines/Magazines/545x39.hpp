@@ -74,7 +74,7 @@ class 30Rnd_545x39_AK_tracer: 30Rnd_545x39_AK {
 class 30Rnd_545x39_AK_rubber: 30Rnd_545x39_AK {
 	scope=2;
 	baseBullet = 545x39_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_545x39_RUBBER";
 	displayName="AK-74 Rubber Mag";
 	displayNameShort="Rubber";
@@ -164,7 +164,7 @@ class RH_45Rnd_545x39_mag_tracer: RH_45Rnd_545x39_mag {
 class RH_45Rnd_545x39_mag_rubber: RH_45Rnd_545x39_mag {
 	scope=2;
 	baseBullet = 545x39_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_545x39_RUBBER";
 	displayName="RPK-74 Rubber Mag";
 	displayNameShort="Rubber";
@@ -257,7 +257,7 @@ class 75Rnd_545x39_RPK_tracer: 75Rnd_545x39_RPK {
 class 75Rnd_545x39_RPK_rubber: 75Rnd_545x39_RPK {
 	scope=2;
 	baseBullet = 545x39_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_545x39_RUBBER";
 	displayName="AK-74 Rubber Drum Mag";
 	displayNameShort="Rubber";

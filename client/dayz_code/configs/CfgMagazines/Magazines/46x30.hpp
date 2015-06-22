@@ -9,10 +9,10 @@ class 40Rnd_46x30_mp7_Empty: emptiedMagazine
 	model="\C1987_Mp7\mp7_40_mag.p3d";
 	class ammoType
 	{
-		class C1987_B_46x30_Ball {
+		class B_46x30_Ball {
 			ammoMag = "40Rnd_46x30_mp7";
 		};
-		class C1987_B_46x30_sd_Ball {
+		class B_46x30_SD {
 			ammoMag = "40Rnd_46x30_sd_mp7";
 		};
 		class B_46x30_HP {
@@ -37,7 +37,7 @@ class 40Rnd_46x30_mp7: CA_Magazine
 	descriptionshort = "Caliber: 46x30 mm<br/>Rounds: 40 <br/>Used in: MP7";
 	picture="\C1987_Mp7\equip\gui_mp7_40_mag.paa";
 	model="\C1987_Mp7\mp7_40_mag.p3d";
-	ammo="C1987_B_46x30_Ball";
+	ammo="B_46x30_Ball";
 	count=40;
 	initSpeed=735;
 	baseBullet = 46x30_x;
@@ -49,8 +49,8 @@ class 40Rnd_46x30_mp7: CA_Magazine
 class 40Rnd_46x30_sd_mp7: 40Rnd_46x30_mp7 {
 	scope=2;
 	baseBullet = 46x30_SD_x;
-	initSpeed=700;
-	ammo="C1987_B_46x30_sd_Ball";
+	initSpeed=650;
+	ammo="B_46x30_SD";
 	displayName="MP7 Long SD Mag";
 	displayNameShort="SD";
 };
@@ -75,7 +75,7 @@ class 40Rnd_46x30_mp7_tracer: 40Rnd_46x30_mp7 {
 class 40Rnd_46x30_mp7_rubber: 40Rnd_46x30_mp7 {
 	scope=2;
 	baseBullet = 46x30_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_46x30_RUBBER";
 	displayName="MP7 Long Rubber Mag";
 	displayNameShort="Rubber";
@@ -99,10 +99,10 @@ class 20Rnd_46x30_mp7_Empty: emptiedMagazine
 	model="\C1987_Mp7\mp7_20_mag.p3d";
 	class ammoType
 	{
-		class C1987_B_46x30_Ball {
+		class B_46x30_Ball {
 			ammoMag = "20Rnd_46x30_mp7";
 		};
-		class C1987_B_46x30_sd_Ball {
+		class B_46x30_SD {
 			ammoMag = "20Rnd_46x30_sd_mp7";
 		};
 		class B_46x30_HP {
@@ -127,7 +127,7 @@ class 20Rnd_46x30_mp7: CA_Magazine
 	descriptionshort = "Caliber: 46x30 mm<br/>Rounds: 20 <br/>Used in: MP7";
 	picture="\C1987_Mp7\equip\gui_mp7_20_mag.paa";
 	model="\C1987_Mp7\mp7_20_mag.p3d";
-	ammo="C1987_B_46x30_Ball";
+	ammo="B_46x30_Ball";
 	count=20;
 	initSpeed=735;
 	baseBullet = 46x30_x;
@@ -139,8 +139,8 @@ class 20Rnd_46x30_mp7: CA_Magazine
 class 20Rnd_46x30_sd_mp7: 20Rnd_46x30_mp7 {
 	scope=2;
 	baseBullet = 46x30_SD_x;
-	initSpeed=700;
-	ammo="C1987_B_46x30_sd_Ball";
+	initSpeed=650;
+	ammo="B_46x30_SD";
 	displayName="MP7 SD Mag";
 	displayNameShort="SD";
 };
@@ -165,7 +165,7 @@ class 20Rnd_46x30_mp7_tracer: 20Rnd_46x30_mp7 {
 class 20Rnd_46x30_mp7_rubber: 20Rnd_46x30_mp7 {
 	scope=2;
 	baseBullet = 46x30_RUBBER_x;
-	
+	initSpeed=200;
 	ammo="B_46x30_RUBBER";
 	displayName="MP7 Rubber Mag";
 	displayNameShort="Rubber";

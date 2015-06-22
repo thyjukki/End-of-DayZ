@@ -1118,6 +1118,7 @@ class 50_AE_RUBBER_x1 : 50_AE_x1 {
 	scope = public;
 	displayName = ".50 AE Rubber (x1)";
 	ammo = "B_50_AE_RUBBER";
+	initSpeed=200;
 	bulletCount = 1;
 	baseName = "50_AE_RUBBER_x";
 	baseDesc = ".50 AE Rubber";

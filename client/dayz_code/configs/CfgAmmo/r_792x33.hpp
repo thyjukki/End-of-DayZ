@@ -13,13 +13,13 @@ class B_792x33_Ball: B_762x54_Ball
 	tracerScale=0;
 	tracerStartTime=0;
 	tracerEndTime=0;
+	typicalspeed = 685;
 	airFriction=-0.000960;
 };
 				
 class B_792x33_HP: B_792x33_Ball
 {
 	hit = 10;
-	typicalSpeed = 600;
 	airFriction = -0.001;
 };
 
@@ -34,11 +34,10 @@ class B_792x33_TRACER: B_792x33_Ball
 
 class B_792x33_RUBBER: B_792x33_Ball
 {
-	airfriction = -0.02;
-	caliber = 2;
 	hit = 1;
+	typicalspeed = 200;
+	airFriction=-0.00500;
 	isRubber = 1;
-	typicalspeed = 250;
 };
 
 class B_792x33_BT: B_792x33_Ball
