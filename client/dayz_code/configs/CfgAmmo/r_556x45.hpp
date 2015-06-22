@@ -23,7 +23,6 @@ class B_556x45_SD : BulletBase {
 	audibleFire=0.07;
 	visibleFireTime=2;
 	cost=1;
-	typicalSpeed=320;
 	airFriction=-0.0006;
 	typicalSpeed=330;
 	caliber=0.5;

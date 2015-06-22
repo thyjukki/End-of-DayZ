@@ -25,7 +25,6 @@ class B_545x39_SD : BulletBase
 	audibleFire=0.07;
 	visibleFireTime=2;
 	cost=1;
-	typicalSpeed=320;
 	airFriction=-0.0006;
 	caliber=0.5;
 };

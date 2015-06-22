@@ -478,8 +478,6 @@ class RH_45ACP_30RND_Mag_rubber: RH_45ACP_30RND_Mag
 	scope=2;
 	baseBullet = 45ACP_RUBBER_x;
 	initSpeed=200;
-	tracersevery = 1;
-	initSpeed=200;
 	ammo="B_45ACP_RUBBER";
 	displayName="G21 Long Rubber Mag";
 	displayNameShort="Rubber";

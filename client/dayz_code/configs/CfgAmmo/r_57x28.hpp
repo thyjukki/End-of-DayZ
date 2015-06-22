@@ -16,7 +16,6 @@ class B_57x28_SD: B_57x28_Ball
 	hit=6;
 	visibleFire=0.07;
 	audibleFire=0.07;
-	typicalspeed=320;
 	visibleFireTime=2;
 	typicalSpeed=320;
 	airFriction=-0.00060000003;

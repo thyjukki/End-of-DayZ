@@ -19,7 +19,6 @@ class B_762x39_SD: BulletBase
 	caliber = 0.83;
 	typicalSpeed=320;
 	airFriction=-0.000550;
-	caliber = 0.83;
 	supersonicCrackNear[]=
 	{
 		"",
