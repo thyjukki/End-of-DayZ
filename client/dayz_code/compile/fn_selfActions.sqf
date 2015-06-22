@@ -105,7 +105,7 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 	_isVehicle = _cursorTarget isKindOf "AllVehicles";
 	_isAir = _cursorTarget isKindOf "Air";
 	_HasHandcuff = "ItemHandcuff" in magazines player;
-	_HasZiptie = "equip_cable_tie" in magazines player;
+	_HasZiptie = ("equip_cable_tie" in magazines player || "equip_duct_tape" in magazines player || "equip_rope" in magazines player);
 	_isBicycle = _cursorTarget isKindOf "Bicycle";
 	_isMan = _cursorTarget isKindOf "Man";
 	_isAnimal = _cursorTarget isKindOf "Animal";

@@ -11,7 +11,17 @@ if (primaryweapon _newCiv != "") exitWith
 /////////////////////////////////////////////////////////////////////////////////////
 if(_dist < 10 && _isMan && _isAlive) then {
     // removing required...
-    player removeMagazine"equip_cable_tie";
+	if ("equip_cable_tie" in magazines player) then {
+		player removeMagazine"equip_cable_tie";
+	} else {
+		if ("equip_duct_tape" in magazines player) then {
+			player removeMagazine"equip_duct_tape";
+		} else {
+			if ("equip_rope" in magazines player) then {
+				player removeMagazine"equip_rope";
+			};
+		};
+	};
 
     sleep 1;
 
