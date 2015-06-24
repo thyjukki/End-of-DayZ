@@ -1,0 +1,26 @@
+militaryWEST[] = {
+//med
+	{"ItemBandage",0.06},
+	{"ItemPainkiller",0.06},
+	{"ItemMorphine",0.02},
+	{"ItemHeatPack",0.02},
+//ammo
+	{"1Rnd_HE_M203",0.01},
+	{"FlareWhite_M203",0.01},
+	{"FlareGreen_M203",0.01},
+	{"1Rnd_Smoke_M203",0.01},	
+	{"HandGrenade_west",0.01},
+	{"SmokeShell",0.04},
+	{"SmokeShellRed",0.02},
+	{"SmokeShellGreen",0.02},
+	{"30Rnd_9x19_MP5",0.02},
+	{"HandChemGreen",0.02},
+	{"HandChemBlue",0.02},
+	{"HandChemRed",0.02},
+//drinks
+	{"ItemWaterbottleUnfilled",0.02},
+//food
+	{"FoodMRE",0.01}
+//special
+//trash
+};

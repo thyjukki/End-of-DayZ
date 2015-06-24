@@ -1,0 +1,19 @@
+militaryEAST[] = {
+//med
+	{"ItemBandage",0.06},
+	{"ItemPainkiller",0.06},
+	{"ItemMorphine",0.02},
+	{"ItemHeatPack",0.04},
+//ammo
+	{"HandGrenade_east",0.01},
+	{"ItemHeatPack",0.02},
+	{"SmokeShell",0.02},
+	{"SmokeShellRed",0.02},
+	{"SmokeShellGreen",0.02},
+//drinks
+//food
+	{"FoodCanRusStew",0.08},
+	{"FoodCanRusPork",0.08}
+//special
+//trash
+};

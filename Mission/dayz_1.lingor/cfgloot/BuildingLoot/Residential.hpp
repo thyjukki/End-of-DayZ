@@ -1,0 +1,32 @@
+Residential[] = {
+//med
+	{"ItemAntibacterialWipe",0.04},
+//ammo
+	{"HandRoadFlare",0.07},
+//drinks
+	{"ItemSodaSmasht",0.02},
+	{"ItemSodaMzly",0.02},
+	{"ItemSodaPeppsy",0.05},
+	//{"ItemWaterbottleUnfilled",0.01}, //military/hunting/police
+//food
+	{"FoodCanDemon",0.01},
+	{"FoodCanFraggleos",0.01},
+	{"FoodCanHerpy",0.01},
+	{"FoodCanDerpy",0.01},
+	{"FoodCanOrlok",0.01},
+	{"FoodCanPowell",0.01},
+	{"FoodCanTylers",0.01},
+	{"FoodCanRusStew",0.03},
+	{"FoodCanRusPork",0.03},
+	{"FoodCanRusPeas",0.03},
+	{"FoodCanRusMilk",0.02},
+//special
+	{"equip_nails",0.03},
+	{"equip_gauze",0.01},
+	{"equip_string",0.04},
+	{"equip_rag",0.03},
+	{"equip_scrapelectronics",0.01},
+	{"equip_floppywire",0.01},
+	{"equip_hose",0.01},
+	{"equip_duct_tape",0.01}
+};

@@ -1,15 +1,7 @@
 
-#include "\userconfig\EndOfDayZ\cameraPosition.hpp"
+//#include "\userconfig\EndOfDayZ\cameraPosition.hpp"
 class Man : Land
 {
-	#ifdef CameraMode1
-	extCameraPosition[] = {0.4, -0.2, -1}; // Deadfast third person camera
-	#endif
-
-	#ifdef CameraMode2
-	extCameraPosition[] = {-0.4, -0.2, -1}; // Deadfast third person camera
-	#endif
-
 	canCarryBackPack=1;
 };
 
