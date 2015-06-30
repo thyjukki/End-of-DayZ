@@ -3,6 +3,14 @@ class FN_FAL;
 class FN_FAL_ANPVS4;
 #include "Rifles\FNFAL.hpp"
 
+//civ weapons
+class AKS_74_UN_kobra;
+#include "Rifles\AK74.hpp"
+
+#include "Rifles\M4A1.hpp"
+
+
+	
 class G36C : Rifle
 {
 	class Single;

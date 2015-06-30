@@ -20,3 +20,5 @@ KPFS_Mosin_Nagant -> Mosin_Nagant
 
 PK_DZ
 Pecheneg_DZ
+
+remember to add civ weapons
