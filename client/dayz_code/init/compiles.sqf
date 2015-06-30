@@ -1,6 +1,7 @@
 /*
 	FUNCTION COMPILES
 */
+call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\KRON_Strings.sqf";					//Compile regular functions
 //Player only
 if (!isDedicated) then {
 
@@ -147,6 +148,11 @@ if (!isDedicated) then {
 		_b
 	};
 
+	fGetIDC ={
+		_number=[_this,"Control #",""] call KRON_Replace;
+		parseNumber _number;
+	};
+	
 	dayz_HungerThirst = {
 		dayz_hunger = dayz_hunger + (_this select 0);
 		dayz_thirst = dayz_thirst + (_this select 1);

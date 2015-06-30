@@ -20,7 +20,7 @@ enableRadio false;
 enableSentences false;
 
 // DayZ Epoch config
-spawnShoremode = 1; // Default = 1 (on shore)
+spawnShoremode = 0; // Default = 1 (on shore)
 spawnArea = 1500; // Default = 1500
 
 MaxVehicleLimit = 300; // Default = 50
@@ -40,6 +40,7 @@ DynamicVehicleDamageLow = 0; // Default: 0
 DynamicVehicleDamageHigh = 100; // Default: 100
 
 DZE_BuildOnRoads = false; // Default: False
+DZE_MissionLootTable = true; //Custom Loot Tables
 
 EpochEvents = [["any","any","any","any",30,"crash_spawner"],["any","any","any","any",0,"crash_spawner"],["any","any","any","any",15,"supply_drop"]];
 dayz_fullMoonNights = true;

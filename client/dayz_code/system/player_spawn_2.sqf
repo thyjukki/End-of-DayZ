@@ -10,6 +10,10 @@ _isPZombie = player isKindOf "PZombie_VB";
 player setVariable ["temperature",dayz_temperatur,true];
 player setVariable["friendlies",DZE_Friends,true];
 
+r_ammo_selected = "";
+r_ammo_selected_slot = 0;
+r_ammo_selected_mode = 0;
+
 dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)) +  (((count dayz_myMagazines) * 0.1) + (count dayz_myWeapons * 0.5));
 
 while {true} do {

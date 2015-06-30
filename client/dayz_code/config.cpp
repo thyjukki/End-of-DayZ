@@ -4067,7 +4067,7 @@ class RscDisplayGear
 {
 	idd=106;
 	enableDisplay=1;
-	onUnload="call player_gearSync; call dayz_forceSave;";
+	onUnload="call player_gearSync; call dayz_forceSave; r_ammo_selected_slot = 0; r_ammo_selected_mode = 0;";
 	class controls
 	{
 		class CA_Filter_Icon: RscPicture
