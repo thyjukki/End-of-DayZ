@@ -1,9 +1,10 @@
-private ["_pos","_display","_body","_playerID","_array","_source","_method","_canHitFree","_isBandit","_punishment","_humanityHit","_myKills","_humanity","_kills","_killsV","_myGroup","_model"];
+private ["_display","_body","_playerID","_array","_source","_method","_canHitFree","_isBandit","_punishment","_humanityHit","_myKills","_humanity","_kills","_killsV","_myGroup"];
 disableSerialization;
 if (deathHandled) exitWith {};
-
 deathHandled = true;
-//Death
+if ((alive player) && {isNil {dayz_playerName}}) then {
+	dayz_playerName = name player;
+};
 //Prevent client freezes
 _display = findDisplay 49;
 if(!isNull _display) then {_display closeDisplay 0;};
@@ -14,28 +15,17 @@ _body = player;
 _playerID = getPlayerUID player;
 
 disableUserInput true;
-
 //add weapon on back to player...
-if (dayz_onBack != "") then {
-	//Add weapon on back to body.
-	_body addWeapon dayz_onBack;
-    /*
-	//Add weapon on back to the ground.
-	_pos = _body modeltoWorld [1,1,0];
-	//_pos set [2, 0];
-    _item = createVehicle ["WeaponHolder", _pos, [], 0.0, "CAN_COLLIDE"];
-    _item setPosATL [_pos select 0, _pos select 1, ((_pos select 2) + 0.1)];
-    _item addWeaponCargoGlobal [dayz_onBack,1];
-	*/
+//if (dayz_onBack != "") then {
+//	_body addWeapon dayz_onBack;
+//};
+
+_infected = 0;
+if (r_player_infected && DZE_PlayerZed) then {
+	_infected = 1;
 };
-_array = _this;
-_source = _array select 0;
-_method = _array select 1;
-_dist = player distance _source;
-//Send Death Notice
-//["PVDZ_plr_Death",[dayz_characterID,0,_body,_playerID,dayz_playerName]] call callRpcProcedure;
-PVDZ_plr_Death = [dayz_characterID,0,_body,_playerID, _source, currentweapon _source, _dist];
-publicVariableServer "PVDZ_plr_Death";
+PVDZE_plr_Died = [dayz_characterID,0,_body,_playerID,_infected, dayz_playerName];
+publicVariableServer "PVDZE_plr_Died";
 
 _id = [player,20,true,getPosATL player] call player_alertZombies;
 
@@ -48,36 +38,27 @@ player setVariable ["NORRN_unconscious", false, true];
 player setVariable ["unconsciousTime", 0, true];
 player setVariable ["USEC_isCardiac",false,true];
 player setVariable ["medForceUpdate",true,true];
-player setVariable ["bloodTaken", false, true];
-//remove combat timer on death
 player setVariable ["startcombattimer", 0];
 r_player_unconscious = false;
 r_player_cardiac = false;
-_model = typeOf player;
 
+_array = _this;
 if (count _array > 0) then {
 	_source = _array select 0;
 	_method = _array select 1;
-	if ((!isNull _source) and (_source != player)) then {
+	if ((!isNull _source) && (_source != player)) then {
 		_canHitFree = player getVariable ["freeTarget",false];
 		_isBandit = (player getVariable["humanity",0]) <= -2000;
-        _accidentalMurder = (_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ","Bandit1_DZ","BanditW1_DZ"]);
-
-		_punishment = _canHitFree || _isBandit || _accidentalMurder; //if u are bandit or start first - player will not recieve humanity drop
+		_punishment = _canHitFree || _isBandit; //if u are bandit || start first - player will not recieve humanity drop
 		_humanityHit = 0;
-
 		if (!_punishment) then {
-			//i'm "not guilty" - kill me and be punished
-			_myKills = ((player getVariable ["humanKills",0]) / 3) * 1500;
-			// how many non bandit players have I (the dead player) killed?
-			// punish my killer 2000 for shooting a surivor
-			// but subtract 500 for each survivor I've murdered
+			//i'm "not guilty" - kill me && be punished
+			_myKills = ((player getVariable ["humanKills",0]) / 30) * 1000;
 			_humanityHit = -(2000 - _myKills);
 			_kills = _source getVariable ["humanKills",0];
 			_source setVariable ["humanKills",(_kills + 1),true];
-			PVDZ_send = [_source,"Humanity",[_source,_humanityHit,300]];
-			publicVariableServer "PVDZ_send";
-
+			PVDZE_send = [_source,"Humanity",[_source,_humanityHit,300]];
+			publicVariableServer "PVDZE_send";
 		} else {
 			//i'm "guilty" - kill me as bandit
 			_killsV = _source getVariable ["banditKills",0];
@@ -89,14 +70,18 @@ if (count _array > 0) then {
 
 terminate dayz_musicH;
 terminate dayz_slowCheck;
+terminate dayz_animalCheck;
 terminate dayz_monitor1;
+terminate dayz_medicalH;
+terminate dayz_gui;
 
-//Reset (just in case)
-//deleteVehicle dayz_playerTrigger;
-//disableUserInput false;
 r_player_dead = true;
 
+"dynamicBlur" ppEffectEnable true;"dynamicBlur" ppEffectAdjust [4]; "dynamicBlur" ppEffectCommit 0.2;
 
+"colorCorrections" ppEffectEnable true;
+"colorCorrections" ppEffectAdjust [1, 1, 0, [1, 1, 1, 0.0], [1, 1, 1, 0.01],  [1, 1, 1, 0.0]];
+"colorCorrections" ppEffectCommit 1;
 
 //Player is Dead!
 3 fadeSound 0;
@@ -108,26 +93,24 @@ addSwitchableUnit dayz_originalPlayer;
 setPlayable dayz_originalPlayer;
 selectPlayer dayz_originalPlayer;
 
-_myGroup = group _body;
-[_body] joinSilent dayz_firstGroup;
-deleteGroup _myGroup;
+//_myGroup = group _body;
+//[_body] joinSilent dayz_firstGroup;
+//deleteGroup _myGroup;
 
 3 cutRsc ["default", "PLAIN",3];
 4 cutRsc ["default", "PLAIN",3];
 
 _body setVariable["combattimeout", 0, true];
 
-
-//due to a cleanup issue with effects this has been disabled remember to look at the cleanup before adding it back.
-//[_body] call spawn_flies;
-//dayzFlies = player;
-//publicVariable "dayzFlies";
+//["dayzFlies",player] call broadcastRpcCallAll;
 sleep 2;
 
-1 cutRsc ["DeathScreen_DZ","BLACK OUT",3];
+1 cutRsc ["DeathScreen","BLACK OUT",3];
 
 playMusic "dayz_track_death_1";
 
+"dynamicBlur" ppEffectAdjust [0]; "dynamicBlur" ppEffectCommit 5;
+"colorCorrections" ppEffectAdjust [1, 1, 0, [1, 1, 1, 0.0], [1, 1, 1, 1],  [1, 1, 1, 1]];"colorCorrections" ppEffectCommit 5;
 
 sleep 2;
 
@@ -136,7 +119,7 @@ for  "_x" from 5 to 1 step -1 do {
 	sleep 1;
 };
 
-PVDZ_Server_Simulation = [_body, false];
-publicVariableServer "PVDZ_Server_Simulation";
+PVDZE_Server_Simulation = [_body, false];
+publicVariableServer "PVDZE_Server_Simulation";
 
 endMission "END1";

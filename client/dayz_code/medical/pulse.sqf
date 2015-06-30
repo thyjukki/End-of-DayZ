@@ -1,15 +1,19 @@
-private["_unit","_isDead","_isCardiac"];
-_unit = _this select 3;
+// bleed.sqf
+
+private ["_unit","_isDead","_isCardiac"];
+_unit = (_this select 3);
 _isDead = _unit getVariable["USEC_isDead",false];
 _isCardiac = _unit getVariable["USEC_isCardiac",false];
 
 sleep 1;
 if (_isDead) then {
-	cutText [localize "str_pulse_extremely_weak","PLAIN DOWN"];
+	TitleText[(localize "str_epoch_player_3"),"PLAIN DOWN",3];
 } else {
 	if (_isCardiac) then {
-		cutText [localize "str_pulse_weak","PLAIN DOWN"];
+		TitleText[(localize "str_epoch_player_4"),"PLAIN DOWN",3];
 	} else {
-		cutText [localize "str_pulse_strong","PLAIN DOWN"];
+		TitleText[(localize "str_epoch_player_5"),"PLAIN DOWN",3];
 	};
 };
+
+//r_action = false;

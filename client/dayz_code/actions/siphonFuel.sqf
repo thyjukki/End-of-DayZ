@@ -1,32 +1,29 @@
-private ["_vehicle","_curFuel","_newFuel","_started","_finished","_animState","_isMedic","_location1","_location2","_abort","_canNameEmpty","_canSizeEmpty","_canTypeEmpty","_canName","_canSize","_configCanEmpty","_configVeh","_capacity","_nameText","_availableCansEmpty","_hasHose"];
+private ["_vehicle","_curFuel","_newFuel","_started","_finished","_animState","_isMedic","_location1","_location2","_abort","_canNameEmpty","_canSizeEmpty","_canTypeEmpty","_canName","_canSize","_configCanEmpty","_configVeh","_capacity","_nameText","_availableCansEmpty"];
 
-player removeAction s_player_siphonfuel;
-_hasHose = "equip_hose" in magazines player;
+if(DZE_ActionInProgress) exitWith { cutText [(localize "str_epoch_player_98") , "PLAIN DOWN"] };
+DZE_ActionInProgress = true;
 
-if (dayz_siphonFuelInProgress) exitWith { cutText [localize "str_siphon_inprogress", "PLAIN DOWN"] };
-if (!_hasHose) exitWith {cutText [localize "str_siphon_hose", "PLAIN DOWN"] };
-_PlayerNear = {isPlayer _x} count ((getPosATL _vehicle) nearEntities ["CAManBase", 10]) > 1;
-if (_PlayerNear) exitWith {cutText [localize "str_pickup_limit_5", "PLAIN DOWN"];};
+// Use target from addaction
+_vehicle = 	_this select 0;
 
-dayz_siphonFuelInProgress = true;
-_vehicle = _this select 3;
 _abort = false;
 
 // Static vehicle fuel information
 _configVeh = 	configFile >> "cfgVehicles" >> TypeOf(_vehicle);
 _capacity = 	getNumber(_configVeh >> "fuelCapacity");
 _nameText = 	getText(_configVeh >> "displayName");
-_isMan = _vehicle isKindOf "Man";
-_isAnimal = _vehicle isKindOf "Animal";
-_isZombie = _vehicle isKindOf "zZombie_base";
 
-if (_isMan or _isAnimal or _isZombie) exitWith { cutText [localize "str_siphon_notvehicle", "PLAIN DOWN"] };
+_availableCansEmpty = ["ItemJerrycanEmpty","ItemFuelBarrelEmpty"];
+// _availableCans = ["ItemJerrycan","ItemFuelBarrel"];
 
-// Loop to find containers that can could hold fuel and fill them
+// Loop to find containers that can could hold fuel && fill them
 {
 	_configCanEmpty = 	configFile >> "CfgMagazines" >> _x;
 	//diag_log format["Looking for: %1", _x];
-	if(_x in DayZ_fuelCansEmpty) then {		
+	if(_x in _availableCansEmpty) then {
+
+		//diag_log format["gas fuelQuantity config : %1", _x];
+		
 		// Get Empty can size
 		_canNameEmpty = _x;
 		_canSizeEmpty = getNumber(_configCanEmpty >> "fuelQuantity");
@@ -37,25 +34,28 @@ if (_isMan or _isAnimal or _isZombie) exitWith { cutText [localize "str_siphon_n
 		_canSize =	getNumber(configFile >> "cfgMagazines" >> _canName >> "fuelQuantity");
 		
 		// is empty
-		if(_canSizeEmpty == 0) then {			
+		if(_canSizeEmpty == 0) then {
+
+			//diag_log format["is empty fuelQuantity : %1", _x];
+			
 			_curFuel = 		((fuel _vehicle) * _capacity);
 			_newFuel = 		(_curFuel - _canSize);
 
 			// calculate new fuel
-			if (_capacity == 0) then {
-				_newFuel = 0;
-			} else {
-				_newFuel = (_newFuel / _capacity);
-			};
+			_newFuel = (_newFuel / _capacity);
 
 			if (_newFuel > 0) then {
-				cutText [format [localize "str_siphon_preparing",_canTypeEmpty], "PLAIN DOWN"];
-				_finished = false;
+
+				cutText [format[(localize "str_epoch_player_133"),_canTypeEmpty], "PLAIN DOWN"];
 				
 				// alert zombies
-				[player,20,true,(getPosATL player)] call player_alertZombies;
+				[player,20,true,(getPosATL player)] spawn player_alertZombies;
+
+				_finished = false;
 
 				if(!dayz_isSwimming) then {
+
+					[1,1] call dayz_HungerThirst;
 					// force animation 
 					player playActionNow "Medic";
 
@@ -70,7 +70,7 @@ if (_isMan or _isAnimal or _isZombie) exitWith { cutText [localize "str_siphon_n
 						if (_isMedic) then {
 							_started = true;
 						};
-						if (_started and !_isMedic) then {
+						if (_started && !_isMedic) then {
 							r_doLoop = false;
 							_finished = true;
 						};
@@ -88,6 +88,7 @@ if (_isMan or _isAnimal or _isZombie) exitWith { cutText [localize "str_siphon_n
 							player playActionNow "stop";
 						};
 					};
+
 				} else {
 					// Alternate method in water make sure player stays in one spot for 6 seconds
 					_location1 = getPosATL player;
@@ -99,53 +100,30 @@ if (_isMan or _isAnimal or _isZombie) exitWith { cutText [localize "str_siphon_n
 				};
 
 				if (_finished) then {
+
 					// Get vehicle fuel levels again
 					_curFuel = 		((fuel _vehicle) * _capacity);
 					_newFuel = 		(_curFuel - _canSize);
 
 					// calculate minimum needed fuel
-					if (_capacity == 0) then {
-						_newFuel = 0;
-					} else {
-						_newFuel = (_newFuel / _capacity);
-					};
+					_newFuel = (_newFuel / _capacity);
 
 					if (_newFuel > 0) then {
+
 						if(([player,_canNameEmpty] call BIS_fnc_invRemove) == 1) then {
+		
+							/* PVS/PVC - Skaronator */
 							if (local _vehicle) then {
 								[_vehicle,_newFuel] call local_setFuel;
 							} else {
-								PVDZ_send = [_vehicle,"SetFuel",[_vehicle,_newFuel]];
-								publicVariableServer "PVDZ_send";
+								PVDZE_send = [_vehicle,"SFuel",[_vehicle,_newFuel]];
+								publicVariableServer "PVDZE_send";
 							};
 
 							// Play sound
 							[player,"refuel",0,false] call dayz_zombieSpeak;
-							
-							// Add filled can
-							if (_vehicle isKindOf "Air") then {
-								if (_canName == "ItemFuelcan") then {
-									player addMagazine "ItemFuelcanKerosene";
-								} else {
-									player addMagazine "ItemJerrycanKerosene";
-								};
-							}
-							else
-							{
-								player addMagazine _canName;
-							};
-					
-							
-							if (_vehicle isKindOf "Air") then {
-								cutText [format[localize "str_siphon_drained_kerosene",_nameText,_canSize], "PLAIN DOWN"];
-							} else {
-								cutText [format[localize "str_siphon_drained",_nameText,_canSize], "PLAIN DOWN"];
-							};
-							
-							// Added Nutrition-Factor for work
-							["Working",0,[20,40,15,0]] call dayz_NutritionSystem;
-					
-							cutText [format [localize "str_siphon_drained",_nameText,_canSize], "PLAIN DOWN"];
+							player addMagazine _canName;
+							cutText [format[(localize "str_epoch_player_171"),_nameText,_canSize], "PLAIN DOWN"];
 	
 							call fnc_usec_medic_removeActions;
 							r_action = false;
@@ -153,22 +131,28 @@ if (_isMan or _isAnimal or _isZombie) exitWith { cutText [localize "str_siphon_n
 							sleep 1;
 						} else {
 							_abort = true;
-						};					
+						};	
+				
 					} else {
-						cutText [format [localize "str_siphon_notenough",_nameText], "PLAIN DOWN"];
+						cutText [format[(localize "str_epoch_player_172"),_nameText], "PLAIN DOWN"];
 						_abort = true;
-					};						
+					};
+						
 				} else {
-					cutText [localize "str_siphon_canceled", "PLAIN DOWN"];
+					cutText [(localize "str_epoch_player_35") , "PLAIN DOWN"];
 					_abort = true;
-				};			
+				};
+			
 			} else {
-				cutText [format [localize "str_siphon_notenough",_nameText], "PLAIN DOWN"];
+				cutText [format[(localize "str_epoch_player_172"),_nameText], "PLAIN DOWN"];
 				_abort = true;
-			};
-		};
+			};	
+		};		
 	};
+	
+	// exit if abort flag was set
 	if(_abort) exitWith {};
-} forEach magazines player;
 
-dayz_siphonFuelInProgress = false;
+} count magazines player;
+
+DZE_ActionInProgress = false;

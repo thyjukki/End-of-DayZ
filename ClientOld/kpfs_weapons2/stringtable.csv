@@ -1,0 +1,102 @@
+﻿LANGUAGE,English,German
+
+STR_KPFS_HandGrenade_24,Handgrenade 24,Stielgranate 24
+STR_KPFS_HandGrenade_39,Handgrenade 39,Eihandgranate 39
+
+STR_KPFS_SKS,SKS,SKS
+STR_KPFS_RPD,RPD,Maschinengewehr D
+STR_KPFS_TT33,Tokarev TT33,Pistole T
+STR_KPFS_STG44,STG 44,Sturmgewehr 44
+STR_KPFS_MPI_K,MPi-K,MPi-K
+
+STR_KPFS_P38,Walther P38,Walther P38
+STR_KPFS_P38K,Walther P38k,Walther P38k
+
+STR_KPFS_P52,P52,P52
+STR_KPFS_P2,P2,P2
+STR_KPFS_P3,P3,P3
+
+STR_KPFS_MG1,MG-42 (MG1),MG-42 (MG1)
+STR_KPFS_MG1_MAG,MG-1 Ammobox,MG-1 Gurtkasten
+
+STR_KPFS_PANZERSCHRECK,Panzerschreck,Raketenpanzerbüchse 54
+STR_KPFS_PANZERSCHRECK_GRENADE,Panzerschreck rocket,RakGr. 4233
+STR_KPFS_PZF60,Panzerfaust 60,Panzerfaust 60
+STR_KPFS_LUFTFAUST_B,Luftfaust,Fliegerfaust-B
+STR_KPFS_LUFTFAUST_DRUM,Luftfaust rocket drum,Fliegerfaust-B Raketen
+
+STR_KPFS_WEAPONBOX_WW2,German Weapons (WWII),Waffen (Deutschland)
+STR_KPFS_WEAPONBOX_SOZ,German Weapons (SOZ),Waffen (SBZ)
+STR_KPFS_WEAPONBOX_AOZ,German Weapons (Trizone),Waffen (Trizone)
+
+//Magazines
+
+STR_KPFS_P38_MAG,Walther P38 Magazine,Walther P38 Magazin
+STR_KPFSS_P38_MAG,"Caliber: 9x19 mm &nbsp;Rounds: 8 &nbsp;Used in: Walther P38, P1","Kaliber: 9x19 mm &nbsp;Schuss: 8  &nbsp;Eingesetzt in: P38, P1"
+STR_KPFS_SKS_MAG,SKS Magazine,SKS Magazin
+STR_KPFS_TT33_MAG,Tokarev magazine,Tokarew Magazin
+STR_KPFSS_TT33_MAG,"Caliber: 7,62x25 mm &nbsp;Rounds: 8 &nbsp;Used in: Tokarev 33","Kaliber: 7,62x25 mm &nbsp;Schuss: 8  &nbsp;Eingesetzt in: Tokarev 33"
+STR_KPFS_STG44_MAG,AR 44 Magazine,Stgw 44 Magazin
+STR_KPFS_RPD_BOX,RPD ammobox, RPD Gurtkasten
+//LIB
+STR_KPFS_LIB_P52,"The US handgun M1911 was introduced in 1951 in the German Border Guard as P51 for M1911 and as P52 for M1911A1. When some BGS officers turn to the Bundeswehr in 1956 they carry on used their gun also there.","Die US Pistole M1911 wurde unter dem Namen P51/52 beim BGS eingeführt und von Beamten, die 1956 zur Bundeswehr wechselten, weiter verwendet."
+STR_KPFS_LIB_TT33,"The soviet Tokarev 33 from Tula was used by the East German armed forces in the first time and was later replaced by the Makarov M.","Als Erstausstattung erhielten bewaffnete DDR Kräfte diese Waffe, die später von der Makarow M abgelöst wurde."
+STR_KPFS_LIB_STG44,"The first assault rifle of the world who was introduced in Dezember 1944 in the Wehrmacht and also used by East German KVP (Barracked People's Police) in the early GDR.","Das Stgw 44 war das erste Schnellfeuergewehr moderner Bauart, das von der Wehrmacht im Dezember 1944 eingeführt wurde. NNach dem Zweiten Weltkrieg war es auch noch in den Einheiten der Kasernierten Volkspolizei der DDR zu finden."
+STR_KPFS_LIB_SKS,"The soviet WWII rifle SKS-45 was one of the first weapons who was used by the GDR military.","Erstes sowjetisches Selbstladegwehr der bewaffneten DDR-Kräfte in den 1950ern."
+STR_KPFS_LIB_RPD,"Soviet WWII Machinegun adopted by the early GDR Police and Army in the 1950's","Erstes sowjetisches Maschinengewehr der bewaffneten DDR-Kräfte in den 1950ern."
+STR_KPFS_LIB_PSL,"The PSL was adopted by the Special Police Unit of the GDR.","Romänisches Scharfschützengewehr der 9.Volkspolizei Kompanie der DDR."
+STR_KPFS_LIB_MG1,"West German MG42 version of the early Bundeswehr who was in use til 1965.","MG42 Nachkriegsversion, die beim BGS und der Bundeswehr von 1951 - 1965 genutzt wurde. Die Waffe wurde 1965 zur MG-2 und 1969 zur MG-3 umgerüstet."
+STR_KPFS_LIB_P38K,"The P38 K is an version with short barrel. Also used by an famous US TV show in the 1960's.","Die P38K ist eine Version mit kurzen Lauf. Bekannt wurde die Version durch eine US-Serie in den 1960ern."
+STR_KPFS_LIB_P38,"Standard Weapon of German Army from 1938 til 1945. After war the weapon was used by paramilitary organisations like BGS, Police or KVP. The was updated in 1957 as P1 for the Bundeswehr. The civilian version still named as P38.","Die Standardpistole der Wehrmacht von 1938 bis 1945. Nach dem Krieg benutzen Polizeieinheiten die Waffe weiter, bis sie 1957 durch die P1 für die Bundeswehr ersetzt wurde."
+STR_KPFS_LIB_PZF60,"The Panzerfaust was the most famous antitank weapon of the Wehrmacht in the end of World War II.","Die Panzerfaust war einer der bekanntesten Einwegpanzerabwehrwaffen des Zweiten Weltkrieges."
+
+STR_AUTHOR_KPFS,Marseille77,Marseille77
+STR_AUTHOR_SWM,Switzerland Mod,Switzerland Mod
+STR_AUTHOR_KPFS_UPD,"Vilas, renewed by Marseille","Vilas, erneuert von "Marseille77"
+
+STR_KPFS_WALTHER_M9,Walther Model 9,Walther Model 9
+STR_KPFS_WM9_MAG,Walther M9 magazine,Walther M9 Magazin
+STR_KPFSS_WM9_MAG,"Caliber: 6,35x15,5 mm &nbsp;Rounds: 6 &nbsp;Used in: Walther Model 9","Kaliber: 6,35x15,5 mm &nbsp;Schuss: 6  &nbsp;Eingesetzt in: Walther Model 9"
+STR_KPFS_LIB_WALTHER_M9,The Walther pocket pistol was built from 1920 to 1943.,Die Walther Taschenpistole wurde von 1920 bis 1943 gebaut.
+STR_KPFS_38H,Sauer 38H,Sauer 38H
+STR_KPFS_38H_MAG,7.65mm bullet magazine,7.65mm Patronenmagazin
+STR_KPFSS_38H_MAG,"Caliber: 7,65x17mm &nbsp;Rounds: 8 &nbsp;Used in: Sauer 38h, Walther PP, Mauser HSc","Kaliber: 7,65x17 mm &nbsp;Schuss: 8  &nbsp;Eingesetzt in: Sauer 38h, Walther PP, Mauser HSc"
+STR_KPFS_LIB_38H,"The Sauer 38 was built for german police forces, tank crews and paratroopers from 1938 til the end of WWII.","Die Sauer 38 wurde bei der Polizei, Panzertruppen und Fallschirmjägern zwischen 1938 und 1945 eingesetzt."
+STR_KPFS_HSC,Mauser HSc,Mauser HSc
+STR_KPFS_LIB_HSC,"The Mauser HSc was built from 1940 til 1977 and was used by officers and policemen.","Die Mauser HSc wurde von 1940 bis 1977 produziert. Sie wurde von Wehrmachtsoffizieren im Krieg, Polizisten und reichen Privatleuten genutzt."
+STR_KPFS_PP,Walther PP,Walther PP
+STR_KPFS_LIB_PP,"The Walther PP was introduced in 1929. Her small brother PPK in 1931. The construction was an revolution in weapon history. It was used by Officers in the war and Policemen til 1970's","Die Walther PP wurd von 1929 bis 1999 produziert und war eine Revolution auf dem Waffenmarkt. Sie wurde von der Wehrmacht im Krieg sowie auch von der Polizei bis zirka 1975 benutzt."
+
+STR_KPFS_GRENADEBOX_WW2,Grenade box (WW2),Granatenkiste (Wk2)
+
+//US WEAPONS
+STR_KPFS_15RND_CAL30,Carbine magazine,Carbine 30 Magazin
+STR_KPFSS_15RND_CAL30,"Caliber: .30 &nbsp;Rounds: 15 &nbsp;Used in: M1 Carbine","Kaliber: 7,65x17 mm &nbsp;Schuss: 15  &nbsp;Eingesetzt in: M1 Carbine"
+STR_KPFS_8RND_CAL30_60,Garand clip,Garand Clip
+STR_KPFSS_8RND_CAL30_60,"Caliber: .30-60 &nbsp;Rounds: 8 &nbsp;Used in: M1 Garand","Kaliber: .30-60 mm &nbsp;Schuss: 8  &nbsp;Eingesetzt in: M1 Garand"
+STR_KPFS_30RND_CAL30_60,BAR magazine,BAR Magazin
+STR_KPFS_M28A1,M28A1 rocket,M28A1 Rakete
+STR_KPFS_PG2,PG2 rocket,PG2 Rakete
+
+STR_KPFS_CARBINE,M1 Carbine,M1 Carbine
+STR_KPFS_GARAND,M1 Garand,M1 Garand
+STR_KPFS_GARAND_M84,M1 Garand M84,M1 Garand M84
+STR_KPFS_THOMPSON,M1A1 Thompson,M1A1 Thompson
+STR_KPFS_BAR,B.A.R. 1918,B.A.R. 1918
+STR_KPFS_M20A1B1,Bazooka M20A1B1,Bazooka M20A1B1
+STR_KPFS_RPG2,RPG-2,RPG-2
+STR_KPFS_PPSH,PPSh-41,MPi-41
+STR_KPFS_PPSH_DRUM,PPSh drum,MPi-41 Trommelmagazin
+STR_KPFSS_PPSH_DRUM,"Caliber: 7,62x25mm \nRounds: 71 \nUsed in: PPSh 41","Kaliber: 7,62x25mm \nSchuss: 71  \nEingesetzt in: MPi-41"
+STR_KPFSS_PPSH,"The PPSh was one of the first weapons in the GDR for theit military troops. Some men had collect many experiences in WWII by occupied guns.","Die MPi-41 gehörte zur Erstbewaffnung der DDR-Streitkräfte der 1950er. Einige ihrer Mitglieder hatten bereits im Zweiten Weltkrieg mit ihr Erfahrungen gemacht."
+
+STR_KPFS_MOSIN,Mosin Nagant M91/30,Mosin Nagant M91/30
+STR_KPFS_MOSIN_PU,Mosin Nagant M91PU,Mosin Nagant M91PU
+STR_KPFS_MOSIN_MAG,Mosin magazine, Mosin Magazin
+
+STR_KPFS_LIB_CARBINE,"The M1 Carbine was developed for light troops like paratroopers, medic and gunners. The weapon of the German Army were old US ones from Korea conflict","Das M1 Carbine gehörte 1956 zur Erstaustattung der Bundeswehr."
+STR_KPFS_LIB_GARAND,The M1 Garand was the famous semi-automatic rifle of the US Troops in WII. In the 1950s some weapons went to Germany for the new German Army,"Das M1 Carbine gehörte 1956 zur Erstaustattung der Bundeswehr. Es waren meist Gewehr aus dem Zweiten Weltkrieg."
+STR_KPFS_LIB_GARAND_M84,"Sniper Variant of the M1 Garand","Scharfschützenvariante des M1 Garand mit M84 Zielfernrohr."
+STR_KPFS_LIB_THOMPSON,"The Thompson was the famous SMG of the US Army in WWII. Some of the weapons went to Germany to equip tank crews","Die Thompson MP wurde 1956 für die Panzerbesatzungen der Bundeswehr beschafft."
+STR_KPFS_LIB_BAR,"The Browning Automatic Rifle was used by US Troops from WWI til the Korean War. After them some weapons were overtaken by the German Bundeswehr 1955.","Das BrowninG Automatik GEwehr wurde von den Amerikanern vom Ersten bis zum Korea Krieg genutzt. Danach wurde es u.a. an die Bundeswehr veräussert."
+STR_KPFS_LIB_M20A1B1,"The American Bazooka was used by German Bundeswehr in version M20A1B1 in the 1950/60's.","Die M20A1B1 war die letzte Ausführung der Bazooka nachd em Zweiten Weltkrieg. Die Bundeswehr nutzte die Waffe in der Zeit ihres Aufbaus."

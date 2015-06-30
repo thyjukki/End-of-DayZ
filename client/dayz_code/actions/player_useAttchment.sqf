@@ -18,13 +18,10 @@ if (_requiredAtt in magazines player) then
 	[player,_dis,true,(getPosATL player)] call player_alertZombies;
 
 	sleep 5;
-	if (carryClick) then {
-		DayZ_onBack = _giveWep;
-	} else {
-		player removeWeapon _weapon;
 
-		player addWeapon _giveWep;
-	};
+	player removeWeapon _weapon;
+
+	player addWeapon _giveWep;
 
 	cutText [format["Attachment %1 succesfully applied.",getText (configFile >> "CfgMagazines" >> _requiredAtt >> "displayName")], "PLAIN DOWN"];
 	player removeMagazine _requiredAtt;

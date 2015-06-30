@@ -1,368 +1,559 @@
-// (c) facoptere@gmail.com, licensed to DayZMod for the community
-private ["_item","_action","_missingTools","_missingItem","_emergingLevel","_isClass","_classname","_requiredTools","_requiredParts ","_ghost","_placement","_text","_onLadder","_isWater","_object","_string","_actionBuildHidden","_getBeams","_o","_offset","_rot","_r","_p","_bn","_bb","_h","_bx","_by","_minElevation","_maxElevation","_insideCheck","_building","_unit","_bbb","_ubb","_check","_min","_max","_myX","_myY","_checkBuildingCollision","_objColliding","_inside","_checkOnRoad","_roadCollide","_checkBeam2Magnet","_a","_beams","_best","_b","_d","_checkNotBuried","_elevation","_position","_delta","_overElevation","_maxplanting","_safeDistance","_dir","_angleRef","_tmp","_actionCancel","_sfx","_actionBuild"];
+/*
+	DayZ Base Building
+	Made for DayZ Epoch please ask permission to use/edit/distrubute email vbawol@veteranbastards.com.
+*/
+private ["_location","_dir","_classname","_item","_hasrequireditem","_missing","_hastoolweapon","_cancel","_reason","_started","_finished","_animState","_isMedic","_dis","_sfx","_hasbuilditem","_tmpbuilt","_onLadder","_isWater","_require","_text","_offset","_IsNearPlot","_isOk","_location1","_location2","_counter","_limit","_proceed","_num_removed","_position","_object","_canBuildOnPlot","_friendlies","_nearestPole","_ownerID","_findNearestPoles","_findNearestPole","_distance","_classnametmp","_ghost","_isPole","_needText","_lockable","_zheightchanged","_rotate","_combination_1","_combination_2","_combination_3","_combination_4","_combination","_combination_1_Display","_combinationDisplay","_zheightdirection","_abort","_isNear","_need","_needNear","_vehicle","_inVehicle","_requireplot","_objHDiff","_isLandFireDZ","_isTankTrap"];
+
+if(DZE_ActionInProgress) exitWith { cutText [(localize "str_epoch_player_40") , "PLAIN DOWN"]; };
+DZE_ActionInProgress = true;
+
+// disallow building if too many objects are found within 30m
+if((count ((getPosATL player) nearObjects ["All",30])) >= DZE_BuildingLimit) exitWith {DZE_ActionInProgress = false; cutText [(localize "str_epoch_player_41"), "PLAIN DOWN"];};
+
+_onLadder =		(getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
+_isWater = 		dayz_isSwimming;
+_cancel = false;
+_reason = "";
+_canBuildOnPlot = false;
+
+_vehicle = vehicle player;
+_inVehicle = (_vehicle != player);
+
+DZE_Q = false;
+DZE_Z = false;
+
+DZE_Q_alt = false;
+DZE_Z_alt = false;
+
+DZE_Q_ctrl = false;
+DZE_Z_ctrl = false;
+
+DZE_5 = false;
+DZE_4 = false;
+DZE_6 = false;
+
+DZE_cancelBuilding = false;
 
 call gear_ui_init;
 closeDialog 1;
 
-_item = _this select 0;
-_action = _this select 1;
-_emergingLevel = 1.1;
-r_action_count = 1;
+if (_isWater) exitWith {DZE_ActionInProgress = false; cutText [localize "str_player_26", "PLAIN DOWN"];};
+if (_inVehicle) exitWith {DZE_ActionInProgress = false; cutText [(localize "str_epoch_player_42"), "PLAIN DOWN"];};
+if (_onLadder) exitWith {DZE_ActionInProgress = false; cutText [localize "str_player_21", "PLAIN DOWN"];};
+if (player getVariable["combattimeout", 0] >= time) exitWith {DZE_ActionInProgress = false; cutText [(localize "str_epoch_player_43"), "PLAIN DOWN"];};
 
-_isClass = switch (1==1) do {
-    case (isClass (configFile >> "CfgMagazines" >> _item)): {"CfgMagazines"};
-    case (isClass (configFile >> "CfgWeapons" >> _item)): {"CfgWeapons"};
+_item =	_this;
+
+// Need Near Requirements
+_abort = false;
+_reason = "";
+
+_needNear = 	getArray (configFile >> "CfgMagazines" >> _item >> "ItemActions" >> "Build" >> "neednearby");
+
+{
+	switch(_x) do{
+		case "fire":
+		{
+			_distance = 3;
+			_isNear = {inflamed _x} count (getPosATL player nearObjects _distance);
+			if(_isNear == 0) then {
+				_abort = true;
+				_reason = "fire";
+			};
+		};
+		case "workshop":
+		{
+			_distance = 3;
+			_isNear = count (nearestObjects [player, ["Wooden_shed_DZ","WoodShack_DZ","WorkBench_DZ"], _distance]);
+			if(_isNear == 0) then {
+				_abort = true;
+				_reason = "workshop";
+			};
+		};
+		case "fueltank":
+		{
+			_distance = 30;
+			_isNear = count (nearestObjects [player, dayz_fuelsources, _distance]);
+			if(_isNear == 0) then {
+				_abort = true;
+				_reason = "fuel tank";
+			};
+		};
+	};
+} forEach _needNear;
+
+
+if(_abort) exitWith {
+	cutText [format[(localize "str_epoch_player_135"),_reason,_distance], "PLAIN DOWN"];
+	DZE_ActionInProgress = false;
 };
 
-_classname = getText (configFile >> _isClass >> _item >> "ItemActions" >> _action >> "create");
-_requiredTools = getArray (configFile >> _isClass >> _item >> "ItemActions" >> _action >> "require");
-_requiredParts   = getArray (configFile >> _isClass >> _item >> "ItemActions" >> _action >> "consume");
-_ghost = getText (configFile >> _isClass >> _item >> "ItemActions" >> _action >> "ghost");
-//need to move to array and separate what checks need to be done.
-_byPassChecks = getText (configFile >> _isClass >> _item >> "ItemActions" >> _action >> "byPass");
+_classname = 	getText (configFile >> "CfgMagazines" >> _item >> "ItemActions" >> "Build" >> "create");
+_classnametmp = _classname;
+_require =  getArray (configFile >> "cfgMagazines" >> _this >> "ItemActions" >> "Build" >> "require");
+_text = 		getText (configFile >> "CfgVehicles" >> _classname >> "displayName");
+_ghost = getText (configFile >> "CfgVehicles" >> _classname >> "ghostpreview");
 
-if (_byPassChecks == "") then { _byPassChecks = "BaseItems" };
-if (_ghost == "") then { _ghost = _classname; };
-
-_text = getText (configFile >> "CfgVehicles" >> _classname >> "displayName");
-_keepOnSlope = 0 == (getNumber (configFile >> "CfgVehicles" >> _classname >> "canbevertical"));
-
-_onLadder = {getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder") == 1};
-_isWater = {(surfaceIsWater (getPosATL _object)) or dayz_isSwimming};
-
-if (0 != count Dayz_constructionContext) then {
-    r_action_count = 0;
-    cutText [localize "str_already_building", "PLAIN DOWN"];
-    diag_log [ diag_ticktime, __FILE__, 'already building, exiting', Dayz_constructionContext, typeName Dayz_constructionContext];
+_lockable = 0;
+if(isNumber (configFile >> "CfgVehicles" >> _classname >> "lockable")) then {
+	_lockable = getNumber(configFile >> "CfgVehicles" >> _classname >> "lockable");
 };
 
-// item is missin - this really is pointless but it aint broke so dont fix it
-if (isClass (configFile >> _isClass >> _item)) then {
-    if ((!(_item IN magazines player))) exitWith {
-        _string = switch true do {
-            case (_item isKindOf "Land_A_tent"): {"str_player_31_pitch"};
-            default {"str_player_31_build"};
-        };
-        cutText [format [localize "str_player_31",_text,(localize _string)] , "PLAIN DOWN"];
-        //diag_log(format["player_build: item:%1 require:%2  Player items:%3  magazines:%4", _item, _requiredTools, (items player), (magazines player)]);
-    };
+_requireplot = DZE_requireplot;
+if(isNumber (configFile >> "CfgVehicles" >> _classname >> "requireplot")) then {
+	_requireplot = getNumber(configFile >> "CfgVehicles" >> _classname >> "requireplot");
 };
 
-// lets check player has requiredTools for upgrade
-_ok = true;
+_isAllowedUnderGround = 1;
+if(isNumber (configFile >> "CfgVehicles" >> _classname >> "nounderground")) then {
+	_isAllowedUnderGround = getNumber(configFile >> "CfgVehicles" >> _classname >> "nounderground");
+};
+
+_offset = 	getArray (configFile >> "CfgVehicles" >> _classname >> "offset");
+if((count _offset) <= 0) then {
+	_offset = [0,1.5,0];
+};
+
+_isPole = (_classname == "Plastic_Pole_EP1_DZ");
+_isLandFireDZ = (_classname == "Land_Fire_DZ");
+
+_distance = DZE_PlotPole select 0;
+_needText = localize "str_epoch_player_246";
+
+if(_isPole) then {
+	_distance = DZE_PlotPole select 1;
+};
+
+// check for near plot
+_findNearestPoles = nearestObjects [(vehicle player), ["Plastic_Pole_EP1_DZ"], _distance];
+_findNearestPole = [];
+
+{
+	if (alive _x) then {
+		_findNearestPole set [(count _findNearestPole),_x];
+	};
+} count _findNearestPoles;
+
+_IsNearPlot = count (_findNearestPole);
+
+// If item is plot pole && another one exists within 45m
+if(_isPole && _IsNearPlot > 0) exitWith {  DZE_ActionInProgress = false; cutText [(localize "str_epoch_player_44") , "PLAIN DOWN"]; };
+
+if(_IsNearPlot == 0) then {
+
+	// Allow building of plot
+	if(_requireplot == 0 || _isLandFireDZ) then {
+		_canBuildOnPlot = true;
+	};
+
+} else {
+	// Since there are plots nearby we check for ownership && then for friend status
+
+	// check nearby plots ownership && then for friend status
+	_nearestPole = _findNearestPole select 0;
+
+	// Find owner
+	_ownerID = _nearestPole getVariable ["CharacterID","0"];
+
+	// diag_log format["DEBUG BUILDING: %1 = %2", dayz_characterID, _ownerID];
+
+	// check if friendly to owner
+	if(dayz_characterID == _ownerID) then {  //Keep ownership
+		// owner can build anything within his plot except other plots
+		if(!_isPole) then {
+			_canBuildOnPlot = true;
+		};
+
+	} else {
+		// disallow building plot
+		if(!_isPole) then {
+			_friendlies		= player getVariable ["friendlyTo",[]];
+			// check if friendly to owner
+			if(_ownerID in _friendlies) then {
+				_canBuildOnPlot = true;
+			};
+		};
+	};
+};
+
+// _message
+if(!_canBuildOnPlot) exitWith {  DZE_ActionInProgress = false; cutText [format[(localize "STR_EPOCH_PLAYER_135"),_needText,_distance] , "PLAIN DOWN"]; };
+
 _missing = "";
+_hasrequireditem = true;
 {
-    if (!(_x IN items player)) exitWith {
-        //systemchat("Missing tools for upgrade." +str());
-        _missing = getText (configFile >> "CfgWeapons" >> _x >> "displayName");
-        _ok = false;
-    };
-} count _requiredTools;
+	_hastoolweapon = _x in weapons player;
+	if(!_hastoolweapon) exitWith { _hasrequireditem = false; _missing = getText (configFile >> "cfgWeapons" >> _x >> "displayName"); };
+} count _require;
 
-if (!_ok) exitWith {
-    r_action_count = 0;
-    cutText [format [localize "str_player_31_missingtools",_text,_missing] , "PLAIN DOWN"]; 
-};
+_hasbuilditem = _this in magazines player;
+if (!_hasbuilditem) exitWith {DZE_ActionInProgress = false; cutText [format[(localize "str_player_31"),_text,"build"] , "PLAIN DOWN"]; };
 
-// lets check player has requiredParts for upgrade
-_ok = true;
-_upgradeParts = [];
-{
-    if (!(_x IN magazines player)) exitWith {
-        _missing = getText (configFile >> "CfgMagazines" >> _x >> "displayName");
-        _ok = false;
-    };
-    if (_x IN magazines player) then {
-        _upgradeParts set [count _upgradeParts, _x];
-        player removeMagazine _x;
-    };
-} count _requiredParts;
-if (!_ok) exitWith {
-    { player addMagazine _x; } foreach _upgradeParts;
-    r_action_count = 0;
-    cutText [format [localize "str_player_31", _missing, localize "str_player_31_build"] , "PLAIN DOWN"];
-};
+if (!_hasrequireditem) exitWith {DZE_ActionInProgress = false; cutText [format[(localize "str_epoch_player_137"),_missing] , "PLAIN DOWN"]; };
+if (_hasrequireditem) then {
 
+	_location = [0,0,0];
+	_isOk = true;
 
-cutText [localize "str_player_build_rotate", "PLAIN DOWN"];
+	// get inital players position
+	_location1 = getPosATL player;
+	_dir = getDir player;
 
-_getBeams = {
-        private [ "_p", "_r", "_bn", "_bb", "_bx", "_by" ];
+	// if ghost preview available use that instead
+	if (_ghost != "") then {
+		_classname = _ghost;
+	};
 
-        _o = _this select 0;
-        _offset = _this select 1;
-        _rot = _this select 2;
-        _r = [];
-        for "_bn" from 1 to 4 do {
-                _p = _o selectionPosition Format [ "beam%1", _bn ];
-                if (_p distance [0,0,0] == 0) exitWith { 
-                    if (_bn == 1) then { // no memory points defined
-                        _bb = boundingBox _o;
-                        _h = _offset + ((_o worldToModel (getPosATL _o)) select 2);
-                        _p = [ (_bb select 0) select 0, 0, _h ];
-                        _r set [ 0, _o modelToWorld _p];
-                        _p = [ (_bb select 1) select 0, 0, _h ];
-                        _r set [ 1, _o modelToWorld _p];
-                    };
-                };
-                if (_rot != 0) then {
-                    _bx = _p select 0;
-                    _by = _p select 1;
-                    _p set [0, (_bx * cos _rot) - (_by * sin _rot)];
-                    _p set [1, (_bx * sin _rot) + (_by * cos _rot)];
-                };
-                _p set [2, (_p select 2) + _offset];
+	_object = createVehicle [_classname, _location, [], 0, "CAN_COLLIDE"];
 
-                _r set [ count _r, _o modelToWorld _p];
-        };
+	_object attachTo [player,_offset];
 
-        _r
-};
+	_position = getPosATL _object;
 
-_minElevation = {
-    private "_r";
-    
-    _r = 400;
-    { _r = _r min (_x select 2); } count _this;
+	cutText [(localize "str_epoch_player_45"), "PLAIN DOWN"];
 
-    _r
-};
+	_objHDiff = 0;
 
-_maxElevation = {
-    private "_r";
-    
-    _r = -400;
-    { _r = _r max (_x select 2); } count _this;
+	while {_isOk} do {
 
-    _r
-};
+		_zheightchanged = false;
+		_zheightdirection = "";
+		_rotate = false;
 
-_insideCheck = {
-    private ["_bbb","_building","_ubb","_unit","_check","_min","_max","_myX","_p","_myY"];
+		if (DZE_Q) then {
+			DZE_Q = false;
+			_zheightdirection = "up";
+			_zheightchanged = true;
+		};
+		if (DZE_Z) then {
+			DZE_Z = false;
+			_zheightdirection = "down";
+			_zheightchanged = true;
+		};
+		if (DZE_Q_alt) then {
+			DZE_Q_alt = false;
+			_zheightdirection = "up_alt";
+			_zheightchanged = true;
+		};
+		if (DZE_Z_alt) then {
+			DZE_Z_alt = false;
+			_zheightdirection = "down_alt";
+			_zheightchanged = true;
+		};
+		if (DZE_Q_ctrl) then {
+			DZE_Q_ctrl = false;
+			_zheightdirection = "up_ctrl";
+			_zheightchanged = true;
+		};
+		if (DZE_Z_ctrl) then {
+			DZE_Z_ctrl = false;
+			_zheightdirection = "down_ctrl";
+			_zheightchanged = true;
+		};
+		if (DZE_4) then {
+			_rotate = true;
+			DZE_4 = false;
+			_dir = 180;
+		};
+		if (DZE_6) then {
+			_rotate = true;
+			DZE_6 = false;
+			_dir = 0;
+		};
 
-    _building = _this select 0;
-    _unit = _this select 1;
-    if ((typeOf _building != "") and {(
-        (sizeOf (typeOf _building) < 8) or {(_unit distance _building > (sizeOf (typeOf _building) + sizeOf (typeOf _unit))/2)}
-        )}) exitwith {false};
+		if(_rotate) then {
+			_object setDir _dir;
+			_object setPosATL _position;
+			//diag_log format["DEBUG Rotate BUILDING POS: %1", _position];
+		};
 
-    _bbb = boundingBox _building;
-    _ubb = boundingBox _unit;
+		if(_zheightchanged) then {
+			detach _object;
 
-    _check = {
-        _min = _bbb select 0;
-        _max = _bbb select 1;
-        _myX = _p select 0;
-        _myY = _p select 1;
+			_position = getPosATL _object;
 
-        (((_myX > (_min select 0)) and {(_myX < (_max select 0))}) and {((_myY > (_min select 1)) and {(_myY < (_max select 1))})})
-    };
-
-    _p = _building worldToModel (_unit modelToWorld [ (_ubb select 0) select 0, (_ubb select 0) select 1, 0]);
-    if (call _check) exitWith {true};
-    _p = _building worldToModel (_unit modelToWorld [ (_ubb select 0) select 0, (_ubb select 1) select 1, 0]);
-    if (call _check) exitWith {true};
-    _p = _building worldToModel (_unit modelToWorld [ (_ubb select 1) select 0, (_ubb select 1) select 1, 0]);
-    if (call _check) exitWith {true};
-    _p = _building worldToModel (_unit modelToWorld [ (_ubb select 1) select 0, (_ubb select 0) select 1, 0]);
-    if (call _check) exitWith {true};
-
-    false
-};
-
-_checkBuildingCollision = {
-    _objColliding = objNull;
-    {
-        _inside = false;
-        if ((!isNull _x) and (!(_x == player)) and (!(_x == _object)) and (!(_x IN DayZ_SafeObjects)) and (!(_x isKindOf "DZ_buildables"))
-            and (!((typeOf _x == "CamoNet_DZ") or {(_x isKindOf "Land_CamoNet_EAST")}))) then {
-            if ((_x isKindOf "Building") or (_x isKindOf "AllVehicles")) then { 
-                _inside = [_x, _object] call _insideCheck;
-                /*if (!_inside) then {
-                    _inside = [_x, _object] call _insideCheck;
-                };*/
-            };
-        };
-        if (_inside) exitWith { _objColliding = _x; };
-    } forEach (nearestObjects [_object, ["Building", "Air", "LandVehicle", "Ship" ], 35]);
-    (!isNull _objColliding)
-    // _objColliding contains the building that collides with the ghost object
-};
-
-
-_checkOnRoad = {
-    _roadCollide = false;
-    {
-        _x set [2,0];
-        if (isOnRoad _x) exitWith { _roadCollide = true;};
-    } forEach ([_object, 0,0] call _getBeams);
-    _roadCollide
-};
-
-_checkBeam2Magnet = {
-    _a = [];
-    {
-        if ((!isNull _x) and (_x != _object)) then { _a = _a + ([_x, 0,0] call _getBeams); };
-    } forEach (nearestObjects [getPosATL _object, ["DZ_buildables"], 15]);
-
-    _beams = [_object, 0,0] call _getBeams;
-    _best = [50,[0,0,0],[0,0,0]];
-    {
-        _b = _x;
-        {
-            _d = [_x, _b] call BIS_fnc_distance2D;
-            if (_d < _best select 0) then {
-                _best = [_d,_b,_x];
-            };
-        } forEach _a;
-    } count _beams;
-    // _best contains the best beam to dock to. [ distance, coor of beam found around, coor of beam of ghost object ]
-};
-
-_checkNotBuried = {
-    // lift up the object so that any beams are buried, but also don't lift further the planting level (straight placement only)
-    _elevation = _position select 2;
-    _delta = 0;
-    _overElevation = 0;
-    _beams = [_object, 0,0] call _getBeams;
-    if (_elevation < 0) then { _delta = -_elevation; }
-    else {
-        _overElevation = _beams call _minElevation;
-        if (_overElevation>0.05) then { // bury the object so that posATL is still positif and all beams are above the ground
-            _delta = - (_overElevation min _elevation);
-        };
-        if (_overElevation < -0.05) then { // lift up the object because a beam is burried
-            _delta = - _overElevation + 0.10;
-        };
-    };
-    _position set [ 2, _elevation + _delta ];
-    _maxplanting = _beams call _maxElevation;
-    // _maxplanting is the height of the emerging foundations, must not be so high because we don't want some "floating" foundations
-};
-
-_object = _ghost createVehicleLocal getMarkerpos "respawn_west";
-_safeDistance = 0.5 + (sizeOf _ghost) * 0.5; // beware of hedgehogs
-_dir = getDir player;
-_object setDir _dir;
-Dayz_constructionContext = [_object, round (_dir/5)*5, cameraView, false, true, _keepOnSlope]; 
-                            // ghost, angle, previous camera, build view on/off, continue on/off, slope on/off
-_posReference = getPosATL player;
-_objColliding = objNull;
-_best = [50,[0,0,0],[0,0,0]];
-_maxplanting = 10;
-_position = getPosATL _object;
-
-_actionBuildHidden = true;
-_actionCancel = player addAction [localize "str_player_build_cancel", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts, _classname, _text, false, 0, "none"], 1, true, true, "", "0 != count Dayz_constructionContext"];
-
-while {r_action_count != 0 and Dayz_constructionContext select 4} do {
-
-    // force the angle so that the ghost is showing always the same side
-    _angleRef=Dayz_constructionContext select 1;
-    _dir = _angleRef - (getDir player);
-    if (_dir > 180) then {_dir = _dir - 360}; 
-    if (_dir < -180) then {_dir = _dir + 360};
-    if (_dir < -75) then {
-        _angleRef = ceil(((getDir player) - 75)/5)*5;
-        Dayz_constructionContext set [ 1, _angleRef];
-    };
-    if (_dir > 75) then {
-        _angleRef = floor(((getDir player) + 75)/5)*5;
-        Dayz_constructionContext set [ 1, _angleRef];
-    };
-
-    // move object according to player position
-    if ((abs(([_object, player] call BIS_fnc_distance2D) - _safeDistance) > (if (_best select 0 < 0.50) then {0.50} else {0.05})) 
-        or (abs([player, _object] call BIS_fnc_relativeDirTo) > (if (_best select 0 < 0.50) then {5} else {1})) or (r_interrupt)) then {
-        r_interrupt = false;
-        _object setDir _angleRef;
-        _tmp = player modelToWorld [0, _safeDistance,0];
-        if (Dayz_constructionContext select 5 or _keepOnSlope) then {
-            _tmp set [2, 0];
-            _object setVectorUp surfaceNormal _tmp;
-        }
-        else {
-            _tmp set [2, _position select 2];
-            _object setVectorUp [0,0,1];
-        };
-        _position = +(_tmp);
-        _object setPosATL _position;
-        
-        // check now that ghost is not colliding
-        call _checkBuildingCollision;
-    };
-
-    // try to dock a beam from current ghost to another beams nearby
-    call _checkBeam2Magnet;
-    if (_best select 0 < 0.50) then {
-        _position = [
-            (_position select 0) + ((_best select 2) select 0) - ((_best select 1) select 0),
-            (_position select 1) + ((_best select 2) select 1) - ((_best select 1) select 1),
-            _position select 2
-        ];
-        _object setPosATL _position;
-    };
-
-    if (Dayz_constructionContext select 5 or _keepOnSlope) then {
-        _maxplanting = 0;
-        _position set [2, 0];
-    }
-    else {
-        // adjust the elevation of the object according to slope and beams to keep them visible (straight placement only)
-        call _checkNotBuried;
-    };
-    _object setPosATL _position;
-
-    if ((((vehicle player) != player or _posReference distance player > 20 or 0 !=  player getVariable["startcombattimer",0]) or {(!alive player)}) or {((call _onLadder) or {(call _isWater)})}) exitWith {
-        [[],[],[],[_object, _requiredParts  , _classname, _text, false, 0, "none"]] call object_build;
-    };
-	
-	if (_byPassChecks == "byPassRoadCheck") then {
-		if (isNull _objColliding and _maxplanting <= _emergingLevel) then { // placement is fine, enable "Build" in the menu
-			if (_actionBuildHidden) then {
-				_actionBuildHidden = false;
-				player removeAction _actionCancel;
-				_sfx = if (_object isKindOf "Land_A_tent") then {"tentunpack"} else {"repair"};
-				_actionBuild = player addAction [localize "str_player_build_complete", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts , _classname, _text, true, 20, _sfx], 1, true, true, "", "0 != count Dayz_constructionContext"];
-				_actionCancel = player addAction [localize "str_player_build_cancel", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts  , _classname, _text, false, 0, "none"], 1, true, true, "", "0 != count Dayz_constructionContext"];
-		   };
-		} else {
-			if (!_actionBuildHidden) then {
-				_actionBuildHidden = true;
-				player removeAction _actionBuild;
+			if(_zheightdirection == "up") then {
+				_position set [2,((_position select 2)+0.1)];
+				_objHDiff = _objHDiff + 0.1;
 			};
+			if(_zheightdirection == "down") then {
+				_position set [2,((_position select 2)-0.1)];
+				_objHDiff = _objHDiff - 0.1;
+			};
+
+			if(_zheightdirection == "up_alt") then {
+				_position set [2,((_position select 2)+1)];
+				_objHDiff = _objHDiff + 1;
+			};
+			if(_zheightdirection == "down_alt") then {
+				_position set [2,((_position select 2)-1)];
+				_objHDiff = _objHDiff - 1;
+			};
+
+			if(_zheightdirection == "up_ctrl") then {
+				_position set [2,((_position select 2)+0.01)];
+				_objHDiff = _objHDiff + 0.01;
+			};
+			if(_zheightdirection == "down_ctrl") then {
+				_position set [2,((_position select 2)-0.01)];
+				_objHDiff = _objHDiff - 0.01;
+			};
+
+			_object setDir (getDir _object);
+
+			if((_isAllowedUnderGround == 0) && ((_position select 2) < 0)) then {
+				_position set [2,0];
+			};
+
+			_object setPosATL _position;
+
+			//diag_log format["DEBUG Change BUILDING POS: %1", _position];
+
+			_object attachTo [player];
+
+		};
+
+		sleep 0.5;
+
+		_location2 = getPosATL player;
+
+		if(DZE_5) exitWith {
+			_isOk = false;
+			detach _object;
+			_dir = getDir _object;
+			_position = getPosATL _object;
+			//diag_log format["DEBUG BUILDING POS: %1", _position];
+			deleteVehicle _object;
+		};
+
+		if(_location1 distance _location2 > 5) exitWith {
+			_isOk = false;
+			_cancel = true;
+			_reason = "You've moved to far away from where you started building (within 5 meters)";
+			detach _object;
+			deleteVehicle _object;
+		};
+
+		if(abs(_objHDiff) > 5) exitWith {
+			_isOk = false;
+			_cancel = true;
+			_reason = "Cannot move up || down more than 5 meters";
+			detach _object;
+			deleteVehicle _object;
+		};
+
+		if (player getVariable["combattimeout", 0] >= time) exitWith {
+			_isOk = false;
+			_cancel = true;
+			_reason = (localize "str_epoch_player_43");
+			detach _object;
+			deleteVehicle _object;
+		};
+
+		if (DZE_cancelBuilding) exitWith {
+			_isOk = false;
+			_cancel = true;
+			_reason = "Cancelled building.";
+			detach _object;
+			deleteVehicle _object;
 		};
 	};
-	
-	if (_byPassChecks == "BaseItems") then {
-		if (isNull _objColliding and _maxplanting <= _emergingLevel and !(call _checkOnRoad)) then { // placement is fine, enable "Build" in the menu
-			if (_actionBuildHidden) then {
-				_actionBuildHidden = false;
-				player removeAction _actionCancel;
-				_sfx = if (_object isKindOf "Land_A_tent") then {"tentunpack"} else {"repair"};
-				_actionBuild = player addAction [localize "str_player_build_complete", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts , _classname, _text, true, 20, _sfx], 1, true, true, "", "0 != count Dayz_constructionContext"];
-				_actionCancel = player addAction [localize "str_player_build_cancel", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts  , _classname, _text, false, 0, "none"], 1, true, true, "", "0 != count Dayz_constructionContext"];
-		   };
-		} else {
-			if (!_actionBuildHidden) then {
-				_actionBuildHidden = true;
-				player removeAction _actionBuild;
+
+	//No building on roads unless toggled
+	if (!DZE_BuildOnRoads) then {
+		if (isOnRoad _position) then { _cancel = true; _reason = "Cannot build on a road."; };
+	};
+
+	// No building in trader zones
+	if(!canbuild) then { _cancel = true; _reason = "Cannot build in a city."; };
+
+	if(!_cancel) then {
+
+		_classname = _classnametmp;
+
+		// Start Build
+		_tmpbuilt = createVehicle [_classname, _location, [], 0, "CAN_COLLIDE"];
+
+		_tmpbuilt setdir _dir;
+
+		// Get position based on object
+		_location = _position;
+
+		if((_isAllowedUnderGround == 0) && ((_location select 2) < 0)) then {
+			_location set [2,0];
+		};
+
+		_tmpbuilt setPosATL _location;
+
+
+		cutText [format[(localize "str_epoch_player_138"),_text], "PLAIN DOWN"];
+
+		_limit = 3;
+
+		if (DZE_StaticConstructionCount > 0) then {
+			_limit = DZE_StaticConstructionCount;
+		}
+		else {
+			if (isNumber (configFile >> "CfgVehicles" >> _classname >> "constructioncount")) then {
+				_limit = getNumber(configFile >> "CfgVehicles" >> _classname >> "constructioncount");
 			};
 		};
+
+		_isOk = true;
+		_proceed = false;
+		_counter = 0;
+
+		while {_isOk} do {
+
+			[10,10] call dayz_HungerThirst;
+			player playActionNow "Medic";
+
+			_dis=20;
+			_sfx = "repair";
+			[player,_sfx,0,false,_dis] call dayz_zombieSpeak;
+			[player,_dis,true,(getPosATL player)] spawn player_alertZombies;
+
+			r_interrupt = false;
+			r_doLoop = true;
+			_started = false;
+			_finished = false;
+
+			while {r_doLoop} do {
+				_animState = animationState player;
+				_isMedic = ["medic",_animState] call fnc_inString;
+				if (_isMedic) then {
+					_started = true;
+				};
+				if (_started && !_isMedic) then {
+					r_doLoop = false;
+					_finished = true;
+				};
+				if (r_interrupt || (player getVariable["combattimeout", 0] >= time)) then {
+					r_doLoop = false;
+				};
+				if (DZE_cancelBuilding) exitWith {
+					r_doLoop = false;
+				};
+				sleep 0.1;
+			};
+			r_doLoop = false;
+
+
+			if(!_finished) exitWith {
+				_isOk = false;
+				_proceed = false;
+			};
+
+			if(_finished) then {
+				_counter = _counter + 1;
+			};
+
+			cutText [format[(localize "str_epoch_player_139"),_text, _counter,_limit], "PLAIN DOWN"];
+
+			if(_counter == _limit) exitWith {
+				_isOk = false;
+				_proceed = true;
+			};
+
+		};
+
+		if (_proceed) then {
+
+			_num_removed = ([player,_item] call BIS_fnc_invRemove);
+			if(_num_removed == 1) then {
+
+				cutText [format[localize "str_build_01",_text], "PLAIN DOWN"];
+
+				if (_isPole) then {
+					[] spawn player_plotPreview;
+				};
+
+				_tmpbuilt setVariable ["OEMPos",_location,true];
+
+				if(_lockable > 1) then {
+
+					_combinationDisplay = "";
+
+					switch (_lockable) do {
+
+						case 2: { // 2 lockbox
+							_combination_1 = (floor(random 3)) + 100; // 100=red,101=green,102=blue
+							_combination_2 = floor(random 10);
+							_combination_3 = floor(random 10);
+							_combination = format["%1%2%3",_combination_1,_combination_2,_combination_3];
+							dayz_combination = _combination;
+							if (_combination_1 == 100) then {
+								_combination_1_Display = "Red";
+							};
+							if (_combination_1 == 101) then {
+								_combination_1_Display = "Green";
+							};
+							if (_combination_1 == 102) then {
+								_combination_1_Display = "Blue";
+							};
+							_combinationDisplay = format["%1%2%3",_combination_1_Display,_combination_2,_combination_3];
+						};
+
+						case 3: { // 3 combolock
+							_combination_1 = floor(random 10);
+							_combination_2 = floor(random 10);
+							_combination_3 = floor(random 10);
+							_combination = format["%1%2%3",_combination_1,_combination_2,_combination_3];
+							dayz_combination = _combination;
+							_combinationDisplay = _combination;
+						};
+
+						case 4: { // 4 safe
+							_combination_1 = floor(random 10);
+							_combination_2 = floor(random 10);
+							_combination_3 = floor(random 10);
+							_combination_4 = floor(random 10);
+							_combination = format["%1%2%3%4",_combination_1,_combination_2,_combination_3,_combination_4];
+							dayz_combination = _combination;
+							_combinationDisplay = _combination;
+						};
+					};
+
+					_tmpbuilt setVariable ["CharacterID",_combination,true];
+
+
+					PVDZE_obj_Publish = [_combination,_tmpbuilt,[_dir,_location],_classname];
+					publicVariableServer "PVDZE_obj_Publish";
+
+					cutText [format[(localize "str_epoch_player_140"),_combinationDisplay,_text], "PLAIN DOWN", 5];
+
+
+				} else {
+					_tmpbuilt setVariable ["CharacterID",dayz_characterID,true];
+
+					// fire?
+					if(_tmpbuilt isKindOf "Land_Fire_DZ") then {
+						_tmpbuilt spawn player_fireMonitor;
+					} else {
+						PVDZE_obj_Publish = [dayz_characterID,_tmpbuilt,[_dir,_location],_classname];
+						publicVariableServer "PVDZE_obj_Publish";
+					};
+				};
+			} else {
+				deleteVehicle _tmpbuilt;
+				cutText [(localize "str_epoch_player_46") , "PLAIN DOWN"];
+			};
+
+		} else {
+			r_interrupt = false;
+			if (vehicle player == player) then {
+				[objNull, player, rSwitchMove,""] call RE;
+				player playActionNow "stop";
+			};
+
+			deleteVehicle _tmpbuilt;
+
+			cutText [(localize "str_epoch_player_46") , "PLAIN DOWN"];
+		};
+
+	} else {
+		cutText [format[(localize "str_epoch_player_47"),_text,_reason], "PLAIN DOWN"];
 	};
-    sleep 0.03;
 };
 
-if (!_actionBuildHidden) then { // player can't build until all is fine
-    _actionBuildHidden = true;
-    player removeAction _actionBuild;
-};
-player removeAction _actionCancel;
-
-if (Dayz_constructionContext select 3) then { // "build" camera was on, switch it off
-    call fn_buildCamera;
-};
-
-Dayz_constructionContext = [];
-r_action_count = 0;
-//systemChat "Dayz_constructionContext reset";
+DZE_ActionInProgress = false;

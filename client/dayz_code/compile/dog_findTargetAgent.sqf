@@ -1,5 +1,4 @@
-private["_dog","_target","_targets","_man","_manDis"];
-
+private ["_dog","_target","_targets","_man","_manDis"];
 _dog = _this;
 _target = objNull;
 _targets = [];
@@ -17,7 +16,7 @@ if (count _targets > 0) then {
 			_man = _x;
 			_manDis = (_x distance _dog);
 		};
-	} forEach _targets;
+	} count _targets;
 	_target = _man;
 };
 _target;

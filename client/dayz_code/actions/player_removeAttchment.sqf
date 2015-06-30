@@ -24,13 +24,9 @@ if (_emptymagslotcount > 0) then
 	[player,_dis,true,(getPosATL player)] call player_alertZombies;
 
 	sleep 5;
-	if (carryClick) then {
-		DayZ_onBack = _giveWep;
-	} else {
-		player removeWeapon _weapon;
+	player removeWeapon _weapon;
 
-		player addWeapon _giveWep;
-	};
+	player addWeapon _giveWep;
 	
 	player addMagazine _giveAtt;
 

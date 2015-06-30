@@ -42,8 +42,7 @@
 #include "762x51.hpp"
 #include "762x54r.hpp"
 #include "792x33.hpp"
-#include "Misc.hpp"
-#include "Shotgun.hpp"
-#include "Quiver.hpp"
 
 #undef COMBINE_MAG
+
+#undef LOAD_AMMO
