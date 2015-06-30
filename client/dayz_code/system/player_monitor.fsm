@@ -34,7 +34,7 @@ item29[] = {"ERROR__Bad_Versi",2,250,175.000000,800.000000,275.000000,850.000000
 item30[] = {"Display_Ready",4,218,-175.000000,1050.000000,-75.000000,1100.000000,0.000000,"Display" \n "Ready"};
 item31[] = {"Preload_Display",2,250,-75.000000,1100.000000,25.000000,1150.000000,0.000000,"Preload" \n "Display"};
 item32[] = {"Preload_Done",4,218,-175.000000,1150.000000,-75.000000,1200.000000,0.000000,"Preload" \n "Done"};
-item33[] = {"Initialize",2,4346,-75.000000,1200.000000,25.000000,1250.000000,0.000000,"Initialize"};
+item33[] = {"Initialize",2,250,-75.000000,1200.000000,25.000000,1250.000000,0.000000,"Initialize"};
 item34[] = {"Finish",1,250,-75.000000,1300.000000,25.000000,1350.000000,0.000000,"Finish"};
 item35[] = {"True",8,218,25.000000,1250.000000,125.000000,1300.000000,0.000000,"True"};
 item36[] = {"Too_Long",4,218,300.000000,150.000000,400.000000,200.000000,0.000000,"Too" \n "Long"};
@@ -46,7 +46,7 @@ item41[] = {"Initialized",4,218,-175.000000,-150.000000,-75.000000,-100.000000,0
 item42[] = {"New_Character",4,218,-325.000000,400.000000,-225.000000,450.000000,5.000000,"New" \n "Character"};
 item43[] = {"Gender_Selection",2,250,-575.000000,400.000000,-475.000000,450.000000,0.000000,"Gender Selection" \n "Dialog"};
 item44[] = {"Selected",4,218,-575.000000,475.000000,-475.000000,525.000000,0.000000,"Selected"};
-item45[] = {"Process",2,250,-575.000000,550.000000,-475.000000,600.000000,0.000000,"Process"};
+item45[] = {"Process",2,4346,-575.000000,550.000000,-475.000000,600.000000,0.000000,"Process"};
 item46[] = {"version_check",4,218,50.000000,-100.000000,150.000000,-50.000000,2.000000,"version check"};
 item47[] = {"ERROR__version_c",2,250,175.000000,-100.000000,275.000000,-50.000000,0.000000,"ERROR:" \n "version check"};
 item48[] = {"Too_Long",4,218,300.000000,-100.000000,400.000000,-50.000000,0.000000,"Too" \n "Long"};
@@ -169,8 +169,8 @@ link85[] = {75,57};
 link86[] = {76,78};
 link87[] = {77,76};
 link88[] = {78,57};
-globals[] = {25.000000,1,0,0,0,640,480,1,143,6316128,1,-280.065002,277.754272,1315.142944,920.020874,864,612,1};
-window[] = {0,-1,-1,-1,-1,966,208,1697,208,1,882};
+globals[] = {25.000000,1,0,0,0,640,480,1,143,6316128,1,-588.620483,176.305908,856.676086,236.648056,1135,920,1};
+window[] = {2,-1,-1,-1,-1,862,104,1593,104,3,1153};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -532,7 +532,7 @@ class FSM
        "if (count _msg > 7) then {" \n
        "	_isHiveOk = _msg select 7;" \n
        "	_newPlayer = _msg select 8;" \n
-       "	_isInfected = _msg select 9;" \n
+       "	_isInfected = false;//_msg select 9; Jukki removing infected players" \n
        "	diag_log (""PLAYER RESULT: "" + str(_isHiveOk));" \n
        "};" \n
        "" \n
@@ -636,15 +636,7 @@ class FSM
     class Phase_One
     {
       name = "Phase_One";
-      init = /*%FSM<STATEINIT""">*/"if ((!isNil ""DZE_defaultSkin"") && _isNew && (_isInfected == 0)) then {" \n
-       "	if (dayz_selectGender == ""Survivor2_DZ"") then {" \n
-       "		_rand = floor(random (count (DZE_defaultSkin select 0)));" \n
-       "		_model = getText (configFile >> ""CfgSurvival"" >> ""Skins"" >> ((DZE_defaultSkin select 0) select _rand) >> ""playerModel""); //MALE" \n
-       "	} else {" \n
-       "		_rand = floor(random (count (DZE_defaultSkin select 1)));" \n
-       "		_model = getText (configFile >> ""CfgSurvival"" >> ""Skins"" >> ((DZE_defaultSkin select 1) select _rand) >> ""playerModel""); //FEMALE" \n
-       "	};" \n
-       "};" \n
+      init = /*%FSM<STATEINIT""">*/"" \n
        "" \n
        "dayz_playerName = name player;" \n
        "_model call player_switchModel;" \n
@@ -1398,10 +1390,9 @@ class FSM
     class Gender_Selection
     {
       name = "Gender_Selection";
-      init = /*%FSM<STATEINIT""">*/"dayz_selectGender = ""Survivor2_DZ"";" \n
+      init = /*%FSM<STATEINIT""">*/"dayz_selectGender = [""Rocker1_DZ"",""Rocker2_DZ"",""Rocker3_DZ"",""Rocker4_DZ"",""INS_Worker2_DZ"",""INS_Lopotev_DZ"",""Functionary1_EP1_DZ"",""Haris_Press_EP1_DZ"",""Survivor2_DZ""];" \n
        "1 cutText ["""", ""BLACK"",0];" \n
        "endLoadingScreen;" \n
-       "createDialog ""RscDisplayGenderSelect"";" \n
        "freshSpawn = 2;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
@@ -1412,7 +1403,7 @@ class FSM
           priority = 0.000000;
           to="Process";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"!dialog"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -1423,7 +1414,8 @@ class FSM
     class Process
     {
       name = "Process";
-      init = /*%FSM<STATEINIT""">*/"_model = dayz_selectGender;"/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/"" \n
+       "_model = dayz_selectGender call BIS_fnc_selectRandom;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -1690,7 +1682,7 @@ class FSM
   initState="init";
   finalStates[] =
   {
-    "Finish"
+    "Finish",
   };
 };
 /*%FSM</COMPILE>*/
