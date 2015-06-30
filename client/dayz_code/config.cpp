@@ -2,6 +2,16 @@
 #define protected 1
 #define public 2
 
+#define WeaponNoSlot		0	// dummy weapons
+#define WeaponSlotPrimary	1	// primary weapons
+#define WeaponSlotSecondary	4	// secondary weapons
+#define WeaponSlotHandGun	2	// HandGun
+#define WeaponSlotHandGunItem	16 // HandGun magazines
+#define WeaponSlotItem		256	// items
+#define WeaponSlotBinocular	4096	// binocular
+#define WeaponHardMounted	65536
+#define WeaponSlotInventory 131072 // inventory items
+
 class CfgNonAIVehicles
 {
 	class StreetLamp
