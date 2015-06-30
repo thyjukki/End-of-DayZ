@@ -786,3 +786,9 @@ if(!isDedicated) then {
 
 	DZE_SaveTime = 30;
 };
+
+
+
+// Set all sides to be friendly so they can enter cars
+EAST setFriend [WEST, 1];
+WEST setFriend [EAST, 1];

@@ -3,6 +3,7 @@ private ["_unit","_ammo","_audible","_distance","_listTalk","_weapon","_group","
 _unit = 		_this select 0;
 _weapon = 		_this select 1;
 _ammo = 		_this select 4;
+_magazine = 	_this select 5;
 _projectile = 	_this select 6;
 
 //Alert Nearby
@@ -14,6 +15,24 @@ dayz_disAudial = _distance;
 dayz_firedCooldown = time;
 // Color in the combat icon
 dayz_combat = 1;
+
+if (player ammo _weapon == 0) then {
+	_emptyMag = getText (configFile >> "CfgMagazines" >> _magazine >> "emptyMag");
+	if (_emptyMag != "") then {
+		player addMagazine _emptyMag;
+		/* _message = format ["Weapons %1 ammo %2 (%3) out, giving mag %4", _weapon, _ammo, _projectile ,_magazine];
+		hint _message;
+		diag_log _message; */
+	};
+};
+
+_giveMag = getText (configFile >> "CfgMagazines" >> _magazine >> "takeOne");
+if (_giveMag != "") then {
+	player addMagazine _giveMag;
+	/* _message = format ["Weapons %1 ammo %2 (%3) out, giving mag %4", _weapon, _ammo, _projectile ,_magazine];
+	hint _message;
+	diag_log _message; */
+};
 
 if (_ammo isKindOf "Melee") exitWith {
 	

@@ -1,9 +1,4 @@
 
-#define COMBINE_MAG class CombineMag\
-{\
-	text = $STR_MAG_COMBINE;\
-	script = "spawn player_combineMag; r_action_count = r_action_count + 1;";\
-};
 
 #define LOAD_AMMO 	class ItemActions {\
 		class loadMag {\
@@ -41,7 +36,5 @@
 #include "762x51.hpp"
 #include "762x54r.hpp"
 #include "792x33.hpp"
-
-#undef COMBINE_MAG
 
 #undef LOAD_AMMO

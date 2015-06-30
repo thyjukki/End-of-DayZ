@@ -2,14 +2,10 @@ private ["_item","_config","_consume","_create","_item_ammo","_consume_magsize",
 disableSerialization;
 call gear_ui_init;
 
-//note - one slot ammo can be used!
-r_action_count = r_action_count + 1;
-if (r_action_count != 1) exitWith { cutText [localize "str_player_actionslimit", "PLAIN DOWN"]; };
-
 _isOK = false;
 _item = _this;
 
-if (!(_item in magazines player)) exitWith {r_action_count = 0;};
+if (!(_item in magazines player)) exitWith {};
 
 _config = configFile >> "CfgMagazines" >> _item;
 
@@ -42,4 +38,3 @@ if (!_isOK) then {
 
 player removeMagazine _item;
 sleep 1;
-r_action_count = 0;

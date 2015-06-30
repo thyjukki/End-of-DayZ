@@ -1,20 +1,12 @@
 // TODO(Jukki) We probably dont ned these?
 class 5Rnd_127x99_as50 : CA_Magazine
 {
-	class ItemActions
-	{
-		COMBINE_MAG
-	};
 
 	emptyMag = "5Rnd_127x99_as50_Empty";
 };
 
 class 10Rnd_127x99_m107 : CA_Magazine {
 
-	class ItemActions
-	{
-		COMBINE_MAG
-	};
 
 	emptyMag = "10Rnd_127x99_m107_Empty";
 };
