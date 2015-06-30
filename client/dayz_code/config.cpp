@@ -1,3 +1,7 @@
+#define private 0
+#define protected 1
+#define public 2
+
 class CfgNonAIVehicles
 {
 	class StreetLamp
@@ -99845,6 +99849,7 @@ class CfgIdentities
 		pitch=1;
 	};
 };
+class Land;
 class Man : Land
 {
 	canCarryBackPack=1;
@@ -100143,7 +100148,7 @@ class CfgMagazines
 {
 	class CA_Magazine;
 	
-	#include "Configs\cfgweapons\CfgWeapons.hpp"
+	#include "Configs\CfgMagazines\CfgMagazines.hpp"
 	class 8Rnd_B_Beneli_74Slug;
 	class 2Rnd_shotgun_74Slug: 8Rnd_B_Beneli_74Slug
 	{

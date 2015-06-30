@@ -1,4 +1,3 @@
-#include "MeleeSwing.hpp"
 
 #define COMBINE_MAG class CombineMag\
 {\
