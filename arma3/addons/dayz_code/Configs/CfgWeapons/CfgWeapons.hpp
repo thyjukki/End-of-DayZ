@@ -27,7 +27,7 @@ class CfgWeapons
 	
 	/* RIFLES */
 	
-	class AK_74;
+	/*class AK_74;
 	class AKS_74_UN_kobra;
 	#include "Rifles\AK74.hpp"
 	
@@ -139,13 +139,13 @@ class CfgWeapons
 	#include "Rifles\MR43.hpp"
 	#include "Rifles\Winchester1866.hpp"
 	#include "Rifles\Remington870.hpp"
-	#include "Rifles\Crossbow.hpp"
+	#include "Rifles\Crossbow.hpp"*/
 	
 	
 	
 	/* PISTOLS */
 	
-	class M9;
+	/*class M9;
 	class M9SD;
 	#include "Pistols\M9.hpp"
 	
@@ -163,7 +163,7 @@ class CfgWeapons
 	#include "Pistols\PDW.hpp"
 	
 	class revolver_EP1;
-	#include "Pistols\Revolver.hpp"
+	#include "Pistols\Revolver.hpp"*/
 	
 	
 	
@@ -171,7 +171,7 @@ class CfgWeapons
 	
 	/* MELEE */
 	
-	class MeleeWeapon : Rifle
+	/*class MeleeWeapon : Rifle
 	{
 		melee = true;
 		
@@ -214,7 +214,7 @@ class CfgWeapons
 	#include "Melee\Crowbar.hpp"
 	#include "Melee\Machete.hpp"
 	#include "Melee\BaseballBat.hpp"
-	#include "Melee\FishingPole.hpp"
+	#include "Melee\FishingPole.hpp"*/
 	
 	
 	
@@ -222,7 +222,7 @@ class CfgWeapons
 	
 	/* TOOLS */
 	
-	#include "Tools\Binocular.hpp"
+	/*#include "Tools\Binocular.hpp"
 	
 	#include "Tools\Map.hpp"
 	#include "Tools\Compass.hpp"
@@ -245,7 +245,7 @@ class CfgWeapons
 	#include "Tools\Machete.hpp"
 	
 	#include "Tools\Flashlight.hpp"
-	#include "Tools\FlashlightRed.hpp"
+	#include "Tools\FlashlightRed.hpp"*/
 	
 	
 	
