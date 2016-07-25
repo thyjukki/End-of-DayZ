@@ -31,7 +31,6 @@ if (_unit == player) then
 	{
         if ((_source != player) and _isPlayer) then
 		{
-            //_isBandit = (player getVariable["humanity",0]) <= -2000;
 			_isBandit = (_model in ["Bandit1_DZ","BanditW1_DZ"]);
 			
 			//if player is not free to shoot at inform server that _source shot at player
@@ -47,32 +46,6 @@ if (_unit == player) then
 
 			// - Accidental Murder - \\  When wearing the garb of a non-civilian you are taking your life in your own hands
 			// Attackers humanity should not be punished for killing a survivor who has shrouded his identity in military garb.
-
-            _punishment =
-				_isBandit ||
-				{player getVariable ["OpenTarget",false]} ||
-				{_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ"]};
-            _humanityHit = 0;
-
-            if (!_punishment) then {
-                _myKills =  200 - (((player getVariable ["humanKills",0]) / 3) * 150);
-                // how many non bandit players have I (the shot/damaged player) killed?
-                // punish my killer 200 for shooting a surivor
-                // but subtract 50 for each survivor I've murdered
-                _humanityHit = -(_myKills * _damage);
-                    if (_humanityHit < -800) then {
-                        _humanityHit = -800;
-                    };
-                    // In the case of outrageous damage (crashes, explosions, desync repeated headshots); cap the limit on humanity lost. 
-
-                [_source,_humanityHit] spawn {  
-                    private ["_source","_humanityHit"];
-                    _source = _this select 0;
-                    _humanityHit = _this select 1;
-                    PVDZ_send = [_source,"Humanity",[_source,_humanityHit,30]];
-                    publicVariableServer "PVDZ_send";
-                };
-            };
         };
     };
     

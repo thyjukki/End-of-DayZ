@@ -20,8 +20,6 @@ _timerMonitor = diag_ticktime;
 
 player setVariable ["temperature",dayz_temperatur,true];
 
-[player,0] call player_humanityChange;
-
 //player addMagazine "Hatchet_swing";
 //player addWeapon "MeleeHatchet";
 
@@ -71,31 +69,6 @@ while {1 == 1} do {
 	if (_speed > 0.1) then {
 		_timeOut = _timeOut + 1;
 	};
-
-	if (_timeOut > 150) then {
-		_humanity = player getVariable ["humanity",0];
-		if (_humanity < 1 or _forceHumanity) then {
-			if (vehicle player != player) then {
-				[player, round(_timeOut / 10)] call player_humanityChange;
-				_forceHumanity = false;
-			} else {
-				_humanity = _humanity + round(_timeOut / 10);
-				player setVariable["humanity",_humanity,true];
-				_forceHumanity = true;
-			};
-		};
-		_timeOut = 0;
-	};
-
-/*	
-	if ((Dayz_loginCompleted) && (diag_tickTime < 25)) then {
-
-		[player,0] call player_humanityChange;
-		
-		diag_log ("Running");
-		_timer10 = diag_Ticktime;
-	};
-*/
 	
 	//reset OpenTarget variable if the timer has run out.
 	if (OpenTarget_Time > 0 && {diag_tickTime - OpenTarget_Time >= dayz_OpenTarget_TimerTicks}) then

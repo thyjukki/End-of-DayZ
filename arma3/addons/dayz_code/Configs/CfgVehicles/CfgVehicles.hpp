@@ -251,7 +251,7 @@ class CfgVehicles {
 		supplyRadius = 1;
 	};
 	#include "gathered_plants.hpp"
-	class Generator_Base: SkodaBase
+	/*class Generator_Base: SkodaBase
 	{
 		model = "\dayz_equip\models\generator_gear.p3d";
 		picture = "\dayz_equip\textures\equip_generator_ca.paa";
@@ -304,7 +304,7 @@ class CfgVehicles {
 				statement = "player action ['engineOff', this];";
 			};
 		};
-	};
+	};*/
 };
 class CfgNonAIVehicles {
 	#include "StreetLamps.hpp"

@@ -89,7 +89,6 @@ if (!isDedicated) then {
 	fn_buildCamera = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_buildCamera.sqf";
 	object_build = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\object_build.sqf";
 	object_upgradeFireplace = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\object_upgradeFireplace.sqf";
-	player_wearClothes = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_wearClothes.sqf";
 	player_dropWeapon = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_dropWeapon.sqf";
 	//player_setTrap = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_setTrap.sqf";
 	object_pickup = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\object_pickup.sqf";
@@ -361,23 +360,6 @@ if (!isDedicated) then {
 			(_display displayCtrl 105) lbSetColor [_i, [0.06, 0.05, 0.03, 1]];
 		};
 	};
-
-	dayz_lowHumanity = {
-		//private["_unit","_humanity","_delay"];
-		_unit = _this;
-		if ((_unit distance player) < 15) then {
-			private "_humanity";
-			_humanity = _unit getVariable["humanity",0];
-			dayz_heartBeat = true;
-			if (_humanity < -3000) then {
-				private "_delay";
-				_delay = ((10000 + _humanity) / 5500) + 0.3;
-				playSound "heartbeat_1";
-				uiSleep _delay;
-			};
-			dayz_heartBeat = false;
-		};
-	};
 	
 	dz_fn_meleeMagazines = {
 		if (_this) then {
@@ -477,7 +459,6 @@ player_medTransfuse = compile preprocessFileLineNumbers "\z\addons\dayz_code\med
 player_medMorphine = compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\publicEH\medMorphine.sqf";
 player_medPainkiller = compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\publicEH\medPainkiller.sqf";
 player_medAntiBiotics = compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\publicEH\medAntibiotics.sqf";
-player_humanityChange = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_humanityChange.sqf";
 player_projectileNear = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_projectileNear.sqf";
 player_bloodCalc = compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\bloodCalc.sqf";
 fn_selectRandomLocation = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_selectRandomLocation.sqf";

@@ -62,7 +62,12 @@ class RscStructuredTextGUI: RscStructuredText
 		valign = "middle";
 	};
 };
+class RscShortcutButton;
+class RscShortcutButtonMain;
 
+class CA_TextLanguage;
+class RscXListBox;
+/*
 class RscDisplayLoading
 {
 	class Variants
@@ -98,7 +103,7 @@ class RscDisplayGetReady;
 class RscDisplayClientGetReady : RscDisplayGetReady
 {
 	// could probably add a check in the spawn but couldn't test with multiple players
-	onload = "[_this,'onload'] call compile preprocessfile '\ca\ui\scripts\server_interface.sqf'; _this spawn { while { !isNull (findDisplay 53) } do { ctrlActivate ((_this select 0) displayCtrl 1); sleep 0.1; }; };"; /*diag_log[diag_tickTime,'RscDisplayClientGetReady'];*/
+	onload = "[_this,'onload'] call compile preprocessfile '\ca\ui\scripts\server_interface.sqf'; _this spawn { while { !isNull (findDisplay 53) } do { ctrlActivate ((_this select 0) displayCtrl 1); sleep 0.1; }; };"; /*diag_log[diag_tickTime,'RscDisplayClientGetReady'];* /
 };
 
 class RscDisplayDebriefing: RscStandardDisplay
@@ -130,8 +135,6 @@ class RscDisplayDebriefing: RscStandardDisplay
 		delete Mainback;
 	};
 };
-class RscShortcutButton;
-class RscShortcutButtonMain;
 
 
 class RscDisplayMultiplayerSetup: RscStandardDisplay
@@ -164,7 +167,7 @@ class RscDisplayMultiplayerSetup: RscStandardDisplay
 				case(diag_tickTime - RscDMSLoad > 5): { ctrlActivate ((_this select 0) displayCtrl 1); RscDMSLoad = -1; };
 			};
 		};
-	*/
+	* /
 	onButtonClick = "with uiNameSpace do{RscDMSLoad=-1};false";
 	onButtonDblClick = "with uiNameSpace do{RscDMSLoad=-1};false";
 	onKeyDown = "with uiNameSpace do{RscDMSLoad=-1};false";
@@ -313,7 +316,7 @@ class RscPendingInvitationInGame
 
 class RscDisplayMissionFail: RscStandardDisplay
 {
-	onLoad = "ctrlActivate ((_this select 0) displayCtrl 2);"; /*diag_log[diag_tickTime,'RscDisplayMissionFail'];*/
+	onLoad = "ctrlActivate ((_this select 0) displayCtrl 2);"; /*diag_log[diag_tickTime,'RscDisplayMissionFail'];* /
 	class controls
 	{
 		delete Debriefing_MissionTitle;
@@ -341,9 +344,6 @@ class RscDisplayMissionFail: RscStandardDisplay
 };
 
 
-class CA_TextLanguage;
-class RscXListBox;
-
 class RscDisplayGameOptions
 {
 	//onLoad = "((_this select 0) displayCtrl 140) lbAdd 'Default';((_this select 0) displayCtrl 140) lbAdd 'Debug';((_this select 0) displayCtrl 140) lbAdd 'None';((_this select 0) displayCtrl 140) lbSetCurSel (uiNamespace getVariable ['DZ_displayUI', 0]);";
@@ -364,7 +364,7 @@ class RscDisplayGameOptions
 			w = 0.3;
 			onLBSelChanged = "(uiNamespace setVariable ['DZ_displayUI', (_this select 1)]);";
 		};
-	};*/
+	};* /
 };
 
 class RscDisplayMain : RscStandardDisplay
@@ -474,7 +474,7 @@ class RscDisplayMPInterrupt : RscStandardDisplay {
 	movingEnable = 0;
 	enableSimulation = 1;
 	//onLoad = "_dummy = ['Init', _this] execVM '\ca\ui\scripts\pauseLoadinit.sqf'; [(_this select 0)] execVM '\z\addons\dayz_code\compile\player_onPause.sqf';"; _respawn = (_this select 0) displayCtrl 1010); _respawn ctrlEnable false; _abort = (_this select 0) displayCtrl 104); _abort ctrlEnable false;
-	onLoad = "uiNamespace setVariable ['RscDisplayMPInterrupt', _this select 0];[] execVM '\z\addons\dayz_code\compile\player_onPause.sqf'; _dummy = ['Init', _this] execVM '\ca\ui\scripts\pauseLoadinit.sqf';"; /*diag_log[diag_tickTime,'RscDisplayMPInterrupt'];*/
+	onLoad = "uiNamespace setVariable ['RscDisplayMPInterrupt', _this select 0];[] execVM '\z\addons\dayz_code\compile\player_onPause.sqf'; _dummy = ['Init', _this] execVM '\ca\ui\scripts\pauseLoadinit.sqf';"; /*diag_log[diag_tickTime,'RscDisplayMPInterrupt'];* /
 	onUnload = "uiNamespace setVariable ['RscDisplayMPInterrupt', nil];['Unload', _this] execVM '\ca\ui\scripts\pauseOnUnload.sqf';";
 
 	class controlsBackground {
@@ -499,7 +499,7 @@ class RscDisplayMPInterrupt : RscStandardDisplay {
 		class B_Save {};
 		class B_Continue {};
 		class B_Diary {};
-	*/
+	* /
 
 		class MissionTitle : RscText {
 			idc = 120;
@@ -639,7 +639,7 @@ class CfgDiary
 		taskFailed = "ca\ui\data\ui_taskstate_failed_CA.paa";
 		taskCurrent = "ca\ui\data\ui_taskstate_current_CA.paa";
 	};
-};
+};*/
 
 /*
 class DZ_ItemInteraction {

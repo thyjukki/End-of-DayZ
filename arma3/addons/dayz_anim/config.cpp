@@ -64,7 +64,7 @@ class CfgPatches
 			"CA_Missions_BAF_Templates_SecOps","CA_Missions_E_Armory2","CA_Missions_E_SecOps","CA_Missions_E_Templates_SecOps",
 			"CA_Missions_PMC","CA_Modules_StratLayer","CA_MPA_MP","Warfare2","Warfare2_E","CAWater","CAWeapons2",
 			"CAWeapons2_HuntingRifle","CAWeapons2_RPG18","CAWeapons2_SMAW","CAWeapons_Kord","CABuildingParts","CABuildingParts_Signs",
-			"CATEC","CACharacters2","CACharacters_E","Chernarus","CAMisc_fix_Ch2","CA_Missions_BAF_2","missions_ew","CATracked","CAWater2",
+			"CATEC","CACharacters2","CACharacters_E","Chernarus","CAMisc_fix_Ch2","CA_Missions_BAF_2","CATracked","CAWater2",
 			"CAWater2_Destroyer","CAWater2_fishing_boat","CAWater2_Fregata","CAWater2_LHD","CAWater2_seafox","CAWater2_smallboat_1",
 			"CAWeapons_Warfare_weapons","CAWheeled","CAWheeled_Pickup","CAWheeled_Offroad","CAAir","CAMisc3","CAWater2_seafox_EP1",
 			"CAStructures_E_Misc_Misc_Interier","CAStructures_E_Misc_Misc_Market","CATracked2","CATracked2_2S6M_Tunguska","CATracked2_AAV",

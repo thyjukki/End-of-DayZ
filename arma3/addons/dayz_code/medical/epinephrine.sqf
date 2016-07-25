@@ -13,9 +13,6 @@ if (!_isDead) then {
 	_unit setVariable ["USEC_isCardiac",false,true];
 	sleep 5;
 	
-	//give humanity
-	[player,25] call player_humanityChange;
-	
 	PVDZ_send = [_unit,"Epinephrine",[_unit,player,"ItemEpinephrine"]];
 	publicVariableServer "PVDZ_send";
 };

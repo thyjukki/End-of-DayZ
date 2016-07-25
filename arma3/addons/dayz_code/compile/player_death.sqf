@@ -52,32 +52,8 @@ if (count _array > 0) then {
 	_source = _array select 0;
 	_method = _array select 1;
 	if ((!isNull _source) && (_source != player)) then {
-		//_isBandit = (player getVariable["humanity",0]) <= -2000;
-		_isBandit = (_model in ["Bandit1_DZ","BanditW1_DZ"]);
-		
-		//if you are a bandit or start first - player will not recieve humanity drop
-		_punishment =
-			_isBandit ||
-			{player getVariable ["OpenTarget",false]} ||
-			{_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ"]};
-		_humanityHit = 0;
-
-		if (!_punishment) then {
-			//I'm "not guilty" - kill me and be punished
-			_myKills = ((player getVariable ["humanKills",0]) / 3) * 1500;
-			// how many non bandit players have I (the dead player) killed?
-			// punish my killer 2000 for shooting a surivor
-			// but subtract 500 for each survivor I've murdered
-			_humanityHit = -(2000 - _myKills);
-			_kills = _source getVariable ["humanKills",0];
-			_source setVariable ["humanKills",(_kills + 1),true];
-			PVDZ_send = [_source,"Humanity",[_source,_humanityHit,300]];
-			publicVariableServer "PVDZ_send";
-		} else {
-			//i'm "guilty" - kill me as bandit
-			_killsV = _source getVariable ["banditKills",0];
-			_source setVariable ["banditKills",(_killsV + 1),true];
-		};
+		_source setVariable ["humanKills",(_kills + 1),true];
+		publicVariableServer "PVDZ_send";
 	};
 	_body setVariable ["deathType",_method,true];
 	

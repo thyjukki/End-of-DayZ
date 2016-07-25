@@ -303,84 +303,6 @@ class CfgAmmo
 		tracerEndTime=5;
 	};
 	
-	
-	
-	/* BULLET */
-	
-	//.44 Henry			Winchester 1866
-	class B_1866_Slug : BulletBase
-	{
-		hit = 9;
-		indirectHit = 0;
-		indirectHitRange = 0;
-		cartridge = "FxCartridge_slug";
-		cost = 5;
-		typicalSpeed = 200;
-		visibleFire = 25;
-		audibleFire = 25;
-		airFriction = -0.005;
-		caliber = 0.5;
-	};
-	
-	//makarov
-	class B_9x18_Ball : BulletBase
-	{
-		airfriction = -0.002751;
-		audiblefire = 15;
-		caliber = 0.33;
-		cartridge = "FxCartridge_9mm";
-		cost = 5;
-		hit = 6;
-		typicalspeed = 350;
-		visiblefire = 15;
-	};
-	
-	//makarov sd
-	class B_9x18_SD : B_9x18_Ball
-	{
-		airfriction = -0.001893;
-		audiblefire = 0.035;
-		cost = 5;
-		hit = 6;
-		typicalspeed = 310;
-		visiblefire = 0.035;
-		visiblefiretime = 2;
-	};
-	
-	//M1911
-	class B_45ACP_Ball : BulletBase
-	{
-		airfriction = -0.0013522;
-		audiblefire = 16;
-		caliber = 0.33; //33
-		cartridge = "FxCartridge_9mm";
-		cost = 5;
-		hit = 9;
-		indirecthit = 0;
-		indirecthitrange = 0;
-		typicalspeed = 260;
-		visiblefire = 16;
-	};
-	
-	//mosin nagant
-	/*class Mosin_762 : BulletBase
-	{
-		hit = 9;
-		typicalSpeed = 850;
-		airFriction = -0.00055;
-		supersonicCrackNear[] = {"",1,1};
-		supersonicCrackFar[] = {"",1,1};
-		visibleFire=40;
-		audibleFire=40;
-		visibleFireTime = 0.5;
-		tracerColor[] = {255,255,0,0};
-		tracerColorR[] = {255,255,0,0};
-		cartridge = "FxCartridge_762";
-	};*/
-	
-	
-	
-	
 	/* THROWN */
 	
 	class ThrownObjects : GrenadeHand
@@ -480,16 +402,5 @@ class CfgAmmo
 	{
 		model = "\dayz_weapons\models\chem_blue";
 		lightColor[] = {0, 0, 0.5};
-	};
-	
-	
-	
-
-	// used for grenade traps
-	class GrenadeHandTimedWest;
-	class GrenadeHandTimedWest_DZ : GrenadeHandTimedWest
-	{
-		//explosiontime = 1;
-		fusedistance = 0;
 	};
 };

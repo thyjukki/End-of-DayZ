@@ -1,5 +1,5 @@
-class Citizen;
-class Citizen1: Citizen {
+class C_man_1;
+class Citizen1: C_man_1 {
 	class SpeechVariants {
 		class Default {
 			speechplural[] = {""};
@@ -23,7 +23,7 @@ class Citizen1: Citizen {
 		};
 	};
 };	
-class Zed_Base : Citizen1 {
+class Zed_Base : C_man_1 {
 	scope = public;
 	class HitDamage {};
 	armor = 3; 

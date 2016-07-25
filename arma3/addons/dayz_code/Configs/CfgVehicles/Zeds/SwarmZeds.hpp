@@ -1,4 +1,4 @@
-class Swarm_Base : Citizen1 {
+class Swarm_Base : C_man_1 {
 	scope = public;
 	class HitDamage {};
 	glassesEnabled = 0;

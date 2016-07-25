@@ -1,4 +1,4 @@
-private ["_charID","_newmodel","_old","_updates","_humanity","_medical","_worldspace","_zombieKills","_headShots","_humanKills","_banditKills","_fractures","_wpnType","_ismelee"];
+private ["_charID","_newmodel","_old","_updates","_medical","_worldspace","_zombieKills","_headShots","_humanKills","_banditKills","_fractures","_wpnType","_ismelee"];
 //_playerUID = _this select 0;
 _charID = _this select 1;
 _model = _this select 2;
@@ -15,7 +15,6 @@ _updates set [0,true];
 player setVariable ["updatePlayer",_updates,true];
 dayz_unsaved = true;
 //Logout
-_humanity = player getVariable ["humanity",0];
 _medical = player call player_sumMedical;
 _worldspace = [round(direction player),getPosATL player];
 _zombieKills = player getVariable ["zombieKills",0];
@@ -72,7 +71,6 @@ if (count _medical > 0) then {
 };
 
 //General Stats
-player setVariable ["humanity",_humanity,true];
 player setVariable ["zombieKills",_zombieKills,true];
 player setVariable ["headShots",_headShots,true];
 player setVariable ["humanKills",_humanKills,true];

@@ -23,12 +23,7 @@ class CfgPatches
 			"dayz_sfx",
 			"dayz_vehicles",
 			"dayz_weapons",
-			"community_crossbow",
-			
-			//shacktac addons
-			"st_bunnyhop",
-			"st_collision",
-			"st_evasive"
+			"community_crossbow"
 		};
 	};
 };

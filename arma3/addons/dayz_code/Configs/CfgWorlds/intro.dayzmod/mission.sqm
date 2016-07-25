@@ -45,7 +45,7 @@ class Mission
 					azimut=393.15283;
 					id=0;
 					side="CIV";
-					vehicle="Citizen1";
+					vehicle="C_man_1";
 					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;

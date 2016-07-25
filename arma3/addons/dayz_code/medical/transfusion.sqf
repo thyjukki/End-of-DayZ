@@ -192,7 +192,6 @@ while {r_doLoop} do {
 		cutText [localize "str_actions_medical_transfusion_successful", "PLAIN DOWN"];
 		//see Note 1
 		//[player,_unit,"loc",rTITLETEXT,localize "str_actions_medical_transfusion_successful","PLAIN DOWN"] call RE;
-		if (!_badBag and _bagFound) then { [player,_humanityAwarded] call player_humanityChange; };
 		r_doLoop = false;
 	};
 

@@ -1,4 +1,4 @@
-class SkinBase : CA_Magazine
+class SkinBase : CA_Magazine //TODO(Jukki) We dont need these in arma 3
 {
 	count = 1;
 	type = WeaponSlotItem;
