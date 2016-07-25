@@ -1,11 +1,11 @@
 pushd %~dp0
 
-set PWA_PATH="%~1\@EndOfDayZ\addons"
+set PWA_PATH="%~1\@DayzAwaken\addons"
 
 mkdir %PWA_PATH%
 mkdir .\building
 
-for /D %%f in (.\..\Client\*) do cpbo.exe -p "%%f" "building\%%~nxf.pbo"
+for /D %%f in (.\..\addons\*) do cpbo.exe -p "%%f" "building\%%~nxf.pbo"
 
 for %%F in (building\*.pbo) do DSSignFile "c:\endofdayz.biprivatekey" %%F
 
