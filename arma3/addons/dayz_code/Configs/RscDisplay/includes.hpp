@@ -3,5 +3,5 @@
 #include "RscDisplayGenderSelect.hpp"
 #include "RscDisplaySpawnSelecter.hpp"
 #include "RscPlayerUI.hpp"
-#include "RscMap.hpp"
+//#include "RscMap.hpp"
 //#include "RscDisplayConstructionMenu.hpp"

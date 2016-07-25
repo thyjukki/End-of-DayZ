@@ -68,8 +68,8 @@ class CfgVehicles {
 
 
 	//External Class
-	/*class SkodaBase;
-	class ATV_Base_EP1 : Car
+	class SkodaBase;
+	/*class ATV_Base_EP1 : Car
 	{
 		class HitPoints : HitPoints
 		{
