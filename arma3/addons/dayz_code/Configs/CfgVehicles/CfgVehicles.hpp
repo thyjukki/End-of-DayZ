@@ -68,7 +68,7 @@ class CfgVehicles {
 
 
 	//External Class
-	class SkodaBase;
+	/*class SkodaBase;
 	class ATV_Base_EP1 : Car
 	{
 		class HitPoints : HitPoints
@@ -111,7 +111,7 @@ class CfgVehicles {
 		};
 	};
 	class UralCivil;
-	class Ship;
+	class Ship;*/
 	//class Bag_Base_EP1;
 	//class Bag_Base_BAF;
 	class HouseBase;
@@ -144,7 +144,7 @@ class CfgVehicles {
 
 	//Includes all DayZ Vehilces
 	//Car's
-	#include "Car\HMMWV.hpp"
+	/*#include "Car\HMMWV.hpp"
 	#include "Car\CAR_HATCHBACK.hpp"
 	#include "Car\UAZ_CDF.hpp"
 	#include "Car\CAR_SEDAN.hpp"
@@ -158,14 +158,14 @@ class CfgVehicles {
 	#include "Helicopter\UH1H.hpp"
 	#include "Helicopter\UH1H2.hpp"
 	#include "Helicopter\AH6X.hpp"
-	#include "Helicopter\MH6J_DZ.hpp"
+	#include "Helicopter\MH6J_DZ.hpp"*/
 	//Wreck's
 	//#include "Helicopter\MI8Wreck.hpp"
 	//#include "Helicopter\UH1Wreck.hpp"
 	//#include "Helicopter\UH60Wreck.hpp"
 	#include "CrashSite.hpp"
 	//Plane's
-	#include "Plane\AN2_DZ.hpp"
+	/*#include "Plane\AN2_DZ.hpp"
 	//Bikes
 	#include "Bikes\ATV_US_EP1.hpp"
 	#include "Bikes\ATV_CZ_EP1.hpp"
@@ -175,7 +175,7 @@ class CfgVehicles {
 	//Boat
 	#include "Boat\PBX.hpp"
 	#include "Boat\Fishing_Boat.hpp"
-	#include "Boat\smallboat.hpp"
+	#include "Boat\smallboat.hpp"*/
 
 	//Includes all Building Stuff
 	// This parent class is made to make referring to these objects easier later with allMissionObjects
