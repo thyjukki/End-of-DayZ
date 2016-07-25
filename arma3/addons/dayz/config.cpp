@@ -29,7 +29,6 @@ class RscStandardDisplay;
 #include "config\CfgMovesZombie.hpp"
 
 #include "config\CfgTownGenerator.hpp"
-#include "config\CfgTownGeneratorUtes.hpp"
 
 #include "config\CfgVehicles.hpp"
 
