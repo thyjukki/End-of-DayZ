@@ -338,7 +338,7 @@ class CfgModels
 	
 	class ArmaMan : Default
 	{
-		sections[] =
+		/sections[] =
 		{
 			"osobnost",
 			"Head_Injury",
@@ -351,9 +351,9 @@ class CfgModels
 			"clan_sign",
 			"Camo",
 			"CamoB"
-		};
+		};*/
  
-		skeletonName = "OFP2_ManSkeleton";
+		//skeletonName = "OFP2_ManSkeleton";
 	};
  
 	class zmbStandIdleA : ArmaMan {};
