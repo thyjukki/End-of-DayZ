@@ -1,5 +1,5 @@
 
-#include "\userconfig\EndOfDayZ\cameraPosition.hpp"
+//#include "\userconfig\EndOfDayZ\cameraPosition.hpp"
 class Man : Land
 {
 	#ifdef CameraMode1

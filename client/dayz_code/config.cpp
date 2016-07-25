@@ -4,7 +4,7 @@ class CfgPatches {
 	class dayz_code {
 		units[] = {};
 		weapons[] = {};
-		requiredVersion = 0.1;
+		requiredVersion = 0.2;
 		requiredAddons[] = {"dayz_equip","dayz_weapons","community_crossbow","dayz_communityweapons","CAMisc3","CABuildingParts","CABuildingParts_Signs","CAStructuresHouse","CAStructuresLand_Ind_Stack_Big","CAStructures_Misc_Powerlines","CAStructures","CABuildings","CABuildings2","Ind_MalyKomin","CAStructures_A_CraneCon","CAStructures_Mil","CAStructures_Nav","CAStructures_Rail","A_Crane_02","A_TVTower","CAStructures_Railway","CAStructuresHouse_HouseBT","dayz_buildings"};
 	};
 };
@@ -12,12 +12,12 @@ class CfgPatches {
 class CfgMods {
 	class DayZ {
 		dir = "DayZ";
-		name = "EndOfDayZ";
+		name = "DayzAwaken";
 		picture = "z\addons\dayz_code\gui\mod.paa";
 		hidePicture = 0;
 		hideName = 0;
-		action = "http://endofdayz.org/mybb/index.php";
-		version = "EndOfDayZ 1.1.2";
+		action = "http://dayzawaken.com/";
+		version = "DayzAwaken 0.2";
 		hiveVersion = 0.96;
 		requiredAddons[] = {"Chernarus"};
 	};
