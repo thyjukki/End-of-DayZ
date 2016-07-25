@@ -338,7 +338,7 @@ class CfgModels
 	
 	class ArmaMan : Default
 	{
-		/sections[] =
+		/*sections[] =
 		{
 			"osobnost",
 			"Head_Injury",
