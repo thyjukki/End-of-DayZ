@@ -68,7 +68,7 @@ class CfgVehicles {
 
 
 	//External Class
-	class SkodaBase;
+	//class SkodaBase;
 	/*class ATV_Base_EP1 : Car
 	{
 		class HitPoints : HitPoints
@@ -138,7 +138,7 @@ class CfgVehicles {
 	//Survivor Skins
 	#include "Skins.hpp"
 	//Bags
-	#include "Bags.hpp"
+	//#include "Bags.hpp"
 	//DZAnimal and DZ_Fin
 	#include "Animal.hpp"
 
