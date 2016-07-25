@@ -1,11 +1,11 @@
 pushd %~dp0
 
-set PWA_PATH="%~1\@EndOfDayZ\addons"
+set PWA_PATH="%~1\@DayzAwaken\addons"
 
 mkdir %PWA_PATH%
 mkdir .\building
 
-cpbo.exe -p .\..\Client\dayz_code ".\building\dayz_code.pbo"
+cpbo.exe -p .\..\addons\dayz_code ".\building\dayz_code.pbo"
 
 DSSignFile "c:\endofdayz.biprivatekey" .\building\dayz_code.pbo
 
