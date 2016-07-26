@@ -21,14 +21,14 @@ class CfgVehicleClasses
 
 class RscPicture;
 class RscStandardDisplay;
-#include "config\Rsc.hpp"
+//#include "config\Rsc.hpp"
 
 #include "config\DutyDefines.hpp"
-#include "config\CfgMovesBasic.hpp"
-#include "config\CfgMovesMaleSdr.hpp"
-#include "config\CfgMovesZombie.hpp"
+//#include "config\CfgMovesBasic.hpp"
+//#include "config\CfgMovesMaleSdr.hpp"
+//#include "config\CfgMovesZombie.hpp"
 
-#include "config\CfgTownGenerator.hpp"
+//#include "config\CfgTownGenerator.hpp"
 
 #include "config\CfgVehicles.hpp"
 

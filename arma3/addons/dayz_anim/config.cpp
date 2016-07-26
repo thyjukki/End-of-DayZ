@@ -1,10 +1,3 @@
-//Banned Weapons
-#include "CfgBanned\CfgAmmo.hpp"
-#include "CfgBanned\CfgMagazines.hpp"
-#include "CfgBanned\CfgMarkers.hpp"
-#include "CfgBanned\CfgVehicles.hpp"
-#include "CfgBanned\CfgWeapons.hpp"
-
 class CfgPatches
 {
 	class dayz_anim
@@ -14,7 +7,7 @@ class CfgPatches
 		requiredVersion = 0.1;
 		requiredAddons[] =
 		{
-			"CAData","HALO_Test","CAAnimals","CA_Anims","CA_Anims_Sdr","CA_Anims_Wmn","CA_Anims_E","CA_Anims_E_Sdr",
+			/*"CAData","HALO_Test","CAAnimals","CA_Anims","CA_Anims_Sdr","CA_Anims_Wmn","CA_Anims_E","CA_Anims_E_Sdr",
 			"CA_Anims_E_Wmn","CABuildings","CA_E","CA_PMC","CA_Heads","CAData_ParticleEffects","CA_Dubbing",
 			"CA_Dubbing_Counterattack","CA_Dubbing_E","CA_Dubbing_PMC","CA_Editor","CALanguage","CALanguage_e",
 			"CALanguage_PMC","CALanguage_missions","CALanguage_missions_e","CALanguage_missions_PMC","CA_HC_Sounds",
@@ -97,7 +90,7 @@ class CfgPatches
 			"CACharacters_W_BAF","Desert_E","CA_L39","CA_Missions2_PMC","CATracked_E","CATracked_E_BMP2","CATracked_E_M113",
 			"CATracked_E_M1_Abrams","CATracked_E_M2A2_Bradley","CATracked_E_T34","CATracked_E_T55","CATracked_E_T72",
 			"CATracked_E_us_m270mlrs","CATracked_E_ZSU","CAWheeled_D_BAF","CAWheeled_W_BAF","CAAir_BAF","CAAir_BAF_CH_47F",
-			"CATracked_BAF","CATracked_W_BAF","CA_CommunityConfigurationProject_E"
+			"CATracked_BAF","CATracked_W_BAF","CA_CommunityConfigurationProject_E"*/
 		};
 		dayzVersion = 1.8;
 	};
