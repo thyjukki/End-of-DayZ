@@ -3,7 +3,7 @@
 //Add the insttance id  of this server 
 dayZ_instance = 1; // The instance
 //Tag info this is shown to all players in the bottom left hand side of the screen 
-dayZ_serverName = "EOD"; // Servername (country code + server number)
+dayZ_serverName = "Dayz Awaken"; // Servername (country code + server number)
 
 
 //Gamesettings
