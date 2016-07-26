@@ -35,7 +35,7 @@ dayz_temperature_override = false; // Set to true to disable all temperature cha
 
 
 // DO NOT EDIT BELOW HERE //
-MISSION_ROOT=toArray __FILE__;MISSION_ROOT resize(count MISSION_ROOT-8);MISSION_ROOT=toString MISSION_ROOT;
+/*MISSION_ROOT=toArray __FILE__;MISSION_ROOT resize(count MISSION_ROOT-8);MISSION_ROOT=toString MISSION_ROOT;
 diag_log 'dayz_preloadFinished reset';
 dayz_preloadFinished=nil;
 onPreloadStarted "diag_log [diag_tickTime,'onPreloadStarted']; dayz_preloadFinished = false;";
@@ -99,4 +99,4 @@ if (!isDedicated) then {
 	3 fadeSound 1;
 	3 fadeMusic 1;
 	endLoadingScreen;
-};
+};*/
