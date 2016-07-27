@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<configuration>
+    <configSections>
+        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="DayzWhitelistProPlus.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <startup> 
+        
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5"/></startup>
+    <userSettings>
+        <DayzWhitelistProPlus.Properties.Settings>
+            <setting name="dbHost" serializeAs="String">
+                <value>85.234.146.76</value>
+            </setting>
+            <setting name="dbPass" serializeAs="String">
+                <value>90ui7gT0wY</value>
+            </setting>
+            <setting name="dbPort" serializeAs="String">
+                <value>3306</value>
+            </setting>
+            <setting name="dbDatabase" serializeAs="String">
+                <value>deanhwhitelist</value>
+            </setting>
+            <setting name="dbUser" serializeAs="String">
+                <value>DeanH</value>
+            </setting>
+            <setting name="rconIP" serializeAs="String">
+                <value>85.234.146.98</value>
+            </setting>
+            <setting name="rconPort" serializeAs="String">
+                <value>2302</value>
+            </setting>
+            <setting name="rconPass" serializeAs="String">
+                <value>P@55w0rd!</value>
+            </setting>
+        </DayzWhitelistProPlus.Properties.Settings>
+    </userSettings>
+</configuration>
