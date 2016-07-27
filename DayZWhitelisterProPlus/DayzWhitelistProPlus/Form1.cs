@@ -86,7 +86,6 @@ namespace Awakener
             restartTimes.Add(0);
             restartTimes.Add(6);
             restartTimes.Add(12);
-            restartTimes.Add(15);
             restartTimes.Add(18);
         }
 
@@ -624,7 +623,7 @@ namespace Awakener
             {
                 int hour = DateAndTime.Hour(DateAndTime.Now);
 
-                if (hour >= nextRestart)
+                if (hour == nextRestart)
                 {
                     b.SendCommand(BattlEyeCommand.Say, "-1 Server will restart in 30 minutes");
 
