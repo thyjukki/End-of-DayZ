@@ -78,6 +78,7 @@ namespace Awakener
         {
             InitializeComponent();
 
+            keepAliveTimer = new Timer();
             mainRebootTimer = new Timer();
             triggeredRebootTimer = new Timer();
 
