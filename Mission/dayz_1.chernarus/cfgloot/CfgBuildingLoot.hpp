@@ -42,6 +42,11 @@ class CfgBuildingLoot {
 			{"ItemWaterbottleUnfilled",		"magazine",0.04},
 			{"ItemWaterbottle",				"magazine",0.02},
 			{"ItemRadio",					"weapon",0.01},
+			{"DZ_Backpack_WIN",				"object",0.01},
+			{"DZ_Backpack_BLK",				"object",0.01},
+			{"DZ_Backpack_FIN",				"object",0.01},
+			{"DZ_Assault_Pack_EP1",			"object",0.05},
+			{"DZ_Czech_Vest_Puch",			"object",0.07},
 		//multiple spawns	
 			{"",							"Trash",0.40},
 			{"",							"civilianMagazines",0.15},
@@ -134,6 +139,10 @@ class CfgBuildingLoot {
 			{"WeaponHolder_ItemTent",		"object",0.05},
 			{"WeaponHolder_ItemCamoNet",	"object",0.01},
 			{"WeaponHolder_ItemDomeTent",	"object",0.05},
+			{"DZ_CivilBackpack_EP1",		"object",0.02}, // 24
+			{"DZ_Backpack_EP1",				"object",0.02}, // 24
+			{"DZ_Backpack_EP1_des",			"object",0.02}, // 24
+			{"DZ_Backpack_EP1_wdl",			"object",0.02}, // 24
 			{"equip_rope",					"magazine",0.03},
 			{"PartWoodPile",				"magazine",0.05},
 			{"FoodCanBakedBeans",			"magazine",0.05},
@@ -219,6 +228,10 @@ class CfgBuildingLoot {
 			{"DZ_Apo_Pack2",				"object",0.03},
 			{"DZ_Apo_Pack3",				"object",0.03},
 			{"DZ_Apo_Pack4",				"object",0.03},
+			{"DZ_Backpack_WIN",				"object",0.01},
+			{"DZ_Backpack_BLK",				"object",0.01},
+			{"DZ_Backpack_FIN",				"object",0.01},
+			{"DZ_Czech_Vest_Puch",			"object",0.07},
 			{"WeaponHolder_ItemTent",		"object",0.01},
 			{"ItemTrashPaper",				"magazine",0.05},
 			{"ItemTrashPaperMusic",			"magazine",0.05},
@@ -256,7 +269,7 @@ class CfgBuildingLoot {
 			{"WeaponHolder_ItemCrowbar",	"object",0.10},
 			{"WeaponHolder_ItemHatchet",	"object",0.05},
 			{"WeaponHolder_PartGeneric",	"object",0.04},
-			{"WeaponHolder_PartWheel",		"object",0.05},
+			{"WeaponHolder_PartWheel",		"object",0.10},
 			{"WeaponHolder_PartFueltank",	"object",0.03},
 			{"WeaponHolder_PartEngine",		"object",0.03},
 			{"WeaponHolder_PartGlass",		"object",0.08},
