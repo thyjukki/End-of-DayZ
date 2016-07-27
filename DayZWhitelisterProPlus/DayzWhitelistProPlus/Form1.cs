@@ -36,7 +36,7 @@ namespace Awakener
         public static string rptPath = armaPath + @"\cfgdayz";
         public static string rptArchive = @"c:\logs";
         public static string Arma2ServerPath = armaPath + @"\arma2oaserver.exe";
-        public static string CommandLineOptions = @"-config=cfgdayz\server.cfg -cfg=cfgdayz\basic.cfg -profiles=C:\arma2\cfgdayz -name=cfgdayz -mod=@DayZAwaken;@hive;@Arma2NET;";
+        public static string CommandLineOptions = @"-config=cfgdayz\server.cfg -malloc=tbb3malloc_bi -cfg=cfgdayz\basic.cfg -profiles=C:\arma2\cfgdayz -name=cfgdayz -mod=@DayZAwaken;@hive;@Arma2NET;";
 
         static BattlEyeClient b;
 
