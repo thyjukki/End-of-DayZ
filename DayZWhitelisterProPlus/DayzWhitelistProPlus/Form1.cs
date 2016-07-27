@@ -832,7 +832,7 @@ namespace Awakener
             {
                 var source = new FileInfo(rptPath + @"\arma2oaserver.rpt");
 
-                var date = source.CreationTime.ToString("yyyy-MM-dd");
+                var date = source.CreationTime.ToString("yyyy-MM-dd-HH-mm");
 
                 File.Move(source.FullName, string.Format(@"{0}\server_{1}.rpt", rptArchive, date));
             }
