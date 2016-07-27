@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DayzWhitelistProPlus
+namespace Awakener
 {
     public partial class frmSettings : Form
     {

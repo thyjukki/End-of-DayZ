@@ -15,19 +15,19 @@ using BattleNET;
 using System.Diagnostics;
 using System.Net;
 
-namespace DayzWhitelistProPlus
+namespace Awakener
 {
     public partial class frmMain : Form
     {
         // Load rcon credentials
-        public static string ip       = Properties.Settings.Default.rconIP;
-        public static int port        = Properties.Settings.Default.rconPort;
+        public static string ip = Properties.Settings.Default.rconIP;
+        public static int port = Properties.Settings.Default.rconPort;
         public static string password = Properties.Settings.Default.rconPass;
 
         // Load database credentials
-        public static String dbHost     = Properties.Settings.Default.dbHost;
-        public static String dbUser     = Properties.Settings.Default.dbUser;
-        public static String dbPort     = Properties.Settings.Default.dbPort.ToString();
+        public static String dbHost = Properties.Settings.Default.dbHost;
+        public static String dbUser = Properties.Settings.Default.dbUser;
+        public static String dbPort = Properties.Settings.Default.dbPort.ToString();
         public static String dbDatabase = Properties.Settings.Default.dbDatabase;
         public static String dbPassword = Properties.Settings.Default.dbPass;
 
@@ -56,18 +56,20 @@ namespace DayzWhitelistProPlus
             }
         }
 
+        private bool autoConnect = false;
+
         /* Options: need loading from config file eventually */
         private static bool showChat = true;
-        private static bool showWelcomeMsg = true;
-        private static bool showStartupMsg = true;
+        private static bool showWelcomeMsg = false;
+        private static bool showStartupMsg = false;
         private static bool whiteListEnabled = true;
         private static bool addNewPlayersWhenDisabled = false;
         private static String serverURL = "http://uk8008.co.uk/";
-                
+
         delegate void DisconnectCallback(string text);
         delegate void DumpMessageCallback(string text);
         delegate void printLineInConsoleCallback(string text);
-        
+
         public frmMain()
         {
             InitializeComponent();
@@ -94,6 +96,15 @@ namespace DayzWhitelistProPlus
                 Properties.Settings.Default.firstTimeOpening = false;
                 Properties.Settings.Default.Save();
             }
+
+            this.FormClosing += FrmMain_FormClosing;
+        }
+
+        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            keepAliveTimer.Stop();
+            mainRebootTimer.Stop();
+            triggeredRebootTimer.Stop();
         }
 
         /* DISCONNECT EVENT */
@@ -112,15 +123,18 @@ namespace DayzWhitelistProPlus
             }
             else
             {
-                this.rtbDisplay.AppendText(msg + "\n", Color.Gray);
+                AppendTextEx(msg + "\n", Color.Gray);
 
                 mnuConnect.Enabled = true;
-                mnuConnect.Text = "Stop";
-                mainRebootTimer.Stop();
-                mainRebootTimer = new Timer();
-                mainRebootTimer.Tick += new EventHandler(tryConnecting);
-                mainRebootTimer.Interval = 10000; // in miliseconds
-                mainRebootTimer.Start();
+                if (autoConnect)
+                {
+                    mnuConnect.Text = "Stop";
+                    mainRebootTimer.Stop();
+                    mainRebootTimer = new Timer();
+                    mainRebootTimer.Tick += new EventHandler(tryConnecting);
+                    mainRebootTimer.Interval = 10000; // in miliseconds
+                    mainRebootTimer.Start();
+                }
             }
         }
 
@@ -144,7 +158,7 @@ namespace DayzWhitelistProPlus
                 // Show chat messages if enabled
                 if (showChat == true)
                 {
-                    this.rtbDisplay.AppendText(msg, bgcolor);
+                    AppendTextEx(msg, bgcolor);
                 }
 
                 try
@@ -198,11 +212,11 @@ namespace DayzWhitelistProPlus
                 }
 
             }
-            
+
         }
 
         /* BATTLEYE FUNCTIONS */
-        
+
         // Sends an empty packet to keep the connection alive
         private void sendKeepAlivePacket(object sender, EventArgs e)
         {
@@ -259,15 +273,15 @@ namespace DayzWhitelistProPlus
                 b.SendCommand(BattlEyeCommand.Say, string.Format("-1 Welcome: {0}", client.UserName));
             }
 
-            this.rtbDisplay.AppendText(string.Format(" Verified Player {0}: {1} - {2}\n", client.playerNo.ToString(), client.GUID.ToString(), client.UserName.ToString()));
+            AppendTextEx(string.Format(" Verified Player {0}: {1} - {2}\n", client.playerNo.ToString(), client.GUID.ToString(), client.UserName.ToString()));
         }
-       
+
         private void KickPlayer(DayzClient client)
         {
             if (whiteListEnabled == true)
             {
                 b.SendCommand(BattlEyeCommand.Kick, string.Format(@"{0} not whitelisted! Signup @ {1}", client.playerNo.ToString(), serverURL));
-                this.rtbDisplay.AppendText(string.Format(" Kicked Player {0} : {1} - {2}\n", client.playerNo.ToString(), client.GUID.ToString(), client.UserName.ToString()));
+                AppendTextEx(string.Format(" Kicked Player {0} : {1} - {2}\n", client.playerNo.ToString(), client.GUID.ToString(), client.UserName.ToString()));
             }
             else if (addNewPlayersWhenDisabled == true)
             {
@@ -300,7 +314,7 @@ namespace DayzWhitelistProPlus
             }
             catch (Exception ex)
             {
-                this.rtbDisplay.AppendText(ex.ToString());
+                AppendTextEx(ex.ToString());
             }
             finally
             {
@@ -308,7 +322,7 @@ namespace DayzWhitelistProPlus
                 conn = null;
                 cmd = null;
             }
-            this.rtbDisplay.AppendText(string.Format(" Added Player to whitelist {0} : {1} - {2}\n", client.playerNo.ToString(), client.GUID.ToString(), client.UserName.ToString()));
+            AppendTextEx(string.Format(" Added Player to whitelist {0} : {1} - {2}\n", client.playerNo.ToString(), client.GUID.ToString(), client.UserName.ToString()));
         }
 
         public void removePlayer(DayzClient client)
@@ -328,14 +342,14 @@ namespace DayzWhitelistProPlus
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "proc_SetWhitelistedStatus";
 
-                cmd.Parameters.Add(new MySqlParameter("p_GUID", client.GUID)); 
+                cmd.Parameters.Add(new MySqlParameter("p_GUID", client.GUID));
                 cmd.Parameters.Add(new MySqlParameter("p_whitelisted", 0));
 
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                this.rtbDisplay.AppendText(ex.ToString());
+                AppendTextEx(ex.ToString());
             }
             finally
             {
@@ -343,7 +357,7 @@ namespace DayzWhitelistProPlus
                 conn = null;
                 cmd = null;
             }
-            this.rtbDisplay.AppendText(string.Format(" Removed Player from whitelist - {0}\n", client.GUID.ToString()));
+            AppendTextEx(string.Format(" Removed Player from whitelist - {0}\n", client.GUID.ToString()));
         }
 
         private void LogPlayer(DayzClient client)
@@ -371,7 +385,7 @@ namespace DayzWhitelistProPlus
             }
             catch (Exception ex)
             {
-                this.rtbDisplay.AppendText(ex.ToString());
+                AppendTextEx(ex.ToString());
             }
             finally
             {
@@ -414,13 +428,13 @@ namespace DayzWhitelistProPlus
             {
                 whiteListEnabled = true;
                 mnuWhitelistActiveChange.Text = "Turn Whitelist Off";
-                this.rtbDisplay.AppendText("Whitelist turned on.", Color.White);
+                AppendTextEx("Whitelist turned on.", Color.White);
             }
             else
             {
                 whiteListEnabled = false;
                 mnuWhitelistActiveChange.Text = "Turn Whitelist On";
-                this.rtbDisplay.AppendText("Whitelist turned off.", Color.White);
+                AppendTextEx("Whitelist turned off.", Color.White);
             }
         }
         // Turning welcome message On/Off
@@ -430,13 +444,13 @@ namespace DayzWhitelistProPlus
             {
                 showWelcomeMsg = true;
                 mnuWelcomeChange.Text = "Turn Welcome Off";
-                this.rtbDisplay.AppendText("Welcome turned on.", Color.White);
+                AppendTextEx("Welcome turned on.", Color.White);
             }
             else
             {
                 showWelcomeMsg = false;
                 mnuWelcomeChange.Text = "Turn Welcome On";
-                this.rtbDisplay.AppendText("Welcome turned off.", Color.White);
+                AppendTextEx("Welcome turned off.", Color.White);
             }
         }
         // Turning chat display On/Off
@@ -446,13 +460,29 @@ namespace DayzWhitelistProPlus
             {
                 showChat = true;
                 mnuChatChange.Text = "Turn Chat Off";
-                this.rtbDisplay.AppendText("Chat turned on.", Color.White);
+                AppendTextEx("Chat turned on.", Color.White);
             }
             else
             {
                 showChat = false;
                 mnuChatChange.Text = "Turn Chat On";
-                this.rtbDisplay.AppendText("Chat turned off.", Color.White);
+                AppendTextEx("Chat turned off.", Color.White);
+            }
+        }
+        // Turning chat display On/Off
+        private void mnuAutoConnect_Click(object sender, EventArgs e)
+        {
+            if (autoConnect == false)
+            {
+                autoConnect = true;
+                mnuChatChange.Text = "Turn Auto Connect Off";
+                AppendTextEx("Auto Connect turned on.", Color.White);
+            }
+            else
+            {
+                autoConnect = false;
+                mnuChatChange.Text = "Turn Auto Connect On";
+                AppendTextEx("Auto Connect turned off.", Color.White);
             }
         }
         // Whether or not to add new players to whitelist when the whitelist is disabled
@@ -462,13 +492,13 @@ namespace DayzWhitelistProPlus
             {
                 addNewPlayersWhenDisabled = true;
                 mnuAddNewPlayersChange.Text = "Don't add new players when whitelist is diabled";
-                this.rtbDisplay.AppendText("New players will be automatically added to whitelist.", Color.White);
+                AppendTextEx("New players will be automatically added to whitelist.", Color.White);
             }
             else
             {
                 addNewPlayersWhenDisabled = false;
                 mnuAddNewPlayersChange.Text = "Add new players when whitelist is diabled";
-                this.rtbDisplay.AppendText("New players will NOT be automatically added to whitelist.", Color.White);
+                AppendTextEx("New players will NOT be automatically added to whitelist.", Color.White);
             }
         }
 
@@ -496,7 +526,7 @@ namespace DayzWhitelistProPlus
         private void mnuConnect_Click(object sender, EventArgs e)
         {
             if (isConnected == false)
-            {   
+            {
                 if (mnuConnect.Text == "Stop")
                 {
                     mnuConnect.Text = "Connect";
@@ -518,7 +548,7 @@ namespace DayzWhitelistProPlus
                 BattlEyeLoginCredentials logcred = new BattlEyeLoginCredentials { Host = IPAddress.Parse(ip), Password = password, Port = Convert.ToInt32(port) };
                 b = new BattlEyeClient(logcred);
 
-                rtbDisplay.AppendText("\n Trying to connect...\n");
+                AppendTextEx("\n Trying to connect...\n");
 
                 // make the connection
                 b.BattlEyeMessageReceived += DumpMessage;
@@ -535,7 +565,7 @@ namespace DayzWhitelistProPlus
                     keepAliveTimer.Interval = 30000; // in miliseconds
                     b.SendCommand("");
                     keepAliveTimer.Start();
-                    
+
                     mainRebootTimer.Stop();
                     mainRebootTimer = new Timer();
                     mainRebootTimer.Tick += new EventHandler(restartTimerTick);
@@ -563,8 +593,9 @@ namespace DayzWhitelistProPlus
                             }
                         }
                     }
-                    
+
                     Console.WriteLine(string.Format("Next restart is in {0}", nextRestart));
+                    AppendTextEx(string.Format("Next restart is in {0}", nextRestart));
                 }
             }
         }
@@ -701,7 +732,7 @@ namespace DayzWhitelistProPlus
                 mainRebootTimer.Interval = 1000; // in miliseconds
                 mainRebootTimer.Start();
                 Console.WriteLine("Begin starting the server");
-                this.rtbDisplay.AppendText("\nBegin starting the server", Color.Gray);
+                AppendTextEx("\nBegin starting the server", Color.Gray);
             }
         }
 
@@ -711,7 +742,7 @@ namespace DayzWhitelistProPlus
             {
 
                 Console.WriteLine("Initializing database");
-                this.rtbDisplay.AppendText("\nInitializing database", Color.Gray);
+                AppendTextEx("\nInitializing database", Color.Gray);
                 string connStr = string.Format("server={0};user={1};database={2};port={3};password={4};", dbHost, dbUser, dbDatabase, dbPort, dbPassword);
 
                 MySqlConnection conn = new MySqlConnection(connStr);
@@ -754,7 +785,7 @@ namespace DayzWhitelistProPlus
             if (isConnected == false)
             {
                 mainRebootTimer.Stop();
-                this.rtbDisplay.AppendText("\nServer starting", Color.Gray);
+                AppendTextEx("\nServer starting", Color.Gray);
                 Process.Start(Arma2ServerPath, CommandLineOptions);
 
 
@@ -764,39 +795,28 @@ namespace DayzWhitelistProPlus
                 mainRebootTimer.Start();
             }
         }
-    }
 
-    public class DayzClient
-    {
-        public string GUID { get; set; }
-        public string IP { get; set; }
-        public string UserName { get; set; }
-        public string message { get; set; }
-        public string email { get; set; }
-        public int playerNo { get; set; }
 
-        public LogTypes logType { get; set; }
-
-        public enum LogTypes
+        public void AppendTextEx(string text)
         {
-            Success = 1,
-            Kick = 2
+            AppendTextEx(text, Color.White);
+        }
+
+        public void AppendTextEx(string text, Color color)
+        {
+            if (InvokeRequired)
+            {
+                Invoke((MethodInvoker)delegate { AppendTextEx(text, color); });
+                return;
+            }
+            rtbDisplay.SelectionStart = rtbDisplay.TextLength;
+            rtbDisplay.SelectionLength = 0;
+
+            rtbDisplay.SelectionColor = color;
+            rtbDisplay.AppendText(" " + text + "\n");
+            rtbDisplay.SelectionColor = rtbDisplay.ForeColor;
+            rtbDisplay.SelectionStart = rtbDisplay.Text.Length;
+            rtbDisplay.ScrollToCaret();
         }
     }
-
-    public static class RichTextBoxExtensions
-    {
-        public static void AppendText(this RichTextBox box, string text, Color color)
-        {
-            box.SelectionStart = box.TextLength;
-            box.SelectionLength = 0;
-
-            box.SelectionColor = color;
-            box.AppendText(" " + text + "\n");
-            box.SelectionColor = box.ForeColor;
-            box.SelectionStart = box.Text.Length;
-            box.ScrollToCaret();
-        }
-    }
-
 }

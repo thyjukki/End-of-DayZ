@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2012 for Windows Desktop
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayzWhitelistProPlus", "DayzWhitelistProPlus\DayzWhitelistProPlus.csproj", "{BAAF6C4E-3229-4998-878D-0AEC50E3B2AF}"
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Awakener", "DayzWhitelistProPlus\Awakener.csproj", "{BAAF6C4E-3229-4998-878D-0AEC50E3B2AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

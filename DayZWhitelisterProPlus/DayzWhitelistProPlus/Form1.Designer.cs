@@ -1,4 +1,4 @@
-﻿namespace DayzWhitelistProPlus
+﻿namespace Awakener
 {
     partial class frmMain
     {
@@ -32,6 +32,7 @@
             this.rtbDisplay = new System.Windows.Forms.RichTextBox();
             this.mnuMain = new System.Windows.Forms.MenuStrip();
             this.mnuConnect = new System.Windows.Forms.ToolStripMenuItem();
+            this.startServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addRemoveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAddGUID = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuRemoveGUID = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +47,7 @@
             this.mnuChatChange = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAddNewPlayersChange = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.startServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.turnAutoConnectOnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,6 +89,13 @@
             this.mnuConnect.Size = new System.Drawing.Size(64, 20);
             this.mnuConnect.Text = "Connect";
             this.mnuConnect.Click += new System.EventHandler(this.mnuConnect_Click);
+            // 
+            // startServerToolStripMenuItem
+            // 
+            this.startServerToolStripMenuItem.Name = "startServerToolStripMenuItem";
+            this.startServerToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.startServerToolStripMenuItem.Text = "Start Server";
+            this.startServerToolStripMenuItem.Click += new System.EventHandler(this.beginServerStartup);
             // 
             // addRemoveToolStripMenuItem
             // 
@@ -157,7 +165,8 @@
             this.mnuWhitelistActiveChange,
             this.mnuWelcomeChange,
             this.mnuChatChange,
-            this.mnuAddNewPlayersChange});
+            this.mnuAddNewPlayersChange,
+            this.turnAutoConnectOnToolStripMenuItem});
             this.actionsToolStripMenuItem.Name = "actionsToolStripMenuItem";
             this.actionsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.actionsToolStripMenuItem.Text = "Actions";
@@ -197,12 +206,12 @@
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.mnuShowSettings);
             // 
-            // startServerToolStripMenuItem
+            // turnAutoConnectOnToolStripMenuItem
             // 
-            this.startServerToolStripMenuItem.Name = "startServerToolStripMenuItem";
-            this.startServerToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
-            this.startServerToolStripMenuItem.Text = "Start Server";
-            this.startServerToolStripMenuItem.Click += new System.EventHandler(this.beginServerStartup);
+            this.turnAutoConnectOnToolStripMenuItem.Name = "turnAutoConnectOnToolStripMenuItem";
+            this.turnAutoConnectOnToolStripMenuItem.Size = new System.Drawing.Size(293, 22);
+            this.turnAutoConnectOnToolStripMenuItem.Text = "Turn Auto Connect Off";
+            this.turnAutoConnectOnToolStripMenuItem.Click += new System.EventHandler(this.mnuAutoConnect_Click);
             // 
             // frmMain
             // 
@@ -214,7 +223,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnuMain;
             this.Name = "frmMain";
-            this.Text = "DayzWhitelistProPlus";
+            this.Text = "Awakener";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.mnuMain.ResumeLayout(false);
             this.mnuMain.PerformLayout();
@@ -243,6 +252,7 @@
         private System.Windows.Forms.ToolStripMenuItem minutesToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem instantToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem startServerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem turnAutoConnectOnToolStripMenuItem;
     }
 }
 

@@ -1,4 +1,4 @@
-﻿namespace DayzWhitelistProPlus.Properties {
+﻿namespace Awakener.Properties {
     
     
     // This class allows you to handle specific events on the settings class:

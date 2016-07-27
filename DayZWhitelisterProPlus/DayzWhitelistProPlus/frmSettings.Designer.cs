@@ -1,4 +1,4 @@
-﻿namespace DayzWhitelistProPlus
+﻿namespace Awakener
 {
     partial class frmSettings
     {
