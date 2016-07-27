@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using BattleNET;
 using System.Diagnostics;
 using System.Net;
+using System.IO;
 
 namespace Awakener
 {
@@ -31,7 +32,10 @@ namespace Awakener
         public static String dbDatabase = Properties.Settings.Default.dbDatabase;
         public static String dbPassword = Properties.Settings.Default.dbPass;
 
-        public static string Arma2ServerPath = @"C:\arma2\arma2oaserver.exe";
+        public static string armaPath = @"C:\arma2";
+        public static string rptPath = armaPath + @"\cfgdayz";
+        public static string rptArchive = @"c:\logs";
+        public static string Arma2ServerPath = armaPath + @"\arma2oaserver.exe";
         public static string CommandLineOptions = @"-config=cfgdayz\server.cfg -cfg=cfgdayz\basic.cfg -profiles=C:\arma2\cfgdayz -name=cfgdayz -mod=@DayZAwaken;@hive;@Arma2NET;";
 
         static BattlEyeClient b;
@@ -726,6 +730,7 @@ namespace Awakener
         {
             if (isConnected == false)
             {
+                BackupLogs();
                 mainRebootTimer.Stop();
                 mainRebootTimer = new Timer();
                 mainRebootTimer.Tick += new EventHandler(initDatabase);
@@ -817,6 +822,24 @@ namespace Awakener
             rtbDisplay.SelectionColor = rtbDisplay.ForeColor;
             rtbDisplay.SelectionStart = rtbDisplay.Text.Length;
             rtbDisplay.ScrollToCaret();
+        }
+
+
+
+        public void BackupLogs()
+        {
+            try
+            {
+                var source = new FileInfo(rptPath + @"\arma2oaserver.rpt");
+
+                var date = source.CreationTime.ToString("yyyy-MM-dd");
+
+                File.Move(source.FullName, string.Format(@"{0}\server_{1}.rpt", rptArchive, date));
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }
