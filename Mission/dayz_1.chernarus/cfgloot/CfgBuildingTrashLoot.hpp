@@ -1,4 +1,4 @@
-czTrash[] = {
+Trash[] = {
 //trash
 	{"ItemSodaLirikEmpty",0.03},
 	{"ItemSodaPeppsyEmpty",0.03},
