@@ -68,7 +68,7 @@ namespace Awakener
         private static bool showStartupMsg = false;
         private static bool whiteListEnabled = true;
         private static bool addNewPlayersWhenDisabled = false;
-        private static String serverURL = "http://uk8008.co.uk/";
+        private static String serverURL = "http://dayzawaken.com/";
 
         delegate void DisconnectCallback(string text);
         delegate void DumpMessageCallback(string text);
