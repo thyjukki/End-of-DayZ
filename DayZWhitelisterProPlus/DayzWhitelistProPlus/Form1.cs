@@ -929,6 +929,7 @@ namespace Awakener
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
+                    MessageBox.Show(ex.ToString());
                 }
                 finally
                 {
