@@ -584,6 +584,7 @@ namespace Awakener
                     b.SendCommand("");
                     keepAliveTimer.Start();
 
+                    playerCheckTimer.Stop();
                     playerCheckTimer = new Timer();
                     playerCheckTimer.Tick += new EventHandler(checkPlayersWhitelist);
                     playerCheckTimer.Interval = 300000; // in miliseconds
