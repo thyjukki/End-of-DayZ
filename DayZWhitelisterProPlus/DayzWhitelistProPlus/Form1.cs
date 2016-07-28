@@ -247,7 +247,7 @@ namespace Awakener
         {
             bool returnVal = false;
 
-            string connStr = string.Format("server={0};user={1};database={2};port={3};password={4};", dbHost, dbUser, dbDatabase, dbPort, dbPassword);
+            string connStr = string.Format("server={0};user={1};database={2};port={3};password={4};", dbHost, dbUser, "whitelist", dbPort, dbPassword);
 
             MySqlConnection conn = new MySqlConnection(connStr);
             MySqlCommand cmd = new MySqlCommand();
