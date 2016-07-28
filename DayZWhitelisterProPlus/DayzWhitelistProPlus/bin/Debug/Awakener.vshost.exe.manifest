@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Awakener.exe" size="204288">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Awakener.exe" size="206848">
       <assemblyIdentity name="Awakener" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5zPC2IMIRMq1GdBNAiaGr6c8RcuNLImDCu8FIMmzUFM=</dsig:DigestValue>
+        <dsig:DigestValue>drSHhjWWyXdVpKxvsFmISham6RfV8bPH9jmBj8/Zxrg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

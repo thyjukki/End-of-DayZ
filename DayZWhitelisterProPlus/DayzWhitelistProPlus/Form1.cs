@@ -43,6 +43,9 @@ namespace Awakener
         private Timer keepAliveTimer;
         private Timer mainRebootTimer;
         private Timer triggeredRebootTimer;
+        private Timer playerCheckTimer;
+
+        private Dictionary<int, string> received = new Dictionary<int, string>();
         Color bgcolor;
 
         private List<int> restartTimes;
@@ -81,6 +84,7 @@ namespace Awakener
             keepAliveTimer = new Timer();
             mainRebootTimer = new Timer();
             triggeredRebootTimer = new Timer();
+            playerCheckTimer = new Timer();
 
             restartTimes = new List<int>();
             restartTimes.Add(0);
@@ -145,6 +149,11 @@ namespace Awakener
         /* DUMP MESSAGE EVENT */
         private void DumpMessage(BattlEyeMessageEventArgs args)
         {
+            // Logging received packet
+            if (!received.ContainsKey(args.Id))
+            {
+                received.Add(args.Id, args.Message);
+            }
             doDumpMessage(args.Message);
         }
 
@@ -216,7 +225,7 @@ namespace Awakener
                 {
                     Console.WriteLine("error ");
                     Console.Write(e.Message);
-                    AppendTextEx(e.Message, Color.Red);
+                    AppendTextEx("WARNINGWARNINGWARNING!!!!!!!!!! CONTACT JUKKI WHITELIST CHECK POTENTIALY BROKEN\n" + e.Message, Color.Red);
                     // do nothing
                 }
 
@@ -575,6 +584,17 @@ namespace Awakener
                     b.SendCommand("");
                     keepAliveTimer.Start();
 
+                    playerCheckTimer = new Timer();
+                    playerCheckTimer.Tick += new EventHandler(checkPlayersWhitelist);
+                    playerCheckTimer.Interval = 300000; // in miliseconds
+                    playerCheckTimer.Start();
+                    new System.Threading.Thread(() =>
+                    {
+                        System.Threading.Thread.CurrentThread.IsBackground = true;
+                        /* run your code here */
+                        checkPlayersWhitelist(null, null);
+                    }).Start();
+
                     mainRebootTimer.Stop();
                     mainRebootTimer = new Timer();
                     mainRebootTimer.Tick += new EventHandler(restartTimerTick);
@@ -605,6 +625,142 @@ namespace Awakener
 
                     Console.WriteLine(string.Format("Next restart is in {0}", nextRestart));
                     AppendTextEx(string.Format("Next restart is in {0}", nextRestart));
+                }
+            }
+        }
+        private string GetResponse(int id)
+        {
+            // Polling for response
+            if (received.ContainsKey(id))
+            {
+                string response = received[id];
+                response.Remove(id);
+
+                return response;
+            }
+            else
+                return null;
+        }
+        //This code is from DaRT
+        private void checkPlayersWhitelist(object sender, EventArgs e)
+        {
+            List<DayzClient> players = new List<DayzClient>();
+
+            int id = b.SendCommand(BattlEyeCommand.Players);
+
+            string response;
+            int ticks = 0;
+            
+            while ((response = GetResponse(id)) == null && ticks < 1000)
+            {
+                System.Threading.Thread.Sleep(10);
+                ticks++;
+            }
+
+            if (response == null)
+            {
+                AppendTextEx("Player request timed out.", Color.Red);
+                return;
+            }
+
+            using (StringReader reader = new StringReader(response))
+            {
+                string line;
+                int row = 0;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    row++;
+                    if (row > 3 && !line.StartsWith("(") && line.Length > 0)
+                    {
+                        String[] items = line.Split(new char[] { ' ' }, 5, StringSplitOptions.RemoveEmptyEntries);
+
+                        if (items.Length == 5)
+                        {
+                            int number = Int32.Parse(items[0]);
+                            String ip = items[1].Split(':')[0];
+                            String ping = items[2];
+                            String guid = items[3].Replace("(OK)", "").Replace("(?)", "");
+                            String name = items[4];
+                            String status = "Unknown";
+
+                            if (guid.Length == 32)
+                            {
+                                if (guid == "-")
+                                {
+                                    status = "Initializing";
+                                }
+
+                                if (name.EndsWith(" (Lobby)"))
+                                {
+                                    name = name.Replace(" (Lobby)", "");
+                                    status = "Lobby";
+                                }
+                                else
+                                    status = "Ingame";
+
+                                if (status != "Initializing")
+                                {
+                                    var client = new DayzClient();
+                                    client.playerNo = number;
+                                    client.IP = ip;
+                                    client.GUID = guid;
+                                    client.UserName = name;
+                                    players.Add(client);
+                                }
+                            }
+                            else
+                            {
+                                // Received malformed player list
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            // Received malformed player list
+                            break;
+                        }
+                    }
+                }
+
+                foreach (var client in players)
+                {
+                    try
+                    {
+                        //Console.WriteLine(string.Format("Succes {0}", client.GUID, client.playerNo, client.UserName));
+                        // did we get a valid result? verify
+                        if (client.GUID != null && client.UserName != null)
+                        {
+                            if (VerifyWhiteList(client) == false)
+                            {
+
+                                // user is not white listed kick and send message
+                                KickPlayer(client);
+                                //addPlayer(client);
+
+                                // log event
+                                client.logType = DayzClient.LogTypes.Kick;
+                                LogPlayer(client);
+                            }
+                            else
+                            {
+                                // display welcome message
+                                WelcomeMessage(client);
+
+                                // log event;
+                                client.logType = DayzClient.LogTypes.Success;
+                                LogPlayer(client);
+                            }
+                        }
+
+                        //Console.WriteLine(matchString.Groups["player_id"].Value + "*" + matchString.Groups["guid"].Value + "*" + matchString.Groups["user"].Value);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("error ");
+                        Console.Write(ex.Message);
+                        AppendTextEx("WARNINGWARNINGWARNING!!!!!!!!!! CONTACT JUKKI WHITELIST CHECK POTENTIALY BROKEN\n" + ex.Message, Color.Red);
+                        // do nothing
+                    }
                 }
             }
         }
