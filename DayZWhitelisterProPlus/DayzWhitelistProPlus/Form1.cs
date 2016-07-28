@@ -247,7 +247,7 @@ namespace Awakener
         {
             bool returnVal = false;
 
-            string connStr = string.Format("server={0};user={1};database={2};port={3};password={4};", dbHost, dbUser, "whitelist", dbPort, dbPassword);
+            string connStr = string.Format("server={0};user={1};database={2};port={3};password={4};", dbHost, dbUser, dbDatabase, dbPort, dbPassword);
 
             MySqlConnection conn = new MySqlConnection(connStr);
             MySqlCommand cmd = new MySqlCommand();
@@ -909,7 +909,7 @@ namespace Awakener
 
                 Console.WriteLine("Initializing database");
                 AppendTextEx("\nInitializing database", Color.Gray);
-                string connStr = string.Format("server={0};user={1};database={2};port={3};password={4};", dbHost, dbUser, dbDatabase, dbPort, dbPassword);
+                string connStr = string.Format("server={0};user={1};database={2};port={3};password={4};", dbHost, dbUser, "dayz_awaken1", dbPort, dbPassword);
 
                 MySqlConnection conn = new MySqlConnection(connStr);
                 MySqlCommand cmd = new MySqlCommand();
@@ -929,7 +929,6 @@ namespace Awakener
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
-                    MessageBox.Show(ex.ToString());
                 }
                 finally
                 {
