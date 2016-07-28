@@ -3,7 +3,7 @@
 //Add the insttance id  of this server 
 dayZ_instance = 1; // The instance
 //Tag info this is shown to all players in the bottom left hand side of the screen 
-dayZ_serverName = "Dayz Awaken"; // Servername (country code + server number)
+dayZ_serverName = "DA"; // Servername (country code + server number)
 
 
 //Gamesettings
@@ -25,7 +25,7 @@ dayz_DamageMultiplier = 1; //Damage Multiplier for Zombies.
 
 dayz_maxGlobalZeds = 500; //Limit the total zeds server wide.
 dayz_attackRange = 3; // attack range of zeds vehicles are * 2 of this number
-dayz_temperature_override = false; // Set to true to disable all temperature changes.
+dayz_temperature_override = true; // Set to true to disable all temperature changes.
 
 
 
@@ -112,4 +112,4 @@ if (!isDedicated) then {
 	endLoadingScreen;
 };
 
-[] execVM "custom\3rd.sqf"; //3rd person limit
+[] execVM "buildings\Jamestown.sqf";
