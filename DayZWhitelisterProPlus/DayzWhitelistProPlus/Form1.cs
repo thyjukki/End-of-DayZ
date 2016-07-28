@@ -168,11 +168,12 @@ namespace Awakener
                 try
                 {
                     Match matchString;
-
+                    Console.WriteLine("trying ");
                     // Grab the user data if it matches our regular expresion - Thanks to mmmmk for this Regex!
                     matchString = Regex.Match(msg, @"Player #(?<player_id>[0-9]{1,3})\s(?<user>.+) - GUID: (?<guid>.+)\W\D\S", RegexOptions.IgnoreCase);
                     if (matchString.Success)
                     {
+                        Console.WriteLine("succes ");
                         // new clien tobj
                         DayzClient client = new DayzClient();
 
@@ -180,6 +181,7 @@ namespace Awakener
                         client.playerNo = Convert.ToInt32(matchString.Groups["player_id"].Value);
                         client.UserName = matchString.Groups["user"].Value;
 
+                        Console.WriteLine(string.Format("Succes {0}", client.GUID, client.playerNo, client.UserName));
                         // did we get a valid result? verify
                         if (client.GUID != null && client.UserName != null)
                         {
@@ -210,8 +212,11 @@ namespace Awakener
                         //Console.WriteLine(matchString.Groups["player_id"].Value + "*" + matchString.Groups["guid"].Value + "*" + matchString.Groups["user"].Value);
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
+                    Console.WriteLine("error ");
+                    Console.Write(e.Message);
+                    AppendTextEx(e.Message, Color.Red);
                     // do nothing
                 }
 
