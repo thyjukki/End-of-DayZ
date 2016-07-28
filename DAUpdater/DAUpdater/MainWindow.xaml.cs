@@ -24,5 +24,25 @@ namespace DAUpdater
         {
             InitializeComponent();
         }
+
+
+
+        #region Buttons
+        private void settingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.Show();
+        }
+
+        private void checkFilesButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void launchButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        #endregion
     }
 }
