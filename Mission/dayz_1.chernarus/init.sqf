@@ -113,4 +113,4 @@ if (!isDedicated) then {
 };
 
 [] execVM "buildings\Jamestown.sqf";
-[] execVM "custom\reservedslot.sqf";
+//[] execVM "custom\reservedslot.sqf";
