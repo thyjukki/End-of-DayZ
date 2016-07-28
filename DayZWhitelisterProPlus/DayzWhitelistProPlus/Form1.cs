@@ -938,6 +938,8 @@ namespace Awakener
                     conn = null;
                     cmd = null;
                 }
+                if (mainRebootTimer == null)
+                    mainRebootTimer = new Timer();
                 mainRebootTimer.Stop();
                 mainRebootTimer = new Timer();
                 mainRebootTimer.Tick += new EventHandler(startServer);
