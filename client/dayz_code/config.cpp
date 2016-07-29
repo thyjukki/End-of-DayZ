@@ -17,7 +17,7 @@ class CfgMods {
 		hidePicture = 0;
 		hideName = 0;
 		action = "http://dayzawaken.com/";
-		version = "DayzAwaken 0.1";
+		version = "EndOfDayZ 1.1.2";
 		hiveVersion = 0.96;
 		requiredAddons[] = {"Chernarus"};
 	};
