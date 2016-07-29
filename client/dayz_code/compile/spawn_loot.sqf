@@ -69,6 +69,8 @@ switch (_iClass) do {
 		_max = ceil(random 2) + 1;
 		
 		while {_qty < _max} do {
+			
+			diag_log(format["%1 spawning from pool %2",__FILE__, _iClass]);
 			_index = dayz_CLBase find _iClass;
 			_weights = dayz_CLChances select _index;
 			_cntWeights = count _weights;
