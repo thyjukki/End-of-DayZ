@@ -377,8 +377,8 @@ namespace Awakener
 
 
                 string trim = msg.Remove(0, removeTo);
-                var name = msg.Split(':')[0].Trim();
-                var message = msg.Split(':')[1].Trim();
+                var name = trim.Split(':')[0].Trim();
+                var message = trim.Split(':')[1].Trim();
                 LogChatMessage(name, type, message);
                 return true;
 
