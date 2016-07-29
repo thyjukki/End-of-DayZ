@@ -861,19 +861,6 @@ namespace Awakener
             }
         }
 
-        public void updateSettings()
-        {
-            ip = Properties.Settings.Default.rconIP;
-            port = Properties.Settings.Default.rconPort;
-            password = Properties.Settings.Default.rconPass;
-
-            dbHost = Properties.Settings.Default.dbHost;
-            dbPort = Properties.Settings.Default.dbPort.ToString();
-            dbPassword = Properties.Settings.Default.dbPass;
-            dbDatabase = Properties.Settings.Default.dbDatabase;
-            dbUser = Properties.Settings.Default.dbUser;
-        }
-
         private void restartTimerTick(object sender, EventArgs e)
         {
             if (isConnected == true)

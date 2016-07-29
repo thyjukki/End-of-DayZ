@@ -59,8 +59,6 @@ namespace Awakener
 
             Properties.Settings.Default.Save();
 
-            parentForm.updateSettings();
-
             this.Close();
         }
     }

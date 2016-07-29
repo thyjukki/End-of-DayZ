@@ -313,7 +313,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(37, 33);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(62, 17);
+            this.label12.Size = new System.Drawing.Size(61, 17);
             this.label12.TabIndex = 10;
             this.label12.Text = "Welcome";
             // 
@@ -358,7 +358,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(757, 351);
+            this.ClientSize = new System.Drawing.Size(1233, 351);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnSaveSettings);
             this.Controls.Add(this.groupBox2);
