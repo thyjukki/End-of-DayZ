@@ -229,26 +229,14 @@ namespace Awakener.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("-config=cfgdayz\\server.cfg -malloc=tbb3malloc_bi -cfg=cfgdayz\\basic.cfg -profiles" +
+            "=C:\\arma2\\cfgdayz -name=cfgdayz -mod=@DayZAwaken;@hive;@Arma2NET;\"")]
         public string parameters {
             get {
                 return ((string)(this["parameters"]));
             }
             set {
                 this["parameters"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("-config=cfgdayz\\server.cfg -malloc=tbb3malloc_bi -cfg=cfgdayz\\basic.cfg -profiles" +
-            "=C:\\arma2\\cfgdayz -name=cfgdayz -mod=@DayZAwaken;@hive;@Arma2NET;\"")]
-        public string Setting {
-            get {
-                return ((string)(this["Setting"]));
-            }
-            set {
-                this["Setting"] = value;
             }
         }
     }

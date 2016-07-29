@@ -54,9 +54,6 @@
       <Value Profile="(Default)">c:\arma2\arma2oaserver.exe</Value>
     </Setting>
     <Setting Name="parameters" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="Setting" Type="System.String" Scope="User">
       <Value Profile="(Default)">-config=cfgdayz\server.cfg -malloc=tbb3malloc_bi -cfg=cfgdayz\basic.cfg -profiles=C:\arma2\cfgdayz -name=cfgdayz -mod=@DayZAwaken;@hive;@Arma2NET;"</Value>
     </Setting>
   </Settings>

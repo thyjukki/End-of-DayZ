@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>inXTOAFWfsYK0PvveiBk35m/xHpE2EdUeyTVKycFHb8=</dsig:DigestValue>
+        <dsig:DigestValue>TGz3MiTnXN3zjIlu5m6qOJQ0IJCArnAUcwcna6/BQPg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -78,13 +78,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Awakener.exe.config" size="5923">
+  <file name="Awakener.exe.config" size="5813">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>kLVNsdMpSYpfMHxHBemCyOyIc6kT6WpMtQcYVd5jbPY=</dsig:DigestValue>
+      <dsig:DigestValue>Nao5/24S9R/7pytA5Oq4CyDWUtE4R9+krfK7PhhjNes=</dsig:DigestValue>
     </hash>
   </file>
   <file name="be_whitelist.ico" size="32038">
