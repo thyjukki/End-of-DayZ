@@ -27,39 +27,39 @@ namespace Awakener
 
         // Load database credentials
         #region gameservr database
-        public static string dbHost
+        public static string gameDBHost
         {
             get
             {
-                return Properties.Settings.Default.dbHost;
+                return Properties.Settings.Default.gameDBHost;
             }
         }
-        public static string dbUser
+        public static string gameDBUser
         {
             get
             {
-                return Properties.Settings.Default.dbUser;
+                return Properties.Settings.Default.gameDBUser;
             }
         }
-        public static string dbPort
+        public static string gameDBPort
         {
             get
             {
-                return Properties.Settings.Default.dbPort.ToString();
+                return Properties.Settings.Default.gameDBPort.ToString();
             }
         }
-        public static string dbDatabase
+        public static string gameDBDatabase
         {
             get
             {
-                return Properties.Settings.Default.dbDatabase;
+                return Properties.Settings.Default.gameDBDatabase;
             }
         }
-        public static string dbPassword
+        public static string gameDBPassword
         {
             get
             {
-                return Properties.Settings.Default.dbPass;
+                return Properties.Settings.Default.gameDBPass;
             }
         }
         #endregion
@@ -167,6 +167,7 @@ namespace Awakener
         private static bool whiteListEnabled = true;
         private static bool addNewPlayersWhenDisabled = false;
         private static String serverURL = "http://dayzawaken.com/";
+        private List<int> sent = new List<int>();
 
         delegate void DisconnectCallback(string text);
         delegate void DumpMessageCallback(string text);
@@ -249,7 +250,10 @@ namespace Awakener
             {
                 received.Add(args.Id, args.Message);
             }
-            doDumpMessage(args.Message);
+            if (!sent.Contains(args.Id))
+            {
+                doDumpMessage(args.Message);
+            }
         }
 
         private void doDumpMessage(String msg)
@@ -267,6 +271,11 @@ namespace Awakener
                 if (showChat == true)
                 {
                     AppendTextEx(msg, bgcolor);
+                }
+
+                if (parseChatMessage(msg))
+                {
+                    return;
                 }
 
                 try
@@ -328,6 +337,94 @@ namespace Awakener
 
         }
 
+        private enum ChatType
+        {
+            Direct,
+            Vehicle,
+            Group,
+            Side
+        }
+
+        private bool parseChatMessage(string msg)
+        {
+            string text = msg.Substring(0, 5);
+
+            try
+            {
+                int removeTo = 0;
+                ChatType type;
+                switch (text)
+                {
+                    case "(Side":
+                        removeTo = 6;
+                        type = ChatType.Side;
+                        break;
+                    case "(Dire":
+                        removeTo = 8;
+                        type = ChatType.Direct;
+                        break;
+                    case "(Vehi":
+                        removeTo = 9;
+                        type = ChatType.Vehicle;
+                        break;
+                    case "(Grou":
+                        removeTo = 7;
+                        type = ChatType.Group;
+                        break;
+                    default:
+                        return false;
+                }
+
+
+                string trim = msg.Remove(0, removeTo);
+                var name = msg.Split(':')[0].Trim();
+                var message = msg.Split(':')[1].Trim();
+                LogChatMessage(name, type, message);
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                AppendTextEx(ex.ToString());
+            }
+
+            return false;
+        }
+
+        private void LogChatMessage(string name, ChatType side, string msg)
+        {
+            // call insert to log function
+            string connStr = string.Format("server={0};user={1};database={2};port={3};password={4};", gameDBHost, gameDBUser, gameDBDatabase, gameDBPort, gameDBPassword);
+
+            MySqlConnection conn = new MySqlConnection(connStr);
+            MySqlCommand cmd = new MySqlCommand();
+
+            try
+            {
+                conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "proc_AddChatLog";
+
+                cmd.Parameters.Add(new MySqlParameter("p_name", name));
+                cmd.Parameters.Add(new MySqlParameter("p_msg", msg));
+                cmd.Parameters.Add(new MySqlParameter("p_type", side.ToString("G")));
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                AppendTextEx(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+                conn = null;
+                cmd = null;
+            }
+
+        }
+
         /* BATTLEYE FUNCTIONS */
 
         // Sends an empty packet to keep the connection alive
@@ -342,7 +439,7 @@ namespace Awakener
         {
             bool returnVal = false;
 
-            string connStr = string.Format("server={0};user={1};database={2};port={3};password={4};", dbHost, dbUser, dbDatabase, dbPort, dbPassword);
+            string connStr = string.Format("server={0};user={1};database={2};port={3};password={4};", whitelistDBHost, whitelistDBUser, whitelistDBDatabase, whitelistDBPort, whitelistDBPassword);
 
             MySqlConnection conn = new MySqlConnection(connStr);
             MySqlCommand cmd = new MySqlCommand();
@@ -405,7 +502,7 @@ namespace Awakener
         public void addPlayer(DayzClient client)
         {
             // call insert to log function
-            string connStr = string.Format("server={0};user={1};database={2};port={3};password={4};", dbHost, dbUser, dbDatabase, dbPort, dbPassword);
+            string connStr = string.Format("server={0};user={1};database={2};port={3};password={4};", whitelistDBHost, whitelistDBUser, whitelistDBDatabase, whitelistDBPort, whitelistDBPassword);
 
             MySqlConnection conn = new MySqlConnection(connStr);
             MySqlCommand cmd = new MySqlCommand();
@@ -441,7 +538,7 @@ namespace Awakener
         public void removePlayer(DayzClient client)
         {
             // call insert to log function
-            string connStr = string.Format("server={0};user={1};database={2};port={3};password={4};", dbHost, dbUser, dbDatabase, dbPort, dbPassword);
+            string connStr = string.Format("server={0};user={1};database={2};port={3};password={4};", whitelistDBHost, whitelistDBUser, whitelistDBDatabase, whitelistDBPort, whitelistDBPassword);
 
             MySqlConnection conn = new MySqlConnection(connStr);
             MySqlCommand cmd = new MySqlCommand();
@@ -476,7 +573,7 @@ namespace Awakener
         private void LogPlayer(DayzClient client)
         {
             // call insert to log function
-            string connStr = string.Format("server={0};user={1};database={2};port={3};password={4};", dbHost, dbUser, dbDatabase, dbPort, dbPassword);
+            string connStr = string.Format("server={0};user={1};database={2};port={3};password={4};", whitelistDBHost, whitelistDBUser, whitelistDBDatabase, whitelistDBPort, whitelistDBPassword);
 
             MySqlConnection conn = new MySqlConnection(connStr);
             MySqlCommand cmd = new MySqlCommand();
@@ -672,6 +769,8 @@ namespace Awakener
                 if (b.Connected == true)
                 {
                     mnuConnect.Enabled = false;
+                    sent.Clear();
+                    received.Clear();
 
                     keepAliveTimer = new Timer();
                     keepAliveTimer.Tick += new EventHandler(sendKeepAlivePacket);
@@ -743,6 +842,8 @@ namespace Awakener
             List<DayzClient> players = new List<DayzClient>();
 
             int id = b.SendCommand(BattlEyeCommand.Players);
+
+            sent.Add(id);
 
             string response;
             int ticks = 0;
@@ -992,7 +1093,7 @@ namespace Awakener
 
                 Console.WriteLine("Initializing database");
                 AppendTextEx("\nInitializing database", Color.Gray);
-                string connStr = string.Format("server={0};user={1};database={2};port={3};password={4};", dbHost, dbUser, "dayz_awaken1", dbPort, dbPassword);
+                string connStr = string.Format("server={0};user={1};database={2};port={3};password={4};", gameDBHost, gameDBUser, gameDBDatabase, gameDBPort, gameDBPassword);
 
                 MySqlConnection conn = new MySqlConnection(connStr);
                 MySqlCommand cmd = new MySqlCommand();

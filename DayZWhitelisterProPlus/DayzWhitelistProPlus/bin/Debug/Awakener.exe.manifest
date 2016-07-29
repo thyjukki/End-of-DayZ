@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Awakener.exe" size="208896">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Awakener.exe" size="212480">
       <assemblyIdentity name="Awakener" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>s21cHdkMGD72UbFNweQ2kBlNZm41XhwjDvbCuqCkQis=</dsig:DigestValue>
+        <dsig:DigestValue>inXTOAFWfsYK0PvveiBk35m/xHpE2EdUeyTVKycFHb8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -78,13 +78,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Awakener.exe.config" size="5903">
+  <file name="Awakener.exe.config" size="5923">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>TmB68JnPL+TB1TCMLi6XGeRZ65WBqnzETGHd47B0Oek=</dsig:DigestValue>
+      <dsig:DigestValue>kLVNsdMpSYpfMHxHBemCyOyIc6kT6WpMtQcYVd5jbPY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="be_whitelist.ico" size="32038">

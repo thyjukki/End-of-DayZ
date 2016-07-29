@@ -26,12 +26,12 @@ namespace Awakener.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("3306")]
-        public int dbPort {
+        public int gameDBPort {
             get {
-                return ((int)(this["dbPort"]));
+                return ((int)(this["gameDBPort"]));
             }
             set {
-                this["dbPort"] = value;
+                this["gameDBPort"] = value;
             }
         }
         
@@ -62,48 +62,48 @@ namespace Awakener.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("127.0.0.1")]
-        public string dbHost {
+        public string gameDBHost {
             get {
-                return ((string)(this["dbHost"]));
+                return ((string)(this["gameDBHost"]));
             }
             set {
-                this["dbHost"] = value;
+                this["gameDBHost"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string dbPass {
+        public string gameDBPass {
             get {
-                return ((string)(this["dbPass"]));
+                return ((string)(this["gameDBPass"]));
             }
             set {
-                this["dbPass"] = value;
+                this["gameDBPass"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string dbDatabase {
+        public string gameDBDatabase {
             get {
-                return ((string)(this["dbDatabase"]));
+                return ((string)(this["gameDBDatabase"]));
             }
             set {
-                this["dbDatabase"] = value;
+                this["gameDBDatabase"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string dbUser {
+        public string gameDBUser {
             get {
-                return ((string)(this["dbUser"]));
+                return ((string)(this["gameDBUser"]));
             }
             set {
-                this["dbUser"] = value;
+                this["gameDBUser"] = value;
             }
         }
         
