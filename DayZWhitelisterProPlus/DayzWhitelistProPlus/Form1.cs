@@ -26,18 +26,113 @@ namespace Awakener
         public static string password = Properties.Settings.Default.rconPass;
 
         // Load database credentials
-        public static String dbHost = Properties.Settings.Default.dbHost;
-        public static String dbUser = Properties.Settings.Default.dbUser;
-        public static String dbPort = Properties.Settings.Default.dbPort.ToString();
-        public static String dbDatabase = Properties.Settings.Default.dbDatabase;
-        public static String dbPassword = Properties.Settings.Default.dbPass;
+        #region gameservr database
+        public static string dbHost
+        {
+            get
+            {
+                return Properties.Settings.Default.dbHost;
+            }
+        }
+        public static string dbUser
+        {
+            get
+            {
+                return Properties.Settings.Default.dbUser;
+            }
+        }
+        public static string dbPort
+        {
+            get
+            {
+                return Properties.Settings.Default.dbPort.ToString();
+            }
+        }
+        public static string dbDatabase
+        {
+            get
+            {
+                return Properties.Settings.Default.dbDatabase;
+            }
+        }
+        public static string dbPassword
+        {
+            get
+            {
+                return Properties.Settings.Default.dbPass;
+            }
+        }
+        #endregion
+        #region whitelist database
+        public static string whitelistDBHost
+        {
+            get
+            {
+                return Properties.Settings.Default.whitelistDBHost;
+            }
+        }
+        public static string whitelistDBUser
+        {
+            get
+            {
+                return Properties.Settings.Default.whitelistDBUser;
+            }
+        }
+        public static string whitelistDBPort
+        {
+            get
+            {
+                return Properties.Settings.Default.whitelistDBPort.ToString();
+            }
+        }
+        public static string whitelistDBDatabase
+        {
+            get
+            {
+                return Properties.Settings.Default.whitelistDBDatabase;
+            }
+        }
+        public static string whitelistDBPassword
+        {
+            get
+            {
+                return Properties.Settings.Default.whitelistDBPass;
+            }
+        }
+        #endregion
 
-        public static string armaPath = @"C:\arma2";
-        public static string rptPath = armaPath + @"\cfgdayz";
-        public static string rptArchive = @"c:\logs";
-        public static string Arma2ServerPath = armaPath + @"\arma2oaserver.exe";
-        public static string CommandLineOptions = @"-config=cfgdayz\server.cfg -malloc=tbb3malloc_bi -cfg=cfgdayz\basic.cfg -profiles=C:\arma2\cfgdayz -name=cfgdayz -mod=@DayZAwaken;@hive;@Arma2NET;";
+        #region gamesettings
+        public static string Arma2ServerPath
+        {
+            get
+            {
+                return Properties.Settings.Default.exePath;
+            }
+        }
+        public static string rptArchive
+        {
+            get
+            {
+                return Properties.Settings.Default.logDir;
+            }
+        }
+        public static string rptPath
+        {
+            get
+            {
+                return Properties.Settings.Default.rptPath;
+            }
+        }
 
+        public static string CommandLineOptions
+        {
+            get
+            {
+                return Properties.Settings.Default.parameters;
+            }
+        }
+        
+        #endregion
         static BattlEyeClient b;
 
         private Timer keepAliveTimer;

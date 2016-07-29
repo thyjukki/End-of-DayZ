@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DayzWhitelistProPlus.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Awakener.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="dbPort" Type="System.Int32" Scope="User">
@@ -28,6 +28,36 @@
     </Setting>
     <Setting Name="rconPass" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="whitelistDBHost" Type="System.String" Scope="User">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="whitelistDBPass" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="whitelistDBUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="whitelistDBDatabase" Type="System.String" Scope="User">
+      <Value Profile="(Default)">whitelist</Value>
+    </Setting>
+    <Setting Name="rptPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\arma2\cfgdayz\arma2oaserver.rpt</Value>
+    </Setting>
+    <Setting Name="logDir" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\logs</Value>
+    </Setting>
+    <Setting Name="whitelistDBPort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3306</Value>
+    </Setting>
+    <Setting Name="exePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\arma2\arma2oaserver.exe</Value>
+    </Setting>
+    <Setting Name="parameters" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Setting" Type="System.String" Scope="User">
+      <Value Profile="(Default)">-config=cfgdayz\server.cfg -malloc=tbb3malloc_bi -cfg=cfgdayz\basic.cfg -profiles=C:\arma2\cfgdayz -name=cfgdayz -mod=@DayZAwaken;@hive;@Arma2NET;"</Value>
     </Setting>
   </Settings>
 </SettingsFile>

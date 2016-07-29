@@ -1,5 +1,6 @@
 private ["_item","_itemTypes","_qty","_tQty","_uniq"];
 
+diag_log(format["%1 with %2",__FILE__, _this]);};
 _iItem = _this select 0;
 _iClass = _this select 1;
 _iPos = _this select 2;

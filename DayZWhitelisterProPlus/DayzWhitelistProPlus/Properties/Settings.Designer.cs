@@ -130,5 +130,126 @@ namespace Awakener.Properties {
                 this["rconPass"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("127.0.0.1")]
+        public string whitelistDBHost {
+            get {
+                return ((string)(this["whitelistDBHost"]));
+            }
+            set {
+                this["whitelistDBHost"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string whitelistDBPass {
+            get {
+                return ((string)(this["whitelistDBPass"]));
+            }
+            set {
+                this["whitelistDBPass"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string whitelistDBUser {
+            get {
+                return ((string)(this["whitelistDBUser"]));
+            }
+            set {
+                this["whitelistDBUser"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("whitelist")]
+        public string whitelistDBDatabase {
+            get {
+                return ((string)(this["whitelistDBDatabase"]));
+            }
+            set {
+                this["whitelistDBDatabase"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("c:\\arma2\\cfgdayz\\arma2oaserver.rpt")]
+        public string rptPath {
+            get {
+                return ((string)(this["rptPath"]));
+            }
+            set {
+                this["rptPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("c:\\logs")]
+        public string logDir {
+            get {
+                return ((string)(this["logDir"]));
+            }
+            set {
+                this["logDir"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3306")]
+        public int whitelistDBPort {
+            get {
+                return ((int)(this["whitelistDBPort"]));
+            }
+            set {
+                this["whitelistDBPort"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("c:\\arma2\\arma2oaserver.exe")]
+        public string exePath {
+            get {
+                return ((string)(this["exePath"]));
+            }
+            set {
+                this["exePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string parameters {
+            get {
+                return ((string)(this["parameters"]));
+            }
+            set {
+                this["parameters"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-config=cfgdayz\\server.cfg -malloc=tbb3malloc_bi -cfg=cfgdayz\\basic.cfg -profiles" +
+            "=C:\\arma2\\cfgdayz -name=cfgdayz -mod=@DayZAwaken;@hive;@Arma2NET;\"")]
+        public string Setting {
+            get {
+                return ((string)(this["Setting"]));
+            }
+            set {
+                this["Setting"] = value;
+            }
+        }
     }
 }
