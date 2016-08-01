@@ -6,12 +6,12 @@ class G36C_DZ : G36C
 	
 	magazines[] =
 	{
-		"545x39_x1",
-		"545x39_SD_x1",
-		"545x39_HP_x1",
-		"545x39_TRACER_x1",
-		"545x39_RUBBER_x1",
-		"545x39_BT_x1",
+		"556x45_x1",
+		"556x45_SD_x1",
+		"556x45_HP_x1",
+		"556x45_TRACER_x1",
+		"556x45_RUBBER_x1",
+		"556x45_BT_x1",
 		"30Rnd_556x45_G36",
 		"30Rnd_556x45_G36SD",
 		"30Rnd_556x45_G36_hp",
@@ -51,12 +51,12 @@ class G36C_SD_DZ : G36_C_SD_eotech
 	
 	magazines[] =
 	{
-		"545x39_x1",
-		"545x39_SD_x1",
-		"545x39_HP_x1",
-		"545x39_TRACER_x1",
-		"545x39_RUBBER_x1",
-		"545x39_BT_x1",
+		"556x45_x1",
+		"556x45_SD_x1",
+		"556x45_HP_x1",
+		"556x45_TRACER_x1",
+		"556x45_RUBBER_x1",
+		"556x45_BT_x1",
 		"30Rnd_556x45_G36",
 		"30Rnd_556x45_G36SD",
 		"30Rnd_556x45_G36_hp",
