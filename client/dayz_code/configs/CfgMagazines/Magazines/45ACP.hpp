@@ -114,7 +114,7 @@ class RH_8Rnd_45cal_m1911_Empty: emptiedMagazine
 class RH_8Rnd_45cal_m1911: CA_Magazine
 {
 	scope=2;
-	displayName="M1911 Nag";
+	displayName="M1911 Mag";
 	picture="\RH_de\inv\m_colt.paa";
 	model="\RH_de\mags\mag_kim.p3d";
 	description = "Caliber: .45 ACP<br/>Rounds: 8<br/>Used in: M1911";
