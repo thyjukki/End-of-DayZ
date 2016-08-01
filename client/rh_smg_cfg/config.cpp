@@ -2310,7 +2310,7 @@ class cfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Aimpoint";
-				att = "Attachment_CCO";
+				att = "Attachment_Holo";
 				out = "RH_P90i";
 			};
 			class UseAtt1 : UseAtt{
@@ -2332,7 +2332,7 @@ class cfgWeapons
 			class UseAtt{
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
-				text = "Detach Aimpoint";
+				text = "Detach Holo";
 				att = "Attachment_CCO";
 				out = "RH_P90i";
 			};
