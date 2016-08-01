@@ -692,7 +692,7 @@ class CfgBuildingLoot {
 			{"G36C_CCO_DZ",					"weapon",4.00},
 			{"G36C_Holo_DZ",				"weapon",4.00},
 			{"G36C_SD_DZ",					"weapon",0.30},
-			{"G36K_Camo_DZ",				"weapon",5.50},
+			{"G36K_Camo_DZ",				"weapon",3.50},
 			{"G36K_Camo_SD_DZ",				"weapon",0.30},
 			{"RH_m4m",						"weapon",5.50},
 			{"RH_m4sbr",					"weapon",5.50},
@@ -911,6 +911,7 @@ class CfgBuildingLoot {
 			{"Attachment_M203",				"magazine",1.05},
 			{"Attachment_ACOG",				"magazine",0.50},
 			{"Attachment_SCOPED",			"magazine",0.20},
+			//{"Attachment_Sup308",			"magazine",0.02},
 		//bags
 			{"DZ_CivilBackpack_EP1",		"object",0.55}, // 24
 			{"DZ_Backpack_EP1",				"object",0.55}, // 24
@@ -1287,6 +1288,13 @@ class CfgBuildingLoot {
 			{"RH_bull",						"weapon",0.02},
 			{"RH_python",					"weapon",0.01},
 			{"RH_aps",						"weapon",0.01},
+			{"RH_p226",						"weapon",0.01},
+			{"RH_p226s",					"weapon",0.01},
+			{"RH_usp",						"weapon",0.01},
+			{"RH_uspm",						"weapon",0.01},
+			{"RH_g17",						"weapon",0.01},
+			{"RH_g18",						"weapon",0.01},
+			{"RH_g19",						"weapon",0.01},
 		//Stanag rifles
 		//AK rifles
 			{"RH_ak47",						"weapon",0.12},
@@ -1504,6 +1512,13 @@ class CfgBuildingLoot {
 			{"RH_anac",						"weapon",0.02},
 			{"RH_bull",						"weapon",0.02},
 			{"RH_python",					"weapon",0.01},
+			{"RH_p226",						"weapon",0.01},
+			{"RH_p226s",					"weapon",0.01},
+			{"RH_usp",						"weapon",0.01},
+			{"RH_uspm",						"weapon",0.01},
+			{"RH_g17",						"weapon",0.01},
+			{"RH_g18",						"weapon",0.01},
+			{"RH_g19",						"weapon",0.01},
 		//shotguns
 			{"M1014_DZ",					"weapon",0.10},
 			{"Remington870_lamp",			"weapon",0.10},

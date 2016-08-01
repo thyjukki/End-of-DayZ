@@ -209,11 +209,11 @@ class Land_SS_hangar: Military {
 		{"",							"military",0.90},
 		{"",							"Trash",0.50},
 		{"",							"civilianMagazines",0.03},
-		{"",							"militaryMagazines",0.10},
-		{"",							"westernMagazines",0.4},
+		{"",							"militaryMagazines",0.40},
+		{"",							"westernMagazines",0.3},
 		{"",							"civilianAmmo",0.01},
 		{"",							"militaryAmmo",0.15},
-		{"",							"westernAmmo",0.04},
+		{"",							"westernAmmo",0.2},
 		{"",							"generic",0.30},
 		{"",							"medical",0.10}
 	};
@@ -420,7 +420,7 @@ class Land_Nav_Boathouse: Residential {
 	lootType[] = { 
 		//one spawn
 		//tools
-			{"ItemFishingPole","weapon",0.03},
+			{"ItemFishingPole","weapon",0.10},
 		//weapons
 		//special
 		//mags special
@@ -547,7 +547,7 @@ class Land_Shed_W4: Residential {
 		{"WeaponHolder_PartEngine","object",0.01},
 		{"ItemToolbox","weapon",0.01},	
 		{"WeaponHolder_PartFueltank","object",0.01},
-		{"WeaponHolder_PartWheel","object",0.01},		
+		{"WeaponHolder_PartWheel","object",0.05},		
 		{"WeaponHolder_ItemJerrycan","object",0.02},
 		{"WeaponHolder_ItemHatchet","object",0.02},
 		{"WeaponHolder_PartGlass","object",0.02},
