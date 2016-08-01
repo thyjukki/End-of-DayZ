@@ -56,6 +56,4 @@ class 15Rnd_W1866_Slug: CA_Magazine
 	{
 		COMBINE_MAG
 	};
-
-	emptyMag = "15Rnd_W1866_Slug_Empty";
 };
