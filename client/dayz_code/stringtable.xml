@@ -9911,6 +9911,17 @@
 			<Original>Remove Suppressor</Original>
 		</Key>
 		
+		<!-- 308 Suppressor -->
+		<Key ID="STR_DZ_ATT_SUP308_NAME">
+			<Original>.308 Suppressor</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_SUP308_DESC">
+			<Original>.308 suppressor</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_SUP556_RMVE">
+			<Original>Remove Suppressor</Original>
+		</Key>
+		
 		<!-- 5.45mm Suppressor -->
 		<Key ID="STR_DZ_ATT_SUP545_NAME">
 			<Original>AK Suppressor</Original>

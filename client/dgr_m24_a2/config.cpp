@@ -44,7 +44,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_SupNATO";
+				att = "Attachment_Sup308";
 				out = "DGR_M24SD";
 			};
 		};
@@ -168,7 +168,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_SupNATO";
+				att = "Attachment_Sup308";
 				out = "DGR_M24";
 			};
 		};

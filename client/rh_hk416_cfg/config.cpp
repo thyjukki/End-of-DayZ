@@ -1671,7 +1671,7 @@ class cfgWeapons
 			class UseAtt4 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_SupNATO";
+				att = "Attachment_Sup308";
 				out = "RH_hk417sd";
 			};
 		};
@@ -1775,7 +1775,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_SupNATO";
+				att = "Attachment_Sup308";
 				out = "RH_hk417sdaim";
 			};
 		};
@@ -1799,7 +1799,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_SupNATO";
+				att = "Attachment_Sup308";
 				out = "RH_hk417sdeotech";
 			};
 		};
@@ -1823,7 +1823,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_SupNATO";
+				att = "Attachment_Sup308";
 				out = "RH_hk417sdacog";
 			};
 		};
@@ -1883,7 +1883,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_SupNATO";
+				att = "Attachment_Sup308";
 				out = "RH_hk417sdsp";
 			};
 		};
@@ -2098,7 +2098,7 @@ class cfgWeapons
 			class UseAtt4 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_SupNATO";
+				att = "Attachment_Sup308";
 				out = "RH_hk417";
 			};
 		};
@@ -2157,7 +2157,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_SupNATO";
+				att = "Attachment_Sup308";
 				out = "RH_hk417aim";
 			};
 		};
@@ -2181,7 +2181,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_SupNATO";
+				att = "Attachment_Sup308";
 				out = "RH_hk417eotech";
 			};
 		};
@@ -2205,7 +2205,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_SupNATO";
+				att = "Attachment_Sup308";
 				out = "RH_hk417acog";
 			};
 		};
@@ -2265,7 +2265,7 @@ class cfgWeapons
 			class UseAtt1 : UseAtt{
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_SupNATO";
+				att = "Attachment_Sup308";
 				out = "RH_hk417sp";
 			};
 		};
