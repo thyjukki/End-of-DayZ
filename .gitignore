@@ -191,6 +191,7 @@ ClientBin/
 node_modules/
 orleans.codegen.cs
 
+dayz_server/
 # RIA/Silverlight projects
 Generated_Code/
 
