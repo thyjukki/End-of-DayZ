@@ -48,15 +48,6 @@ if (dayz_onBack != "" && !dayz_onBackActive && !_inVehicle && !_onLadder && !r_p
 	s_player_equip_carry = -1;
 };
 
-if (!r_player_unconscious) then {
-	if (s_player_change_view < 0) then {
-		s_player_change_view = player addAction ["<t color='#888800'>Viewdistance</t>","\z\addons\dayz_code\vdg\scripts\addAction.sqf",[],0.1,false,true];
-	};
-} else {
-	player removeAction s_player_change_view;
-	s_player_change_view = -1;
-};
-
 //fishing
 if ((_currentWeapon in Dayz_fishingItems) && !dayz_fishingInprogress && !_inVehicle && !dayz_isSwimming) then {
 	if (s_player_fishing < 0) then {
