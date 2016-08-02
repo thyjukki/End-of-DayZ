@@ -948,7 +948,7 @@ class cfgWeapons
 		class ItemActions {
 			class UseAtt{
 				isAttachment = 1;
-				script = "spawn player_useAttchment;";
+				script = "spawn player_removeAttchment;";
 				text = "Detach PSO";
 				att = "Attachment_PSO1";
 				out = "RH_akm";
