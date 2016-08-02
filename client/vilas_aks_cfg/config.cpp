@@ -1250,6 +1250,19 @@ class cfgWeapons {
 			disabled = 0;
 			author = $STR_AUTHOR_VILAS;
 		};
+		
+		magazines[] = {
+			"762x54_x1",
+			"762x54_HP_x1",
+			"762x54_TRACER_x1",
+			"762x54_RUBBER_x1",
+			"762x54_BT_x1",
+			"B_762x54_Ball",
+			"B_762x54_HP",
+			"B_762x54_TRACER",
+			"B_762x54_RUBBER",
+			"B_762x54_BT"
+		};
 	};
 	
 	class vil_PKP_EOT : vil_PKP {
