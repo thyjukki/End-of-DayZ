@@ -411,8 +411,8 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 		//sleep 3;
 		//["gear"] call player_switchWeapon;
 		//sleep 1;
-*/
 	};
+*/
 
 	//Crowbar ammo fix
 	//"MeleeCrowbar" call dayz_meleeMagazineCheck;
