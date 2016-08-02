@@ -2,7 +2,7 @@ disableSerialization;
 
 // Enable
 // 0=False/off, 1=True/on
-dayz_Trash = 0;
+dayz_Trash = 1;
 
 //Model Variables
 Bandit1_DZ = "Bandit1_DZ";
@@ -27,6 +27,9 @@ Message_1_time = 0;
 Message_2_time = 0;
 Message_3_time = 0;
 
+//OpenTarget timer
+OpenTarget_Time = 0;
+
 ///Player class's
 AllPlayers = ["Survivor_DZ","Survivor1_DZ","SurvivorW2_DZ","Survivor2_DZ","Sniper1_DZ","Soldier1_DZ","Camo1_DZ","BanditW1_DZ","Bandit1_DZ","Survivor3_DZ"];
 DayZ_Male = ["Survivor_DZ","Survivor1_DZ","Survivor2_DZ","Survivor3_DZ","Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Bandit1_DZ"];
@@ -34,7 +37,7 @@ DayZ_Female = ["SurvivorW2_DZ","BanditW1_DZ"];
 
 //Classnames for specific items
 MeleeWeapons = ["MeleeHatchet","MeleeCrowbar","MeleeMachete","MeleeBaseball","MeleeBaseBallBat","MeleeBaseBallBatBarbed","MeleeBaseBallBatNails","MeleeFishingPole"];
-MeleeMagazines = ["hatchet_swing","crowbar_swing","Machete_swing","Bat_Swing","BatBarbed_Swing","BatNails_Swing","Fishing_Swing"];
+MeleeMagazines = ["Hatchet_Swing","Crowbar_Swing","Machete_Swing","Bat_Swing","BatBarbed_Swing","BatNails_Swing","Fishing_Swing"];
 //Fishing Tool
 Dayz_fishingItems = ["MeleeFishingPole"];
 //Plants
@@ -71,145 +74,34 @@ DayZ_GearedObjects = ["Car", "Helicopter", "Motorcycle", "Ship", "TentStorage_ba
 DayZ_RestingAnims = ["amovpsitmstpsnonwpstdnon_ground", "amovpsitmstpsnonwpstdnon_smoking", "amovpsitmstpsraswrfldnon_weaponcheck1", "amovpsitmstpsraswrfldnon"];
 
 //Cooking
-Dayz_meatraw = [
-    "FoodSteakRaw",
-    "FoodmeatRaw",
-    "FoodbeefRaw",
-    "FoodmuttonRaw",
-    "FoodchickenRaw",
-    "FoodrabbitRaw",
-    "FoodbaconRaw",
-    "FoodgoatRaw",
+Dayz_meatraw =
+[
+    "FoodBeefRaw",
+    "FoodMuttonRaw",
+    "FoodChickenRaw",
+    "FoodRabbitRaw",
+    "FoodBaconRaw",
+    "FoodGoatRaw",
 	"FishRawTrout",
 	"FishRawSeaBass",
 	"FishRawTuna"
 ];
-Dayz_meatcooked = [
-    "FoodSteakCooked",
-    "FoodmeatCooked",
-    "FoodbeefCooked",
-    "FoodmuttonCooked",
-    "FoodchickenCooked",
-    "FoodrabbitCooked",
-    "FoodbaconCooked",
-	"FoodgoatCooked",
+
+Dayz_meatcooked =
+[
+    "FoodBeefCooked",
+    "FoodMuttonCooked",
+    "FoodChickenCooked",
+    "FoodRabbitCooked",
+    "FoodBaconCooked",
+	"FoodGoatCooked",
 	"FishCookedTrout",
 	"FishCookedSeaBass",
 	"FishCookedTuna"
 ];
 
-//Eating
-no_output_food = [
-	"FoodMRE",
-	"FoodPistachio",
-	"FoodNutmix",
-	"FoodCandyAnders",
-	"FoodCandyLegacys",
-	"FoodCandyMintception"
-]+Dayz_meatcooked+Dayz_meatraw;
-
-food_with_output=[
-    "FoodCanBakedBeans",
-    "FoodCanSardines",
-    "FoodCanFrankBeans",
-    "FoodCanPasta",
-	"FoodCanGriff",
-	"FoodCanBadguy",
-	"FoodCanBoneboy",
-	"FoodCanCorn",
-	"FoodCanCurgon",
-	"FoodCanDemon",
-	"FoodCanFraggleos",
-	"FoodCanHerpy",
-	"FoodCanDerpy",
-	"FoodCanOrlok",
-	"FoodCanPowell",
-	"FoodCanTylers",
-	"FoodCanUnlabeled",
-	"FoodCanRusUnlabeled",
-	"FoodCanRusPork",
-	"FoodCanRusPeas",
-	"FoodCanRusMilk",
-	"FoodCanRusCorn",
-	"FoodCanRusStew",
-	"FoodChipsSulahoops",
-	"FoodChipsMysticales",
-	"FoodCanPotatoes",
-	"FoodCanBeef"
-];
-
-food_output = [
-    "FoodCanUnlabeledEmpty",
-    "FoodCanUnlabeledEmpty",
-    "FoodCanUnlabeledEmpty",
-    "FoodCanUnlabeledEmpty",
-	"FoodCanGriffEmpty",
-	"FoodCanBadguyEmpty",
-	"FoodCanBoneboyEmpty",
-	"FoodCanCornEmpty",
-	"FoodCanCurgonEmpty",
-	"FoodCanDemonEmpty",
-	"FoodCanFraggleosEmpty",
-	"FoodCanHerpyEmpty",
-	"FoodCanDerpyEmpty",
-	"FoodCanOrlokEmpty",
-	"FoodCanPowellEmpty",
-	"FoodCanTylersEmpty",
-	"FoodCanUnlabeledEmpty",
-	"FoodCanRusUnlabeledEmpty",
-	"FoodCanRusPorkEmpty",
-	"FoodCanRusPeasEmpty",
-	"FoodCanRusMilkEmpty",
-	"FoodCanRusCornEmpty",
-	"FoodCanRusStewEmpty",
-	"FoodChipsSulahoopsEmpty",
-	"FoodChipsMysticalesEmpty",
-	"FoodCanPotatoesEmpty",
-	"FoodCanBeefEmpty"
-];
-//Drinking
-no_output_drink = ["ItemWaterbottle", "ItemWaterbottleBoiled", "ItemWaterBottleInfected", "ItemWaterBottleSafe","ItemWaterBottleHerbal"];
-
-drink_with_output = [
-    "ItemSoda",  //just to define item for ItemSodaEmpty
-	"ItemSodaClays",
-	"ItemSodaDrwaste",
-	"ItemSodaFranka",
-	"ItemSodaGrapeDrink",
-	"ItemSodaLemonade",
-	"ItemSodaLirik",
-	"ItemSodaLvg",
-	"ItemSodaMtngreen",
-	"ItemSodaMzly",
-	"ItemSodaPeppsy",
-	"ItemSodaR4z0r",
-	"ItemSodaRabbit",
-	"ItemSodaRocketFuel",
-	"ItemSodaSacrite",
-	//"ItemSodaSherbet",
-	"ItemSodaSmasht"
-];
- 
-drink_output = [
-    "ItemSodaEmpty",
-	"ItemSodaClaysEmpty",
-	"ItemSodaDrwasteEmpty",
-	"ItemSodaFrankaEmpty",
-	"ItemSodaGrapeDrinkEmpty",
-	"ItemSodaLemonadeEmpty",
-	"ItemSodaLirikEmpty",
-	"ItemSodaLvgEmpty",
-	"ItemSodaMtngreenEmpty",
-	"ItemSodaMzlyEmpty",
-	"ItemSodaPeppsyEmpty",
-	"ItemSodaR4z0rEmpty",
-	"ItemSodaRabbitEmpty",
-	"ItemSodaRocketFuelEmpty",
-	"ItemSodaSacriteEmpty",
-	//"ItemSodaSherbetEmpty",
-	"ItemSodaSmashtEmpty"
-];
-boil_tin_cans = [
+boil_tin_cans =
+[
     "TrashTinCan",
 	"FoodCanGriffEmpty",
 	"FoodCanBadguyEmpty",
@@ -255,16 +147,20 @@ canPickup = false;
 pickupInit = false;
 
 //Hunting Variables
-dayZ_partClasses = [
+dayZ_partClasses =
+[
 	"PartFueltank",
 	"PartWheel",
 	//"PartGeneric", //No need to add, it is default for everything
 	"PartEngine"
 ];
-dayZ_explosiveParts = [
+
+dayZ_explosiveParts =
+[
 	"palivo",
 	"motor"
 ];
+
 //Survival Variables
 SleepFood = 2160; //minutes (48 hours)
 SleepWater = 1440; //minutes (24 hours)
@@ -338,6 +234,8 @@ dayz_resetSelfActions = {
 	s_player_CloseGate = -1;
 	s_player_breakinhouse = -1;
 	s_player_setCode = -1;
+	s_player_BuildUnLock = -1;
+	s_player_BuildLock = -1;
 };
 call dayz_resetSelfActions;
 
@@ -509,45 +407,105 @@ dayz_cantseeDist = 150; // distance from which we can spawn a Z in front of any 
 dayz_cantseefov = 70; // half player field-of-view. Visible Z won't be spawned in front of any near players
 dayz_canDelete = 350; // Z, further than this distance from its "owner", will be deleted
 
-if(isNil "dayz_serversideloot") then {
-	dayz_serversideloot = false; //enables server side loot spawning.
-};
-if(isNil "dayz_POIs") then {
-    dayz_POIs = true; //Enable POI's
-};
+dayz_traps = [];
+dayz_traps_active = [];
+dayz_traps_trigger = [];
+
+//Remove
 if(isNil "dayz_ForcefullmoonNights") then {
     dayz_ForcefullmoonNights = true; //force full moon nights.
 };
-if(isNil "dayz_infectiouswaterholes") then {
-	dayz_infectiouswaterholes = true; //Enable infected waterholes
-};
-
-if(isNil "dayz_quickSwitch") then {
-	dayz_quickSwitch = false; //Enable quick weapon switch,
-};
-
 if(isNil "dayz_bleedingeffect") then { 
-	dayz_bleedingeffect = 2;
+	dayz_bleedingeffect = 3;
 };//dayz_bleedingeffect = 3; //1= blood on the ground, 2= partical effect, 3 = both.
-
-if(isNil "dayz_DamageMultiplier") then { 
-	dayz_DamageMultiplier = 1;
-};
 
 if(isNil "dayz_temperature_override") then { 
 	dayz_temperature_override = false;
 };
 
+//Settings Not under dayz_settings
 if(isNil "dayz_attackRange") then { 
 	dayz_attackRange = 3;
 };
-
-if(isNil "dayz_maxGlobalZeds") then {
-	dayz_maxGlobalZeds = 1000;
+if(isNil "dayz_DamageMultiplier") then { 
+	dayz_DamageMultiplier = 1;
+};
+if(isNil "dayz_quickSwitch") then {
+	dayz_quickSwitch = false; //Enable quick weapon switch,
+};
+//Will be moved to map
+if(isNil "dayz_infectiouswaterholes") then {
+	dayz_infectiouswaterholes = true; //Enable infected waterholes
+};
+if(isNil "dayz_POIs") then {
+    dayz_POIs = true; //Enable POI's
 };
 
-//init global arrays for Loot Chances
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\loot_init.sqf";
+//Replace server individual settings with ranked settings
+if(isNil "dayz_presets") then { dayz_presets = "Vanilla"; };
+
+switch (dayz_presets) do {
+	case "Custom": { //Custom 
+		if(isNil "dayz_enableGhosting") then { dayz_enableGhosting = false; };
+		if(isNil "dayz_ghostTimer") then { dayz_ghostTimer = 120; };
+		if(isNil "dayz_spawnselection") then { dayz_spawnselection = 0; };
+		if(isNil "dayz_spawncarepkgs_clutterCutter") then { dayz_spawncarepkgs_clutterCutter = 0; };
+		if(isNil "dayz_spawnCrashSite_clutterCutter") then { dayz_spawnCrashSite_clutterCutter = 0; };
+		if(isNil "dayz_spawnInfectedSite_clutterCutter") then { dayz_spawnInfectedSite_clutterCutter = 0; };
+		if(isNil "dayz_bleedingeffect") then { dayz_bleedingeffect = 2; };
+		if(isNil "dayz_ForcefullmoonNights") then { dayz_ForcefullmoonNights = false; };
+		if(isNil "dayz_OpenTarget_TimerTicks") then { dayz_OpenTarget_TimerTicks = 60 * 10; };
+		if(isNil "dayz_temperature_override") then { dayz_temperature_override = true; };
+		if(isNil "dayz_nutritionValuesSystem") then { dayz_nutritionValuesSystem = false; };
+		//Not implmented yet
+		if(isNil "dayz_classicBloodBagSystem") then { dayz_classicBloodBagSystem = false; };
+	};
+    case "Classic": { //Classic
+		dayz_enableGhosting = false; //Enable disable the ghosting system.
+		dayz_ghostTimer = 120; //Sets how long in seconds a player must be dissconnected before being able to login again.
+		dayz_spawnselection = 0; //Turn on spawn selection 0 = random only spawns, 1 = Spawn choice based on limits
+		dayz_spawncarepkgs_clutterCutter = 0; //0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
+		dayz_spawnCrashSite_clutterCutter = 0;	// heli crash options 0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
+		dayz_spawnInfectedSite_clutterCutter = 0; // infected base spawn... 0: loot hidden in grass, 1: loot lifted, 2: no grass 
+		dayz_bleedingeffect = 2; //1= blood on the ground, 2= partical effect, 3 = both.
+		dayz_ForcefullmoonNights = false; // Forces night time to be full moon.
+		dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked.
+		dayz_temperature_override = true; // Set to true to disable all temperature changes.
+		dayz_nutritionValuesSystem = false; //Enables nutrition system
+		//Not implmented yet
+		dayz_classicBloodBagSystem = true; //Enables one type of bloodbag
+	};
+	case "Elite": { //Elite
+		dayz_enableGhosting = true; //Enable disable the ghosting system.
+		dayz_ghostTimer = 90; //Sets how long in seconds a player must be dissconnected before being able to login again.
+		dayz_spawnselection = 0; //Turn on spawn selection 0 = random only spawns, 1 = Spawn choice based on limits
+		dayz_spawncarepkgs_clutterCutter = 0; //0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
+		dayz_spawnCrashSite_clutterCutter = 0;	// heli crash options 0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
+		dayz_spawnInfectedSite_clutterCutter = 0; // infected base spawn... 0: loot hidden in grass, 1: loot lifted, 2: no grass 
+		dayz_bleedingeffect = 3; //1= blood on the ground, 2= partical effect, 3 = both.
+		dayz_ForcefullmoonNights = false; // Forces night time to be full moon.
+		dayz_OpenTarget_TimerTicks = 60 * 25; //how long can a player be freely attacked for after attacking someone unprovoked.
+		dayz_temperature_override = false; // Set to true to disable all temperature changes.
+		dayz_nutritionValuesSystem = true; //Enables nutrition system
+		//Not implmented yet
+		dayz_classicBloodBagSystem = false; //Enables one type of bloodbag
+	};
+    default { //Vanilla
+		dayz_enableGhosting = true; //Enable disable the ghosting system.
+		dayz_ghostTimer = 60; //Sets how long in seconds a player must be disconnected before being able to login again.
+		dayz_spawnselection = 1; //Turn on spawn selection 0 = random only spawns, 1 = Spawn choice based on limits
+		dayz_spawncarepkgs_clutterCutter = 0; //0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
+		dayz_spawnCrashSite_clutterCutter = 0;	// heli crash options 0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
+		dayz_spawnInfectedSite_clutterCutter = 0; // infected base spawn... 0: loot hidden in grass, 1: loot lifted, 2: no grass 
+		dayz_bleedingeffect = 3; //1= blood on the ground, 2= partical effect, 3 = both.
+		dayz_ForcefullmoonNights = true; // Forces night time to be full moon.
+		dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked.
+		dayz_temperature_override = false; // Set to true to disable all temperature changes.
+		dayz_nutritionValuesSystem = true; //Enables nutrition system
+		//Not implmented yet
+		dayz_classicBloodBagSystem = false; //Enables one type of bloodbag
+	};
+};
 
 if(isServer) then {
 	dayz_players = [];
@@ -556,9 +514,6 @@ if(isServer) then {
 	Server_InfectedCamps = [];
 	//dayz_spawnCrashSite_clutterCutter=0; // helicrash spawn... 0: loot hidden in grass, 1: loot lifted, 2: no grass 
 	//dayz_spawnInfectedSite_clutterCutter=0; // infected base spawn... 0: loot hidden in grass, 1: loot lifted, 2: no grass 
-	dayz_traps = [];
-	dayz_traps_active = [];
-	dayz_traps_trigger = [];
 	//Objects to remove when killed.
 	DayZ_removableObjects = ["Wire_cat1", "Sandbag1_DZ", "Hedgehog_DZ", "CamoNet_DZ", "Trap_Cans", "TrapTripwireFlare", "TrapBearTrapSmoke", "TrapTripwireGrenade", "TrapTripwireSmoke", "TrapBearTrapFlare"];
 	//[10416.695, 4198.4634],[7982.2563, 1419.8256],[10795.93, 1419.8263],[7966.083, 4088.7463],[9259.7266, 2746.1985],[5200.5234, 3915.3274],[6494.1665, 2572.7798],[5216.6968, 1246.407],[2564.7244, 3915.3296],[3858.3674, 2572.782],[2580.8977, 1246.4092],[13398.995, 4400.5874],[12242.025, 2948.3196],[13551.842, 1832.2257],[14870.512, 3009.5117],[-178.19415, 1062.4478],[1099.2754, 2388.8206],[-194.36755, 3731.3679],[10394.215, 8322.1719],[7959.7759, 5543.5342],[10773.449, 5543.5342],
@@ -613,7 +568,7 @@ if(!isDedicated) then {
 	dayz_buildingBubbleMonitor = [];
 	dayz_gridsActive = [];
 	
-	dayz_baseTypes = getArray (missionConfigFile >> "CfgBuildingLoot" >> "Default" >> "zombieClassSlow");
+	dayz_baseTypes = getArray (configFile >> "CfgBuildingLoot" >> "Default" >> "zombieClass");
 
 	//temperature variables
 	dayz_temperatur = 36;		//TeeChange
@@ -659,11 +614,13 @@ if(!isDedicated) then {
 //Current NearBy
 	dayz_CurrentNearByZombies = 0;
 //Max NearBy
-	dayz_maxNearByZombies = 25; // max quantity of Z controlled by local gameclient, used by player_spawnCheck. Below this limit we can spawn Z
+	dayz_maxNearByZombies = 30; // max quantity of Z controlled by local gameclient, used by player_spawnCheck. Below this limit we can spawn Z
 //Current total
 	dayz_currentGlobalZombies = 0;
 //Max global zeds.
-	dayz_maxGlobalZeds = 1000;
+	if(isNil "dayz_maxGlobalZeds") then {
+		dayz_maxGlobalZeds = 1000;
+	};
 //Animals
 	dayz_currentGlobalAnimals =	0;
 	dayz_maxGlobalAnimals =		50;
@@ -681,7 +638,6 @@ if(!isDedicated) then {
 	dayzDebug = false;
 	dayzState = -1;
 	dayz_onBack = "";
-	dayz_onBackActive = false;
 	dayz_fishingInprogress = false;
 	dayz_siphonFuelInProgress = false;
 	dayz_salvageInProgress = false;

@@ -40,10 +40,7 @@ if (["forest",dayz_surfaceType] call fnc_inString) then {
 		if (_objName in _trees) exitWith { _findNearestTree = _x; };
 	} foreach nearestObjects [getPosATL player, [], 8];
 	
-	 // get 2d distance
-    _distance2d = [player, _findNearestTree] call BIS_fnc_distance2D;
-    _distance3d = player distance _findNearestTree;
-    _countOut = ceil(_distance3d-_distance2d);
+    _countOut = floor(random 3) + 2;
 	
 	if (!isNull _findNearestTree) then {
 		_woodCutting = true;
@@ -55,7 +52,7 @@ if (["forest",dayz_surfaceType] call fnc_inString) then {
 
 if (_woodCutting) then {
     //Remove melee magazines (BIS_fnc_invAdd fix) (add new melee ammo to array if needed)
-    {player removeMagazines _x} forEach ["hatchet_swing","crowbar_swing","Machete_swing","Fishing_Swing"];
+    {player removeMagazines _x} forEach ["Hatchet_Swing","Crowbar_Swing","Machete_Swing","Fishing_Swing"];
 
     // Start chop tree loop
     _counter = 0;
@@ -125,20 +122,8 @@ if (_woodCutting) then {
             
             _counter = _counter + 1;
             _itemOut = "ItemLog";
-
-            _wpPos = player modeltoWorld [0,-1,0];
-			_wpPos set [2,0]; // assuming the player in on the ground.
-            _nearByPile= nearestObjects [_wpPos, ["WeaponHolder","WeaponHolderBase"],2];
-            if (count _nearByPile ==0) then {
-                _item = createVehicle ["WeaponHolder", _wpPos, [], 1, "CAN_COLLIDE"];
-            } else {
-                _item = _nearByPile select 0;
-            };
-
-            _item addMagazineCargoGlobal [_itemOut,1];
-            //_item modelToWorld getPosATL player;
-            _item setdir (getDir player);
-            player reveal _item;
+			//Drop Item to ground
+			_itemOut call fn_dropItem;
         };
             
         if ((_counter == _countOut) || _breaking) exitWith {
@@ -155,11 +140,11 @@ if (_woodCutting) then {
     };
 
     if (_proceed) then {            
-        //if ("" == typeOf _findNearestTree) then { 
+        if ("" == typeOf _findNearestTree) then { 
         //remove vehicle, Need to ask server to remove.
-        //  PVDZ_objgather_Knockdown = [_findNearestTree,player];
-        //  publicVariableServer "PVDZ_objgather_Knockdown";
-        //};            
+          PVDZ_objgather_Knockdown = [_findNearestTree,player];
+          publicVariableServer "PVDZ_objgather_Knockdown";
+        };            
         //cutText [format["\n\nChopping down tree.], "PLAIN DOWN"];
         //cutText [localize "str_player_25", "PLAIN DOWN"];
     } else {
@@ -174,9 +159,9 @@ if (_woodCutting) then {
     };
     //adding melee mags back if needed
     switch (primaryWeapon player) do {
-        case "MeleeHatchet": {player addMagazine 'hatchet_swing';};
-        case "MeleeCrowbar": {player addMagazine 'crowbar_swing';};
-        case "MeleeMachete": {player addMagazine 'Machete_swing';};
+        case "MeleeHatchet": {player addMagazine 'Hatchet_Swing';};
+        case "MeleeCrowbar": {player addMagazine 'Crowbar_Swing';};
+        case "MeleeMachete": {player addMagazine 'Machete_Swing';};
         case "MeleeFishingPole": {player addMagazine 'Fishing_Swing';};
     };
 };

@@ -1,3 +1,10 @@
+/*
+	Upkeep on built items.
+*/
+
+#define MAINTENANCE_NUTRITION_VALUES [20,40,15,0]
+
+
 private ["_isMedic","_cursorTarget"];
 
 _cursorTarget = _this select 3;
@@ -66,7 +73,7 @@ if (_startMaintenance) then {
 	_sfx = "tentpack";
 	[player,_sfx,0,false,_dis] call dayz_zombieSpeak;
 	[player,_dis,true,(getPosATL player)] call player_alertZombies;
-	["Working",0,[20,40,15,0]] call dayz_NutritionSystem; // Added Nutrition-Factor for work
+	["Working",0,MAINTENANCE_NUTRITION_VALUES] call dayz_NutritionSystem; // Added Nutrition-Factor for work
 	
 	{ player removeMagazine _x; } count _requiredParts;
 	
@@ -90,15 +97,16 @@ if (_startMaintenance) then {
 	r_doLoop = false;
 	
 	if (_finished) then {
-		PVDZ_veh_Save = [_cursorTarget,"maintenance"];
-		publicVariableServer "PVDZ_veh_Save";
 		if (isServer) then {
 			PVDZ_veh_Save call server_updateObject;
+		} else {
+			PVDZ_veh_Save = [_cursorTarget,"maintenance"];
+			publicVariableServer "PVDZ_veh_Save";
 		};
 		
-		_cursorTarget setVariable["Maintenance",false,true];
-	}
-	
+		PVDZ_object_replace = [_cursorTarget];
+		publicVariableServer "PVDZ_object_replace";
+	};
 	cutText [localize "str_maintenanceDone", "PLAIN DOWN"];
 };
 

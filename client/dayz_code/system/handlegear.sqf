@@ -55,6 +55,7 @@ if (typeName(_data select 0) == "CONTROL") then {
 	_display = ctrlParent _control;
 };
 
+
 /*-------------------------------------------*/
 _lbSelectedItem = {
 	private ["_index","_selectedItem","_n"];

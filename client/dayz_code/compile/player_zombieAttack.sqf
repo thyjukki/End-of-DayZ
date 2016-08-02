@@ -19,7 +19,7 @@ _isVehicle = (_vehicle != player);
 _playerDodged = false;
 
 if (_type != "zombie") exitWith { diag_log ("not a zombie"); }; // we deal only with zombies in this function
-if (_unit distance _vehicle > 3.6) exitWith { diag_log ("too far:"); }; // distance too far according to any logic dealt here //+str(_unit distance _nextPlayerPos)+"/"+str(_areaAffect)
+if (_unit distance _vehicle > 3.6) exitWith {  }; // distance too far according to any logic dealt here //+str(_unit distance _nextPlayerPos)+"/"+str(_areaAffect)
 
 // compute the animation move
 _rnd = 0;
@@ -111,7 +111,7 @@ _tPos = (getPosASL _vehicle);
 _zPos = (getPosASL _unit);
 // compute damage for vehicle and/or the player
 if (_isVehicle) then {
-	if ((_unit distance player) < (dayz_attackRange * 2)) then {
+	if ((_unit distance player) < (3.3 * 2)) then {
 		_hpList = 	_vehicle call vehicle_getHitpoints;
 		_hp = 		_hpList call BIS_fnc_selectRandom;
 		_wound = 	getText(configFile >> "cfgVehicles" >> (typeOf _vehicle) >> "HitPoints" >> _hp >> "name");
@@ -166,7 +166,7 @@ if (_isVehicle) then {
 	};
 } else { 
 	// player by foot
-	if ((_unit distance player) <= dayz_attackRange) then {
+	if ((_unit distance player) <= 3.3) then {
 			
 		//Make sure sure evrything is processed as we attack.
 		_damage = 0.2 + random (1.2);
@@ -189,10 +189,11 @@ if (_isVehicle) then {
 			//Stop the Zed
 			_unit setVariable ["speedLimit", 0, false];
 				
-			_attackanimations = ["zombiestandingattack1","zombiestandingattack2","zombiestandingattack3","zombiestandingattack4","zombiestandingattack5","zombiestandingattack6","zombiestandingattack7","zombiestandingattack8","zombiestandingattack9","zombiestandingattack10","zombiefeed1","zombiefeed2","zombiefeed3","zombiefeed4","zombiefeed5"];
+			//_attackanimations = ["zombiestandingattack1","zombiestandingattack2","zombiestandingattack3","zombiestandingattack4","zombiestandingattack5","zombiestandingattack6","zombiestandingattack7","zombiestandingattack8","zombiestandingattack9","zombiestandingattack10","zombiefeed1","zombiefeed2","zombiefeed3","zombiefeed4","zombiefeed5"];
+			
 			//diag_log ((animationState _unit));
-			if ((animationState _unit) in _attackanimations) then {
-					
+			
+			//if ((animationState _unit) in _attackanimations) then {
 				if (alive _unit) then {	
 					//Damage the player
 					[player,  _wound,  _damage,  _unit, "zombie"] call fnc_usec_damageHandler;
@@ -201,7 +202,7 @@ if (_isVehicle) then {
 					if (unitPos _unit != "UP") then {
 						_unit setUnitPos "UP";
 					};
-				};
+				//};
 				
 				// broadcast hit noise
 				_pos = getPosATL player;

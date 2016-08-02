@@ -211,7 +211,7 @@ class RscTitles
 				h = 0.10;
 				colorText[] = {1,1,1,1};
 			};
-			/*class RscPicture_1205: RscPictureGUI
+			class RscPicture_1205: RscPictureGUI
 			{
 				idc = 1205;
 				text = "\z\addons\dayz_code\gui\status\status_bg.paa";
@@ -228,7 +228,7 @@ class RscTitles
 				y = 0.37 * safezoneH + safezoneY;
 				w = 0.075;
 				h = 0.10;
-			};*/
+			};
 		};
 		class Controls {
 			class RscPicture_1301: RscPictureGUI
@@ -285,7 +285,7 @@ class RscTitles
 				w = 0.075;
 				h = 0.10;
 				colorText[] = {1,1,1,0.5};
-			};/*
+			};
 			class RscPicture_1304: RscPictureGUI
 			{
 				idc = 1304;
@@ -303,7 +303,7 @@ class RscTitles
 				y = 0.37 * safezoneH + safezoneY;
 				w = 0.075;
 				h = 0.10;
-			};*/
+			};
 		};
 	};
 };

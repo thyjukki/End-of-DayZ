@@ -1,4 +1,4 @@
-private ["_pos","_display","_body","_playerID","_array","_source","_method","_canHitFree","_isBandit","_punishment","_humanityHit","_myKills","_humanity","_kills","_killsV","_myGroup","_model"];
+private ["_pos","_display","_body","_playerID","_array","_source","_method","_isBandit","_punishment","_humanityHit","_myKills","_humanity","_kills","_killsV","_myGroup","_model"];
 disableSerialization;
 if (deathHandled) exitWith {};
 
@@ -55,7 +55,9 @@ r_player_unconscious = false;
 r_player_cardiac = false;
 _model = typeOf player;
 
-if (count _array > 0) then {
+_array = _this;
+if (count _array > 0) then
+{
 	_source = _array select 0;
 	_method = _array select 1;
 	if ((!isNull _source) and (_source != player)) then {

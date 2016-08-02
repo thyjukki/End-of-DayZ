@@ -9,26 +9,22 @@
 		displayName = $STR_ZNAME_INFECTEDVIRAL;
 		fsmDanger = "";
 		fsmFormation = "";
-		zombieLoot = "viralloot";
+		zombieLoot = ZombieCivilianViral;
 		moves = "CfgMovesZombie";
 		isMan = false;
 		weapons[] = {};
 		magazines[] = {};
 		sensitivity = 2;	// sensor sensitivity
 		sensitivityEar = 4;
-		damageScale = 3000;
+		damageScale = 450; //900
 		sepsisChance = 36;
 		BleedChance  = 30;
 		forcedSpeed = 6;
 
-		class Eventhandlers {
+		class Eventhandlers
+		{
 			init = "_this call zombie_initialize;";
-			local = "_z = _this select 0;" \n
-				    "if ((!isServer and !isNull _z) and {(side _z != civilian)}) exitWith { " \n
-				    "PVDZ_sec_atp = [ 'wrong side', player ]; publicVariableServer 'PVDZ_sec_atp'; deleteVehicle _z; };" \n
-					"if (!(_this select 1)) exitWith {};" \n
-				    "if (isServer) exitWith { _z call sched_co_deleteVehicle; };" \n
-				    "[(position _z), _z, true] execFSM '\z\AddOns\dayz_code\system\zombie_agent.fsm';";
+			local = "_z = _this select 0; if ((!isServer and !isNull _z) and {(side _z != civilian)}) exitWith { PVDZ_sec_atp = [ 'wrong side', player ]; publicVariableServer 'PVDZ_sec_atp'; deleteVehicle _z; }; if (!(_this select 1)) exitWith {}; if (isServer) exitWith { _z call sched_co_deleteVehicle; }; [(position _z), _z, true] execFSM '\z\AddOns\dayz_code\system\zombie_agent.fsm';";
 		};
 		
 		class HitPoints {
@@ -117,7 +113,6 @@
 	};
 	
 	class z_newBase : zZombie_new_Base {
-		zombieLoot = "viralloot";
 		model = "\ca\characters2\civil\Villager\Villager";
 		hiddenSelections[] = {"Camo"};
 		hiddenSelectionsTextures[] = {"\ca\characters2\civil\villager\data\villager_co.paa"};
@@ -138,7 +133,6 @@
 	};
 	
 	class z_new_worker_base : zZombie_new_Base {
-		zombieLoot = "viralloot";
 		model = "\Ca\characters_E\Overall\Overall";
 		hiddenSelections[] = {"Camo"};
 		hiddenSelectionsTextures[] = {"\Ca\characters_E\Overall\Data\Overall_4_co.paa"};

@@ -286,7 +286,7 @@ class z_suit2_slow : z_suit1_slow {
 };
 class z_worker1_slow : zZombie_Slow_Base { 
 	displayName = $STR_ZNAME_WORKER;
-	zombieLoot = "Industrial";
+	zombieLoot = "Industrial";//TODO(Jukki) ZOmbie loots
 	model = "\Ca\characters_E\Overall\Overall";
 	hiddenSelections[] = {"Camo"};
 	

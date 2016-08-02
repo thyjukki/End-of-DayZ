@@ -1,11 +1,21 @@
 // (c) facoptere@gmail.com, licensed to DayZMod for the community
-private ["_item","_action","_missingTools","_missingItem","_emergingLevel","_isClass","_classname","_requiredTools","_requiredParts ","_ghost","_placement","_text","_onLadder","_isWater","_object","_string","_actionBuildHidden","_getBeams","_o","_offset","_rot","_r","_p","_bn","_bb","_h","_bx","_by","_minElevation","_maxElevation","_insideCheck","_building","_unit","_bbb","_ubb","_check","_min","_max","_myX","_myY","_checkBuildingCollision","_objColliding","_inside","_checkOnRoad","_roadCollide","_checkBeam2Magnet","_a","_beams","_best","_b","_d","_checkNotBuried","_elevation","_position","_delta","_overElevation","_maxplanting","_safeDistance","_dir","_angleRef","_tmp","_actionCancel","_sfx","_actionBuild"];
+private ["_classType","_item","_action","_missingTools","_missingItem","_emergingLevel","_isClass","_classname","_requiredTools","_requiredParts ","_ghost","_placement","_text","_onLadder","_isWater","_object","_string","_actionBuildHidden","_getBeams","_o","_offset","_rot","_r","_p","_bn","_bb","_h","_bx","_by","_minElevation","_maxElevation","_insideCheck","_building","_unit","_bbb","_ubb","_check","_min","_max","_myX","_myY","_checkBuildingCollision","_objColliding","_inside","_checkOnRoad","_roadCollide","_checkBeam2Magnet","_a","_beams","_best","_b","_d","_checkNotBuried","_elevation","_position","_delta","_overElevation","_maxplanting","_safeDistance","_dir","_angleRef","_tmp","_actionCancel","_sfx","_actionBuild"];
+
+/*
+Needs a full rewrite to keep up with the demand of everything we plan to add.
+*/
 
 call gear_ui_init;
 closeDialog 1;
 
 _item = _this select 0;
 _action = _this select 1;
+_classType = "ItemActions";
+
+if (count _this > 2) then {
+	_classType = _this select 2;
+};
+
 _emergingLevel = 1.1;
 r_action_count = 1;
 
@@ -14,12 +24,13 @@ _isClass = switch (1==1) do {
     case (isClass (configFile >> "CfgWeapons" >> _item)): {"CfgWeapons"};
 };
 
-_classname = getText (configFile >> _isClass >> _item >> "ItemActions" >> _action >> "create");
-_requiredTools = getArray (configFile >> _isClass >> _item >> "ItemActions" >> _action >> "require");
-_requiredParts   = getArray (configFile >> _isClass >> _item >> "ItemActions" >> _action >> "consume");
-_ghost = getText (configFile >> _isClass >> _item >> "ItemActions" >> _action >> "ghost");
+//need to swap all build systems to this "ItemActions"
+_classname = getText (configFile >> _isClass >> _item >> _classType >> _action >> "create");
+_requiredTools = getArray (configFile >> _isClass >> _item >> _classType >> _action >> "require");
+_requiredParts   = getArray (configFile >> _isClass >> _item >> _classType >> _action >> "consume");
+_ghost = getText (configFile >> _isClass >> _item >> _classType >> _action >> "ghost");
 //need to move to array and separate what checks need to be done.
-_byPassChecks = getText (configFile >> _isClass >> _item >> "ItemActions" >> _action >> "byPass");
+_byPassChecks = getText (configFile >> _isClass >> _item >> _classType >> _action >> "byPass");
 
 if (_byPassChecks == "") then { _byPassChecks = "BaseItems" };
 if (_ghost == "") then { _ghost = _classname; };
@@ -32,7 +43,9 @@ _isWater = {(surfaceIsWater (getPosATL _object)) or dayz_isSwimming};
 
 if (0 != count Dayz_constructionContext) then {
     r_action_count = 0;
-    cutText [localize "str_already_building", "PLAIN DOWN"];
+    //cutText [localize "str_already_building", "PLAIN DOWN"];
+	_msg = localize "str_already_building";
+	_msg call dayz_rollingMessages;
     diag_log [ diag_ticktime, __FILE__, 'already building, exiting', Dayz_constructionContext, typeName Dayz_constructionContext];
 };
 
@@ -43,7 +56,9 @@ if (isClass (configFile >> _isClass >> _item)) then {
             case (_item isKindOf "Land_A_tent"): {"str_player_31_pitch"};
             default {"str_player_31_build"};
         };
-        cutText [format [localize "str_player_31",_text,(localize _string)] , "PLAIN DOWN"];
+        //cutText [format [localize "str_player_31",_text,(localize _string)] , "PLAIN DOWN"];
+		_msg = format [localize "str_player_31",_text,(localize _string)];
+		_msg call dayz_rollingMessages;
         //diag_log(format["player_build: item:%1 require:%2  Player items:%3  magazines:%4", _item, _requiredTools, (items player), (magazines player)]);
     };
 };
@@ -61,7 +76,9 @@ _missing = "";
 
 if (!_ok) exitWith {
     r_action_count = 0;
-    cutText [format [localize "str_player_31_missingtools",_text,_missing] , "PLAIN DOWN"]; 
+    //cutText [format [localize "str_player_31_missingtools",_text,_missing] , "PLAIN DOWN"]; 
+	_msg = format [localize "str_player_31_missingtools",_text,_missing];
+	_msg call dayz_rollingMessages;
 };
 
 // lets check player has requiredParts for upgrade
@@ -80,42 +97,47 @@ _upgradeParts = [];
 if (!_ok) exitWith {
     { player addMagazine _x; } foreach _upgradeParts;
     r_action_count = 0;
-    cutText [format [localize "str_player_31", _missing, localize "str_player_31_build"] , "PLAIN DOWN"];
+   // cutText [format [localize "str_player_31", _missing, localize "str_player_31_build"] , "PLAIN DOWN"];
+	_msg = format [localize "str_player_31", _missing, localize "str_player_31_build"];
+	_msg call dayz_rollingMessages;
 };
 
 
-cutText [localize "str_player_build_rotate", "PLAIN DOWN"];
+//cutText [localize "str_player_build_rotate", "PLAIN DOWN"];
+_msg = localize "str_player_build_rotate";
+_msg call dayz_rollingMessages;
 
+//Get fence beams based on model
 _getBeams = {
         private [ "_p", "_r", "_bn", "_bb", "_bx", "_by" ];
-
+		
         _o = _this select 0;
         _offset = _this select 1;
         _rot = _this select 2;
         _r = [];
-        for "_bn" from 1 to 4 do {
-                _p = _o selectionPosition Format [ "beam%1", _bn ];
-                if (_p distance [0,0,0] == 0) exitWith { 
-                    if (_bn == 1) then { // no memory points defined
-                        _bb = boundingBox _o;
-                        _h = _offset + ((_o worldToModel (getPosATL _o)) select 2);
-                        _p = [ (_bb select 0) select 0, 0, _h ];
-                        _r set [ 0, _o modelToWorld _p];
-                        _p = [ (_bb select 1) select 0, 0, _h ];
-                        _r set [ 1, _o modelToWorld _p];
-                    };
-                };
-                if (_rot != 0) then {
-                    _bx = _p select 0;
-                    _by = _p select 1;
-                    _p set [0, (_bx * cos _rot) - (_by * sin _rot)];
-                    _p set [1, (_bx * sin _rot) + (_by * cos _rot)];
-                };
-                _p set [2, (_p select 2) + _offset];
+		
+		for "_bn" from 1 to 4 do {
+				_p = _o selectionPosition Format [ "beam%1", _bn ];
+				if (_p distance [0,0,0] == 0) exitWith { 
+					if (_bn == 1) then { // no memory points defined
+						_bb = boundingBox _o;
+						_h = _offset + ((_o worldToModel (getPosATL _o)) select 2);
+						_p = [ (_bb select 0) select 0, 0, _h ];
+						_r set [ 0, _o modelToWorld _p];
+						_p = [ (_bb select 1) select 0, 0, _h ];
+						_r set [ 1, _o modelToWorld _p];
+					};
+				};
+				if (_rot != 0) then {
+					_bx = _p select 0;
+					_by = _p select 1;
+					_p set [0, (_bx * cos _rot) - (_by * sin _rot)];
+					_p set [1, (_bx * sin _rot) + (_by * cos _rot)];
+				};
+				_p set [2, (_p select 2) + _offset];
 
-                _r set [ count _r, _o modelToWorld _p];
-        };
-
+				_r set [ count _r, _o modelToWorld _p];
+		};
         _r
 };
 
@@ -137,6 +159,7 @@ _maxElevation = {
     _r
 };
 
+//Is the placed object inside another object
 _insideCheck = {
     private ["_bbb","_building","_ubb","_unit","_check","_min","_max","_myX","_p","_myY"];
 
@@ -170,26 +193,39 @@ _insideCheck = {
     false
 };
 
+//check if building being placed and objects around placement is free to be built on.
+//Fence owners must build all the foundations by one player anyone can still upgrade (pending lock build level)
 _checkBuildingCollision = {
     _objColliding = objNull;
     {
         _inside = false;
-        if ((!isNull _x) and (!(_x == player)) and (!(_x == _object)) and (!(_x IN DayZ_SafeObjects)) and (!(_x isKindOf "DZ_buildables"))
-            and (!((typeOf _x == "CamoNet_DZ") or {(_x isKindOf "Land_CamoNet_EAST")}))) then {
-            if ((_x isKindOf "Building") or (_x isKindOf "AllVehicles")) then { 
-                _inside = [_x, _object] call _insideCheck;
-                /*if (!_inside) then {
-                    _inside = [_x, _object] call _insideCheck;
-                };*/
-            };
-        };
+		_ownerID = _x getVariable ["ownerArray",[]];
+
+		if (count _ownerID > 0) then { _ownerID = _ownerID select 0; } else { _ownerID = (getPlayerUID player); };
+		
+		//and (!(_x isKindOf "DZ_buildables")) Not used
+
+		if(_ownerID != (getPlayerUID player)) then {
+			if ((!isNull _x) and (!(_x == player)) and (!(_x == _object)) and (!(_x IN DayZ_SafeObjects)) 
+				and (!((typeOf _x == "CamoNet_DZ") or {(_x isKindOf "Land_CamoNet_EAST")}))) then {
+				if ((_x isKindOf "Building") or (_x isKindOf "AllVehicles")) then { 
+					_inside = [_x, _object] call _insideCheck;
+					
+					/*
+					if (!_inside) then {
+						_inside = [_object, _x] call _insideCheck;
+					};
+					*/
+				};
+			};
+		};
         if (_inside) exitWith { _objColliding = _x; };
-    } forEach (nearestObjects [_object, ["Building", "Air", "LandVehicle", "Ship" ], 35]);
+    } forEach (nearestObjects [_object, ["Building", "Air", "LandVehicle", "Ship", "DZ_buildables"], 35]);
     (!isNull _objColliding)
     // _objColliding contains the building that collides with the ghost object
 };
 
-
+//Is placement on a road?
 _checkOnRoad = {
     _roadCollide = false;
     {
@@ -199,10 +235,11 @@ _checkOnRoad = {
     _roadCollide
 };
 
+//Make the object attach to beams if it can
 _checkBeam2Magnet = {
     _a = [];
     {
-        if ((!isNull _x) and (_x != _object)) then { _a = _a + ([_x, 0,0] call _getBeams); };
+		if ((!isNull _x) and (_x != _object)) then { _a = _a + ([_x, 0,0] call _getBeams); };
     } forEach (nearestObjects [getPosATL _object, ["DZ_buildables"], 15]);
 
     _beams = [_object, 0,0] call _getBeams;
@@ -210,10 +247,10 @@ _checkBeam2Magnet = {
     {
         _b = _x;
         {
-            _d = [_x, _b] call BIS_fnc_distance2D;
-            if (_d < _best select 0) then {
-                _best = [_d,_b,_x];
-            };
+			_d = [_x, _b] call BIS_fnc_distance2D;
+			if (_d < _best select 0) then {
+				_best = [_d,_b,_x];
+			};
         } forEach _a;
     } count _beams;
     // _best contains the best beam to dock to. [ distance, coor of beam found around, coor of beam of ghost object ]

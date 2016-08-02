@@ -66,6 +66,15 @@ if(_classname isKindOf "Bag_Base_EP1") exitwith {
 		
 		player action ["TakeBag", _holder];
 	};
+	
+	//Lets wait to make sure the player has some kind of backpack.
+	waitUntil { !isNull (unitBackpack player) };
+	
+	sleep 0.03;
+	
+	//Lets call inventory save
+	PVDZ_plr_Save = [player,nil,false];
+	publicVariableServer "PVDZ_plr_Save";
 };
 
 _config = (configFile >> _type >> _classname);
@@ -89,7 +98,7 @@ sleep 3;
 //adding melee mags back if needed
 _wpn = primaryWeapon player;
 //diag_log format["Classname: %1, WPN: %2", _classname,_wpn];
-_ismelee = (gettext (configFile >> "CfgWeapons" >> _wpn >> "melee"));
-if (_ismelee == "true") then {
+_ismelee = (getNumber (configFile >> "CfgWeapons" >> _wpn >> "melee") == 1);
+if (_ismelee) then {
 	call dayz_meleeMagazineCheck;
 };

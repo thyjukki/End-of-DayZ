@@ -7,7 +7,7 @@ scriptName "Functions\misc\fn_damageHandler.sqf";
     - Function
     - [unit, selectionName, damage, source, projectile] call fnc_usec_damageHandler;
 ************************************************************/
-private ["_unit","_hit","_damage","_unconscious","_source","_ammo","_Viralzed","_isMinor","_isHeadHit","_isPlayer","_canHitFree","_isBandit","_punishment","_humanityHit","_myKills","_wpst","_sourceDist","_sourceWeap","_scale","_type","_nrj","_rndPain","_hitPain","_wound","_isHit","_isbleeding","_rndBleed","_hitBleed","_isInjured","_lowBlood","_rndInfection","_hitInfection","_isCardiac","_chance","_breakaleg","_model"];
+private ["_unit","_hit","_damage","_unconscious","_source","_ammo","_Viralzed","_isMinor","_isHeadHit","_isPlayer","_isBandit","_punishment","_humanityHit","_myKills","_wpst","_sourceDist","_sourceWeap","_scale","_type","_nrj","_rndPain","_hitPain","_wound","_isHit","_isbleeding","_rndBleed","_hitBleed","_isInjured","_lowBlood","_rndInfection","_hitInfection","_isCardiac","_chance","_breakaleg","_model"];
 _unit = _this select 0;
 _hit = _this select 1;
 _damage = _this select 2;
@@ -31,6 +31,13 @@ if (_unit == player) then {
         if ((_source != player) and _isPlayer) then {       
             _canHitFree =   player getVariable ["freeTarget",false];
             _isBandit = (player getVariable["humanity",0]) <= -2000;
+
+			//if player is not free to shoot at inform server that _source shot at player
+			if (!_isBandit && !(player getVariable ["OpenTarget",false])) then
+			{
+				PVDZ_send = [_source,"OpenTarget",[]];
+				publicVariableServer "PVDZ_send";
+			};
 
 			// Due to server errors or desync killing someone in a bandit skin with >-2000 humanity CAN occur. 
             // Attacker should not be punished for killing a Bandit skin under any circumstances. 
@@ -66,42 +73,59 @@ if (_unit == player) then {
         };
     };
     
-    if ((_ammo == "tranquiliser_bolt") and (!_unconscious) and (vehicle player == player)) then {
-        [_unit] spawn {
-            private ["_unit"];
-            _unit = _this select 0;
-            cutText [localize "str_player_tranquilized", "PLAIN DOWN"]; 
-			//systemChat format ["YOU HAVE BEEN TRANQUILISED"];
-            //sleep 2; 
-            // 0 fadeSound 0.05;
-            //sleep 5; 
-            [_unit,0.01] call fnc_usec_damageUnconscious;
-            _unit setVariable ["NORRN_unconscious", true, true];
-            r_player_timeout = round(random 60);
-            r_player_unconscious = true;
-            player setVariable["medForceUpdate",true,true];
-            player setVariable ["unconsciousTime", r_player_timeout, true];
-        };
-    };
-    
-    if ((_isRubber == 1) and (!_unconscious) and (vehicle player == player) and ((_isHeadHit) or ((random 10) < 3))) then {
-		diag_log("Should go unconsciousTime");
-        [_unit] spawn {
-            private ["_unit"];
-            _unit = _this select 0;
-            cutText [localize "str_player_rubbered", "PLAIN DOWN"]; 
-			//systemChat format ["YOU HAVE BEEN TRANQUILISED"];
-            //sleep 2; 
-            // 0 fadeSound 0.05;
-            //sleep 5; 
-            [_unit,0.01] call fnc_usec_damageUnconscious;
-            _unit setVariable ["NORRN_unconscious", true, true];
-            r_player_timeout = round(random 60);
-            r_player_unconscious = true;
-            player setVariable["medForceUpdate",true,true];
-            player setVariable ["unconsciousTime", r_player_timeout, true];
-        };
-    };
+	if ((vehicle player == player) and (!_unconscious)) then {
+		if (_ammo == "tranquiliser_bolt") then {
+			[_unit] spawn {
+				private ["_unit"];
+				_unit = _this select 0;
+				cutText [localize "str_player_tranquilized", "PLAIN DOWN"]; 
+				//systemChat format ["YOU HAVE BEEN TRANQUILISED"];
+				//sleep 2; 
+				// 0 fadeSound 0.05;
+				//sleep 5; 
+				[_unit,0.01] call fnc_usec_damageUnconscious;
+				_unit setVariable ["NORRN_unconscious", true, true];
+				r_player_timeout = round(random 60);
+				r_player_unconscious = true;
+				player setVariable["medForceUpdate",true,true];
+				player setVariable ["unconsciousTime", r_player_timeout, true];
+			};
+		};
+		
+		if (_damage > 0.4) then {
+			//Melee knockout system
+			if ((_isHeadHit) and (_ammo in ["Crowbar_Swing_Ammo","Bat_Swing_Ammo"])) then {
+				[_unit] spawn {
+					 _unit = _this select 0;
+					cutText ["you have been knocked out", "PLAIN DOWN"]; 
+					[_unit,0.01] call fnc_usec_damageUnconscious;
+					_unit setVariable ["NORRN_unconscious", true, true];
+					r_player_timeout = 20 + round(random 60);
+					r_player_unconscious = true;
+					player setVariable["medForceUpdate",true,true];
+					player setVariable ["unconsciousTime", r_player_timeout, true];
+				};
+			};
+
+    	if ((_isRubber == 1) and ((_isHeadHit) or ((random 10) < 3))) then {
+			diag_log("Should go unconsciousTime");
+	        [_unit] spawn {
+	            private ["_unit"];
+	            _unit = _this select 0;
+	            cutText [localize "str_player_rubbered", "PLAIN DOWN"]; 
+				//systemChat format ["YOU HAVE BEEN TRANQUILISED"];
+	            //sleep 2; 
+	            // 0 fadeSound 0.05;
+	            //sleep 5; 
+	            [_unit,0.01] call fnc_usec_damageUnconscious;
+	            _unit setVariable ["NORRN_unconscious", true, true];
+	            r_player_timeout = round(random 60);
+	            r_player_unconscious = true;
+	            player setVariable["medForceUpdate",true,true];
+	            player setVariable ["unconsciousTime", r_player_timeout, true];
+	        };
+		};
+	};
   
 
     //Log to server :-( OverProcessing really not needed.

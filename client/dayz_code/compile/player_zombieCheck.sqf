@@ -44,18 +44,20 @@ if (_isSea) then { } else {  };
 				};
 			};
 			
-			if (_x distance _refObj > dayz_attackRange) then {
+			if (_x distance _refObj >= 3.3) then {
 				_x setVariable ["speedLimit", _forcedSpeed, false];
 			};
-			if (!local _x) then {		
+			//if (!local _x) then {		
 				if (_refObj in _targets) then {
 					_last = _x getVariable["lastAttack", 0];
 					_entHeight = (getPosATL _x) select 2;
 					_pHeight = (getPosATL _refObj) select 2;
 					_delta = _pHeight - _entHeight;
 					_x setVariable ["speedLimit", 0, false];			
-					
-					if (_x distance _refObj < dayz_attackRange) then {
+ 
+					if (_x distance _refObj <= 3.3) then {
+					//Force Ai to Stand
+						_x setUnitPos "UP";
 						if (!(animationState _x == "ZombieFeed")) then {
 							if (((diag_tickTime - _last) > 1.5) and ((_delta < 1.5) and (_delta > -1.5))) then {
 								_attackResult = [_x,  _type] call player_zombieAttack;
@@ -69,7 +71,7 @@ if (_isSea) then { } else {  };
 				} else {
 					_x setVariable ["speedLimit", _forcedSpeed, false];
 				};
-			};
+			//};
 			
 			//Block all target atteps while in a vehicle
 			if (!_isAir) then {
@@ -120,7 +122,7 @@ if (_isSea) then { } else {  };
 			if (_targetedBySight or _targetedBySound) then {
 				[_x, "spotted", 0, false] call dayz_zombieSpeak;
 				
-				//diag_log format["Zombie: %1, Distance: %2, Target Reason: Sight-%3,%5/Sound-%4,%6",(typeof _x),_dist,_targetedBySight,_targetedBySound,DAYZ_disVisual,DAYZ_disAudial];
+				diag_log format["Zombie: %1, Distance: %2, Target Reason: Sight-%3,%5/Sound-%4,%6",(typeof _x),_dist,_targetedBySight,_targetedBySound,DAYZ_disVisual,DAYZ_disAudial];
 				
 				switch (local _x) do {
 					case false: {

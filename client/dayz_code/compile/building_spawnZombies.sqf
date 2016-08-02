@@ -2,7 +2,7 @@
         Created exclusively for ArmA2:OA - DayZMod.
         Please request permission to use/alter/distribute from project leader (R4Z0R49)
 */
-private ["_wreck","_favStance","_maxlocalspawned","_maxControlledZombies","_iPos","_nearByZed","_nearByPlayer","_rnd","_positions","_zombieChance","_unitTypes","_min","_max","_num","_clean","_obj","_type","_config","_canLoot","_originalPos","_fastRun","_enabled","_i","_Pos"];
+private ["_wreck","_maxlocalspawned","_maxControlledZombies","_iPos","_nearByZed","_nearByPlayer","_rnd","_positions","_zombieChance","_unitTypes","_min","_max","_num","_clean","_obj","_type","_config","_canLoot","_originalPos","_fastRun","_enabled","_i","_Pos"];
 _obj = 			_this select 0;
 _wreck = false;
 _favStance = "";
@@ -11,7 +11,7 @@ if (count _this > 1) then {
 };
 
 _type = 		typeOf _obj;
-_config = 		missionConfigFile >> "CfgBuildingLoot" >> _type;
+_config = 		configFile >> "CfgLoot" >> "Buildings" >> _type;
 _canLoot = 		isClass (_config);
 _originalPos = 	getPosATL _obj;
 
@@ -47,6 +47,7 @@ if (_canLoot ) then {
 	//Walking Zombies
 	_num = (round(random _max)) max _min; // + round(_max / 3);
 	//diag_log ("Class: " + _type + " / Zombies: " + str(_unitTypes) + " / Walking: " + str(_num));
+	
 	for "_i" from 0 to _num do
 	{
 		//_iPos = _obj modelToWorld _originalPos;

@@ -1,11 +1,10 @@
-// (c) facoptere@gmail.com, licensed to DayZMod for the community
 private ["_cursorTarget","_onLadder","_isWater","_alreadyRemoving","_characterID","_objectID","_objectUID","_ownerArray","_dir",
     "_realObjectStillThere","_upgrade","_entry","_parent","_requiredParts","_requiredTools","_model","_toolsOK","_displayname",
     "_whpos","_i","_wh","_object"];
 
-//if (!isNil "faco_object_disassembly") exitWith { _this call faco_object_disassembly;};
 
 _cursorTarget = _this select 3;
+
 // ArmaA2 bug workaround: sometimes the object is null
 if ((isNil "_cursorTarget") or {(isNull _cursorTarget)}) then {
     _cursorTarget = nearestObjects [ player modelToWorld [0,1.5,0] , ["DZ_buildables","BuiltItems"], 1.5];
@@ -26,20 +25,17 @@ s_player_disassembly = -1;
 _onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 _isWater = (surfaceIsWater (getPosATL player)) or dayz_isSwimming;
 if(_isWater or _onLadder) exitWith {
-    //cutText ["unable to upgrade at this time", "PLAIN DOWN"];
-    //cutText [localize "str_disassembleInProgress", "PLAIN DOWN"];
 	_msg = localize "str_disassembleInProgress";
 	_msg call dayz_rollingMessages;
 };
 
-_alreadyRemoving = _cursorTarget getVariable["alreadyRemoving",0];
+_alreadyRemoving = _cursorTarget getVariable["ObjectLocked",0];
 if (_alreadyRemoving == 1) exitWith {
-	//cutText [localize "str_disassembleInProgress" , "PLAIN DOWN"];
 	_msg = localize "str_disassembleInProgress";
 	_msg call dayz_rollingMessages;
 };
 
-_cursorTarget setVariable["alreadyRemoving",1];
+_cursorTarget setVariable["ObjectLocked",1,true];
 _characterID = _cursorTarget getVariable ["characterID","0"];
 _objectID = _cursorTarget getVariable ["ObjectID","0"];
 _objectUID = _cursorTarget getVariable ["ObjectUID","0"];
@@ -53,18 +49,21 @@ _realObjectStillThere = true;
 _upgrade = typeOf _cursorTarget;
 _entry = configFile >> "CfgVehicles" >> _upgrade;
 r_interrupt = false;
+
 for "_i" from 1 to 20 do {
     _parent = inheritsFrom _entry;
     _requiredParts = [] + (getArray (_parent >> "Upgrade" >> "requiredParts"));
     _requiredTools = [] + (getArray (_parent >> "Upgrade" >> "requiredTools"));
     _model = getText (_parent >> "model"); // model of parent
     _displayname = getText (_entry >> "displayName"); // name of current
+	diag_log format["%1 - %2 - %3 - %4 - %5",_parent,_requiredParts,_requiredTools,_model,_displayname];
 
     // check the tools needed
     _toolsOK = true;
     {
         if (!(_x IN items player)) exitWith { _toolsOK = false; };
     } count _requiredTools;
+	
     if (!_toolsOK) exitWith {
         //cutText [format [localize "str_disassembleMissingTool",getText (configFile >> "CfgWeapons" >> _x >> "displayName"),_displayname], "PLAIN DOWN"];//["Missing %1 to disassemble %2."
     	_msg = format [localize "str_disassembleMissingTool",getText (configFile >> "CfgWeapons" >> _x >> "displayName"),_displayname];
@@ -170,5 +169,5 @@ _msg = localize "str_disassembleDone";
 _msg call dayz_rollingMessages;
 //cutText [localize "str_disassembleDone", "PLAIN DOWN"];
 
-player setVariable["alreadyBuilding",0];
+_cursorTarget setVariable["ObjectLocked",0,true];
 

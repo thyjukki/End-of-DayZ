@@ -39,6 +39,23 @@ class CfgVehicles {
         //};
 	};
 	class Car : LandVehicle {
+		class HitPoints
+		{
+			class HitLFWheel;
+			class HitLBWheel;
+			class HitLMWheel;
+			class HitLF2Wheel;
+
+			class HitRFWheel;
+			class HitRBWheel;
+			class HitRMWheel;
+			class HitRF2Wheel;
+
+			class HitGlass1;
+			class HitGlass2;
+			class HitGlass3;
+			class HitGlass4;
+		};
 		class Turrets
         {
             class MainTurret: NewTurret
@@ -52,7 +69,20 @@ class CfgVehicles {
 
 	//External Class
 	class SkodaBase;
-	class ATV_Base_EP1;
+	class ATV_Base_EP1 : Car
+	{
+		class HitPoints : HitPoints
+		{
+			class HitEngine {armor=2;material=-1;name="motor";visual="motor";passThrough=0;};
+			class HitFuel {armor=1;material=-1;name="palivo";passThrough=0;};
+
+			class HitLFWheel:HitLFWheel{armor=1;};
+			class HitLBWheel:HitLBWheel{armor=1;};
+
+			class HitRFWheel:HitRFWheel{armor=1;};
+			class HitRBWheel:HitRBWheel{armor=1;};
+		};
+	};
 	class Motorcycle;
 	class RubberBoat;
 	class UAZ_Unarmed_Base;
@@ -61,11 +91,32 @@ class CfgVehicles {
 	class An2_Base_EP1;
 	class TT650_Base;
 	class V3S_Base;
-	class SUV_Base_EP1;
+	class SUV_Base_EP1 : Car
+	{
+		class HitPoints : HitPoints
+		{
+			class HitLFWheel;
+			class HitLBWheel;
+			class HitRFWheel;
+			class HitRBWheel;
+			class HitFuel;
+			class HitEngine;
+
+			//armored glass - hight armor value
+			class HitGlass1:HitGlass1 {armor=1;};
+			class HitGlass2:HitGlass2 {armor=1;};
+			class HitGlass3:HitGlass3 {armor=1;};
+			class HitGlass4:HitGlass4 {armor=1;};
+
+		};
+	};
+	class UralCivil;
 	class Ship;
 	//class Bag_Base_EP1;
 	//class Bag_Base_BAF;
-	class House {
+	class HouseBase;
+	class House : HouseBase
+	{
 		class DestructionEffects;
 	};
 	class SpawnableWreck : House {};
@@ -76,6 +127,7 @@ class CfgVehicles {
 	class Pastor;
 	class BuiltItems;
 	class Building;
+	class ReammoBox;
 
 	#include "RepairParts.hpp" //names for all reapir parts. Needs moving to hitpoints
 	//ZEDS
@@ -101,6 +153,7 @@ class CfgVehicles {
 	#include "Car\SUV_DZ.hpp"
 	#include "Car\Pickup_PK_INS.hpp"
 	#include "Car\Offroad_DSHKM_INS.hpp"
+	#include "Car\UralCivil_DZ.hpp"
 	//Helicopter's
 	#include "Helicopter\MI17.hpp"
 	#include "Helicopter\UH1H.hpp"
@@ -108,9 +161,10 @@ class CfgVehicles {
 	#include "Helicopter\AH6X.hpp"
 	#include "Helicopter\MH6J_DZ.hpp"
 	//Wreck's
-	#include "Helicopter\MI8Wreck.hpp"
-	#include "Helicopter\UH1Wreck.hpp"
-	#include "Helicopter\UH60Wreck.hpp"
+	//#include "Helicopter\MI8Wreck.hpp"
+	//#include "Helicopter\UH1Wreck.hpp"
+	//#include "Helicopter\UH60Wreck.hpp"
+	#include "CrashSite.hpp"
 	//Plane's
 	#include "Plane\AN2_DZ.hpp"
 	//Bikes
@@ -159,6 +213,7 @@ class CfgVehicles {
 
 	//itemBox's
 	//#include "CardboardBox.hpp"
+	#include "LootContainer.hpp"
 
 	//Tents,storage
 	//#include "Storage.hpp"
