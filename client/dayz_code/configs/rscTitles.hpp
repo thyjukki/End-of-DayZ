@@ -378,7 +378,7 @@ class RscDisplayMain : RscStandardDisplay
 		class DAYZ_Version : CA_Version
 		{
 			idc = -1;
-			text = "End Of DayZ 1.1.1";
+			text = "DayZ Awaken 0.2";
 			y = "(SafeZoneH + SafeZoneY) - (1 - 0.95)";
 		};
 		delete CA_TitleMainMenu;

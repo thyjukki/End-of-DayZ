@@ -1,6 +1,6 @@
 pushd %~dp0
 
-set PWA_PATH="%~1\@EndOfDayZ\addons"
+set PWA_PATH="%~1\@DayzAwaken\addons"
 
 mkdir %PWA_PATH%
 mkdir .\building

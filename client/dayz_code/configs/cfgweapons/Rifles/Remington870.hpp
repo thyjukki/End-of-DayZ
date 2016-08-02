@@ -1,11 +1,22 @@
+#define R870_FLASHLIGHT class FlashLight\
+{\
+	color[] = {0.9, 0.9, 0.7, 0.9};\
+	ambient[] = {0.1, 0.1, 0.1, 1.0};\
+	position = "flash dir";\
+	direction = "flash";\
+	angle = 30;\
+	scale[] = {1, 1, 0.5};\
+	brightness = 0.1;\
+}
+
 class Remington870_DZ : Rifle
 {
 	scope = public;
 	
 	model = "\dayz_weapons\models\Remington870.p3d";
 	picture = "\dayz_weapons\textures\equip_remington870_CA.paa";
-	displayname = $STR_WPN_NAME_2;
-	descriptionShort = $STR_WPN_DESC_2;
+	displayname = $STR_DZ_WPN_R870_NAME;
+	descriptionShort = $STR_DZ_WPN_R870_DESC;
 	
 	magazines[] =
 	{
@@ -40,8 +51,8 @@ class Remington870_DZ : Rifle
 class Remington870_FL_DZ : Remington870_DZ
 {
 	model = "\dayz_weapons\models\Remington870_lamp.p3d";
-	displayname = $STR_WPN_NAME_3;
-	descriptionShort = $STR_WPN_DESC_3;
+	displayname = $STR_DZ_WPN_R870_FL_NAME;
+	descriptionShort = $STR_DZ_WPN_R870_FL_DESC;
 	
 	class FlashLight
 	{
