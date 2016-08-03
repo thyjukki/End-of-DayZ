@@ -1,4 +1,5 @@
 ﻿using dnGREP;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,14 +28,14 @@ namespace DAUpdater
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            arma2PathBox.Text = Properties.Settings.Default.ArmaPath;
+            steamPathBox.Text = Properties.Settings.Default.SteamPath;
             modPathBox.Text = Properties.Settings.Default.ModPath;
             parametersBox.Text = Properties.Settings.Default.Paremeters;
         }
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            Properties.Settings.Default.ArmaPath = arma2PathBox.Text;
+            Properties.Settings.Default.SteamPath = steamPathBox.Text;
             Properties.Settings.Default.ModPath = modPathBox.Text;
             Properties.Settings.Default.Paremeters = parametersBox.Text;
             DAUpdater.Properties.Settings.Default.FirstTime = false;
@@ -55,11 +56,14 @@ namespace DAUpdater
 
         private void armaPathSelect_Click(object sender, RoutedEventArgs e)
         {
-            var dialog = new FileFolderDialog();
-            dialog.SelectedPath = arma2PathBox.Text;
+            var dialog = new OpenFileDialog();
+            dialog.DefaultExt = ".exe";
+            dialog.Multiselect = false;
+            dialog.CheckFileExists = true;
+            dialog.Filter = "Steam exe |steam.exe";
             dialog.ShowDialog();
 
-            arma2PathBox.Text = dialog.SelectedPath;
+            steamPathBox.Text = dialog.FileName;
         }
 
         private void modPathSelect_Click(object sender, RoutedEventArgs e)

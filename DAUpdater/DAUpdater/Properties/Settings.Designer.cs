@@ -26,12 +26,12 @@ namespace DAUpdater.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ArmaPath {
+        public string SteamPath {
             get {
-                return ((string)(this["ArmaPath"]));
+                return ((string)(this["SteamPath"]));
             }
             set {
-                this["ArmaPath"] = value;
+                this["SteamPath"] = value;
             }
         }
         

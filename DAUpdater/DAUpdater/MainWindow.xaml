@@ -12,8 +12,7 @@
         <Button x:Name="launchButton" Content="Launch" Margin="0,0,10,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="launchButton_Click"/>
         <Button x:Name="settingsButton" Content="Settings" Margin="0,0,10,60" Click="settingsButton_Click" HorizontalAlignment="Right" Width="75" Height="20" VerticalAlignment="Bottom"/>
         <Button x:Name="checkFilesButton" Content="Check Files" Margin="0,0,10,35" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="checkFilesButton_Click"/>
-        <ProgressBar x:Name="localProgress" Margin="10,0,90,35" Height="20" VerticalAlignment="Bottom"/>
-        <ProgressBar x:Name="fileProgress" Margin="10,0,90,60" Height="20" VerticalAlignment="Bottom"/>
+        <ProgressBar x:Name="progressBar" Margin="10,0,90,35" Height="20" VerticalAlignment="Bottom"/>
         <TextBox x:Name="progressBox" IsReadOnly="True" TextAlignment="Center" Margin="10,0,90,10" TextWrapping="Wrap" Text="" Height="20" VerticalAlignment="Bottom"/>
 
     </Grid>

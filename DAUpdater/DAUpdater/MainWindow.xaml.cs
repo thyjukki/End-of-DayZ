@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -28,6 +29,7 @@ namespace DAUpdater
         #region variables
         Stack<string> downloading = new Stack<string>();
         WebClient client = new WebClient();
+        private int downloadingVersion;
         #endregion
 
         #region public getters
@@ -156,6 +158,7 @@ namespace DAUpdater
             string[] files = Directory.GetFiles(modPath, "*", SearchOption.AllDirectories);
 
             var liveFiles = GetLiveList();
+            downloadingVersion = LiveVersion;
             List<string> toDelete = new List<string>();
             List<string> md5s = new List<string>();
 
@@ -166,7 +169,7 @@ namespace DAUpdater
 
                 Application.Current.Dispatcher.Invoke(new Action(() =>
                 {
-                    localProgress.Maximum = files.Length;
+                    progressBar.Maximum = files.Length;
                     progressBox.Text = string.Format("Checking {0}", System.IO.Path.GetFileName(file));
                 }));
                 
@@ -201,6 +204,8 @@ namespace DAUpdater
                 checkFilesButton.IsEnabled = true;
                 launchButton.IsEnabled = true;
                 settingsButton.IsEnabled = true;
+                progressBar.Value = 0;
+                progressBox.Text = "Mod file integrity checking complete.";
                 downloadStack();
             }));
         }
@@ -237,9 +242,11 @@ namespace DAUpdater
             try
             {
                 var files = GetLiveList();
+                downloadingVersion = LiveVersion;
                 client.DownloadProgressChanged += file_DownloadProessChanged;
                 client.DownloadFileCompleted += file_DownloadFileCompleted;
 
+                downloading = new Stack<string>(files.Keys);
                 downloadStack();
             }
             catch (Exception e)
@@ -256,6 +263,8 @@ namespace DAUpdater
                 checkFilesButton.IsEnabled = true;
                 launchButton.IsEnabled = true;
                 settingsButton.IsEnabled = true;
+                progressBar.Value = 0;
+                progressBox.Text = "Mod has been downloaded.";
             }
         }
 
@@ -267,6 +276,8 @@ namespace DAUpdater
                 launchButton.IsEnabled = false;
                 settingsButton.IsEnabled = false;
                 downloadFile(downloading.Pop());
+
+                Properties.Settings.Default.modVersion = downloadingVersion;
                 return true;
             }
             return false;
@@ -287,7 +298,7 @@ namespace DAUpdater
 
         void file_DownloadProessChanged(object sender, DownloadProgressChangedEventArgs e)
         {
-            fileProgress.Value = e.ProgressPercentage;
+            progressBar.Value = e.ProgressPercentage;
             progressBox.Text = string.Format("Downloading {0} {1} Mbs / {2} Mbs"
                 , (string)e.UserState
                 , (e.BytesReceived / 1024d / 1024d).ToString("0.00")
@@ -298,7 +309,7 @@ namespace DAUpdater
         #region loading bars
         void worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            localProgress.Value = e.ProgressPercentage;
+            progressBar.Value = e.ProgressPercentage;
         }
         #endregion
 
@@ -324,11 +335,18 @@ namespace DAUpdater
             }
             else if (mode == "Update")
             {
-
+                CheckFileChecksums();
             }
             else if (mode == "Launch")
             {
+                string extra = "-nosplash -world=chernarus -skipIntro" + Properties.Settings.Default.Paremeters;
 
+                if (Properties.Settings.Default.Windowed)
+                {
+                    extra += " -windowed";
+                }
+                
+                Process.Start(Properties.Settings.Default.SteamPath, string.Format("-applaunch 33930 -mod={0}; {1}", modPath, extra));
             }
         }
         #endregion
