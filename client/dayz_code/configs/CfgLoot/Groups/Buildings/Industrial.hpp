@@ -33,6 +33,8 @@ Industrial[] =
 	{Loot_GROUP,		15,		Parts},
 	{Loot_PILE,			10,		Trash, 1, 3},
 	{Loot_PILE,			4,		Consumable, 1, 2},
+	{Loot_GROUP,		5,		civilianAmmo},
+	{Loot_GROUP,		5,		AmmoCivilian},
 	{Loot_GROUP,		8,		Generic}
 };
 

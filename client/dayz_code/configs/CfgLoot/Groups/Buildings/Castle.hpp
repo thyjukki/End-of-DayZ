@@ -46,6 +46,12 @@ Castle[] =
 	
 	//Groups
 	{Loot_GROUP,		5,		AmmoCivilian},
+	{Loot_GROUP,		2,		AmmoMilitaryLow},
+	{Loot_GROUP,		2,		AmmoMilitaryHigh},
+	{Loot_GROUP,		1,		AmmoUS},
+	{Loot_GROUP,		5,		civilianAmmo},
+	{Loot_GROUP,		1,		westernAmmo},
+	{Loot_GROUP,		5,		militaryAmmo},
 	{Loot_GROUP,		10,		Trash},
 	{Loot_GROUP,		5,		Generic},
 	{Loot_GROUP,		1,		Matchbox},

@@ -462,13 +462,11 @@ CrashSiteEU[] =
 	{{Loot_WEAPON,		0,		RH_scarakacog},
 	//Tools
 	{Loot_WEAPON,		1.5,	ItemGPS},
-	{Loot_WEAPON,		1,		Binocular_Vector},
 	{Loot_WEAPON,		0.5,	NVGoggles},
 	
 	//Backpacks
 	
 	//Clothing
-	{Loot_MAGAZINE,		2.5,	Skin_Camo1_DZ},
 	{Loot_MAGAZINE,		1.5,	Skin_Sniper1_DZ},
 	
 	//Containers
@@ -569,13 +567,16 @@ CrashSiteUN[] =
 	{Loot_WEAPON,		2,		ItemGPS},
 	
 	//Clothing
-	{Loot_MAGAZINE,		2,		Skin_Camo1_DZ},
 	
 	//Containers
 	{Loot_CONTAINER,	10,		DZ_MedBox, MedicalBox, 10, 20},
 	{Loot_CONTAINER,	10,		DZ_CardboardBox, Consumable, 10, 20},
 	{Loot_CONTAINER,	2,		DZ_AmmoBoxUS, AmmoBoxUS1, 5, 15},		//556x45	STANAG, M249
-	{Loot_CONTAINER,	2,		DZ_AmmoBoxRU, AmmoBoxRU1, 5, 15},		//545x39	AK74, RPK74
+	{Loot_CONTAINER,	2,		DZ_AmmoBoxRU, AmmoBoxRU1, 5, 15},		//545x39
+	{Loot_CONTAINER,	3,		DZ_AmmoBoxUS, AmmoBoxUS1, 10, 20},		//556x45	STANAG, M249
+	{Loot_CONTAINER,	2,		DZ_AmmoBoxUS, AmmoBoxUS2, 5, 10},		//762x51	AK74, RPK74
+	{Loot_CONTAINER,	2,		DZ_AmmoBoxEU, AmmoBoxEU1, 5, 10,},
+	{Loot_CONTAINER,	2,		DZ_AmmoBoxEU, AmmoBoxEU2, 5, 10,},
 	
 	//Other
 	{Loot_MAGAZINE,		1,		PartVRotor},

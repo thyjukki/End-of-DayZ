@@ -42,6 +42,7 @@ Hunting[] =
 	{Loot_MAGAZINE,		1, 		5x_22_LR_17_HMR},
 	
 	{Loot_PILE,			10,		AmmoCivilian, 1, 3},
+	{Loot_GROUP,		5,		civilianAmmo},
 	{Loot_PILE,			10,		Consumable, 1, 3},
 	{Loot_GROUP,		7,		Matchbox},
 	{Loot_GROUP,		10,		Generic}

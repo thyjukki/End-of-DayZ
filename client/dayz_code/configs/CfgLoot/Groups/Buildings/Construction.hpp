@@ -16,6 +16,8 @@ Construction[] =
 	{Loot_WEAPON,		2,		ItemShovel},
 	
 	{Loot_GROUP,		10,		Trash},
+	{Loot_GROUP,		5,		civilianAmmo},
+	{Loot_GROUP,		5,		AmmoCivilian},
 	//{Loot_GROUP,		6,		Parts},
 	{Loot_GROUP,		3,		Generic}
 };

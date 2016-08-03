@@ -67,5 +67,12 @@ CarePackage[] =
 	{Loot_PILE,			10,		MedicalLow, 1, 3},
 	{Loot_PILE,			15,		Consumable, 1, 3},
 	{Loot_GROUP,		3,		Matchbox},
+	{Loot_GROUP,		10,		AmmoCivilian},
+	{Loot_GROUP,		10,		AmmoMilitaryLow},
+	{Loot_GROUP,		2,		AmmoMilitaryHigh},
+	{Loot_GROUP,		5,		AmmoUS},
+	{Loot_GROUP,		5,		civilianAmmo},
+	{Loot_GROUP,		1,		westernAmmo},
+	{Loot_GROUP,		5,		militaryAmmo}
 	{Loot_GROUP,		12,		Generic}
 };

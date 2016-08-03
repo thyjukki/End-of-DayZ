@@ -83,5 +83,12 @@ InfectedCamp[] =
 	{Loot_GROUP,		20,		MedicalHigh},
 	{Loot_GROUP,		10,		Parts},
 	{Loot_GROUP,		100,	Consumable},
+	{Loot_GROUP,		10,		AmmoCivilian},
+	{Loot_GROUP,		10,		AmmoMilitaryLow},
+	{Loot_GROUP,		2,		AmmoMilitaryHigh},
+	{Loot_GROUP,		5,		AmmoUS},
+	{Loot_GROUP,		5,		civilianAmmo},
+	{Loot_GROUP,		1,		westernAmmo},
+	{Loot_GROUP,		5,		militaryAmmo},
 	{Loot_GROUP,		6,		Matchbox}
 };

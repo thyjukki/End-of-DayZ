@@ -40,6 +40,7 @@ Residential[] =
 	{Loot_MAGAZINE,		0.5,	ItemPadlock},
 	
 	{Loot_PILE,			6,		AmmoCivilian, 1, 2},
+	{Loot_GROUP,		5,		civilianAmmo},
 	{Loot_PILE,			10,		Trash, 1, 3},
 	{Loot_PILE,			10,		Consumable, 1, 2},
 	{Loot_GROUP,		3,		Matchbox},
