@@ -9,10 +9,10 @@
         Title="Settings" Height="389.362" Width="638.297">
     <Grid>
         <Button x:Name="saveButton" Content="Save" HorizontalAlignment="Left" Margin="49.957,0,0,10" Width="75" Height="20" VerticalAlignment="Bottom" Grid.Column="1" Click="saveButton_Click"/>
-        <Button x:Name="cancelButton" Content="Cancel" Margin="0,0,80,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Grid.Column="1"/>
+        <Button x:Name="cancelButton" Content="Cancel" Margin="0,0,80,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Grid.Column="1" Click="cancelButton_Click"/>
         <GroupBox x:Name="groupBox" Header="Game Settings" Margin="10,0,10,35" Height="195" VerticalAlignment="Bottom">
             <Grid>
-                <Label x:Name="label_Copy1" Content="Arma 2 OA Location:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="125"/>
+                <Label x:Name="label_Copy1" Content="Aditional parameters" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="125"/>
                 <Label x:Name="label_Copy2" Content="Launch windowed:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="125"/>
                 <TextBox x:Name="parametersBox" Height="23" Margin="135,13,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
                 <CheckBox x:Name="windowedBox" HorizontalAlignment="Left" Margin="135,47,0,0" VerticalAlignment="Top"/>
@@ -25,8 +25,8 @@
                 <Label x:Name="label_Copy" Content="Mod Install Folder:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="2"/>
                 <TextBox x:Name="arma2PathBox" Height="23" Margin="135,13,80,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
                 <TextBox x:Name="modPathBox" Height="23" Margin="135,44,80,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-                <Button x:Name="armaPathSelect" Content="Select" Margin="0,13,10,0" VerticalAlignment="Top" Height="23" HorizontalAlignment="Right" Width="65"/>
-                <Button x:Name="modPathSelect" Content="Select" Margin="0,44,10,0" VerticalAlignment="Top" Height="23" HorizontalAlignment="Right" Width="65"/>
+                <Button x:Name="armaPathSelect" Content="Select" Margin="0,13,10,0" VerticalAlignment="Top" Height="23" HorizontalAlignment="Right" Width="65" Click="armaPathSelect_Click"/>
+                <Button x:Name="modPathSelect" Content="Select" Margin="0,44,10,0" VerticalAlignment="Top" Height="23" HorizontalAlignment="Right" Width="65" Click="modPathSelect_Click"/>
             </Grid>
         </GroupBox>
 

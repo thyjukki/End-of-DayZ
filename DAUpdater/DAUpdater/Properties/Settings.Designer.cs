@@ -82,5 +82,29 @@ namespace DAUpdater.Properties {
                 this["FirstTime"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int modVersion {
+            get {
+                return ((int)(this["modVersion"]));
+            }
+            set {
+                this["modVersion"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string fullVersion {
+            get {
+                return ((string)(this["fullVersion"]));
+            }
+            set {
+                this["fullVersion"] = value;
+            }
+        }
     }
 }

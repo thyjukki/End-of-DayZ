@@ -27,5 +27,20 @@ namespace DAUpdater
                 mainView.Show();
             }
         }
+
+        public App()
+        {
+            AppDomain currentDomain = AppDomain.CurrentDomain;
+            currentDomain.UnhandledException += new UnhandledExceptionEventHandler(MyHandler);
+        }
+
+        static void MyHandler(object sender, UnhandledExceptionEventArgs args)
+        {
+            Exception e = (Exception)args.ExceptionObject;
+            Console.WriteLine("MyHandler caught : " + e.Message);
+            Console.WriteLine("Runtime terminating: {0}", args.IsTerminating);
+
+            MessageBox.Show(string.Format("MyHandler caught : {0}\nRuntime terminating: {1}", e.Message, args.IsTerminating));
+        }
     }
 }
