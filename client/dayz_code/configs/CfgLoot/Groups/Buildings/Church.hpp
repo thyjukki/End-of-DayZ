@@ -4,7 +4,11 @@ Church[] =
 	{Loot_WEAPON,		3,		ItemFlashlight},
 	
 	//Weapons
-	{Loot_WEAPON,		3,		M1911_DZ},
+	{Loot_WEAPON,		1,		RH_pm},
+	{Loot_WEAPON,		1,		RH_m1911old},
+	{Loot_WEAPON,		1,		RH_ppk},
+	{Loot_WEAPON,		1,		RH_tt33},
+	{Loot_WEAPON,		1,		RH_python},
 	{Loot_WEAPON,		3,		MeleeBaseBallBat},
 	
 	//Backpacks
@@ -20,7 +24,7 @@ Church[] =
 	//Groups
 	{Loot_GROUP,		10,		Trash},
 	{Loot_GROUP,		5,		AmmoCivilian},
-	{Loot_GROUP,		2,		AttachmentsGeneric},
+	{Loot_GROUP,		5,		civilianAmmo},
 	{Loot_GROUP,		4,		Generic},
 	{Loot_GROUP,		2,		Matchbox},
 	{Loot_GROUP,		8,		Consumable}

@@ -1,12 +1,24 @@
 Hunting[] =
 {
 	//Weapons
+	{Loot_WEAPON,		3,		LeeEnfield},
+	{Loot_WEAPON,		3,		Mosin_Nagant},
+	{Loot_WEAPON,		2,		Mosin_Nagant_Scoped},
+	{Loot_WEAPON,		3,		Winchester1866},
+	{Loot_WEAPON,		5,		MR43},
 	{Loot_WEAPON,		3,		Crossbow_DZ},
-	{Loot_WEAPON,		4,		CZ550_DZ},
-	{Loot_WEAPON,		8,		MR43_DZ},
-	{Loot_WEAPON,		6,		Winchester1866_DZ},
-	{Loot_WEAPON,		2,		LeeEnfield_DZ},
-	{Loot_WEAPON,		2,		Mosin_DZ},
+	{Loot_WEAPON,		3,		MeleeBaseBallBat},
+	{Loot_WEAPON,		3,		KPFS_KarS},
+	{Loot_WEAPON,		1,		KPFS_M1_Carbine},
+	{Loot_WEAPON,		1,		KPFS_M1_Garand},
+	{Loot_WEAPON,		1,		KPFS_M1_Garand_M84},
+	{Loot_WEAPON,		1,		RH_ak47_Civ},
+	{Loot_WEAPON,		4,		huntingrifle},
+	{Loot_WEAPON,		4,		RH_pm},
+	{Loot_WEAPON,		4,		RH_m1911old},
+	{Loot_WEAPON,		4,		RH_ppk},
+	{Loot_WEAPON,		4,		RH_tt33},
+	{Loot_WEAPON,		4,		RH_python},
 	
 	//Tools
 	{Loot_WEAPON,		4,		ItemMachete},
@@ -27,6 +39,7 @@ Hunting[] =
 	{Loot_MAGAZINE,		1,		12Rnd_Quiver_Wood},
 	{Loot_MAGAZINE,		1,		1Rnd_Bolt_Tranquilizer},
 	{Loot_MAGAZINE,		1,		1Rnd_Bolt_Explosive},
+	{Loot_MAGAZINE,		1, 		5x_22_LR_17_HMR},
 	
 	{Loot_PILE,			10,		AmmoCivilian, 1, 3},
 	{Loot_PILE,			10,		Consumable, 1, 3},

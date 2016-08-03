@@ -6,9 +6,11 @@ Office[] =
 	{Loot_WEAPON,		5,		ItemFlashlight},
 	
 	//Pistols
-	{Loot_WEAPON,		4,		Makarov_DZ},
-	{Loot_WEAPON,		3,		Revolver_DZ},
-	{Loot_WEAPON,		2,		M1911_DZ},
+	{Loot_WEAPON,		2,		RH_pm},
+	{Loot_WEAPON,		2,		RH_m1911old},
+	{Loot_WEAPON,		2,		RH_ppk},
+	{Loot_WEAPON,		2,		RH_tt33},
+	{Loot_WEAPON,		2,		RH_python},
 	
 	//Rifles
 	{Loot_WEAPON,		3,		MeleeBaseBallBat},

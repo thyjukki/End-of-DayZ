@@ -8,5 +8,5 @@ Hospital[] =
 	
 	{Loot_CONTAINER,	1,		DZ_MedBox, MedicalBox, 8, 16},
 	
-	{Loot_PILE,			10,		Trash, 1, 2}
+	{Loot_PILE,			15,		Trash, 1, 2}
 };

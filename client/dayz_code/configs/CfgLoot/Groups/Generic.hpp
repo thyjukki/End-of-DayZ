@@ -1,7 +1,6 @@
 Generic[] =
 {
 	{Loot_MAGAZINE,		1,		1Rnd_Arrow_Wood},
-	
 	{Loot_MAGAZINE,		1,		HandRoadFlare},
 	{Loot_MAGAZINE,		1,		HandChemGreen},
 	{Loot_MAGAZINE,		1,		HandChemBlue},
