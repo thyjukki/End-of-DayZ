@@ -27,9 +27,9 @@ namespace DAUpdater
     public partial class MainWindow : Window
     {
         #region variables
-        Stack<string> downloading = new Stack<string>();
-        WebClient client = new WebClient();
-        private int downloadingVersion;
+
+        private Downloader downloader;
+        
         #endregion
 
         #region public getters
@@ -47,11 +47,7 @@ namespace DAUpdater
             {
                 try
                 {
-                    Stream stream = client.OpenRead(@"http://dayzawaken.euknetworks.com/updater/version");
-                    StreamReader reader = new StreamReader(stream);
-                    String content = reader.ReadToEnd();
-
-                    int version = int.Parse(content);
+                    int version = int.Parse(downloader.ReadString(@"http://dayzawaken.euknetworks.com/updater/version"));
 
                     return version;
                 }
@@ -65,15 +61,33 @@ namespace DAUpdater
             }
         }
 
-        private bool updateRequired
+
+        public Dictionary<string, string> LiveList
         {
             get
             {
-                return LiveVersion < LiveVersion;
+                Dictionary<string, string> files = new Dictionary<string, string>();
+                StreamReader reader = new StreamReader(downloader.GetStream(@"http://dayzawaken.euknetworks.com/updater/files"));
+                while (reader.Peek() >= 0)
+                {
+                    var line = reader.ReadLine();
+                    string[] entry = line.Split(':');
+                    files.Add(entry[0], entry[1]);
+                }
+
+                return files;
             }
         }
 
-        private bool installRequired
+        public bool UpdateRequired
+        {
+            get
+            {
+                return Properties.Settings.Default.modVersion < LiveVersion;
+            }
+        }
+
+        public bool InstallRequired
         {
             get
             {
@@ -81,21 +95,28 @@ namespace DAUpdater
             }
         }
         #endregion
+
+        #region constructor
         public MainWindow()
         {
             InitializeComponent();
-            if (updateRequired)
+
+            downloader = new Downloader();
+            if (UpdateRequired)
             {
                 launchButton.Content = "Update";
-                checkFilesButton.IsEnabled = false;
             }
 
-            if (installRequired)
+            if (InstallRequired)
             {
                 launchButton.Content = "Install";
-                checkFilesButton.IsEnabled = false;
             }
+
+            downloader.Progress += Downloader_Progress;
+            downloader.Added += Downloader_Added;
+            downloader.FileDone += Downloader_FileDone;
         }
+        #endregion
 
         #region helper functions
         public static string RelativePath(string absPath, string relTo)
@@ -133,16 +154,26 @@ namespace DAUpdater
             relativePath.Append(relDirs[relDirs.Length - 1]);
             return relativePath.ToString();
         }
+
+
+        private string fileChecksum(string path)
+        {
+            using (var md5 = MD5.Create())
+            {
+                var stream = File.OpenRead(path);
+
+                return BitConverter.ToString(md5.ComputeHash(stream)).Replace("-", string.Empty);
+            }
+        }
         #endregion
 
         #region Logic
 
 
 
-        private void CheckFileChecksums()
+        public void CheckFiles()
         {
             //localProgress.IsIndeterminate = true;
-            checkFilesButton.IsEnabled = false;
             launchButton.IsEnabled = false;
             settingsButton.IsEnabled = false;
             BackgroundWorker worker = new BackgroundWorker();
@@ -157,8 +188,7 @@ namespace DAUpdater
         {
             string[] files = Directory.GetFiles(modPath, "*", SearchOption.AllDirectories);
 
-            var liveFiles = GetLiveList();
-            downloadingVersion = LiveVersion;
+            var liveFiles = LiveList;
             List<string> toDelete = new List<string>();
             List<string> md5s = new List<string>();
 
@@ -194,60 +224,32 @@ namespace DAUpdater
             {
                 if (!md5s.Contains(item.Value))
                 {
-                    downloading.Push(item.Key);
+                    Console.WriteLine("have to download " + item.Key);
+                    downloader.AddDownload(item.Key);
                 }
             }
 
 
             Application.Current.Dispatcher.Invoke(new Action(() =>
             {
-                checkFilesButton.IsEnabled = true;
                 launchButton.IsEnabled = true;
                 settingsButton.IsEnabled = true;
                 progressBar.Value = 0;
                 progressBox.Text = "Mod file integrity checking complete.";
-                downloadStack();
+                downloader.StartDownload(modPath);
             }));
-        }
-
-
-        private string fileChecksum(string path)
-        {
-            using (var md5 = MD5.Create())
-            {
-                var stream = File.OpenRead(path);
-
-                return BitConverter.ToString(md5.ComputeHash(stream)).Replace("-", string.Empty);
-            }
-        }
-
-        public Dictionary<string, string> GetLiveList()
-        {
-
-            Dictionary<string, string> files = new Dictionary<string, string>();
-            Stream stream = client.OpenRead(@"http://dayzawaken.euknetworks.com/updater/files");
-            StreamReader reader = new StreamReader(stream);
-            while (reader.Peek() >= 0)
-            {
-                var line = reader.ReadLine();
-                string[] entry = line.Split(':');
-                files.Add(entry[0], entry[1]);
-            }
-
-            return files;
         }
 
         public void Install()
         {
             try
             {
-                var files = GetLiveList();
-                downloadingVersion = LiveVersion;
-                client.DownloadProgressChanged += file_DownloadProessChanged;
-                client.DownloadFileCompleted += file_DownloadFileCompleted;
+                var files = LiveList;
 
-                downloading = new Stack<string>(files.Keys);
-                downloadStack();
+
+                downloader.AddDownloads(files.Keys);
+
+                downloader.StartDownload(modPath);
             }
             catch (Exception e)
             {
@@ -255,54 +257,18 @@ namespace DAUpdater
             }
         }
 
-        private void file_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
+
+        private void Launch()
         {
-            if (!downloadStack())
+            string extra = "-nosplash -world=chernarus -skipIntro" + Properties.Settings.Default.Paremeters;
+
+            if (Properties.Settings.Default.Windowed)
             {
-                launchButton.Content = "Launch";
-                checkFilesButton.IsEnabled = true;
-                launchButton.IsEnabled = true;
-                settingsButton.IsEnabled = true;
-                progressBar.Value = 0;
-                progressBox.Text = "Mod has been downloaded.";
+                extra += " -windowed";
             }
-        }
 
-        private bool downloadStack()
-        {
-            if (downloading.Count > 0)
-            {
-                checkFilesButton.IsEnabled = false;
-                launchButton.IsEnabled = false;
-                settingsButton.IsEnabled = false;
-                downloadFile(downloading.Pop());
+            Process.Start(Properties.Settings.Default.SteamPath, string.Format("-applaunch 33930 -mod={0}; {1}", modPath, extra));
 
-                Properties.Settings.Default.modVersion = downloadingVersion;
-                return true;
-            }
-            return false;
-        }
-
-        private void downloadFile(string file)
-        {
-            var url = string.Format(@"http://dayzawaken.euknetworks.com/updater/@DayzAwaken/{0}", file);
-            var location = string.Format(@"{0}/{1}", modPath, file);
-            var dir = System.IO.Path.GetDirectoryName((location));
-
-            if (!Directory.Exists(dir))
-                Directory.CreateDirectory(dir);
-
-            Console.WriteLine("Url: " + url + " location: " + location);
-            client.DownloadFileAsync(new System.Uri(url), location, System.IO.Path.GetFileName(file));
-        }
-
-        void file_DownloadProessChanged(object sender, DownloadProgressChangedEventArgs e)
-        {
-            progressBar.Value = e.ProgressPercentage;
-            progressBox.Text = string.Format("Downloading {0} {1} Mbs / {2} Mbs"
-                , (string)e.UserState
-                , (e.BytesReceived / 1024d / 1024d).ToString("0.00")
-                , (e.TotalBytesToReceive / 1024d / 1024d).ToString("0.00"));
         }
         #endregion
 
@@ -311,18 +277,34 @@ namespace DAUpdater
         {
             progressBar.Value = e.ProgressPercentage;
         }
+
+
+        private void Downloader_Progress(string name, float receivedMB, float totalMB, float precent)
+        {
+            downloadBar.Value = precent;
+            progressBox.Text = string.Format("Downloading {0} {1} Mbs / {2} Mbs"
+                , name
+                , receivedMB.ToString("0.00")
+                , totalMB.ToString("0.00"));
+        }
+
+        private void Downloader_Added(int value)
+        {
+            progressBar.Maximum = value;
+        }
+
+        private void Downloader_FileDone()
+        {
+            progressBar.Value++;
+        }
         #endregion
 
         #region Buttons
         private void settingsButton_Click(object sender, RoutedEventArgs e)
         {
             Settings settings = new Settings();
+            settings.parent = this;
             settings.Show();
-        }
-
-        private void checkFilesButton_Click(object sender, RoutedEventArgs e)
-        {
-            CheckFileChecksums();
         }
 
         private void launchButton_Click(object sender, RoutedEventArgs e)
@@ -335,20 +317,20 @@ namespace DAUpdater
             }
             else if (mode == "Update")
             {
-                CheckFileChecksums();
+                CheckFiles();
             }
             else if (mode == "Launch")
             {
-                string extra = "-nosplash -world=chernarus -skipIntro" + Properties.Settings.Default.Paremeters;
-
-                if (Properties.Settings.Default.Windowed)
-                {
-                    extra += " -windowed";
-                }
-                
-                Process.Start(Properties.Settings.Default.SteamPath, string.Format("-applaunch 33930 -mod={0}; {1}", modPath, extra));
+                Launch();
             }
         }
         #endregion
+
+        private void Window_Closing(object sender, CancelEventArgs e)
+        {
+            //downloading.Clear();
+            //Console.WriteLine(client);
+            //client.CancelAsync();
+        }
     }
 }

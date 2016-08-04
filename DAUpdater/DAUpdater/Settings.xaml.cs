@@ -21,6 +21,7 @@ namespace DAUpdater
     /// </summary>
     public partial class Settings : Window
     {
+        public MainWindow parent;
         public Settings()
         {
             InitializeComponent();
@@ -31,6 +32,18 @@ namespace DAUpdater
             steamPathBox.Text = Properties.Settings.Default.SteamPath;
             modPathBox.Text = Properties.Settings.Default.ModPath;
             parametersBox.Text = Properties.Settings.Default.Paremeters;
+
+            if (parent != null)
+            {
+                if (parent.InstallRequired)
+                {
+                    verifyButton.Visibility = Visibility.Hidden;
+                }
+                else
+                {
+                    verifyButton.Visibility = Visibility.Visible;
+                }
+            }
         }
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
@@ -78,6 +91,15 @@ namespace DAUpdater
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void verifyButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (parent != null)
+            {
+                parent.CheckFiles();
+                Close();
+            }
         }
     }
 }
