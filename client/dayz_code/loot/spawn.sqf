@@ -61,14 +61,18 @@ switch (_lootInfo select 0) do
 		
 		if (count _magazines > 0 && {getNumber (configFile >> "CfgWeapons" >> _lootInfo select 1 >> "melee") != 1}) then
 		{
-			#ifdef COMPLEX_WEAPON_MAGAZINES
-			for "_i" from 1 to (floor random (MAX_WEAPON_MAGAZINES + 1)) do
+			//weapons spawn with 1 magazine
+			_mag = _magazines select floor random count _magazines;
+			_ammo = getText (configFile >> "CfgMagazines" >> _mag >> "ammo");
+			_isRubber = getNumber (configFile >> "CfgAmmo" >> _ammo >> "isRubber");
+			while {(_isRubber != 1)} do
 			{
-				_vehicle addMagazineCargoGlobal [_magazines select floor random count _magazines, 1];
+				_mag = _magazines select floor random count _magazines;
+				_ammo = getText (configFile >> "CfgMagazines" >> _mag >> "ammo");
+				_isRubber = getNumber (configFile >> "CfgAmmo" >> _ammo >> "isRubber");
 			};
-			#else
-			_vehicle addMagazineCargoGlobal [_magazines select 0, floor random (MAX_WEAPON_MAGAZINES + 1)];
-			#endif
+				
+			_vehicle addMagazineCargoGlobal [_mag, 1];  
 		};
 	};
 	
