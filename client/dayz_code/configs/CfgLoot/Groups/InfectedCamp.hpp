@@ -45,8 +45,8 @@ InfectedCamp[] =
 	
 	//Rifles
 	{Loot_WEAPON,		10,		LeeEnfield},
-	{Loot_WEAPON,		10,		Mosin_Nagant},
-	{Loot_WEAPON,		5,		Mosin_Nagant_Scoped},
+	{Loot_WEAPON,		10,		Mosin_DZ},
+	{Loot_WEAPON,		5,		Mosin_PU_DZ},
 	{Loot_WEAPON,		10,		Winchester1866},
 	{Loot_WEAPON,		15,		MR43},
 	{Loot_WEAPON,		10,		Crossbow_DZ},

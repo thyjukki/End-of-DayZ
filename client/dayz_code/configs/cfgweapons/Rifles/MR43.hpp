@@ -1,4 +1,4 @@
-class MR43_DZ : Rifle
+class MR43 : Rifle
 {
 	scope = public;
 	

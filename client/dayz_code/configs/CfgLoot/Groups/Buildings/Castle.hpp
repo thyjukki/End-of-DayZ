@@ -13,8 +13,8 @@ Castle[] =
 	
 	//Weapons
 	{Loot_WEAPON,		3,		LeeEnfield},
-	{Loot_WEAPON,		3,		Mosin_Nagant},
-	{Loot_WEAPON,		2,		Mosin_Nagant_Scoped},
+	{Loot_WEAPON,		3,		Mosin_DZ},
+	{Loot_WEAPON,		2,		Mosin_PU_DZ},
 	{Loot_WEAPON,		3,		Winchester1866},
 	{Loot_WEAPON,		5,		MR43},
 	{Loot_WEAPON,		3,		Crossbow_DZ},

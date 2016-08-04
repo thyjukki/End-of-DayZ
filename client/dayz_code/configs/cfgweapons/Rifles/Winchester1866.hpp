@@ -1,4 +1,4 @@
-class Winchester1866_DZ : Rifle
+class Winchester1866 : Rifle
 {
 	scope = public;
 	
