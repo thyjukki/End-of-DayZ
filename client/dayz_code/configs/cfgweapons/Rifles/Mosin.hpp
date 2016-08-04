@@ -22,8 +22,38 @@ class Mosin_Base : Rifle
 	dexterity = 1.6;
 	distanceZoomMin = 300;
 	distanceZoomMax = 300;
-	
-	magazines[] = {5Rnd_762x54_Mosin};
+	magazines[] = {
+		"762x54_x1",
+		"762x54_x2",
+		"762x54_x3",
+		"762x54_x4",
+		"762x54_x5",
+		"762x54_HP_x1",
+		"762x54_HP_x2",
+		"762x54_HP_x3",
+		"762x54_HP_x4",
+		"762x54_HP_x5",
+		"762x54_TRACER_x1",
+		"762x54_TRACER_x2",
+		"762x54_TRACER_x3",
+		"762x54_TRACER_x4",
+		"762x54_TRACER_x5",
+		"762x54_RUBBER_x1",
+		"762x54_RUBBER_x2",
+		"762x54_RUBBER_x3",
+		"762x54_RUBBER_x4",
+		"762x54_RUBBER_x5",
+		"762x54_BT_x1",
+		"762x54_BT_x2",
+		"762x54_BT_x3",
+		"762x54_BT_x4",
+		"762x54_BT_x5",
+		"KPFS_5Rnd_762x54_Mosin",
+		"KPFS_5Rnd_762x54_Mosin_hp",
+		"KPFS_5Rnd_762x54_Mosin_tracer",
+		"KPFS_5Rnd_762x54_Mosin_rubber",
+		"KPFS_5Rnd_762x54_Mosin_bt"
+	};
 	
 	//recoil = "Mosin_NagantRecoil";
 	//recoilProne = "Mosin_NagantRecoilProne";
