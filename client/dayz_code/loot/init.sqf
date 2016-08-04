@@ -102,6 +102,7 @@ for "_i" from 0 to (count _cfgGroups) - 1 do
 				dz_loot_definitions set [_index, _x];
 			};
 			
+			diag_log format ["init.sqf (%1)", _weight];
 			_lootGroup set [_forEachIndex, round(_weight * 100)];
 			_indices set [_forEachIndex, _index];
 		}
