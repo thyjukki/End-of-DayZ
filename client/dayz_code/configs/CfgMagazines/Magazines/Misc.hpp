@@ -1,57 +1,46 @@
 //CZ550
-class 5x_22_LR_17_HMR_Empty: emptiedMagazine {
-	descriptionshort = "Caliber: 7x64 mm <BR/>Rounds: 5 <BR/>Used in: CZ 550";
-	displayname = "CZ 550 Magazine (Empty)";
-	picture = "\Ca\weapons\Data\Equip\m_M24_CA.paa";
-	scope = 2;
-	class ammoType
-	{
-		class B_762x51_noTracer {
-			ammoMag = "5x_22_LR_17_HMR";
-		};
-	};
-};
-
-class 5x_22_LR_17_HMR: CA_Magazine
+class 5x_22_LR_17_HMR;
+class 5Rnd_17HMR : 5x_22_LR_17_HMR
 {
+	displayName = $STR_DZ_MAG_5RND_17HMR_NAME;
+	descriptionShort = $STR_DZ_MAG_5RND_17HMR_DESC;
+
+	model = "\dayz_equip\models\mag5rnd.p3d";
+	
 	class ItemActions
 	{
 		COMBINE_MAG
-	};
-
-	emptyMag = "5x_22_LR_17_HMR_Empty";
-};
-
-class 10x_303_Empty : emptiedMagazine { //FIXME
-	descriptionshort = "Caliber: .303<br/>Rounds: 10<br/>Used in: Lee Enfield Mk III";
-	displayname = "Lee Enfield Mag (Empty)";
-	picture = "\Ca\weapons\Data\Equip\m_M24_CA.paa";
-	scope = 2;
-
-	class ammoType
-	{
-		class B_303_Ball {
-			ammoMag = "10x_303";
-		};
 	};
 };
 
 //Lee-Enfield
-class 10x_303: CA_Magazine
+class 10x_303;
+class 10Rnd_303British : 10x_303
 {
+	model = "\dayz_equip\models\mag10rnd.p3d";
+	displayName = $STR_DZ_MAG_10RND_303BRITISH_NAME;
+	
 	class ItemActions
 	{
 		COMBINE_MAG
 	};
-
-	emptyMag = "10x_303_Empty";
 };
 
 //Winchester 1866
-class 15Rnd_W1866_Slug: CA_Magazine
+class 15Rnd_W1866_Slug : CA_Magazine
 {
+	scope = public;
+	
 	model = "\z\addons\dayz_communityassets\models\winammo.p3d";
 	picture = "\z\addons\dayz_communityassets\pictures\equip_winammo_ca.paa";
+	displayName = $STR_DZ_MAG_15RND_W1866_NAME;
+	descriptionShort = $STR_DZ_MAG_15RND_W1866_DESC;
+	
+	ammo = B_1866_Slug;
+	count = 15;
+	initSpeed = 396;
+	displayNameShort = "Slug";
+	
 	class ItemActions
 	{
 		COMBINE_MAG

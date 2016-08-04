@@ -1,4 +1,4 @@
-#include "MeleeSwing.hpp"
+#include "Melee.hpp"
 
 #define COMBINE_MAG class CombineMag\
 {\
@@ -42,8 +42,8 @@
 #include "762x51.hpp"
 #include "762x54r.hpp"
 #include "792x33.hpp"
-#include "Misc.hpp"
+#include "Misc.hpp"			//CZ550, Lee-Enfield, Winchester 1866
 #include "Shotgun.hpp"
-#include "Quiver.hpp"
+#include "Arrows.hpp"
 
 #undef COMBINE_MAG
