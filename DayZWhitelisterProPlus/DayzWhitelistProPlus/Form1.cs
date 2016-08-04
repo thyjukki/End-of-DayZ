@@ -1181,11 +1181,12 @@ namespace Awakener
 
                 var date = source.CreationTime.ToString("yyyy-MM-dd-HH-mm");
 
+                Directory.CreateDirectory(rptArchive);
                 File.Move(source.FullName, string.Format(@"{0}\server_{1}.rpt", rptArchive, date));
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                AppendTextEx(e.Message);
             }
         }
     }
