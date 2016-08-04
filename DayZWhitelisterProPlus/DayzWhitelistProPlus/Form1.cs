@@ -202,6 +202,7 @@ namespace Awakener
             }
 
             this.FormClosing += FrmMain_FormClosing;
+            this.FormClosed += FrmMain_FormClosed;
         }
 
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -209,9 +210,15 @@ namespace Awakener
             keepAliveTimer.Stop();
             mainRebootTimer.Stop();
             triggeredRebootTimer.Stop();
+        }
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
             keepAliveTimer.Dispose();
+            keepAliveTimer = null;
             mainRebootTimer.Dispose();
+            mainRebootTimer = null;
             triggeredRebootTimer.Dispose();
+            triggeredRebootTimer = null;
         }
 
         /* DISCONNECT EVENT */
