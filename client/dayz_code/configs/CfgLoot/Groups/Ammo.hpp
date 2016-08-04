@@ -35,11 +35,11 @@ AmmoCivilian[] =
 	{Loot_MAGAZINE,		04,		RH_20Rnd_9x18_aps_Empty}, //Dont have APS in table atm
 	{Loot_MAGAZINE,		03,		RH_20Rnd_9x18_aps},
 	{Loot_MAGAZINE,		02,		RH_20Rnd_9x18_apsSD},
-	{Loot_MAGAZINE,		02,		RH_20Rnd_9x18_aps_hp,
+	{Loot_MAGAZINE,		02,		RH_20Rnd_9x18_aps_hp},
 	{Loot_MAGAZINE,		02,		RH_20Rnd_9x18_aps_tracer},
 	{Loot_MAGAZINE,		01,		RH_20Rnd_9x18_aps_rubber},
 	{Loot_MAGAZINE,		01,		RH_20Rnd_9x18_aps_bt},
-	{Loot_MAGAZINE,		04,		15Rnd_9x19_M9_Empty,
+	{Loot_MAGAZINE,		04,		15Rnd_9x19_M9_Empty},
 	{Loot_MAGAZINE,		03,		15Rnd_9x19_M9},
 	{Loot_MAGAZINE,		02,		15Rnd_9x19_M9SD},
 	{Loot_MAGAZINE,		02,		15Rnd_9x19_M9_hp},
@@ -246,7 +246,7 @@ AmmoMilitaryLow[] =
 		{Loot_MAGAZINE,		02,		RH_57x28mm_50RND_Mag_tracer},
 		{Loot_MAGAZINE,		01,		RH_57x28mm_50RND_Mag_rubber},
 		{Loot_MAGAZINE,		01,		RH_57x28mm_50RND_Mag_bt},
-		{Loot_MAGAZINE,		15,		30Rnd_545x39_AK_Empty, // 5.45x39 magazines (AK74)
+		{Loot_MAGAZINE,		15,		30Rnd_545x39_AK_Empty}, // 5.45x39 magazines (AK74)
 		{Loot_MAGAZINE,		15,		30Rnd_545x39_AK},
 		{Loot_MAGAZINE,		05,		30Rnd_545x39_AKSD},
 		{Loot_MAGAZINE,		05,		30Rnd_545x39_AK_hp},
@@ -626,7 +626,7 @@ civilianAmmo[] = {
 		{Loot_MAGAZINE,		04,		792x33_x10},
 		{Loot_MAGAZINE,		02,		792x33_HP_x10},
 		{Loot_MAGAZINE,		02,		792x33_TRACER_x10},
-		{Loot_MAGAZINE,		01,		792x33_RUBBER_x10,
+		{Loot_MAGAZINE,		01,		792x33_RUBBER_x10},
 		{Loot_MAGAZINE,		01,		792x33_BT_x10}
 		// Remember ending no ,
 };

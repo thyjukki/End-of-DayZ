@@ -7,7 +7,7 @@ AmmoBoxRU1[] =
 	{Loot_MAGAZINE,		02,		8Rnd_9x18_Makarov_hp},
 	{Loot_MAGAZINE,		02,		8Rnd_9x18_Makarov_tracer},
 	{Loot_MAGAZINE,		01,		8Rnd_9x18_Makarov_bt},
-	{Loot_MAGAZINE,		10,		30Rnd_545x39_AK_Empty, // 5.45x39 magazines (AK74)
+	{Loot_MAGAZINE,		10,		30Rnd_545x39_AK_Empty}, // 5.45x39 magazines (AK74)
 	{Loot_MAGAZINE,		10,		30Rnd_545x39_AK},
 	{Loot_MAGAZINE,		02,		30Rnd_545x39_AKSD},
 	{Loot_MAGAZINE,		02,		30Rnd_545x39_AK_hp},
@@ -99,7 +99,7 @@ AmmoBoxUS1[] =
 	{Loot_MAGAZINE,		01,		7Rnd_45ACP_1911},
 	{Loot_MAGAZINE,		01,		RH_8Rnd_45cal_m1911_Empty},
 	{Loot_MAGAZINE,		01,		RH_8Rnd_45cal_m1911},
-	{Loot_MAGAZINE,		01,		15Rnd_9x19_M9_Empty,
+	{Loot_MAGAZINE,		01,		15Rnd_9x19_M9_Empty},
 	{Loot_MAGAZINE,		01,		15Rnd_9x19_M9},
 	{Loot_MAGAZINE,		01,		RH_45ACP_25RND_UMP_Mag_Empty},
 	{Loot_MAGAZINE,		01,		RH_45ACP_25RND_UMP_Mag},
@@ -166,7 +166,7 @@ AmmoBoxEU2[] =
 	{Loot_MAGAZINE,		02,		5Rnd_762x51_M24_Empty},
 	{Loot_MAGAZINE,		02,		5Rnd_762x51_M24},
 	{Loot_MAGAZINE,		02,		UKF_5Rnd_338_Mag_Empty},
-	{Loot_MAGAZINE,		02,		UKF_5Rnd_338_Mag}
+	{Loot_MAGAZINE,		02,		UKF_5Rnd_338_Mag},
 	{Loot_MAGAZINE,		05,		762x51_x100},
 	{Loot_MAGAZINE,		01,		338_x50},
 };

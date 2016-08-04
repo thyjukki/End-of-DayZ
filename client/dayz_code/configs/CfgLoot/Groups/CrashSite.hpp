@@ -459,7 +459,7 @@ CrashSiteEU[] =
 	{Loot_WEAPON,		08,		RH_Scarak},
 	{Loot_WEAPON,		08,		RH_scarakaim},
 	{Loot_WEAPON,		08,		RH_scarakeotech},
-	{{Loot_WEAPON,		08,		RH_scarakacog},
+	{Loot_WEAPON,		08,		RH_scarakacog},
 	//Tools
 	{Loot_WEAPON,		1.5,	ItemGPS},
 	{Loot_WEAPON,		0.5,	NVGoggles},
@@ -525,7 +525,7 @@ CrashSiteUN[] =
 	{Loot_WEAPON,		40,		ukf_L85A2AG36_susat},
 	{Loot_WEAPON,		40,		ukf_L85A2AG36_acog},
 	{Loot_WEAPON,		40,		ukf_L85A2AG36_sd_fgrip_CQB},
-	{Loot_WEAPON,		40,		RH_HK53aim,
+	{Loot_WEAPON,		40,		RH_HK53aim},
 	{Loot_WEAPON,		40,		RH_HK53eot},
 	{Loot_WEAPON,		40,		RH_HK53RFX},	
 	{Loot_WEAPON,		40,		RH_m16a2},

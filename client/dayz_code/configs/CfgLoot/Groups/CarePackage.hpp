@@ -73,6 +73,6 @@ CarePackage[] =
 	{Loot_GROUP,		5,		AmmoUS},
 	{Loot_GROUP,		5,		civilianAmmo},
 	{Loot_GROUP,		1,		westernAmmo},
-	{Loot_GROUP,		5,		militaryAmmo}
+	{Loot_GROUP,		5,		militaryAmmo},
 	{Loot_GROUP,		12,		Generic}
 };
