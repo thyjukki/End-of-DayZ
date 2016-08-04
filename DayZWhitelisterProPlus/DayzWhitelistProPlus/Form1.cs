@@ -209,6 +209,9 @@ namespace Awakener
             keepAliveTimer.Stop();
             mainRebootTimer.Stop();
             triggeredRebootTimer.Stop();
+            keepAliveTimer.Dispose();
+            mainRebootTimer.Dispose();
+            triggeredRebootTimer.Dispose();
         }
 
         /* DISCONNECT EVENT */
@@ -826,11 +829,9 @@ namespace Awakener
         private string GetResponse(int id)
         {
             // Polling for response
-            if (received.ContainsKey(id))
+            string response;
+            if (received.TryGetValue(id, out response))
             {
-                string response = received[id];
-                response.Remove(id);
-
                 return response;
             }
             else
