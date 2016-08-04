@@ -1177,7 +1177,7 @@ namespace Awakener
         {
             try
             {
-                var source = new FileInfo(rptPath + @"\arma2oaserver.rpt");
+                var source = new FileInfo(rptPath);
 
                 var date = source.CreationTime.ToString("yyyy-MM-dd-HH-mm");
 
