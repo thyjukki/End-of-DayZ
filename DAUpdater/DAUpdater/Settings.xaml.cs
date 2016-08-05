@@ -39,16 +39,13 @@ namespace DAUpdater
             modPathBox.Text = Properties.Settings.Default.ModPath;
             parametersBox.Text = Properties.Settings.Default.Paremeters;
 
-            if (parent != null)
+            if (firstTime || (parent != null && parent.InstallRequired))
             {
-                if (parent.InstallRequired)
-                {
-                    verifyButton.Visibility = Visibility.Hidden;
-                }
-                else
-                {
-                    verifyButton.Visibility = Visibility.Visible;
-                }
+                verifyButton.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                verifyButton.Visibility = Visibility.Visible;
             }
         }
 
@@ -80,8 +77,8 @@ namespace DAUpdater
             Properties.Settings.Default.Windowed = windowed;
 
 
-            DAUpdater.Properties.Settings.Default.FirstTime = false;
-            DAUpdater.Properties.Settings.Default.Save();
+            Properties.Settings.Default.FirstTime = false;
+            Properties.Settings.Default.Save();
 
 
             if (firstTime)

@@ -11,7 +11,7 @@
     <Grid>
         <Button x:Name="saveButton" Content="Save" Margin="0,0,90,10" Height="20" VerticalAlignment="Bottom" Click="saveButton_Click" HorizontalAlignment="Right" Width="75"/>
         <Button x:Name="cancelButton" Content="Cancel" Margin="0,0,10,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="cancelButton_Click" RenderTransformOrigin="1.057,0.865"/>
-        <GroupBox x:Name="groupBox" Header="Game Settings" Margin="10,128,10,35">
+        <GroupBox x:Name="groupBox" Header="Game Settings" Margin="10,144,10,35">
             <Grid>
                 <Label x:Name="label_Copy1" Content="Aditional parameters" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="125"/>
                 <Label x:Name="label_Copy2" Content="Launch windowed:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="125"/>
@@ -20,15 +20,15 @@
 
             </Grid>
         </GroupBox>
-        <GroupBox x:Name="groupBox_Copy" Header="Application Settings" Margin="10,10,10,230">
+        <GroupBox x:Name="groupBox_Copy" Header="Application Settings" Margin="10,10,10,221">
             <Grid>
                 <Label x:Name="label" Content="Steam.exe Location:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="2"/>
                 <Label x:Name="label_Copy" Content="Mod Install Folder:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="2"/>
                 <TextBox x:Name="steamPathBox" Height="23" Margin="135,13,80,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
                 <TextBox x:Name="modPathBox" Height="23" Margin="135,44,80,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-                <Button x:Name="armaPathSelect" Content="Select" Margin="0,13,10,0" VerticalAlignment="Top" Height="23" HorizontalAlignment="Right" Width="65" Click="armaPathSelect_Click"/>
-                <Button x:Name="modPathSelect" Content="Select" Margin="0,44,10,0" VerticalAlignment="Top" Height="23" HorizontalAlignment="Right" Width="65" Click="modPathSelect_Click"/>
-                <Button x:Name="verifyButton" Content="Verify and repair mod files" Margin="0,0,10,0" Height="20" VerticalAlignment="Bottom" Click="verifyButton_Click" HorizontalAlignment="Right" Width="162"/>
+                <Button x:Name="armaPathSelect" Content="Select" Margin="0,13,10,62" HorizontalAlignment="Right" Width="65" Click="armaPathSelect_Click"/>
+                <Button x:Name="modPathSelect" Content="Select" Margin="0,44,10,0" HorizontalAlignment="Right" Width="65" Click="modPathSelect_Click" Height="23" VerticalAlignment="Top"/>
+                <Button x:Name="verifyButton" Content="Verify and repair mod files" Margin="0,72,10,6" Click="verifyButton_Click" HorizontalAlignment="Right" Width="162"/>
             </Grid>
         </GroupBox>
 

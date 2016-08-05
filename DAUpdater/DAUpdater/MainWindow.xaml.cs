@@ -419,8 +419,6 @@ namespace DAUpdater
             Version = LiveVersion;
             FullVersion = FullLiveVersion;
             RefreshUpdater();
-
-            MessageBox.Show("Mod downloaded!");
         }
         private void Downloader_Zip_Done()
         {
@@ -473,7 +471,7 @@ namespace DAUpdater
         {
             Console.WriteLine("Zip_Progress");
 
-            int precentage = (int)((totalMB / 100f) * receivedMB);
+            int precentage = (int)((totalMB / receivedMB) * 100);
             downloadBar.Value = precentage;
             progressBox.Text = string.Format("Extracting {0} {1} Mbs / {2} Mbs"
                 , name
@@ -488,8 +486,6 @@ namespace DAUpdater
             FullVersion = FullLiveVersion;
 
             zip.Delete();
-
-            MessageBox.Show("Mod installed!");
             RefreshUpdater();
         }
 
