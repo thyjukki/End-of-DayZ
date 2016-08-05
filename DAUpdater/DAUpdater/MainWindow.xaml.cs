@@ -33,11 +33,19 @@ namespace DAUpdater
         #endregion
 
         #region public getters
-        public string modPath
+        public string ModPath
         {
             get
             {
                 return Properties.Settings.Default.ModPath + @"\@DayZAwaken";
+            }
+        }
+
+        public string InstallPath
+        {
+            get
+            {
+                return Properties.Settings.Default.ModPath;
             }
         }
 
@@ -58,6 +66,51 @@ namespace DAUpdater
 
 
                 return -1;
+            }
+        }
+
+        public int Version
+        {
+            get
+            {
+                return Properties.Settings.Default.modVersion;
+            }
+            set
+            {
+                Properties.Settings.Default.modVersion = value;
+                Properties.Settings.Default.Save();
+            }
+        }
+
+        public string FullLiveVersion
+        {
+            get
+            {
+                try
+                {
+
+                    return downloader.ReadString(@"http://dayzawaken.euknetworks.com/updater/version");
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+
+
+                return "";
+            }
+        }
+
+        public string FullVersion
+        {
+            get
+            {
+                return Properties.Settings.Default.fullVersion;
+            }
+            set
+            {
+                Properties.Settings.Default.fullVersion = value;
+                Properties.Settings.Default.Save();
             }
         }
 
@@ -91,7 +144,7 @@ namespace DAUpdater
         {
             get
             {
-                return !Directory.Exists(modPath);
+                return !Directory.Exists(ModPath);
             }
         }
         #endregion
@@ -102,19 +155,13 @@ namespace DAUpdater
             InitializeComponent();
 
             downloader = new Downloader();
-            if (UpdateRequired)
-            {
-                launchButton.Content = "Update";
-            }
-
-            if (InstallRequired)
-            {
-                launchButton.Content = "Install";
-            }
+            RefreshUpdater();
 
             downloader.Progress += Downloader_Progress;
             downloader.Added += Downloader_Added;
             downloader.FileDone += Downloader_FileDone;
+            downloader.Done += Downloader_Done;
+            downloader.Canceled += Downloader_Canceled;
         }
         #endregion
 
@@ -186,13 +233,13 @@ namespace DAUpdater
 
         void checkFilesWork(object sender, DoWorkEventArgs e)
         {
-            string[] files = Directory.GetFiles(modPath, "*", SearchOption.AllDirectories);
+            string[] files = Directory.GetFiles(ModPath, "*", SearchOption.AllDirectories);
 
             var liveFiles = LiveList;
             List<string> toDelete = new List<string>();
             List<string> md5s = new List<string>();
 
-            
+
             for (int i = 0; i < files.Length; i++)
             {
                 string file = files[i];
@@ -202,8 +249,8 @@ namespace DAUpdater
                     progressBar.Maximum = files.Length;
                     progressBox.Text = string.Format("Checking {0}", System.IO.Path.GetFileName(file));
                 }));
-                
-    
+
+
 
                 var md5 = fileChecksum(file);
 
@@ -225,7 +272,7 @@ namespace DAUpdater
                 if (!md5s.Contains(item.Value))
                 {
                     Console.WriteLine("have to download " + item.Key);
-                    downloader.AddDownload(item.Key);
+                    downloader.AddDownload(@"@DayzAwaken/" + item.Key);
                 }
             }
 
@@ -236,7 +283,92 @@ namespace DAUpdater
                 settingsButton.IsEnabled = true;
                 progressBar.Value = 0;
                 progressBox.Text = "Mod file integrity checking complete.";
-                downloader.StartDownload(modPath);
+
+                if (downloader.HasDownloads)
+                {
+                    if (MessageBox.Show("Do you want to download them?", "Missing or broken files detected!", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                    {
+                        downloader.StartDownload(ModPath);
+                    }
+                    else
+                    {
+                        RefreshUpdater();
+                    }
+                }
+                else
+                {
+                    RefreshUpdater();
+                }
+            }));
+        }
+
+        public void UpdateFiles()
+        {
+            //localProgress.IsIndeterminate = true;
+            launchButton.IsEnabled = false;
+            settingsButton.IsEnabled = false;
+            BackgroundWorker worker = new BackgroundWorker();
+            worker.WorkerReportsProgress = true;
+            worker.DoWork += UpdateWork;
+            worker.ProgressChanged += worker_ProgressChanged;
+
+            worker.RunWorkerAsync();
+        }
+
+        void UpdateWork(object sender, DoWorkEventArgs e)
+        {
+            string[] files = Directory.GetFiles(ModPath, "*", SearchOption.AllDirectories);
+
+            var liveFiles = LiveList;
+            List<string> toDelete = new List<string>();
+            List<string> md5s = new List<string>();
+
+
+            for (int i = 0; i < files.Length; i++)
+            {
+                string file = files[i];
+
+                Application.Current.Dispatcher.Invoke(new Action(() =>
+                {
+                    progressBar.Maximum = files.Length;
+                    progressBox.Text = string.Format("Checking {0}", System.IO.Path.GetFileName(file));
+                }));
+
+
+
+                var md5 = fileChecksum(file);
+
+                if (!liveFiles.ContainsValue(md5))
+                {
+                    toDelete.Add(file);
+                }
+                else
+                {
+                    md5s.Add(md5);
+                }
+
+                (sender as BackgroundWorker).ReportProgress(i);
+            }
+
+
+            foreach (var item in liveFiles)
+            {
+                if (!md5s.Contains(item.Value))
+                {
+                    Console.WriteLine("have to download " + item.Key);
+                    downloader.AddDownload(@"@DayzAwaken/" + item.Key);
+                }
+            }
+
+
+            Application.Current.Dispatcher.Invoke(new Action(() =>
+            {
+                launchButton.IsEnabled = true;
+                settingsButton.IsEnabled = true;
+                progressBar.Value = 0;
+                progressBox.Text = "Mod file integrity checking complete.";
+                
+                downloader.StartDownload(ModPath);
             }));
         }
 
@@ -244,12 +376,13 @@ namespace DAUpdater
         {
             try
             {
-                var files = LiveList;
+                downloader.Addpackage();
+                launchButton.Content = "Cancel";
+                settingsButton.IsEnabled = false;
 
-
-                downloader.AddDownloads(files.Keys);
-
-                downloader.StartDownload(modPath);
+                downloader.Done -= Downloader_Done;
+                downloader.Done += Downloader_Zip_Done;
+                downloader.StartDownload(InstallPath);
             }
             catch (Exception e)
             {
@@ -267,8 +400,42 @@ namespace DAUpdater
                 extra += " -windowed";
             }
 
-            Process.Start(Properties.Settings.Default.SteamPath, string.Format("-applaunch 33930 -mod={0}; {1}", modPath, extra));
+            Process.Start(Properties.Settings.Default.SteamPath, string.Format("-applaunch 33930 -mod={0}; {1}", ModPath, extra));
 
+        }
+
+
+
+        private void Downloader_Canceled()
+        {
+            MessageBox.Show("Download canceled!");
+            
+            RefreshUpdater();
+        }
+
+        private void Downloader_Done()
+        {
+            Console.WriteLine("Downloader_Done");
+            Version = LiveVersion;
+            FullVersion = FullLiveVersion;
+            RefreshUpdater();
+
+            MessageBox.Show("Mod downloaded!");
+        }
+        private void Downloader_Zip_Done()
+        {
+            Console.WriteLine("Downloader_Zip_Done");
+            downloader.Done -= Downloader_Zip_Done;
+            downloader.Done += Downloader_Done;
+            progressBar.IsIndeterminate = true;
+            downloadBar.Value = 0;
+            progressBox.Text = string.Empty;
+
+            var zip = new Zipper(InstallPath + @"/@DayzAwaken.zip");
+            zip.Progress += Zip_Progress;
+            zip.Done += Zip_Done;
+            zip.ExtractAll(InstallPath);
+            launchButton.IsEnabled = false;
         }
         #endregion
 
@@ -281,6 +448,7 @@ namespace DAUpdater
 
         private void Downloader_Progress(string name, float receivedMB, float totalMB, float precent)
         {
+            Console.WriteLine("Downloader_Progress");
             downloadBar.Value = precent;
             progressBox.Text = string.Format("Downloading {0} {1} Mbs / {2} Mbs"
                 , name
@@ -295,7 +463,72 @@ namespace DAUpdater
 
         private void Downloader_FileDone()
         {
+            Console.WriteLine("Downloader_FileDone");
             progressBar.Value++;
+        }
+
+
+
+        private void Zip_Progress(string name, float receivedMB, float totalMB)
+        {
+            Console.WriteLine("Zip_Progress");
+
+            int precentage = (int)((totalMB / 100f) * receivedMB);
+            downloadBar.Value = precentage;
+            progressBox.Text = string.Format("Extracting {0} {1} Mbs / {2} Mbs"
+                , name
+                , receivedMB.ToString("0.00")
+                , totalMB.ToString("0.00"));
+        }
+
+        private void Zip_Done(Zipper zip)
+        {
+            Console.WriteLine("Zip_Done");
+            Version = LiveVersion;
+            FullVersion = FullLiveVersion;
+
+            zip.Delete();
+
+            MessageBox.Show("Mod installed!");
+            RefreshUpdater();
+        }
+
+        private void RefreshUpdater()
+        {
+            launchButton.IsEnabled = true;
+            settingsButton.IsEnabled = true;
+
+            progressBar.IsIndeterminate = false;
+            progressBar.Maximum = 100;
+            progressBar.Value = 0;
+
+            downloadBar.IsIndeterminate = false;
+            downloadBar.Maximum = 100;
+            downloadBar.Value = 0;
+
+            progressBox.Text = string.Empty;
+
+            launchButton.Content = "Launch";
+            if (UpdateRequired)
+            {
+                UpdateNotification();
+                launchButton.Content = "Update";
+            }
+
+            if (InstallRequired)
+            {
+                launchButton.Content = "Install";
+            }
+
+            
+        }
+
+        private void UpdateNotification()
+        {
+            string curVersion = FullVersion;
+            string newVersion = FullLiveVersion;
+            string message = downloader.ReadString(@"http://dayzawaken.euknetworks.com/updater/updatemessage");
+            MessageBox.Show(string.Format("Update {0} is avaible to download!\nYou have {1}\n\nChanges are:\n{2}", newVersion, curVersion, message), "Update avaible");
         }
         #endregion
 
@@ -317,11 +550,15 @@ namespace DAUpdater
             }
             else if (mode == "Update")
             {
-                CheckFiles();
+                UpdateFiles();
             }
             else if (mode == "Launch")
             {
                 Launch();
+            }
+            else if (mode == "Cancel")
+            {
+                downloader.Canel();
             }
         }
         #endregion

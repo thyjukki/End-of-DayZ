@@ -14,6 +14,7 @@ namespace DAUpdater
     public delegate void DownloadAdded(int value);
     public delegate void DownloadDone();
     public delegate void DownloadFileDone();
+    public delegate void DownloadCanceled();
 
     class Downloader
     {
@@ -21,16 +22,30 @@ namespace DAUpdater
         Stack<string> dlStack = new Stack<string>();
         string destination;
 
+        static string updaterUrl = @"http://dayzawaken.euknetworks.com/updater";
+        static string filesUrl = updaterUrl + @"@DayzAwaken";
+        static string zipFile = @"/@DayzAwaken.zip";
         public event DownloadProgress Progress;
         public event DownloadAdded Added;
         public event DownloadDone Done;
         public event DownloadFileDone FileDone;
+        public event DownloadCanceled Canceled;
+
+
 
         public bool Downloading
         {
             get
             {
                 return client.IsBusy;
+            }
+        }
+
+        public bool HasDownloads
+        {
+            get
+            {
+                return dlStack.Count > 0;
             }
         }
 
@@ -74,6 +89,16 @@ namespace DAUpdater
 
         private void downloadDone(object sender, AsyncCompletedEventArgs e)
         {
+            if (e.Cancelled)
+            {
+                Application.Current.Dispatcher.Invoke(new Action(() =>
+                {
+                    Canceled();
+                }));
+
+                return;
+            }
+
             if (downloadStack())
             {
                 Application.Current.Dispatcher.Invoke(new Action(() =>
@@ -92,7 +117,8 @@ namespace DAUpdater
 
         private void downloadProgress(object sender, DownloadProgressChangedEventArgs e)
         {
-
+            if (!Downloading)
+                return;
             Application.Current.Dispatcher.Invoke(new Action(() =>
             {
                 Progress((string)e.UserState, (e.BytesReceived / 1024f / 1024f), (e.TotalBytesToReceive / 1024f / 1024f), e.ProgressPercentage);
@@ -102,15 +128,15 @@ namespace DAUpdater
 
         private void downloadFile(string file)
         {
-            var url = new System.Uri(string.Format(@"http://dayzawaken.euknetworks.com/updater/@DayzAwaken/{0}", file));
+            var url = new System.Uri(string.Format(@"{0}/{1}", updaterUrl, file));
             var location = string.Format(@"{0}/{1}", destination, file);
+            Console.WriteLine(location);
             var dir = System.IO.Path.GetDirectoryName((location));
 
             if (!Directory.Exists(dir))
                 Directory.CreateDirectory(dir);
 
             Console.WriteLine("Url: " + url + " location: " + location);
-            File.Delete(location);
             client.DownloadFileAsync(url, location, System.IO.Path.GetFileName(file));
         }
 
@@ -142,9 +168,18 @@ namespace DAUpdater
         {
             foreach (var item in paths)
             {
-                dlStack.Push(item);
+                dlStack.Push(string.Format(@"{0}/{1}", filesUrl, item));
             }
 
+            Application.Current.Dispatcher.Invoke(new Action(() =>
+            {
+                Added(dlStack.Count);
+            }));
+        }
+
+        public void Addpackage()
+        {
+            dlStack.Push(zipFile);
             Application.Current.Dispatcher.Invoke(new Action(() =>
             {
                 Added(dlStack.Count);
@@ -157,6 +192,14 @@ namespace DAUpdater
             if (!Downloading)
             {
                 downloadStack();
+            }
+        }
+
+        public void Canel()
+        {
+            if (Downloading)
+            {
+                client.CancelAsync();
             }
         }
     }

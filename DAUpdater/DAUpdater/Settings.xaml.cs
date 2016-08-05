@@ -2,7 +2,10 @@
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Security.AccessControl;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,9 +25,12 @@ namespace DAUpdater
     public partial class Settings : Window
     {
         public MainWindow parent;
-        public Settings()
+
+        private bool firstTime;
+        public Settings(bool ft = false)
         {
             InitializeComponent();
+            firstTime = ft;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -48,11 +54,20 @@ namespace DAUpdater
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
+            if (!File.Exists(steamPathBox.Text))
+            {
+                MessageBox.Show("Steam path is not valid!\nPlease select steam.exe");
+                return;
+            }
             Properties.Settings.Default.SteamPath = steamPathBox.Text;
+            if (!Directory.Exists(modPathBox.Text))
+            {
+                MessageBox.Show("Mod installation path is not a valid location!");
+                return;
+            }
+            
             Properties.Settings.Default.ModPath = modPathBox.Text;
             Properties.Settings.Default.Paremeters = parametersBox.Text;
-            DAUpdater.Properties.Settings.Default.FirstTime = false;
-            DAUpdater.Properties.Settings.Default.Save();
             bool windowed;
             if(windowedBox.IsChecked.HasValue)
             {
@@ -64,6 +79,16 @@ namespace DAUpdater
             }
             Properties.Settings.Default.Windowed = windowed;
 
+
+            DAUpdater.Properties.Settings.Default.FirstTime = false;
+            DAUpdater.Properties.Settings.Default.Save();
+
+
+            if (firstTime)
+            {
+                MainWindow mainView = new MainWindow();
+                mainView.Show();
+            }
             this.Close();
         }
 

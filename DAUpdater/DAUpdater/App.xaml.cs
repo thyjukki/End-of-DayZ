@@ -18,7 +18,7 @@ namespace DAUpdater
             //add some bootstrap or startup logic 
             if (DAUpdater.Properties.Settings.Default.FirstTime)
             {
-                Settings settings = new Settings();
+                Settings settings = new Settings(true);
                 settings.Show();
             }
             else
