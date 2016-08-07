@@ -8,7 +8,7 @@ dayZ_serverName = "DA"; // Servername (country code + server number)
 
 //Gamesettings
 dayz_antihack = 0; // DayZ Antihack / 1 = enabled // 0 = disabled
-dayz_REsec = 1; // DayZ RE Security / 1 = enabled // 0 = disabled
+dayz_REsec = 0; // DayZ RE Security / 1 = enabled // 0 = disabled
 dayz_enableRules = true; //Enables a nice little news/rules feed on player login (make sure to keep the lists quick).
 dayz_quickSwitch = false; //Turns on forced animation for weapon switch. (hotkeys 1,2,3) False = enable animations, True = disable animations
 dayz_POIs = true;
@@ -73,7 +73,6 @@ call compile preprocessFileLineNumbers "\z\addons\dayz_code\system\BIS_Effects\i
 progressLoadingScreen 0.25;
 initialized = true;
 
-if (dayz_REsec == 1) then { call compile preprocessFileLineNumbers "\z\addons\dayz_code\system\REsec.sqf"; };
 execVM "\z\addons\dayz_code\system\DynamicWeatherEffects.sqf";
 
 if (isServer) then {
@@ -98,7 +97,6 @@ if (!isDedicated) then {
 	if (dayz_infectiousWaterholes) then { execVM "\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\init.sqf"; };
 	if (dayz_antihack != 0) then {
 		execVM "\z\addons\dayz_code\system\mission\chernarus\security\init.sqf";
-		call compile preprocessFileLineNumbers "\z\addons\dayz_code\system\antihack.sqf";
 	};
 	
 	// remove annoying benches
