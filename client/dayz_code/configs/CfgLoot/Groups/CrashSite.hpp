@@ -423,10 +423,10 @@ CrashSiteEU[] =
 	{Loot_WEAPON,		25,		ukf_L85A2AG36_acog},
 	{Loot_WEAPON,		25,		ukf_L85A2AG36_sd_fgrip_CQB},
 	{Loot_WEAPON,		25,		RH_ctar21},
-	{Loot_WEAPON,		30,		RH_m27},
+	/*{Loot_WEAPON,		30,		RH_m27},TODO(Jukki) Do we have these?
 	{Loot_WEAPON,		10,		RH_m27acog},
 	{Loot_WEAPON,		10,		RH_m27aim},
-	{Loot_WEAPON,		10,		RH_m27eotech},
+	{Loot_WEAPON,		10,		RH_m27eotech},*/
 	{Loot_WEAPON,		10,		RH_hk416},
 	{Loot_WEAPON,		10,		RH_hk416aim},
 	{Loot_WEAPON,		10,		RH_hk416acog},
