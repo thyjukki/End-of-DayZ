@@ -581,6 +581,7 @@ class CfgWeapons
 	{
 		class ItemActions {
 			class UseAtt {
+				isAttachment = 1;
 				text = "Detach Aimpoint";
 				script = "spawn player_removeAttchment;";
 				att = "Attachment_CCO";
@@ -610,6 +611,7 @@ class CfgWeapons
 	{
 		class ItemActions {
 			class UseAtt {
+				isAttachment = 1;
 				text = "Detach Aimpoint";
 				script = "spawn player_removeAttchment;";
 				att = "Attachment_CCO";
@@ -629,6 +631,7 @@ class CfgWeapons
 	{
 		class ItemActions {
 			class UseAtt {
+				isAttachment = 1;
 				text = "Detach Acog";
 				script = "spawn player_removeAttchment;";
 				att = "Attachment_ACOG";
@@ -697,6 +700,7 @@ class CfgWeapons
 	{
 		class ItemActions {
 			class UseAtt {
+				isAttachment = 1;
 				text = "Detach Acog";
 				script = "spawn player_removeAttchment;";
 				att = "Attachment_ACOG";
@@ -716,6 +720,7 @@ class CfgWeapons
 	{
 		class ItemActions {
 			class UseAtt {
+				isAttachment = 1;
 				text = "Detach Holo";
 				script = "spawn player_removeAttchment;";
 				att = "Attachment_Holo";
@@ -744,6 +749,7 @@ class CfgWeapons
 	{
 		class ItemActions {
 			class UseAtt {
+				isAttachment = 1;
 				text = "Detach Holo";
 				script = "spawn player_removeAttchment;";
 				att = "Attachment_Holo";
