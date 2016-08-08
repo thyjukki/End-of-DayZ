@@ -774,7 +774,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_useAttchment;";
 				text = "Attach Silencer";
-				att = "Attachment_Sup556";
+				att = "Attachment_SupNATO";
 				out = "R3F_Famas_F1_EOT_HG_SD";
 			};
 		};
@@ -833,7 +833,7 @@ class CfgWeapons
 				isAttachment = 1;
 				script = "spawn player_removeAttchment;";
 				text = "Detach Silencer";
-				att = "Attachment_Sup556";
+				att = "Attachment_SupNATO";
 				out = "R3F_Famas_F1_EOT";
 			};
 		};
