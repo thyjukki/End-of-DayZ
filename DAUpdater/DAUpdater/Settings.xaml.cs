@@ -1,5 +1,4 @@
-﻿using dnGREP;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -103,7 +102,7 @@ namespace DAUpdater
 
         private void modPathSelect_Click(object sender, RoutedEventArgs e)
         {
-            var dialog = new FileFolderDialog();
+            var dialog = new System.Windows.Forms.FolderBrowserDialog();
             dialog.SelectedPath = modPathBox.Text;
             dialog.ShowDialog();
 

@@ -297,7 +297,7 @@ namespace DAUpdater
                 }
                 else
                 {
-                    RefreshUpdater();
+                    Downloader_Done();
                 }
             }));
         }
@@ -367,8 +367,15 @@ namespace DAUpdater
                 settingsButton.IsEnabled = true;
                 progressBar.Value = 0;
                 progressBox.Text = "Mod file integrity checking complete.";
-                
-                downloader.StartDownload(ModPath);
+
+                if (downloader.HasDownloads)
+                {
+                    downloader.StartDownload(ModPath);
+                }
+                else
+                {
+                    Downloader_Done();
+                }
             }));
         }
 
@@ -400,7 +407,8 @@ namespace DAUpdater
                 extra += " -windowed";
             }
 
-            Process.Start(Properties.Settings.Default.SteamPath, string.Format("-applaunch 33930 -mod={0}; {1}", ModPath, extra));
+            Console.WriteLine(string.Format("-applaunch 33930 -mod={0}; {1}", ModPath, extra));
+            Process.Start(Properties.Settings.Default.SteamPath, string.Format("-applaunch 33930 -mod='{0}'; {1}", ModPath, extra));
 
         }
 
@@ -546,6 +554,7 @@ namespace DAUpdater
             }
             else if (mode == "Update")
             {
+                Console.WriteLine("Test");
                 UpdateFiles();
             }
             else if (mode == "Launch")

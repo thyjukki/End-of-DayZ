@@ -186,13 +186,19 @@ namespace DAUpdater
             }));
         }
 
-        public void StartDownload(string location)
+        public bool StartDownload(string location)
         {
             destination = location;
             if (!Downloading)
             {
                 downloadStack();
+                if (dlStack.Count > 0)
+                {
+                    return true;
+                }
             }
+
+            return false;
         }
 
         public void Canel()

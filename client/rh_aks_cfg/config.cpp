@@ -2287,7 +2287,7 @@ class cfgWeapons
 				script = "spawn player_removeAttchment;";
 				text = "Detach Acog";
 				att = "Attachment_ACOG";
-				out = "RH_rk95sd";
+				out = "RH_rk95";
 			};
 			class UseAtt2 : UseAtt{
 				script = "spawn player_useAttchment;";
