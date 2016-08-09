@@ -406,9 +406,11 @@ namespace DAUpdater
             {
                 extra += " -windowed";
             }
+            
+            string parms = string.Format(@"-applaunch 33930 -mod=@DayzAwaken {0}", extra);
 
-            Console.WriteLine(string.Format("-applaunch 33930 -mod={0}; {1}", ModPath, extra));
-            Process.Start(Properties.Settings.Default.SteamPath, string.Format("-applaunch 33930 -mod='{0}'; {1}", ModPath, extra));
+            Console.WriteLine(parms);
+            Process.Start(Properties.Settings.Default.SteamPath, parms);
 
         }
 

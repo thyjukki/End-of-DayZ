@@ -1,5 +1,5 @@
-dir = "@DayZ";
-name = "ArmA 2: DayZ Mod";
+dir = "@DayZAwaken";
+name = "ArmA 2: DayZ Awaken Mod";
 picture = "z\addons\dayz_code\gui\mod.paa";
-actionName = "Launch DayZ Mod";
-action = "http://forums.dayzgame.com/";
+actionName = "Launch Dayz Awaken Mod";
+action = "http://dayzawaken.com/";

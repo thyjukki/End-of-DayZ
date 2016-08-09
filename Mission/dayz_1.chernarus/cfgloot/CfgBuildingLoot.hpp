@@ -764,7 +764,7 @@ class CfgBuildingLoot {
 			{"RH_HK53aim",					"weapon",2.20},
 			{"RH_HK53eot",					"weapon",2.20},
 			{"RH_HK53RFX",					"weapon",2.20},		
-			{"R3F_Famas_F1",				"Weapon",2.15},
+			{"R3F_Famas_F1",				"weapon",2.15},
 			{"R3F_Famas_F1_AIM",			"weapon",2.15},
 			{"R3F_Famas_F1_EOT",			"weapon",2.15},
 			{"R3F_Famas_F1_EOT_HG_SD",		"weapon",0.50},
@@ -789,7 +789,7 @@ class CfgBuildingLoot {
 			{"MIDF_Aug_A3_eotech_gl",		"weapon",2.15},
 			{"ukf_L85A2",					"weapon",2.15},
 			{"ukf_L85A2_susat",				"weapon",0.50},
-			{"ukf_L85A2_RIS",				"Weapon",2.15},
+			{"ukf_L85A2_RIS",				"weapon",2.15},
 			{"ukf_L85A2_acog",				"weapon",0.50},
 			{"ukf_L85A2_sd",				"weapon",0.50},
 			{"ukf_L86A2LSW",				"weapon",2.15},
@@ -911,7 +911,7 @@ class CfgBuildingLoot {
 			{"Attachment_M203",				"magazine",1.05},
 			{"Attachment_ACOG",				"magazine",0.50},
 			{"Attachment_SCOPED",			"magazine",0.20},
-			//{"Attachment_Sup308",			"magazine",0.02},
+			{"Attachment_Sup308",			"magazine",0.02},
 		//bags
 			{"DZ_CivilBackpack_EP1",		"object",0.55}, // 24
 			{"DZ_Backpack_EP1",				"object",0.55}, // 24

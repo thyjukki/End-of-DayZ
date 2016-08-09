@@ -23,7 +23,7 @@
         <GroupBox x:Name="groupBox_Copy" Header="Application Settings" Margin="10,10,10,221">
             <Grid>
                 <Label x:Name="label" Content="Steam.exe Location:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="2"/>
-                <Label x:Name="label_Copy" Content="Mod Install Folder:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="2"/>
+                <Label x:Name="label_Copy" Content="Arma 2 OA Location:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="125" Grid.ColumnSpan="2"/>
                 <TextBox x:Name="steamPathBox" Height="23" Margin="135,13,80,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
                 <TextBox x:Name="modPathBox" Height="23" Margin="135,44,80,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
                 <Button x:Name="armaPathSelect" Content="Select" Margin="0,13,10,62" HorizontalAlignment="Right" Width="65" Click="armaPathSelect_Click"/>
